@@ -83,9 +83,7 @@ namespace MyWebApi
             {
                 app.UseDeveloperExceptionPage();
             }
-
             app.UseMvc();
-
 
             #region Swagger服务配置
             app.UseSwagger();
