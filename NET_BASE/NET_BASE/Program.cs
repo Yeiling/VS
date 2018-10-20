@@ -4,13 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Collections;
-using NET_BASE.Class;
-using System.Xml.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Reflection;
 using Newtonsoft.Json;
-using NET_BASE.ExtClass;
-using System.Text.RegularExpressions;
 
 namespace NET_BASE
 {
@@ -24,7 +18,7 @@ namespace NET_BASE
     {
         /// <summary>
         /// 枚举数据类型
-        /// 枚举类型转换成整数类型是自动的，整数类型可以强制转换成枚举类型：weeks w=(weeks)3
+        ///枚举类型转换成整数类型是自动的，整数类型可以强制转换成枚举类型：weeks w=(weeks)3
         /// </summary>
         #region 枚举
         public enum WeekS
@@ -274,7 +268,7 @@ namespace NET_BASE
             #endregion
 
             //----------委托和事件--------
-            #region
+            #region 委托和事件
             //Heater heater = new Heater();
             //Alarm alarm = new Alarm();
 
@@ -429,8 +423,7 @@ namespace NET_BASE
             #endregion
 
 
-            //文件编码--Encoding
-            #region
+            #region 文件编码--Encoding
             //Encoding code = Encoding.GetEncoding("gb2312");  //获取gb2312编码
             //Console.WriteLine(code.EncodingName);   //code.EncodingName获取编码的名称
 
@@ -552,8 +545,6 @@ namespace NET_BASE
             #endregion
 
 
-            //路径解码问题
-
             //"=="和equal的区别
             #region 判断是否相等 "=="和equal()函数，string类是个特例
             //string s1 = "123";
@@ -670,6 +661,8 @@ namespace NET_BASE
 
             //}
             #endregion
+
+
 
 
 
