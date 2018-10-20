@@ -659,10 +659,7 @@ namespace NET_BASE
             #endregion
 
 
-               
-
-
-
+              
 
 
             Console.ReadKey();
