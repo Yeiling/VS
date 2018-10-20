@@ -36,6 +36,7 @@ namespace MyWebApi
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+
             #region 注册Swagger服务
             services.AddSwaggerGen(sgo =>
             {
