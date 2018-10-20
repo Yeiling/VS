@@ -7300,11 +7300,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitFile\\WebApi\\ClassLibrary\\ClassLibrary.csproj",
+      "projectUniqueName": "D:\\GetRespo\\WebApi\\ClassLibrary\\ClassLibrary.csproj",
       "projectName": "ClassLibrary",
-      "projectPath": "D:\\GitFile\\WebApi\\ClassLibrary\\ClassLibrary.csproj",
+      "projectPath": "D:\\GetRespo\\WebApi\\ClassLibrary\\ClassLibrary.csproj",
       "packagesPath": "C:\\Users\\CCC\\.nuget\\packages\\",
-      "outputPath": "D:\\GitFile\\WebApi\\ClassLibrary\\obj\\",
+      "outputPath": "D:\\GetRespo\\WebApi\\ClassLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

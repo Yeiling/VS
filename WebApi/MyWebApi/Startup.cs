@@ -10,7 +10,7 @@ using System.IO;
 namespace MyWebApi
 {
     /// <summary>
-    /// 
+    /// 程序
     /// </summary>
     public class Startup
     {
@@ -23,7 +23,7 @@ namespace MyWebApi
             Configuration = configuration;
         }
         /// <summary>
-        /// 
+        /// IConfiguration接口属性
         /// </summary>
         public IConfiguration Configuration { get; }
 
