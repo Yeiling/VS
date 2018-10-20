@@ -23,7 +23,11 @@ namespace MyWebApi
         {
             CreateWebHostBuilder(args).Build().Run();
         }
-
+        /// <summary>
+        /// 添加注释
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>();
