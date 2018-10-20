@@ -15,7 +15,7 @@ namespace MyWebApi
     public class Startup
     {
         /// <summary>
-        /// 配置
+        /// Startup配置
         /// </summary>
         /// <param name="configuration"></param>
         public Startup(IConfiguration configuration)
