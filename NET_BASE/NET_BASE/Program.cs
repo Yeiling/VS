@@ -8,7 +8,15 @@ using Newtonsoft.Json;
 
 namespace NET_BASE
 {
-    public delegate string MyDelehate(string s);  //定义一个带有参数和返回值的委托
+    /// <summary>
+    /// 定义一个带有参数和返回值的委托
+    /// </summary>
+    /// <param name="s"></param>
+    /// <returns></returns>
+    public delegate string MyDelehate(string s);
+    /// <summary>
+    /// 枚举定义
+    /// </summary>
     public enum Sex
     {
         man,
@@ -102,7 +110,7 @@ namespace NET_BASE
             //Console.WriteLine(k/h);
             //Console.WriteLine(h/k);
             #endregion
-            
+
             //++,--
             #region
             //int num1 = 9;
@@ -659,7 +667,7 @@ namespace NET_BASE
             #endregion
 
 
-              
+
 
 
             Console.ReadKey();
