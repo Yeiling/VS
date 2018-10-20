@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>bin\Debug\netcoreapp2.1\ClassLibrary</OutputPath>
+    <DocumentationFile>bin\Debug\netcoreapp2.1\ClassLibrary\netcoreapp2.1\ClassLibrary.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="sqlSugarCore" Version="4.6.4.9" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,322 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ClassLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:ClassLibrary.City">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ClassLibrary.City.Id">
+            <summary>
+            Desc:
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.City.CityCode">
+            <summary>
+            Desc:
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.City.Name">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.City.ParentCodeId">
+            <summary>
+            Desc:
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.City.Status">
+            <summary>
+            Desc:
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="T:ClassLibrary.Role">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ClassLibrary.Role.RoleId">
+            <summary>
+            Desc:角色id（99：超级管理员，98：管理员，97：运营，96：媒介，95：商务，1：代理，0：站长）
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Role.RoleName">
+            <summary>
+            Desc:角色名称
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Role.Status">
+            <summary>
+            Desc:状态
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Role.Id">
+            <summary>
+            Desc:
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="T:ClassLibrary.Site">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ClassLibrary.Site.Id">
+            <summary>
+            Desc:
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Site.Name">
+            <summary>
+            Desc:站点名称
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Site.Url">
+            <summary>
+            Desc:站点网址
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Site.BeiAn">
+            <summary>
+            Desc:站点备案
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Site.UserId">
+            <summary>
+            Desc:所属用户
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Site.Status">
+            <summary>
+            Desc:状态
+            Default:0
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Site.SiteType">
+            <summary>
+            Desc:平台类型（0：pc，1：wap，2：app）
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Site.AppName">
+            <summary>
+            Desc:app名称
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Site.AppPackage">
+            <summary>
+            Desc:app包名
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Site.AppVersion">
+            <summary>
+            Desc:app版本
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Site.AppUrl">
+            <summary>
+            Desc:app应用商店地址
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Site.AppId">
+            <summary>
+            Desc:智合平台生成的appid
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Site.AppOSType">
+            <summary>
+            Desc:设备类型（0：其他，1：Android，2：IOS）
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Site.AppDescription">
+            <summary>
+            Desc:app描述
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Site.IsAppDown">
+            <summary>
+            Desc:支持一键下载
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Site.IsAppDongTu">
+            <summary>
+            Desc:支持gif
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Site.IsAppLink">
+            <summary>
+            Desc:支持DeepLink
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Site.IsAppHtml">
+            <summary>
+            Desc:支持Html
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Site.IsAppGPS">
+            <summary>
+            Desc:支持GPS
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Site.TimeOut">
+            <summary>
+            Desc:app请求超时时间 毫秒
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Site.IsAppSupMacro">
+            <summary>
+            Desc:支持宏替换
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Site.IsAppJs">
+            <summary>
+            Desc:支持Js
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Site.IsAppVideo">
+            <summary>
+            Desc:支持视频
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Site.PostDate">
+            <summary>
+            Desc:添加时间
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Site.Company">
+            <summary>
+            Desc:所属公司
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Site.IsAppSignature">
+            <summary>
+            Desc:提供签名包验证
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="T:ClassLibrary.Url">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ClassLibrary.Url.Id">
+            <summary>
+            Desc:
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Url.UrlValue">
+            <summary>
+            Desc:
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Url.UrlClassId">
+            <summary>
+            Desc:
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Url.Weight">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Url.UserId">
+            <summary>
+            Desc:
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Url.Date">
+            <summary>
+            Desc:
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+        <member name="P:ClassLibrary.Url.Status">
+            <summary>
+            Desc:
+            Default:
+            Nullable:False
+            </summary>           
+        </member>
+    </members>
+</doc>
