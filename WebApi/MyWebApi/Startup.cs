@@ -28,7 +28,7 @@ namespace MyWebApi
         public IConfiguration Configuration { get; }
 
         /// <summary>
-        /// 配置服务
+        /// 配置服务 
         /// </summary>
         /// <param name="services"></param>
         // This method gets called by the runtime. Use this method to add services to the container.
