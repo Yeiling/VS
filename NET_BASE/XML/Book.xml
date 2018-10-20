@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<bookstore>
+  <book type="必修课" isbn="7-111-19149-1">
+    <title>辟邪剑谱</title>
+    <anther>林平之</anther>
+    <price>130.50</price>
+  </book>
+  <book type="选修课" isbn="7-111-19149-2">
+    <title>葵花宝典</title>
+    <anther>东方不败</anther>
+    <price>120.00</price>
+  </book>
+  <book type="必修课" isbn="7-111-19149-3">
+    <title>如来神掌</title>
+    <anther>达摩祖师</anther>
+    <price>300.50</price>
+  </book>
+  <book type="必修课" isbn="7-111-19149-4">
+    <title>降龙十八掌</title>
+    <anther>乔峰</anther>
+    <price>500.00</price>
+  </book>
+</bookstore>
