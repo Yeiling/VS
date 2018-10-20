@@ -89,7 +89,7 @@ namespace MyWebApi
             #region Swagger服务配置
             app.UseSwagger();
             app.UseSwaggerUI(us =>
-            {
+            {      
                 us.SwaggerEndpoint("/swagger/MyWebApi/swagger.json", "MyWebApi");
             });
             #endregion

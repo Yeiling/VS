@@ -13944,11 +13944,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GetRespo\\WebApi\\MyWebApi\\MyWebApi.csproj",
+      "projectUniqueName": "D:\\GitFile\\WebApi\\MyWebApi\\MyWebApi.csproj",
       "projectName": "MyWebApi",
-      "projectPath": "D:\\GetRespo\\WebApi\\MyWebApi\\MyWebApi.csproj",
+      "projectPath": "D:\\GitFile\\WebApi\\MyWebApi\\MyWebApi.csproj",
       "packagesPath": "C:\\Users\\CCC\\.nuget\\packages\\",
-      "outputPath": "D:\\GetRespo\\WebApi\\MyWebApi\\obj\\",
+      "outputPath": "D:\\GitFile\\WebApi\\MyWebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13967,8 +13967,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "D:\\GetRespo\\WebApi\\ClassLibrary\\ClassLibrary.csproj": {
-              "projectPath": "D:\\GetRespo\\WebApi\\ClassLibrary\\ClassLibrary.csproj"
+            "D:\\GitFile\\WebApi\\ClassLibrary\\ClassLibrary.csproj": {
+              "projectPath": "D:\\GitFile\\WebApi\\ClassLibrary\\ClassLibrary.csproj"
             }
           }
         }

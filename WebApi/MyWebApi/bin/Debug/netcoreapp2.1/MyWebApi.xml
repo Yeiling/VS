@@ -89,25 +89,32 @@
             </summary>
             <param name="args"></param>
         </member>
+        <member name="M:MyWebApi.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            添加注释
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
         <member name="T:MyWebApi.Startup">
             <summary>
-            
+            程序
             </summary>
         </member>
         <member name="M:MyWebApi.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
-            
+            Startup配置
             </summary>
             <param name="configuration"></param>
         </member>
         <member name="P:MyWebApi.Startup.Configuration">
             <summary>
-            
+            IConfiguration接口属性
             </summary>
         </member>
         <member name="M:MyWebApi.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
             <summary>
-            
+            配置服务
             </summary>
             <param name="services"></param>
         </member>
