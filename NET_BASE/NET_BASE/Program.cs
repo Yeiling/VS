@@ -102,7 +102,7 @@ namespace NET_BASE
             //Console.WriteLine(k/h);
             //Console.WriteLine(h/k);
             #endregion
-
+            
             //++,--
             #region
             //int num1 = 9;
@@ -220,12 +220,9 @@ namespace NET_BASE
             //}
             #endregion
 
-
             #region 构造函数问题
             Students ss = new Students("张山", "男", 20, "001");
             #endregion
-
-
 
             //抽象类和抽象方法
             #region
@@ -421,7 +418,6 @@ namespace NET_BASE
             //    }
             //}
             #endregion
-
 
             #region 文件编码--Encoding
             //Encoding code = Encoding.GetEncoding("gb2312");  //获取gb2312编码
@@ -665,11 +661,7 @@ namespace NET_BASE
 
 
 
-
-
-
             Console.ReadKey();
-
         }
         //----------------------泛型和委托方法-------------------
         /// <summary>
