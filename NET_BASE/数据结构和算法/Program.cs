@@ -11,7 +11,7 @@ namespace 数据结构和算法
             //-------------------算法-----------------
 
             #region 数组
-            int[] arry = new int[] { 3, 7, 1, 5, 8 };
+            //int[] arry = new int[] { 3, 7, 1, 5, 8 };
             //1：数组添加一个元素
             //int[] newarry = new int[arry.Length + 1];
             //for (int i = 0; i < arry.Length; i++)
@@ -22,13 +22,33 @@ namespace 数据结构和算法
             //Console.WriteLine(ArryForeach(newarry));
 
             //var narry = ArryAddOneItem(arry, 100, 6);
-            var strarry = ArryAddOneItem(new string[] { "天下", "中国", "虾米", "情怀", "强者" }, "奋斗", 5);
+            //var strarry = ArryAddOneItem(new string[] { "天下", "中国", "虾米", "情怀", "强者" }, "奋斗", 5);
+            //var trmp = RemoveOneItemByIndex(strarry, 6);
 
-            var trmp = RemoveOneItemByIndex(strarry, 6);
+            //2：数组移除一个元素
+            //RemoveOneItemByIndex(arry, 2);
+            #endregion
+
+            #region 查找算法
+            int[] arry = new int[] { 3, 7, 1, 5, 8 };
+
+            //1:线性查找
+            //for (int i = 0; i < arry.Length; i++)
+            //{
+            //    if (arry[i] == 5)
+            //    {
+            //        Console.WriteLine(arry[i]);
+            //    }
+            //}
+
+            //2:二分法查找数据---局限于顺序的数组
+            int[] arrys = new int[] { 5, 10, 39, 55, 71, 89, 100 };
+
+            bool isExists;
+            var index = EFind(arrys, 2000, out isExists);
 
             #endregion
-            //2：数组移除一个元素
-            int[] newarry1 = new int[arry.Length - 1];
+
 
 
 
@@ -121,6 +141,37 @@ namespace 数据结构和算法
                 return arry;
         }
 
-      
+        /// <summary>
+        /// 二分法查找元素
+        /// </summary>
+        /// <param name="arry">数组</param>
+        /// <param name="item">元素</param>
+        /// <returns>元素位置索引</returns>
+        private static int EFind(int[] arry, int item, out bool IsExist)
+        {
+            //起始元素位置，结束元素位置，中间位置
+            int beginIndex = 0, endIndex = arry.Length - 1, middleIndex = (beginIndex + endIndex) / 2;
+            IsExist = false;
+            while (true)
+            {
+                if (arry[middleIndex] == item)
+                {
+                    IsExist = true;
+                    return middleIndex;
+                }
+                else
+                {
+                    if (middleIndex == arry.Length - 1)
+                        return -1;
+                    if (arry[middleIndex] > item)
+                        endIndex = middleIndex - 1;
+                    else
+                        beginIndex = middleIndex + 1;
+
+                    middleIndex = (beginIndex + endIndex) / 2;
+                }
+            }
+        }
+
     }
 }
