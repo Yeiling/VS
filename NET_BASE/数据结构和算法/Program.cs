@@ -66,22 +66,22 @@ namespace 数据结构和算法
             #endregion
 
             #region 队列
-            Queue<int> queue = new Queue<int>(3);
-            int num = 0;
-            Random r = new Random();
-            while (num < 10)
-            {
-                queue.Enqueue(r.Next(0, 101));
-                num++;
-            }
-            int top = queue.Peek(); // 查看队首元素
-            while (true)
-            {
-                if (queue.Count == 0)
-                    break;
+            //Queue<int> queue = new Queue<int>(3);
+            //int num = 0;
+            //Random r = new Random();
+            //while (num < 10)
+            //{
+            //    queue.Enqueue(r.Next(0, 101));
+            //    num++;
+            //}
+            //int top = queue.Peek(); // 查看队首元素
+            //while (true)
+            //{
+            //    if (queue.Count == 0)
+            //        break;
 
-                queue.Dequeue();
-            }
+            //    queue.Dequeue();
+            //}
             #endregion
 
 
