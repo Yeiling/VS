@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -30,8 +31,7 @@ namespace 数据结构和算法
             #endregion
 
             #region 查找算法
-            int[] arry = new int[] { 3, 7, 1, 5, 8 };
-
+            //int[] arry = new int[] { 3, 7, 1, 5, 8 };
             //1:线性查找
             //for (int i = 0; i < arry.Length; i++)
             //{
@@ -40,21 +40,56 @@ namespace 数据结构和算法
             //        Console.WriteLine(arry[i]);
             //    }
             //}
-
             //2:二分法查找数据---局限于顺序的数组
-            int[] arrys = new int[] { 5, 10, 39, 55, 71, 89, 100 };
-
-            bool isExists;
-            var index = EFind(arrys, 2000, out isExists);
-
+            //int[] arrys = new int[] { 5, 10, 39, 55, 71, 89, 100 };
+            //bool isExists;
+            //var index = EFind(arrys, 71, out isExists);
             #endregion
 
+            #region 栈数据操作
+            //定义一个栈对象-- - 可以定义栈的长度，超过则自动扩容
+            //Stack<int> stack = new Stack<int>(3);
+            //int num = 0;
+            //Random r = new Random();
+            //while (num < 10)
+            //{
+            //    stack.Push(r.Next(0, 101));
+            //    num++;
+            //}
+            //int top = stack.Peek();//查看栈顶元素
+            //while (true)
+            //{
+            //    if (stack.Count == 0)
+            //        break;
+            //    stack.Pop();
+            //}
+            #endregion
+
+            #region 队列
+            Queue<int> queue = new Queue<int>(3);
+            int num = 0;
+            Random r = new Random();
+            while (num < 10)
+            {
+                queue.Enqueue(r.Next(0, 101));
+                num++;
+            }
+            int top = queue.Peek(); // 查看队首元素
+            while (true)
+            {
+                if (queue.Count == 0)
+                    break;
+
+                queue.Dequeue();
+            }
+            #endregion
 
 
 
             Console.ReadKey();
         }
 
+        #region 数组相关方法
         /// <summary>
         /// 查看数组
         /// </summary>
@@ -172,6 +207,10 @@ namespace 数据结构和算法
                 }
             }
         }
+        #endregion
 
+        #region 栈--操作
+
+        #endregion
     }
 }
