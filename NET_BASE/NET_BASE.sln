@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET_BASE", "NET_BASE\NET_BASE.csproj", "{A80DB126-D136-4315-84F2-B80FC3C3F97F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp_BASE", "CSharp_BASE\CSharp_BASE.csproj", "{43A9873C-B9C8-45F1-9677-F2B21E8F8B3C}"
@@ -38,6 +40,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDelegate", "MyDelegate\MyDelegate.csproj", "{F8AE312B-B784-4D49-ADA4-9D04F6F17AD4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T4Modal", "T4Modal\T4Modal.csproj", "{A26D5A23-3D7F-401C-AABF-B8DDE7B8BF9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "数据结构和算法", "数据结构和算法\数据结构和算法.csproj", "{986EBC46-FFA6-4369-A684-05E3897646CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -229,11 +233,26 @@ Global
 		{A26D5A23-3D7F-401C-AABF-B8DDE7B8BF9F}.Release|Mixed Platforms.Build.0 = Release|x86
 		{A26D5A23-3D7F-401C-AABF-B8DDE7B8BF9F}.Release|x86.ActiveCfg = Release|x86
 		{A26D5A23-3D7F-401C-AABF-B8DDE7B8BF9F}.Release|x86.Build.0 = Release|x86
+		{986EBC46-FFA6-4369-A684-05E3897646CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{986EBC46-FFA6-4369-A684-05E3897646CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{986EBC46-FFA6-4369-A684-05E3897646CD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{986EBC46-FFA6-4369-A684-05E3897646CD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{986EBC46-FFA6-4369-A684-05E3897646CD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{986EBC46-FFA6-4369-A684-05E3897646CD}.Debug|x86.Build.0 = Debug|Any CPU
+		{986EBC46-FFA6-4369-A684-05E3897646CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{986EBC46-FFA6-4369-A684-05E3897646CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{986EBC46-FFA6-4369-A684-05E3897646CD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{986EBC46-FFA6-4369-A684-05E3897646CD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{986EBC46-FFA6-4369-A684-05E3897646CD}.Release|x86.ActiveCfg = Release|Any CPU
+		{986EBC46-FFA6-4369-A684-05E3897646CD}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6973486B-8266-470E-A8B8-79B08C9167A7} = {0AF487BF-6687-43E2-9B58-9C7E4B3E7527}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D2734DE-680B-4CA1-A63B-04B00A733E83}
 	EndGlobalSection
 EndGlobal
