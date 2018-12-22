@@ -9,7 +9,7 @@ namespace 数据结构和算法
     {
         static void Main(string[] args)
         {
-            //-------------------算法-----------------
+            //-----------------------算法-----------------------
 
             #region 数组
             //int[] arry = new int[] { 3, 7, 1, 5, 8 };
@@ -84,29 +84,34 @@ namespace 数据结构和算法
             //}
             #endregion
 
-            #region 链表
-            LinkedList<int> link = new LinkedList<int>();
-            int num = 0;
-            Random r = new Random();
-            while (num < 10)
-            {
-                link.AddFirst(r.Next(0, 101));
-                num++;
-            }
+            #region 双向链表
+            //LinkedList<int> link = new LinkedList<int>();
+            //int num = 0;
+            //Random r = new Random();
+            //while (num < 10)
+            //{
+            //    link.AddFirst(r.Next(0, 101));
+            //    num++;
+            //}
 
-            var firstNode = link.First; // 查看链表第一个节点
-            var lastNode = link.Last;// 查看链表最后一个节点
-            var firstData = firstNode.Value; //查看链表第一个节点的值
-            var lastData = lastNode.Value; // 查看链表最后一个节点的值
+            //var firstNode = link.First; // 查看链表第一个节点
+            //var lastNode = link.Last;// 查看链表最后一个节点
+            //var firstData = firstNode.Value; //查看链表第一个节点的值
+            //var lastData = lastNode.Value; // 查看链表最后一个节点的值
 
-            while (true)
-            {
-                if (link.Count == 0)
-                    break;
+            //while (true)
+            //{
+            //    if (link.Count == 0)
+            //        break;
 
-                link.RemoveLast();
-            }
+            //    link.RemoveLast();
+            //}
             #endregion
+
+            
+
+
+
 
 
             Console.ReadKey();
