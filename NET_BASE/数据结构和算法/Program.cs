@@ -85,7 +85,27 @@ namespace 数据结构和算法
             #endregion
 
             #region 链表
+            LinkedList<int> link = new LinkedList<int>();
+            int num = 0;
+            Random r = new Random();
+            while (num < 10)
+            {
+                link.AddFirst(r.Next(0, 101));
+                num++;
+            }
 
+            var firstNode = link.First; // 查看链表第一个节点
+            var lastNode = link.Last;// 查看链表最后一个节点
+            var firstData = firstNode.Value; //查看链表第一个节点的值
+            var lastData = lastNode.Value; // 查看链表最后一个节点的值
+
+            while (true)
+            {
+                if (link.Count == 0)
+                    break;
+
+                link.RemoveLast();
+            }
             #endregion
 
 
