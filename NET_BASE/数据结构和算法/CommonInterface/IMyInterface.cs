@@ -42,7 +42,7 @@
         /// </summary>
         /// <param name="t"></param>
         /// <param name="index"></param>
-        void Add(T t, int index);
+        void Add(int index, T t);
         /// <summary>
         /// 移除一个元素
         /// </summary>
@@ -53,7 +53,7 @@
         /// </summary>
         /// <param name="t"></param>
         /// <param name="index"></param>
-        void Remove(T t, int index);
+        void Remove(int index,T t);
         /// <summary>
         /// 改成新的值
         /// </summary>

@@ -60,7 +60,7 @@ namespace 数据结构和算法.Model
             Arrys[Index++] = t;
         }
 
-        public void Add(object t, int index)
+        public void Add(int index, object t)
         {
             if (Arrys.Length == Index)
                 Arrys = ArrysExp();  //数组扩容
@@ -119,7 +119,7 @@ namespace 数据结构和算法.Model
             throw new NotImplementedException();
         }
 
-        public void Remove(object t, int index)
+        public void Remove(int index, object t)
         {
             throw new NotImplementedException();
         }
