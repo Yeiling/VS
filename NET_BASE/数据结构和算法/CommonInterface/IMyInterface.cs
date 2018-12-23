@@ -6,7 +6,7 @@
     public interface IMyInterface<T>
     {
         /// <summary>
-        /// 长度属性
+        /// 数组长度
         /// </summary>
         int Length { get; }
         /// <summary>

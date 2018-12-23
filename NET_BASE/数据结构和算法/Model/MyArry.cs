@@ -10,18 +10,13 @@ namespace 数据结构和算法.Model
         /// </summary>
         public object[] Arrys { get; set; }
         /// <summary>
-        /// 索引位置
+        /// 索引位置---元素的个数
         /// </summary>
         public int Index { get; set; }
         /// <summary>
         /// 数组的默认长度10
         /// </summary>
         private static int Default { get; } = 5;
-
-        /// <summary>
-        /// 获取数组长度
-        /// </summary>
-        public int Length => Arrys.Length;
 
         #region 构造函数
         /// <summary>
@@ -56,6 +51,7 @@ namespace 数据结构和算法.Model
         #endregion
 
         #region 接口方法实现
+        public int Length => Arrys.Length;
         public void Add(object t)
         {
             if (Arrys.Length == Index)
@@ -72,7 +68,6 @@ namespace 数据结构和算法.Model
             {
                 for (int i = Index; i > 0; i--)
                     Arrys[i] = Arrys[i - 1];
-
                 Arrys[0] = t;
             }
             else

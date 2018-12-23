@@ -117,6 +117,7 @@ namespace 数据结构和算法
             #endregion
 
 
+            #region 相关操作
             MyArry myArry = new MyArry();
             myArry.Add(3);
             myArry.Add(6);
@@ -125,10 +126,13 @@ namespace 数据结构和算法
             myArry.Add(5);
             myArry.Add(8, 0);
             myArry.Add(2, -9);
-
             myArry.Add(12, 9);
-
             myArry.Add(15, 3);
+            int len = myArry.Length;
+            #endregion
+
+
+
 
 
             Console.ReadKey();
