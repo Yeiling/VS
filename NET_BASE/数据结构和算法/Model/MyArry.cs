@@ -51,7 +51,8 @@ namespace 数据结构和算法.Model
         #endregion
 
         #region 接口方法实现
-        public int Length => Arrys.Length;
+        public int Length => Arrys.Length; //数组长度
+        public int Count => Index; //数组元素个数
         public void Add(object t)
         {
             if (Arrys.Length == Index)
@@ -119,9 +120,9 @@ namespace 数据结构和算法.Model
             throw new NotImplementedException();
         }
 
-        public void Remove(int index, object t)
+        public void Remove(int index)
         {
-            throw new NotImplementedException();
+            Arrys[index] = null;
         }
 
         public object Replace(int index, object newModel)

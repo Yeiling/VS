@@ -128,7 +128,8 @@ namespace 数据结构和算法
             myArry.Add(-9, 2);
             myArry.Add(9, 12);
             myArry.Add(3, 15);
-            int len = myArry.Length;
+            int len = myArry.Length; //数组长度
+            int count = myArry.Count; //元素个数
             #endregion
 
 

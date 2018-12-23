@@ -10,6 +10,10 @@
         /// </summary>
         int Length { get; }
         /// <summary>
+        /// 元素个数
+        /// </summary>
+        int Count { get; }
+        /// <summary>
         /// 获取索引为index的元素
         /// </summary>
         /// <param name="index"></param>
@@ -53,7 +57,7 @@
         /// </summary>
         /// <param name="t"></param>
         /// <param name="index"></param>
-        void Remove(int index,T t);
+        void Remove(int index);
         /// <summary>
         /// 改成新的值
         /// </summary>
