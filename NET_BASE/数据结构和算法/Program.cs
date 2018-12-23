@@ -118,18 +118,18 @@ namespace 数据结构和算法
 
 
             #region 相关操作
-            MyArry myArry = new MyArry();
-            myArry.Add(3);
-            myArry.Add(6);
-            myArry.Add(1);
-            myArry.Add(4);
-            myArry.Add(5);
-            myArry.Add(0, 8);
-            myArry.Add(-9, 2);
-            myArry.Add(9, 12);
-            myArry.Add(3, 15);
-            int len = myArry.Length; //数组长度
-            int count = myArry.Count; //元素个数
+            //MyArry myArry = new MyArry();
+            //myArry.Add(3);
+            //myArry.Add(6);
+            //myArry.Add(1);
+            //myArry.Add(4);
+            //myArry.Add(5);
+            //myArry.Add(0, 8);
+            //myArry.Add(-9, 2);
+            //myArry.Add(9, 12);
+            //myArry.Add(3, 15);
+            //int len = myArry.Length; //数组长度
+            //int count = myArry.Count; //元素个数
             #endregion
 
 
