@@ -123,12 +123,12 @@ namespace 数据结构和算法
             myArry.Add(1);
             myArry.Add(4);
             myArry.Add(5);
-            myArry.Add(8);
-            myArry.Add(2);
+            myArry.Add(8, 0);
+            myArry.Add(2, -9);
 
+            myArry.Add(12, 9);
 
-
-
+            myArry.Add(15, 3);
 
 
             Console.ReadKey();

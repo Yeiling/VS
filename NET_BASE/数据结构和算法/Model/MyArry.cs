@@ -67,9 +67,30 @@ namespace 数据结构和算法.Model
         public void Add(object t, int index)
         {
             if (Arrys.Length == Index)
-                Arrys = ArrysExp();
+                Arrys = ArrysExp();  //数组扩容
+            if (index <= 0) //添加到数组的头部
+            {
+                for (int i = Index; i > 0; i--)
+                    Arrys[i] = Arrys[i - 1];
 
-           
+                Arrys[0] = t;
+            }
+            else
+            {
+                if (index <= Index) //添加到数组指定的位置
+                {
+                    for (int j = Index; j > 0; j--)
+                    {
+                        if (j > index - 1)
+                            Arrys[j] = Arrys[j - 1];
+                        else if (j == index - 1)
+                            Arrys[j] = t;
+                    }
+                }
+                else  //添加到数组的末尾                 
+                    Arrys[Index] = t;
+            }
+            Index++;
         }
 
         public bool Contains(object t)
