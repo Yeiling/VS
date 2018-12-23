@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using 数据结构和算法.Model;
 
 namespace 数据结构和算法
 {
@@ -114,6 +115,19 @@ namespace 数据结构和算法
             //    link.RemoveLast();
             //}
             #endregion
+
+
+            MyArry myArry = new MyArry();
+            myArry.Add(3);
+            myArry.Add(6);
+            myArry.Add(1);
+            myArry.Add(4);
+            myArry.Add(5);
+            myArry.Add(8);
+            myArry.Add(2);
+
+
+
 
 
 

@@ -6,10 +6,9 @@
     public interface IMyInterface<T>
     {
         /// <summary>
-        /// 容量
+        /// 长度属性
         /// </summary>
-        /// <returns></returns>
-        int Capacity();
+        int Length { get; }
         /// <summary>
         /// 获取索引为index的元素
         /// </summary>
@@ -61,7 +60,7 @@
         /// <param name="index"></param>
         /// <param name="newModel"></param>
         /// <returns></returns>
-        T Replace(int index,T newModel);
+        T Replace(int index, T newModel);
 
     }
 }
