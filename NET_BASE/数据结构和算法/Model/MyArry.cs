@@ -72,8 +72,8 @@ namespace 数据结构和算法.Model
         public void Add(int index, object t)
         {
             if (Arrys.Length == Index)
-                Arrys = ArrysExp();  //数组扩容
-            if (index <= 0) //添加到数组的头部
+                Arrys = ArrysExp();  //扩容
+            if (index <= 0) //添加到头部
             {
                 for (int i = Index; i > 0; i--)
                     Arrys[i] = Arrys[i - 1];
@@ -81,7 +81,7 @@ namespace 数据结构和算法.Model
             }
             else
             {
-                if (index <= Index) //添加到数组指定的位置
+                if (index <= Index) //添加到指定的位置
                 {
                     for (int j = Index; j > 0; j--)
                     {
@@ -91,7 +91,7 @@ namespace 数据结构和算法.Model
                             Arrys[j] = t;
                     }
                 }
-                else  //添加到数组的末尾                 
+                else  //添加到末尾                 
                     Arrys[Index] = t;
             }
             Index++;
