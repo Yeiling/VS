@@ -3,7 +3,10 @@ using 数据结构和算法.CommonInterface;
 
 namespace 数据结构和算法.Model
 {
-    public class MyArry : IMyInterface<object>
+    /// <summary>
+    /// 使用数组实现顺序存储
+    /// </summary>
+    public class Arry : IMyInterface<object>
     {
         /// <summary>
         /// object数组
@@ -22,10 +25,10 @@ namespace 数据结构和算法.Model
         /// <summary>
         /// 默认初始化是10个长度
         /// </summary>
-        public MyArry() : this(Default)
+        public Arry() : this(Default)
         {
         }
-        public MyArry(int num)
+        public Arry(int num)
         {
             Arrys = new object[num];
         }

@@ -116,22 +116,26 @@ namespace 数据结构和算法
             //}
             #endregion
 
-            #region 相关操作
-            //MyArry myArry = new MyArry();
-            //myArry.Add(3);
-            //myArry.Add(6);
-            //myArry.Add(1);
-            //myArry.Add(4);
-            //myArry.Add(5);
-            //myArry.Add(0, 8);
-            //myArry.Add(-9, 2);
-            //myArry.Add(9, 12);
-            //myArry.Add(3, 15);
-            //int len = myArry.Length; //数组长度
-            //int count = myArry.Count; //元素个数
+            #region 线性结构---相关操作
+            //Arry myArry = new Arry();
+            //Arry.Add(3);
+            //Arry.Add(6);
+            //Arry.Add(1);
+            //Arry.Add(4);
+            //Arry.Add(5);
+            //Arry.Add(0, 8);
+            //Arry.Add(-9, 2);
+            //Arry.Add(9, 12);
+            //Arry.Add(3, 15);
+            //int len = Arry.Length; //数组长度
+            //int count = Arry.Count; //元素个数
             #endregion
 
+            #region 单链表---相关操作
 
+
+
+            #endregion
 
 
 
