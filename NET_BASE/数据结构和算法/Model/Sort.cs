@@ -72,25 +72,49 @@
         #endregion
 
         #region 选择排序
-        public static int[] SelectionSort(int[] group)
+        public static int[] SelectionSort(int[] arr)
         {
-            int temp;
-            int pos = 0;
-            for (int i = 0; i < group.Length - 1; i++)
+            for (int i = 0; i < arr.Length - 1; i++)
             {
-                pos = i;
-                for (int j = i + 1; j < group.Length; j++)
+                for (int j = i + 1; j < arr.Length; j++)
                 {
-                    if (group[j] < group[pos])
+                    if (arr[i] > arr[j]) //交换数值
                     {
-                        pos = j;
+                        arr[i] -= arr[j];
+                        arr[j] += arr[i];
+                        arr[i] = arr[j] - arr[i];
                     }
-                }//第i个数与最小的数group[pos]交换
-                temp = group[i];
-                group[i] = group[pos];
-                group[pos] = temp;
+                }
             }
-            return group;
+            return arr;
+        }
+        public static int[] SelectionSort(int[] arr, bool SmallToLarge = true)
+        {
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                for (int j = i + 1; j < arr.Length; j++)
+                {
+                    if (SmallToLarge)
+                    {
+                        if (arr[i] > arr[j]) //交换数值
+                        {
+                            arr[i] -= arr[j];
+                            arr[j] += arr[i];
+                            arr[i] = arr[j] - arr[i];
+                        }
+                    }
+                    else
+                    {
+                        if (arr[i] < arr[j]) //交换数值
+                        {
+                            arr[i] -= arr[j];
+                            arr[j] += arr[i];
+                            arr[i] = arr[j] - arr[i];
+                        }
+                    }
+                }
+            }
+            return arr;
         }
         #endregion
     }

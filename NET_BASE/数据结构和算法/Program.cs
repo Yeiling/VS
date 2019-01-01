@@ -17,7 +17,7 @@ namespace 数据结构和算法
 
             //-----------------------算法----------------------
             //算法:时间复杂度和空间复杂度
-          
+
             #region 数组
             //int[] arry = new int[] { 3, 7, 1, 5, 8 };
             //1：数组添加一个元素
@@ -139,6 +139,10 @@ namespace 数据结构和算法
             //Sort.QuickSort(array, 0, array.Length - 1);
             #endregion
 
+            #region MyRegion
+            int[] arr = new int[] { 49, 38, 65, 97, 76, 13, 27, -3 };
+            Sort.SelectionSort(arr, false);
+            #endregion
 
 
 
