@@ -139,11 +139,15 @@ namespace 数据结构和算法
             //Sort.QuickSort(array, 0, array.Length - 1);
             #endregion
 
-            #region MyRegion
-            int[] arr = new int[] { 49, 38, 65, 97, 76, 13, 27, -3 };
-            Sort.SelectionSort(arr, false);
+            #region 选择排序
+            //int[] arr = new int[] { 49, 38, 65, 97, 76, 13, 27, -3 };
+            //Sort.SelectionSort(arr, false);
             #endregion
 
+            #region 冒泡排序
+            //int[] arr = new int[] { 49, 38, 65, 97, 76, 13, 27, -3 };
+            //Sort.BubbleSort(arr,false);
+            #endregion
 
 
 

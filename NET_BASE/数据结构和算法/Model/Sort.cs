@@ -117,5 +117,52 @@
             return arr;
         }
         #endregion
+
+        #region 冒泡排序
+        public static int[] BubbleSort(int[] arr)
+        {
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                for (int j = 0; j < arr.Length - 1 - i; j++)
+                {
+                    if (arr[j] > arr[j + 1])
+                    {
+                        arr[j] -= arr[j + 1];
+                        arr[j + 1] += arr[j];
+                        arr[j] = arr[j + 1] - arr[j];
+                    }
+                }
+            }
+            return arr;
+        }
+        public static int[] BubbleSort(int[] arr, bool SmallToLarge = true)
+        {
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                for (int j = 0; j < arr.Length - 1 - i; j++)
+                {
+                    if (SmallToLarge)
+                    {
+                        if (arr[j] > arr[j + 1])
+                        {
+                            arr[j] -= arr[j + 1];
+                            arr[j + 1] += arr[j];
+                            arr[j] = arr[j + 1] - arr[j];
+                        }
+                    }
+                    else
+                    {
+                        if (arr[j] < arr[j + 1])
+                        {
+                            arr[j] -= arr[j + 1];
+                            arr[j + 1] += arr[j];
+                            arr[j] = arr[j + 1] - arr[j];
+                        }
+                    }
+                }
+            }
+            return arr;
+        }
+        #endregion
     }
 }
