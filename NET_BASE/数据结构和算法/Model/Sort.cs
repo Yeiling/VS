@@ -50,7 +50,7 @@
         #endregion
 
         #region 冒泡排序
-        public static int[] BullleSort(int[] arr)
+        public static void BullleSort(int[] arr)
         {
             int temp = 0;
             for (int i = 0; i < arr.Length - 1; i++)
@@ -67,12 +67,11 @@
                 }
                 #endregion
             }
-            return arr;
         }
         #endregion
 
         #region 选择排序
-        public static int[] SelectionSort(int[] arr)
+        public static void SelectionSort(int[] arr)
         {
             for (int i = 0; i < arr.Length - 1; i++)
             {
@@ -86,9 +85,8 @@
                     }
                 }
             }
-            return arr;
         }
-        public static int[] SelectionSort(int[] arr, bool SmallToLarge = true)
+        public static void SelectionSort(int[] arr, bool SmallToLarge = true)
         {
             for (int i = 0; i < arr.Length - 1; i++)
             {
@@ -114,12 +112,11 @@
                     }
                 }
             }
-            return arr;
         }
         #endregion
 
         #region 冒泡排序
-        public static int[] BubbleSort(int[] arr)
+        public static void BubbleSort(int[] arr)
         {
             for (int i = 0; i < arr.Length - 1; i++)
             {
@@ -133,9 +130,8 @@
                     }
                 }
             }
-            return arr;
         }
-        public static int[] BubbleSort(int[] arr, bool SmallToLarge = true)
+        public static void BubbleSort(int[] arr, bool SmallToLarge = true)
         {
             for (int i = 0; i < arr.Length - 1; i++)
             {
@@ -161,7 +157,6 @@
                     }
                 }
             }
-            return arr;
         }
         #endregion
     }
