@@ -28,6 +28,7 @@
             }
             /*左边都比key小，右边都比key大。//将key放在游标当前位置。//此时low等于high */
             array[low] = key;
+
             return high;
         }
         /// <summary>

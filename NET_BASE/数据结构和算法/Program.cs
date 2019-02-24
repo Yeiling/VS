@@ -10,6 +10,23 @@ namespace 数据结构和算法
     {
         static void Main(string[] args)
         {
+
+            #region ForEach函数可以改变对象，只有当对象为String时不能改变
+            //List<person> people = new List<person>
+            //{
+            //    new person{ name="ahi",age=28,sex='男'},
+            //    new person{ name="giauhdjh",age=22,sex='女'},
+            //    new person{ name="zccdop",age=20,sex='女'},
+            //    new person{ name="pxo",age=24,sex='男'},
+            //    new person{ name="zhongkai",age=21,sex='男'}
+            //};
+            //people.ForEach(p =>
+            //{
+            //    if (p.name.Contains('h'))
+            //        p.age = 100;
+            //});
+            #endregion
+
             //---------------------数据结构------------------
             //1:逻辑结构---线性结构，非线性结构
             //2:存储结构---顺序存储，链式存储，散列存储，索引存储
@@ -149,21 +166,7 @@ namespace 数据结构和算法
             //Sort.BubbleSort(arr,false);
             #endregion
 
-            #region ForEach函数可以改变对象，只有当对象为String时不能改变
-            //List<person> people = new List<person>
-            //{
-            //    new person{ name="ahi",age=28,sex='男'},
-            //    new person{ name="giauhdjh",age=22,sex='女'},
-            //    new person{ name="zccdop",age=20,sex='女'},
-            //    new person{ name="pxo",age=24,sex='男'},
-            //    new person{ name="zhongkai",age=21,sex='男'}
-            //};
-            //people.ForEach(p =>
-            //{
-            //    if (p.name.Contains('h'))
-            //        p.age = 100;
-            //});
-            #endregion
+
 
 
 
@@ -300,10 +303,10 @@ namespace 数据结构和算法
     /// <summary>
     /// 测试类
     /// </summary>
-    public class person
+    public class Person
     {
-        public string name { get; set; }
-        public byte age { get; set; }
-        public char sex { get; set; }
+        public string Name { get; set; }
+        public byte Age { get; set; }
+        public char Sex { get; set; }
     }
 }
