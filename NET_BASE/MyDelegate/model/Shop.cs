@@ -17,20 +17,20 @@ namespace MyDelegate.model
         /// <summary>
         /// 商店名称
         /// </summary>
-        public string shopName { get; set; }
+        public string ShopName { get; set; }
         /// <summary>
         /// 构造函数
         /// </summary>
         /// <param name="name"></param>
         public Shop(string name)
         {
-            this.shopName = name;
+            this.ShopName = name;
         }
 
         /// <summary>
         /// 定义价格变动事件
         /// </summary>
-        public event PriceChange priceChanged;
+        public event PriceChange PriceChanged;
 
         /// <summary>
         /// 
@@ -40,8 +40,8 @@ namespace MyDelegate.model
         public void OnPriceChanged(PriceChagedArgs chagedArgs)
         {
             //如果事件被注册，则发送消息给消费者
-            if (priceChanged != null)
-                this.priceChanged(this, chagedArgs);
+            if (PriceChanged != null)
+                this.PriceChanged(this, chagedArgs);
         }
         /// <summary>
         /// 更新商品名称，并引发商品价格变动事件
@@ -64,11 +64,11 @@ namespace MyDelegate.model
         /// <summary>
         /// 商品名称
         /// </summary>
-        public string name { get; set; }
+        public string Name { get; set; }
         /// <summary>
         /// 商品价格
         /// </summary>
-        public decimal price { get; set; }
+        public decimal Price { get; set; }
         /// <summary>
         /// 构造方法
         /// </summary>
@@ -76,8 +76,8 @@ namespace MyDelegate.model
         /// <param name="price"></param>
         public PriceChagedArgs(string name, decimal price)
         {
-            this.name = name;
-            this.price = price;
+            this.Name = name;
+            this.Price = price;
         }
     }
 }
