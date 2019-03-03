@@ -48,19 +48,19 @@ namespace MyDelegate
             //}
 
             #region 委托---字符串操作练习
-            string[] strArry = new string[] { "2eGrty", "iHUHyb", "ni23sYG" };
+            string[] strArry = new string[] { "2eGwjrty", "iHUHyb", "ni23sYGwshih" };
             StrArryHelper(strArry, str =>
             {
                 return str.ToLower();
             });
-            string result1 = GetMax(strArry, (first, target) =>
+            string result1 = GetMaxOrMin(strArry, (first, target) =>
             {
                 return first.Length < target.Length;
             });
             int[] intArry = new int[] { 9, 2, 10, 22, 1, 5, 7, 3 };
-            int result2 = GetMax(intArry, (first, target) =>
+            int result2 = GetMaxOrMin(intArry, (first, target) =>
             {
-                return first < target;
+                return first > target;
             });
             #endregion
 
@@ -129,12 +129,12 @@ namespace MyDelegate
         /// <param name="arry"></param>
         /// <param name="predit"></param>
         /// <returns></returns>
-        public static T GetMax<T>(T[] arry, Func<T, T, bool> predit)
+        public static T GetMaxOrMin<T>(T[] arry, Func<T, T, bool> predit)
         {
             T first = arry[0];
             for (int i = 0; i < arry.Length; i++)
             {
-                if (predit(first, arry[i]))
+                if (!predit(first, arry[i]))
                     first = arry[i];
             }
             return first;
