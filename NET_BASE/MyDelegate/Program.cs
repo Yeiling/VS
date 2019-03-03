@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyDelegate.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -48,24 +49,27 @@ namespace MyDelegate
             //}
 
             #region 委托---字符串操作练习
-            string[] strArry = new string[] { "123", "2345", "1234" };
-            StrArryHelper(strArry, str =>
-            {
-                return str.ToLower();
-            });
-            var result1 = GetMaxOrMin(strArry, (first, target) =>
-            {
-                return first.Length - target.Length; //最小长度
-                //return target.Length - first.Length; ////最大长度
-            }, out string maxOrMinlen);
-            int[] intArry = new int[] { 9, 1, 2, 10, 22, 1, 5, 7, 3, -4 };
-            var result2 = GetMaxOrMin(intArry, (first, target) =>
-            {
-                return first - target; //最小值
-                //return target - first; ////最大值
-            }, out int maxOrMin);
+            //string[] strArry = new string[] { "123", "23456", "1234" };
+            //StrArryHelper(strArry, str =>
+            //{
+            //    return str.ToLower();
+            //});
+            //var result1 = GetMaxOrMin(strArry, (first, target) =>
+            //{
+            //    //return first.Length - target.Length; //最小长度
+            //    return target.Length - first.Length; ////最大长度
+            //}, out string maxOrMinlen);
+            //int[] intArry = new int[] { 9, 1, 2, 10, 22, 1, 5, 7, 3, -4 };
+            //var result2 = GetMaxOrMin(intArry, (first, target) =>
+            //{
+            //    //return first - target; //最小值
+            //    return target - first; ////最大值
+            //}, out int maxOrMin);
             #endregion
 
+            #region 事件
+            
+            #endregion
 
             Console.ReadKey();
         }
