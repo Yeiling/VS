@@ -929,7 +929,7 @@ namespace NET_BASE
     {
         //结构里面可以定义 =>  字段、属性、实例方法、静态方法
         private string _name;
-        public string name
+        public string Name
         {
             get { return _name; }
             set { _name = value; }
@@ -956,7 +956,7 @@ namespace NET_BASE
         {
             this.arr = ss;
         }
-        public int count
+        public int Count
         {
             get
             {
