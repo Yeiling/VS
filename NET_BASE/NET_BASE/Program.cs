@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
-using System.IO;
-using System.Collections;
-using Newtonsoft.Json;
 
 namespace NET_BASE
 {
@@ -471,7 +471,6 @@ namespace NET_BASE
             //    Console.WriteLine(s);
             //}
             #endregion
-
             #region 类和构造函数使用
             //Students sts = new Students("张山", "男", 20, "001");
             #endregion
@@ -665,7 +664,6 @@ namespace NET_BASE
 
             //}
             #endregion
-
 
 
 

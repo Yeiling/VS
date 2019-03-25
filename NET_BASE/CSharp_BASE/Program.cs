@@ -1,8 +1,8 @@
-﻿using System;
+﻿using CSharp_BASE.Class;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using CSharp_BASE.Class;
 
 namespace CSharp_BASE
 {
