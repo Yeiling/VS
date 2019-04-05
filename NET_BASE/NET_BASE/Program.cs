@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using NET_BASE.ExtClass;
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -229,7 +230,7 @@ namespace NET_BASE
             #endregion
 
             #region 构造函数问题
-            Students ss = new Students("张山", "男", 20, "001");
+            //Students ss = new Students("张山", "男", 20, "001");
             #endregion
 
             //抽象类和抽象方法
@@ -664,6 +665,20 @@ namespace NET_BASE
 
             //}
             #endregion
+
+            #region 使用扩展方法
+            string[] arry = new string[] { "qas", "er", "dgfs" };
+            bool b = ExtendClass.IsNullOrEmpty<string>(arry);
+
+            List<int> vs = new List<int> {
+                2,8,1,5,8,7
+            };
+            bool c = ExtendClass.IsNullOrEmpty<int>(vs);
+
+            List<int> vss = new List<int>();
+            bool cc = ExtendClass.IsNullOrEmpty<int>(vss);
+            #endregion
+
 
 
 
