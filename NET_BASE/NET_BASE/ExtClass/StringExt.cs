@@ -5,7 +5,10 @@ using System.Text;
 
 namespace NET_BASE.ExtClass
 {
-    public static class ExtendClass
+    /// <summary>
+    /// 字符串（String）类扩展方法
+    /// </summary>
+    public static class StringExt
     {
         //扩展方法三要素：静态类，静态方法，this关键字
         /// <summary>
@@ -43,21 +46,5 @@ namespace NET_BASE.ExtClass
             }
             return chr.ToString();
         }
-
-
-        /// <summary>
-        /// 集合扩展方法---判断是否为空
-        /// </summary>
-        /// <typeparam name="T">泛型</typeparam>
-        /// <param name="list">集合对象</param>
-        /// <returns>是否为空</returns>
-        public static bool IsNullOrEmpty<T>(this IEnumerable<T> list)
-        {
-            return list == null || list.Count() == 0;
-        }
-
-
-
-
     }
 }

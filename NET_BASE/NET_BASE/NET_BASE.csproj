@@ -54,7 +54,8 @@
     <Compile Include="Class\English.cs" />
     <Compile Include="Class\Human.cs" />
     <Compile Include="Class\IHunmanable.cs" />
-    <Compile Include="ExtClass\ExtendClass.cs" />
+    <Compile Include="ExtClass\ListExt.cs" />
+    <Compile Include="ExtClass\StringExt.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

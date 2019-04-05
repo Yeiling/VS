@@ -668,15 +668,15 @@ namespace NET_BASE
 
             #region 使用扩展方法
             //string[] arry = new string[] { "qas", "er", "dgfs" };
-            //bool b = arry.IsNullOrEmpty();   //ExtendClass.IsNullOrEmpty<string>(arry);
+            //bool b = arry.IsNullOrEmpty();
 
             //List<int> vs = new List<int> {
             //    2,8,1,5,8,7
             //};
-            //bool c = vs.IsNullOrEmpty();    //ExtendClass.IsNullOrEmpty<int>(vs);
+            //bool c = vs.IsNullOrEmpty();
 
             //List<int> vss = new List<int>();
-            //bool cc = vss.IsNullOrEmpty();   //ExtendClass.IsNullOrEmpty<int>(vss);
+            //bool cc = vss.IsNullOrEmpty();
 
             //Dictionary<int, int> dir = new Dictionary<int, int>();
             //bool dd = dir.IsNullOrEmpty();
