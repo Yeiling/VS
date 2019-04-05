@@ -667,16 +667,19 @@ namespace NET_BASE
             #endregion
 
             #region 使用扩展方法
-            string[] arry = new string[] { "qas", "er", "dgfs" };
-            bool b = arry.IsNullOrEmpty();   //ExtendClass.IsNullOrEmpty<string>(arry);
+            //string[] arry = new string[] { "qas", "er", "dgfs" };
+            //bool b = arry.IsNullOrEmpty();   //ExtendClass.IsNullOrEmpty<string>(arry);
 
-            List<int> vs = new List<int> {
-                2,8,1,5,8,7
-            };
-            bool c = vs.IsNullOrEmpty();    //ExtendClass.IsNullOrEmpty<int>(vs);
+            //List<int> vs = new List<int> {
+            //    2,8,1,5,8,7
+            //};
+            //bool c = vs.IsNullOrEmpty();    //ExtendClass.IsNullOrEmpty<int>(vs);
 
-            List<int> vss = new List<int>();
-            bool cc = vss.IsNullOrEmpty();   //ExtendClass.IsNullOrEmpty<int>(vss);
+            //List<int> vss = new List<int>();
+            //bool cc = vss.IsNullOrEmpty();   //ExtendClass.IsNullOrEmpty<int>(vss);
+
+            //Dictionary<int, int> dir = new Dictionary<int, int>();
+            //bool dd = dir.IsNullOrEmpty();
             #endregion
 
 
