@@ -11,9 +11,9 @@ namespace NET_BASE.ExtClass
         /// <summary>
         /// 字符串截取
         /// </summary>
-        /// <param name="str"></param>
-        /// <param name="s"></param>
-        /// <param name="index"></param>
+        /// <param name="str">字符串</param>
+        /// <param name="s">目标字符串</param>
+        /// <param name="index">索引位置</param>
         /// <returns></returns>
         public static int GetString(this string str, string s, int index)
         {
@@ -34,8 +34,7 @@ namespace NET_BASE.ExtClass
         public static string RevseseString(this string str)
         {
             char[] chr = str.ToCharArray();
-
-            int num = chr.Length / 2;
+            int num = chr.Length / 2; //变量交换次数
             for (int i = 0; i < num; i++)
             {
                 var c = chr[chr.Length - i - 1];
@@ -56,6 +55,9 @@ namespace NET_BASE.ExtClass
         {
             return list == null || list.Count() == 0;
         }
+
+
+
 
     }
 }

@@ -28,8 +28,7 @@ namespace ADO_NET.DAL
                     u = del(name, pwd);
                 }
             }
-            catch (Exception e)
-            { }
+            catch{ }
             finally
             {
                 conn.Close();
