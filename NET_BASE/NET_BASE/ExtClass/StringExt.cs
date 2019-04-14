@@ -44,5 +44,6 @@ namespace NET_BASE.ExtClass
             return chr.ToString();
         }
 
+
     }
 }

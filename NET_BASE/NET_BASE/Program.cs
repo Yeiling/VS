@@ -209,6 +209,16 @@ namespace NET_BASE
             //}
             #endregion
 
+            #region 数组
+            string[] strArry = new string[] { "A", "F", "G", "R" };
+            //string[] result = ArryAddItem(strArry, 4, "M");
+            string[] result = ArryDelItem(strArry, 2);
+            for (int i = 0; i < result.Length; i++)
+            {
+                Console.WriteLine(result[i]);
+            }
+            #endregion
+
 
             //类的继承
             #region
@@ -930,6 +940,59 @@ namespace NET_BASE
                 Console.WriteLine(dir + " 该文件夹不存在"); //如果文件夹不存在则提示 
             }
         }
+
+
+        //------------------------数组操作----------------------
+        /// <summary>
+        /// 数组添加元素到指定位置
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="arry">数组</param>
+        /// <param name="index">索引位置</param>
+        /// <param name="item">添加元素</param>
+        /// <returns>新数组</returns>
+        public static T[] ArryAddItem<T>(T[] arry, int index, T item)
+        {
+            if (index <= 0)
+                index = 0;
+            if (index >= arry.Length)
+                index = arry.Length;
+            T[] newArry = new T[arry.Length + 1];
+            for (int i = newArry.Length - 1; i > -1; i--)
+            {
+                if (i > index)
+                    newArry[i] = arry[i - 1];
+                else if (i == index)
+                    newArry[i] = item;
+                else
+                    newArry[i] = arry[i];
+            }
+            return newArry;
+        }
+        /// <summary>
+        /// 数组删除制定位置元素
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="arry">数组</param>
+        /// <param name="index">索引位置</param>
+        /// <returns></returns>
+        public static T[] ArryDelItem<T>(T[] arry, int index)
+        {
+            if (index <= 0)
+                index = 0;
+            if (index >= arry.Length)
+                index = arry.Length - 1;
+            T[] newArry = new T[arry.Length - 1];
+            for (int i = arry.Length - 1; i > -1; i--)
+            {
+                if (i > index)
+                    newArry[i-1] = arry[i];
+                else if (i < index)
+                    newArry[i] = arry[i];
+            }
+            return newArry;
+        }
+
 
     }
 
