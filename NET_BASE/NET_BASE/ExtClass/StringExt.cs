@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 
 namespace NET_BASE.ExtClass
 {
@@ -46,5 +43,6 @@ namespace NET_BASE.ExtClass
             }
             return chr.ToString();
         }
+
     }
 }
