@@ -1016,10 +1016,10 @@ namespace NET_BASE
             set { _name = value; }
         }
 
-        public void m1() { }
-        public int m2() { return 1; }
-        public static void m3() { }
-        public static int m4() { return 1; }
+        public void M1() { }
+        public int M2() { return 1; }
+        public static void M3() { }
+        public static int M4() { return 1; }
 
         public Home(string name)     //结构中的构造函数只能给【字段】赋值，不能给属性赋值
         {
