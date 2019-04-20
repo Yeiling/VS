@@ -30,7 +30,7 @@ namespace NET_BASE
         ///枚举类型转换成整数类型是自动的，整数类型可以强制转换成枚举类型：weeks w=(weeks)3
         /// </summary>
         #region 枚举
-        public enum WeekS
+        public enum Weeks
         {
             Monday = 1,
             Tuesday,
@@ -210,13 +210,13 @@ namespace NET_BASE
             #endregion
 
             #region 数组
-            string[] strArry = new string[] { "A", "F", "G", "R" };
-            //string[] result = ArryAddItem(strArry, 4, "M");
-            string[] result = ArryDelItem(strArry, 2);
-            for (int i = 0; i < result.Length; i++)
-            {
-                Console.WriteLine(result[i]);
-            }
+            //string[] strArry = new string[] { "A", "F", "G", "R" };
+            ////string[] result = ArryAddItem(strArry, 4, "M");
+            //string[] result = ArryDelItem(strArry, 2);
+            //for (int i = 0; i < result.Length; i++)
+            //{
+            //    Console.WriteLine(result[i]);
+            //}
             #endregion
 
 
@@ -693,9 +693,6 @@ namespace NET_BASE
             #endregion
 
 
-
-
-
             Console.ReadKey();
         }
         //----------------------泛型和委托方法-------------------
@@ -782,13 +779,9 @@ namespace NET_BASE
                 foreach (char ch in c)
                 {
                     if (ch == ' ')
-                    {
                         sb.Append(string.Empty);
-                    }
                     else
-                    {
                         sb = sb.Append(ch.ToString());
-                    }
                 }
             }
             return sb.ToString();
@@ -846,13 +839,9 @@ namespace NET_BASE
         {
             int[] num = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
             if (index > 9)
-            {
                 throw new Exception("索引超出了范围！");
-            }
             if (index < 0)
-            {
                 throw new Exception("索引不在范围之内！");
-            }
             return "存在该数据的索引";
         }
 
@@ -861,14 +850,8 @@ namespace NET_BASE
         /// </summary>
         /// <param name="str1"></param>
         /// <returns></returns>
-        public static string SayHello(string str1)
-        {
-            return str1;
-        }
-        public static string SayHi(string str2)
-        {
-            return str2;
-        }
+        public static string SayHello(string str1) => str1;
+        public static string SayHi(string str2) => str2;
 
 
         //--------------file/Path/Directory类的使用--------------
@@ -879,7 +862,6 @@ namespace NET_BASE
             DirectoryInfo di = new DirectoryInfo(path);
             DirectoryInfo[] dr = di.GetDirectories();
             StringBuilder sb = new StringBuilder(path);
-
             foreach (DirectoryInfo d in dr)
             {
                 if (d.GetDirectories().Length > 0)
@@ -888,9 +870,7 @@ namespace NET_BASE
                     ScareDir1(sb.ToString());
                 }
                 else
-                {
                     Console.WriteLine(sb.ToString() + "\\" + d);
-                }
             }
 
         }
@@ -908,29 +888,23 @@ namespace NET_BASE
                     continue;
                 }
                 else
-                {
                     Directory.CreateDirectory(sb.ToString());
-                }
                 num++;
             }
             Console.WriteLine("OK");
         }
         #endregion
         //删除目录和目录下的文件
-        public static void deleteDir(string dir)
+        public static void DeleteDir(string dir)
         {
             if (Directory.Exists(dir)) //如果存在这个文件夹删除之 
             {
                 foreach (string d in Directory.GetFileSystemEntries(dir))
                 {
                     if (File.Exists(d))
-                    {
                         File.Delete(d); //直接删除其中的文件 
-                    }
                     else
-                    {
-                        deleteDir(d); //递归删除子文件夹 
-                    }
+                        DeleteDir(d); //递归删除子文件夹 
                 }
                 Directory.Delete(dir); //删除已空文件夹 
                 Console.WriteLine(dir + " 文件夹删除成功");
@@ -986,7 +960,7 @@ namespace NET_BASE
             for (int i = arry.Length - 1; i > -1; i--)
             {
                 if (i > index)
-                    newArry[i-1] = arry[i];
+                    newArry[i - 1] = arry[i];
                 else if (i < index)
                     newArry[i] = arry[i];
             }
@@ -1075,13 +1049,9 @@ namespace NET_BASE
             get
             {
                 if (index >= 0 && index < this._friends.Length)
-                {
                     return this._friends[index];
-                }
                 else
-                {
                     throw new Exception("索引超出范围");
-                }
             }
         }
 
@@ -1174,25 +1144,17 @@ namespace NET_BASE
             get
             {
                 if (nameindex >= 0 && nameindex < this.L.Count)
-                {
                     return this.L[nameindex];
-                }
                 else
-                {
                     return "没有这个名称！";
-                }
             }
             set
             {
                 //当值在索引范围时，更新数据，否则，添加这个值到集合中
                 if (nameindex >= 0 && nameindex < this.L.Count)
-                {
                     this.L[nameindex] = value;
-                }
                 else
-                {
                     this.L.Add(value);
-                }
             }
         }
     }
@@ -1212,24 +1174,17 @@ namespace NET_BASE
             get
             {
                 if (index >= 0 && index < _ml.Count)
-                {
                     return this._ml[index];
-                }
                 else
-                {
                     return (T)this._ml[index];
-                }
             }
             set
             {
-                if (index >= 0 && index < _ml.Count)  //索引超出时更新，没有超出则添加
-                {
+                //索引超出时更新，没有超出则添加
+                if (index >= 0 && index < _ml.Count)
                     this._ml[index] = value;
-                }
                 else
-                {
                     this._ml.Add(value);
-                }
             }
         }
 
@@ -1323,14 +1278,10 @@ namespace NET_BASE
     public abstract class D : A
     {
         public abstract string D1();
-        public static string D2() //抽象类可以定义非抽象方法(静态方法)
-        {
-            return "D2";
-        }
-        public string D3(string str) //抽象类可以定义非抽象方法(非静态方法，由子类实例化来调用)
-        {
-            return str;
-        }
+        //抽象类可以定义非抽象方法(静态方法)
+        public static string D2() => "D2";
+        //抽象类可以定义非抽象方法(非静态方法，由子类实例化来调用)
+        public string D3(string str) => str;
     }
 
     /// <summary>
@@ -1371,14 +1322,8 @@ namespace NET_BASE
                 return this._distince;
             }
         }
-        public double Run()
-        {
-            return this._time * this._speed;
-        }
-        public void Stop()
-        {
-            Console.WriteLine("Cow停止了奔跑！");
-        }
+        public double Run() => this._time * this._speed;
+        public void Stop() => Console.WriteLine("Cow停止了奔跑！");
     }
 
     /// <summary>
@@ -1432,9 +1377,7 @@ namespace NET_BASE
                 if (temperature > 85)
                 {
                     if (Boild != null)
-                    {
                         Boild(temperature);
-                    }
                 }
             }
         }
@@ -1443,19 +1386,13 @@ namespace NET_BASE
     // 警报器
     public class Alarm
     {
-        public void MakeAlert(int param)
-        {
-            Console.WriteLine("Alarm：嘀嘀嘀，水已经 {0} 度了：", param);
-        }
+        public void MakeAlert(int param) => Console.WriteLine("Alarm：嘀嘀嘀，水已经 {0} 度了：", param);
     }
 
     // 显示器
     public class Displays
     {
-        public static void ShowMsg(int param)
-        { //静态方法
-            Console.WriteLine("Display：水快烧开了，当前温度：{0}度。", param);
-        }
+        public static void ShowMsg(int param) => Console.WriteLine("Display：水快烧开了，当前温度：{0}度。", param);
     }
 
     /// <summary>
