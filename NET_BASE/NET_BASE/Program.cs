@@ -558,7 +558,6 @@ namespace NET_BASE
             //Console.WriteLine(result2);
             #endregion
 
-
             //"=="和equal的区别
             #region 判断是否相等 "=="和equal()函数，string类是个特例
             //string s1 = "123";
@@ -568,7 +567,6 @@ namespace NET_BASE
             //Annimal aa = new Annimal();
             //Console.WriteLine(a == aa); //false
             #endregion
-
 
             #region 字符串练习补充
             ////字符串数组转换成字符串集合
@@ -649,13 +647,11 @@ namespace NET_BASE
             ////其他字符串函数
             #endregion
 
-
             #region 数组练习补充
             //int[] srr = { 5, 7, 3, 0, 1 };
             //IEnumerable<int> nums1 = srr.DefaultIfEmpty();
             //IEnumerable<int> nums2 = srr.AsEnumerable();
             #endregion
-
 
             #region 邮箱正则表达式
             //string reg = @"^[a-zA-Z0-9]([a-z0-9]*[-_]?[a-z0-9]+)*@([a-z0-9]*[-_]?[a-z0-9]+)+[\.][a-z]{2,3}([\.][a-z]{2})?$";
@@ -691,6 +687,9 @@ namespace NET_BASE
             //Dictionary<int, int> dir = new Dictionary<int, int>();
             //bool dd = dir.IsNullOrEmpty();
             #endregion
+
+            
+
 
 
             Console.ReadKey();
