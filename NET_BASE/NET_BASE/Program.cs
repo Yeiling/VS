@@ -1196,7 +1196,7 @@ namespace NET_BASE
             }
         }
     }
-    //泛型类实现算法重用---索引器（***非常重要）
+    //泛型类实现算法重用---索引器（***非常重要***）
     public class MyIndexF<T>
     {
         private T _name;
@@ -1551,7 +1551,7 @@ namespace NET_BASE
         public void B2()
         { }
     }
-    public static class jt2
+    public static class Jt2
     {
         public static string CC { get; set; }
         public static void C1()
