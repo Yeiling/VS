@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace NET_BASE.ExtClass
 {
@@ -15,13 +16,17 @@ namespace NET_BASE.ExtClass
         /// <param name="s">目标字符串</param>
         /// <param name="index">索引位置</param>
         /// <returns></returns>
-        public static int GetString(this string str, string s, int index)
+        public static int GetStrIndex(this string str, string s, int index) => str.IndexOf(s, index);
+        /// <summary>
+        /// 判断集合中是否包含对象
+        /// </summary>
+        /// <typeparam name="T">泛型</typeparam>
+        /// <param name="list">集合对象</param>
+        /// <param name="t">目标对象</param>
+        /// <returns></returns>
+        public static bool ContainKey<T>(this IEnumerable<T> list, T t)
         {
-            return str.IndexOf(s, index);
-        }
-        public static bool GetString(this string[] strArry, string str)
-        {
-            if (strArry.Contains(str))
+            if (list.Contains(t))
                 return true;
             else
                 return false;
@@ -35,11 +40,12 @@ namespace NET_BASE.ExtClass
         {
             char[] chr = str.ToCharArray();
             int num = chr.Length / 2; //变量交换次数
+            char temp;
             for (int i = 0; i < num; i++)
             {
-                var c = chr[chr.Length - i - 1];
+                temp = chr[chr.Length - i - 1];
                 chr[chr.Length - i - 1] = chr[i];
-                chr[i] = c;
+                chr[i] = temp;
             }
             return chr.ToString();
         }
