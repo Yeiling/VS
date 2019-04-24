@@ -688,9 +688,15 @@ namespace NET_BASE
             //bool dd = dir.IsNullOrEmpty();
             #endregion
 
-            
+            List<String> lsts = new List<string> {
+                "A","C","V","B","R"
+            };
 
+            bool cont = lsts.ContainKey("A");
 
+            string str = "hello world";
+            string rest = str.RevseseStr();
+            Console.WriteLine(rest);
 
             Console.ReadKey();
         }

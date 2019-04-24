@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace NET_BASE.ExtClass
 {
@@ -36,7 +37,7 @@ namespace NET_BASE.ExtClass
         /// </summary>
         /// <param name="str">目标字符串</param>
         /// <returns>返回值字符串</returns>
-        public static string RevseseString(this string str)
+        public static string RevseseStr(this string str)
         {
             char[] chr = str.ToCharArray();
             int num = chr.Length / 2; //变量交换次数
@@ -47,7 +48,7 @@ namespace NET_BASE.ExtClass
                 chr[chr.Length - i - 1] = chr[i];
                 chr[i] = temp;
             }
-            return chr.ToString();
+            return new string(chr);
         }
 
 
