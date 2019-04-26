@@ -18,9 +18,10 @@ namespace NET_BASE.ExtClass
         /// <summary>
         /// 集合扩展方法---判断是否为空
         /// </summary>
-        /// <typeparam name="T泛型typeparam>
+        /// <typeparam name="T">泛型type</param>
         /// <param name="list">集合对象</param>
         /// <returns>是否为空</returns>
         public static bool IsNotNullOrEmpty<T>(this IEnumerable<T> list) => list != null && list.Count() > 0;
+
     }
 }
