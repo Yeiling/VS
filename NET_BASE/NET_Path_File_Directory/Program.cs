@@ -247,6 +247,7 @@ namespace NET_Path_File_Directory
             //3：文件路径Path
             Path.Combine("", "");
 
+
             Console.ReadKey();
         }
         //------------------方法部分------------------
