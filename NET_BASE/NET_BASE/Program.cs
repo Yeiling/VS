@@ -688,9 +688,6 @@ namespace NET_BASE
             //bool dd = dir.IsNullOrEmpty();
             #endregion
 
-            
-
-
 
 
 
@@ -705,6 +702,7 @@ namespace NET_BASE
 
             Console.ReadKey();
         }
+
         //----------------------泛型和委托方法-------------------
         /// <summary>
         /// 泛型委托
