@@ -688,9 +688,7 @@ namespace NET_BASE
             //bool dd = dir.IsNullOrEmpty();
             #endregion
 
-             
-
-
+            
 
             Console.ReadKey();
 
