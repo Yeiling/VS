@@ -304,8 +304,6 @@ namespace NET_BASE
 
 
             //1：Jason序列化是把文件变成string的过程
-
-
             //2：XML序列化，是把文件写成XML文件的过程
             //(将序列化写入流中，写入本地磁盘)
             #region
