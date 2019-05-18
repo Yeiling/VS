@@ -689,11 +689,6 @@ namespace NET_BASE
 
 
 
-
-
-
-
-
             Console.ReadKey();
 
         }
