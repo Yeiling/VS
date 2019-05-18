@@ -20,7 +20,7 @@ namespace NET_BASE
     public enum Sex
     {
         man,
-        woman
+        woman              
     }
     class Program
     {
