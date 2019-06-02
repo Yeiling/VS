@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using 数据结构和算法.Model;
 
 namespace 数据结构和算法
 {
@@ -164,9 +165,14 @@ namespace 数据结构和算法
             //Sort.BubbleSort(arr,false);
             #endregion
 
+          
+            Arry<string> arry = new Arry<string>();
+            for (int i = 0; i < 23; i++)
+            {
+                arry.Add(i.ToString());
+            }
 
-
-
+            
 
 
             Console.ReadKey();
