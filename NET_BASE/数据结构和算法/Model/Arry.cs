@@ -193,17 +193,17 @@ namespace 数据结构和算法.Model
 
         public void Add(int index, T t)
         {
-            throw new NotImplementedException();
-        }
-
-        public bool Contains(T t)
-        {
-            return true;
+            if (index < 0 || index > Count)
+                return;
+            ArrayModel[index] = t;
         }
 
         public T Get(int index)
         {
-            throw new NotImplementedException();
+            if (index < 0 || index > Count)
+                return ArrayModel[0];
+
+            return ArrayModel[index];
         }
 
         public int Indexof(T t)
@@ -211,24 +211,24 @@ namespace 数据结构和算法.Model
             throw new NotImplementedException();
         }
 
-        public bool IsEmpty()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Remove(T t)
-        {
-            throw new NotImplementedException();
-        }
+        public bool IsEmpty() => Count > 0;
 
         public void Remove(int index)
         {
-            throw new NotImplementedException();
+            if (index < 0 || index > Count)
+                return;
+            if (index > 0 && index < Count)
+            {
+
+            }
         }
 
-        public T Replace(int index, T newModel)
+        public void Replace(int index, T newModel)
         {
-            throw new NotImplementedException();
+            if (index < 0 || index > Count)
+                return;
+
+            ArrayModel[index] = newModel;
         }
 
 
