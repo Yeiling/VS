@@ -558,23 +558,23 @@ namespace NET_BASE
 
             //"=="和equal的区别
             #region 判断是否相等 "=="和equal()函数，string类型是个特例
-            string s1 = "123";
-            string s2 = "123";
-            Console.WriteLine(s1 == s2);  //true
-            Console.WriteLine(s1.Equals(s2));  //true
+            //string s1 = "123";
+            //string s2 = "123";
+            //Console.WriteLine(s1 == s2);  //true
+            //Console.WriteLine(s1.Equals(s2));  //true
 
-            string s3 = s1;
-            Console.WriteLine(s1 == s3);  //true
-            Console.WriteLine(s1.Equals(s3));  //true
+            //string s3 = s1;
+            //Console.WriteLine(s1 == s3);  //true
+            //Console.WriteLine(s1.Equals(s3));  //true
 
-            Annimal a = new Annimal();
-            Annimal aa = new Annimal();
-            Console.WriteLine(a == aa); //false
-            Console.WriteLine(a.Equals(aa));  //false
+            //Annimal a = new Annimal();
+            //Annimal aa = new Annimal();
+            //Console.WriteLine(a == aa); //false
+            //Console.WriteLine(a.Equals(aa));  //false
 
-            Annimal aaa = a;
-            Console.WriteLine(a == aaa); //true
-            Console.WriteLine(a.Equals(aaa));  //true
+            //Annimal aaa = a;
+            //Console.WriteLine(a == aaa); //true
+            //Console.WriteLine(a.Equals(aaa));  //true
             #endregion
 
             #region 字符串练习补充
