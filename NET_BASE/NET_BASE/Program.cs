@@ -20,7 +20,7 @@ namespace NET_BASE
     public enum Sex
     {
         man,
-        woman              
+        woman
     }
     class Program
     {
@@ -479,6 +479,7 @@ namespace NET_BASE
             //    Console.WriteLine(s);
             //}
             #endregion
+
             #region 类和构造函数使用
             //Students sts = new Students("张山", "男", 20, "001");
             #endregion
@@ -556,13 +557,24 @@ namespace NET_BASE
             #endregion
 
             //"=="和equal的区别
-            #region 判断是否相等 "=="和equal()函数，string类是个特例
-            //string s1 = "123";
-            //string s2 = "123";
-            //Console.WriteLine(s1.Equals(s2));  //true
-            //Annimal a = new Annimal();
-            //Annimal aa = new Annimal();
-            //Console.WriteLine(a == aa); //false
+            #region 判断是否相等 "=="和equal()函数，string类型是个特例
+            string s1 = "123";
+            string s2 = "123";
+            Console.WriteLine(s1 == s2);  //true
+            Console.WriteLine(s1.Equals(s2));  //true
+
+            string s3 = s1;
+            Console.WriteLine(s1 == s3);  //true
+            Console.WriteLine(s1.Equals(s3));  //true
+
+            Annimal a = new Annimal();
+            Annimal aa = new Annimal();
+            Console.WriteLine(a == aa); //false
+            Console.WriteLine(a.Equals(aa));  //false
+
+            Annimal aaa = a;
+            Console.WriteLine(a == aaa); //true
+            Console.WriteLine(a.Equals(aaa));  //true
             #endregion
 
             #region 字符串练习补充
@@ -686,7 +698,9 @@ namespace NET_BASE
             #endregion
 
 
-            Console.ReadKey();
+
+
+            //Console.ReadKey();
 
         }
 
