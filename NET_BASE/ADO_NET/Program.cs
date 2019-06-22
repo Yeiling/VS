@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using ADO_NET.BLL;
+﻿using ADO_NET.BLL;
 using ADO_NET.Model;
+using System;
+using System.Collections.Generic;
 
 namespace ADO_NET
 {

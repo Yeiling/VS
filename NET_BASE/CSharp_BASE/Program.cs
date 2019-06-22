@@ -73,7 +73,6 @@ namespace CSharp_BASE
             //Console.WriteLine(GetnumMax(a));
             #endregion
 
-
             //判断一个数是否是质数
             #region
             //while (true)
@@ -92,7 +91,6 @@ namespace CSharp_BASE
             //    }
             //}
             #endregion
-
 
             //求数组的平均值，结果要四舍五入
             #region
@@ -123,7 +121,6 @@ namespace CSharp_BASE
             foreach (var v in group)
                 Console.WriteLine(v);
             #endregion
-
 
             //冒泡排序
             #region
@@ -161,7 +158,6 @@ namespace CSharp_BASE
             //}
             #endregion
 
-
             //例如：1-100里随机不重复的数排序----散列排序或者哈希排序
             #region
             //int[] data = { 60, 2, 5, 89, 21, 75, 10, 4, 19, 0, 55, 100, 7, 61, 38, 84, 30, 50, 17, 9 };
@@ -186,7 +182,6 @@ namespace CSharp_BASE
             //Console.WriteLine(max);
             #endregion
 
-
             //字符串的练习(请算出字符串中“歌”字出现的次数)
             //如果判断字符串里有且仅有一个“歌”字符串，则可以判定indexof()=lastindexof()
             #region 第一种写法
@@ -200,7 +195,6 @@ namespace CSharp_BASE
             //}
             //Console.WriteLine("总共出现{0}次", count);
             #endregion
-
 
             #region 另一种写法
             //string str = "唱歌就唱好歌，歌不好，还唱什么歌";
@@ -257,7 +251,6 @@ namespace CSharp_BASE
             //    Console.WriteLine("\'" + key + "\'" + " 出现了 " + d[key] + "次");
             //}
             #endregion
-
 
             //替换字符串的空格
             #region
@@ -472,6 +465,7 @@ namespace CSharp_BASE
             //}
             //Console.WriteLine("获得字符串是:{0}", sb.ToString());
             #endregion
+
             #region 方法2
             //string[] strr = { "神马", "都是", "浮云" };
             //string s = null;
@@ -599,7 +593,6 @@ namespace CSharp_BASE
             //    Console.WriteLine(e.ToString());
             //}
             #endregion
-
 
             //值传递和引用传递
             //通常都是值传递，ref传递称作引用传递
@@ -938,7 +931,6 @@ namespace CSharp_BASE
             //Console.WriteLine(sb.ToString());
             #endregion
 
-
             //自定义泛型类
             //非泛型类也可以创建泛型方法
 
@@ -960,7 +952,6 @@ namespace CSharp_BASE
             //jikouf.Show("hello world ", 3.14);
             #endregion
 
-
             //单例模式---类
             #region
             //Simple s1 = Simple.sim;
@@ -969,7 +960,6 @@ namespace CSharp_BASE
             //Console.WriteLine(s1 == s2 ? "==是同一个" : "不是同一个");
             //Console.WriteLine(s1.Equals(s2) ? "equal是同一个" : "不是同一个");
             #endregion
-
 
             //扩展方法和委托使用案例
             #region
@@ -1007,7 +997,6 @@ namespace CSharp_BASE
             //    Console.WriteLine(v);
             //}
             #endregion
-
 
             //-------------Stream流，输入和输出流-----------
             //1:FileStraem文件流  
@@ -1436,8 +1425,6 @@ namespace CSharp_BASE
             this.Sex = sex;
             this.Age = age;
         }
-
-
     }
 
     //自定义泛型类
@@ -1517,7 +1504,5 @@ namespace CSharp_BASE
         //    return _sim;
         //}
     }
-
-
 
 }

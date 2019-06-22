@@ -60,7 +60,8 @@ namespace PM.BLL
             var deptList = deptmodel.QueryList();
             string Jsonstr1 = JsonConvert.SerializeObject(deptList);
             var empmodel = ServerFac.GetObject(Config.DBConfig.ServerModel.EmpService) as IEmpService;
-            var empList = empmodel.QueryByID(100);
+            int total = 0;
+            var empList = empmodel.QueryPage(ep => ep.ename.Contains("o"), ref total, 1, 30);
             string Jsonstr2 = JsonConvert.SerializeObject(empList);
 
 
