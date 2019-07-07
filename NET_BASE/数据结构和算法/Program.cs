@@ -166,11 +166,11 @@ namespace 数据结构和算法
             #endregion
 
           
-            Arry<string> arry = new Arry<string>();
-            for (int i = 0; i < 23; i++)
-            {
-                arry.Add(i.ToString());
-            }
+            //Arry<string> arry = new Arry<string>();
+            //for (int i = 0; i < 23; i++)
+            //{
+            //    arry.Add(i.ToString());
+            //}
 
             
 

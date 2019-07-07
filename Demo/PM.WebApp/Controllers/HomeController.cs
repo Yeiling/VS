@@ -12,8 +12,17 @@ namespace PM.WebApp.Controllers
         {
             var result = HomeBLL.Index();
 
-            return View();
+
+
+            return View(result);
         }
+        [HttpGet]
+        public JsonResult GetJson()
+        {
+            var result = HomeBLL.Index();
+            return Json(result);
+        }
+
 
         public IActionResult About()
         {

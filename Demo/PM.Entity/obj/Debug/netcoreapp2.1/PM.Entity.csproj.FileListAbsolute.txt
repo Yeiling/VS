@@ -15,4 +15,3 @@ D:\GitFiles\Demo\PM.Entity\obj\Debug\netcoreapp2.1\PM.Entity.AssemblyInfoInputs.
 D:\GitFiles\Demo\PM.Entity\obj\Debug\netcoreapp2.1\PM.Entity.AssemblyInfo.cs
 D:\GitFiles\Demo\PM.Entity\obj\Debug\netcoreapp2.1\PM.Entity.dll
 D:\GitFiles\Demo\PM.Entity\obj\Debug\netcoreapp2.1\PM.Entity.pdb
-D:\GitFiles\Demo\PM.Entity\obj\Debug\netcoreapp2.1\PM.Entity.csprojAssemblyReference.cache

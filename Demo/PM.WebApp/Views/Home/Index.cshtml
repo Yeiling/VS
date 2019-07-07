@@ -91,4 +91,34 @@
             <li><a href="https://go.microsoft.com/fwlink/?LinkID=398609">Publish to Microsoft Azure Web Apps</a></li>
         </ul>
     </div>
+
 </div>
+<div class="row">
+    <div class="col-md-3" id="emp"></div>
+</div>
+
+
+<script src="~/lib/jquery/dist/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+    $(function () {
+        //获取员工信息
+        $.get("/home/GetJson", function (data) {
+            if (data.length > 0) {
+                var table = $("<table>");
+                var tr;
+                $.each(data, function (key, value) {
+                    tr = $("<tr>");
+                    $("<td>").html(key + 1).appendTo(tr);
+                    $("<td>").html(value.empno).appendTo(tr);
+                    $("<td>").html(value.ename).appendTo(tr);
+                    $("<td>").html(value.job).appendTo(tr);
+                    $("<td>").html(value.sal).appendTo(tr);
+                    $("<td>").html(value.comm).appendTo(tr);
+                    tr.appendTo(table);
+                });
+                table.appendTo($("#emp"));
+            }
+        });
+
+    });
+</script>

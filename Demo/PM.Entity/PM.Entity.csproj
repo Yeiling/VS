@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="TestEntity\" />
+    <Folder Include="YiiBaidbEntity\" />
   </ItemGroup>
 
 </Project>

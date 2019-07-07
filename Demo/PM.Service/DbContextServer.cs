@@ -419,10 +419,7 @@ namespace {Namespace}
         /// </summary>
         /// <param name="blnIsAutoCloseConnection">是否自动关闭连接（如果为false，则使用接受时需要手动关闭Db）</param>
         /// <returns>返回值</returns>
-        public static DbContextServer GetDbContext(bool blnIsAutoCloseConnection)
-        {
-            return new DbContextServer(blnIsAutoCloseConnection);
-        }
+        public static DbContextServer GetDbContext(bool blnIsAutoCloseConnection = true) => new DbContextServer(blnIsAutoCloseConnection);
 
         /// <summary>
         /// 功能描述:设置初始化参数

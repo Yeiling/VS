@@ -1009,9 +1009,17 @@ namespace CSharp_BASE
             //}
             #endregion
 
+            A a = new A();
+            a.Test();
+            a.Test1();
 
+            A aa = new A1();
+            aa.Test();
+            aa.Test1();
 
-
+            A aaa = new A2();
+            aaa.Test();
+            aaa.Test1();
 
             Console.ReadKey();
         }
@@ -1503,6 +1511,42 @@ namespace CSharp_BASE
         //    }
         //    return _sim;
         //}
+    }
+
+    public class A
+    {
+        public void Test()
+        {
+            Console.WriteLine("我是a中的Test方法");
+        }
+        public virtual void Test1()
+        {
+            Console.WriteLine("我是a中的Test1方法");
+        }
+    }
+
+    public class A1 : A
+    {
+        public new void Test()
+        {
+            Console.WriteLine("我是a1中的Test方法");
+        }
+        public override void Test1()
+        {
+            Console.WriteLine("我是a1中的Test1方法");
+        }
+    }
+
+    public class A2 : A
+    {
+        public new void Test()
+        {
+            Console.WriteLine("我是a2中的Test方法");
+        }
+        public override void Test1()
+        {
+            Console.WriteLine("我是a2中的Test1方法");
+        }
     }
 
 }
