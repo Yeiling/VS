@@ -15,7 +15,7 @@ namespace PM.BLL
         /// <summary>
         /// 业务逻辑
         /// </summary>
-        public static string Index()
+        public static object Index()
         {
             //string pm = Config.DBConfig.PM;
             //string edm = Config.DBConfig.EDM;
@@ -56,20 +56,21 @@ namespace PM.BLL
             //int max = test.max(20, 50);
 
 
-            var deptmodel = ServerFac.GetObject(Config.DBConfig.ServerModel.DeptService) as IDeptService;
-            var deptList = deptmodel.QueryList();
-            string Jsonstr1 = JsonConvert.SerializeObject(deptList);
-            var empmodel = ServerFac.GetObject(Config.DBConfig.ServerModel.EmpService) as IEmpService;
-            int total = 0;
-            var empList = empmodel.QueryPage(ep => ep.ename.Contains("o"), ref total, 1, 30);
-            string Jsonstr2 = JsonConvert.SerializeObject(empList);
+            //var deptmodel = ServerFac.GetObject(Config.DBConfig.ServerModel.DeptService) as IDeptService;
+            //var deptList = deptmodel.QueryList();
+            //string Jsonstr1 = JsonConvert.SerializeObject(deptList);
+            //var empmodel = ServerFac.GetObject(Config.DBConfig.ServerModel.EmpService) as IEmpService;
+            //int total = 0;
+            //var empList = empmodel.QueryPage(ep => ep.ename.Contains("o"), ref total, 1, 30);
+            //string Jsonstr2 = JsonConvert.SerializeObject(empList);
+
+            var OrderDetailService = ServerFac.GetObject(Config.DBConfig.ServerModel.OrderDetailService) as IOrderDetailService;
+            var orders = OrderDetailService.QueryList();
 
 
 
 
-
-
-            return "";
+            return orders;
         }
 
 
