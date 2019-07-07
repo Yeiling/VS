@@ -67,6 +67,8 @@ namespace PM.BLL
             var OrderDetailService = ServerFac.GetObject(Config.DBConfig.ServerModel.OrderDetailService) as IOrderDetailService;
             var orders = OrderDetailService.QueryList();
 
+            OrderDetailService = ServerFac.GetObject(Config.DBConfig.ServerModel.OrderDetailService) as IOrderDetailService;
+            orders = OrderDetailService.QueryList();
 
 
 
