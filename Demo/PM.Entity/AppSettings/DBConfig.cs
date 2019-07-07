@@ -41,8 +41,22 @@
     /// </summary>
     public class ServerModel
     {
+        //Test库
         public string DeptService { get; set; }
         public string EmpService { get; set; }
-    }
 
+        //yiibaidb库
+        public string CustomerService { get; set; }
+        public string EmployeeService { get; set; }
+        public string ItemService { get; set; }
+        public string OfficeService { get; set; }
+        public string OrderDetailService { get; set; }
+        public string OrderService { get; set; }
+        public string PaymentService { get; set; }
+        public string ProductLineService { get; set; }
+        public string ProductService { get; set; }
+        public string TokenService { get; set; }
+
+    }
 }
+
