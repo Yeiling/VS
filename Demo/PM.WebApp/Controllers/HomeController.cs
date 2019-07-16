@@ -10,12 +10,13 @@ namespace PM.WebApp.Controllers
     {
         public IActionResult Index()
         {
-            var result = HomeBLL.Index();
+            //var result = HomeBLL.Index();
 
 
 
-            return View(result);
+            return View();
         }
+
         [HttpGet]
         public JsonResult GetJson()
         {

@@ -64,15 +64,13 @@ namespace PM.BLL
             //var empList = empmodel.QueryPage(ep => ep.ename.Contains("o"), ref total, 1, 30);
             //string Jsonstr2 = JsonConvert.SerializeObject(empList);
 
-            var OrderDetailService = ServerFac.GetObject(Config.DBConfig.ServerModel.OrderDetailService) as IOrderDetailService;
-            var orders = OrderDetailService.QueryList();
+            //var OrderDetailService = ServerFac.GetObject(Config.DBConfig.ServerModel.OrderDetailService) as IOrderDetailService;
+            //var orders = OrderDetailService.QueryList();
 
-            OrderDetailService = ServerFac.GetObject(Config.DBConfig.ServerModel.OrderDetailService) as IOrderDetailService;
-            orders = OrderDetailService.QueryList();
+            //OrderDetailService = ServerFac.GetObject(Config.DBConfig.ServerModel.OrderDetailService) as IOrderDetailService;
+            //orders = OrderDetailService.QueryList();
 
-
-
-            return orders;
+            return null;
         }
 
 

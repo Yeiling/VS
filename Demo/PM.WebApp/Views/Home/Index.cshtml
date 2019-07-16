@@ -101,7 +101,7 @@
 <script src="~/lib/jquery/dist/jquery-1.8.3.js"></script>
 <script type="text/javascript">
     $(function () {
-        //获取员工信息
+        //获取订单信息
         $.get("/home/GetJson", function (data) {
             if (data.length > 0) {
                 var table = $("<table>");
@@ -109,11 +109,11 @@
                 $.each(data, function (key, value) {
                     tr = $("<tr>");
                     $("<td>").html(key + 1).appendTo(tr);
-                    $("<td>").html(value.empno).appendTo(tr);
-                    $("<td>").html(value.ename).appendTo(tr);
-                    $("<td>").html(value.job).appendTo(tr);
-                    $("<td>").html(value.sal).appendTo(tr);
-                    $("<td>").html(value.comm).appendTo(tr);
+                    $("<td>").html(value.orderNumber).appendTo(tr);
+                    $("<td>").html(value.productCode).appendTo(tr);
+                    $("<td>").html(value.quantityOrdered).appendTo(tr);
+                    $("<td>").html(value.priceEach).appendTo(tr);
+                    $("<td>").html(value.orderLineNumber).appendTo(tr);
                     tr.appendTo(table);
                 });
                 table.appendTo($("#emp"));

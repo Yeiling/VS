@@ -15,3 +15,4 @@ D:\GitFiles\Demo\PM.Common\obj\Debug\netcoreapp2.1\PM.Common.AssemblyInfoInputs.
 D:\GitFiles\Demo\PM.Common\obj\Debug\netcoreapp2.1\PM.Common.AssemblyInfo.cs
 D:\GitFiles\Demo\PM.Common\obj\Debug\netcoreapp2.1\PM.Common.dll
 D:\GitFiles\Demo\PM.Common\obj\Debug\netcoreapp2.1\PM.Common.pdb
+D:\GitFiles\Demo\PM.Common\obj\Debug\netcoreapp2.1\PM.Common.csprojAssemblyReference.cache
