@@ -989,7 +989,7 @@ namespace CSharp_BASE
 
             ////数组平均值
             //Console.WriteLine("平均值是：" + nums.Average());
-
+             
             ////数组排序
             //IOrderedEnumerable<int> numarr = nums.OrderBy(i => i);
             //foreach (var v in numarr)
