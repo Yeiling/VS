@@ -14,7 +14,7 @@ namespace PM.Entity.YiiBaidbEntity
 
            }
            /// <summary>
-           /// Desc:
+           /// Desc:客户编号
            /// Default:
            /// Nullable:False
            /// </summary>           

@@ -80,3 +80,4 @@ D:\GitFiles\Demo\PM.WebApp\obj\Debug\netcoreapp2.1\PM.WebApp.dll
 D:\GitFiles\Demo\PM.WebApp\obj\Debug\netcoreapp2.1\PM.WebApp.pdb
 D:\GitFiles\Demo\PM.WebApp\bin\Debug\netcoreapp2.1\PM.Factory.dll
 D:\GitFiles\Demo\PM.WebApp\bin\Debug\netcoreapp2.1\PM.Factory.pdb
+D:\GitFiles\Demo\PM.WebApp\bin\Debug\netcoreapp2.1\PM.Entity.xml

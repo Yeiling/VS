@@ -19,6 +19,7 @@ D:\GitFiles\Demo\PM.Service\bin\Debug\netcoreapp2.1\PM.Common.dll
 D:\GitFiles\Demo\PM.Service\bin\Debug\netcoreapp2.1\PM.Entity.dll
 D:\GitFiles\Demo\PM.Service\bin\Debug\netcoreapp2.1\PM.Common.pdb
 D:\GitFiles\Demo\PM.Service\bin\Debug\netcoreapp2.1\PM.Entity.pdb
+D:\GitFiles\Demo\PM.Service\bin\Debug\netcoreapp2.1\PM.Entity.xml
 D:\GitFiles\Demo\PM.Service\obj\Debug\netcoreapp2.1\PM.Service.csprojAssemblyReference.cache
 D:\GitFiles\Demo\PM.Service\obj\Debug\netcoreapp2.1\PM.Service.csproj.CoreCompileInputs.cache
 D:\GitFiles\Demo\PM.Service\obj\Debug\netcoreapp2.1\PM.Service.AssemblyInfoInputs.cache

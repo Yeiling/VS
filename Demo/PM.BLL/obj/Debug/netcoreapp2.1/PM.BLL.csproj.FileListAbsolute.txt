@@ -32,3 +32,4 @@ D:\GitFiles\Demo\PM.BLL\obj\Debug\netcoreapp2.1\PM.BLL.dll
 D:\GitFiles\Demo\PM.BLL\obj\Debug\netcoreapp2.1\PM.BLL.pdb
 D:\GitFiles\Demo\PM.BLL\bin\Debug\netcoreapp2.1\PM.Factory.dll
 D:\GitFiles\Demo\PM.BLL\bin\Debug\netcoreapp2.1\PM.Factory.pdb
+D:\GitFiles\Demo\PM.BLL\bin\Debug\netcoreapp2.1\PM.Entity.xml

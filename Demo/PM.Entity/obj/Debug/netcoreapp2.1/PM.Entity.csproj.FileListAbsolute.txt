@@ -10,6 +10,11 @@ F:\Project\Demo\PM.Entity\obj\Debug\netcoreapp2.1\PM.Entity.csprojAssemblyRefere
 D:\GitFiles\Demo\PM.Entity\bin\Debug\netcoreapp2.1\PM.Entity.deps.json
 D:\GitFiles\Demo\PM.Entity\bin\Debug\netcoreapp2.1\PM.Entity.dll
 D:\GitFiles\Demo\PM.Entity\bin\Debug\netcoreapp2.1\PM.Entity.pdb
+D:\GitFiles\Demo\PM.Entity\bin\Debug\netcoreapp2.1\PM.Entity.xml
+D:\GitFiles\Demo\PM.Entity\bin\Debug\netcoreapp2.1\netcoreapp2.1\PM.Entity.deps.json
+D:\GitFiles\Demo\PM.Entity\bin\Debug\netcoreapp2.1\netcoreapp2.1\PM.Entity.dll
+D:\GitFiles\Demo\PM.Entity\bin\Debug\netcoreapp2.1\netcoreapp2.1\PM.Entity.pdb
+D:\GitFiles\Demo\PM.Entity\bin\Debug\netcoreapp2.1\netcoreapp2.1\PM.Entity.xml
 D:\GitFiles\Demo\PM.Entity\obj\Debug\netcoreapp2.1\PM.Entity.csproj.CoreCompileInputs.cache
 D:\GitFiles\Demo\PM.Entity\obj\Debug\netcoreapp2.1\PM.Entity.AssemblyInfoInputs.cache
 D:\GitFiles\Demo\PM.Entity\obj\Debug\netcoreapp2.1\PM.Entity.AssemblyInfo.cs
