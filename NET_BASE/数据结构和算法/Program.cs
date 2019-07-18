@@ -149,7 +149,6 @@ namespace 数据结构和算法
 
             #endregion
 
-
             #region 快速排序
             //int[] array = { 49, 38, 65, 97, 76, 13, 27 };
             //Sort.QuickSort(array, 0, array.Length - 1);
@@ -165,14 +164,16 @@ namespace 数据结构和算法
             //Sort.BubbleSort(arr,false);
             #endregion
 
-          
-            //Arry<string> arry = new Arry<string>();
-            //for (int i = 0; i < 23; i++)
-            //{
-            //    arry.Add(i.ToString());
-            //}
+            Arry<int> myArry = new Arry<int>();
+            myArry.Add(4);
+            myArry.Add(5);
+            myArry.Add(3);
+            myArry.Add(8);
+            myArry.Add(2);
+            myArry.Add(7);
+            myArry.Add(9);
 
-            
+            myArry.Add(9, 99);
 
 
             Console.ReadKey();

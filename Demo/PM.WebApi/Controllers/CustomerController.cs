@@ -13,7 +13,7 @@ namespace PM.WebApi.Controllers
     public class CustomerController : BaseController
     {
         /// <summary>
-        /// 获取所有的用户信息
+        /// 获取所有的用户信息接口
         /// </summary>
         /// <returns></returns>
         // GET: api/Customer
