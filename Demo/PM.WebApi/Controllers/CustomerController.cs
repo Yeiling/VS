@@ -1,26 +1,23 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PM.Entity.AppSettings;
 using PM.Entity.YiiBaidbEntity;
-using PM.Factory;
 using PM.Service;
-using PM.Service.IService;
 using System.Collections.Generic;
 
 namespace PM.WebApi.Controllers
 {
     /// <summary>
-    /// 用户服务
+    /// 用户服务---继承自BaseController
     /// </summary>
-    [Route("api/[controller]")]
-    [ApiController]
-    public class CustomerController : ControllerBase
+    //[Route("api/[controller]/[action]")]
+    //[ApiController]
+    public class CustomerController : BaseController
     {
         /// <summary>
         /// 获取所有的用户信息
         /// </summary>
         /// <returns></returns>
         // GET: api/Customer
-        [HttpGet]
+        [HttpGet(Name = "GetAll")]
         public IEnumerable<customers> GetAll()
         {
             return SqlSugarDBContext.GetDbContext().SimpleClientFun(sc =>
@@ -35,7 +32,7 @@ namespace PM.WebApi.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         // GET: api/Customer/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}", Name = "GetById")]
         public customers GetById(int id)
         {
             return SqlSugarDBContext.GetDbContext().SimpleClientFun(sc =>

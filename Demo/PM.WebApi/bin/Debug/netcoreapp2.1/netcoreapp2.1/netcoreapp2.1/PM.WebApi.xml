@@ -4,6 +4,11 @@
         <name>PM.WebApi</name>
     </assembly>
     <members>
+        <member name="T:PM.WebApi.Controllers.BaseController">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:PM.WebApi.Controllers.CustomerController">
             <summary>
             用户服务
@@ -40,6 +45,53 @@
             删除用户信息
             </summary>
             <param name="id"></param>
+        </member>
+        <member name="T:PM.WebApi.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PM.WebApi.Program.Main(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:PM.WebApi.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PM.WebApi.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PM.WebApi.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:PM.WebApi.Startup.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PM.WebApi.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:PM.WebApi.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
         </member>
     </members>
 </doc>
