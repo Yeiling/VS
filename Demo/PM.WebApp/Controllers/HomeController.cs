@@ -12,8 +12,6 @@ namespace PM.WebApp.Controllers
         {
             //var result = HomeBLL.Index();
 
-
-
             return View();
         }
 
