@@ -51,7 +51,9 @@ namespace 数据结构和算法.单链表
                 //赋值---顺序不能反过来
                 Next = indexNode.Next //新节点的后继指向索引节点的next
             };
-            indexNode.Next = newNode;//索引节点的next指向新节点
+
+            //索引节点的next指向新节点
+            indexNode.Next = newNode;
 
             //数量增加
             _counts++;
@@ -151,14 +153,13 @@ namespace 数据结构和算法.单链表
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            Node<T> temp = header.Next;
+            Node<T> temp = header;
             for (int i = 0; i <= _counts; i++)
             {
-                if (temp != null && temp.Data != null)
-                {
-                    sb.Append(temp.Data + ",");
-                    temp = temp.Next;
-                }
+                if (temp.Next != null && temp.Next.Data != null)
+                    sb.Append(temp.Next.Data + ",");
+
+                temp = temp.Next;
             }
             return sb.ToString().TrimEnd(',');
         }

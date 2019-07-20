@@ -16,6 +16,10 @@ namespace 数据结构和算法.集合.Model
         /// 当前索引位置
         /// </summary>
         private int Index { get; set; }
+        public T this[int indx] //索引器
+        {
+            get { return ArrayModel[indx]; }
+        }
         /// <summary>
         /// 初始化数组大小
         /// </summary>
@@ -101,7 +105,6 @@ namespace 数据结构和算法.集合.Model
 
             ArrayModel[index] = newModel;
         }
-
 
 
         #region 数组扩容
