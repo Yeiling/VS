@@ -118,7 +118,7 @@ namespace 数据结构和算法.双链表
         /// <param name="index">索引位置</param>
         public void Remove(int index)
         {
-            //找到索引index位置节点的前一个节点
+            //index位置节点的前一个节点
             DoubleNode<T> indexNode = header;
             for (int i = 0; i < index; i++)
                 indexNode = indexNode.NextNode;
