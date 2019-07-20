@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace 数据结构和算法.双链表
+﻿namespace 数据结构和算法.双链表
 {
     /// <summary>
     /// 双链表节点---有后继和前驱
@@ -13,15 +9,15 @@ namespace 数据结构和算法.双链表
         /// <summary>
         /// 节点数据
         /// </summary>
-        private T Data { get; set; }
+        public T Data { get; set; }
         /// <summary>
         /// 前驱节点
         /// </summary>
-        private DoubleNode<T> PreNode { get; set; }
+        public DoubleNode<T> PreNode { get; set; }
         /// <summary>
         /// 后继节点
         /// </summary>
-        private DoubleNode<T> NextNode { get; set; }
+        public DoubleNode<T> NextNode { get; set; }
 
         /// <summary>
         /// 默认构造函数---空节点
