@@ -16,13 +16,13 @@ namespace 数据结构和算法.Model
         /// 节点总数
         /// </summary>
         private int _counts { get; set; }
-        public int Count
-        {
-            get
-            {
-                return _counts; //数组元素个数
-            }
-        }
+        public int Count => _counts - 1; //数组元素个数---不包括头结点
+        /// <summary>
+        /// 索引器
+        /// </summary>
+        /// <param name="index">索引位置</param>
+        /// <returns></returns>
+        public Node this[int index] => Get(index);
         #endregion
 
         #region 接口方法实现
@@ -30,7 +30,7 @@ namespace 数据结构和算法.Model
         /// 添加元素
         /// </summary>
         /// <param name="t">新元素</param>
-        public void Add(object t) => Add(Count, t);
+        public void Add(object t) => Add(_counts, t);
 
         /// <summary>
         /// 制定位置添加元素
