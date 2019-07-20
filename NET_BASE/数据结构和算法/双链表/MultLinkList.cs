@@ -1,5 +1,4 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 
 namespace 数据结构和算法.双链表
 {
@@ -18,7 +17,12 @@ namespace 数据结构和算法.双链表
         /// </summary>
         private int _counts { get; set; }
         public int Count => _counts; //数组元素个数---不包括头结点
-
+        /// <summary>
+        /// 索引器
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public DoubleNode<T> this[int index] => Get(index);
         #region 接口方法实现
         /// <summary>
         /// 添加元素
