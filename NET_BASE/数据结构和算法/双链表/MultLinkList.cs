@@ -17,7 +17,7 @@ namespace 数据结构和算法.双链表
         /// 节点总数
         /// </summary>
         private int _counts { get; set; }
-        public int Count => _counts - 1; //数组元素个数---不包括头结点
+        public int Count => _counts; //数组元素个数---不包括头结点
 
         #region 接口方法实现
         /// <summary>
@@ -115,9 +115,11 @@ namespace 数据结构和算法.双链表
             DoubleNode<T> indexNode = header;
             for (int i = 0; i < index; i++)
                 indexNode = indexNode.NextNode;
-            //索引位置节点
-            DoubleNode<T> temp = indexNode.NextNode;
-            indexNode.NextNode.PreNode = indexNode.PreNode;
+            //顺序不可以调整
+            indexNode.NextNode.NextNode.PreNode = indexNode;
+            indexNode.NextNode = indexNode.NextNode.NextNode;
+            //数量减少
+            _counts--;
         }
 
         /// <summary>

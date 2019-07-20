@@ -146,28 +146,32 @@ namespace 数据结构和算法
             #endregion
 
             #region 单链表---模拟相关操作
-            SingLinkList<int> singLinkList = new SingLinkList<int>();
-            singLinkList.Add(88);
-            singLinkList.Add(16);
-            singLinkList.Add(1, 101);
-            singLinkList.Add(0, 2);
-            singLinkList.Add(77);
-            singLinkList.Add(55);
-            singLinkList.Remove(2);
-            singLinkList.Replace(1, 100);
-            var b = singLinkList.Contains(7);
-            Console.WriteLine(singLinkList.ToString());
-            Console.WriteLine(singLinkList.Get(2).Data);
+            //SingLinkList<int> singLinkList = new SingLinkList<int>();
+            //singLinkList.Add(88);
+            //singLinkList.Add(16);
+            //singLinkList.Add(1, 101);
+            //singLinkList.Add(0, 2);
+            //singLinkList.Add(7);
+            //singLinkList.Add(55);
+            //singLinkList.Remove(2);
+            //singLinkList.Replace(1, 100);
+            //var num = singLinkList.Get(3);
+            //var b = singLinkList.Contains(7);
+            //Console.WriteLine(singLinkList.ToString());
+            //Console.WriteLine(singLinkList.Get(2).Data);
             #endregion
 
             #region 双链表---模拟相关操作
             MultLinkList<int> multLinkList = new MultLinkList<int>();
             multLinkList.Add(99);
-            multLinkList.Add(45);
+            multLinkList.Add(5);
             multLinkList.Add(2);
-            multLinkList.Add(79);
-
-            //multLinkList.Remove(2);
+            multLinkList.Add(7);
+            multLinkList.Add(8);
+            multLinkList.Add(3);
+            multLinkList.Remove(3);
+            var t = multLinkList.Get(2);
+            Console.WriteLine(multLinkList.ToString());
             #endregion
 
             #region 快速排序

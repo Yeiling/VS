@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 
 namespace 数据结构和算法.单链表
 {
@@ -39,6 +40,9 @@ namespace 数据结构和算法.单链表
         /// <param name="t">新元素</param>
         public void Add(int index, T obj)
         {
+            if (index < 0 || index > _counts)
+                throw new Exception("索引位置越界异常" + index.ToString());
+
             //找到要添加的索引index位置节点的前一个节点next就是本节点
             Node<T> indexNode = header;
             for (int i = 0; i < index; i++)
