@@ -5,13 +5,13 @@ namespace 数据结构和算法.单链表.Model
     /// <summary>
     /// 模拟单链表
     /// </summary>
-    public class SingLinkList
+    public class SingLinkList<T>
     {
         #region 字段和属性
         /// <summary>
         /// 头结点，不存储数据和指针，为了编写方便
         /// </summary>
-        private Node header = new Node();
+        private Node<T> header = new Node<T>();
         /// <summary>
         /// 节点总数
         /// </summary>
@@ -22,7 +22,7 @@ namespace 数据结构和算法.单链表.Model
         /// </summary>
         /// <param name="index">索引位置</param>
         /// <returns></returns>
-        public Node this[int index] => Get(index);
+        public Node<T> this[int index] => Get(index);
         #endregion
 
         #region 接口方法实现
@@ -30,22 +30,22 @@ namespace 数据结构和算法.单链表.Model
         /// 添加元素
         /// </summary>
         /// <param name="t">新元素</param>
-        public void Add(object t) => Add(_counts, t);
+        public void Add(T t) => Add(_counts, t);
 
         /// <summary>
         /// 制定位置添加元素
         /// </summary>
         /// <param name="index">要添加的索引位置</param>
         /// <param name="t">新元素</param>
-        public void Add(int index, object obj)
+        public void Add(int index, T obj)
         {
             //找到要添加的索引index位置节点的前一个节点
-            Node indexNode = header;
+            Node<T> indexNode = header;
             for (int i = 0; i < index; i++)
                 indexNode = indexNode.Next;
 
             //创建新节点
-            Node newNode = new Node(obj)
+            Node<T> newNode = new Node<T>(obj)
             {
                 //赋值---顺序不能反过来
                 Next = indexNode.Next //新节点的后继指向索引节点的next
@@ -63,7 +63,7 @@ namespace 数据结构和算法.单链表.Model
         /// <returns>是否包含</returns>
         public bool Contains(object t)
         {
-            Node temp = header;
+            Node<T> temp = header;
             for (int i = 0; i <= _counts; i++)
             {
                 temp = temp.Next;
@@ -78,9 +78,9 @@ namespace 数据结构和算法.单链表.Model
         /// </summary>
         /// <param name="index">索引位置</param>
         /// <returns>目标元素</returns>
-        public Node Get(int index)
+        public Node<T> Get(int index)
         {
-            Node temp = header;
+            Node<T> temp = header;
             for (int i = 0; i <= index; i++)
                 temp = temp.Next;
             return temp;
@@ -93,7 +93,7 @@ namespace 数据结构和算法.单链表.Model
         /// <returns>索引位置</returns>
         public int Indexof(object t)
         {
-            Node temp = header;
+            Node<T> temp = header;
             for (int i = 0; i <= _counts; i++)
             {
                 temp = temp.Next;
@@ -116,11 +116,11 @@ namespace 数据结构和算法.单链表.Model
         public void Remove(int index)
         {
             //找到索引index位置节点的前一个节点
-            Node indexNode = header;
+            Node<T> indexNode = header;
             for (int i = 0; i < index; i++) //索引位置前一个节点
                 indexNode = indexNode.Next;
 
-            Node temp = indexNode.Next; //索引位置节点
+            Node<T> temp = indexNode.Next; //索引位置节点
             indexNode.Next = temp.Next;
         }
 
@@ -130,7 +130,7 @@ namespace 数据结构和算法.单链表.Model
         /// <param name="index">索引位置</param>
         /// <param name="newModel">新元素</param>
         /// <returns>返回新元素</returns>
-        public void Replace(int index, object newModel)
+        public void Replace(int index, T newModel)
         {
             //找到索引index位置节点的前一个节点,并赋值
             Get(index).Data = newModel;
@@ -143,7 +143,7 @@ namespace 数据结构和算法.单链表.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            Node temp = header.Next;
+            Node<T> temp = header.Next;
             for (int i = 0; i <= _counts; i++)
             {
                 if (temp != null && temp.Data != null)

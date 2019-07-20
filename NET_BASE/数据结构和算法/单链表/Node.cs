@@ -3,17 +3,17 @@
     /// <summary>
     /// 节点类---单链表只能找到后继节点
     /// </summary>
-    public class Node
+    public class Node<T>
     {
         #region 属性
         /// <summary>
         /// 数据
         /// </summary>
-        public object Data { get; set; }
+        public T Data { get; set; }
         /// <summary>
         /// 节点指针
         /// </summary>
-        public Node Next { get; set; }
+        public Node<T> Next { get; set; }
         #endregion
 
         #region 构造函数
@@ -25,7 +25,7 @@
         /// 构造函数---新节点
         /// </summary>
         /// <param name="data">只有数据，没有节点的链表</param>
-        public Node(object data) : this(data, null)
+        public Node(T data) : this(data, null)
         {
             Data = data;
         }
@@ -34,7 +34,7 @@
         /// </summary>
         /// <param name="data">数据</param>
         /// <param name="node">节点指针</param>
-        public Node(object data, Node node)
+        public Node(T data, Node<T> node)
         {
             Data = data;
             Next = node;
