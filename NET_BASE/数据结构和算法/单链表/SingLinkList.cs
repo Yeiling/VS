@@ -39,7 +39,7 @@ namespace 数据结构和算法.单链表
         /// <param name="t">新元素</param>
         public void Add(int index, T obj)
         {
-            //找到要添加的索引index位置节点的前一个节点
+            //找到要添加的索引index位置节点的前一个节点next就是本节点
             Node<T> indexNode = header;
             for (int i = 0; i < index; i++)
                 indexNode = indexNode.Next;
@@ -47,6 +47,7 @@ namespace 数据结构和算法.单链表
             //创建新节点
             Node<T> newNode = new Node<T>(obj)
             {
+                Data = obj,
                 //赋值---顺序不能反过来
                 Next = indexNode.Next //新节点的后继指向索引节点的next
             };
@@ -67,8 +68,13 @@ namespace 数据结构和算法.单链表
             for (int i = 0; i <= _counts; i++)
             {
                 temp = temp.Next;
-                if (temp.Data.Equals(t))
-                    return true;
+                if (temp != null)
+                {
+                    if (temp.Data.Equals(t))
+                        return true;
+                    else
+                        return false;
+                }
             }
             return false;
         }

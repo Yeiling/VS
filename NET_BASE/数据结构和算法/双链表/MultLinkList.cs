@@ -33,7 +33,7 @@ namespace 数据结构和算法.双链表
         /// <param name="t">新元素</param>
         public void Add(int index, T obj)
         {
-            //找到要添加的索引index位置节点的前一个节点
+            //找到要添加的索引index位置节点的前一个节点next就是本节点
             DoubleNode<T> indexNode = header;
             for (int i = 0; i < index; i++)
                 indexNode = indexNode.NextNode;
@@ -41,6 +41,8 @@ namespace 数据结构和算法.双链表
             //创建新节点
             DoubleNode<T> newNode = new DoubleNode<T>()
             {
+                Data = obj,
+                PreNode = indexNode,
                 //赋值---顺序不能反过来
                 NextNode = indexNode.NextNode //新节点的后继指向索引节点的next
             };
@@ -111,11 +113,11 @@ namespace 数据结构和算法.双链表
         {
             //找到索引index位置节点的前一个节点
             DoubleNode<T> indexNode = header;
-            for (int i = 0; i < index; i++) //索引位置前一个节点
+            for (int i = 0; i < index; i++)
                 indexNode = indexNode.NextNode;
-
-            DoubleNode<T> temp = indexNode.NextNode; //索引位置节点
-            indexNode.NextNode = temp.NextNode;
+            //索引位置节点
+            DoubleNode<T> temp = indexNode.NextNode;
+            indexNode.NextNode.PreNode = indexNode.PreNode;
         }
 
         /// <summary>

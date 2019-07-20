@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Text;
+using 数据结构和算法.单链表;
+using 数据结构和算法.双链表;
 
 namespace 数据结构和算法
 {
@@ -144,22 +146,26 @@ namespace 数据结构和算法
             #endregion
 
             #region 单链表---模拟相关操作
-            //SingLinkList<int> singLinkList = new SingLinkList<int>();
-            //singLinkList.Add(8);
-            //singLinkList.Add(1);
-            //singLinkList.Add(3);
-            //singLinkList.Add(7);
-            //singLinkList.Add(5);
-            //singLinkList.Add(0, 2);
-            //singLinkList.Remove(2);
-            //singLinkList.Replace(1, 100);
-            //var b = singLinkList.Contains(7);
-            //Console.WriteLine(singLinkList.ToString());
-            //Console.WriteLine(singLinkList.Get(2).Data);
+            SingLinkList<int> singLinkList = new SingLinkList<int>();
+            singLinkList.Add(8);
+            singLinkList.Add(1);
+            singLinkList.Add(1, 101);
+            singLinkList.Add(0, 2);
+            singLinkList.Remove(2);
+            singLinkList.Replace(1, 100);
+            var b = singLinkList.Contains(7);
+            Console.WriteLine(singLinkList.ToString());
+            Console.WriteLine(singLinkList.Get(2).Data);
             #endregion
 
             #region 双链表---模拟相关操作
+            MultLinkList<int> multLinkList = new MultLinkList<int>();
+            multLinkList.Add(99);
+            multLinkList.Add(45);
+            multLinkList.Add(2);
+            multLinkList.Add(79);
 
+            //multLinkList.Remove(2);
             #endregion
 
             #region 快速排序
