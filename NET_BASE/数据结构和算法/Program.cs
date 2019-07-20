@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Text;
 using 数据结构和算法.单链表;
 using 数据结构和算法.双链表;
+using 数据结构和算法.栈和队列;
 
 namespace 数据结构和算法
 {
@@ -104,6 +106,8 @@ namespace 数据结构和算法
 
             //    queue.Dequeue();
             //}
+
+            //var resultss = StackQueue.ConvertMod(13);
             #endregion
 
             #region 线性结构---相关操作
@@ -162,16 +166,29 @@ namespace 数据结构和算法
             #endregion
 
             #region 双链表---模拟相关操作
-            MultLinkList<int> multLinkList = new MultLinkList<int>();
-            multLinkList.Add(99);
-            multLinkList.Add(5);
-            multLinkList.Add(2);
-            multLinkList.Add(7);
-            multLinkList.Add(8);
-            multLinkList.Add(3);
-            multLinkList.Remove(3);
-            var t = multLinkList.Get(2);
-            Console.WriteLine(multLinkList.ToString());
+            //MultLinkList<int> multLinkList = new MultLinkList<int>();
+            //multLinkList.Add(99);
+            //multLinkList.Add(5);
+            //multLinkList.Add(2);
+            //multLinkList.Add(7);
+            //multLinkList.Add(8);
+            //multLinkList.Add(3);
+            //multLinkList.Remove(3);
+            //var t = multLinkList.Get(2);
+            //Console.WriteLine(multLinkList.ToString());
+            #endregion
+
+            #region 树
+            //
+
+
+
+            #endregion
+
+
+            #region 栈和队列
+            //Stack stack = new Stack();  //栈---先进后出
+            //Queue queue = new Queue();  //队列---先进先出
             #endregion
 
             #region 快速排序
