@@ -146,7 +146,18 @@ namespace 数据结构和算法
             #endregion
 
             #region 单链表---相关操作
-
+            SingLinkList singLinkList = new SingLinkList();
+            singLinkList.Add(8);
+            singLinkList.Add(1);
+            singLinkList.Add(3);
+            singLinkList.Add(7);
+            singLinkList.Add(5);
+            singLinkList.Add(0, 2);
+            singLinkList.Remove(2);
+            singLinkList.Replace(1, 100);
+            var b = singLinkList.Contains(7);
+            Console.WriteLine(singLinkList.ToString());
+            Console.WriteLine(singLinkList.Get(2).Data);
             #endregion
 
             #region 快速排序
@@ -164,16 +175,16 @@ namespace 数据结构和算法
             //Sort.BubbleSort(arr,false);
             #endregion
 
-            Arry<int> myArry = new Arry<int>();
-            myArry.Add(4);
-            myArry.Add(5);
-            myArry.Add(3);
-            myArry.Add(8);
-            myArry.Add(2);
-            myArry.Add(7);
-            myArry.Add(9);
+            //Arry<int> myArry = new Arry<int>();
+            //myArry.Add(4);
+            //myArry.Add(5);
+            //myArry.Add(3);
+            //myArry.Add(8);
+            //myArry.Add(2);
+            //myArry.Add(7);
+            //myArry.Add(9);
 
-            myArry.Add(9, 99);
+            //myArry.Add(9, 99);
 
 
             Console.ReadKey();
