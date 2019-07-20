@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace 数据结构和算法.单链表.Model
+namespace 数据结构和算法.单链表
 {
     /// <summary>
     /// 模拟单链表

@@ -8,7 +8,6 @@ namespace 数据结构和算法
     {
         static void Main(string[] args)
         {
-
             #region ForEach函数可以改变对象，只有当对象为String时不能改变
             //List<person> people = new List<person>
             //{
@@ -30,7 +29,7 @@ namespace 数据结构和算法
             //2:存储结构---顺序存储，链式存储，散列存储，索引存储
             //3:数据的运算---检索，添加，删除，排序等操作
 
-            //-----------------------算法----------------------
+            //-----------------------算法--------------------
             //算法:时间复杂度和空间复杂度
 
             #region 数组
@@ -146,7 +145,7 @@ namespace 数据结构和算法
             #endregion
 
             #region 单链表---模拟相关操作
-            //SingLinkList singLinkList = new SingLinkList();
+            //SingLinkList<int> singLinkList = new SingLinkList<int>();
             //singLinkList.Add(8);
             //singLinkList.Add(1);
             //singLinkList.Add(3);
@@ -178,17 +177,6 @@ namespace 数据结构和算法
             //int[] arr = new int[] { 49, 38, 65, 97, 76, 13, 27, -3 };
             //Sort.BubbleSort(arr,false);
             #endregion
-
-            //Arry<int> myArry = new Arry<int>();
-            //myArry.Add(4);
-            //myArry.Add(5);
-            //myArry.Add(3);
-            //myArry.Add(8);
-            //myArry.Add(2);
-            //myArry.Add(7);
-            //myArry.Add(9);
-
-            //myArry.Add(9, 99);
 
 
             Console.ReadKey();

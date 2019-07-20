@@ -1,7 +1,7 @@
-﻿namespace 数据结构和算法.单链表.Model
+﻿namespace 数据结构和算法.单链表
 {
     /// <summary>
-    /// 节点类---单链表只能找到后继节点
+    /// 单链表节点---只有后继，没有前驱
     /// </summary>
     public class Node<T>
     {
