@@ -106,7 +106,22 @@ namespace 数据结构和算法
             //}
             #endregion
 
-            #region 双向链表
+            #region 线性结构---相关操作
+            //Arry myArry = new Arry();
+            //Arry.Add(3);
+            //Arry.Add(6);
+            //Arry.Add(1);
+            //Arry.Add(4);
+            //Arry.Add(5);
+            //Arry.Add(0, 8);
+            //Arry.Add(-9, 2);
+            //Arry.Add(9, 12);
+            //Arry.Add(3, 15);
+            //int len = Arry.Length; //数组长度
+            //int count = Arry.Count; //元素个数
+            #endregion
+
+            #region 双向链表---net自带
             //LinkedList<int> link = new LinkedList<int>();
             //int num = 0;
             //Random r = new Random();
@@ -130,34 +145,23 @@ namespace 数据结构和算法
             //}
             #endregion
 
-            #region 线性结构---相关操作
-            //Arry myArry = new Arry();
-            //Arry.Add(3);
-            //Arry.Add(6);
-            //Arry.Add(1);
-            //Arry.Add(4);
-            //Arry.Add(5);
-            //Arry.Add(0, 8);
-            //Arry.Add(-9, 2);
-            //Arry.Add(9, 12);
-            //Arry.Add(3, 15);
-            //int len = Arry.Length; //数组长度
-            //int count = Arry.Count; //元素个数
+            #region 单链表---模拟相关操作
+            //SingLinkList singLinkList = new SingLinkList();
+            //singLinkList.Add(8);
+            //singLinkList.Add(1);
+            //singLinkList.Add(3);
+            //singLinkList.Add(7);
+            //singLinkList.Add(5);
+            //singLinkList.Add(0, 2);
+            //singLinkList.Remove(2);
+            //singLinkList.Replace(1, 100);
+            //var b = singLinkList.Contains(7);
+            //Console.WriteLine(singLinkList.ToString());
+            //Console.WriteLine(singLinkList.Get(2).Data);
             #endregion
 
-            #region 单链表---相关操作
-            SingLinkList singLinkList = new SingLinkList();
-            singLinkList.Add(8);
-            singLinkList.Add(1);
-            singLinkList.Add(3);
-            singLinkList.Add(7);
-            singLinkList.Add(5);
-            singLinkList.Add(0, 2);
-            singLinkList.Remove(2);
-            singLinkList.Replace(1, 100);
-            var b = singLinkList.Contains(7);
-            Console.WriteLine(singLinkList.ToString());
-            Console.WriteLine(singLinkList.Get(2).Data);
+            #region 双链表---模拟相关操作
+
             #endregion
 
             #region 快速排序
