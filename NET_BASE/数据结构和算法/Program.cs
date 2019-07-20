@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Text;
-using 数据结构和算法.Model;
+using 数据结构和算法.单链表.Model;
 
 namespace 数据结构和算法
 {

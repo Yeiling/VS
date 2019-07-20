@@ -1,4 +1,4 @@
-﻿namespace 数据结构和算法.Model
+﻿namespace 数据结构和算法.单链表.Model
 {
     /// <summary>
     /// 节点类---单链表只能找到后继节点

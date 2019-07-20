@@ -1,7 +1,7 @@
 ﻿using System;
 using 数据结构和算法.CommonInterface;
 
-namespace 数据结构和算法.Model
+namespace 数据结构和算法.集合.Model
 {
     /// <summary>
     /// 使用数组实现顺序存储

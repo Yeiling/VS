@@ -1,4 +1,4 @@
-﻿namespace 数据结构和算法.Model
+﻿namespace 数据结构和算法.排序.Model
 {
     public class Sort
     {
