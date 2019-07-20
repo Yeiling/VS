@@ -147,10 +147,12 @@ namespace 数据结构和算法
 
             #region 单链表---模拟相关操作
             SingLinkList<int> singLinkList = new SingLinkList<int>();
-            singLinkList.Add(8);
-            singLinkList.Add(1);
+            singLinkList.Add(88);
+            singLinkList.Add(16);
             singLinkList.Add(1, 101);
             singLinkList.Add(0, 2);
+            singLinkList.Add(77);
+            singLinkList.Add(55);
             singLinkList.Remove(2);
             singLinkList.Replace(1, 100);
             var b = singLinkList.Contains(7);

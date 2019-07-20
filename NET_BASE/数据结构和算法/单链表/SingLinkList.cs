@@ -16,7 +16,7 @@ namespace 数据结构和算法.单链表
         /// 节点总数
         /// </summary>
         private int _counts { get; set; }
-        public int Count => _counts - 1; //数组元素个数---不包括头结点
+        public int Count => _counts; //数组元素个数---不包括头结点
         /// <summary>
         /// 索引器
         /// </summary>
@@ -128,6 +128,8 @@ namespace 数据结构和算法.单链表
 
             Node<T> temp = indexNode.Next; //索引位置节点
             indexNode.Next = temp.Next;
+            //数量减1
+            _counts--;
         }
 
         /// <summary>
