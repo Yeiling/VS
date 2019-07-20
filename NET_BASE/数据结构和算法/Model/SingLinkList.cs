@@ -1,5 +1,4 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 
 namespace 数据结构和算法.Model
 {
@@ -8,8 +7,9 @@ namespace 数据结构和算法.Model
     /// </summary>
     public class SingLinkList
     {
+        #region 字段和属性
         /// <summary>
-        /// 头结点，不存储数据，为了编写方便
+        /// 头结点，不存储数据和指针，为了编写方便
         /// </summary>
         private Node header = new Node();
         /// <summary>
@@ -23,6 +23,7 @@ namespace 数据结构和算法.Model
                 return _counts; //数组元素个数
             }
         }
+        #endregion
 
         #region 接口方法实现
         /// <summary>
