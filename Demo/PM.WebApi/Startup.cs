@@ -11,12 +11,12 @@ using System.IO;
 namespace PM.WebApi
 {
     /// <summary>
-    /// 
+    /// Startup
     /// </summary>
     public class Startup
     {
         /// <summary>
-        /// 
+        /// Startup
         /// </summary>
         /// <param name="configuration"></param>
         public Startup(IConfiguration configuration)
@@ -24,12 +24,12 @@ namespace PM.WebApi
             Configuration = configuration;
         }
         /// <summary>
-        /// 
+        /// 配置Configuration
         /// </summary>
         public IConfiguration Configuration { get; }
 
         /// <summary>
-        /// 
+        /// ConfigureServices
         /// </summary>
         /// <param name="services"></param>
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -74,7 +74,7 @@ namespace PM.WebApi
         }
 
         /// <summary>
-        /// 
+        /// Configure
         /// </summary>
         /// <param name="app"></param>
         /// <param name="env"></param>
