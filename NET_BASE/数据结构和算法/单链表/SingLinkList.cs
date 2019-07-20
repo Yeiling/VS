@@ -8,7 +8,7 @@ namespace 数据结构和算法.单链表
     /// </summary>
     public class SingLinkList<T>
     {
-        #region 字段和属性
+        #region 属性和索引器
         /// <summary>
         /// 头结点，不存储数据和指针，为了编写方便
         /// </summary>

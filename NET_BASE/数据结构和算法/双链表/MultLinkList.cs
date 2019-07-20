@@ -8,6 +8,7 @@ namespace 数据结构和算法.双链表
     /// <typeparam name="T"></typeparam>
     public class MultLinkList<T>
     {
+        #region 属性和索引器
         /// <summary>
         /// 头结点
         /// </summary>
@@ -23,6 +24,8 @@ namespace 数据结构和算法.双链表
         /// <param name="index"></param>
         /// <returns></returns>
         public DoubleNode<T> this[int index] => Get(index);
+        #endregion
+
         #region 接口方法实现
         /// <summary>
         /// 添加元素
