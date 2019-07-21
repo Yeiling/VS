@@ -178,8 +178,11 @@ namespace 数据结构和算法
             //Console.WriteLine(multLinkList.ToString());
             #endregion
 
-            #region 树
-            //
+            #region 树---二叉树
+            //先顺---根--左--右
+            //中序---左--根--右
+            //后序---左--右--根
+
 
 
 
