@@ -3,6 +3,7 @@ using System.Collections;
 using System.Text;
 using 数据结构和算法.单链表;
 using 数据结构和算法.双链表;
+using 数据结构和算法.查找;
 using 数据结构和算法.栈和队列;
 
 namespace 数据结构和算法
@@ -186,6 +187,12 @@ namespace 数据结构和算法
 
 
 
+            #endregion
+
+            #region 查找
+            //二分法查找---顺序存储结构数组必须是有序的,即:从小到大
+            //int[] arry = { 6, 21, 41, 51, 5, 67, 87, 99, 100 };    
+            //int index = Search.MidSearch(arry, 300);
             #endregion
 
 

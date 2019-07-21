@@ -18,8 +18,21 @@
         #endregion
 
         #region 构造函数
+        /// <summary>
+        /// 空节点
+        /// </summary>
         public TreeNode() { }
+        /// <summary>
+        /// 没有左右节点的节点
+        /// </summary>
+        /// <param name="data"></param>
         public TreeNode(T data) : this(data, null, null) => Data = data;
+        /// <summary>
+        /// 有左右节点的节点
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="leftNode"></param>
+        /// <param name="rightNode"></param>
         public TreeNode(T data, TreeNode<T> leftNode, TreeNode<T> rightNode)
         {
             Data = data;
