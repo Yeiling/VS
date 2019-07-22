@@ -1,0 +1,12 @@
+D:\GitFiles\Demo\PM.Factory\bin\Release\netcoreapp2.1\PM.Factory.deps.json
+D:\GitFiles\Demo\PM.Factory\bin\Release\netcoreapp2.1\PM.Factory.dll
+D:\GitFiles\Demo\PM.Factory\bin\Release\netcoreapp2.1\PM.Factory.pdb
+D:\GitFiles\Demo\PM.Factory\bin\Release\netcoreapp2.1\PM.Entity.dll
+D:\GitFiles\Demo\PM.Factory\bin\Release\netcoreapp2.1\PM.Entity.pdb
+D:\GitFiles\Demo\PM.Factory\obj\Release\netcoreapp2.1\PM.Factory.csprojAssemblyReference.cache
+D:\GitFiles\Demo\PM.Factory\obj\Release\netcoreapp2.1\PM.Factory.csproj.CoreCompileInputs.cache
+D:\GitFiles\Demo\PM.Factory\obj\Release\netcoreapp2.1\PM.Factory.AssemblyInfoInputs.cache
+D:\GitFiles\Demo\PM.Factory\obj\Release\netcoreapp2.1\PM.Factory.AssemblyInfo.cs
+D:\GitFiles\Demo\PM.Factory\obj\Release\netcoreapp2.1\PM.Factory.csproj.CopyComplete
+D:\GitFiles\Demo\PM.Factory\obj\Release\netcoreapp2.1\PM.Factory.dll
+D:\GitFiles\Demo\PM.Factory\obj\Release\netcoreapp2.1\PM.Factory.pdb

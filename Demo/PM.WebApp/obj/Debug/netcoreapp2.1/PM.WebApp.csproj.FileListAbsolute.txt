@@ -48,10 +48,13 @@ D:\GitFiles\Demo\PM.WebApp\bin\Debug\netcoreapp2.1\PM.WebApp.Views.pdb
 D:\GitFiles\Demo\PM.WebApp\bin\Debug\netcoreapp2.1\PM.BLL.dll
 D:\GitFiles\Demo\PM.WebApp\bin\Debug\netcoreapp2.1\PM.Common.dll
 D:\GitFiles\Demo\PM.WebApp\bin\Debug\netcoreapp2.1\PM.Entity.dll
+D:\GitFiles\Demo\PM.WebApp\bin\Debug\netcoreapp2.1\PM.Factory.dll
 D:\GitFiles\Demo\PM.WebApp\bin\Debug\netcoreapp2.1\PM.Service.dll
 D:\GitFiles\Demo\PM.WebApp\bin\Debug\netcoreapp2.1\PM.BLL.pdb
 D:\GitFiles\Demo\PM.WebApp\bin\Debug\netcoreapp2.1\PM.Common.pdb
 D:\GitFiles\Demo\PM.WebApp\bin\Debug\netcoreapp2.1\PM.Entity.pdb
+D:\GitFiles\Demo\PM.WebApp\bin\Debug\netcoreapp2.1\PM.Entity.xml
+D:\GitFiles\Demo\PM.WebApp\bin\Debug\netcoreapp2.1\PM.Factory.pdb
 D:\GitFiles\Demo\PM.WebApp\bin\Debug\netcoreapp2.1\PM.Service.pdb
 D:\GitFiles\Demo\PM.WebApp\obj\Debug\netcoreapp2.1\PM.WebApp.csprojAssemblyReference.cache
 D:\GitFiles\Demo\PM.WebApp\obj\Debug\netcoreapp2.1\PM.WebApp.csproj.CoreCompileInputs.cache
@@ -78,6 +81,3 @@ D:\GitFiles\Demo\PM.WebApp\obj\Debug\netcoreapp2.1\PM.WebApp.Views.pdb
 D:\GitFiles\Demo\PM.WebApp\obj\Debug\netcoreapp2.1\PM.WebApp.csproj.CopyComplete
 D:\GitFiles\Demo\PM.WebApp\obj\Debug\netcoreapp2.1\PM.WebApp.dll
 D:\GitFiles\Demo\PM.WebApp\obj\Debug\netcoreapp2.1\PM.WebApp.pdb
-D:\GitFiles\Demo\PM.WebApp\bin\Debug\netcoreapp2.1\PM.Factory.dll
-D:\GitFiles\Demo\PM.WebApp\bin\Debug\netcoreapp2.1\PM.Factory.pdb
-D:\GitFiles\Demo\PM.WebApp\bin\Debug\netcoreapp2.1\PM.Entity.xml
