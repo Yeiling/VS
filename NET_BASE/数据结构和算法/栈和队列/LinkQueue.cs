@@ -72,7 +72,7 @@ namespace 数据结构和算法.栈和队列
         /// <returns></returns>
         public T FirstQueueElement() => Header.NextNode.Data;
         /// <summary>
-        /// 栈转换成数组
+        /// 自定义栈转换成数组
         /// </summary>
         /// <returns></returns>
         public T[] ToArry()
