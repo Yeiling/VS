@@ -32,10 +32,10 @@ D:\GitFiles\Demo\PM.WebApi\obj\Debug\netcoreapp2.1\PM.WebApi.csprojAssemblyRefer
 D:\GitFiles\Demo\PM.WebApi\obj\Debug\netcoreapp2.1\PM.WebApi.csproj.CoreCompileInputs.cache
 D:\GitFiles\Demo\PM.WebApi\obj\Debug\netcoreapp2.1\PM.WebApi.RazorAssemblyInfo.cache
 D:\GitFiles\Demo\PM.WebApi\obj\Debug\netcoreapp2.1\PM.WebApi.RazorAssemblyInfo.cs
-D:\GitFiles\Demo\PM.WebApi\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
 D:\GitFiles\Demo\PM.WebApi\obj\Debug\netcoreapp2.1\PM.WebApi.AssemblyInfoInputs.cache
 D:\GitFiles\Demo\PM.WebApi\obj\Debug\netcoreapp2.1\PM.WebApi.AssemblyInfo.cs
 D:\GitFiles\Demo\PM.WebApi\obj\Debug\netcoreapp2.1\PM.WebApi.RazorTargetAssemblyInfo.cache
 D:\GitFiles\Demo\PM.WebApi\obj\Debug\netcoreapp2.1\PM.WebApi.csproj.CopyComplete
 D:\GitFiles\Demo\PM.WebApi\obj\Debug\netcoreapp2.1\PM.WebApi.dll
 D:\GitFiles\Demo\PM.WebApi\obj\Debug\netcoreapp2.1\PM.WebApi.pdb
+D:\GitFiles\Demo\PM.WebApi\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs

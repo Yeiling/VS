@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Text;
 using 数据结构和算法.单链表;
 using 数据结构和算法.双链表;
 using 数据结构和算法.查找;
 using 数据结构和算法.栈和队列;
+using 数据结构和算法.树;
 
 namespace 数据结构和算法
 {
@@ -88,6 +90,34 @@ namespace 数据结构和算法
             //        break;
             //    stack.Pop();
             //}
+            #endregion
+
+            #region 自定义栈
+            //使用双链表实现栈
+            //LinkStack<int> stack = new LinkStack<int>();
+            //stack.Push(2);
+            //stack.Push(6);
+            //stack.Push(5);
+            //stack.Push(8);
+            //stack.Push(3);
+            //var zd = stack.Peek();
+            //stack.Pop();
+            //zd = stack.Peek();
+            //var str = stack.ToString();
+            //var bol = stack.IsEmpty();
+            //var arry = stack.ToArry();
+
+            //使用双链表实现队列
+            //LinkQueue<int> linkQueue = new LinkQueue<int>();
+            //linkQueue.EnQueue(5);
+            //linkQueue.DeQueue();
+            //linkQueue.EnQueue(3);
+            //linkQueue.EnQueue(1);
+            //linkQueue.EnQueue(5);
+            //var a = linkQueue.IsEmpty();
+            //var first = linkQueue.FirstQueueElement();
+            //var str = linkQueue.ToString();
+            //var arr = linkQueue.ToArry();
             #endregion
 
             #region 队列
@@ -180,8 +210,24 @@ namespace 数据结构和算法
             #endregion
 
             #region 树---二叉树
+            //创建一个完整的二叉树
+            TreeNode<int> node5 = new TreeNode<int>(5);
+            TreeNode<int> node4 = new TreeNode<int>(4, null, node5);
+
+            TreeNode<int> node7 = new TreeNode<int>(7);
+            TreeNode<int> node6 = new TreeNode<int>(6, null, node7);
+            TreeNode<int> node3 = new TreeNode<int>(3);
+            TreeNode<int> node2 = new TreeNode<int>(2, node3, node6);
+
+            TreeNode<int> node1 = new TreeNode<int>(1, node4, node2);
+
+            //构建树
+            LinkTree<int> tree = new LinkTree<int>(node1);
+            Console.WriteLine(tree.IsEmpty());
             //先顺---根--左--右
+
             //中序---左--根--右
+
             //后序---左--右--根
 
 

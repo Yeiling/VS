@@ -5,6 +5,10 @@ using 数据结构和算法.CommonInterface;
 
 namespace 数据结构和算法.树
 {
+    /// <summary>
+    /// 树
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class LinkTree<T> : ITreeInterface<T>
     {
         #region 属性
