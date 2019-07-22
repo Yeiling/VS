@@ -32,7 +32,7 @@ namespace PM.WebApi.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         // GET: api/Customer/5
-        [HttpGet("{id}", Name = "GetById")]
+        [HttpGet(Name = "GetById")]
         public customers GetById(int id)
         {
             return SqlSugarDBContext.GetDbContext().SimpleClientFun(sc =>
