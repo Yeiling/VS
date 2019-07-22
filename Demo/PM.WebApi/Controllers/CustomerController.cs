@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PM.Entity.YiiBaidbEntity;
 using PM.Service;
+using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace PM.WebApi.Controllers
 {
@@ -17,12 +19,43 @@ namespace PM.WebApi.Controllers
         /// </summary>
         /// <returns></returns>
         // GET: api/Customer
-        [HttpGet(Name = "GetAll")]
-        public IEnumerable<customers> GetAll()
+        [HttpGet(Name = "GetList")]
+        public IEnumerable<customers> GetList()
         {
             return SqlSugarDBContext.GetDbContext().SimpleClientFun(sc =>
             {
                 return sc.GetList<customers>();
+            });
+        }
+
+        /// <summary>
+        /// 根据名称获取用户信息
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        [HttpGet(Name = "GetListByName")]
+        public IEnumerable<customers> GetListByName(string name)
+        {
+            //表达式树
+            Expression<Func<customers, bool>> Exp = exp => exp.customerName.Contains(name);
+            return SqlSugarDBContext.GetDbContext().SimpleClientFun(sc =>
+            {
+                return sc.GetList<customers>(Exp);
+            });
+        }
+
+        /// <summary>
+        /// 通过id获取用户信息
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        // GET: api/Customer/5
+        [HttpGet(Name = "GetEntity")]
+        public customers GetEntity(int id)
+        {
+            return SqlSugarDBContext.GetDbContext().SimpleClientFun(sc =>
+            {
+                return sc.GetById<customers>(id);
             });
         }
 
@@ -40,9 +73,8 @@ namespace PM.WebApi.Controllers
                 return sc.GetById<customers>(id);
             });
         }
-
         /// <summary>
-        /// 查询信息
+        /// 查询/修改信息
         /// </summary>
         /// <param name="value"></param>
         // POST: api/Customer

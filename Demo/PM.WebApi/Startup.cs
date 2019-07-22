@@ -44,10 +44,10 @@ namespace PM.WebApi
                 sgo.SwaggerDoc("MyWebApi", new Info
                 {
                     Version = "1.0",  //版本号
-                    Title = "My WebApi",  //主题
-                    Description = "WebApi框架",  //描述
-                    TermsOfService = null,
-                    Contact = new Contact() { Name = "CaiHui", Url = "www.baidu.com", Email = "123@qq.com" }
+                    Title = "WebApi",  //主题
+                    //Description = "WebApi框架",  //描述
+                    //TermsOfService = null,
+                    //Contact = new Contact() { Name = "CaiHui", Url = "www.baidu.com", Email = "123@qq.com" }
                 });
                 //添加读取注释服务  
                 var basePath = PlatformServices.Default.Application.ApplicationBasePath;

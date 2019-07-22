@@ -14,10 +14,24 @@
             用户服务---继承自BaseController
             </summary>
         </member>
-        <member name="M:PM.WebApi.Controllers.CustomerController.GetAll">
+        <member name="M:PM.WebApi.Controllers.CustomerController.GetList">
             <summary>
             获取所有的用户信息接口
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PM.WebApi.Controllers.CustomerController.GetListByName(System.String)">
+            <summary>
+            根据名称获取用户信息
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PM.WebApi.Controllers.CustomerController.GetEntity(System.Int32)">
+            <summary>
+            通过id获取用户信息
+            </summary>
+            <param name="id"></param>
             <returns></returns>
         </member>
         <member name="M:PM.WebApi.Controllers.CustomerController.GetById(System.Int32)">
@@ -29,7 +43,7 @@
         </member>
         <member name="M:PM.WebApi.Controllers.CustomerController.Post(System.String)">
             <summary>
-            查询信息
+            查询/修改信息
             </summary>
             <param name="value"></param>
         </member>
