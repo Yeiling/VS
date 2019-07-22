@@ -33,7 +33,7 @@ namespace 数据结构和算法.栈和队列
             StackQueueNode<T> newNode = new StackQueueNode<T>(data);
             if (Counts == 0) //头结点第一次记录，之后不动
             {
-                newNode.PreNode = Header;  //
+                newNode.PreNode = Header;  //注:赋值顺序
                 Header.NextNode = newNode;
             }
             //游标节点(也是从头结点开始移动)每增加元素都动一次
@@ -58,7 +58,7 @@ namespace 数据结构和算法.栈和队列
 
             if (Counts > 1)
             {
-                Header.NextNode.NextNode.PreNode = Header;
+                Header.NextNode.NextNode.PreNode = Header; //顺序不能反
                 Header.NextNode = Header.NextNode.NextNode;
             }
             else
@@ -99,16 +99,15 @@ namespace 数据结构和算法.栈和队列
         public override string ToString()
         {
             StringBuilder result = new StringBuilder(Counts * 2);
-            if (Counts > 0)
+
+            StackQueueNode<T> node = Header.NextNode;
+            while (node != null)
             {
-                StackQueueNode<T> node = Header.NextNode;
-                while (node != null)
-                {
-                    result.Append(node.Data + ",");
-                    node = node.NextNode;
-                }
+                result.Append(node.Data + ",");
+                node = node.NextNode;
             }
             return result.ToString().TrimEnd(',');
         }
+
     }
 }
