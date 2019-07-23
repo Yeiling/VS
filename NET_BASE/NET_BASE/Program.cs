@@ -71,9 +71,7 @@ namespace NET_BASE
             //for (int i = 1; i <= 9; i++)
             //{
             //    for (int j = 1; j <= i; j++)
-            //    {
             //        Console.Write(j + "*" + i + "=" + (i * j) + "    ");
-            //    }
             //}
             #endregion
 
@@ -761,9 +759,8 @@ namespace NET_BASE
             try
             {
                 foreach (var t in tarry)
-                {
                     action(t);
-                }
+
                 isOk = true;
             }
             catch
@@ -832,9 +829,7 @@ namespace NET_BASE
             if (arr.Length > 0)
             {
                 foreach (int i in arr)
-                {
                     sum += i;
-                }
             }
             return sum;
         }
