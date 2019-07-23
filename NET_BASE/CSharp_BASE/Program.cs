@@ -18,9 +18,7 @@ namespace CSharp_BASE
             //    for (j = 2; j < (int)(Math.Sqrt(i) + 1); j++)
             //    {
             //        if (i % j == 0)
-            //        {
             //            break;
-            //        }
             //    }
             //    if (j > (int)Math.Sqrt(i))
             //    {
@@ -100,26 +98,24 @@ namespace CSharp_BASE
 
             //选择排序---每一次从剩下的数据中找到最大值，交换到对应位置
             #region 
-            int[] group = { 300, 500, 100, 900, 4000, 300, 800 };
-            int temp;
-            int pos = 0;
-            for (int i = 0; i < group.Length - 1; i++)
-            {
-                pos = i;
-                for (int j = i + 1; j < group.Length; j++)
-                {
-                    if (group[j] < group[pos])
-                    {
-                        pos = j;
-                    }
-                }//第i个数与最小的数group[pos]交换
-                temp = group[i];
-                group[i] = group[pos];
-                group[pos] = temp;
-            }
+            //int[] group = { 300, 500, 100, 900, 4000, 300, 800 };
+            //int temp;
+            //int pos = 0;
+            //for (int i = 0; i < group.Length - 1; i++)
+            //{
+            //    pos = i;
+            //    for (int j = i + 1; j < group.Length; j++)
+            //    {
+            //        if (group[j] < group[pos])
+            //            pos = j;
+            //    }//第i个数与最小的数group[pos]交换
+            //    temp = group[i];
+            //    group[i] = group[pos];
+            //    group[pos] = temp;
+            //}
 
-            foreach (var v in group)
-                Console.WriteLine(v);
+            //foreach (var v in group)
+            //    Console.WriteLine(v);
             #endregion
 
             //冒泡排序
@@ -134,9 +130,7 @@ namespace CSharp_BASE
             //double[] dd = { 2.9, 0.9, 8.7, 30.0, 2.9, 3, 10.87 };
             //dd = MPPX(dd);
             //for (int i = 0; i < dd.Length; i++)
-            //{
             //    Console.WriteLine(dd[i]);
-            //}
 
             //int[] arrs = { 2, 0, 87, 30, 29, 3, 1 };
             //int max = 0;
@@ -165,9 +159,7 @@ namespace CSharp_BASE
             //for (int i = 0; i < temp.Length; i++)
             //{
             //    if (temp[i] == 1)
-            //    {
             //        Console.WriteLine(i);
-            //    }
             //}
             #endregion
 
@@ -176,9 +168,7 @@ namespace CSharp_BASE
             //int[] data = { 60, 2, 5, 89, 21, 75, 10, 4, 19, 0, 55, 100, 7, 61, 38, 84, 30, 50, 17, 9 };
             //int max = data[0];
             //for (int i = 0; i < data.Length; i++)
-            //{
             //    max = (data[i] > max) ? data[i] : max;
-            //}
             //Console.WriteLine(max);
             #endregion
 
@@ -217,18 +207,12 @@ namespace CSharp_BASE
             //for (int k = 0; k < str.Length; k++)
             //{
             //    if (dir.ContainsKey(str[k]))
-            //    {
             //        dir[str[k]]++;  //如果有key,则key对应的value加1
-            //    }
             //    else
-            //    {
             //        dir.Add(str[k], 1);  //如果没有key值，则加进去一个
-            //    }
             //}
             //foreach (char c in dir.Keys)
-            //{
             //    Console.WriteLine(c + ":" + dir[c]);
-            //}
             #endregion
 
             #region 计算每一个字符出现的次数
@@ -237,19 +221,13 @@ namespace CSharp_BASE
             //for (int k = 0; k < st.Length; k++)
             //{
             //    if (d.ContainsKey(st[k]))
-            //    {
             //        d[st[k]]++;  //如果存在键，就将该键对应的值加一
-            //    }
             //    else
-            //    {
             //        d.Add(st[k], 1);
-            //    }
             //}
             ////遍历键值对
             //foreach (char key in d.Keys)
-            //{
             //    Console.WriteLine("\'" + key + "\'" + " 出现了 " + d[key] + "次");
-            //}
             #endregion
 
             //替换字符串的空格
@@ -319,18 +297,14 @@ namespace CSharp_BASE
             #region
             //ItcastClass ic = new ItcastClass();
             //for (int i = 0; i < ic._count; i++)
-            //{
             //    Console.WriteLine(ic[i]);
-            //}
 
             //ItcastClass itc = new ItcastClass();
             //int num = itc._count;
             //Console.WriteLine("共有{0}个人", num);
             //Console.WriteLine("分别是:");
             //for (int j = 0; j < itc._count; j++)
-            //{
             //    Console.WriteLine(itc[j].ToString());
-            //}
 
             //InternalIndex it = new InternalIndex();
             //it.id = 123;
@@ -344,16 +318,12 @@ namespace CSharp_BASE
             //int[] numarr = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
             //numarr = ReverseArr(numarr);
             //for (int i = 0; i < numarr.Length; i++)
-            //{
             //    Console.WriteLine(numarr[i]);
-            //}
 
             //string[] strarr = { "反对", "那我", "王力宏", "方法", "不必", "好" };
             //strarr = ReverseArr(strarr);
             //for (int i = 0; i < strarr.Length; i++)
-            //{
             //    Console.WriteLine(strarr[i]);
-            //}
             #endregion
 
             //类的继承和构造函数初始化
@@ -371,9 +341,7 @@ namespace CSharp_BASE
             //{
             //    string name = Console.ReadLine();
             //    if (name != "admin")
-            //    {
             //        Console.WriteLine("用户名错误！请重新输入");
-            //    }
             //    else
             //    {
             //        Console.WriteLine("请输入密码：");
@@ -381,13 +349,9 @@ namespace CSharp_BASE
             //        {
             //            string pwd = Console.ReadLine();
             //            if (pwd != "8888")
-            //            {
             //                Console.WriteLine("密码错误，请重新输入");
-            //            }
             //            else
-            //            {
             //                Console.WriteLine("恭喜你，用户名和密码都对了！！！");
-            //            }
             //        }
             //    }
             //}
@@ -411,9 +375,7 @@ namespace CSharp_BASE
             //        else
             //        {
             //            if (iage < 10)
-            //            {
             //                Console.WriteLine("你的年龄是{0},不允许查看！", iage);
-            //            }
             //            else
             //            {
             //                Console.WriteLine("你的年龄是{0},可以查看！", iage);
@@ -422,17 +384,11 @@ namespace CSharp_BASE
             //                {
             //                    string daan = Console.ReadLine();
             //                    if (daan.ToLower() == "yes")
-            //                    {
             //                        Console.WriteLine("尽情的看吧！");
-            //                    }
             //                    else if (daan.ToLower() == "no")
-            //                    {
             //                        Console.WriteLine("好吧，很遗憾，你选择了推出！");
-            //                    }
             //                    else
-            //                    {
             //                        Console.WriteLine("你输入的是什么鬼东西？ 是否继续查看？  Yes/NO");
-            //                    }
             //                }
             //            }
             //        }
@@ -459,9 +415,7 @@ namespace CSharp_BASE
             //        sb.Append("|");
             //    }
             //    else
-            //    {
             //        sb.Append(str[i]);
-            //    }
             //}
             //Console.WriteLine("获得字符串是:{0}", sb.ToString());
             #endregion
@@ -470,9 +424,7 @@ namespace CSharp_BASE
             //string[] strr = { "神马", "都是", "浮云" };
             //string s = null;
             //for (int i = 0; i < strr.Length; i++)
-            //{
             //    s = string.Join("|", strr);
-            //}
             //Console.WriteLine("获得字符串是:{0}", s);
             #endregion
 
@@ -481,13 +433,9 @@ namespace CSharp_BASE
             //int[] arry = { 10, 9, 81, 49, 31, 77, 1, 63 };
             //string[] strarry = new string[arry.Length];
             //for (int k = 0; k < arry.Length; k++)
-            //{
             //    strarry[k] = arry[k].ToString();
-            //}
             //for (int h = 0; h < strarry.Length; h++)
-            //{
             //    Console.WriteLine("第{0}个字符是{1}", h, strarry[h]);
-            //}
             #endregion
 
             //将一个字符串数组的元素的顺序进行反转。{"3","a","8","haha"} 转换为{"haha","8","a","3"}。
@@ -502,9 +450,7 @@ namespace CSharp_BASE
             //    sss[sss.Length - j - 1] = temp;
             //}
             //for (int jj = 0; jj < sss.Length; jj++)
-            //{
             //    Console.WriteLine("第{0}个字符是{1}", jj, sss[jj]);
-            //}
             #endregion
 
             //求整数数组中的最大值
@@ -514,9 +460,7 @@ namespace CSharp_BASE
             //foreach (int arr in num)
             //{
             //    if (max < arr)
-            //    {
             //        max = arr;
-            //    }
             //}
             //Console.WriteLine("最大值是{0}", max);
             #endregion
@@ -534,9 +478,7 @@ namespace CSharp_BASE
             #region
             //Man m = new Man();
             ////if (m is Person)
-            ////{
             ////    Person p = (Person)m;  //第一种转换方式
-            ////}
             //Person p = m as Person;  //第二种转换方式,效率高，as 转换，如果失败，返回null
             //p.Name = "大卫";
             //p.Sex = "男";
@@ -701,17 +643,11 @@ namespace CSharp_BASE
             //{
             //    int num = Convert.ToInt32(Console.ReadLine());  //输入“abc”
             //    if (num > 1000)
-            //    {
             //        throw new Exception("数字超出了规定的值！！！"); //自定义异常
-            //    }
             //    else if (num < -1000)
-            //    {
             //        throw new Exception("数字小于规定的值！！！");  //自定义异常
-            //    }
             //    else
-            //    {
             //        Console.WriteLine(num);
-            //    }
             //}
             //catch (Exception ex)
             //{
@@ -751,9 +687,7 @@ namespace CSharp_BASE
             ////al.Sort();   //升序排序
             ////al.Reverse();  //翻转集合
             //for (int i = 0; i < al.Count; i++)
-            //{
             //    Console.WriteLine(al[i]);
-            //}
             ////删除集合元素
             ////al.Clear();
             #endregion
@@ -765,14 +699,10 @@ namespace CSharp_BASE
             //for (int i = 0; i < a.Count; i++)
             //{
             //    if (!all.Contains(a[i]))
-            //    {
             //        all.Add(a[i]);
-            //    }
             //}
             //for (int k = 0; k < all.Count; k++)
-            //{
             //    Console.WriteLine(all[k]);
-            //}
             #endregion
 
             //练习--随机产生1-100之间的10个整数，必须是偶数，添加到集合中，不允许有重复
@@ -792,21 +722,14 @@ namespace CSharp_BASE
             //        }
             //    }
             //    else
-            //    {
             //        continue;
-            //    }
 
             //    if (index >= 10)
-            //    {
             //        break;
-            //    }
-
             //}
 
             //for (int i = 0; i < num.Count; i++)
-            //{
             //    Console.WriteLine("第{0}个数是{1}", i, num[i]);
-            //}
             #endregion
 
             //小写转换大写----阿拉伯小写转大写
@@ -902,30 +825,18 @@ namespace CSharp_BASE
             //    if (sys[i] == '十')    //处理“十”的问题
             //    {
             //        if (!dt.ContainsKey(sys[i - 1]) && !dt.ContainsKey(sys[i + 1]))
-            //        {
             //            sb.Append("10");  //十
-            //        }
             //        else if (!dt.ContainsKey(sys[i - 1]) && dt.ContainsKey(sys[i + 1]))
-            //        {
             //            sb.Append("1");  //十七
-            //        }
             //        else if (dt.ContainsKey(sys[i - 1]) && !dt.ContainsKey(sys[i + 1]))
-            //        {
             //            sb.Append("0"); //二十
-            //        }
             //        else if (dt.ContainsKey(sys[i - 1]) && dt.ContainsKey(sys[i + 1]))
-            //        {
             //            sb.Append(""); //例如二十九
-            //        }
             //    }
             //    else if (dt.ContainsKey(sys[i]))   //十以外的其他数字
-            //    {
             //        sb.Append(dt[sys[i]]);
-            //    }
             //    else               //其他非数字的字
-            //    {
             //        sb.Append(sys[i]);
-            //    }
             //}
 
             //Console.WriteLine(sb.ToString());
@@ -967,9 +878,7 @@ namespace CSharp_BASE
             ////var tems = strs.Where(s => s.Contains("1"));
             //var temp = strs.Where((string s) => s.Contains("0"));
             //foreach (var v in temp)
-            //{
             //    Console.WriteLine(v);
-            //}
 
             //判断集合中的所有元素都满足某一个条件
             //bool b = strs.All(s => s.Contains("0"));
@@ -983,9 +892,7 @@ namespace CSharp_BASE
             //int[] nums = new int[] { 3, 7, 1, 0, 5, 2, 6 };
             //IEnumerable<int> mynums = nums.Where(i => i > 5);
             //foreach (var v in mynums)
-            //{
             //    Console.WriteLine(v);
-            //}
 
             ////数组平均值
             //Console.WriteLine("平均值是：" + nums.Average());
@@ -993,9 +900,7 @@ namespace CSharp_BASE
             ////数组排序
             //IOrderedEnumerable<int> numarr = nums.OrderBy(i => i);
             //foreach (var v in numarr)
-            //{
             //    Console.WriteLine(v);
-            //}
             #endregion
 
             //-------------Stream流，输入和输出流-----------
@@ -1027,8 +932,12 @@ namespace CSharp_BASE
         }
 
         //-----------------方法-------------------
-        //求和算法
-        //1-2+3-4+5-6+7
+
+        /// <summary>
+        /// 求和算法   1-2+3-4+5-6+7
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
         static int GetSum(int num)
         {
             int result = 0;
@@ -1059,13 +968,15 @@ namespace CSharp_BASE
         static int DG(int num)
         {
             if (num == 0 || num == 1)
-            {
                 return 1;
-            }
             return num * DG(num - 1);
         }
 
-        //out:out参数必须在方法内部给参数变量赋值,out参数在方法执行完毕前必须赋值‘’带出去‘’
+        /// <summary>
+        /// out:out参数必须在方法内部给参数变量赋值,out参数在方法执行完毕前必须赋值‘’带出去‘’
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
         static int Out_test(out int num)
         {
             num = 100;
@@ -1084,24 +995,24 @@ namespace CSharp_BASE
             if (score != null)
             {
                 for (int i = 0; i < score.Length; i++)
-                {
                     sb.Append(score[i] + ",");
-                }
             }
             return name + sex + age + sb.ToString();
         }
 
-        //写一个方法，参数是抽象类或者返回值是抽象类（这样就可以把子类当作参数或者返回值了，更灵活）
-        static string Hello(AbstractPerentClass apc)
-        {
-            return apc.SayHi();
-        }
-        static AbstractPerentClass Hi(AbstractPerentClass apc)
-        {
-            return apc;
-        }
+        /// <summary>
+        /// 写一个方法，参数是抽象类或者返回值是抽象类（这样就可以把子类当作参数或者返回值了，更灵活）
+        /// </summary>
+        /// <param name="apc"></param>
+        /// <returns></returns>
+        static string Hello(AbstractPerentClass apc) => apc.SayHi();
+        static AbstractPerentClass Hi(AbstractPerentClass apc) => apc;
 
-        //数组的翻转
+        /// <summary>
+        /// 数组的翻转
+        /// </summary>
+        /// <param name="arrint"></param>
+        /// <returns></returns>
         static int[] ReverseArr(int[] arrint)
         {
             int cishu = arrint.Length / 2;
@@ -1116,6 +1027,11 @@ namespace CSharp_BASE
             }
             return arrint;
         }
+        /// <summary>
+        /// 数组的翻转
+        /// </summary>
+        /// <param name="arrstring"></param>
+        /// <returns></returns>
         static string[] ReverseArr(string[] arrstring)
         {
             int cishu = arrstring.Length / 2;
@@ -1131,10 +1047,14 @@ namespace CSharp_BASE
             return arrstring;
         }
 
-        //将阿拉伯数字转换成大写
+        /// <summary>
+        /// 阿拉伯数字转换成大写
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
         static string ConvertToUpper(string s)
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder(s.Length);
             if (s.Length > 0)
             {
                 char[] ch = s.ToCharArray();
@@ -1179,7 +1099,11 @@ namespace CSharp_BASE
             return sb.ToString();
         }
 
-        //字符串去除所有的空格
+        /// <summary>
+        /// 字符串去除所有的空格
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
         static string strQCKG(string str)
         {
             string[] strword = str.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
@@ -1193,18 +1117,18 @@ namespace CSharp_BASE
             for (int i = 0; i < ch.Length; i++)
             {
                 if (ch[i].ToString() == " ")
-                {
                     sb.Append(string.Empty);
-                }
                 else
-                {
                     sb.Append(ch[i].ToString());
-                }
             }
             return sb.ToString();
         }
 
-        //冒泡排序方法重载
+        /// <summary>
+        /// 冒泡排序方法重载
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <returns></returns>
         static int[] MPPX(int[] arr)
         {
             for (int i = 0; i < arr.Length - 1; i++)
@@ -1238,50 +1162,66 @@ namespace CSharp_BASE
             return arr;
         }
 
-        //求平均值，四舍五入
+        /// <summary>
+        /// 求平均值，四舍五入
+        /// </summary>
+        /// <param name="arrint"></param>
+        /// <returns></returns>
         static double GetAvg(int[] arrint)
         {
             int sum = 0;
             for (int k = 0; k < arrint.Length; k++)
-            {
                 sum += arrint[k];
-            }
             return Math.Round((double)sum / arrint.Length, 2);
         }
-        //判断是是否是质数
+        /// <summary>
+        /// 判断是是否是质数
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
         static bool Iszhishu(int num)
         {
             for (int i = 2; i < num; i++)
             {
                 if (num % i == 0)
-                {
                     return false;
-                }
             }
             return true;
         }
 
-        //计算两个数的最大值方法1(重载)
+        /// <summary>
+        /// 计算两个数的最大值方法1(重载)
+        /// </summary>
+        /// <param name="num1"></param>
+        /// <param name="num2"></param>
+        /// <returns></returns>
         static int GetnumMax(int num1, int num2)
         {
             int maxnum;
             maxnum = (num1 > num2 ? num1 : num2);
             return maxnum;
         }
+        /// <summary>
+        /// 计算两个数的最大值方法2(重载)
+        /// </summary>
+        /// <param name="ps"></param>
+        /// <returns></returns>
         static int GetnumMax(params int[] ps)
         {
             int maxnum = ps[0];
             for (int i = 1; i < ps.Length; i++)
             {
                 if (maxnum <= ps[i])
-                {
                     maxnum = ps[i];
-                }
             }
             return maxnum;
         }
 
-        //求数组的最大值
+        /// <summary>
+        /// 求数组的最大值
+        /// </summary>
+        /// <param name="tarr"></param>
+        /// <returns></returns>
         static int GetMax(int[] tarr)
         {
             int max = tarr[0];
@@ -1290,9 +1230,7 @@ namespace CSharp_BASE
                 for (int i = 0; i < tarr.Length; i++)
                 {
                     if (max < tarr[i])
-                    {
                         max = tarr[i];
-                    }
                 }
             }
             return max;
@@ -1303,22 +1241,23 @@ namespace CSharp_BASE
             if (tarr != null)
             {
                 for (int i = 0; i < tarr.Length; i++)
-                {
                     max = (tarr[i] > max) ? tarr[i] : max;
-                }
             }
             return max;
         }
 
 
-        //-----------散列排序(哈希排序)----------
+        /// <summary>
+        /// 散列排序(哈希排序)
+        /// </summary>
+        /// <param name="tArry"></param>
+        /// <param name="flag"></param>
+        /// <returns></returns>
         public static int[] GetLXSort(int[] tArry, int flag)
         {
             int[] temp = new int[GetMax(tArry) + 1];   //GetMax()方法是计算数组最大值
             for (int i = 0; i < tArry.Length; i++)
-            {
                 temp[tArry[i]] = flag;
-            }
             return temp;
         }
 
@@ -1377,13 +1316,9 @@ namespace CSharp_BASE
             get
             {
                 if (index <= counts && index > 0)
-                {
                     return this._name[index];
-                }
                 else
-                {
                     return null;
-                }
             }
             set
             {
@@ -1396,13 +1331,9 @@ namespace CSharp_BASE
             get
             {
                 if (this._name.Contains(name))
-                {
                     return name;
-                }
                 else
-                {
                     return null;
-                }
             }
         }
     }
@@ -1440,16 +1371,10 @@ namespace CSharp_BASE
             set { _age = value; }
         }
         //重写Person的tostring()方法
-        public override string ToString()
-        {
-            return this.Name + "," + this.Sex + "," + this.Age;
-        }
+        public override string ToString() => this.Name + "," + this.Sex + "," + this.Age;
 
         //定义一个方法
-        public void SayHi()
-        {
-            Console.WriteLine("Hi...我是人类。。。");
-        }
+        public void SayHi() => Console.WriteLine("Hi...我是人类。。。");
     }
     //Man类
     public class Man : Person
@@ -1468,21 +1393,14 @@ namespace CSharp_BASE
     //自定义泛型类
     public class MyType<T>   //单个自定义泛型类
     {
-        void SayHi(T t)  //非泛型方法
-        {
-            Console.WriteLine(t);
-        }
-        void Sayhello<K>(K k1)  //泛型方法
-        {
-            Console.WriteLine(k1);
-        }
+        //非泛型方法
+        void SayHi(T t) => Console.WriteLine(t);
+        //泛型方法
+        void Sayhello<K>(K k1) => Console.WriteLine(k1);
     }
     public class YouType<T, K, F> where T : struct   //多个自定义泛型类，where关键字 泛型约束（struct:值类型，class:引用类型）
     {
-        void SayHi(T t1, K k1, F f1)
-        {
-            Console.WriteLine(t1 + " " + k1 + " " + f1);
-        }
+        void SayHi(T t1, K k1, F f1) => Console.WriteLine(t1 + " " + k1 + " " + f1);
     }
 
     //泛型接口
@@ -1494,26 +1412,14 @@ namespace CSharp_BASE
     //普通类实现泛型接口
     public class jiekou : IEatable<string, int>
     {
-        public string Say(string msg)
-        {
-            return msg;
-        }
-        public void Show(string msg, int ko)
-        {
-            Console.WriteLine(msg + ko);
-        }
+        public string Say(string msg) => msg;
+        public void Show(string msg, int ko) => Console.WriteLine(msg + ko);
     }
     //泛型类实现泛型接口
     public class jiekouF<A, B> : IEatable<A, B>    //使用泛型类的类型类型来替代泛型接口的参数类型
     {
-        public A Say(A msg)
-        {
-            return msg;
-        }
-        public void Show(A msg, B ko)
-        {
-            Console.WriteLine(msg + "" + ko);
-        }
+        public A Say(A msg) => msg;
+        public void Show(A msg, B ko) => Console.WriteLine(msg + "" + ko);
     }
 
 
@@ -1526,9 +1432,7 @@ namespace CSharp_BASE
             get
             {
                 if (_sim == null)
-                {
                     return new Simple();
-                }
                 return _sim;
             }
         }
@@ -1536,47 +1440,27 @@ namespace CSharp_BASE
         //public static Simple GetSim()
         //{
         //    if (_sim == null)
-        //    {
         //        _sim = new Simple();
-        //    }
         //    return _sim;
         //}
     }
 
     public class A
     {
-        public void Test()
-        {
-            Console.WriteLine("我是a中的Test方法");
-        }
-        public virtual void Test1()
-        {
-            Console.WriteLine("我是a中的Test1方法");
-        }
+        public void Test() => Console.WriteLine("我是a中的Test方法");
+        public virtual void Test1() => Console.WriteLine("我是a中的Test1方法");
     }
 
     public class A1 : A
     {
-        public new void Test()
-        {
-            Console.WriteLine("我是a1中的Test方法");
-        }
-        public override void Test1()
-        {
-            Console.WriteLine("我是a1中的Test1方法");
-        }
+        public new void Test() => Console.WriteLine("我是a1中的Test方法");
+        public override void Test1() => Console.WriteLine("我是a1中的Test1方法");
     }
 
     public class A2 : A
     {
-        public new void Test()
-        {
-            Console.WriteLine("我是a2中的Test方法");
-        }
-        public override void Test1()
-        {
-            Console.WriteLine("我是a2中的Test1方法");
-        }
+        public new void Test() => Console.WriteLine("我是a2中的Test方法");
+        public override void Test1() => Console.WriteLine("我是a2中的Test1方法");
     }
 
 }
