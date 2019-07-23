@@ -989,7 +989,7 @@ namespace CSharp_BASE
 
             ////数组平均值
             //Console.WriteLine("平均值是：" + nums.Average());
-             
+
             ////数组排序
             //IOrderedEnumerable<int> numarr = nums.OrderBy(i => i);
             //foreach (var v in numarr)
@@ -1008,6 +1008,8 @@ namespace CSharp_BASE
             //    fs.Write(bts, 0, bts.Length);
             //}
             #endregion
+            var result = GetSum(100);
+
 
             A a = new A();
             a.Test();
@@ -1026,6 +1028,33 @@ namespace CSharp_BASE
 
         //-----------------方法-------------------
         //递归求一个数的阶乘
+        //1-2+3-4+5-6+7
+        static int GetSum(int num)
+        {
+            int result = 0;
+            #region 算法1
+            //for (int i = 1; i <= num; i++)
+            //{
+            //    if (i % 2 == 0)
+            //        result -= i;
+            //    else
+            //        result += i;
+            //}
+            #endregion
+            #region 算法2
+            if (num % 2 == 0)
+                result = (num / 2) * -1;
+            else
+                result = ((num / 2) * -1) + num;
+            #endregion
+            return result;
+        }
+
+        /// <summary>
+        /// 递归操作练习
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
         static int DG(int num)
         {
             if (num == 0 || num == 1)
