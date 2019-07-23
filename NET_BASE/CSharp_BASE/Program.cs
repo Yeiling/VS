@@ -1027,7 +1027,7 @@ namespace CSharp_BASE
         }
 
         //-----------------方法-------------------
-        //递归求一个数的阶乘
+        //求和算法
         //1-2+3-4+5-6+7
         static int GetSum(int num)
         {
@@ -1050,6 +1050,7 @@ namespace CSharp_BASE
             return result;
         }
 
+        //递归求一个数的阶乘
         /// <summary>
         /// 递归操作练习
         /// </summary>
