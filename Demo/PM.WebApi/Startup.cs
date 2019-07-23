@@ -71,6 +71,18 @@ namespace PM.WebApi
                 });
             });
             #endregion
+
+            //添加cors 服务 配置跨域处理            
+            services.AddCors(options =>
+            {
+                options.AddPolicy("any", builder =>
+                {
+                    builder.AllowAnyOrigin() //允许任何来源的主机访问
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials();//指定处理cookie
+                });
+            });
         }
 
         /// <summary>
@@ -85,6 +97,9 @@ namespace PM.WebApi
                 app.UseDeveloperExceptionPage();
             else
                 app.UseHsts();
+
+            //配置Cors
+            app.UseCors("any");
 
             app.UseHttpsRedirection();
             app.UseMvc();

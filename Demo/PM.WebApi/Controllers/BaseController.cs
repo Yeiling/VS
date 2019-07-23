@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace PM.WebApi.Controllers
 {
     /// <summary>
-    /// 
+    /// 控制器基类
     /// </summary>
     [Route("api/[controller]/[action]")]
+    [EnableCors("any")]  //Ajax跨域
     [ApiController]
     public class BaseController : Controller
     {

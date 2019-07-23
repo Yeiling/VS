@@ -92,7 +92,7 @@ namespace 数据结构和算法
             //}
             #endregion
 
-            #region 自定义栈
+            #region 自定义栈---数据结构和算法
             //使用双链表实现栈
             //LinkStack<int> stack = new LinkStack<int>();
             //stack.Push(2);
@@ -118,6 +118,19 @@ namespace 数据结构和算法
             //var first = linkQueue.FirstQueueElement();
             //var str = linkQueue.ToString();
             //var arr = linkQueue.ToArry();
+
+            //LinkStack<int> stack = new LinkStack<int>();
+            //LinkQueue<int> linkQueue = new LinkQueue<int>();
+            //Random r = new Random();
+            //int rdm = 0;
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    rdm = r.Next(0, 1000);
+            //    stack.Push(rdm);
+            //    linkQueue.EnQueue(rdm);
+            //}
+            //var ls = stack.ToString();
+            //var lq = linkQueue.ToString();
             #endregion
 
             #region 队列

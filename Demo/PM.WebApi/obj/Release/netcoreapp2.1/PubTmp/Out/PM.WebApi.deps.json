@@ -31,7 +31,8 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.9",
           "PM.Factory": "1.0.0",
           "PM.Service": "1.0.0",
-          "Swashbuckle.AspNetCore": "4.0.1"
+          "Swashbuckle.AspNetCore": "4.0.1",
+          "Swashbuckle.AspNetCore.SwaggerUI": "4.0.1"
         },
         "runtime": {
           "PM.WebApi.dll": {}
