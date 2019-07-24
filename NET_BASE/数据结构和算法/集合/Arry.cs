@@ -16,10 +16,12 @@ namespace 数据结构和算法.集合.Model
         /// 当前索引位置
         /// </summary>
         private int Index { get; set; }
-        public T this[int indx] //索引器
-        {
-            get { return ArrayModel[indx]; }
-        }
+        /// <summary>
+        /// 索引器
+        /// </summary>
+        /// <param name="indx"></param>
+        /// <returns></returns>
+        public T this[int indx] => ArrayModel[indx];
         /// <summary>
         /// 初始化数组大小
         /// </summary>
@@ -40,27 +42,32 @@ namespace 数据结构和算法.集合.Model
         /// <summary>
         /// 添加一个元素,默认是在数组末尾添加
         /// </summary>
-        /// <param name="t"></param>
-        public void Add(T t)
-        {
-            if (Index >= ArrayModel.Length) //扩容数组
-                ArrayModel = EnsureArray(ArrayModel);
-
-            ArrayModel[Index++] = t;
-        }
-
+        /// <param name="t">元素</param>
+        public void Add(T t) => Add(Index, t);
+        /// <summary>
+        /// 在指定位置新增一个元素
+        /// </summary>
+        /// <param name="index">索引位置</param>
+        /// <param name="t">元素</param>
         public void Add(int index, T t)
         {
-            //if (index < 0 || index > ArrayModel.Length - 1)
-            //    throw new Exception("数组索引越界异常" + index);
-            //else
-            //{
-            //    if ()
-            //    {
-            //    }
-            //    ArrayModel[index] = t;
-            //}
+            if (Index == ArrayModel.Length)
+                ArrayModel = EnsureArray(ArrayModel);  //扩容
 
+            if (index < 0 || index > Index)
+                throw new Exception("数组索引越界异常" + index);
+            else
+            {
+                if (index == Index)
+                    ArrayModel[Index++] = t;
+                else if (index < Index)
+                {
+                    for (int i = Index; i > index; i--)
+                        ArrayModel[i] = ArrayModel[i - 1];
+
+                    ArrayModel[Index++] = t;
+                }
+            }
         }
         /// <summary>
         /// 获取索引位置的数据
@@ -75,29 +82,43 @@ namespace 数据结构和算法.集合.Model
             return ArrayModel[index];
         }
 
-        public int Indexof(T t)
-        {
-            throw new NotImplementedException();
-        }
         /// <summary>
         /// 是否为空
         /// </summary>
         /// <returns></returns>
         public bool IsEmpty() => Count == 0;
+
+        public void Remove()
+        {
+            ArrayModel[Index - 1] = default(T);
+            Index--;
+        }
+
         /// <summary>
         /// 移除一个数据项
         /// </summary>
         /// <param name="index"></param>
         public void Remove(int index)
         {
-            if (index < 0 || index > Count)
+            if (index < 0 || index > Index)
                 return;
-            if (index > 0 && index < Count)
+            if (index > 0 && index < Index)
             {
+                for (int i = index; i < Index; i++)
+                    ArrayModel[index] = ArrayModel[index + 1];
 
+                Index--;
             }
         }
-
+        /// <summary>
+        /// 元素索引位置
+        /// </summary>
+        /// <param name="t"></param>
+        /// <returns></returns>
+        public int Indexof(T t)
+        {
+            throw new NotImplementedException();
+        }
         public void Replace(int index, T newModel)
         {
             if (index < 0 || index > Count)
@@ -117,9 +138,8 @@ namespace 数据结构和算法.集合.Model
         {
             T[] newArry = new T[arry.Length + (arry.Length >> 1)];
             for (int i = 0; i < arry.Length; i++)
-            {
                 newArry[i] = arry[i];
-            }
+
             return newArry;
         }
         #endregion

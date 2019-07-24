@@ -7,6 +7,7 @@ using 数据结构和算法.双链表;
 using 数据结构和算法.查找;
 using 数据结构和算法.栈和队列;
 using 数据结构和算法.树;
+using 数据结构和算法.集合.Model;
 
 namespace 数据结构和算法
 {
@@ -224,26 +225,40 @@ namespace 数据结构和算法
 
             #region 树---二叉树
             //创建一个完整的二叉树
-            TreeNode<int> node5 = new TreeNode<int>(5);
-            TreeNode<int> node4 = new TreeNode<int>(4, null, node5);
+            //TreeNode<int> node5 = new TreeNode<int>(5);
+            //TreeNode<int> node4 = new TreeNode<int>(4, null, node5);
 
-            TreeNode<int> node7 = new TreeNode<int>(7);
-            TreeNode<int> node6 = new TreeNode<int>(6, null, node7);
-            TreeNode<int> node3 = new TreeNode<int>(3);
-            TreeNode<int> node2 = new TreeNode<int>(2, node3, node6);
+            //TreeNode<int> node7 = new TreeNode<int>(7);
+            //TreeNode<int> node6 = new TreeNode<int>(6, null, node7);
+            //TreeNode<int> node3 = new TreeNode<int>(3);
+            //TreeNode<int> node2 = new TreeNode<int>(2, node3, node6);
 
-            TreeNode<int> node1 = new TreeNode<int>(1, node4, node2);
+            //TreeNode<int> node1 = new TreeNode<int>(1, node4, node2);
 
-            //构建树
-            LinkTree<int> tree = new LinkTree<int>(node1);
-            Console.WriteLine(tree.IsEmpty());
+            ////构建树
+            //LinkTree<int> tree = new LinkTree<int>(node1);
+            //Console.WriteLine(tree.IsEmpty());
             //先顺---根--左--右
 
             //中序---左--根--右
 
             //后序---左--右--根
 
+            Arry<int> arr = new Arry<int>();
+            arr.Add(55);
+            arr.Add(99);
+            arr.Add(88);
+            arr.Add(77);
 
+            arr.Add(2, 5);
+            arr.Add(1, 6);
+            //arr.Add(66, 9);
+            arr.Remove();
+
+            arr.Add(11);
+            arr.Add(22);
+            arr.Add(100);
+            arr.Add(101);
 
 
             #endregion

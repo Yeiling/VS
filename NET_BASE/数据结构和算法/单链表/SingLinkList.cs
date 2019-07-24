@@ -52,7 +52,7 @@ namespace 数据结构和算法.单链表
             Node<T> newNode = new Node<T>(obj)
             {
                 Data = obj,
-                //赋值---顺序不能反过来
+                //赋值---顺序不能反
                 Next = indexNode.Next //新节点的后继指向索引节点的next
             };
 
