@@ -237,16 +237,21 @@ namespace 数据结构和算法
 
             //构建二叉树
             LinkTree<int> tree = new LinkTree<int>(node1);
-            //先序---根--左--右
 
+            //先序---根--左--右 1,4,5,2,3,6,7
+            Queue<int> queue1 = new Queue<int>();
+            var result = tree.PreOrderTree(ref queue1);
 
+            Queue<int> queue2 = new Queue<int>();
+            result = tree.PreOrderTreeExt(ref queue2);
 
-            //中序---左--根--右
+            //中序---左--根--右 4,5,1,3,2,6,7
+            Queue<int> queue3 = new Queue<int>();
+            result = tree.InOrderTree(ref queue3);
 
-
-
-            //后序---左--右--根
-
+            //后序---左--右--根 4,5,3,2,6,7,1
+            Queue<int> queue4 = new Queue<int>();
+            result = tree.PostOrderTree(ref queue4);
 
 
 

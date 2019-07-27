@@ -1,4 +1,6 @@
-﻿namespace 数据结构和算法.CommonInterface
+﻿using System.Collections.Generic;
+
+namespace 数据结构和算法.CommonInterface
 {
     /// <summary>
     /// 二叉树接口
@@ -14,7 +16,7 @@
         /// 节点总数
         /// </summary>
         /// <returns></returns>
-        int Count();
+        int Count { get; }
         /// <summary>
         /// 二叉树高度
         /// </summary>
@@ -28,14 +30,14 @@
         /// <summary>
         /// 前序遍历
         /// </summary>
-        void PreOrderTree();
+        IEnumerable<T> PreOrderTree(ref Queue<T> queue);
         /// <summary>
         /// 中序遍历
         /// </summary>
-        void InOrderTree();
+        IEnumerable<T> InOrderTree(ref Queue<T> queue);
         /// <summary>
         /// 后序遍历
         /// </summary>
-        void PostOrderTree();
+        IEnumerable<T> PostOrderTree(ref Queue<T> queue);
     }
 }
