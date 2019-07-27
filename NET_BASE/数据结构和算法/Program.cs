@@ -244,21 +244,7 @@ namespace 数据结构和算法
 
             //后序---左--右--根
 
-            Arry<int> arr = new Arry<int>();
-            arr.Add(55);
-            arr.Add(99);
-            arr.Add(88);
-            arr.Add(77);
-
-            arr.Add(2, 5);
-            arr.Add(1, 6);
-            //arr.Add(66, 9);
-            arr.Remove();
-
-            arr.Add(11);
-            arr.Add(22);
-            arr.Add(100);
-            arr.Add(101);
+          
 
 
             #endregion

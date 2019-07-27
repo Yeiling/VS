@@ -127,7 +127,6 @@ namespace 数据结构和算法.集合.Model
             ArrayModel[index] = newModel;
         }
 
-
         #region 数组扩容
         /// <summary>
         /// 数组长度自动扩容
