@@ -225,26 +225,29 @@ namespace 数据结构和算法
 
             #region 树---二叉树
             //创建一个完整的二叉树
-            //TreeNode<int> node5 = new TreeNode<int>(5);
-            //TreeNode<int> node4 = new TreeNode<int>(4, null, node5);
+            TreeNode<int> node5 = new TreeNode<int>(5);
+            TreeNode<int> node4 = new TreeNode<int>(4, null, node5);
 
-            //TreeNode<int> node7 = new TreeNode<int>(7);
-            //TreeNode<int> node6 = new TreeNode<int>(6, null, node7);
-            //TreeNode<int> node3 = new TreeNode<int>(3);
-            //TreeNode<int> node2 = new TreeNode<int>(2, node3, node6);
+            TreeNode<int> node7 = new TreeNode<int>(7);
+            TreeNode<int> node6 = new TreeNode<int>(6, null, node7);
+            TreeNode<int> node3 = new TreeNode<int>(3);
+            TreeNode<int> node2 = new TreeNode<int>(2, node3, node6);
 
-            //TreeNode<int> node1 = new TreeNode<int>(1, node4, node2);
+            TreeNode<int> node1 = new TreeNode<int>(1, node4, node2);
 
-            ////构建树
-            //LinkTree<int> tree = new LinkTree<int>(node1);
-            //Console.WriteLine(tree.IsEmpty());
-            //先顺---根--左--右
+            //构建二叉树
+            LinkTree<int> tree = new LinkTree<int>(node1);
+            //先序---根--左--右
+
+
 
             //中序---左--根--右
 
+
+
             //后序---左--右--根
 
-          
+
 
 
             #endregion
@@ -254,7 +257,6 @@ namespace 数据结构和算法
             //int[] arry = { 6, 21, 41, 51, 5, 67, 87, 99, 100 };    
             //int index = Search.MidSearch(arry, 300);
             #endregion
-
 
             #region 栈和队列
             //Stack stack = new Stack();  //栈---先进后出
@@ -275,7 +277,6 @@ namespace 数据结构和算法
             //int[] arr = new int[] { 49, 38, 65, 97, 76, 13, 27, -3 };
             //Sort.BubbleSort(arr,false);
             #endregion
-
 
             Console.ReadKey();
         }
@@ -401,9 +402,6 @@ namespace 数据结构和算法
         }
         #endregion
 
-        #region 栈--操作
-
-        #endregion
     }
 
     /// <summary>
