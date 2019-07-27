@@ -59,11 +59,35 @@ namespace 数据结构和算法.树
             throw new NotImplementedException();
         }
 
-        #region 前序第一种写法
+        #region 前序写法
+        /// <summary>
+        /// 前序遍历
+        /// </summary>
+        public IEnumerable<T> PreOrderTree(ref Queue<T> queue) => PreOrderTree(RootNode, ref queue);
+        /// <summary>
+        /// 前序遍历辅助方法
+        /// </summary>
+        /// <param name="node"></param>
+        private IEnumerable<T> PreOrderTree(TreeNode<T> node, ref Queue<T> queue)
+        {
+            if (node != null)
+            {
+                //根
+                queue.Enqueue(node.Data);
+                //左
+                PreOrderTree(node.LeftChild, ref queue);
+                //右
+                PreOrderTree(node.RightChild, ref queue);
+            }
+            return queue;
+        }
+        #endregion
+
+        #region 前序扩展写法
         /// <summary>
         /// 前序遍历 
         /// </summary>
-        public IEnumerable<T> PreOrderTree(ref Queue<T> queue)
+        public IEnumerable<T> PreOrderTreeExt(ref Queue<T> queue)
         {
             if (RootNode != null)
             {
@@ -73,38 +97,14 @@ namespace 数据结构和算法.树
                 if (RootNode.LeftChild != null)
                 {
                     LRNode = new LinkTree<T>(RootNode.LeftChild);
-                    LRNode.PreOrderTree(ref queue);
+                    LRNode.PreOrderTreeExt(ref queue);
                 }
                 //遍历右子树
                 if (RootNode.RightChild != null)
                 {
                     LRNode = new LinkTree<T>(RootNode.RightChild);
-                    LRNode.PreOrderTree(ref queue);
+                    LRNode.PreOrderTreeExt(ref queue);
                 }
-            }
-            return queue;
-        }
-        #endregion
-
-        #region 前序第二种写法
-        /// <summary>
-        /// 前序遍历
-        /// </summary>
-        public IEnumerable<T> PreOrderTreeExt(ref Queue<T> queue) => PreOrderTreeExt(RootNode, ref queue);
-        /// <summary>
-        /// 前序遍历辅助方法
-        /// </summary>
-        /// <param name="node"></param>
-        private IEnumerable<T> PreOrderTreeExt(TreeNode<T> node, ref Queue<T> queue)
-        {
-            if (node != null)
-            {
-                //根
-                queue.Enqueue(node.Data);
-                //左
-                PreOrderTreeExt(node.LeftChild, ref queue);
-                //右
-                PreOrderTreeExt(node.RightChild, ref queue);
             }
             return queue;
         }
@@ -159,6 +159,7 @@ namespace 数据结构和算法.树
             return queue;
         }
         #endregion
+
         #endregion
     }
 }
