@@ -23,6 +23,12 @@ namespace 数据结构和算法.CommonInterface
         /// <returns></returns>
         int Height();
         /// <summary>
+        /// 是否包含数据
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        bool Contain(T key);
+        /// <summary>
         /// 前序遍历
         /// </summary>
         IEnumerable<T> PreOrderTree(ref Queue<T> queue);

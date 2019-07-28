@@ -51,6 +51,7 @@ namespace 数据结构和算法.树
             else
                 return 0;
         }
+
         /// <summary>
         /// 是否为空
         /// </summary>
@@ -83,6 +84,35 @@ namespace 数据结构和算法.树
             }
             else
                 return 0;
+        }
+
+        /// <summary>
+        /// 二叉树是否包含值
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public bool Contain(T key) => Contain(RootNode, key);
+        /// <summary>
+        /// 二叉树是否包含值
+        /// </summary>
+        /// <param name="node"></param>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        private bool Contain(TreeNode<T> node, T model)
+        {
+            bool result = false;
+            if (node != null)
+            {
+                if (node.Data.Equals(model))
+                    result = true;
+                else
+                {
+                    result = Contain(node.LeftChild, model);
+                    result = Contain(node.RightChild, model);
+                }
+
+            }
+            return result;
         }
 
         #region 前序写法
@@ -184,6 +214,7 @@ namespace 数据结构和算法.树
             }
             return queue;
         }
+
         #endregion
 
         #endregion

@@ -255,7 +255,7 @@ namespace 数据结构和算法
 
             int height = tree.Height();
             var num = tree.Count;
-
+            bool b = tree.Contain(6);
             #endregion
 
             #region 查找
