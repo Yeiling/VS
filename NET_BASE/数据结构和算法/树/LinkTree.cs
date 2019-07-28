@@ -27,8 +27,30 @@ namespace 数据结构和算法.树
         /// 节点总数
         /// </summary>
         /// <returns></returns>
-        public int Count => 8;
-
+        public int Count
+        {
+            get
+            {
+                if (RootNode == null)
+                    return 0;
+                else
+                    return CountExt(RootNode);
+            }
+        }
+        /// <summary>
+        /// 二叉树节点数
+        /// </summary>
+        /// <param name="node">节点</param>
+        /// <returns></returns>
+        private int CountExt(TreeNode<T> node)
+        {
+            if (node != null)
+                //int nl = CountExt(node.LeftChild); //左子树高度
+                //int nr = CountExt(node.RightChild); //右子树高度
+                return CountExt(node.LeftChild) + CountExt(node.RightChild) + 1;
+            else
+                return 0;
+        }
         /// <summary>
         /// 是否为空
         /// </summary>
@@ -42,21 +64,25 @@ namespace 数据结构和算法.树
         public T GetRootValue() => RootNode.Data;
 
         /// <summary>
-        /// 获取一个数值
-        /// </summary>
-        /// <returns></returns>
-        public T GetValue()
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
         /// 树的高度
         /// </summary>
         /// <returns></returns>
-        public int Height()
+        public int Height() => Height(RootNode);
+        /// <summary>
+        /// 树的高度
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        private int Height(TreeNode<T> node)
         {
-            throw new NotImplementedException();
+            if (node != null) //比较左右子树
+            {
+                int nl = Height(node.LeftChild); //左子树高度
+                int nr = Height(node.RightChild); //右子树高度
+                return nl > nr ? nl + 1 : nr + 1;
+            }
+            else
+                return 0;
         }
 
         #region 前序写法

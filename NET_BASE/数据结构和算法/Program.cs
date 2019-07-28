@@ -253,7 +253,8 @@ namespace 数据结构和算法
             Queue<int> queue4 = new Queue<int>();
             result = tree.PostOrderTree(ref queue4);
 
-
+            int height = tree.Height();
+            var num = tree.Count;
 
             #endregion
 

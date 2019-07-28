@@ -23,11 +23,6 @@ namespace 数据结构和算法.CommonInterface
         /// <returns></returns>
         int Height();
         /// <summary>
-        /// 获取值
-        /// </summary>
-        /// <returns></returns>
-        T GetValue();
-        /// <summary>
         /// 前序遍历
         /// </summary>
         IEnumerable<T> PreOrderTree(ref Queue<T> queue);
