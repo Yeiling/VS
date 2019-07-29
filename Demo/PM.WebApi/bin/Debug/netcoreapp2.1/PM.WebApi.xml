@@ -62,18 +62,18 @@
         </member>
         <member name="T:PM.WebApi.Program">
             <summary>
-            
+            Program
             </summary>
         </member>
         <member name="M:PM.WebApi.Program.Main(System.String[])">
             <summary>
-            
+            主程序入口
             </summary>
             <param name="args"></param>
         </member>
         <member name="M:PM.WebApi.Program.CreateWebHostBuilder(System.String[])">
             <summary>
-            
+            Web宿主服务
             </summary>
             <param name="args"></param>
             <returns></returns>

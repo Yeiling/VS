@@ -93,23 +93,39 @@ namespace PM.WebApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            //判断是否是环境变量
             if (env.IsDevelopment())
+                //在开发环境中，使用异常页面会暴露错误的堆栈信息，所以不要放在生产环境下使用
                 app.UseDeveloperExceptionPage();
             else
-                app.UseHsts();
+                //使用严格的HTTP请求传输，对于保护Web很重要
+                //app.UseHsts();
+                app.UseExceptionHandler();
 
-            //配置Cors
+            //配置Cors 配置跨域处理
             app.UseCors("any");
 
-            app.UseHttpsRedirection();
+            app.UseHttpsRedirection(); //跳转Https
             app.UseMvc();
 
             #region Swagger服务
             app.UseSwagger();
             app.UseSwaggerUI(us =>
             {
+                //第一种写法
+                #region 这种写法是写死固定
                 us.SwaggerEndpoint("/swagger/MyWebApi/swagger.json", "MyWebApi");
+                //路径配置为空，表示直接在根域名（localhost:5001）访问该文件
+                //注意：localhost:5001/swagger是访问不到的，把文件launchSetting.json中把launchUrl去掉
+                //us.RoutePrefix = "";
+                #endregion
+
+                //第二种写法
+                #region 根据版本名称倒序，遍历显示
+                #endregion
             });
+            //验证---官方验证方法
+            app.UseAuthentication();
             #endregion
         }
     }
