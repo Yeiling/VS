@@ -940,7 +940,7 @@ namespace CSharp_BASE
         /// <returns></returns>
         static int GetSum(int num)
         {
-            int result = result = (num / 2) * -1;
+            int result = (num / 2) * -1;
             if (num % 2 != 0)
                 result += num;
             return result;
