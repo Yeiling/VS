@@ -72,17 +72,28 @@ namespace PM.WebApi
             });
             #endregion
 
-            //添加cors 服务 配置跨域处理            
+            //添加cors 服务 配置跨域处理           
             services.AddCors(options =>
             {
-                options.AddPolicy("any", builder =>
+                //---正式环境下不要使用全开放处理---
+                options.AddPolicy("Any", policy =>
                 {
-                    builder.AllowAnyOrigin() //允许任何来源的主机访问
-                    .AllowAnyMethod()
-                    .AllowAnyHeader()
-                    .AllowCredentials();//指定处理cookie
+                    policy.AllowAnyOrigin() //允许任何来源的主机访问
+                    .AllowAnyMethod() //允许任何方式
+                    .AllowAnyHeader() //允许任何头
+                    .AllowCredentials();//允许任意cookie
                 });
+
+                //测试环境下
+                //支持多个域名端口 
+                //string[] arry = { "http://127.0.0.1:1818", "http://localhost:1818", "http://localhost:8080", "http://localhost:8081", "http://localhost:8021" };
+                //options.AddPolicy("LimitRequest", policy =>
+                //{
+                //    policy.WithOrigins(arry).AllowAnyHeader().AllowAnyMethod();
+                //});
             });
+
+
         }
 
         /// <summary>
@@ -98,12 +109,12 @@ namespace PM.WebApi
                 //在开发环境中，使用异常页面会暴露错误的堆栈信息，所以不要放在生产环境下使用
                 app.UseDeveloperExceptionPage();
             else
-                //使用严格的HTTP请求传输，对于保护Web很重要
-                //app.UseHsts();
-                app.UseExceptionHandler();
+                app.UseHsts();
+            //使用严格的HTTP请求传输，对于保护Web很重要
+            //app.UseExceptionHandler();
 
             //配置Cors 配置跨域处理
-            app.UseCors("any");
+            app.UseCors("Any");
 
             app.UseHttpsRedirection(); //跳转Https
             app.UseMvc();
@@ -117,7 +128,8 @@ namespace PM.WebApi
                 us.SwaggerEndpoint("/swagger/MyWebApi/swagger.json", "MyWebApi");
                 //路径配置为空，表示直接在根域名（localhost:5001）访问该文件
                 //注意：localhost:5001/swagger是访问不到的，把文件launchSetting.json中把launchUrl去掉
-                //us.RoutePrefix = "";
+
+                us.RoutePrefix = "";
                 #endregion
 
                 //第二种写法

@@ -940,22 +940,9 @@ namespace CSharp_BASE
         /// <returns></returns>
         static int GetSum(int num)
         {
-            int result = 0;
-            #region 算法1
-            //for (int i = 1; i <= num; i++)
-            //{
-            //    if (i % 2 == 0)
-            //        result -= i;
-            //    else
-            //        result += i;
-            //}
-            #endregion
-            #region 算法2
-            if (num % 2 == 0)
-                result = (num / 2) * -1;
-            else
-                result = ((num / 2) * -1) + num;
-            #endregion
+            int result = result = (num / 2) * -1;
+            if (num % 2 != 0)
+                result += num;
             return result;
         }
 
