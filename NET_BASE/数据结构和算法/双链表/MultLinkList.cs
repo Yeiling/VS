@@ -42,7 +42,8 @@ namespace 数据结构和算法.双链表
         {
             //找到要添加的索引index位置节点的前一个节点next就是本节点
             DoubleNode<T> indexNode = header;
-            indexNode = Get(index);
+            for (int i = 0; i < index; i++)
+                indexNode = indexNode.NextNode;
 
             //创建新节点
             DoubleNode<T> newNode = new DoubleNode<T>()

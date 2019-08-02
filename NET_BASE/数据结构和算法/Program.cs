@@ -216,6 +216,7 @@ namespace 数据结构和算法
             //multLinkList.Add(5);
             //multLinkList.Add(2);
             //multLinkList.Add(7);
+            //multLinkList.Add(2, 70);
             //multLinkList.Add(8);
             //multLinkList.Add(3);
             //multLinkList.Remove(3);
@@ -225,37 +226,37 @@ namespace 数据结构和算法
 
             #region 树---二叉树
             //创建一个完整的二叉树
-            TreeNode<int> node5 = new TreeNode<int>(5);
-            TreeNode<int> node4 = new TreeNode<int>(4, null, node5);
+            //TreeNode<int> node5 = new TreeNode<int>(5);
+            //TreeNode<int> node4 = new TreeNode<int>(4, null, node5);
 
-            TreeNode<int> node7 = new TreeNode<int>(7);
-            TreeNode<int> node6 = new TreeNode<int>(6, null, node7);
-            TreeNode<int> node3 = new TreeNode<int>(3);
-            TreeNode<int> node2 = new TreeNode<int>(2, node3, node6);
+            //TreeNode<int> node7 = new TreeNode<int>(7);
+            //TreeNode<int> node6 = new TreeNode<int>(6, null, node7);
+            //TreeNode<int> node3 = new TreeNode<int>(3);
+            //TreeNode<int> node2 = new TreeNode<int>(2, node3, node6);
 
-            TreeNode<int> node1 = new TreeNode<int>(1, node4, node2);
+            //TreeNode<int> node1 = new TreeNode<int>(1, node4, node2);
 
-            //构建二叉树
-            LinkTree<int> tree = new LinkTree<int>(node1);
+            ////构建二叉树
+            //LinkTree<int> tree = new LinkTree<int>(node1);
 
-            //先序---根--左--右 1,4,5,2,3,6,7
-            Queue<int> queue1 = new Queue<int>();
-            var result = tree.PreOrderTree(ref queue1);
+            ////先序---根--左--右 1,4,5,2,3,6,7
+            //Queue<int> queue1 = new Queue<int>();
+            //var result = tree.PreOrderTree(ref queue1);
 
-            Queue<int> queue2 = new Queue<int>();
-            result = tree.PreOrderTreeExt(ref queue2);
+            //Queue<int> queue2 = new Queue<int>();
+            //result = tree.PreOrderTreeExt(ref queue2);
 
-            //中序---左--根--右 4,5,1,3,2,6,7
-            Queue<int> queue3 = new Queue<int>();
-            result = tree.InOrderTree(ref queue3);
+            ////中序---左--根--右 4,5,1,3,2,6,7
+            //Queue<int> queue3 = new Queue<int>();
+            //result = tree.InOrderTree(ref queue3);
 
-            //后序---左--右--根 4,5,3,2,6,7,1
-            Queue<int> queue4 = new Queue<int>();
-            result = tree.PostOrderTree(ref queue4);
+            ////后序---左--右--根 4,5,3,2,6,7,1
+            //Queue<int> queue4 = new Queue<int>();
+            //result = tree.PostOrderTree(ref queue4);
 
-            int height = tree.Height();
-            var num = tree.Count;
-            bool b = tree.Contain(6);
+            //int height = tree.Height();
+            //var num = tree.Count;
+            //bool b = tree.Contain(6);
             #endregion
 
             #region 查找
