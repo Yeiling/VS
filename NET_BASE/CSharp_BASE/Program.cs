@@ -913,7 +913,7 @@ namespace CSharp_BASE
             //    fs.Write(bts, 0, bts.Length);
             //}
             #endregion
-            var result = GetSum(100);
+            var result = GetSum(101);
 
 
             A a = new A();
