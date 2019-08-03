@@ -410,14 +410,5 @@ namespace 数据结构和算法
         #endregion
 
     }
-
-    /// <summary>
-    /// 测试类
-    /// </summary>
-    public class Person
-    {
-        public string Name { get; set; }
-        public byte Age { get; set; }
-        public char Sex { get; set; }
-    }
+    
 }
