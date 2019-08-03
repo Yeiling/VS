@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.PlatformAbstractions;
 using Swashbuckle.AspNetCore.Swagger;
+using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -29,7 +32,7 @@ namespace PM.WebApi
         public IConfiguration Configuration { get; }
 
         /// <summary>
-        /// ConfigureServices
+        /// public void ConfigureServices(IServiceCollection services)
         /// </summary>
         /// <param name="services"></param>
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -72,6 +75,7 @@ namespace PM.WebApi
             });
             #endregion
 
+            #region 跨域处理 cors 服务
             //添加cors 服务 配置跨域处理           
             services.AddCors(options =>
             {
@@ -92,8 +96,23 @@ namespace PM.WebApi
                 //    policy.WithOrigins(arry).AllowAnyHeader().AllowAnyMethod();
                 //});
             });
+            #endregion
 
+            //#region AutoFac
+            ////实例化 AutoFac  容器   
+            //var builder = new ContainerBuilder();
 
+            ////注册要通过反射创建的组件
+            //builder.RegisterType<AdvertisementServices>().As<IAdvertisementServices>();
+
+            ////将services填充到Autofac容器生成器中
+            //builder.Populate(services);
+
+            ////使用已进行的组件登记创建新容器
+            //var ApplicationContainer = builder.Build();
+
+            //#endregion
+            //return new AutofacServiceProvider(ApplicationContainer);//第三方IOC接管 core内置DI容器
         }
 
         /// <summary>
