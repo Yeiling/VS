@@ -117,6 +117,10 @@
         #endregion
 
         #region 冒泡排序
+        /// <summary>
+        /// 冒泡排序1
+        /// </summary>
+        /// <param name="arr"></param>
         public static void BubbleSort(int[] arr)
         {
             for (int i = 0; i < arr.Length - 1; i++)
@@ -132,6 +136,11 @@
                 }
             }
         }
+        /// <summary>
+        /// 冒泡排序2
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <param name="SmallToLarge"></param>
         public static void BubbleSort(int[] arr, bool SmallToLarge = true)
         {
             for (int i = 0; i < arr.Length - 1; i++)
