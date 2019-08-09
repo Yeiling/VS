@@ -4,6 +4,23 @@
     {
         #region 快速排序
         /// <summary>
+        /// 快速排序
+        /// </summary>
+        /// <param name="array"></param>
+        /// <param name="low"></param>
+        /// <param name="high"></param>
+        public static void QuickSort(int[] array, int low, int high)
+        {
+            if (low >= high)
+                return;
+            /*完成一次单元排序*/
+            int index = SortUnit(array, low, high);
+            /*对左边单元进行排序*/
+            QuickSort(array, low, index - 1);
+            /*对右边单元进行排序*/
+            QuickSort(array, index + 1, high);
+        }
+        /// <summary>
         /// 一次排序单元，完成此方法，key左边都比key小，key右边都比key大。
         /// </summary>
         /// <param name="array"></param>
@@ -31,26 +48,14 @@
 
             return high;
         }
-        /// <summary>
-        /// 快速排序
-        /// </summary>
-        /// <param name="array"></param>
-        /// <param name="low"></param>
-        /// <param name="high"></param>
-        public static void QuickSort(int[] array, int low, int high)
-        {
-            if (low >= high)
-                return;
-            /*完成一次单元排序*/
-            int index = SortUnit(array, low, high);
-            /*对左边单元进行排序*/
-            QuickSort(array, low, index - 1);
-            /*对右边单元进行排序*/
-            QuickSort(array, index + 1, high);
-        }
+        
         #endregion
 
         #region 冒泡排序
+        /// <summary>
+        /// 冒泡排序
+        /// </summary>
+        /// <param name="arr"></param>
         public static void BullleSort(int[] arr)
         {
             int temp = 0;
@@ -72,6 +77,10 @@
         #endregion
 
         #region 选择排序
+        /// <summary>
+        /// 选择排序1
+        /// </summary>
+        /// <param name="arr"></param>
         public static void SelectionSort(int[] arr)
         {
             for (int i = 0; i < arr.Length - 1; i++)
@@ -87,6 +96,11 @@
                 }
             }
         }
+        /// <summary>
+        /// 选择排序2
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <param name="SmallToLarge"></param>
         public static void SelectionSort(int[] arr, bool SmallToLarge = true)
         {
             for (int i = 0; i < arr.Length - 1; i++)
