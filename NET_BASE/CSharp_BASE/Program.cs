@@ -57,6 +57,8 @@ namespace CSharp_BASE
             //Console.WriteLine("请输入一个字符串：");
             //string str = Console.ReadLine();
             //Console.WriteLine(str + "长度是：" + str.Length);
+
+            //string result = StrLengthMax("ere", "ndifv", "f", "ghsi", "sdfvds", "detg");
             #endregion
 
             //计算两个数的最大值
@@ -913,25 +915,64 @@ namespace CSharp_BASE
             //    fs.Write(bts, 0, bts.Length);
             //}
             #endregion
-            var result = GetSum(101);
+            //var result = GetSum(101);
 
 
-            A a = new A();
-            a.Test();
-            a.Test1();
+            #region 方法覆盖和虚方法区别
+            //A a = new A();
+            //a.Test();
+            //a.Test1();
 
-            A aa = new A1();
-            aa.Test();
-            aa.Test1();
+            //A aa = new A1();
+            //aa.Test();
+            //aa.Test1();
 
-            A aaa = new A2();
-            aaa.Test();
-            aaa.Test1();
+            //A aaa = new A2();
+            //aaa.Test();
+            //aaa.Test1(); 
+            #endregion
 
+          
             Console.ReadKey();
         }
 
+
         //-----------------方法-------------------
+
+        /// <summary>
+        /// 字符串中字符出现的次数
+        /// </summary>
+        /// <param name="str">字符串</param>
+        /// <param name="searchStr">字符</param>
+        /// <returns></returns>
+        static int StringCount(string str, string searchStr)
+        {
+            int count = 0;
+            int index = 0;
+            while ((index = str.IndexOf(searchStr, index)) != -1)
+            {
+                count++;
+                index += searchStr.Length;
+            }
+            return count;
+        }
+
+        /// <summary>
+        /// 求数组字符串最长的字符
+        /// </summary>
+        /// <param name="StrArry">字符串数组</param>
+        /// <returns></returns>
+        static string StrLengthMax(params string[] StrArry)
+        {
+            string MaxLenStr = StrArry[0];
+            for (int i = 1; i < StrArry.Length; i++)
+            {
+                if (StrArry[i].Length > MaxLenStr.Length)
+                    MaxLenStr = StrArry[i];
+            }
+            return MaxLenStr;
+        }
+
 
         /// <summary>
         /// 求和算法   1-2+3-4+5-6+7
@@ -970,7 +1011,7 @@ namespace CSharp_BASE
             num++;
             return num;
         }
-        static int ref_test(ref int num)
+        static int Ref_test(ref int num)
         {
             num++;
             return num;
@@ -978,7 +1019,7 @@ namespace CSharp_BASE
         //params:可变参数可以传递参数，也可以不传递参数；可变参数作为参数，只能放在最后面；也可以直接传递一个数组进来
         static string Params_test(string name, string sex, int age, params int[] score)
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder(score.Length);
             if (score != null)
             {
                 for (int i = 0; i < score.Length; i++)
@@ -1091,11 +1132,10 @@ namespace CSharp_BASE
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
-        static string strQCKG(string str)
+        static string StrQCKG(string str)
         {
             string[] strword = str.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            str = string.Join("", strword);
-            return str;
+            return string.Join("", strword);
         }
         static string QCKG(string str)
         {
@@ -1240,7 +1280,7 @@ namespace CSharp_BASE
         /// <param name="tArry"></param>
         /// <param name="flag"></param>
         /// <returns></returns>
-        public static int[] GetLXSort(int[] tArry, int flag)
+        static int[] GetLXSort(int[] tArry, int flag)
         {
             int[] temp = new int[GetMax(tArry) + 1];   //GetMax()方法是计算数组最大值
             for (int i = 0; i < tArry.Length; i++)
@@ -1432,22 +1472,24 @@ namespace CSharp_BASE
         //}
     }
 
+    #region MyRegion
     public class A
     {
         public void Test() => Console.WriteLine("我是a中的Test方法");
-        public virtual void Test1() => Console.WriteLine("我是a中的Test1方法");
+        public virtual void Test1() => Console.WriteLine("我是a中的虚方法Test1");
     }
 
     public class A1 : A
     {
         public new void Test() => Console.WriteLine("我是a1中的Test方法");
-        public override void Test1() => Console.WriteLine("我是a1中的Test1方法");
+        public override void Test1() => Console.WriteLine("我是a1中重写的Test1虚方法");
     }
 
     public class A2 : A
     {
         public new void Test() => Console.WriteLine("我是a2中的Test方法");
-        public override void Test1() => Console.WriteLine("我是a2中的Test1方法");
+        public override void Test1() => Console.WriteLine("我是a2中重写的Test1虚方法");
     }
+    #endregion
 
 }
