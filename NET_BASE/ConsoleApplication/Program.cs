@@ -15,9 +15,9 @@ namespace ConsoleApplication
         public delegate List<T> fxwt<T>(T t1, T t2);  //泛型委托 
 
         //委托事件的前提,事件本质上也是一种特殊的委托
-        public event wt event_wt;    //定义一个wt委托类型 的事件
-        public event Action<string> ac;  //定义一个无返回值,只有一个string类型参数的事件
-        public event Func<string, string, string> fn;  //定义一个有string返回值,且有两个string类型参数的事件
+        public event wt Event_wt;    //定义一个wt委托类型 的事件
+        public event Action<string> Ac;  //定义一个无返回值,只有一个string类型参数的事件
+        public event Func<string, string, string> Fn;  //定义一个有string返回值,且有两个string类型参数的事件
 
         static void Main(string[] args)
         {

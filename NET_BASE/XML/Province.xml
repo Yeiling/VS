@@ -82,7 +82,7 @@
       <District Name='晋州市' Lon='115.03' Lat='38.03'/>
       <District Name='新乐市' Lon='114.68' Lat='38.35'/>
       <District Name='鹿泉市' Lon='114.3' Lat='38.08'/>
-    </City>>
+    </City>
     <City Name='唐山市' >
       <District Name='唐山市' Lon='118.2' Lat='39.63'/>
       <District Name='路南区' Lon='118.17' Lat='39.63'/>

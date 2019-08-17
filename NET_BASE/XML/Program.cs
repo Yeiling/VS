@@ -366,8 +366,12 @@ namespace XML
             #endregion
 
 
+            XMLHelper.CreateXmlDoc(@"D:\GitFiles\NET_BASE\XML\", "Person");
+
             Console.ReadKey();
         }
+
+        //---------------------------方法---------------------------
 
         //-----------连接数据库，获取VndMessage信息------
         static List<Vnd> GetVnd(string sqlconn, string sql)
