@@ -60,6 +60,12 @@
             </summary>
             <param name="id"></param>
         </member>
+        <member name="M:PM.WebApi.Controllers.CustomerController.TestApi(PM.Entity.YiiBaidbEntity.customers)">
+            <summary>
+            测试接口---可随时删除
+            </summary>
+            <param name="customer"></param>
+        </member>
         <member name="T:PM.WebApi.Program">
             <summary>
             Program

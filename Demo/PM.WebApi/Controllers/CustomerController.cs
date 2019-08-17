@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PM.Entity.YiiBaidbEntity;
 using PM.Service;
-using System;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 
 namespace PM.WebApi.Controllers
 {
@@ -36,11 +34,9 @@ namespace PM.WebApi.Controllers
         [HttpGet(Name = "GetListByName")]
         public IEnumerable<customers> GetListByName(string name)
         {
-            //表达式树
-            Expression<Func<customers, bool>> Exp = exp => exp.customerName.Contains(name);
             return SqlSugarDBContext.GetDbContext().SimpleClientFun(sc =>
             {
-                return sc.GetList<customers>(Exp);
+                return sc.GetList<customers>(exp => exp.customerName.Contains(name));
             });
         }
 
@@ -106,6 +102,14 @@ namespace PM.WebApi.Controllers
         {
 
         }
+
+
+        /// <summary>
+        /// 测试接口---可随时删除
+        /// </summary>
+        /// <param name="customer"></param>
+        [HttpPost]
+        public bool TestApi(customers customer) => customer.customerNumber > 100;
 
     }
 }
