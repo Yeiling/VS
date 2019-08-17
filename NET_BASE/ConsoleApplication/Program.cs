@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using ConsoleApplication.Class;
 using System.Runtime.Remoting.Messaging;
 
 namespace ConsoleApplication
@@ -17,7 +14,7 @@ namespace ConsoleApplication
         public delegate string wt(string name, int age, string sex);
         public delegate List<T> fxwt<T>(T t1, T t2);  //泛型委托 
 
-        //委托时间的前提,事件本质上也是一种特殊的委托
+        //委托事件的前提,事件本质上也是一种特殊的委托
         public event wt event_wt;    //定义一个wt委托类型 的事件
         public event Action<string> ac;  //定义一个无返回值,只有一个string类型参数的事件
         public event Func<string, string, string> fn;  //定义一个有string返回值,且有两个string类型参数的事件
@@ -34,7 +31,7 @@ namespace ConsoleApplication
             Console.WriteLine(e);
 
             //(2):匿名委托的写法
-            Func<int, int, int> f2 = delegate(int a, int b)
+            Func<int, int, int> f2 = delegate (int a, int b)
             {
                 return a + b;
             };
@@ -297,19 +294,27 @@ namespace ConsoleApplication
         {
             return (a + b).ToString();
         }
-        //委托函数
-        public static int Add(int a, int b)
-        {
-            return a + b;
-        }
-        public int Add1(int a, int b) //非静态的方法
-        {
-            return a - b;
-        }
-        public static int Add2(int a, int b)
-        {
-            return a - b;
-        }
+        /// <summary>
+        /// 委托函数求和
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public static int Add(int a, int b) => a + b;
+        /// <summary>
+        /// 非静态的方法
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public int Add1(int a, int b) => a - b;
+        /// <summary>
+        /// 静态的方法
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public static int Add2(int a, int b) => a - b;
 
 
         //------------方法--------
@@ -484,7 +489,7 @@ namespace ConsoleApplication
                         // 触发事件
                         KeyDown(this.GetType(), keyEventArgs);
                         break;
-                    //KeyDown( this, KeyEventArgs );一句，这是触发事件的语句，并将事件交由KeyDownHandler这个委托来处理
+                        //KeyDown( this, KeyEventArgs );一句，这是触发事件的语句，并将事件交由KeyDownHandler这个委托来处理
                 }
             }
         }

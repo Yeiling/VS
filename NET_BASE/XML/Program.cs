@@ -441,9 +441,8 @@ namespace XML
                 {
                     StringBuilder sb = new StringBuilder();
                     if (r.Value.Contains("\n"))
-                    {
                         continue;
-                    }
+
                     if (r.NodeType == XmlNodeType.XmlDeclaration)  //1：声明
                     {
                         if (r.AttributeCount > 0)
@@ -469,20 +468,15 @@ namespace XML
                             }
                         }
                         else
-                        {
                             sb.Append(nodename);
-                        }
                         Console.Write(sb.ToString());
                     }
                     if (r.NodeType == XmlNodeType.Text)   //3：文本内容（节点之间的值）
-                    {
                         Console.Write(r.Value);
-                    }
                 }
             }
             r.Close();
         }
-
 
     }
 }

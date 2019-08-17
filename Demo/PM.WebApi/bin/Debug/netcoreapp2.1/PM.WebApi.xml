@@ -96,7 +96,7 @@
         </member>
         <member name="M:PM.WebApi.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
             <summary>
-            ConfigureServices
+            public void ConfigureServices(IServiceCollection services)
             </summary>
             <param name="services"></param>
         </member>
