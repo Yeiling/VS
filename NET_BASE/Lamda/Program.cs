@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Lamda
 {
@@ -77,14 +74,8 @@ namespace Lamda
         }
 
         //委托函数
-        public static int Add(int a, int b)
-        {
-            return a + b;
-        }
-        public int Add1(int a, int b)
-        {
-            return a - b;
-        }
+        public static int Add(int a, int b) => a + b;
+        public int Add1(int a, int b) => a - b;
 
     }
 }

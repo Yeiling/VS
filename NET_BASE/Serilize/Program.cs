@@ -26,27 +26,11 @@ namespace Serilize
     //--------定义一个类-------
     public class Human
     {
-        private string _name;
+        public string Name { get; set; }
 
-        public string Name
-        {
-            get { return _name; }
-            set { _name = value; }
-        }
-        private string _sex;
+        public string Sex { get; set; }
 
-        public string Sex
-        {
-            get { return _sex; }
-            set { _sex = value; }
-        }
-        private int _age;
-
-        public int Age
-        {
-            get { return _age; }
-            set { _age = value; }
-        }
+        public int Age { get; set; }
         //构造函数
         public Human()
         { }

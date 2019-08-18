@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Calculator
+﻿namespace Calculator
 {
     public class JianFa : Cal
     {
@@ -24,9 +19,7 @@ namespace Calculator
                     continue;
                 }
                 else
-                {
                     result -= this.dbarr[i];
-                }
             }
             return result;
         }
