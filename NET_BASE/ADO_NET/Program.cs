@@ -30,9 +30,7 @@ namespace ADO_NET
                         }
                     }
                     else
-                    {
                         Console.WriteLine("登录失败,没有这个人.....");
-                    }
                 }
 
             }
