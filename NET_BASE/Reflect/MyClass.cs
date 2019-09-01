@@ -16,12 +16,11 @@ namespace Reflect
         {
             if (string.IsNullOrEmpty(msg))
                 return string.Empty;
-            else
-                return msg;
+
+            return msg;
         }
-        static void Hi(string msg)  //静态方法
-        {
-            Console.WriteLine(msg);
-        }
+        //静态方法
+        static void Hi(string msg) => Console.WriteLine(msg);
+
     }
 }

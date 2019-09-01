@@ -196,36 +196,14 @@ namespace Reflect
             this.Sex = strsex;
             this.Age = intage;
         }
-
-        private string _name;
-        public string Name
-        {
-            get { return _name; }
-            set { _name = value; }
-        }
-        private string _sex;
-        public string Sex
-        {
-            get { return _sex; }
-            set { _sex = value; }
-        }
-        private int _age;
-        public int Age
-        {
-            get { return _age; }
-            set { _age = value; }
-        }
+        public string Name { get; set; }
+        public string Sex { get; set; }
+        public int Age { get; set; }
         //重写Person的tostring()方法
-        public override string ToString()
-        {
-            return this.Name + "," + this.Sex + "," + this.Age;
-        }
+        public override string ToString() => this.Name + "," + this.Sex + "," + this.Age;
 
         //定义一个方法
-        public void SayHi()
-        {
-            Console.WriteLine("Hi...我是人类。。。");
-        }
+        public void SayHi() => Console.WriteLine("Hi...我是人类。。。");
     }
     //Man类
     public class Man : Person
