@@ -33,4 +33,10 @@
     <ProjectReference Include="..\PM.Service\PM.Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:\Users\Inspire\Desktop\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

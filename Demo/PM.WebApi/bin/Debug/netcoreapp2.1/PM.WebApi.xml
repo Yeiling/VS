@@ -20,6 +20,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:PM.WebApi.Controllers.CustomerController.GetListByPage(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            测试EasyUI
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:PM.WebApi.Controllers.CustomerController.GetListByName(System.String)">
             <summary>
             根据名称获取用户信息

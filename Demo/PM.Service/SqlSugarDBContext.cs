@@ -13,7 +13,7 @@ namespace PM.Service
     {
         #region 
         //写死---测试使用
-        private static string Conn = "Database=yiibaidb;Data Source=192.168.56.101;User Id=root;Password=123456;pooling=false;CharSet=utf8;port=3306";
+        private static string Conn = "Database=yiibaidb;Data Source=192.168.56.105;User Id=root;Password=123456;pooling=false;CharSet=utf8;port=3306";
         //Config.DBConfig.Test; //正式默认连接库
         #endregion
         #region  
