@@ -228,9 +228,8 @@ namespace NET_Path_File_Directory
             foreach (DriveInfo d in Drivers)
             {
                 if (d.IsReady) //光驱可读时（已经准备好了），输出光驱，避免了H盘
-                {
                     Console.WriteLine(d + "---" + d.TotalSize / 1024 / 1024 / 1024 + "GB" + "---" + d.DriveType + "---" + d.TotalFreeSpace / 1024 / 1024 / 1024 + "GB");
-                }
+
             }
             DriveInfo driver = new DriveInfo("D");
             string name = driver.Name;
@@ -268,16 +267,12 @@ namespace NET_Path_File_Directory
                         {
                             int r = fs.Read(bt, 0, bt.Length);//返回本次读取到的实际大小
                             for (int i = 0; i < r; i++)
-                            {
                                 bt[i] = (byte)(byte.MaxValue - bt[i]);
-                            }
 
                             fsw.Write(bt, 0, r);
 
                             if (r == 0)
-                            {
                                 break;
-                            }
 
                         }
                     }
@@ -304,14 +299,10 @@ namespace NET_Path_File_Directory
                         {
                             int r = fs.Read(bt, 0, bt.Length);//返回本次读取到的实际大小
                             for (int i = 0; i < r; i++)
-                            {
                                 bt[i] = (byte)(byte.MaxValue - bt[i]);
-                            }
 
                             if (r == 0)
-                            {
                                 break;
-                            }
 
                             fsw.Write(bt, 0, r);
 
@@ -337,9 +328,8 @@ namespace NET_Path_File_Directory
                         {
                             int len = r.Read(bt, 0, bt.Length);
                             if (len == 0)
-                            {
                                 break;
-                            }
+
                             zip.Write(bt, 0, len);
                         }
                     }
@@ -362,9 +352,7 @@ namespace NET_Path_File_Directory
                         {
                             int len = zip.Read(bt, 0, bt.Length);
                             if (len == 0)
-                            {
                                 break;
-                            }
 
                             w.Write(bt, 0, len);
                         }
@@ -431,9 +419,8 @@ namespace NET_Path_File_Directory
                         {
                             int r = fs.Read(bt, 0, bt.Length);//返回本次读取到的实际大小
                             if (r == 0)
-                            {
                                 break;
-                            }
+
                             fsw.Write(bt, 0, r);
                         }
                     }
@@ -457,9 +444,8 @@ namespace NET_Path_File_Directory
                         string msg = sr.ReadLine();
                         Console.WriteLine(msg);
                         if (msg == null)   //逐行读取，如果没有独到数据就跳出循环
-                        {
                             break;
-                        }
+
                         sw.WriteLine(msg);  //逐行写入数据
                     }
                 }
@@ -484,13 +470,9 @@ namespace NET_Path_File_Directory
                         {
                             string filename = Path.GetFileName(filepath);
                             if (File.Exists(direpan + "\\" + filename))
-                            {
                                 continue;
-                            }
                             else
-                            {
                                 File.Copy(filepath, direpan + "\\" + filename);
-                            }
 
                         }
                     }
@@ -505,14 +487,10 @@ namespace NET_Path_File_Directory
                     }
                 }
                 else
-                {
                     Console.WriteLine(path + "路径下没有文件。。。。");
-                }
             }
             else
-            {
                 Console.WriteLine("不存在" + path + "\r\n");
-            }
         }
 
 
@@ -532,9 +510,7 @@ namespace NET_Path_File_Directory
                     ScareDir1(sb.ToString());
                 }
                 else
-                {
                     Console.WriteLine(sb.ToString() + "\\" + d);
-                }
             }
 
         }
@@ -552,9 +528,8 @@ namespace NET_Path_File_Directory
                     continue;
                 }
                 else
-                {
                     Directory.CreateDirectory(sb.ToString());
-                }
+
                 num++;
             }
             Console.WriteLine("OK");
@@ -568,21 +543,15 @@ namespace NET_Path_File_Directory
                 foreach (string d in Directory.GetFileSystemEntries(dir))
                 {
                     if (File.Exists(d))
-                    {
                         File.Delete(d); //直接删除其中的文件 
-                    }
                     else
-                    {
                         deleteDir(d); //递归删除子文件夹 
-                    }
                 }
                 Directory.Delete(dir); //删除已空文件夹 
                 Console.WriteLine(dir + " 文件夹删除成功");
             }
             else
-            {
                 Console.WriteLine(dir + " 该文件夹不存在"); //如果文件夹不存在则提示 
-            }
         }
 
 

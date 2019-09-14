@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Security.Cryptography;
+using System.Text;
 
 namespace ADO_NET.Common
 {
@@ -20,9 +18,7 @@ namespace ADO_NET.Common
                     byte[] md5bt = m.ComputeHash(bt);
 
                     for (int i = 0; i < md5bt.Length; i++)
-                    {
                         sb.Append(md5bt[i].ToString("x"));
-                    }
                 }
 
             }

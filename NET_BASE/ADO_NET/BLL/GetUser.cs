@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using ADO_NET.Common;
 using ADO_NET.DAL;
 using ADO_NET.Model;
-using ADO_NET.Common;
+using System.Collections.Generic;
 
 namespace ADO_NET.BLL
 {

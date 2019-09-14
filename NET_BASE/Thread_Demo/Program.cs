@@ -79,9 +79,6 @@ namespace Thread_Demo
             Console.ReadKey();
         }
 
-        static void Pth(string s)
-        {
-            Console.WriteLine(s);
-        }
+        static void Pth(string s) => Console.WriteLine(s);
     }
 }

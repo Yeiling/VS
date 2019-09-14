@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace CSharp_BASE.Class
+﻿namespace CSharp_BASE.Class
 {
     public class Test1 : chongzai
     {

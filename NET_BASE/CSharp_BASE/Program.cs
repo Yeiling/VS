@@ -932,7 +932,7 @@ namespace CSharp_BASE
             //aaa.Test1(); 
             #endregion
 
-          
+
             Console.ReadKey();
         }
 
@@ -1222,12 +1222,7 @@ namespace CSharp_BASE
         /// <param name="num1"></param>
         /// <param name="num2"></param>
         /// <returns></returns>
-        static int GetnumMax(int num1, int num2)
-        {
-            int maxnum;
-            maxnum = (num1 > num2 ? num1 : num2);
-            return maxnum;
-        }
+        static int GetnumMax(int num1, int num2) => (num1 > num2 ? num1 : num2);
         /// <summary>
         /// 计算两个数的最大值方法2(重载)
         /// </summary>

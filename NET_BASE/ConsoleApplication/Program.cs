@@ -290,10 +290,13 @@ namespace ConsoleApplication
             Console.WriteLine("返回结果是:" + ss);
         }
 
-        public static string wts(int a, int b)   //委托定义的方法
-        {
-            return (a + b).ToString();
-        }
+        /// <summary>
+        /// 委托定义的方法
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public static string wts(int a, int b) => (a + b).ToString();
         /// <summary>
         /// 委托函数求和
         /// </summary>
@@ -332,25 +335,14 @@ namespace ConsoleApplication
         static void StringWT(string[] arr, MyString ms)
         {
             for (int k = 0; k < arr.Length; k++)
-            {
                 arr[k] = ms(arr[k]);
-            }
         }
 
         //转换成大写，小写，加双引号(委托的方法)
         #region 委托所使用的方法
-        static string Upper(string s)
-        {
-            return s.ToUpper();
-        }
-        static string Lower(string s)
-        {
-            return s.ToLower();
-        }
-        static string SHH(string s)
-        {
-            return "\"" + s + "\"";
-        }
+        static string Upper(string s) => s.ToUpper();
+        static string Lower(string s) => s.ToLower();
+        static string SHH(string s) => "\"" + s + "\"";
         #endregion
 
         //求任意数组的最大值 (数组的类型没有限制)
@@ -362,9 +354,7 @@ namespace ConsoleApplication
                 for (int i = 0; i < ob.Length; i++)
                 {
                     if (ar(max, ob[i]) < 0)
-                    {
                         max = ob[i];
-                    }
                 }
             }
             return max;
@@ -379,9 +369,7 @@ namespace ConsoleApplication
                 for (int i = 0; i < arr.Length; i++)
                 {
                     if (Convert.ToInt32(at(max, arr[i])) < 0)
-                    {
                         max = arr[i];
-                    }
                 }
 
             }
@@ -390,34 +378,16 @@ namespace ConsoleApplication
 
         //多播委托使用到的方法
         #region
-        static void M1()
-        {
-            Console.WriteLine("M1--多播委托");
-        }
+        static void M1() => Console.WriteLine("M1--多播委托");
 
-        static void M2(string msg)
-        {
-            Console.WriteLine(msg);
-        }
-        static void M3(string msg)
-        {
-            Console.WriteLine(msg);
-        }
-        static void M4(string msg)
-        {
-            Console.WriteLine(msg);
-        }
-        static void M5(string msg)
-        {
-            Console.WriteLine(msg);
-        }
+        static void M2(string msg) => Console.WriteLine(msg);
+        static void M3(string msg) => Console.WriteLine(msg);
+        static void M4(string msg) => Console.WriteLine(msg);
+        static void M5(string msg) => Console.WriteLine(msg);
         #endregion
 
 
-        static string GetMsg(string name, int age, string sex)
-        {
-            return name + "\n" + age + "\n" + sex;
-        }
+        static string GetMsg(string name, int age, string sex) => name + "\n" + age + "\n" + sex;
         //泛型委托
         static List<T> Fx<T>(T t1, T t2)
         {
@@ -428,15 +398,9 @@ namespace ConsoleApplication
         }
 
         //将委托定义为参数
-        static string TQ(Func<string, string, string> fn, string s1, string s2)
-        {
-            return fn(s1, s2);
-        }
+        static string TQ(Func<string, string, string> fn, string s1, string s2) => fn(s1, s2);
         //将委托定义为返回值
-        static Func<int, int, string> QT()
-        {
-            return new Func<int, int, string>((a, b) => { return (a + b).ToString(); });
-        }
+        static Func<int, int, string> QT() => new Func<int, int, string>((a, b) => { return (a + b).ToString(); });
 
     }
 

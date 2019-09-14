@@ -66,7 +66,7 @@ namespace MyDelegate
             #endregion
 
             #region 事件
-            
+
             #endregion
 
             Console.ReadKey();
@@ -76,39 +76,25 @@ namespace MyDelegate
         public static string[] StrSZ(string[] strs, changestr change)
         {
             for (int i = 0; i < strs.Length; i++)
-            {
                 strs[i] = change(strs[i]);
-            }
+
             return strs;
         }
-        public static string chageStrs(string str)
-        {
-            return str.ToUpper();
-        }
-        public static string otherchage(string str)
-        {
-            return "***" + str + "***";
-        }
+        public static string chageStrs(string str) => str.ToUpper();
+        public static string otherchage(string str) => "***" + str + "***";
         #endregion
         #region 第二个实例
-        public static string[] CaiStr(string[] ss, changesz sz)
-        {
-            return sz(ss);
-        }
+        public static string[] CaiStr(string[] ss, changesz sz) => sz(ss);
         public static string[] changecai(string[] sss)
         {
             for (int j = 0; j < sss.Length; j++)
-            {
                 sss[j] = "（" + sss[j] + "）";
-            }
+
             return sss;
         }
         #endregion
         #region //定义委托实现方法
-        public static string strcon(string s1, string s2)
-        {
-            return s1 + s2;
-        }
+        public static string strcon(string s1, string s2) => s1 + s2;
         #endregion
 
         /// <summary>
@@ -120,9 +106,8 @@ namespace MyDelegate
         public static string[] StrArryHelper(string[] strArry, Func<string, string> strHandler)
         {
             for (int i = 0; i < strArry.Length; i++)
-            {
                 strArry[i] = strHandler(strArry[i]);
-            }
+
             return strArry;
         }
 

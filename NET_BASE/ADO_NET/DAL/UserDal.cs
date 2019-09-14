@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data.Sql;
-using System.Data.SqlClient;
+﻿using ADO_NET.Model;
+using System;
 using System.Data;
-using ADO_NET.Model;
+using System.Data.SqlClient;
 
 namespace ADO_NET.DAL
 {
@@ -24,11 +20,9 @@ namespace ADO_NET.DAL
             {
                 conn.Open();
                 if (conn.State == ConnectionState.Open)
-                {
                     u = del(name, pwd);
-                }
             }
-            catch{ }
+            catch { }
             finally
             {
                 conn.Close();
@@ -46,7 +40,7 @@ namespace ADO_NET.DAL
             try
             {
                 conn.Open();
-                SqlParameter[] para = new SqlParameter[] { 
+                SqlParameter[] para = new SqlParameter[] {
                     new SqlParameter("@name",SqlDbType.NVarChar,50){Value=string.IsNullOrEmpty(name)?string.Empty:name},
                     new SqlParameter("@pwd",SqlDbType.NVarChar,100){Value=string.IsNullOrEmpty(pwd)?string.Empty:pwd}
                 };

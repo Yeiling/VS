@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace CSharp_BASE.Class
 {
@@ -26,9 +23,8 @@ namespace CSharp_BASE.Class
             get
             {
                 if (index < 0 || index > _count)
-                {
                     throw new Exception("索引值超出数组的范围");
-                }
+                
                 return _names[index];
             }
             set

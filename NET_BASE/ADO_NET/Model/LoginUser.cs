@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace ADO_NET.Model
+﻿namespace ADO_NET.Model
 {
     public static class LoginUser
     {

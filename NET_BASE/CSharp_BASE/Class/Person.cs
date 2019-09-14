@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace CSharp_BASE.Class
+﻿namespace CSharp_BASE.Class
 {
     public class Person
     {
@@ -23,9 +18,6 @@ namespace CSharp_BASE.Class
             set;
         }
 
-        public virtual string sayHi(string str)
-        {
-            return str;
-        }
+        public virtual string sayHi(string str) => str;
     }
 }

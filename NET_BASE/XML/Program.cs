@@ -33,34 +33,29 @@ namespace XML
             //                    Console.WriteLine();
             //                    string Province = reader.Name, Provincename = string.Empty;
             //                    if (reader.MoveToAttribute("Name"))
-            //                    {
             //                        Provincename = reader.ReadContentAsString();
-            //                    }
+
             //                    Console.WriteLine("  " + Province + ":" + Provincename);
 
             //                    break;
             //                case "City":
             //                    string city = reader.Name, cityname = string.Empty;
             //                    if (reader.MoveToAttribute("Name"))
-            //                    {
             //                        cityname = reader.ReadContentAsString();
-            //                    }
+
             //                    Console.WriteLine("    " + city + ":" + cityname);
             //                    break;
             //                case "District":
             //                    string District = reader.Name, Districtname = string.Empty, lon = string.Empty, lat = string.Empty;
             //                    if (reader.MoveToAttribute("Name"))
-            //                    {
             //                        Districtname = reader.ReadContentAsString();
-            //                    }
+
             //                    if (reader.MoveToAttribute("Lon"))
-            //                    {
             //                        lon = reader.ReadContentAsString();
-            //                    }
+
             //                    if (reader.MoveToAttribute("Lat"))
-            //                    {
             //                        lat = reader.ReadContentAsString();
-            //                    }
+
             //                    Console.WriteLine("      " + District + ":" + Districtname + " 经度:" + lon + " 纬度:" + lat);
             //                    break;
             //            }
@@ -103,9 +98,7 @@ namespace XML
             //                Console.WriteLine();
             //            }
             //            else
-            //            {
             //                Console.WriteLine(" " + nodename + " ");
-            //            }
             //        }
             //    }
             //}
@@ -473,6 +466,7 @@ namespace XML
                         }
                         else
                             sb.Append(nodename);
+
                         Console.Write(sb.ToString());
                     }
                     if (r.NodeType == XmlNodeType.Text)   //3：文本内容（节点之间的值）
