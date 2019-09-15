@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using 数据结构和算法.CommonInterface;
 
 namespace 数据结构和算法.树

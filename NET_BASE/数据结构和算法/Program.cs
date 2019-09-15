@@ -285,7 +285,7 @@ namespace 数据结构和算法
             //Sort.BubbleSort(arr,false);
             #endregion
 
-          
+
 
 
 
@@ -304,9 +304,7 @@ namespace 数据结构和算法
         {
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < arry.Length; i++)
-            {
                 sb.Append(arry[i] + ",");
-            }
             return sb.ToString().TrimEnd(',');
         }
 
@@ -325,9 +323,8 @@ namespace 数据结构和算法
             {
                 newarry[0] = t;
                 for (int i = 0; i < arry.Length; i++)
-                {
                     newarry[i + 1] = arry[i];
-                }
+
             }
             else
             {
@@ -346,9 +343,8 @@ namespace 数据结构和算法
                 else  //添加到数组的末尾
                 {
                     for (int i = 0; i < arry.Length; i++)
-                    {
                         newarry[i] = arry[i];
-                    }
+
                     newarry[arry.Length] = t;
                 }
             }
@@ -414,5 +410,5 @@ namespace 数据结构和算法
         #endregion
 
     }
-    
+
 }
