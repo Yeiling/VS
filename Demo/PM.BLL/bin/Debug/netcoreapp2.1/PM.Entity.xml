@@ -64,6 +64,21 @@
             接口类配置文件
             </summary>
         </member>
+        <member name="T:PM.Entity.EasyUIEntity.EasyUIData`1">
+            <summary>
+            EasyUI数据返回值
+            </summary>
+        </member>
+        <member name="P:PM.Entity.EasyUIEntity.EasyUIData`1.Total">
+            <summary>
+            总数量
+            </summary>
+        </member>
+        <member name="P:PM.Entity.EasyUIEntity.EasyUIData`1.Rows">
+            <summary>
+            数据集合
+            </summary>
+        </member>
         <member name="T:PM.Entity.HiMallEntity.Himall_Account">
             <summary>
             

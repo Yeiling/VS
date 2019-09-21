@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PM.Entity.YiiBaidbEntity;
 using PM.Service;
+using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace PM.WebApi.Controllers
 {
@@ -46,21 +48,6 @@ namespace PM.WebApi.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         // GET: api/Customer/5
-        [HttpGet(Name = "GetEntity")]
-        public customers GetEntity(int id)
-        {
-            return SqlSugarDBContext.GetDbContext().SimpleClientFun(sc =>
-            {
-                return sc.GetById<customers>(id);
-            });
-        }
-
-        /// <summary>
-        /// 通过id获取用户信息
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        // GET: api/Customer/5
         [HttpGet(Name = "GetById")]
         public customers GetById(int id)
         {
@@ -69,38 +56,78 @@ namespace PM.WebApi.Controllers
                 return sc.GetById<customers>(id);
             });
         }
-        /// <summary>
-        /// 查询/修改信息
-        /// </summary>
-        /// <param name="value"></param>
-        // POST: api/Customer
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
 
+        /// <summary>
+        /// 查询通用方法
+        /// </summary>
+        /// <typeparam name="T">泛型类</typeparam>
+        /// <param name="exp">表达式</param>
+        /// <returns>对象集合</returns>
+        public IEnumerable<T> GetList<T>(Expression<Func<T, bool>> exp) where T : class, new()
+        {
+            return SqlSugarDBContext.GetDbContext().SimpleClientFun(sc =>
+            {
+                return sc.GetList(exp);
+            });
+        }
+
+        /// <summary>
+        /// 修改信息
+        /// </summary>
+        /// <typeparam name="T">泛型类</typeparam>
+        /// <param name="model">对象</param>
+        /// <returns>是否已经添加</returns>
+        [HttpPost]
+        public bool Modify<T>(T model) where T : class, new()
+        {
+            return SqlSugarDBContext.GetDbContext().SimpleClientFun(sc =>
+            {
+                return sc.Update<T>(model);
+            });
+        }
+
+        /// <summary>
+        /// 根据条件更新特定的列
+        /// </summary>
+        /// <typeparam name="T">泛型类</typeparam>
+        /// <param name="column">列属性</param>
+        /// <param name="exp">条件</param>
+        /// <returns>是否已经更新</returns>
+        public bool Modify<T>(Expression<Func<T, T>> column, Expression<Func<T, bool>> exp) where T : class, new()
+        {
+            return SqlSugarDBContext.GetDbContext().SimpleClientFun(sc =>
+            {
+                return sc.Update<T>(column, exp);
+            });
         }
 
         /// <summary>
         /// 新增用户信息
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="value"></param>
-        // PUT: api/Customer/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        /// <typeparam name="T">泛型类</typeparam>
+        /// <param name="model">对象</param>
+        /// <returns>是否已经添加</returns>
+        [HttpPut("{model}")]
+        public bool Add<T>(T model) where T : class, new()
         {
-
+            return SqlSugarDBContext.GetDbContext().SimpleClientFun(sc =>
+            {
+                return sc.Insert<T>(model);
+            });
         }
 
         /// <summary>
         /// 删除用户信息
         /// </summary>
-        /// <param name="id"></param>
-        // DELETE: api/ApiWithActions/5
+        /// <param name="id">主键Id</param>
+        /// <returns>是否已经删除</returns>
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public bool Delete(dynamic id)
         {
-
+            return SqlSugarDBContext.GetDbContext().SimpleClientFun(sc =>
+            {
+                return sc.DeleteById(id);
+            });
         }
 
 

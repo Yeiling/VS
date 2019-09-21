@@ -933,6 +933,13 @@ namespace CSharp_BASE
             #endregion
 
 
+            DateTime d1 = DateTime.Parse("2019-09-01");
+            DateTime d2 = DateTime.Parse("2019-09-09");
+
+            var t = (d2 - d1);
+            var r = t.TotalDays;
+            Console.WriteLine(r);
+
             Console.ReadKey();
         }
 
