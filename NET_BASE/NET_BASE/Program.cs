@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace NET_BASE
 {
@@ -660,7 +661,7 @@ namespace NET_BASE
             //IEnumerable<int> nums2 = srr.AsEnumerable();
             #endregion
 
-            #region 邮箱正则表达式
+            #region 正则表达式
             //string reg = @"^[a-zA-Z0-9]([a-z0-9]*[-_]?[a-z0-9]+)*@([a-z0-9]*[-_]?[a-z0-9]+)+[\.][a-z]{2,3}([\.][a-z]{2})?$";
             ////正则对象,指定不区分大小写
             //Regex regex = new Regex(reg, RegexOptions.IgnoreCase);
@@ -677,6 +678,17 @@ namespace NET_BASE
             //        Console.WriteLine("输入错误！！");
 
             //}
+
+            //匹配字符
+            //            string sss = @"explain select emp.*,office.* from offices office,employees emp where emp.officecode=office.officecode\G
+            //";
+            //            Regex reg = new Regex(".ff.");
+            //            MatchCollection m = reg.Matches(sss);
+            //            for (int i = 0; i < m.Count; i++)
+            //            {
+            //                Console.WriteLine(m[i]);
+            //            }
+
             #endregion
 
             #region 使用扩展方法
