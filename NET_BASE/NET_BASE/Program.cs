@@ -680,9 +680,8 @@ namespace NET_BASE
             //}
 
             //匹配字符
-            //            string sss = @"explain select emp.*,office.* from offices office,employees emp where emp.officecode=office.officecode\G
-            //";
-            //            Regex reg = new Regex(".ff.");
+            //            string sss = @"explain select emp.*,office.* from offices office,employees emp where emp.officecode=office.officecode";
+            //            Regex reg = new Regex("*ff*");
             //            MatchCollection m = reg.Matches(sss);
             //            for (int i = 0; i < m.Count; i++)
             //            {
