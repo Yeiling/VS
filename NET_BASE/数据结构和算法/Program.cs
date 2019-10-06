@@ -44,9 +44,7 @@ namespace 数据结构和算法
             //1：数组添加一个元素
             //int[] newarry = new int[arry.Length + 1];
             //for (int i = 0; i < arry.Length; i++)
-            //{
             //    newarry[i] = arry[i];
-            //}
             //newarry[newarry.Length - 1] = 100;
             //Console.WriteLine(ArryForeach(newarry));
 
@@ -64,9 +62,7 @@ namespace 数据结构和算法
             //for (int i = 0; i < arry.Length; i++)
             //{
             //    if (arry[i] == 5)
-            //    {
             //        Console.WriteLine(arry[i]);
-            //    }
             //}
             //2:二分法查找数据---局限于顺序的数组
             //int[] arrys = new int[] { 5, 10, 39, 55, 71, 89, 100 };

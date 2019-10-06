@@ -929,16 +929,18 @@ namespace CSharp_BASE
 
             //A aaa = new A2();
             //aaa.Test();
-            //aaa.Test1(); 
+            //aaa.Test1();
             #endregion
 
 
-            DateTime d1 = DateTime.Parse("2019-09-01");
-            DateTime d2 = DateTime.Parse("2019-09-09");
+            #region 时间转换
+            //DateTime d1 = DateTime.Parse("2019-09-01");
+            //DateTime d2 = DateTime.Parse("2019-09-09");
 
-            var t = (d2 - d1);
-            var r = t.TotalDays;
-            Console.WriteLine(r);
+            //var t = (d2 - d1);
+            //var r = t.TotalDays;
+            //Console.WriteLine(r); 
+            #endregion
 
             Console.ReadKey();
         }
@@ -1477,20 +1479,20 @@ namespace CSharp_BASE
     #region MyRegion
     public class A
     {
-        public void Test() => Console.WriteLine("我是a中的Test方法");
-        public virtual void Test1() => Console.WriteLine("我是a中的虚方法Test1");
+        public void Test() => Console.WriteLine("我是A中的Test方法");
+        public virtual void Test1() => Console.WriteLine("我是A中的虚方法Test1");
     }
 
     public class A1 : A
     {
-        public new void Test() => Console.WriteLine("我是a1中的Test方法");
-        public override void Test1() => Console.WriteLine("我是a1中重写的Test1虚方法");
+        public new void Test() => Console.WriteLine("我是A1中的Test方法");
+        public override void Test1() => Console.WriteLine("我是A1中重写的Test1虚方法");
     }
 
     public class A2 : A
     {
-        public new void Test() => Console.WriteLine("我是a2中的Test方法");
-        public override void Test1() => Console.WriteLine("我是a2中重写的Test1虚方法");
+        public new void Test() => Console.WriteLine("我是A2中的Test方法");
+        public override void Test1() => Console.WriteLine("我是A2中重写的Test1虚方法");
     }
     #endregion
 
