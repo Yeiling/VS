@@ -473,7 +473,6 @@ namespace NET_Path_File_Directory
                                 continue;
                             else
                                 File.Copy(filepath, direpan + "\\" + filename);
-
                         }
                     }
                     else
