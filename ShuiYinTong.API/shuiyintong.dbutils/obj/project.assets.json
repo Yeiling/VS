@@ -3294,11 +3294,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Project\\shuiyintong.dbutils\\shuiyintong.DBUtils.csproj",
+      "projectUniqueName": "F:\\GitHubProject\\ShuiYinTong.API\\shuiyintong.dbutils\\shuiyintong.DBUtils.csproj",
       "projectName": "shuiyintong.DBUtils",
-      "projectPath": "F:\\Project\\shuiyintong.dbutils\\shuiyintong.DBUtils.csproj",
+      "projectPath": "F:\\GitHubProject\\ShuiYinTong.API\\shuiyintong.dbutils\\shuiyintong.DBUtils.csproj",
       "packagesPath": "C:\\Users\\Mypc\\.nuget\\packages\\",
-      "outputPath": "F:\\Project\\shuiyintong.dbutils\\obj\\",
+      "outputPath": "F:\\GitHubProject\\ShuiYinTong.API\\shuiyintong.dbutils\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3317,8 +3317,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "F:\\Project\\shuiyintong.Common\\shuiyintong.Common.csproj": {
-              "projectPath": "F:\\Project\\shuiyintong.Common\\shuiyintong.Common.csproj"
+            "F:\\GitHubProject\\ShuiYinTong.API\\shuiyintong.Common\\shuiyintong.Common.csproj": {
+              "projectPath": "F:\\GitHubProject\\ShuiYinTong.API\\shuiyintong.Common\\shuiyintong.Common.csproj"
             }
           }
         }

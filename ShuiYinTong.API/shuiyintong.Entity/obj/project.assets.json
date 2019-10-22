@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Project\\shuiyintong.Entity\\shuiyintong.Entity.csproj",
+      "projectUniqueName": "F:\\GitHubProject\\ShuiYinTong.API\\shuiyintong.Entity\\shuiyintong.Entity.csproj",
       "projectName": "shuiyintong.Entity",
-      "projectPath": "F:\\Project\\shuiyintong.Entity\\shuiyintong.Entity.csproj",
+      "projectPath": "F:\\GitHubProject\\ShuiYinTong.API\\shuiyintong.Entity\\shuiyintong.Entity.csproj",
       "packagesPath": "C:\\Users\\Mypc\\.nuget\\packages\\",
-      "outputPath": "F:\\Project\\shuiyintong.Entity\\obj\\",
+      "outputPath": "F:\\GitHubProject\\ShuiYinTong.API\\shuiyintong.Entity\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
