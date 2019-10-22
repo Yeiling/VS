@@ -10,15 +10,15 @@
         /// </summary>
         public string merSeqno { get; set; }
         /// <summary>
-        /// 商户日期时间
+        /// 商户日期时间---必填
         /// </summary>
         public string mercDtTm { get; set; }
         /// <summary>
-        /// 行内行外标志
+        /// 行内行外标志---必填
         /// </summary>
         public string spdbFlag { get; set; }
         /// <summary>
-        /// 账户类型
+        /// 账户类型---必填
         /// </summary>
         public string jdAcctType { get; set; }
         /// <summary>
@@ -26,19 +26,19 @@
         /// </summary>
         public string remitFlag { get; set; }
         /// <summary>
-        /// 付款人账号
+        /// 付款人账号---必填
         /// </summary>
         public string payAcct { get; set; }
         /// <summary>
-        /// 付款人名称
+        /// 付款人名称---必填
         /// </summary>
         public string payAcctName { get; set; }
         /// <summary>
-        /// 收款人账号
+        /// 收款人账号---必填
         /// </summary>
         public string rcvAcct { get; set; }
         /// <summary>
-        /// 收款人名称
+        /// 收款人名称---必填
         /// </summary>
         public string rcvAcctName { get; set; }
         /// <summary>
@@ -50,11 +50,11 @@
         /// </summary>
         public string rcvBankName { get; set; }
         /// <summary>
-        /// 金额
+        /// 金额---必填
         /// </summary>
         public string transAmt { get; set; }
         /// <summary>
-        /// 附言
+        /// 附言---必填
         /// </summary>
         public string attachInfo { get; set; }
         /// <summary>
@@ -62,15 +62,15 @@
         /// </summary>
         public string transDigest { get; set; }
         /// <summary>
-        /// 指令审批核心企业账号
+        /// 指令审批核心企业账号---必填
         /// </summary>
         public string insAprCrEpClntAtNo { get; set; }
         /// <summary>
-        /// 指令审批核心企业中文名
+        /// 指令审批核心企业中文名---必填
         /// </summary>
         public string insAprCrEpCltChsNm { get; set; }
         /// <summary>
-        /// 发起方
+        /// 发起方---必填
         /// </summary>
         public string inttrId { get; set; }
         /// <summary>

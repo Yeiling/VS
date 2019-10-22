@@ -18,3 +18,4 @@ F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.1\netcoreapp2.1\shuiyintong.Ent
 F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.1\netcoreapp2.1\shuiyintong.Entity.dll
 F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.1\netcoreapp2.1\shuiyintong.Entity.pdb
 F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.1\netcoreapp2.1\shuiyintong.Entity.xml
+F:\Project\shuiyintong.Entity\obj\Debug\netcoreapp2.1\shuiyintong.Entity.csprojAssemblyReference.cache

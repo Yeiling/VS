@@ -6,19 +6,19 @@
     public class AcctDtlInfoQryReq
     {
         /// <summary>
-        /// 账号
+        /// 账号---必填
         /// </summary>
         public string acctNo { get; set; }
         /// <summary>
-        /// 起始日期
+        /// 起始日期---必填
         /// </summary>
         public string beginDate { get; set; }
         /// <summary>
-        /// 终止日期
+        /// 终止日期---必填
         /// </summary>
         public string endDate { get; set; }
         /// <summary>
-        /// 起始笔数
+        /// 起始笔数---必填
         /// </summary>
         public string beginNumber { get; set; }
         /// <summary>

@@ -44,7 +44,7 @@
             <param name="dataRequest">请求Json字符串</param>
             <returns></returns>
         </member>
-        <member name="M:shuiyintong.Api.Controllers.SPDBankController.AcctInfoQry(shuiyintong.Entity.SPDBankEntity.SPDBankReq.AccountReq)">
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.AcctInfo(shuiyintong.Entity.SPDBankEntity.SPDBankReq.AccountReq)">
             <summary>
             获取账户信息
             </summary>
@@ -67,6 +67,12 @@
             单笔划拨结果查询
             </summary>
             <param name="snglTrsfRstlQryReq">请求参数</param>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.ElectRecptApplction(shuiyintong.Entity.SPDBankEntity.SPDBankReq.ElectRecptApplctionReq)">
+            <summary>
+            电子回单申请
+            </summary>
+            <param name="electRecptApplctionReq">请求参数</param>
         </member>
         <member name="T:shuiyintong.Api.Program">
             <summary>

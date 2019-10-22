@@ -30,7 +30,7 @@
         /// <summary>
         /// 账户信息
         /// </summary>
-        public string AcctInfoQry { get; set; }
+        public string AcctInfo { get; set; }
         /// <summary>
         /// 账户信息查询
         /// </summary>
@@ -43,6 +43,10 @@
         /// 单笔划拨结果
         /// </summary>
         public string SnglTrsfRstlQry { get; set; }
+        /// <summary>
+        /// 电子回单申请
+        /// </summary>
+        public string ElectRecptApplction { get; set; }
 
     }
 }

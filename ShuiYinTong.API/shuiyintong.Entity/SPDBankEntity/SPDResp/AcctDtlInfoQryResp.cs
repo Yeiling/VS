@@ -38,12 +38,14 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDResp
         /// <summary>
         /// 详细信息数组
         /// </summary>
-        public List<detailQryArray> detailQryArray { get; set; }
+        public List<detailQryArrayItem> detailQryArray { get; set; }
 
     }
 
-
-    public class detailQryArray
+    /// <summary>
+    /// 详情信息
+    /// </summary>
+    public class detailQryArrayItem
     {
         /// <summary>
         /// 交易日期

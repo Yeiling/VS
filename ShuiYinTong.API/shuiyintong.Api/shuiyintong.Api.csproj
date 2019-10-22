@@ -31,4 +31,6 @@
     <ProjectReference Include="..\shuiyintong.Entity\shuiyintong.Entity.csproj" />
     <ProjectReference Include="..\shuiyintong.SPDB\shuiyintong.SPDB.csproj" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JSONSchema="" /></VisualStudio></ProjectExtensions>
 </Project>

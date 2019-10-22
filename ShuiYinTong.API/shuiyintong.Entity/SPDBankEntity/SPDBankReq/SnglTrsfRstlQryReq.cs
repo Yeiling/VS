@@ -6,11 +6,11 @@
     public class SnglTrsfRstlQryReq
     {
         /// <summary>
-        /// 商户流水号
+        /// 商户流水号---必填
         /// </summary>
         public string merSeqno { get; set; }
         /// <summary>
-        /// 付款人账号
+        /// 付款人账号---必填
         /// </summary>
         public string payAcct { get; set; }
 

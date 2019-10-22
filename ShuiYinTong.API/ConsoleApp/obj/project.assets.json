@@ -3348,11 +3348,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\GitHubProject\\ShuiYinTong.API\\ConsoleApp\\ConsoleApp.csproj",
+      "projectUniqueName": "F:\\Project\\ConsoleApp\\ConsoleApp.csproj",
       "projectName": "ConsoleApp",
-      "projectPath": "F:\\GitHubProject\\ShuiYinTong.API\\ConsoleApp\\ConsoleApp.csproj",
+      "projectPath": "F:\\Project\\ConsoleApp\\ConsoleApp.csproj",
       "packagesPath": "C:\\Users\\Mypc\\.nuget\\packages\\",
-      "outputPath": "F:\\GitHubProject\\ShuiYinTong.API\\ConsoleApp\\obj\\",
+      "outputPath": "F:\\Project\\ConsoleApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3371,14 +3371,14 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "F:\\GitHubProject\\ShuiYinTong.API\\shuiyintong.dbutils\\shuiyintong.DBUtils.csproj": {
-              "projectPath": "F:\\GitHubProject\\ShuiYinTong.API\\shuiyintong.dbutils\\shuiyintong.DBUtils.csproj"
+            "F:\\Project\\shuiyintong.dbutils\\shuiyintong.DBUtils.csproj": {
+              "projectPath": "F:\\Project\\shuiyintong.dbutils\\shuiyintong.DBUtils.csproj"
             },
-            "F:\\GitHubProject\\ShuiYinTong.API\\shuiyintong.Entity\\shuiyintong.Entity.csproj": {
-              "projectPath": "F:\\GitHubProject\\ShuiYinTong.API\\shuiyintong.Entity\\shuiyintong.Entity.csproj"
+            "F:\\Project\\shuiyintong.Entity\\shuiyintong.Entity.csproj": {
+              "projectPath": "F:\\Project\\shuiyintong.Entity\\shuiyintong.Entity.csproj"
             },
-            "F:\\GitHubProject\\ShuiYinTong.API\\shuiyintong.SPDB\\shuiyintong.SPDB.csproj": {
-              "projectPath": "F:\\GitHubProject\\ShuiYinTong.API\\shuiyintong.SPDB\\shuiyintong.SPDB.csproj"
+            "F:\\Project\\shuiyintong.SPDB\\shuiyintong.SPDB.csproj": {
+              "projectPath": "F:\\Project\\shuiyintong.SPDB\\shuiyintong.SPDB.csproj"
             }
           }
         }

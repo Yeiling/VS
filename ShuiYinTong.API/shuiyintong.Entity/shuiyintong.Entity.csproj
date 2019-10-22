@@ -6,7 +6,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <OutputPath>F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.1\</OutputPath>
-    <DocumentationFile>F:\Project\shuiyintong.Entity\shuiyintong.Entity.xml</DocumentationFile>
+    <DocumentationFile>F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.1\shuiyintong.Entity.xml</DocumentationFile>
   </PropertyGroup>
 
 </Project>
