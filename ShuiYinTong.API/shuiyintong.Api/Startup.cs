@@ -47,7 +47,6 @@ namespace shuiyintong.Api
             {
                 c.SwaggerDoc("v1", new Info { Title = "ShuiYinTong.WebApi", Version = "v1" });
                 //添加xml文件
-
                 var xmlFile = Assembly.GetExecutingAssembly();
                 var path = Path.GetDirectoryName(xmlFile.Location);
                 DirectoryInfo directoryInfo = new DirectoryInfo(path);
@@ -60,7 +59,6 @@ namespace shuiyintong.Api
                         c.IncludeXmlComments(xmlPath, true);
                     }
                 }
-
             });
 
             services.Replace(ServiceDescriptor.Transient<IControllerActivator, ServiceBasedControllerActivator>());
@@ -98,13 +96,10 @@ namespace shuiyintong.Api
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
-            {
                 app.UseDeveloperExceptionPage();
-            }
             else
-            {
                 app.UseHsts();
-            }
+            
             app.UseHttpsRedirection();
 
             // 启用Swagger中间件

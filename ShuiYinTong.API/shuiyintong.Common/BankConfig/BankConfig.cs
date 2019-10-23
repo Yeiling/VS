@@ -47,6 +47,10 @@
         /// 电子回单申请
         /// </summary>
         public string ElectRecptApplction { get; set; }
+        /// <summary>
+        /// 三方解约
+        /// </summary>
+        public string FncThdCncl { get; set; }
 
     }
 }

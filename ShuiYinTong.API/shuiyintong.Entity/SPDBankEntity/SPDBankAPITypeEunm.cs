@@ -37,8 +37,11 @@ namespace shuiyintong.Entity.SPDBankEntity
             /// </summary>
             [Description("电子回单申请")]
             ElectRecptApplction = 104,
-
-
+            /// <summary>
+            /// 三方解约
+            /// </summary>
+            [Description("三方解约")]
+            FncThdCncl =105
 
         }
     }

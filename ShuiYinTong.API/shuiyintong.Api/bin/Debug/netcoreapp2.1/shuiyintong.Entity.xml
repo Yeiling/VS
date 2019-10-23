@@ -150,6 +150,11 @@
             电子回单申请接口
             </summary>
         </member>
+        <member name="F:shuiyintong.Entity.SPDBankEntity.SPDBankAPITypeEunm.SPDBankAPIType.FncThdCncl">
+            <summary>
+            三方解约
+            </summary>
+        </member>
         <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankReq.AccountReq">
             <summary>
             银行账户信息请求类型
@@ -228,6 +233,31 @@
         <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankReq.ElectRecptApplctionReq.txnSeqNo">
             <summary>
             传票组内序号---必填
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankReq.FncThdCnclReq">
+            <summary>
+            三方解约请求类型
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankReq.FncThdCnclReq.clientNo">
+            <summary>
+            客户号---必填
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankReq.FncThdCnclReq.signAcctNo">
+            <summary>
+            签约账号---必填
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankReq.FncThdCnclReq.aprCrEpClntAtNo">
+            <summary>
+            审批核心企业账号---必填
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankReq.FncThdCnclReq.aprCrEpCltChsNm">
+            <summary>
+            审批核心企业中文名---必填
             </summary>
         </member>
         <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankReq.SingleTransferReq">
@@ -528,6 +558,161 @@
         <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.eRecptAplInfoItem.formNo">
             <summary>
             表单编号
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.SPDBankEntity.SPDResp.FncThdCnclResp">
+            <summary>
+            三方解约返回类型
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.FncThdCnclResp.statusMsg">
+            <summary>
+            返回信息
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.FncThdCnclResp.statusCode">
+            <summary>
+            返回状态码
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.FncThdCnclResp.transNo">
+            <summary>
+            交易流水号
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.FncThdCnclResp.clientNo">
+            <summary>
+            客户号
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.FncThdCnclResp.signStatus">
+            <summary>
+            签约状态
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.FncThdCnclResp.corpUnInfo">
+            <summary>
+            冻结信息列表
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.FncThdCnclResp.cntlFlag">
+            <summary>
+            对公账户控制标志
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.FncThdCnclResp.returnSt">
+            <summary>
+            返回状态
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.FncThdCnclResp.signNo">
+            <summary>
+            签约编号
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.FncThdCnclResp.signSt">
+            <summary>
+            签约状态
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.FncThdCnclResp.tranStatus">
+            <summary>
+            交易状态
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.SPDBankEntity.SPDResp.corpUnInfoItem">
+            <summary>
+            冻结信息详情
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.corpUnInfoItem.bussId">
+            <summary>
+            冻结控制编号
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.corpUnInfoItem.acctNo">
+            <summary>
+            帐号
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.corpUnInfoItem.clientName">
+            <summary>
+            冻结控制客户名称
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.corpUnInfoItem.ccy">
+            <summary>
+            币种
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.corpUnInfoItem.cashRateFlag">
+            <summary>
+            钞汇标志
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.corpUnInfoItem.frzFlag">
+            <summary>
+            冻结控制方式代码
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.corpUnInfoItem.pcsMode">
+            <summary>
+            解冻解控方式代码
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.corpUnInfoItem.confirmFlag">
+            <summary>
+            冻结控制生效标志
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.corpUnInfoItem.unfrzAmt">
+            <summary>
+            解冻解控金额
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.corpUnInfoItem.remainLimit">
+            <summary>
+            剩余控制金额
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.corpUnInfoItem.vldStrtDt">
+            <summary>
+            控制日期
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.corpUnInfoItem.expiredDate">
+            <summary>
+            控制到期日
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.corpUnInfoItem.unfrzDate">
+            <summary>
+            解控日期
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.corpUnInfoItem.cmntInfo">
+            <summary>
+            冻结控制说明
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.corpUnInfoItem.opertorName">
+            <summary>
+            执行执法人员名称
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.corpUnInfoItem.empNo">
+            <summary>
+            员工编号
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.corpUnInfoItem.telephone">
+            <summary>
+            冻结控制联系电话
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.corpUnInfoItem.rptPath">
+            <summary>
+            报表路径
             </summary>
         </member>
         <member name="T:shuiyintong.Entity.SPDBankEntity.SPDResp.SingleTransferResp">

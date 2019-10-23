@@ -74,6 +74,12 @@
             </summary>
             <param name="electRecptApplctionReq">请求参数</param>
         </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.FncThdCncl(shuiyintong.Entity.SPDBankEntity.SPDBankReq.FncThdCnclReq)">
+            <summary>
+            三方解约
+            </summary>
+            <param name="fncThdCnclReq">请求参数</param>
+        </member>
         <member name="T:shuiyintong.Api.Program">
             <summary>
             主程序

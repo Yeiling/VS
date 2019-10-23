@@ -306,6 +306,57 @@ namespace shuiyintong.Api.Controllers
             }
         }
 
+        /// <summary>
+        /// 三方解约
+        /// </summary>
+        /// <param name="fncThdCnclReq">请求参数</param>
+        [HttpPost]
+        public void FncThdCncl([FromBody]FncThdCnclReq fncThdCnclReq)
+        {
+            var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
+            NewLifeRedisHelper redis;
+            string key = ((int)BankType.SPDBank).ToString() + "-" + ((int)SPDBankAPIType.FncThdCncl).ToString() + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
+            int code = 0; //http请求错误码
+            byte responseType; //返回类型
+            BaseLog log = new BaseLog //日志对象
+            {
+                DateTime = Now,
+                APICode = (int)SPDBankAPIType.FncThdCncl,
+                APIName = SPDBankAPIType.FncThdCncl.GetDescription()
+            };
+            try
+            {
+                var header = GetHeaderSign(fncThdCnclReq, out string dataRequest);
+                HttpClientHelper.POSTRequest(bankConfig.SPDBankConfig.FncThdCncl, dataRequest, header, (statusCode, result) =>
+                {
+                    code = (int)statusCode;
+                    responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                    BaseResponse<string> baseResponse = new BaseResponse<string>
+                    {
+                        Code = code,
+                        Data = result,
+                        ResponseType = responseType,
+                        DateTime = Now
+                    };
+
+                    //Redis保存
+                    key += responseType;
+                    redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.RespDb);
+                    if (redis != null)
+                        redis.Set(key, baseResponse);
+                });
+            }
+            catch (Exception ex)
+            {
+                responseType = (byte)ResponseType.Fail;
+                log.ErrorMsg = ex.Message;
+                key += responseType;
+                //保存日志
+                redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
+                if (redis != null)
+                    redis.Set(key, log);
+            }
+        }
 
         #endregion
 
