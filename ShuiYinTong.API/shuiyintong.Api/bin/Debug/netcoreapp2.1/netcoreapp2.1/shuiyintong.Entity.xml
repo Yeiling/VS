@@ -155,6 +155,11 @@
             三方解约
             </summary>
         </member>
+        <member name="F:shuiyintong.Entity.SPDBankEntity.SPDBankAPITypeEunm.SPDBankAPIType.RexgAddInfoQry">
+            <summary>
+            退汇附加信息查询
+            </summary>
+        </member>
         <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankReq.AccountReq">
             <summary>
             银行账户信息请求类型
@@ -258,6 +263,16 @@
         <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankReq.FncThdCnclReq.aprCrEpCltChsNm">
             <summary>
             审批核心企业中文名---必填
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankReq.RexgAddInfoQryReq">
+            <summary>
+            退汇附加信息查询请求类型
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankReq.RexgAddInfoQryReq.withdrawBussId">
+            <summary>
+            退汇业务编号
             </summary>
         </member>
         <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankReq.SingleTransferReq">
@@ -713,6 +728,61 @@
         <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.corpUnInfoItem.rptPath">
             <summary>
             报表路径
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.SPDBankEntity.SPDResp.RexgAddInfoQryResp">
+            <summary>
+            退汇附加信息查询返回类型
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.RexgAddInfoQryResp.statusMsg">
+            <summary>
+            返回信息
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.RexgAddInfoQryResp.statusCode">
+            <summary>
+            返回状态码
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.RexgAddInfoQryResp.transNo">
+            <summary>
+            交易流水号
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.RexgAddInfoQryResp.withdrawBussId">
+            <summary>
+            退汇业务编号
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.RexgAddInfoQryResp.payBussId">
+            <summary>
+            原往账业务编号
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.RexgAddInfoQryResp.rexgRsn">
+            <summary>
+            退汇原因
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.RexgAddInfoQryResp.rexgRsn1">
+            <summary>
+            退汇原因1
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.RexgAddInfoQryResp.rexgRsn2">
+            <summary>
+            退汇原因2
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.RexgAddInfoQryResp.rexgRsn3">
+            <summary>
+            退汇原因3
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDResp.RexgAddInfoQryResp.rexgRsn4">
+            <summary>
+            退汇原因4
             </summary>
         </member>
         <member name="T:shuiyintong.Entity.SPDBankEntity.SPDResp.SingleTransferResp">

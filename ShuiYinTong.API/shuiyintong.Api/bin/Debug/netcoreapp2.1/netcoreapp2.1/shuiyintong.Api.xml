@@ -80,6 +80,12 @@
             </summary>
             <param name="fncThdCnclReq">请求参数</param>
         </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.RexgAddInfoQry(shuiyintong.Entity.SPDBankEntity.SPDBankReq.RexgAddInfoQryReq)">
+            <summary>
+            退汇附加信息查询
+            </summary>
+            <param name="rexgAddInfoQryReq">请求参数</param>
+        </member>
         <member name="T:shuiyintong.Api.Program">
             <summary>
             主程序

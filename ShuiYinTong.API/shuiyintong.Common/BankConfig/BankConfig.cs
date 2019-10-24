@@ -51,6 +51,12 @@
         /// 三方解约
         /// </summary>
         public string FncThdCncl { get; set; }
+        /// <summary>
+        /// 退汇附加信息查询
+        /// </summary>
+        public string RexgAddInfoQry { get; set; }
+
+
 
     }
 }

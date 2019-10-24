@@ -41,7 +41,15 @@ namespace shuiyintong.Entity.SPDBankEntity
             /// 三方解约
             /// </summary>
             [Description("三方解约")]
-            FncThdCncl =105
+            FncThdCncl = 105,
+            /// <summary>
+            /// 退汇附加信息查询
+            /// </summary>
+            [Description("退汇附加信息查询")]
+            RexgAddInfoQry = 106,
+
+
+
 
         }
     }
