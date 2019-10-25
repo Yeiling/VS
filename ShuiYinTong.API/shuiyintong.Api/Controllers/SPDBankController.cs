@@ -2,12 +2,14 @@
 using shuiyintong.Common;
 using shuiyintong.Common.Extend;
 using shuiyintong.DBUtils;
+using shuiyintong.DBUtils.IService;
+using shuiyintong.DBUtils.SYT_apiDB_TestEntity;
 using shuiyintong.Entity;
 using shuiyintong.Entity.SPDBankEntity.SPDBankReq;
+using shuiyintong.Entity.SPDBankEntity.SPDResp;
 using shuiyintong.SPDB;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using static shuiyintong.Entity.Enums.BankTypeEum;
 using static shuiyintong.Entity.Enums.RedisDBEnum;
 using static shuiyintong.Entity.Enums.RespCodeEnum;
@@ -22,7 +24,11 @@ namespace shuiyintong.Api.Controllers
     /// </summary>
     public class SPDBankController : BaseController
     {
-        //public IBaseService<view_DM_Api_Amount> Api_AmountService { get; set; }
+        /// <summary>
+        /// 账户信息注入
+        /// </summary>
+        public IBaseService<AcctDtlInfoQry> AcctDtlInfoServer { get; set; }
+
 
         #region 接口签名
 
@@ -131,11 +137,27 @@ namespace shuiyintong.Api.Controllers
                         DateTime = Now
                     };
 
+                    var rr = result.ToObject<AcctDtlInfoQryResp>();
+                    AcctDtlInfoQry model = new AcctDtlInfoQry
+                    {
+                        statusMsg = "",//rr.statusMsg,
+                        statusCode = "",//rr.statusMsg,
+                        transNo = "",//rr.transNo,
+                        totalCount = "",//rr.totalCount,
+                        acctNo = "",//rr.acctNo,
+                        currencyCode = "",// rr.currencyCode,
+                        cifName = "",//rr.cifName,
+                        detailQryArray = "",//rr.detailQryArray.ToJson().Replace("\r\n", ""),
+                    };
+                    var b = AcctDtlInfoServer.AddOne(model);
+
+
                     //Redis保存
                     key += responseType;
                     redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.RespDb);
                     if (redis != null)
                         redis.Set(key, baseResponse);
+
                 });
             }
             catch (Exception ex)
@@ -410,6 +432,60 @@ namespace shuiyintong.Api.Controllers
                     redis.Set(key, log);
             }
         }
+
+        /// <summary>
+        /// 根据抹账流水查原往账流水
+        /// </summary>
+        /// <param name="bnkInfoQryCombntnTranReq">请求参数</param>
+        [HttpPost]
+        public void BnkInfoQryCombntnTran([FromBody]BnkInfoQryCombntnTranReq bnkInfoQryCombntnTranReq)
+        {
+            var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
+            NewLifeRedisHelper redis;
+            string key = ((int)BankType.SPDBank).ToString() + "-" + ((int)SPDBankAPIType.BnkInfoQryCombntnTran).ToString() + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
+            int code = 0; //http请求错误码
+            byte responseType; //返回类型
+            BaseLog log = new BaseLog //日志对象
+            {
+                DateTime = Now,
+                APICode = (int)SPDBankAPIType.BnkInfoQryCombntnTran,
+                APIName = SPDBankAPIType.BnkInfoQryCombntnTran.GetDescription()
+            };
+            try
+            {
+                var header = GetHeaderSign(bnkInfoQryCombntnTranReq, out string dataRequest);
+                HttpClientHelper.POSTRequest(bankConfig.SPDBankConfig.BnkInfoQryCombntnTran, dataRequest, header, (statusCode, result) =>
+                {
+                    code = (int)statusCode;
+                    responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                    BaseResponse<string> baseResponse = new BaseResponse<string>
+                    {
+                        Code = code,
+                        Data = result,
+                        ResponseType = responseType,
+                        DateTime = Now
+                    };
+
+                    //Redis保存
+                    key += responseType;
+                    redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.RespDb);
+                    if (redis != null)
+                        redis.Set(key, baseResponse);
+                });
+            }
+            catch (Exception ex)
+            {
+                responseType = (byte)ResponseType.Fail;
+                log.ErrorMsg = ex.Message;
+                key += responseType;
+                //保存日志
+                redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
+                if (redis != null)
+                    redis.Set(key, log);
+            }
+        }
+
+
 
 
 

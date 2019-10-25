@@ -47,9 +47,11 @@ namespace shuiyintong.Entity.SPDBankEntity
             /// </summary>
             [Description("退汇附加信息查询")]
             RexgAddInfoQry = 106,
-
-
-
+            /// <summary>
+            /// 根据抹账流水查原往账流水
+            /// </summary>
+            [Description("根据抹账流水查原往账流水")]
+            BnkInfoQryCombntnTran =107,
 
         }
     }

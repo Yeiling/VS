@@ -7,16 +7,17 @@ namespace shuiyintong.DBUtils
 {
     public class SqlSugarHelper
     {
-        private static SqlSugarClient SqlClient;
-        private static SimpleClient SimpleClient;
+        private SqlSugarClient SqlClient;
+        private SimpleClient SimpleClient;
 
+        #region 单例模式
         private static SqlSugarHelper sqlSugarHelper = null;
         private SqlSugarHelper() { }
         public SqlSugarHelper(string conn, DbType DBtype = DbType.SqlServer)
         {
             SqlClient = new SqlSugarClient(new ConnectionConfig()
             {
-                ConnectionString = conn,//"server=.;uid=sa;pwd=@jhl85661501;database=SqlSugar4XTest",
+                ConnectionString = conn,
                 DbType = DBtype,//设置数据库类型
                 IsAutoCloseConnection = true,//自动释放数据务，如果存在事务，在事务结束后释放
                 InitKeyType = InitKeyType.Attribute //从实体特性中读取主键自增列信息
@@ -36,6 +37,7 @@ namespace shuiyintong.DBUtils
 
             return sqlSugarHelper;
         }
+        #endregion
 
         private void SqlClientAct(Action<SqlSugarClient> act) => act(SqlClient);
         private void SqlClientAct<T>(Action<SqlSugarClient> act) => act(SqlClient);
@@ -54,6 +56,6 @@ namespace shuiyintong.DBUtils
         public IEnumerable<T> GetList<T>() where T : class, new() => SimpleClientFunc(sc => sc.GetList<T>());
 
 
-        public void TableToEntity(string path, string nameSpaces) => SqlClientAct(sc => sc.DbFirst.CreateClassFile(path, nameSpaces));
+        public void TableToEntity(string path, string nameSpaces) => SqlClientAct(sc => sc.DbFirst.IsCreateAttribute().CreateClassFile(path, nameSpaces));
     }
 }

@@ -16,28 +16,24 @@ namespace shuiyintong.DBUtils.Service
         /// <summary>
         /// 上下文对象
         /// </summary>
-        private static DBContext<T> dBContext;
+        private DBContext dBContext;
         /// <summary>
         /// 数据处理对象 
         /// </summary>
-        private static SqlSugarClient DB;
+        private SqlSugarClient DB;
         /// <summary>
         /// 实体数据处理对象 
         /// </summary>
-        private static SimpleClient<T> EntityDB;
-
+        private SimpleClient<T> EntityDB;
 
         #endregion
 
         #region 构造函数
         public BaseService()
         {
-            if (dBContext == null)
-            {
-                dBContext = DBContext<T>.GetDBContext(conn, dbType);
-                DB = dBContext.SqlClient;
-                EntityDB = dBContext.SimpleClient;
-            }
+            DB = DBContext.GetDBContext(conn, dbType);
+            if (DB != null)
+                EntityDB = DB.GetSimpleClient<T>();
         }
         #endregion
 

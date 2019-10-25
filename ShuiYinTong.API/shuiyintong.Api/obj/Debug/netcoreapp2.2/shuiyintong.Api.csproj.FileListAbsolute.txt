@@ -9,8 +9,6 @@ F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.1\netcoreapp2.2\shuiyintong.DBU
 F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.1\netcoreapp2.2\shuiyintong.SPDB.dll
 F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.1\netcoreapp2.2\shuiyintong.Common.pdb
 F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.1\netcoreapp2.2\shuiyintong.DBUtils.pdb
-F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.1\netcoreapp2.2\shuiyintong.Entity.pdb
-F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.1\netcoreapp2.2\shuiyintong.Entity.xml
 F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.1\netcoreapp2.2\shuiyintong.SPDB.pdb
 F:\Project\shuiyintong.Api\obj\Debug\netcoreapp2.2\shuiyintong.Api.csprojAssemblyReference.cache
 F:\Project\shuiyintong.Api\obj\Debug\netcoreapp2.2\shuiyintong.Api.csproj.CoreCompileInputs.cache
@@ -22,3 +20,5 @@ F:\Project\shuiyintong.Api\obj\Debug\netcoreapp2.2\shuiyintong.Api.RazorTargetAs
 F:\Project\shuiyintong.Api\obj\Debug\netcoreapp2.2\shuiyintong.Api.csproj.CopyComplete
 F:\Project\shuiyintong.Api\obj\Debug\netcoreapp2.2\shuiyintong.Api.dll
 F:\Project\shuiyintong.Api\obj\Debug\netcoreapp2.2\shuiyintong.Api.pdb
+F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.1\netcoreapp2.2\shuiyintong.Entity.pdb
+F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.1\netcoreapp2.2\shuiyintong.Entity.xml

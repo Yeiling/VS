@@ -13,4 +13,8 @@
     <ProjectReference Include="..\shuiyintong.Common\shuiyintong.Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="SYT_apiDB_TestEntity\" />
+  </ItemGroup>
+
 </Project>

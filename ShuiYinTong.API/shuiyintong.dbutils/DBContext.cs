@@ -2,14 +2,12 @@
 
 namespace shuiyintong.DBUtils
 {
-    public class DBContext<T> where T : class, new()
+    public class DBContext
     {
-        public SqlSugarClient SqlClient;
-        public SimpleClient<T> SimpleClient;
+        public static SqlSugarClient SqlClient;
 
+        public static DBContext dBContext;
 
-        #region 单例模式
-        private static DBContext<T> dBContext = null;
         private DBContext() { }
         public DBContext(string conn, DbType DBtype = DbType.SqlServer)
         {
@@ -21,17 +19,20 @@ namespace shuiyintong.DBUtils
                 InitKeyType = InitKeyType.Attribute, //从实体特性中读取主键自增列信息
                 IsShardSameThread = true ///设为true相同线程是同一个SqlConnection
             });
-            SimpleClient = SqlClient.GetSimpleClient<T>();
         }
-        #endregion
-        
 
-        public static DBContext<T> GetDBContext(string conn, DbType DBtype = DbType.SqlServer)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="DBtype"></param>
+        /// <returns></returns>
+        public static SqlSugarClient GetDBContext(string conn, DbType DBtype = DbType.SqlServer)
         {
             if (dBContext == null)
-                dBContext = new DBContext<T>(conn, DBtype);
-            return dBContext;
-        }
+                dBContext = new DBContext(conn, DBtype);
 
+            return SqlClient;
+        }
     }
 }

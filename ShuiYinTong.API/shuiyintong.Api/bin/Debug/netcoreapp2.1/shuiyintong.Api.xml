@@ -36,6 +36,11 @@
             浦发银行接口
             </summary>
         </member>
+        <member name="P:shuiyintong.Api.Controllers.SPDBankController.AcctDtlInfoServer">
+            <summary>
+            账户信息注入
+            </summary>
+        </member>
         <member name="M:shuiyintong.Api.Controllers.SPDBankController.GetHeaderSign(System.Object,System.String@)">
             <summary>
             获取签名
@@ -85,6 +90,12 @@
             退汇附加信息查询
             </summary>
             <param name="rexgAddInfoQryReq">请求参数</param>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.BnkInfoQryCombntnTran(shuiyintong.Entity.SPDBankEntity.SPDBankReq.BnkInfoQryCombntnTranReq)">
+            <summary>
+            根据抹账流水查原往账流水
+            </summary>
+            <param name="bnkInfoQryCombntnTranReq">请求参数</param>
         </member>
         <member name="T:shuiyintong.Api.Program">
             <summary>

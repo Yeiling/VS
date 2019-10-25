@@ -55,6 +55,11 @@
         /// 退汇附加信息查询
         /// </summary>
         public string RexgAddInfoQry { get; set; }
+        /// <summary>
+        /// 根据抹账流水查原往账流水
+        /// </summary>
+        public string BnkInfoQryCombntnTran { get; set; }
+
 
 
 
