@@ -14,13 +14,9 @@ namespace shuiyintong.DBUtils.Service
         private readonly DbType dbType = DbType.SqlServer;
 
         /// <summary>
-        /// 上下文对象
+        /// 数据库连接对象
         /// </summary>
-        private DBContext dBContext;
-        /// <summary>
-        /// 数据处理对象 
-        /// </summary>
-        private SqlSugarClient DB;
+        private static SqlSugarClient DB;
         /// <summary>
         /// 实体数据处理对象 
         /// </summary>
@@ -31,9 +27,10 @@ namespace shuiyintong.DBUtils.Service
         #region 构造函数
         public BaseService()
         {
-            DB = DBContext.GetDBContext(conn, dbType);
-            if (DB != null)
-                EntityDB = DB.GetSimpleClient<T>();
+            if (DB == null)
+                DB = DBContext.GetDBContext(conn, dbType);
+
+            EntityDB = DB.GetSimpleClient<T>();
         }
         #endregion
 

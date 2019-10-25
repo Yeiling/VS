@@ -28,7 +28,7 @@ namespace shuiyintong.Api.Controllers
         /// 账户信息注入
         /// </summary>
         public IBaseService<AcctDtlInfoQry> AcctDtlInfoServer { get; set; }
-
+          
 
         #region 接口签名
 
@@ -140,23 +140,23 @@ namespace shuiyintong.Api.Controllers
                     var rr = result.ToObject<AcctDtlInfoQryResp>();
                     AcctDtlInfoQry model = new AcctDtlInfoQry
                     {
-                        statusMsg = "",//rr.statusMsg,
-                        statusCode = "",//rr.statusMsg,
-                        transNo = "",//rr.transNo,
-                        totalCount = "",//rr.totalCount,
-                        acctNo = "",//rr.acctNo,
-                        currencyCode = "",// rr.currencyCode,
-                        cifName = "",//rr.cifName,
-                        detailQryArray = "",//rr.detailQryArray.ToJson().Replace("\r\n", ""),
+                        statusMsg = rr.statusMsg,
+                        statusCode = rr.statusCode,
+                        transNo = rr.transNo,
+                        totalCount = rr.totalCount,
+                        acctNo = rr.acctNo,
+                        currencyCode = rr.currencyCode,
+                        cifName = rr.cifName,
+                        detailQryArray = rr.detailQryArray.ToJson(),
                     };
                     var b = AcctDtlInfoServer.AddOne(model);
 
 
                     //Redis保存
-                    key += responseType;
-                    redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.RespDb);
-                    if (redis != null)
-                        redis.Set(key, baseResponse);
+                    //key += responseType;
+                    //redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.RespDb);
+                    //if (redis != null)
+                    //    redis.Set(key, baseResponse);
 
                 });
             }
