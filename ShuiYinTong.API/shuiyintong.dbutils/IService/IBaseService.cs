@@ -14,16 +14,19 @@ namespace shuiyintong.DBUtils.IService
         #region 删
         bool DeleteById(dynamic id);
         bool DeleteList(Expression<Func<T, bool>> exp);
+        bool Delete(T deleteObj);
         #endregion
 
         #region 改
         bool ModefyOne(T model);
         bool Modefylist(T[] entityArr);
+        bool Modefy(Expression<Func<T, bool>> exp, Expression<Func<T, T>> columns);
         #endregion
 
         #region 查
         T GetById(dynamic id);
         IEnumerable<T> GetList(Expression<Func<T, bool>> exp);
+        IEnumerable<T> GetPageList(Expression<Func<T, bool>> exp, int pageIndex, int pageSize, ref int totalCount);
         #endregion
 
     }

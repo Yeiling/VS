@@ -66,6 +66,12 @@ namespace shuiyintong.DBUtils.Service
         /// <param name="exp">表达式</param>
         /// <returns></returns>
         public bool DeleteList(Expression<Func<T, bool>> exp) => EntityDB.Delete(exp);
+        /// <summary>
+        /// 删除对象
+        /// </summary>
+        /// <param name="Obj"></param>
+        /// <returns></returns>
+        public bool Delete(T Obj) => EntityDB.Delete(Obj);
 
 
         /// <summary>
@@ -80,7 +86,14 @@ namespace shuiyintong.DBUtils.Service
         /// <param name="exp">表达式</param>
         /// <returns></returns>
         public IEnumerable<T> GetList(Expression<Func<T, bool>> exp) => EntityDB.GetList(exp);
-
+        /// <summary>
+        /// 分页查询
+        /// </summary>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="totalCount"></param>
+        /// <returns></returns>
+        public IEnumerable<T> GetPageList(Expression<Func<T, bool>> exp, int pageIndex, int pageSize, ref int totalCount) => DB.Queryable<T>().Where(exp).ToPageList(pageIndex, pageSize, ref totalCount);
 
         /// <summary>
         /// 批量修改
@@ -94,7 +107,12 @@ namespace shuiyintong.DBUtils.Service
         /// <param name="model">对象</param>
         /// <returns></returns>
         public bool ModefyOne(T model) => EntityDB.Update(model);
-
-
+        /// <summary>
+        /// 依据表达式批量修改更新自定义列
+        /// </summary>
+        /// <param name="columns">列</param>
+        /// <param name="exp">表达式</param>
+        /// <returns></returns>
+        public bool Modefy(Expression<Func<T, bool>> exp, Expression<Func<T, T>> columns) => EntityDB.Update(columns, exp);
     }
 }

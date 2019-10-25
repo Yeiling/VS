@@ -10,6 +10,7 @@ using shuiyintong.Entity.SPDBankEntity.SPDResp;
 using shuiyintong.SPDB;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using static shuiyintong.Entity.Enums.BankTypeEum;
 using static shuiyintong.Entity.Enums.RedisDBEnum;
 using static shuiyintong.Entity.Enums.RespCodeEnum;
@@ -28,7 +29,43 @@ namespace shuiyintong.Api.Controllers
         /// 账户信息注入
         /// </summary>
         public IBaseService<AcctDtlInfoQry> AcctDtlInfoServer { get; set; }
-          
+
+        /// <summary>
+        /// 测试
+        /// </summary>
+        [HttpPost]
+        public void Test()
+        {
+            //分页查询
+            int totalCount = 0;
+            var rrr = AcctDtlInfoServer.GetPageList(aa => aa.ID >= 1000, 1, 3, ref totalCount).ToList();
+            //单个修改
+            //foreach (var r in rrr)
+            //{
+            //    r.statusMsg = "AAA";
+            //    var b = AcctDtlInfoServer.ModefyOne(r);
+            //}
+            //批量修改
+            //AcctDtlInfoQry[] lst = new AcctDtlInfoQry[rrr.Count()];
+            //for (int i = 0; i < rrr.Count(); i++)
+            //{
+            //    rrr[i].statusMsg = "AAA";
+            //    lst[i] = rrr[i];
+            //}
+            //var b = AcctDtlInfoServer.Modefylist(lst);
+            //批量修改
+            //var tb = AcctDtlInfoServer.Modefy(ab => ab.ID < 1008, info => new AcctDtlInfoQry
+            //{
+            //    statusMsg = "BBB",
+            //    statusCode = "1111"
+            //});
+
+
+            var a = 100;
+            a++;
+        }
+
+
 
         #region 接口签名
 
@@ -137,27 +174,11 @@ namespace shuiyintong.Api.Controllers
                         DateTime = Now
                     };
 
-                    var rr = result.ToObject<AcctDtlInfoQryResp>();
-                    AcctDtlInfoQry model = new AcctDtlInfoQry
-                    {
-                        statusMsg = rr.statusMsg,
-                        statusCode = rr.statusCode,
-                        transNo = rr.transNo,
-                        totalCount = rr.totalCount,
-                        acctNo = rr.acctNo,
-                        currencyCode = rr.currencyCode,
-                        cifName = rr.cifName,
-                        detailQryArray = rr.detailQryArray.ToJson(),
-                    };
-                    var b = AcctDtlInfoServer.AddOne(model);
-
-
                     //Redis保存
-                    //key += responseType;
-                    //redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.RespDb);
-                    //if (redis != null)
-                    //    redis.Set(key, baseResponse);
-
+                    key += responseType;
+                    redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.RespDb);
+                    if (redis != null)
+                        redis.Set(key, baseResponse);
                 });
             }
             catch (Exception ex)
