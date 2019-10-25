@@ -16,19 +16,25 @@ namespace shuiyintong.DBUtils.Service
         /// <summary>
         /// 数据库连接对象
         /// </summary>
-        private static SqlSugarClient DB;
+        private SqlSugarClient DB { get; set; }
         /// <summary>
         /// 实体数据处理对象 
         /// </summary>
-        private SimpleClient<T> EntityDB;
+        private SimpleClient<T> EntityDB { get; set; }
 
         #endregion
 
         #region 构造函数
         public BaseService()
         {
-            if (DB == null)
-                DB = DBContext.GetDBContext(conn, dbType);
+            DB = new SqlSugarClient(new ConnectionConfig()
+            {
+                ConnectionString = conn,
+                DbType = dbType,//设置数据库类型
+                IsAutoCloseConnection = true,//自动释放数据务，如果存在事务，在事务结束后释放
+                InitKeyType = InitKeyType.Attribute, //从实体特性中读取主键自增列信息
+                IsShardSameThread = true ///设为true相同线程是同一个SqlConnection
+            });
 
             EntityDB = DB.GetSimpleClient<T>();
         }
