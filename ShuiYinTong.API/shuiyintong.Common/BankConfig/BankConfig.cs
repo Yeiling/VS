@@ -67,6 +67,22 @@
         /// 支付指令登记
         /// </summary>
         public string PayInsrChk { get; set; }
+        /// <summary>
+        /// 支付指令明细查询
+        /// </summary>
+        public string PayInsrDtlQry { get; set; }
+        /// <summary>
+        /// 支付指令取消
+        /// </summary>
+        public string PayInsrCnl { get; set; }
+        /// <summary>
+        /// 收款人白名单查询
+        /// </summary>
+        public string PayeeWhtLstQry { get; set; }
+        /// <summary>
+        /// 收款人白名单维护
+        /// </summary>
+        public string PayeeWhtLstMntn { get; set; }
 
 
     }

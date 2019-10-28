@@ -102,7 +102,35 @@
             <summary>
             支付指令登记
             </summary>
-            <param name="payInsrChkReq"></param>
+            <param name="payInsrChkReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.PayInsrDtlQry(shuiyintong.Entity.SPDBankEntity.SPDBankReq.PayInsrDtlQryReq)">
+            <summary>
+            支付指令明细查询
+            </summary>
+            <param name="payInsrDtlQryReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.PayInsrCnl(shuiyintong.Entity.SPDBankEntity.SPDBankReq.PayInsrCnlReq)">
+            <summary>
+            支付指令取消
+            </summary>
+            <param name="payInsrCnlReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.PayeeWhtLstQry(shuiyintong.Entity.SPDBankEntity.SPDBankReq.PayeeWhtLstQryReq)">
+            <summary>
+            收款人白名单查询
+            </summary>
+            <param name="payeeWhtLstQryReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.PayeeWhtLstMntn(shuiyintong.Entity.SPDBankEntity.SPDBankReq.PayeeWhtLstMntnReq)">
+            <summary>
+            收款人白名单维护
+            </summary>
+            <param name="payeeWhtLstMntnReq">请求参数</param>
             <returns></returns>
         </member>
         <member name="T:shuiyintong.Api.Program">

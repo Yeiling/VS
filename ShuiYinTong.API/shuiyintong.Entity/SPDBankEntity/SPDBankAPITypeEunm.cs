@@ -51,17 +51,37 @@ namespace shuiyintong.Entity.SPDBankEntity
             /// 根据抹账流水查原往账流水
             /// </summary>
             [Description("根据抹账流水查原往账流水")]
-            BnkInfoQryCombntnTran =107,
+            BnkInfoQryCombntnTran = 107,
             /// <summary>
             /// 单笔资金划拨小额鉴权
             /// </summary>
             [Description("单笔资金划拨小额鉴权")]
-            AuthSmlAmt =108,
+            AuthSmlAmt = 108,
             /// <summary>
             /// 支付指令登记
             /// </summary>
             [Description("支付指令登记")]
-            PayInsrChk =109,
+            PayInsrChk = 109,
+            /// <summary>
+            /// 支付指令明细查询
+            /// </summary>
+            [Description("支付指令明细查询")]
+            PayInsrDtlQry = 110,
+            /// <summary>
+            /// 支付指令取消
+            /// </summary>
+            [Description("支付指令取消")]
+            PayInsrCnl = 111,
+            /// <summary>
+            /// 收款人白名单查询
+            /// </summary>
+            [Description("收款人白名单查询")]
+            PayeeWhtLstQry = 112,
+            /// <summary>
+            /// 收款人白名单维护
+            /// </summary>
+            [Description("收款人白名单维护")]
+            PayeeWhtLstMntn = 113,
 
         }
     }
