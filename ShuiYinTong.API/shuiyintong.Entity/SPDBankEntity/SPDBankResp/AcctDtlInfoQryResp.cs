@@ -1,24 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using shuiyintong.Entity.SPDBankEntity.SPDBankResp;
+using System.Collections.Generic;
 
 namespace shuiyintong.Entity.SPDBankEntity.SPDResp
 {
     /// <summary>
     /// 账户信息查询请求参数对象
     /// </summary>
-    public class AcctDtlInfoQryResp
-    {
-        /// <summary>
-        /// 返回信息
-        /// </summary>
-        public string statusMsg { get; set; }
-        /// <summary>
-        /// 返回状态码
-        /// </summary>
-        public string statusCode { get; set; }
-        /// <summary>
-        /// 交易流水号
-        /// </summary>
-        public string transNo { get; set; }
+    public class AcctDtlInfoQryResp: BaseResp
+    {      
         /// <summary>
         /// 笔数
         /// </summary>

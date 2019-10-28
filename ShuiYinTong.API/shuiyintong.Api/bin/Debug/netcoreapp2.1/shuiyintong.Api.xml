@@ -36,16 +36,6 @@
             浦发银行接口
             </summary>
         </member>
-        <member name="P:shuiyintong.Api.Controllers.SPDBankController.AcctDtlInfoServer">
-            <summary>
-            账户信息注入
-            </summary>
-        </member>
-        <member name="M:shuiyintong.Api.Controllers.SPDBankController.Test">
-            <summary>
-            测试
-            </summary>
-        </member>
         <member name="M:shuiyintong.Api.Controllers.SPDBankController.GetHeaderSign(System.Object,System.String@)">
             <summary>
             获取签名
@@ -101,6 +91,19 @@
             根据抹账流水查原往账流水
             </summary>
             <param name="bnkInfoQryCombntnTranReq">请求参数</param>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.AuthSmlAmt(shuiyintong.Entity.SPDBankEntity.SPDBankReq.AuthSmlAmtReq)">
+            <summary>
+            单笔资金划拨小额鉴权
+            </summary>
+            <param name="authSmlAmt">请求参数</param>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.PayInsrChk(shuiyintong.Entity.SPDBankEntity.SPDBankReq.PayInsrChkReq)">
+            <summary>
+            支付指令登记
+            </summary>
+            <param name="payInsrChkReq"></param>
+            <returns></returns>
         </member>
         <member name="T:shuiyintong.Api.Program">
             <summary>

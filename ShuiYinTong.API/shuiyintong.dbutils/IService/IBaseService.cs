@@ -27,6 +27,7 @@ namespace shuiyintong.DBUtils.IService
         T GetById(dynamic id);
         IEnumerable<T> GetList(Expression<Func<T, bool>> exp);
         IEnumerable<T> GetPageList(Expression<Func<T, bool>> exp, int pageIndex, int pageSize, ref int totalCount);
+        IEnumerable<T> GetListBySQL(string sql);
         #endregion
 
     }

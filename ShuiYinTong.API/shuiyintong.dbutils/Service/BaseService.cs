@@ -81,7 +81,7 @@ namespace shuiyintong.DBUtils.Service
         /// <returns></returns>
         public T GetById(dynamic id) => EntityDB.GetById(id);
         /// <summary>
-        ///条件查询集合对象
+        /// 条件查询集合对象
         /// </summary>
         /// <param name="exp">表达式</param>
         /// <returns></returns>
@@ -94,6 +94,12 @@ namespace shuiyintong.DBUtils.Service
         /// <param name="totalCount"></param>
         /// <returns></returns>
         public IEnumerable<T> GetPageList(Expression<Func<T, bool>> exp, int pageIndex, int pageSize, ref int totalCount) => DB.Queryable<T>().Where(exp).ToPageList(pageIndex, pageSize, ref totalCount);
+        /// <summary>
+        /// SQL查询集合
+        /// </summary>
+        /// <param name="sql">SQL语句</param>
+        /// <returns></returns>
+        public IEnumerable<T> GetListBySQL(string sql) => DB.SqlQueryable<T>(sql).ToList();
 
         /// <summary>
         /// 批量修改
@@ -110,8 +116,8 @@ namespace shuiyintong.DBUtils.Service
         /// <summary>
         /// 依据表达式批量修改更新自定义列
         /// </summary>
-        /// <param name="columns">列</param>
         /// <param name="exp">表达式</param>
+        /// <param name="columns">列</param>
         /// <returns></returns>
         public bool Modefy(Expression<Func<T, bool>> exp, Expression<Func<T, T>> columns) => EntityDB.Update(columns, exp);
     }

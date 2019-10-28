@@ -1,24 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using shuiyintong.Entity.SPDBankEntity.SPDBankResp;
+using System.Collections.Generic;
 
 namespace shuiyintong.Entity.SPDBankEntity.SPDResp
 {
     /// <summary>
     /// 电子回单申请返回类型
     /// </summary>
-    public class ElectRecptApplctionResp
+    public class ElectRecptApplctionResp : BaseResp
     {
-        /// <summary>
-        /// 返回信息
-        /// </summary>
-        public string statusMsg { get; set; }
-        /// <summary>
-        /// 返回状态码
-        /// </summary>
-        public string statusCode { get; set; }
-        /// <summary>
-        /// 交易流水号
-        /// </summary>
-        public string transNo { get; set; }
         /// <summary>
         /// 笔数
         /// </summary>

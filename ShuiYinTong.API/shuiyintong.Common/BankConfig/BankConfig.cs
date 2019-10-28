@@ -59,8 +59,14 @@
         /// 根据抹账流水查原往账流水
         /// </summary>
         public string BnkInfoQryCombntnTran { get; set; }
-
-
+        /// <summary>
+        /// 单笔资金划拨小额鉴权
+        /// </summary>
+        public string AuthSmlAmt { get; set; }
+        /// <summary>
+        /// 支付指令登记
+        /// </summary>
+        public string PayInsrChk { get; set; }
 
 
     }

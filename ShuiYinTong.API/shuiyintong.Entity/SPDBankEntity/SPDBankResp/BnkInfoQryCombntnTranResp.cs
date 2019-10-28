@@ -1,22 +1,12 @@
-﻿namespace shuiyintong.Entity.SPDBankEntity.SPDResp
+﻿using shuiyintong.Entity.SPDBankEntity.SPDBankResp;
+
+namespace shuiyintong.Entity.SPDBankEntity.SPDResp
 {
     /// <summary>
     /// 根据抹账流水查原往账流水请返回类型
     /// </summary>
-    public class BnkInfoQryCombntnTranResp
-    {
-        /// <summary>
-        /// 返回信息
-        /// </summary>
-        public string statusMsg { get; set; }
-        /// <summary>
-        /// 返回状态码
-        /// </summary>
-        public string statusCode { get; set; }
-        /// <summary>
-        /// 交易流水号
-        /// </summary>
-        public string transNo { get; set; }
+    public class BnkInfoQryCombntnTranResp: BaseResp
+    {       
         /// <summary>
         /// 柜员流水号
         /// </summary>

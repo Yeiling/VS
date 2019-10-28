@@ -11,6 +11,7 @@ using shuiyintong.SPDB;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using static shuiyintong.Entity.Enums.BankTypeEum;
 using static shuiyintong.Entity.Enums.RedisDBEnum;
 using static shuiyintong.Entity.Enums.RespCodeEnum;
@@ -28,43 +29,7 @@ namespace shuiyintong.Api.Controllers
         /// <summary>
         /// 账户信息注入
         /// </summary>
-        public IBaseService<AcctDtlInfoQry> AcctDtlInfoServer { get; set; }
-
-        /// <summary>
-        /// 测试
-        /// </summary>
-        [HttpPost]
-        public void Test()
-        {
-            //分页查询
-            int totalCount = 0;
-            var rrr = AcctDtlInfoServer.GetPageList(aa => aa.ID >= 1000, 1, 3, ref totalCount).ToList();
-            //单个修改
-            //foreach (var r in rrr)
-            //{
-            //    r.statusMsg = "AAA";
-            //    var b = AcctDtlInfoServer.ModefyOne(r);
-            //}
-            //批量修改
-            //AcctDtlInfoQry[] lst = new AcctDtlInfoQry[rrr.Count()];
-            //for (int i = 0; i < rrr.Count(); i++)
-            //{
-            //    rrr[i].statusMsg = "AAA";
-            //    lst[i] = rrr[i];
-            //}
-            //var b = AcctDtlInfoServer.Modefylist(lst);
-            //批量修改
-            //var tb = AcctDtlInfoServer.Modefy(ab => ab.ID < 1008, info => new AcctDtlInfoQry
-            //{
-            //    statusMsg = "BBB",
-            //    statusCode = "1111"
-            //});
-
-
-            var a = 100;
-            a++;
-        }
-
+        //public IBaseService<AcctDtlInfoQry> AcctDtlInfoServer { get; set; }
 
 
         #region 接口签名
@@ -94,8 +59,9 @@ namespace shuiyintong.Api.Controllers
         /// </summary>
         /// <param name="accountRequest">请求参数</param>
         [HttpPost]
-        public void AcctInfo([FromBody]AccountReq accountRequest)
+        public string AcctInfo([FromBody]AccountReq accountRequest)
         {
+            string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             NewLifeRedisHelper redis;
             string key = ((int)BankType.SPDBank).ToString() + "-" + ((int)SPDBankAPIType.AcctInfo).ToString() + "-" + Now + "-"; ; //Redis key
@@ -110,24 +76,24 @@ namespace shuiyintong.Api.Controllers
             try
             {
                 var header = GetHeaderSign(accountRequest, out string dataRequest);
-                HttpClientHelper.POSTRequest(bankConfig.SPDBankConfig.AcctInfo, dataRequest, header, (statusCode, result) =>
-                {
-                    code = (int)statusCode;
-                    responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
-                    BaseResponse<string> baseResponse = new BaseResponse<string>
-                    {
-                        Code = code,
-                        Data = result,
-                        ResponseType = responseType,
-                        DateTime = Now
-                    };
+                resultStr = HttpClientHelper.POSTRequest(bankConfig.SPDBankConfig.AcctInfo, dataRequest, header, (statusCode, result) =>
+                 {
+                     code = (int)statusCode;
+                     responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                     BaseResponse<string> baseResponse = new BaseResponse<string>
+                     {
+                         Code = code,
+                         Data = result,
+                         ResponseType = responseType,
+                         DateTime = Now
+                     };
 
-                    //Redis保存
-                    key += responseType;
-                    redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.RespDb);
-                    if (redis != null)
-                        redis.Set(key, baseResponse);
-                });
+                     //Redis保存
+                     key += responseType;
+                     redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.RespDb);
+                     if (redis != null)
+                         redis.Set(key, baseResponse);
+                 });
             }
             catch (Exception ex)
             {
@@ -139,6 +105,7 @@ namespace shuiyintong.Api.Controllers
                 if (redis != null)
                     redis.Set(key, log);
             }
+            return resultStr;
         }
 
         /// <summary>
@@ -146,8 +113,9 @@ namespace shuiyintong.Api.Controllers
         /// </summary>
         /// <param name="acctInfoReq">请求参数</param>
         [HttpPost]
-        public void AcctDtlInfoQry([FromBody]AcctDtlInfoQryReq acctInfoReq)
+        public string AcctDtlInfoQry([FromBody]AcctDtlInfoQryReq acctInfoReq)
         {
+            string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             NewLifeRedisHelper redis;
             string key = ((int)BankType.SPDBank).ToString() + "-" + ((int)SPDBankAPIType.AcctDtlInfoQry).ToString() + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
@@ -162,24 +130,24 @@ namespace shuiyintong.Api.Controllers
             try
             {
                 var header = GetHeaderSign(acctInfoReq, out string dataRequest);
-                HttpClientHelper.POSTRequest(bankConfig.SPDBankConfig.AcctDtlInfoQry, dataRequest, header, (statusCode, result) =>
-                {
-                    code = (int)statusCode;
-                    responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
-                    BaseResponse<string> baseResponse = new BaseResponse<string>
-                    {
-                        Code = code,
-                        Data = result,
-                        ResponseType = responseType,
-                        DateTime = Now
-                    };
+                resultStr = HttpClientHelper.POSTRequest(bankConfig.SPDBankConfig.AcctDtlInfoQry, dataRequest, header, (statusCode, result) =>
+                  {
+                      code = (int)statusCode;
+                      responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                      BaseResponse<string> baseResponse = new BaseResponse<string>
+                      {
+                          Code = code,
+                          Data = result,
+                          ResponseType = responseType,
+                          DateTime = Now
+                      };
 
-                    //Redis保存
-                    key += responseType;
-                    redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.RespDb);
-                    if (redis != null)
-                        redis.Set(key, baseResponse);
-                });
+                      //Redis保存
+                      key += responseType;
+                      redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.RespDb);
+                      if (redis != null)
+                          redis.Set(key, baseResponse);
+                  });
             }
             catch (Exception ex)
             {
@@ -191,6 +159,7 @@ namespace shuiyintong.Api.Controllers
                 if (redis != null)
                     redis.Set(key, log);
             }
+            return resultStr;
         }
 
         /// <summary>
@@ -198,8 +167,9 @@ namespace shuiyintong.Api.Controllers
         /// </summary>
         /// <param name="singleTransferReq">请求参数</param>
         [HttpPost]
-        public void SingleTransfer([FromBody]SingleTransferReq singleTransferReq)
+        public string SingleTransfer([FromBody]SingleTransferReq singleTransferReq)
         {
+            string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             NewLifeRedisHelper redis;
             string key = ((int)BankType.SPDBank).ToString() + "-" + ((int)SPDBankAPIType.SingleTransfer).ToString() + "-" + Now + "-"; ; //Redis key
@@ -214,25 +184,25 @@ namespace shuiyintong.Api.Controllers
             try
             {
                 var header = GetHeaderSign(singleTransferReq, out string dataRequest);
-                HttpClientHelper.POSTRequest(bankConfig.SPDBankConfig.SingleTransfer, dataRequest, header, (statusCode, result) =>
-                {
-                    code = (int)statusCode;
-                    responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
-                    responseType = (byte)ResponseType.Success;
-                    BaseResponse<string> baseResponse = new BaseResponse<string>
-                    {
-                        Code = code,
-                        Data = result,
-                        ResponseType = responseType,
-                        DateTime = Now
-                    };
+                resultStr = HttpClientHelper.POSTRequest(bankConfig.SPDBankConfig.SingleTransfer, dataRequest, header, (statusCode, result) =>
+                  {
+                      code = (int)statusCode;
+                      responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                      responseType = (byte)ResponseType.Success;
+                      BaseResponse<string> baseResponse = new BaseResponse<string>
+                      {
+                          Code = code,
+                          Data = result,
+                          ResponseType = responseType,
+                          DateTime = Now
+                      };
 
-                    //Redis保存
-                    key += responseType;
-                    redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.RespDb);
-                    if (redis != null)
-                        redis.Set(key, baseResponse);
-                });
+                      //Redis保存
+                      key += responseType;
+                      redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.RespDb);
+                      if (redis != null)
+                          redis.Set(key, baseResponse);
+                  });
             }
             catch (Exception ex)
             {
@@ -244,6 +214,7 @@ namespace shuiyintong.Api.Controllers
                 if (redis != null)
                     redis.Set(key, log);
             }
+            return resultStr;
         }
 
         /// <summary>
@@ -251,8 +222,9 @@ namespace shuiyintong.Api.Controllers
         /// </summary>
         /// <param name="snglTrsfRstlQryReq">请求参数</param>
         [HttpPost]
-        public void SnglTrsfRstlQryReq([FromBody]SnglTrsfRstlQryReq snglTrsfRstlQryReq)
+        public string SnglTrsfRstlQryReq([FromBody]SnglTrsfRstlQryReq snglTrsfRstlQryReq)
         {
+            string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             NewLifeRedisHelper redis;
             string key = ((int)BankType.SPDBank).ToString() + "-" + ((int)SPDBankAPIType.SnglTrsfRstlQry).ToString() + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
@@ -267,24 +239,24 @@ namespace shuiyintong.Api.Controllers
             try
             {
                 var header = GetHeaderSign(snglTrsfRstlQryReq, out string dataRequest);
-                HttpClientHelper.POSTRequest(bankConfig.SPDBankConfig.SnglTrsfRstlQry, dataRequest, header, (statusCode, result) =>
-                {
-                    code = (int)statusCode;
-                    responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
-                    BaseResponse<string> baseResponse = new BaseResponse<string>
-                    {
-                        Code = code,
-                        Data = result,
-                        ResponseType = responseType,
-                        DateTime = Now
-                    };
+                resultStr = HttpClientHelper.POSTRequest(bankConfig.SPDBankConfig.SnglTrsfRstlQry, dataRequest, header, (statusCode, result) =>
+                 {
+                     code = (int)statusCode;
+                     responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                     BaseResponse<string> baseResponse = new BaseResponse<string>
+                     {
+                         Code = code,
+                         Data = result,
+                         ResponseType = responseType,
+                         DateTime = Now
+                     };
 
-                    //Redis保存
-                    key += responseType;
-                    redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.RespDb);
-                    if (redis != null)
-                        redis.Set(key, baseResponse);
-                });
+                     //Redis保存
+                     key += responseType;
+                     redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.RespDb);
+                     if (redis != null)
+                         redis.Set(key, baseResponse);
+                 });
             }
             catch (Exception ex)
             {
@@ -296,6 +268,7 @@ namespace shuiyintong.Api.Controllers
                 if (redis != null)
                     redis.Set(key, log);
             }
+            return resultStr;
         }
 
         /// <summary>
@@ -303,8 +276,9 @@ namespace shuiyintong.Api.Controllers
         /// </summary>
         /// <param name="electRecptApplctionReq">请求参数</param>
         [HttpPost]
-        public void ElectRecptApplction([FromBody]ElectRecptApplctionReq electRecptApplctionReq)
+        public string ElectRecptApplction([FromBody]ElectRecptApplctionReq electRecptApplctionReq)
         {
+            string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             NewLifeRedisHelper redis;
             string key = ((int)BankType.SPDBank).ToString() + "-" + ((int)SPDBankAPIType.ElectRecptApplction).ToString() + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
@@ -319,24 +293,24 @@ namespace shuiyintong.Api.Controllers
             try
             {
                 var header = GetHeaderSign(electRecptApplctionReq, out string dataRequest);
-                HttpClientHelper.POSTRequest(bankConfig.SPDBankConfig.ElectRecptApplction, dataRequest, header, (statusCode, result) =>
-                {
-                    code = (int)statusCode;
-                    responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
-                    BaseResponse<string> baseResponse = new BaseResponse<string>
-                    {
-                        Code = code,
-                        Data = result,
-                        ResponseType = responseType,
-                        DateTime = Now
-                    };
+                resultStr = HttpClientHelper.POSTRequest(bankConfig.SPDBankConfig.ElectRecptApplction, dataRequest, header, (statusCode, result) =>
+                  {
+                      code = (int)statusCode;
+                      responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                      BaseResponse<string> baseResponse = new BaseResponse<string>
+                      {
+                          Code = code,
+                          Data = result,
+                          ResponseType = responseType,
+                          DateTime = Now
+                      };
 
-                    //Redis保存
-                    key += responseType;
-                    redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.RespDb);
-                    if (redis != null)
-                        redis.Set(key, baseResponse);
-                });
+                      //Redis保存
+                      key += responseType;
+                      redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.RespDb);
+                      if (redis != null)
+                          redis.Set(key, baseResponse);
+                  });
             }
             catch (Exception ex)
             {
@@ -348,6 +322,7 @@ namespace shuiyintong.Api.Controllers
                 if (redis != null)
                     redis.Set(key, log);
             }
+            return resultStr;
         }
 
         /// <summary>
@@ -355,8 +330,9 @@ namespace shuiyintong.Api.Controllers
         /// </summary>
         /// <param name="fncThdCnclReq">请求参数</param>
         [HttpPost]
-        public void FncThdCncl([FromBody]FncThdCnclReq fncThdCnclReq)
+        public string FncThdCncl([FromBody]FncThdCnclReq fncThdCnclReq)
         {
+            string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             NewLifeRedisHelper redis;
             string key = ((int)BankType.SPDBank).ToString() + "-" + ((int)SPDBankAPIType.FncThdCncl).ToString() + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
@@ -371,24 +347,24 @@ namespace shuiyintong.Api.Controllers
             try
             {
                 var header = GetHeaderSign(fncThdCnclReq, out string dataRequest);
-                HttpClientHelper.POSTRequest(bankConfig.SPDBankConfig.FncThdCncl, dataRequest, header, (statusCode, result) =>
-                {
-                    code = (int)statusCode;
-                    responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
-                    BaseResponse<string> baseResponse = new BaseResponse<string>
-                    {
-                        Code = code,
-                        Data = result,
-                        ResponseType = responseType,
-                        DateTime = Now
-                    };
+                resultStr = HttpClientHelper.POSTRequest(bankConfig.SPDBankConfig.FncThdCncl, dataRequest, header, (statusCode, result) =>
+                 {
+                     code = (int)statusCode;
+                     responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                     BaseResponse<string> baseResponse = new BaseResponse<string>
+                     {
+                         Code = code,
+                         Data = result,
+                         ResponseType = responseType,
+                         DateTime = Now
+                     };
 
-                    //Redis保存
-                    key += responseType;
-                    redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.RespDb);
-                    if (redis != null)
-                        redis.Set(key, baseResponse);
-                });
+                     //Redis保存
+                     key += responseType;
+                     redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.RespDb);
+                     if (redis != null)
+                         redis.Set(key, baseResponse);
+                 });
             }
             catch (Exception ex)
             {
@@ -400,6 +376,7 @@ namespace shuiyintong.Api.Controllers
                 if (redis != null)
                     redis.Set(key, log);
             }
+            return resultStr;
         }
 
         /// <summary>
@@ -407,8 +384,9 @@ namespace shuiyintong.Api.Controllers
         /// </summary>
         /// <param name="rexgAddInfoQryReq">请求参数</param>
         [HttpPost]
-        public void RexgAddInfoQry([FromBody]RexgAddInfoQryReq rexgAddInfoQryReq)
+        public string RexgAddInfoQry([FromBody]RexgAddInfoQryReq rexgAddInfoQryReq)
         {
+            string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             NewLifeRedisHelper redis;
             string key = ((int)BankType.SPDBank).ToString() + "-" + ((int)SPDBankAPIType.RexgAddInfoQry).ToString() + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
@@ -423,24 +401,24 @@ namespace shuiyintong.Api.Controllers
             try
             {
                 var header = GetHeaderSign(rexgAddInfoQryReq, out string dataRequest);
-                HttpClientHelper.POSTRequest(bankConfig.SPDBankConfig.RexgAddInfoQry, dataRequest, header, (statusCode, result) =>
-                {
-                    code = (int)statusCode;
-                    responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
-                    BaseResponse<string> baseResponse = new BaseResponse<string>
-                    {
-                        Code = code,
-                        Data = result,
-                        ResponseType = responseType,
-                        DateTime = Now
-                    };
+                resultStr = HttpClientHelper.POSTRequest(bankConfig.SPDBankConfig.RexgAddInfoQry, dataRequest, header, (statusCode, result) =>
+                  {
+                      code = (int)statusCode;
+                      responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                      BaseResponse<string> baseResponse = new BaseResponse<string>
+                      {
+                          Code = code,
+                          Data = result,
+                          ResponseType = responseType,
+                          DateTime = Now
+                      };
 
-                    //Redis保存
-                    key += responseType;
-                    redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.RespDb);
-                    if (redis != null)
-                        redis.Set(key, baseResponse);
-                });
+                      //Redis保存
+                      key += responseType;
+                      redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.RespDb);
+                      if (redis != null)
+                          redis.Set(key, baseResponse);
+                  });
             }
             catch (Exception ex)
             {
@@ -452,6 +430,7 @@ namespace shuiyintong.Api.Controllers
                 if (redis != null)
                     redis.Set(key, log);
             }
+            return resultStr;
         }
 
         /// <summary>
@@ -459,8 +438,9 @@ namespace shuiyintong.Api.Controllers
         /// </summary>
         /// <param name="bnkInfoQryCombntnTranReq">请求参数</param>
         [HttpPost]
-        public void BnkInfoQryCombntnTran([FromBody]BnkInfoQryCombntnTranReq bnkInfoQryCombntnTranReq)
+        public string BnkInfoQryCombntnTran([FromBody]BnkInfoQryCombntnTranReq bnkInfoQryCombntnTranReq)
         {
+            string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             NewLifeRedisHelper redis;
             string key = ((int)BankType.SPDBank).ToString() + "-" + ((int)SPDBankAPIType.BnkInfoQryCombntnTran).ToString() + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
@@ -475,7 +455,116 @@ namespace shuiyintong.Api.Controllers
             try
             {
                 var header = GetHeaderSign(bnkInfoQryCombntnTranReq, out string dataRequest);
-                HttpClientHelper.POSTRequest(bankConfig.SPDBankConfig.BnkInfoQryCombntnTran, dataRequest, header, (statusCode, result) =>
+                resultStr = HttpClientHelper.POSTRequest(bankConfig.SPDBankConfig.BnkInfoQryCombntnTran, dataRequest, header, (statusCode, result) =>
+                  {
+                      code = (int)statusCode;
+                      responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                      BaseResponse<string> baseResponse = new BaseResponse<string>
+                      {
+                          Code = code,
+                          Data = result,
+                          ResponseType = responseType,
+                          DateTime = Now
+                      };
+
+                      //Redis保存
+                      key += responseType;
+                      redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.RespDb);
+                      if (redis != null)
+                          redis.Set(key, baseResponse);
+                  });
+            }
+            catch (Exception ex)
+            {
+                responseType = (byte)ResponseType.Fail;
+                log.ErrorMsg = ex.Message;
+                key += responseType;
+                //保存日志
+                redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
+                if (redis != null)
+                    redis.Set(key, log);
+            }
+            return resultStr;
+        }
+
+        /// <summary>
+        /// 单笔资金划拨小额鉴权
+        /// </summary>
+        /// <param name="authSmlAmt">请求参数</param>
+        [HttpPost]
+        public string AuthSmlAmt([FromBody]AuthSmlAmtReq authSmlAmt)
+        {
+            string resultStr = string.Empty;
+            var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
+            NewLifeRedisHelper redis;
+            string key = ((int)BankType.SPDBank).ToString() + "-" + ((int)SPDBankAPIType.AuthSmlAmt).ToString() + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
+            int code = 0; //http请求错误码
+            byte responseType; //返回类型
+            BaseLog log = new BaseLog //日志对象
+            {
+                DateTime = Now,
+                APICode = (int)SPDBankAPIType.AuthSmlAmt,
+                APIName = SPDBankAPIType.AuthSmlAmt.GetDescription()
+            };
+            try
+            {
+                var header = GetHeaderSign(authSmlAmt, out string dataRequest);
+                resultStr = HttpClientHelper.POSTRequest(bankConfig.SPDBankConfig.AuthSmlAmt, dataRequest, header, (statusCode, result) =>
+                 {
+                     code = (int)statusCode;
+                     responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                     BaseResponse<string> baseResponse = new BaseResponse<string>
+                     {
+                         Code = code,
+                         Data = result,
+                         ResponseType = responseType,
+                         DateTime = Now
+                     };
+
+                     //Redis保存
+                     key += responseType;
+                     redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.RespDb);
+                     if (redis != null)
+                         redis.Set(key, baseResponse);
+                 });
+            }
+            catch (Exception ex)
+            {
+                responseType = (byte)ResponseType.Fail;
+                log.ErrorMsg = ex.Message;
+                key += responseType;
+                //保存日志
+                redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
+                if (redis != null)
+                    redis.Set(key, log);
+            }
+            return resultStr;
+        }
+
+        /// <summary>
+        /// 支付指令登记
+        /// </summary>
+        /// <param name="payInsrChkReq"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public string PayInsrChk([FromBody]PayInsrChkReq payInsrChkReq)
+        {
+            string resultStr = string.Empty;
+            var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
+            NewLifeRedisHelper redis;
+            string key = ((int)BankType.SPDBank).ToString() + "-" + ((int)SPDBankAPIType.PayInsrChk).ToString() + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
+            int code = 0; //http请求错误码
+            byte responseType; //返回类型
+            BaseLog log = new BaseLog //日志对象
+            {
+                DateTime = Now,
+                APICode = (int)SPDBankAPIType.PayInsrChk,
+                APIName = SPDBankAPIType.PayInsrChk.GetDescription()
+            };
+            try
+            {
+                var header = GetHeaderSign(payInsrChkReq, out string dataRequest);
+                resultStr = HttpClientHelper.POSTRequest(bankConfig.SPDBankConfig.PayInsrChk, dataRequest, header, (statusCode, result) =>
                 {
                     code = (int)statusCode;
                     responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
@@ -504,10 +593,8 @@ namespace shuiyintong.Api.Controllers
                 if (redis != null)
                     redis.Set(key, log);
             }
+            return resultStr;
         }
-
-
-
 
 
         #endregion

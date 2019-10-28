@@ -1,22 +1,12 @@
-﻿namespace shuiyintong.Entity.SPDBankEntity.SPDResp
+﻿using shuiyintong.Entity.SPDBankEntity.SPDBankResp;
+
+namespace shuiyintong.Entity.SPDBankEntity.SPDResp
 {
     /// <summary>
     /// 退汇附加信息查询返回类型
     /// </summary>
-    public class RexgAddInfoQryResp
-    {
-        /// <summary>
-        /// 返回信息
-        /// </summary>
-        public string statusMsg { get; set; }
-        /// <summary>
-        /// 返回状态码
-        /// </summary>
-        public string statusCode { get; set; }
-        /// <summary>
-        /// 交易流水号
-        /// </summary>
-        public string transNo { get; set; }
+    public class RexgAddInfoQryResp: BaseResp
+    {       
         /// <summary>
         /// 退汇业务编号
         /// </summary>

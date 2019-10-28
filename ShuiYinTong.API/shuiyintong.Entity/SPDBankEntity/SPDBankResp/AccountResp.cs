@@ -1,22 +1,12 @@
-﻿namespace shuiyintong.Entity.SPDBankEntity.SPDResp
+﻿using shuiyintong.Entity.SPDBankEntity.SPDBankResp;
+
+namespace shuiyintong.Entity.SPDBankEntity.SPDResp
 {
     /// <summary>
     /// 账户信息返回类型
     /// </summary>
-    public class AccountResp
-    {
-        /// <summary>
-        /// 返回信息
-        /// </summary>
-        public string statusMsg { get; set; }
-        /// <summary>
-        /// 返回状态码
-        /// </summary>
-        public string statusCode { get; set; }
-        /// <summary>
-        /// 交易流水号
-        /// </summary>
-        public string transNo { get; set; }
+    public class AccountResp: BaseResp
+    {      
         /// <summary>
         /// 账号
         /// </summary>
