@@ -35,3 +35,5 @@ F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.2\shuiyintong.SPDB.dll
 F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.2\shuiyintong.Common.pdb
 F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.2\shuiyintong.DBUtils.pdb
 F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.2\shuiyintong.SPDB.pdb
+F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.2\shuiyintong.Entity.pdb
+F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.2\shuiyintong.Entity.xml

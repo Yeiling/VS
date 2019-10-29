@@ -96,12 +96,13 @@ namespace shuiyintong.Api.Controllers
             {
                 responseType = (byte)ResponseType.Fail;
                 log.ErrorMsg = ex.Message;
-                //保存日志
                 key += responseType;
-                redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
-                if (redis != null)
-                    redis.Set(key, log);
             }
+            //保存日志
+            redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
+            if (redis != null)
+                redis.Set(key, log);
+
             return resultStr;
         }
 
@@ -154,11 +155,12 @@ namespace shuiyintong.Api.Controllers
                 responseType = (byte)ResponseType.Fail;
                 log.ErrorMsg = ex.Message;
                 key += responseType;
-                //保存日志
-                redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
-                if (redis != null)
-                    redis.Set(key, log);
             }
+            //保存日志
+            redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
+            if (redis != null)
+                redis.Set(key, log);
+
             return resultStr;
         }
 
@@ -212,11 +214,12 @@ namespace shuiyintong.Api.Controllers
                 responseType = (byte)ResponseType.Fail;
                 log.ErrorMsg = ex.Message;
                 key += responseType;
-                //保存日志
-                redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
-                if (redis != null)
-                    redis.Set(key, log);
             }
+            //保存日志
+            redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
+            if (redis != null)
+                redis.Set(key, log);
+
             return resultStr;
         }
 
@@ -269,11 +272,12 @@ namespace shuiyintong.Api.Controllers
                 responseType = (byte)ResponseType.Fail;
                 log.ErrorMsg = ex.Message;
                 key += responseType;
-                //保存日志
-                redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
-                if (redis != null)
-                    redis.Set(key, log);
             }
+            //保存日志
+            redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
+            if (redis != null)
+                redis.Set(key, log);
+
             return resultStr;
         }
 
@@ -326,11 +330,12 @@ namespace shuiyintong.Api.Controllers
                 responseType = (byte)ResponseType.Fail;
                 log.ErrorMsg = ex.Message;
                 key += responseType;
-                //保存日志
-                redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
-                if (redis != null)
-                    redis.Set(key, log);
             }
+            //保存日志
+            redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
+            if (redis != null)
+                redis.Set(key, log);
+
             return resultStr;
         }
 
@@ -383,11 +388,12 @@ namespace shuiyintong.Api.Controllers
                 responseType = (byte)ResponseType.Fail;
                 log.ErrorMsg = ex.Message;
                 key += responseType;
-                //保存日志
-                redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
-                if (redis != null)
-                    redis.Set(key, log);
             }
+            //保存日志
+            redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
+            if (redis != null)
+                redis.Set(key, log);
+
             return resultStr;
         }
 
@@ -440,11 +446,12 @@ namespace shuiyintong.Api.Controllers
                 responseType = (byte)ResponseType.Fail;
                 log.ErrorMsg = ex.Message;
                 key += responseType;
-                //保存日志
-                redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
-                if (redis != null)
-                    redis.Set(key, log);
             }
+            //保存日志
+            redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
+            if (redis != null)
+                redis.Set(key, log);
+
             return resultStr;
         }
 
@@ -497,11 +504,12 @@ namespace shuiyintong.Api.Controllers
                 responseType = (byte)ResponseType.Fail;
                 log.ErrorMsg = ex.Message;
                 key += responseType;
-                //保存日志
-                redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
-                if (redis != null)
-                    redis.Set(key, log);
             }
+            //保存日志
+            redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
+            if (redis != null)
+                redis.Set(key, log);
+
             return resultStr;
         }
 
@@ -554,11 +562,12 @@ namespace shuiyintong.Api.Controllers
                 responseType = (byte)ResponseType.Fail;
                 log.ErrorMsg = ex.Message;
                 key += responseType;
-                //保存日志
-                redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
-                if (redis != null)
-                    redis.Set(key, log);
             }
+            //保存日志
+            redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
+            if (redis != null)
+                redis.Set(key, log);
+
             return resultStr;
         }
 
@@ -612,11 +621,12 @@ namespace shuiyintong.Api.Controllers
                 responseType = (byte)ResponseType.Fail;
                 log.ErrorMsg = ex.Message;
                 key += responseType;
-                //保存日志
-                redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
-                if (redis != null)
-                    redis.Set(key, log);
             }
+            //保存日志
+            redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
+            if (redis != null)
+                redis.Set(key, log);
+
             return resultStr;
         }
 
@@ -670,11 +680,12 @@ namespace shuiyintong.Api.Controllers
                 responseType = (byte)ResponseType.Fail;
                 log.ErrorMsg = ex.Message;
                 key += responseType;
-                //保存日志
-                redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
-                if (redis != null)
-                    redis.Set(key, log);
             }
+            //保存日志
+            redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
+            if (redis != null)
+                redis.Set(key, log);
+
             return resultStr;
         }
 
@@ -728,11 +739,12 @@ namespace shuiyintong.Api.Controllers
                 responseType = (byte)ResponseType.Fail;
                 log.ErrorMsg = ex.Message;
                 key += responseType;
-                //保存日志
-                redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
-                if (redis != null)
-                    redis.Set(key, log);
             }
+            //保存日志
+            redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
+            if (redis != null)
+                redis.Set(key, log);
+
             return resultStr;
         }
 
@@ -786,11 +798,12 @@ namespace shuiyintong.Api.Controllers
                 responseType = (byte)ResponseType.Fail;
                 log.ErrorMsg = ex.Message;
                 key += responseType;
-                //保存日志
-                redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
-                if (redis != null)
-                    redis.Set(key, log);
             }
+            //保存日志
+            redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
+            if (redis != null)
+                redis.Set(key, log);
+
             return resultStr;
         }
 
@@ -844,11 +857,12 @@ namespace shuiyintong.Api.Controllers
                 responseType = (byte)ResponseType.Fail;
                 log.ErrorMsg = ex.Message;
                 key += responseType;
-                //保存日志
-                redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
-                if (redis != null)
-                    redis.Set(key, log);
             }
+            //保存日志
+            redis = NewLifeRedisHelper.GetRedis(bankConfig.DBConfig.RedisConn, (byte)RedisDbNum.ErrorDb);
+            if (redis != null)
+                redis.Set(key, log);
+
             return resultStr;
         }
 
