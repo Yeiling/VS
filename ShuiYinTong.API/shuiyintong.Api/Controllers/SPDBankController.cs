@@ -21,7 +21,10 @@ namespace shuiyintong.Api.Controllers
     {
         //private IBaseService<AcctDtlInfoQry> AcctDtlInfoServer { get; set; }
 
-
+        /// <summary>
+        /// 银行类型---浦发银行
+        /// </summary>
+        private readonly BankType SPDBank = BankType.SPDBank;
         #region 接口签名
 
         /// <summary>
@@ -55,14 +58,17 @@ namespace shuiyintong.Api.Controllers
             string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             NewLifeRedisHelper redis;
-            string key = ((int)BankType.SPDBank).ToString() + "-" + ((int)SPDBankAPIType.AcctInfo).ToString() + "-" + Now + "-"; ; //Redis key
+            SPDBankAPIType sPDBankAPIType = SPDBankAPIType.AcctInfo;
+            int BankAPIType = (int)sPDBankAPIType;
+            string key = (int)SPDBank + "-" + BankAPIType + "-" + Now + "-"; ; //Redis key
             int code = 0; //http请求错误码
             byte responseType; //返回类型
             BaseLog log = new BaseLog //日志对象
             {
                 DateTime = Now,
-                APICode = (int)SPDBankAPIType.AcctInfo,
-                APIName = SPDBankAPIType.AcctInfo.GetDescription()
+                BankName = SPDBank.GetDescription(),
+                APICode = BankAPIType,
+                APIName = sPDBankAPIType.GetDescription()
             };
             try
             {
@@ -109,14 +115,17 @@ namespace shuiyintong.Api.Controllers
             string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             NewLifeRedisHelper redis;
-            string key = ((int)BankType.SPDBank).ToString() + "-" + ((int)SPDBankAPIType.AcctDtlInfoQry).ToString() + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
+            SPDBankAPIType sPDBankAPIType = SPDBankAPIType.AcctDtlInfoQry;
+            int BankAPIType = (int)sPDBankAPIType;
+            string key = (int)SPDBank + "-" + BankAPIType + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
             int code = 0; //http请求错误码
             byte responseType; //返回类型
             BaseLog log = new BaseLog //日志对象
             {
                 DateTime = Now,
-                APICode = (int)SPDBankAPIType.AcctDtlInfoQry,
-                APIName = SPDBankAPIType.AcctDtlInfoQry.GetDescription()
+                BankName = SPDBank.GetDescription(),
+                APICode = BankAPIType,
+                APIName = sPDBankAPIType.GetDescription()
             };
             try
             {
@@ -163,14 +172,17 @@ namespace shuiyintong.Api.Controllers
             string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             NewLifeRedisHelper redis;
-            string key = ((int)BankType.SPDBank).ToString() + "-" + ((int)SPDBankAPIType.SingleTransfer).ToString() + "-" + Now + "-"; ; //Redis key
+            SPDBankAPIType sPDBankAPIType = SPDBankAPIType.SingleTransfer;
+            int BankAPIType = (int)sPDBankAPIType;
+            string key = (int)SPDBank + "-" + BankAPIType + "-" + Now + "-"; ; //Redis key
             int code = 0; //http请求错误码
             byte responseType; //返回类型
             BaseLog log = new BaseLog //日志对象
             {
                 DateTime = Now,
-                APICode = (int)SPDBankAPIType.SingleTransfer,
-                APIName = SPDBankAPIType.SingleTransfer.GetDescription()
+                BankName = SPDBank.GetDescription(),
+                APICode = BankAPIType,
+                APIName = sPDBankAPIType.GetDescription()
             };
             try
             {
@@ -218,14 +230,17 @@ namespace shuiyintong.Api.Controllers
             string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             NewLifeRedisHelper redis;
-            string key = ((int)BankType.SPDBank).ToString() + "-" + ((int)SPDBankAPIType.SnglTrsfRstlQry).ToString() + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
+            SPDBankAPIType sPDBankAPIType = SPDBankAPIType.SnglTrsfRstlQry;
+            int BankAPIType = (int)sPDBankAPIType;
+            string key = (int)SPDBank + "-" + BankAPIType + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
             int code = 0; //http请求错误码
             byte responseType; //返回类型
             BaseLog log = new BaseLog //日志对象
             {
                 DateTime = Now,
-                APICode = (int)SPDBankAPIType.SnglTrsfRstlQry,
-                APIName = SPDBankAPIType.SnglTrsfRstlQry.GetDescription()
+                BankName = SPDBank.GetDescription(),
+                APICode = BankAPIType,
+                APIName = sPDBankAPIType.GetDescription()
             };
             try
             {
@@ -272,14 +287,17 @@ namespace shuiyintong.Api.Controllers
             string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             NewLifeRedisHelper redis;
-            string key = ((int)BankType.SPDBank).ToString() + "-" + ((int)SPDBankAPIType.ElectRecptApplction).ToString() + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
+            SPDBankAPIType sPDBankAPIType = SPDBankAPIType.ElectRecptApplction;
+            int BankAPIType = (int)sPDBankAPIType;
+            string key = (int)SPDBank + "-" + BankAPIType + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
             int code = 0; //http请求错误码
             byte responseType; //返回类型
             BaseLog log = new BaseLog //日志对象
             {
                 DateTime = Now,
-                APICode = (int)SPDBankAPIType.ElectRecptApplction,
-                APIName = SPDBankAPIType.ElectRecptApplction.GetDescription()
+                BankName = SPDBank.GetDescription(),
+                APICode = BankAPIType,
+                APIName = sPDBankAPIType.GetDescription()
             };
             try
             {
@@ -326,14 +344,17 @@ namespace shuiyintong.Api.Controllers
             string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             NewLifeRedisHelper redis;
-            string key = ((int)BankType.SPDBank).ToString() + "-" + ((int)SPDBankAPIType.FncThdCncl).ToString() + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
+            SPDBankAPIType sPDBankAPIType = SPDBankAPIType.FncThdCncl;
+            int BankAPIType = (int)sPDBankAPIType;
+            string key = (int)SPDBank + "-" + BankAPIType + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
             int code = 0; //http请求错误码
             byte responseType; //返回类型
             BaseLog log = new BaseLog //日志对象
             {
                 DateTime = Now,
-                APICode = (int)SPDBankAPIType.FncThdCncl,
-                APIName = SPDBankAPIType.FncThdCncl.GetDescription()
+                BankName = SPDBank.GetDescription(),
+                APICode = BankAPIType,
+                APIName = sPDBankAPIType.GetDescription()
             };
             try
             {
@@ -380,14 +401,17 @@ namespace shuiyintong.Api.Controllers
             string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             NewLifeRedisHelper redis;
-            string key = ((int)BankType.SPDBank).ToString() + "-" + ((int)SPDBankAPIType.RexgAddInfoQry).ToString() + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
+            SPDBankAPIType sPDBankAPIType = SPDBankAPIType.RexgAddInfoQry;
+            int BankAPIType = (int)sPDBankAPIType;
+            string key = (int)BankType.SPDBank + "-" + BankAPIType + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
             int code = 0; //http请求错误码
             byte responseType; //返回类型
             BaseLog log = new BaseLog //日志对象
             {
                 DateTime = Now,
-                APICode = (int)SPDBankAPIType.RexgAddInfoQry,
-                APIName = SPDBankAPIType.RexgAddInfoQry.GetDescription()
+                BankName = SPDBank.GetDescription(),
+                APICode = BankAPIType,
+                APIName = sPDBankAPIType.GetDescription()
             };
             try
             {
@@ -434,14 +458,17 @@ namespace shuiyintong.Api.Controllers
             string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             NewLifeRedisHelper redis;
-            string key = ((int)BankType.SPDBank).ToString() + "-" + ((int)SPDBankAPIType.BnkInfoQryCombntnTran).ToString() + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
+            SPDBankAPIType sPDBankAPIType = SPDBankAPIType.BnkInfoQryCombntnTran;
+            int BankAPIType = (int)sPDBankAPIType;
+            string key = (int)SPDBank + "-" + BankAPIType + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
             int code = 0; //http请求错误码
             byte responseType; //返回类型
             BaseLog log = new BaseLog //日志对象
             {
                 DateTime = Now,
-                APICode = (int)SPDBankAPIType.BnkInfoQryCombntnTran,
-                APIName = SPDBankAPIType.BnkInfoQryCombntnTran.GetDescription()
+                BankName = SPDBank.GetDescription(),
+                APICode = BankAPIType,
+                APIName = sPDBankAPIType.GetDescription()
             };
             try
             {
@@ -488,14 +515,17 @@ namespace shuiyintong.Api.Controllers
             string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             NewLifeRedisHelper redis;
-            string key = ((int)BankType.SPDBank).ToString() + "-" + ((int)SPDBankAPIType.AuthSmlAmt).ToString() + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
+            SPDBankAPIType sPDBankAPIType = SPDBankAPIType.AuthSmlAmt;
+            int BankAPIType = (int)sPDBankAPIType;
+            string key = (int)SPDBank + "-" + BankAPIType + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
             int code = 0; //http请求错误码
             byte responseType; //返回类型
             BaseLog log = new BaseLog //日志对象
             {
                 DateTime = Now,
-                APICode = (int)SPDBankAPIType.AuthSmlAmt,
-                APIName = SPDBankAPIType.AuthSmlAmt.GetDescription()
+                BankName = SPDBank.GetDescription(),
+                APICode = BankAPIType,
+                APIName = sPDBankAPIType.GetDescription()
             };
             try
             {
@@ -543,14 +573,17 @@ namespace shuiyintong.Api.Controllers
             string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             NewLifeRedisHelper redis;
-            string key = ((int)BankType.SPDBank).ToString() + "-" + ((int)SPDBankAPIType.PayInsrChk).ToString() + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
+            SPDBankAPIType sPDBankAPIType = SPDBankAPIType.PayInsrChk;
+            int BankAPIType = (int)sPDBankAPIType;
+            string key = (int)SPDBank + "-" + BankAPIType + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
             int code = 0; //http请求错误码
             byte responseType; //返回类型
             BaseLog log = new BaseLog //日志对象
             {
                 DateTime = Now,
-                APICode = (int)SPDBankAPIType.PayInsrChk,
-                APIName = SPDBankAPIType.PayInsrChk.GetDescription()
+                BankName = SPDBank.GetDescription(),
+                APICode = BankAPIType,
+                APIName = sPDBankAPIType.GetDescription()
             };
             try
             {
@@ -598,14 +631,17 @@ namespace shuiyintong.Api.Controllers
             string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             NewLifeRedisHelper redis;
-            string key = ((int)BankType.SPDBank).ToString() + "-" + ((int)SPDBankAPIType.PayInsrDtlQry).ToString() + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
+            SPDBankAPIType sPDBankAPIType = SPDBankAPIType.PayInsrDtlQry;
+            int BankAPIType = (int)sPDBankAPIType;
+            string key = (int)SPDBank + "-" + BankAPIType + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
             int code = 0; //http请求错误码
             byte responseType; //返回类型
             BaseLog log = new BaseLog //日志对象
             {
                 DateTime = Now,
-                APICode = (int)SPDBankAPIType.PayInsrDtlQry,
-                APIName = SPDBankAPIType.PayInsrDtlQry.GetDescription()
+                BankName = SPDBank.GetDescription(),
+                APICode = BankAPIType,
+                APIName = sPDBankAPIType.GetDescription()
             };
             try
             {
@@ -653,14 +689,17 @@ namespace shuiyintong.Api.Controllers
             string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             NewLifeRedisHelper redis;
-            string key = ((int)BankType.SPDBank).ToString() + "-" + ((int)SPDBankAPIType.PayInsrCnl).ToString() + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
+            SPDBankAPIType sPDBankAPIType = SPDBankAPIType.PayInsrCnl;
+            int BankAPIType = (int)sPDBankAPIType;
+            string key = (int)SPDBank + "-" + BankAPIType + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
             int code = 0; //http请求错误码
             byte responseType; //返回类型
             BaseLog log = new BaseLog //日志对象
             {
                 DateTime = Now,
-                APICode = (int)SPDBankAPIType.PayInsrCnl,
-                APIName = SPDBankAPIType.PayInsrCnl.GetDescription()
+                BankName = SPDBank.GetDescription(),
+                APICode = BankAPIType,
+                APIName = sPDBankAPIType.GetDescription()
             };
             try
             {
@@ -708,14 +747,17 @@ namespace shuiyintong.Api.Controllers
             string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             NewLifeRedisHelper redis;
-            string key = ((int)BankType.SPDBank).ToString() + "-" + ((int)SPDBankAPIType.PayeeWhtLstQry).ToString() + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
+            SPDBankAPIType sPDBankAPIType = SPDBankAPIType.PayeeWhtLstQry;
+            int BankAPIType = (int)sPDBankAPIType;
+            string key = (int)SPDBank + "-" + BankAPIType + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
             int code = 0; //http请求错误码
             byte responseType; //返回类型
             BaseLog log = new BaseLog //日志对象
             {
                 DateTime = Now,
-                APICode = (int)SPDBankAPIType.PayeeWhtLstQry,
-                APIName = SPDBankAPIType.PayeeWhtLstQry.GetDescription()
+                BankName = SPDBank.GetDescription(),
+                APICode = BankAPIType,
+                APIName = sPDBankAPIType.GetDescription()
             };
             try
             {
@@ -763,14 +805,17 @@ namespace shuiyintong.Api.Controllers
             string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             NewLifeRedisHelper redis;
-            string key = ((int)BankType.SPDBank).ToString() + "-" + ((int)SPDBankAPIType.PayeeWhtLstMntn).ToString() + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
+            SPDBankAPIType sPDBankAPIType = SPDBankAPIType.PayeeWhtLstMntn;
+            int BankAPIType = (int)sPDBankAPIType;
+            string key = (int)BankType.SPDBank + "-" + BankAPIType + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
             int code = 0; //http请求错误码
             byte responseType; //返回类型
             BaseLog log = new BaseLog //日志对象
             {
                 DateTime = Now,
-                APICode = (int)SPDBankAPIType.PayeeWhtLstMntn,
-                APIName = SPDBankAPIType.PayeeWhtLstMntn.GetDescription()
+                BankName = SPDBank.GetDescription(),
+                APICode = BankAPIType,
+                APIName = sPDBankAPIType.GetDescription()
             };
             try
             {

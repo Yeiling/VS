@@ -36,6 +36,11 @@
             浦发银行接口
             </summary>
         </member>
+        <member name="F:shuiyintong.Api.Controllers.SPDBankController.SPDBank">
+            <summary>
+            银行类型---浦发银行
+            </summary>
+        </member>
         <member name="M:shuiyintong.Api.Controllers.SPDBankController.GetHeaderSign(System.Object,System.String@)">
             <summary>
             获取签名

@@ -9,9 +9,14 @@
             日志数据类型
             </summary>
         </member>
+        <member name="P:shuiyintong.Entity.BaseLog.BankName">
+            <summary>
+            银行名称
+            </summary>
+        </member>
         <member name="P:shuiyintong.Entity.BaseLog.Code">
             <summary>
-            Http code
+            code(1:成功，0:错误或者异常)
             </summary>
         </member>
         <member name="P:shuiyintong.Entity.BaseLog.ErrorMsg">

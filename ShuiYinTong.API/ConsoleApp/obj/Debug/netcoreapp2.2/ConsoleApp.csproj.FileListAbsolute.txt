@@ -17,5 +17,3 @@ F:\Project\ConsoleApp\obj\Debug\netcoreapp2.2\ConsoleApp.AssemblyInfo.cs
 F:\Project\ConsoleApp\obj\Debug\netcoreapp2.2\ConsoleApp.csproj.CopyComplete
 F:\Project\ConsoleApp\obj\Debug\netcoreapp2.2\ConsoleApp.dll
 F:\Project\ConsoleApp\obj\Debug\netcoreapp2.2\ConsoleApp.pdb
-F:\Project\ConsoleApp\bin\Debug\netcoreapp2.2\shuiyintong.Entity.pdb
-F:\Project\ConsoleApp\bin\Debug\netcoreapp2.2\shuiyintong.Entity.xml

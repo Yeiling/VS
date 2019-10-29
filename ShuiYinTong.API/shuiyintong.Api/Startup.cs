@@ -27,7 +27,7 @@ namespace shuiyintong.Api
         /// <param name="configuration"></param>
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;  
+            Configuration = configuration;
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace shuiyintong.Api
                 app.UseDeveloperExceptionPage();
             else
                 app.UseHsts();
-            
+
             app.UseHttpsRedirection();
 
             // 启用Swagger中间件

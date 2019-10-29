@@ -6,7 +6,11 @@
     public class BaseLog
     {
         /// <summary>
-        /// Http code
+        /// 银行名称
+        /// </summary>
+        public string BankName { get; set; }
+        /// <summary>
+        /// code(1:成功，0:错误或者异常)
         /// </summary>
         public int Code { get; set; }
         /// <summary>
