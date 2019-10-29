@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netcoreapp2.1\shuiyintong.Api.xml</DocumentationFile>
-    <OutputPath>bin\Debug\netcoreapp2.1\</OutputPath>
+    <DocumentationFile>bin\Debug\netcoreapp2.2\shuiyintong.Api.xml</DocumentationFile>
+    <OutputPath>bin\Debug\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>

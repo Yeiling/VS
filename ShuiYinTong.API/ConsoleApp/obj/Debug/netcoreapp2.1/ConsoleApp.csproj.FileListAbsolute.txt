@@ -78,5 +78,3 @@ F:\Project\ConsoleApp\obj\Debug\netcoreapp2.1\ConsoleApp.pdb
 F:\Project\ConsoleApp\bin\Debug\netcoreapp2.1\shuiyintong.DBUtils.dll
 F:\Project\ConsoleApp\bin\Debug\netcoreapp2.1\shuiyintong.DBUtils.pdb
 F:\Project\ConsoleApp\bin\Debug\netcoreapp2.1\shuiyintong.Entity.dll
-F:\Project\ConsoleApp\bin\Debug\netcoreapp2.1\shuiyintong.Entity.pdb
-F:\Project\ConsoleApp\bin\Debug\netcoreapp2.1\shuiyintong.Entity.xml

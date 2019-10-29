@@ -1,34 +1,34 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\dd\\shuiyintong.dbutils\\shuiyintong.DBUtils.csproj": {}
+    "F:\\Project\\shuiyintong.dbutils\\shuiyintong.DBUtils.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\dd\\shuiyintong.dbutils\\shuiyintong.DBUtils.csproj": {
+    "F:\\Project\\shuiyintong.Common\\shuiyintong.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\dd\\shuiyintong.dbutils\\shuiyintong.DBUtils.csproj",
-        "projectName": "shuiyintong.DBUtils",
-        "projectPath": "C:\\Projects\\dd\\shuiyintong.dbutils\\shuiyintong.DBUtils.csproj",
-        "packagesPath": "C:\\Users\\Jason\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\dd\\shuiyintong.dbutils\\obj\\",
+        "projectUniqueName": "F:\\Project\\shuiyintong.Common\\shuiyintong.Common.csproj",
+        "projectName": "shuiyintong.Common",
+        "projectPath": "F:\\Project\\shuiyintong.Common\\shuiyintong.Common.csproj",
+        "packagesPath": "C:\\Users\\Mypc\\.nuget\\packages\\",
+        "outputPath": "F:\\Project\\shuiyintong.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Jason\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mypc\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp2.1"
+          "netcoreapp2.2"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp2.1": {
+          "netcoreapp2.2": {
             "projectReferences": {}
           }
         },
@@ -39,26 +39,96 @@
         }
       },
       "frameworks": {
-        "netcoreapp2.1": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.2, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "F:\\Project\\shuiyintong.dbutils\\shuiyintong.DBUtils.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Project\\shuiyintong.dbutils\\shuiyintong.DBUtils.csproj",
+        "projectName": "shuiyintong.DBUtils",
+        "projectPath": "F:\\Project\\shuiyintong.dbutils\\shuiyintong.DBUtils.csproj",
+        "packagesPath": "C:\\Users\\Mypc\\.nuget\\packages\\",
+        "outputPath": "F:\\Project\\shuiyintong.dbutils\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Mypc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "F:\\Project\\shuiyintong.Common\\shuiyintong.Common.csproj": {
+                "projectPath": "F:\\Project\\shuiyintong.Common\\shuiyintong.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
           "dependencies": {
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.1.0, )",
+              "version": "[2.2.0, )",
               "autoReferenced": true
+            },
+            "NewLife.Redis": {
+              "target": "Package",
+              "version": "[2.1.6871.1098, )"
+            },
+            "sqlSugarCore": {
+              "target": "Package",
+              "version": "[5.0.0.10, )"
             }
           },
           "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
+            "net461"
           ],
           "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "warn": true
         }
       }
     }

@@ -27,7 +27,7 @@ namespace shuiyintong.Api
         /// <param name="configuration"></param>
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            Configuration = configuration;  
         }
 
         /// <summary>

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace shuiyintong.Entity
+﻿namespace shuiyintong.Entity
 {
     /// <summary>
     /// 返回结果基类

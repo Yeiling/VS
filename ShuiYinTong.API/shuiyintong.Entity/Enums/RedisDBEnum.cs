@@ -15,12 +15,12 @@ namespace shuiyintong.Entity.Enums
             /// <summary>
             /// 返回数据库
             /// </summary>
-            [Description("返回数据")]
+            [Description("返回数据库")]
             RespDb = 1,
             /// <summary>
             /// 异常日志库
             /// </summary>
-            [Description("异常日志")]
+            [Description("异常日志库")]
             ErrorDb = 2
         }
     }

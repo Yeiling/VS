@@ -1,0 +1,8 @@
+F:\Project\shuiyintong.Entity\bin\Release\netcoreapp2.1\shuiyintong.Entity.deps.json
+F:\Project\shuiyintong.Entity\bin\Release\netcoreapp2.1\shuiyintong.Entity.dll
+F:\Project\shuiyintong.Entity\bin\Release\netcoreapp2.1\shuiyintong.Entity.pdb
+F:\Project\shuiyintong.Entity\obj\Release\netcoreapp2.1\shuiyintong.Entity.csproj.CoreCompileInputs.cache
+F:\Project\shuiyintong.Entity\obj\Release\netcoreapp2.1\shuiyintong.Entity.AssemblyInfoInputs.cache
+F:\Project\shuiyintong.Entity\obj\Release\netcoreapp2.1\shuiyintong.Entity.AssemblyInfo.cs
+F:\Project\shuiyintong.Entity\obj\Release\netcoreapp2.1\shuiyintong.Entity.dll
+F:\Project\shuiyintong.Entity\obj\Release\netcoreapp2.1\shuiyintong.Entity.pdb

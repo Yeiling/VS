@@ -2,22 +2,15 @@
 using shuiyintong.Common;
 using shuiyintong.Common.Extend;
 using shuiyintong.DBUtils;
-using shuiyintong.DBUtils.IService;
-using shuiyintong.DBUtils.SYT_apiDB_TestEntity;
 using shuiyintong.Entity;
 using shuiyintong.Entity.SPDBankEntity.SPDBankReq;
-using shuiyintong.Entity.SPDBankEntity.SPDResp;
 using shuiyintong.SPDB;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using static shuiyintong.Entity.Enums.BankTypeEum;
 using static shuiyintong.Entity.Enums.RedisDBEnum;
 using static shuiyintong.Entity.Enums.RespCodeEnum;
 using static shuiyintong.Entity.SPDBankEntity.SPDBankAPITypeEunm;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace shuiyintong.Api.Controllers
 {
@@ -26,10 +19,7 @@ namespace shuiyintong.Api.Controllers
     /// </summary>
     public class SPDBankController : BaseController
     {
-        /// <summary>
-        /// 账户信息注入
-        /// </summary>
-        //public IBaseService<AcctDtlInfoQry> AcctDtlInfoServer { get; set; }
+        //private IBaseService<AcctDtlInfoQry> AcctDtlInfoServer { get; set; }
 
 
         #region 接口签名

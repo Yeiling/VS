@@ -1,15 +1,5 @@
-﻿using Newtonsoft.Json;
-using shuiyintong.Common;
-using shuiyintong.DBUtils;
-using shuiyintong.SPDB;
+﻿using shuiyintong.DBUtils;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Reflection;
-using System.Runtime.InteropServices;
-using System.Runtime.Loader;
-using static shuiyintong.Common.Enums.HttpEnum;
 
 namespace ConsoleApp
 {
