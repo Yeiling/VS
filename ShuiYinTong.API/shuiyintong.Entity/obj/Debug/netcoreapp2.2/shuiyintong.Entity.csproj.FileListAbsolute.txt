@@ -2,12 +2,12 @@ F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.1\netcoreapp2.2\shuiyintong.Ent
 F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.1\netcoreapp2.2\shuiyintong.Entity.dll
 F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.1\netcoreapp2.2\shuiyintong.Entity.pdb
 F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.1\netcoreapp2.2\shuiyintong.Entity.xml
+F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.2\shuiyintong.Entity.xml
+F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.2\shuiyintong.Entity.deps.json
+F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.2\shuiyintong.Entity.dll
+F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.2\shuiyintong.Entity.pdb
 F:\Project\shuiyintong.Entity\obj\Debug\netcoreapp2.2\shuiyintong.Entity.csproj.CoreCompileInputs.cache
 F:\Project\shuiyintong.Entity\obj\Debug\netcoreapp2.2\shuiyintong.Entity.AssemblyInfoInputs.cache
 F:\Project\shuiyintong.Entity\obj\Debug\netcoreapp2.2\shuiyintong.Entity.AssemblyInfo.cs
 F:\Project\shuiyintong.Entity\obj\Debug\netcoreapp2.2\shuiyintong.Entity.dll
 F:\Project\shuiyintong.Entity\obj\Debug\netcoreapp2.2\shuiyintong.Entity.pdb
-F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.2\shuiyintong.Entity.deps.json
-F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.2\shuiyintong.Entity.dll
-F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.2\shuiyintong.Entity.pdb
-F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.2\shuiyintong.Entity.xml

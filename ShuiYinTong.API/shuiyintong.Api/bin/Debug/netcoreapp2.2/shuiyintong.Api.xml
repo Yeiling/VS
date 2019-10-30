@@ -21,9 +21,19 @@
             控制器基类
             </summary>
         </member>
-        <member name="P:shuiyintong.Api.Controllers.BaseController.bankConfig">
+        <member name="F:shuiyintong.Api.Controllers.BaseController.bankConfig">
             <summary>
             银行配置
+            </summary>
+        </member>
+        <member name="F:shuiyintong.Api.Controllers.BaseController.RedisConn">
+            <summary>
+            Redis链接字符串
+            </summary>
+        </member>
+        <member name="F:shuiyintong.Api.Controllers.BaseController.DBConn">
+            <summary>
+            数据库链接字符串
             </summary>
         </member>
         <member name="T:shuiyintong.Api.Controllers.FileOperController">
@@ -36,9 +46,19 @@
             浦发银行接口
             </summary>
         </member>
+        <member name="P:shuiyintong.Api.Controllers.SPDBankController.AcctDtlInfoServer">
+            <summary>
+            数据库实现
+            </summary>
+        </member>
         <member name="F:shuiyintong.Api.Controllers.SPDBankController.SPDBank">
             <summary>
             银行类型---浦发银行
+            </summary>
+        </member>
+        <member name="F:shuiyintong.Api.Controllers.SPDBankController.SPDBankConfig">
+            <summary>
+            浦发银行配合信息
             </summary>
         </member>
         <member name="M:shuiyintong.Api.Controllers.SPDBankController.GetHeaderSign(System.Object,System.String@)">
@@ -136,6 +156,13 @@
             收款人白名单维护
             </summary>
             <param name="payeeWhtLstMntnReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.ZLSysInrBnkTfr(shuiyintong.Entity.SPDBankEntity.SPDBankReq.ZLSysInrBnkTfrReq)">
+            <summary>
+            备付金或结算户转客户结算户
+            </summary>
+            <param name="zLSysInrBnkTfrReq">请求参数</param>
             <returns></returns>
         </member>
         <member name="T:shuiyintong.Api.Program">

@@ -8,8 +8,8 @@ namespace ConsoleApp
         static void Main(string[] args)
         {
             #region ORM
-            string conn = "Server=39.105.178.182,3588;Database=SYT_apiDB_Test;Uid=Test_sa;Pwd=data2018!";
-            SqlSugarHelper.InitClient(conn).TableToEntity(@"F:\Project\shuiyintong.dbutils\SYT_apiDB_TestEntity", "shuiyintong.DBUtils.SYT_apiDB_TestEntity");
+            //string conn = "Server=39.105.178.182,3588;Database=SYT_apiDB_Test;Uid=Test_sa;Pwd=data2018!";
+            // SqlSugarHelper.InitClient(conn).TableToEntity(@"F:\Project\shuiyintong.dbutils\SYT_apiDB_TestEntity", "shuiyintong.DBUtils.SYT_apiDB_TestEntity");
             //var lst = SqlSugarHelper.InitClient(conn).GetList<DM_DataApiType>();
 
 

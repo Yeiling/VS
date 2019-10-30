@@ -14,7 +14,15 @@ namespace shuiyintong.Api.Controllers
         /// <summary>
         /// 银行配置
         /// </summary>
-        public BankConfig bankConfig { get; } = AppSettings.BankConfig;
+        public static BankConfig bankConfig = AppSettings.BankConfig;
+        /// <summary>
+        /// Redis链接字符串
+        /// </summary>
+        public static string RedisConn = bankConfig.DBConfig.RedisConn;
+        /// <summary>
+        /// 数据库链接字符串
+        /// </summary>
+        public static string DBConn = bankConfig.DBConfig.DBConn;
     }
 
 

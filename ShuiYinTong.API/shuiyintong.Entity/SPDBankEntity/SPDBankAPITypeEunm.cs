@@ -83,6 +83,14 @@ namespace shuiyintong.Entity.SPDBankEntity
             [Description("收款人白名单维护")]
             PayeeWhtLstMntn = 113,
 
+
+            /// <summary>
+            /// 备付金或结算户转客户结算户
+            /// </summary>
+            [Description("备付金或结算户转客户结算户")]
+            ZLSysInrBnkTfr = 114,
+
+
         }
     }
 }

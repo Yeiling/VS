@@ -20,7 +20,7 @@ namespace shuiyintong.DBUtils.SYT_apiDB_TestEntity
            /// Default:
            /// Nullable:False
            /// </summary>           
-           [SugarColumn(IsPrimaryKey=true,IsIdentity=true)]
+           [SugarColumn(IsIdentity=true)]
            public int ID {get;set;}
 
            /// <summary>

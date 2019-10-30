@@ -24,7 +24,13 @@
     /// </summary>
     public class SPDBankConfig
     {
+        /// <summary>
+        /// 客户端id
+        /// </summary>
         public string ClientId { get; set; }
+        /// <summary>
+        /// 秘钥
+        /// </summary>
         public string Secret { get; set; }
 
         /// <summary>
@@ -83,6 +89,15 @@
         /// 收款人白名单维护
         /// </summary>
         public string PayeeWhtLstMntn { get; set; }
+
+
+        /// <summary>
+        /// 备付金或结算户转客户结算户
+        /// </summary>
+        public string ZLSysInrBnkTfr { get; set; }
+
+
+
 
 
     }
