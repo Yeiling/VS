@@ -25,7 +25,7 @@ namespace shuiyintong.Api.Controllers
         /// <summary>
         /// 数据库实现
         /// </summary>
-        public IBaseService<AcctDtlInfoQry> AcctDtlInfoServer { get; set; }
+        //public IBaseService<AcctDtlInfoQry> AcctDtlInfoServer { get; set; }
 
         /// <summary>
         /// 银行类型---浦发银行
