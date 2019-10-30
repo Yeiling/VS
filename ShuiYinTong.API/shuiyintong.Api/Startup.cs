@@ -11,7 +11,9 @@ using shuiyintong.DBUtils.IService;
 using shuiyintong.DBUtils.Service;
 using Swashbuckle.AspNetCore.Swagger;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 
 namespace shuiyintong.Api
@@ -59,6 +61,18 @@ namespace shuiyintong.Api
                         c.IncludeXmlComments(xmlPath, true);
                     }
                 }
+                c.AddSecurityDefinition("Bearer", new ApiKeyScheme
+                {
+                    Description = "请输入带有Bearer的Token",
+                    Name = "Authorization",
+                    In = "header",
+                    Type = "apiKey"
+                });
+                //Json Token认证方式，此方式为全局添加
+                c.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>>
+                {
+                    { "Bearer", Enumerable.Empty<string>() }
+                });
             });
 
             services.Replace(ServiceDescriptor.Transient<IControllerActivator, ServiceBasedControllerActivator>());
