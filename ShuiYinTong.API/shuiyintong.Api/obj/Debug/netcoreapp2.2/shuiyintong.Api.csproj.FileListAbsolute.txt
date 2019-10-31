@@ -35,5 +35,3 @@ F:\Project\shuiyintong.Api\obj\Debug\netcoreapp2.2\shuiyintong.Api.RazorTargetAs
 F:\Project\shuiyintong.Api\obj\Debug\netcoreapp2.2\shuiyintong.Api.csproj.CopyComplete
 F:\Project\shuiyintong.Api\obj\Debug\netcoreapp2.2\shuiyintong.Api.dll
 F:\Project\shuiyintong.Api\obj\Debug\netcoreapp2.2\shuiyintong.Api.pdb
-F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.2\shuiyintong.Entity.pdb
-F:\Project\shuiyintong.Api\bin\Debug\netcoreapp2.2\shuiyintong.Entity.xml

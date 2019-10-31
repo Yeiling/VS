@@ -8,7 +8,7 @@ namespace shuiyintong.Entity.SPDBankEntity
     public class SPDBankAPITypeEunm
     {
         /// <summary>
-        /// 接口类型
+        /// 浦发银行接口名称
         /// </summary>
         public enum SPDBankAPIType
         {
@@ -89,6 +89,15 @@ namespace shuiyintong.Entity.SPDBankEntity
             /// </summary>
             [Description("备付金或结算户转客户结算户")]
             ZLSysInrBnkTfr = 114,
+            /// <summary>
+            /// 贷款归还
+            /// </summary>
+            [Description("贷款归还")]
+            OlBrwLnRepy = 115,
+
+
+
+
 
 
         }

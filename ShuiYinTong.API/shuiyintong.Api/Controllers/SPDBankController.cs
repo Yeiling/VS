@@ -879,6 +879,7 @@ namespace shuiyintong.Api.Controllers
         #endregion
 
         #region e商贷API接口
+
         /// <summary>
         /// 备付金或结算户转客户结算户
         /// </summary>
@@ -938,7 +939,64 @@ namespace shuiyintong.Api.Controllers
             return resultStr;
         }
 
+        /// <summary>
+        /// 贷款归还
+        /// </summary>
+        /// <param name="olBrwLnRepyReq">请求参数</param>
+        /// <returns></returns>
+        [HttpPost]
+        public string OlBrwLnRepy([FromBody]OlBrwLnRepyReq olBrwLnRepyReq)
+        { 
+            string resultStr = string.Empty;
+            var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
+            NewLifeRedisHelper redis;
+            SPDBankAPIType sPDBankAPIType = SPDBankAPIType.OlBrwLnRepy;
+            int BankAPIType = (int)sPDBankAPIType;
+            string key = (int)BankType.SPDBank + "-" + BankAPIType + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
+            int code = 0; //http请求错误码
+            byte responseType; //返回类型
+            BaseLog log = new BaseLog //日志对象
+            {
+                DateTime = Now,
+                BankName = SPDBank.GetDescription(),
+                APICode = BankAPIType,
+                APIName = sPDBankAPIType.GetDescription()
+            };
+            try
+            {
+                var header = GetHeaderSign(olBrwLnRepyReq, out string dataRequest);
+                resultStr = HttpClientHelper.POSTRequest(SPDBankConfig.OlBrwLnRepy, dataRequest, header, (statusCode, result) =>
+                {
+                    code = (int)statusCode;
+                    responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                    BaseResponse<string> baseResponse = new BaseResponse<string>
+                    {
+                        Code = code,
+                        Data = result,
+                        ResponseType = responseType,
+                        DateTime = Now
+                    };
 
+                    //Redis保存
+                    key += responseType;
+                    redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
+                    if (redis != null)
+                        redis.Set(key, baseResponse);
+                });
+            }
+            catch (Exception ex)
+            {
+                responseType = (byte)ResponseType.Fail;
+                log.ErrorMsg = ex.Message;
+                key += responseType;
+            }
+            //保存日志
+            redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.ErrorDb);
+            if (redis != null)
+                redis.Set(key, log);
+
+            return resultStr;
+        }
 
 
         #endregion

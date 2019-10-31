@@ -27,10 +27,7 @@ namespace shuiyintong.Api
         /// 构造函数
         /// </summary>
         /// <param name="configuration"></param>
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+        public Startup(IConfiguration configuration) => Configuration = configuration;
 
         /// <summary>
         /// 配置属性
@@ -116,9 +113,7 @@ namespace shuiyintong.Api
 
             app.UseHttpsRedirection();
 
-            // 启用Swagger中间件
             app.UseSwagger();
-            // 配置SwaggerUI
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "ShuiYinTong.WebApi");

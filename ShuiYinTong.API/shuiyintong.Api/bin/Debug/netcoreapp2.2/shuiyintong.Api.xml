@@ -46,11 +46,6 @@
             浦发银行接口
             </summary>
         </member>
-        <member name="P:shuiyintong.Api.Controllers.SPDBankController.AcctDtlInfoServer">
-            <summary>
-            数据库实现
-            </summary>
-        </member>
         <member name="F:shuiyintong.Api.Controllers.SPDBankController.SPDBank">
             <summary>
             银行类型---浦发银行
@@ -163,6 +158,13 @@
             备付金或结算户转客户结算户
             </summary>
             <param name="zLSysInrBnkTfrReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.OlBrwLnRepy(shuiyintong.Entity.SPDBankEntity.SPDBankReq.OlBrwLnRepyReq)">
+            <summary>
+            贷款归还
+            </summary>
+            <param name="olBrwLnRepyReq">请求参数</param>
             <returns></returns>
         </member>
         <member name="T:shuiyintong.Api.Program">

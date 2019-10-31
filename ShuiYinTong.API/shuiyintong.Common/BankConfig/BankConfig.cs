@@ -95,7 +95,10 @@
         /// 备付金或结算户转客户结算户
         /// </summary>
         public string ZLSysInrBnkTfr { get; set; }
-
+        /// <summary>
+        /// 贷款归还
+        /// </summary>
+        public string OlBrwLnRepy { get; set; }
 
 
 
