@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Cors;
+﻿using Autofac.Extras.DynamicProxy;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using shuiyintong.Api.AutoFacAop;
 using shuiyintong.Common.BankConfig;
 
 namespace shuiyintong.Api.Controllers
@@ -9,6 +11,7 @@ namespace shuiyintong.Api.Controllers
     /// </summary>
     [EnableCors("any")]
     [Route("[controller]/[action]")]
+    //[Intercept(typeof(LogInterceptor))]
     public class BaseController : Controller
     {
         /// <summary>

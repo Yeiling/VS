@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Autofac.Extras.DynamicProxy;
+using Microsoft.AspNetCore.Mvc;
+using shuiyintong.Api.AutoFacAop;
 using shuiyintong.Common;
 using shuiyintong.Common.BankConfig;
 using shuiyintong.Common.Extend;
@@ -20,12 +22,13 @@ namespace shuiyintong.Api.Controllers
     /// <summary>
     /// 浦发银行接口
     /// </summary>
+    [Intercept(typeof(LogInterceptor))]
     public class SPDBankController : BaseController
     {
         /// <summary>
         /// 数据库实现
         /// </summary>
-        //public IBaseService<AcctDtlInfoQry> AcctDtlInfoServer { get; set; }
+        public IBaseService<AcctDtlInfoQry> AcctDtlInfoServer { get; set; }
         //public IBaseService<DVR_USER_LOGIN_INFO> DVR_USER_LOGIN_INFO { get; set; }
 
 
@@ -189,6 +192,8 @@ namespace shuiyintong.Api.Controllers
         [HttpPost]
         public string SingleTransfer([FromBody]SingleTransferReq singleTransferReq)
         {
+            bool b = AcctDtlInfoServer.AddOne(null);
+
             string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             NewLifeRedisHelper redis;
