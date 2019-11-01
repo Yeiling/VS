@@ -103,7 +103,10 @@
         /// 贷款还款明细查询
         /// </summary>
         public string IntDtlQry { get; set; }
-
+        /// <summary>
+        /// 贷款试算
+        /// </summary>
+        public string InterestTrial { get; set; }
 
 
     }

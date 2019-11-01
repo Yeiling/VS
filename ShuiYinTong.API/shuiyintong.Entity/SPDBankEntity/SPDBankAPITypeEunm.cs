@@ -99,7 +99,11 @@ namespace shuiyintong.Entity.SPDBankEntity
             /// </summary>
             [Description("贷款还款明细查询")]
             IntDtlQry = 116,
-
+            /// <summary>
+            /// 贷款试算
+            /// </summary>
+            [Description("贷款试算")]
+            InterestTrial = 117,
 
 
 
