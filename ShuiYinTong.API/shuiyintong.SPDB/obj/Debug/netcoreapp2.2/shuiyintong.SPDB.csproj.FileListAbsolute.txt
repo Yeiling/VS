@@ -10,3 +10,15 @@ F:\Project\shuiyintong.SPDB\obj\Debug\netcoreapp2.2\shuiyintong.SPDB.AssemblyInf
 F:\Project\shuiyintong.SPDB\obj\Debug\netcoreapp2.2\shuiyintong.SPDB.csproj.CopyComplete
 F:\Project\shuiyintong.SPDB\obj\Debug\netcoreapp2.2\shuiyintong.SPDB.dll
 F:\Project\shuiyintong.SPDB\obj\Debug\netcoreapp2.2\shuiyintong.SPDB.pdb
+F:\GitHubProject\ShuiYinTong.API\shuiyintong.SPDB\bin\Debug\netcoreapp2.2\shuiyintong.SPDB.deps.json
+F:\GitHubProject\ShuiYinTong.API\shuiyintong.SPDB\bin\Debug\netcoreapp2.2\shuiyintong.SPDB.dll
+F:\GitHubProject\ShuiYinTong.API\shuiyintong.SPDB\bin\Debug\netcoreapp2.2\shuiyintong.SPDB.pdb
+F:\GitHubProject\ShuiYinTong.API\shuiyintong.SPDB\bin\Debug\netcoreapp2.2\shuiyintong.Common.dll
+F:\GitHubProject\ShuiYinTong.API\shuiyintong.SPDB\bin\Debug\netcoreapp2.2\shuiyintong.Common.pdb
+F:\GitHubProject\ShuiYinTong.API\shuiyintong.SPDB\obj\Debug\netcoreapp2.2\shuiyintong.SPDB.csprojAssemblyReference.cache
+F:\GitHubProject\ShuiYinTong.API\shuiyintong.SPDB\obj\Debug\netcoreapp2.2\shuiyintong.SPDB.csproj.CoreCompileInputs.cache
+F:\GitHubProject\ShuiYinTong.API\shuiyintong.SPDB\obj\Debug\netcoreapp2.2\shuiyintong.SPDB.AssemblyInfoInputs.cache
+F:\GitHubProject\ShuiYinTong.API\shuiyintong.SPDB\obj\Debug\netcoreapp2.2\shuiyintong.SPDB.AssemblyInfo.cs
+F:\GitHubProject\ShuiYinTong.API\shuiyintong.SPDB\obj\Debug\netcoreapp2.2\shuiyintong.SPDB.csproj.CopyComplete
+F:\GitHubProject\ShuiYinTong.API\shuiyintong.SPDB\obj\Debug\netcoreapp2.2\shuiyintong.SPDB.dll
+F:\GitHubProject\ShuiYinTong.API\shuiyintong.SPDB\obj\Debug\netcoreapp2.2\shuiyintong.SPDB.pdb

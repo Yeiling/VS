@@ -19,3 +19,9 @@ F:\Project\ConsoleApp\obj\Debug\netcoreapp2.2\ConsoleApp.dll
 F:\Project\ConsoleApp\obj\Debug\netcoreapp2.2\ConsoleApp.pdb
 F:\Project\ConsoleApp\bin\Debug\netcoreapp2.2\shuiyintong.Entity.pdb
 F:\Project\ConsoleApp\bin\Debug\netcoreapp2.2\shuiyintong.Entity.xml
+F:\GitHubProject\ShuiYinTong.API\ConsoleApp\obj\Debug\netcoreapp2.2\ConsoleApp.csprojAssemblyReference.cache
+F:\GitHubProject\ShuiYinTong.API\ConsoleApp\obj\Debug\netcoreapp2.2\ConsoleApp.csproj.CoreCompileInputs.cache
+F:\GitHubProject\ShuiYinTong.API\ConsoleApp\obj\Debug\netcoreapp2.2\ConsoleApp.AssemblyInfoInputs.cache
+F:\GitHubProject\ShuiYinTong.API\ConsoleApp\obj\Debug\netcoreapp2.2\ConsoleApp.AssemblyInfo.cs
+F:\GitHubProject\ShuiYinTong.API\ConsoleApp\obj\Debug\netcoreapp2.2\ConsoleApp.dll
+F:\GitHubProject\ShuiYinTong.API\ConsoleApp\obj\Debug\netcoreapp2.2\ConsoleApp.pdb
