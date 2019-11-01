@@ -97,6 +97,27 @@ namespace shuiyintong.DBUtils.Service
         /// <returns></returns>
         public IEnumerable<T> GetPageList(Expression<Func<T, bool>> exp, int pageIndex, int pageSize, ref int totalCount) => DB.Queryable<T>().Where(exp).ToPageList(pageIndex, pageSize, ref totalCount);
         /// <summary>
+        /// 分页查询
+        /// </summary>
+        /// <param name="whereExpression"></param>
+        /// <param name="intTotalCount"></param>
+        /// <param name="intPageIndex"></param>
+        /// <param name="intPageSize"></param>
+        /// <param name="strOrderByFileds"></param>
+        /// <returns></returns>
+        public List<T> QueryPage(
+         Expression<Func<T, bool>> whereExpression,
+         ref int intTotalCount,
+         int intPageIndex = 0,
+         int intPageSize = 20,
+         string strOrderByFileds = null)
+        {
+            return DB.Queryable<T>()
+                .OrderByIF(!string.IsNullOrEmpty(strOrderByFileds), strOrderByFileds)
+                .WhereIF(whereExpression != null, whereExpression)
+                .ToPageList(intPageIndex, intPageSize, ref intTotalCount);
+        }
+        /// <summary>
         /// SQL查询集合
         /// </summary>
         /// <param name="sql">SQL语句</param>
@@ -122,5 +143,7 @@ namespace shuiyintong.DBUtils.Service
         /// <param name="columns">列</param>
         /// <returns></returns>
         public bool Modefy(Expression<Func<T, bool>> exp, Expression<Func<T, T>> columns) => EntityDB.Update(columns, exp);
+
+        
     }
 }

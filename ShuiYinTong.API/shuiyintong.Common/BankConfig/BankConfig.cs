@@ -99,7 +99,10 @@
         /// 贷款归还
         /// </summary>
         public string OlBrwLnRepy { get; set; }
-
+        /// <summary>
+        /// 贷款还款明细查询
+        /// </summary>
+        public string IntDtlQry { get; set; }
 
 
 

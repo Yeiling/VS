@@ -26,6 +26,8 @@ namespace shuiyintong.Api.Controllers
         /// 数据库实现
         /// </summary>
         //public IBaseService<AcctDtlInfoQry> AcctDtlInfoServer { get; set; }
+        //public IBaseService<DVR_USER_LOGIN_INFO> DVR_USER_LOGIN_INFO { get; set; }
+
 
         /// <summary>
         /// 银行类型---浦发银行
@@ -946,7 +948,7 @@ namespace shuiyintong.Api.Controllers
         /// <returns></returns>
         [HttpPost]
         public string OlBrwLnRepy([FromBody]OlBrwLnRepyReq olBrwLnRepyReq)
-        { 
+        {
             string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             NewLifeRedisHelper redis;
@@ -997,6 +999,69 @@ namespace shuiyintong.Api.Controllers
 
             return resultStr;
         }
+
+        /// <summary>
+        /// 贷款还款明细查询
+        /// </summary>
+        /// <param name="intDtlQryReq">请求参数</param>
+        /// <returns></returns>
+        [HttpPost]
+        public string IntDtlQry([FromBody]IntDtlQryReq intDtlQryReq)
+        {
+            string resultStr = string.Empty;
+            var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
+            NewLifeRedisHelper redis;
+            SPDBankAPIType sPDBankAPIType = SPDBankAPIType.IntDtlQry;
+            int BankAPIType = (int)sPDBankAPIType;
+            string key = (int)BankType.SPDBank + "-" + BankAPIType + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
+            int code = 0; //http请求错误码
+            byte responseType; //返回类型
+            BaseLog log = new BaseLog //日志对象
+            {
+                DateTime = Now,
+                BankName = SPDBank.GetDescription(),
+                APICode = BankAPIType,
+                APIName = sPDBankAPIType.GetDescription()
+            };
+            try
+            {
+                var header = GetHeaderSign(intDtlQryReq, out string dataRequest);
+                resultStr = HttpClientHelper.POSTRequest(SPDBankConfig.IntDtlQry, dataRequest, header, (statusCode, result) =>
+                {
+                    code = (int)statusCode;
+                    responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                    BaseResponse<string> baseResponse = new BaseResponse<string>
+                    {
+                        Code = code,
+                        Data = result,
+                        ResponseType = responseType,
+                        DateTime = Now
+                    };
+
+                    //Redis保存
+                    key += responseType;
+                    redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
+                    if (redis != null)
+                        redis.Set(key, baseResponse);
+                });
+            }
+            catch (Exception ex)
+            {
+                responseType = (byte)ResponseType.Fail;
+                log.ErrorMsg = ex.Message;
+                key += responseType;
+            }
+            //保存日志
+            redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.ErrorDb);
+            if (redis != null)
+                redis.Set(key, log);
+
+            return resultStr;
+        }
+
+
+
+
 
 
         #endregion

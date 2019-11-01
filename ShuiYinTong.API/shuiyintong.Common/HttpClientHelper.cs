@@ -8,7 +8,7 @@ using System.Text;
 namespace shuiyintong.Common
 {
     /// <summary>
-    /// HttpClient的帮助类
+    /// HttpClient请求公共类
     /// </summary>
     public class HttpClientHelper
     {
@@ -36,7 +36,7 @@ namespace shuiyintong.Common
             request.ContentType = contentType;
             request.MediaType = contentType;
             request.ContentLength = bdata.Length;
-            if (header.IsNotNullOrEmpty())  //请求头
+            if (header.IsNotNullOrEmpty())
             {
                 foreach (var h in header)
                     request.Headers.Add(h.Key, h.Value);

@@ -94,7 +94,11 @@ namespace shuiyintong.Entity.SPDBankEntity
             /// </summary>
             [Description("贷款归还")]
             OlBrwLnRepy = 115,
-
+            /// <summary>
+            /// 贷款还款明细查询
+            /// </summary>
+            [Description("贷款还款明细查询")]
+            IntDtlQry = 116,
 
 
 

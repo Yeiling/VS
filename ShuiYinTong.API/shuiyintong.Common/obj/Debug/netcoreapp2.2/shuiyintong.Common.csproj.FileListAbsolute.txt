@@ -6,4 +6,3 @@ F:\Project\shuiyintong.Common\obj\Debug\netcoreapp2.2\shuiyintong.Common.Assembl
 F:\Project\shuiyintong.Common\obj\Debug\netcoreapp2.2\shuiyintong.Common.AssemblyInfo.cs
 F:\Project\shuiyintong.Common\obj\Debug\netcoreapp2.2\shuiyintong.Common.dll
 F:\Project\shuiyintong.Common\obj\Debug\netcoreapp2.2\shuiyintong.Common.pdb
-F:\Project\shuiyintong.Common\obj\Debug\netcoreapp2.2\shuiyintong.Common.csprojAssemblyReference.cache
