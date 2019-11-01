@@ -10,6 +10,7 @@ namespace shuiyintong.Api
     /// </summary>
     public static class BuilderJsonConfig
     {
+        private static System.IDisposable callbackRegistration;
         /// <summary>
         /// 实现
         /// </summary>
@@ -18,11 +19,11 @@ namespace shuiyintong.Api
 
         public static void UseJsonConfig(this IServiceCollection services, IConfiguration configuration)
         {
-            callbackRegistration = configuration.GetSection("AppSettings").GetReloadToken().RegisterChangeCallback(OnAppConfigChanged, configuration.GetSection("AppSettings"));
+            callbackRegistration = configuration.GetSection("BankConfig").GetReloadToken().RegisterChangeCallback(OnAppConfigChanged, configuration.GetSection("BankConfig"));
             AppSettings.BankConfig = services.Configure<BankConfig>(configuration.GetSection("BankConfig")).BuildServiceProvider().GetService<IOptionsSnapshot<BankConfig>>().Value;
         }
 
-        private static System.IDisposable callbackRegistration;
+        
 
         private static void OnAppConfigChanged(object state)
         {

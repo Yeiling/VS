@@ -9,6 +9,11 @@
             拦截器 需要实现 IInterceptor接口 Intercept方法
             </summary>
         </member>
+        <member name="F:shuiyintong.Api.AutoFacAop.LogInterceptor._log">
+            <summary>
+            日志记录器
+            </summary>
+        </member>
         <member name="M:shuiyintong.Api.AutoFacAop.LogInterceptor.Intercept(Castle.DynamicProxy.IInvocation)">
             <summary>
             实现Castle.DynamicProxy(动态代理中的接口IInterceptor)

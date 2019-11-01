@@ -1,7 +1,6 @@
 ﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Autofac.Extras.DynamicProxy;
-using Castle.DynamicProxy;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -9,8 +8,9 @@ using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Options;
 using shuiyintong.Api.AutoFacAop;
-using shuiyintong.Api.Controllers;
+using shuiyintong.Common.BankConfig;
 using shuiyintong.DBUtils.IService;
 using shuiyintong.DBUtils.Service;
 using Swashbuckle.AspNetCore.Swagger;
@@ -81,6 +81,7 @@ namespace shuiyintong.Api
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.UseJsonConfig(Configuration);
+  
 
             services.AddCors(options =>
             {
@@ -139,7 +140,7 @@ namespace shuiyintong.Api
             //方式二：在注册类型到容器的时候动态注入拦截器(去掉类型上的特性Attribute)---动态注入---不需要在类型上加特性Attribute
             //Builder.RegisterType<Man>().As<IPerson>().InterceptedBy(typeof(LogInterceptor)).EnableInterfaceInterceptors(); 
             #endregion
-            //---------------------------------------------AOP----------------------------------------------
+            //-----------------------------------------------AOP------------------------------------------------
 
             Builder.Populate(services);
             var container = Builder.Build();
