@@ -56,6 +56,11 @@
             浦发银行配合信息
             </summary>
         </member>
+        <member name="F:shuiyintong.Api.Controllers.SPDBankController.Code">
+            <summary>
+            Http请求返回Code
+            </summary>
+        </member>
         <member name="M:shuiyintong.Api.Controllers.SPDBankController.GetHeaderSign(System.Object,System.String@)">
             <summary>
             获取签名

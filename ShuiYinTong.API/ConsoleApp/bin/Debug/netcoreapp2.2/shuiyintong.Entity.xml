@@ -1720,6 +1720,56 @@
             实还表外复息利息
             </summary>
         </member>
+        <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankResp.InterestTrialResp">
+            <summary>
+            贷款试算返回类型
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankResp.InterestTrialResp.anlDstrPyAmt">
+            <summary>
+            贷款金额
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankResp.InterestTrialResp.intSetlPrd">
+            <summary>
+            结息周期
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankResp.InterestTrialResp.execIntRate">
+            <summary>
+            利率
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankResp.InterestTrialResp.totalInt">
+            <summary>
+            应还利息总和
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankResp.InterestTrialResp.intTrialInfo">
+            <summary>
+            贷款试算详情集合
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankResp.intTrialInfoItem">
+            <summary>
+            贷款试算对象
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankResp.intTrialInfoItem.repayDate">
+            <summary>
+            还款日期
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankResp.intTrialInfoItem.principal">
+            <summary>
+            应还本金
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankResp.intTrialInfoItem.interest">
+            <summary>
+            应还利息
+            </summary>
+        </member>
         <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankResp.OlBrwLnRepyResp">
             <summary>
             贷款归还返回类型

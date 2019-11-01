@@ -37,6 +37,12 @@ namespace shuiyintong.Api.Controllers
         /// 浦发银行配合信息
         /// </summary>
         private readonly SPDBankConfig SPDBankConfig = bankConfig.SPDBankConfig;
+        /// <summary>
+        /// Http请求返回Code
+        /// </summary>
+        private readonly int Code = 200;
+
+
         #region 接口签名
 
         /// <summary>
@@ -88,7 +94,7 @@ namespace shuiyintong.Api.Controllers
                 resultStr = HttpClientHelper.POSTRequest(SPDBankConfig.AcctInfo, dataRequest, header, (statusCode, result) =>
                  {
                      code = (int)statusCode;
-                     responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                     responseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
                      BaseResponse<string> baseResponse = new BaseResponse<string>
                      {
                          Code = code,
@@ -146,7 +152,7 @@ namespace shuiyintong.Api.Controllers
                 resultStr = HttpClientHelper.POSTRequest(SPDBankConfig.AcctDtlInfoQry, dataRequest, header, (statusCode, result) =>
                   {
                       code = (int)statusCode;
-                      responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                      responseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
                       BaseResponse<string> baseResponse = new BaseResponse<string>
                       {
                           Code = code,
@@ -204,7 +210,7 @@ namespace shuiyintong.Api.Controllers
                 resultStr = HttpClientHelper.POSTRequest(SPDBankConfig.SingleTransfer, dataRequest, header, (statusCode, result) =>
                   {
                       code = (int)statusCode;
-                      responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                      responseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
                       responseType = (byte)ResponseType.Success;
                       BaseResponse<string> baseResponse = new BaseResponse<string>
                       {
@@ -263,7 +269,7 @@ namespace shuiyintong.Api.Controllers
                 resultStr = HttpClientHelper.POSTRequest(SPDBankConfig.SnglTrsfRstlQry, dataRequest, header, (statusCode, result) =>
                  {
                      code = (int)statusCode;
-                     responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                     responseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
                      BaseResponse<string> baseResponse = new BaseResponse<string>
                      {
                          Code = code,
@@ -321,7 +327,7 @@ namespace shuiyintong.Api.Controllers
                 resultStr = HttpClientHelper.POSTRequest(SPDBankConfig.ElectRecptApplction, dataRequest, header, (statusCode, result) =>
                   {
                       code = (int)statusCode;
-                      responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                      responseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
                       BaseResponse<string> baseResponse = new BaseResponse<string>
                       {
                           Code = code,
@@ -379,7 +385,7 @@ namespace shuiyintong.Api.Controllers
                 resultStr = HttpClientHelper.POSTRequest(SPDBankConfig.FncThdCncl, dataRequest, header, (statusCode, result) =>
                  {
                      code = (int)statusCode;
-                     responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                     responseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
                      BaseResponse<string> baseResponse = new BaseResponse<string>
                      {
                          Code = code,
@@ -437,7 +443,7 @@ namespace shuiyintong.Api.Controllers
                 resultStr = HttpClientHelper.POSTRequest(SPDBankConfig.RexgAddInfoQry, dataRequest, header, (statusCode, result) =>
                   {
                       code = (int)statusCode;
-                      responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                      responseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
                       BaseResponse<string> baseResponse = new BaseResponse<string>
                       {
                           Code = code,
@@ -495,7 +501,7 @@ namespace shuiyintong.Api.Controllers
                 resultStr = HttpClientHelper.POSTRequest(SPDBankConfig.BnkInfoQryCombntnTran, dataRequest, header, (statusCode, result) =>
                   {
                       code = (int)statusCode;
-                      responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                      responseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
                       BaseResponse<string> baseResponse = new BaseResponse<string>
                       {
                           Code = code,
@@ -553,7 +559,7 @@ namespace shuiyintong.Api.Controllers
                 resultStr = HttpClientHelper.POSTRequest(SPDBankConfig.AuthSmlAmt, dataRequest, header, (statusCode, result) =>
                  {
                      code = (int)statusCode;
-                     responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                     responseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
                      BaseResponse<string> baseResponse = new BaseResponse<string>
                      {
                          Code = code,
@@ -612,7 +618,7 @@ namespace shuiyintong.Api.Controllers
                 resultStr = HttpClientHelper.POSTRequest(SPDBankConfig.PayInsrChk, dataRequest, header, (statusCode, result) =>
                 {
                     code = (int)statusCode;
-                    responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                    responseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
                     BaseResponse<string> baseResponse = new BaseResponse<string>
                     {
                         Code = code,
@@ -671,7 +677,7 @@ namespace shuiyintong.Api.Controllers
                 resultStr = HttpClientHelper.POSTRequest(SPDBankConfig.PayInsrDtlQry, dataRequest, header, (statusCode, result) =>
                 {
                     code = (int)statusCode;
-                    responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                    responseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
                     BaseResponse<string> baseResponse = new BaseResponse<string>
                     {
                         Code = code,
@@ -730,7 +736,7 @@ namespace shuiyintong.Api.Controllers
                 resultStr = HttpClientHelper.POSTRequest(SPDBankConfig.PayInsrCnl, dataRequest, header, (statusCode, result) =>
                 {
                     code = (int)statusCode;
-                    responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                    responseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
                     BaseResponse<string> baseResponse = new BaseResponse<string>
                     {
                         Code = code,
@@ -789,7 +795,7 @@ namespace shuiyintong.Api.Controllers
                 resultStr = HttpClientHelper.POSTRequest(SPDBankConfig.PayeeWhtLstQry, dataRequest, header, (statusCode, result) =>
                 {
                     code = (int)statusCode;
-                    responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                    responseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
                     BaseResponse<string> baseResponse = new BaseResponse<string>
                     {
                         Code = code,
@@ -848,7 +854,7 @@ namespace shuiyintong.Api.Controllers
                 resultStr = HttpClientHelper.POSTRequest(SPDBankConfig.PayeeWhtLstMntn, dataRequest, header, (statusCode, result) =>
                 {
                     code = (int)statusCode;
-                    responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                    responseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
                     BaseResponse<string> baseResponse = new BaseResponse<string>
                     {
                         Code = code,
@@ -911,7 +917,7 @@ namespace shuiyintong.Api.Controllers
                 resultStr = HttpClientHelper.POSTRequest(SPDBankConfig.ZLSysInrBnkTfr, dataRequest, header, (statusCode, result) =>
                 {
                     code = (int)statusCode;
-                    responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                    responseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
                     BaseResponse<string> baseResponse = new BaseResponse<string>
                     {
                         Code = code,
@@ -970,7 +976,7 @@ namespace shuiyintong.Api.Controllers
                 resultStr = HttpClientHelper.POSTRequest(SPDBankConfig.OlBrwLnRepy, dataRequest, header, (statusCode, result) =>
                 {
                     code = (int)statusCode;
-                    responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                    responseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
                     BaseResponse<string> baseResponse = new BaseResponse<string>
                     {
                         Code = code,
@@ -1029,7 +1035,7 @@ namespace shuiyintong.Api.Controllers
                 resultStr = HttpClientHelper.POSTRequest(SPDBankConfig.IntDtlQry, dataRequest, header, (statusCode, result) =>
                 {
                     code = (int)statusCode;
-                    responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                    responseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
                     BaseResponse<string> baseResponse = new BaseResponse<string>
                     {
                         Code = code,
@@ -1067,7 +1073,7 @@ namespace shuiyintong.Api.Controllers
         [HttpPost]
         public string InterestTrial([FromBody]InterestTrialReq interestTrialReq)
         {
-            string resultStr = string.Empty; 
+            string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             NewLifeRedisHelper redis;
             SPDBankAPIType sPDBankAPIType = SPDBankAPIType.InterestTrial;
@@ -1088,7 +1094,7 @@ namespace shuiyintong.Api.Controllers
                 resultStr = HttpClientHelper.POSTRequest(SPDBankConfig.InterestTrial, dataRequest, header, (statusCode, result) =>
                 {
                     code = (int)statusCode;
-                    responseType = code == 200 ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                    responseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
                     BaseResponse<string> baseResponse = new BaseResponse<string>
                     {
                         Code = code,
