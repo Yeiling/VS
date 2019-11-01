@@ -1,6 +1,9 @@
 ﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Autofac.Extras.DynamicProxy;
+using log4net;
+using log4net.Config;
+using log4net.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 using shuiyintong.Api.AutoFacAop;
+using shuiyintong.Api.Controllers;
 using shuiyintong.Common.BankConfig;
 using shuiyintong.DBUtils.IService;
 using shuiyintong.DBUtils.Service;
@@ -28,15 +32,22 @@ namespace shuiyintong.Api
     public class Startup
     {
         /// <summary>
-        /// 构造函数
-        /// </summary>
-        /// <param name="configuration"></param>
-        public Startup(IConfiguration configuration) => Configuration = configuration;
-
-        /// <summary>
         /// 配置属性
         /// </summary>
         public IConfiguration Configuration { get; }
+
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="configuration"></param>
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+            //Log4net
+            LogRepository.Repository = LogManager.CreateRepository("Log4Repository");
+            var t = XmlConfigurator.Configure(LogRepository.Repository, new FileInfo("log4net.config"));
+        }
+
         //IServiceProvider--- This method gets called by the runtime. Use this method to add services to the container.
         /// <summary>
         /// 配置服务
@@ -81,7 +92,7 @@ namespace shuiyintong.Api
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.UseJsonConfig(Configuration);
-  
+
 
             services.AddCors(options =>
             {
@@ -161,16 +172,16 @@ namespace shuiyintong.Api
 
             app.UseHttpsRedirection();
 
+            //添加Swagger
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "ShuiYinTong.WebApi");
                 c.RoutePrefix = string.Empty;
             });
-
+            //扩展路由
             app.UseMvc(routes =>
             {
-                //扩展路由
                 routes.MapRoute("default", "/{controller}/{action}/{id?}", new { controller = "Home", action = "Index" });
             });
 

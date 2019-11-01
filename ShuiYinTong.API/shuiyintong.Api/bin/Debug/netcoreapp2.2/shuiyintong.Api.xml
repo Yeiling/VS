@@ -82,6 +82,11 @@
             Http请求返回Code
             </summary>
         </member>
+        <member name="F:shuiyintong.Api.Controllers.SPDBankController._log">
+            <summary>
+            Log4服务对象
+            </summary>
+        </member>
         <member name="M:shuiyintong.Api.Controllers.SPDBankController.GetHeaderSign(System.Object,System.String@)">
             <summary>
             获取签名
@@ -207,6 +212,16 @@
             <param name="interestTrialReq">请求参数</param>
             <returns></returns>
         </member>
+        <member name="T:shuiyintong.Api.LogRepository">
+            <summary>
+            Log4
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Api.LogRepository.Repository">
+            <summary>
+            Log4日志
+            </summary>
+        </member>
         <member name="T:shuiyintong.Api.Program">
             <summary>
             主程序
@@ -230,16 +245,16 @@
             Startup类
             </summary>
         </member>
+        <member name="P:shuiyintong.Api.Startup.Configuration">
+            <summary>
+            配置属性
+            </summary>
+        </member>
         <member name="M:shuiyintong.Api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
             构造函数
             </summary>
             <param name="configuration"></param>
-        </member>
-        <member name="P:shuiyintong.Api.Startup.Configuration">
-            <summary>
-            配置属性
-            </summary>
         </member>
         <member name="M:shuiyintong.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
             <summary>

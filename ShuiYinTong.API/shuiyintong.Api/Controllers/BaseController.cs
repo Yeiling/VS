@@ -11,7 +11,7 @@ namespace shuiyintong.Api.Controllers
     /// </summary>
     [EnableCors("any")]
     [Route("[controller]/[action]")]
-    //[Intercept(typeof(LogInterceptor))]
+    //[Intercept(typeof(LogInterceptor))] ////AOP拦截器
     public class BaseController : Controller
     {
         /// <summary>
