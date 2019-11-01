@@ -1296,11 +1296,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Project\\shuiyintong.Common\\shuiyintong.Common.csproj",
+      "projectUniqueName": "F:\\GitHubProject\\ShuiYinTong.API\\shuiyintong.Common\\shuiyintong.Common.csproj",
       "projectName": "shuiyintong.Common",
-      "projectPath": "F:\\Project\\shuiyintong.Common\\shuiyintong.Common.csproj",
+      "projectPath": "F:\\GitHubProject\\ShuiYinTong.API\\shuiyintong.Common\\shuiyintong.Common.csproj",
       "packagesPath": "C:\\Users\\Mypc\\.nuget\\packages\\",
-      "outputPath": "F:\\Project\\shuiyintong.Common\\obj\\",
+      "outputPath": "F:\\GitHubProject\\ShuiYinTong.API\\shuiyintong.Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
