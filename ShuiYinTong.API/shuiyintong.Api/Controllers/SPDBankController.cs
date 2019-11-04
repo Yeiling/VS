@@ -23,7 +23,6 @@ namespace shuiyintong.Api.Controllers
     /// <summary>
     /// 浦发银行接口
     /// </summary>
-    [Intercept(typeof(LogInterceptor))] ////AOP拦截器
     public class SPDBankController : BaseController
     {
         /// <summary>
@@ -196,8 +195,6 @@ namespace shuiyintong.Api.Controllers
         [HttpPost]
         public string SingleTransfer([FromBody]SingleTransferReq singleTransferReq)
         {
-            var rr = AcctDtlInfoServer.GetList(r => true);
-
             string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             NewLifeRedisHelper redis;
