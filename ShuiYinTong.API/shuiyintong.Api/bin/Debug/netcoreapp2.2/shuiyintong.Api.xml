@@ -4,9 +4,52 @@
         <name>shuiyintong.Api</name>
     </assembly>
     <members>
+        <member name="T:shuiyintong.Api.AutoFacAop.LogAfterInterceptor">
+            <summary>
+            Aspect AOP定义一个前置拦截器
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.AutoFacAop.LogAfterInterceptor.After(Autofac.Aspect.AspectContext)">
+            <summary>
+            后置拦截器拦截器
+            </summary>
+            <param name="aspectContext"></param>
+            <returns></returns>
+        </member>
+        <member name="T:shuiyintong.Api.AutoFacAop.LogArroundInterceptor">
+            <summary>
+            Aspect AOP定义一个环绕拦截器
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.AutoFacAop.LogArroundInterceptor.Before(Autofac.Aspect.AspectContext)">
+            <summary>
+            前置拦截器拦截器
+            </summary>
+            <param name="aspectContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.AutoFacAop.LogArroundInterceptor.After(Autofac.Aspect.AspectContext)">
+            <summary>
+            后置拦截器拦截器
+            </summary>
+            <param name="aspectContext"></param>
+            <returns></returns>
+        </member>
+        <member name="T:shuiyintong.Api.AutoFacAop.LogBeforeInterceptor">
+            <summary>
+            Aspect AOP定义一个前置拦截器---事务
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.AutoFacAop.LogBeforeInterceptor.Before(Autofac.Aspect.AspectContext)">
+            <summary>
+            前置拦截器
+            </summary>
+            <param name="aspectContext"></param>
+            <returns></returns>
+        </member>
         <member name="T:shuiyintong.Api.AutoFacAop.LogInterceptor">
             <summary>
-            拦截器 需要实现 IInterceptor接口 Intercept方法
+            AutoFac AOP拦截器 需要实现 IInterceptor接口 Intercept方法
             </summary>
         </member>
         <member name="F:shuiyintong.Api.AutoFacAop.LogInterceptor._log">
@@ -215,15 +258,47 @@
             <param name="interestTrialReq">请求参数</param>
             <returns></returns>
         </member>
-        <member name="T:shuiyintong.Api.LogRepository">
+        <member name="T:shuiyintong.Api.Controllers.TestController">
             <summary>
-            Log4
+            测试使用
             </summary>
         </member>
-        <member name="P:shuiyintong.Api.LogRepository.Repository">
+        <member name="P:shuiyintong.Api.Controllers.TestController.AcctDtlInfoServer">
             <summary>
-            Log4日志
+            AcctDtlInfoServer
             </summary>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.TestController.AAA">
+            <summary>
+            测试方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:shuiyintong.Api.Log4Helper">
+            <summary>
+            Log4net日志
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.Log4Helper.Info(System.String,System.Exception)">
+            <summary>
+            普通日志
+            </summary>
+            <param name="message"></param>
+            <param name="exception"></param>
+        </member>
+        <member name="M:shuiyintong.Api.Log4Helper.Warn(System.String,System.Exception)">
+            <summary>
+            告警日志
+            </summary>
+            <param name="message"></param>
+            <param name="exception"></param>
+        </member>
+        <member name="M:shuiyintong.Api.Log4Helper.Error(System.String,System.Exception)">
+            <summary>
+            错误日志
+            </summary>
+            <param name="message"></param>
+            <param name="exception"></param>
         </member>
         <member name="T:shuiyintong.Api.Program">
             <summary>

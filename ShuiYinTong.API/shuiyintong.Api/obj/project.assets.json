@@ -65,6 +65,24 @@
           "lib/netstandard2.0/Autofac.dll": {}
         }
       },
+      "Autofac.Annotation/3.0.5": {
+        "type": "package",
+        "dependencies": {
+          "AspectCore.Extensions.Reflection": "1.3.0",
+          "Autofac": "4.9.4",
+          "Castle.Core": "4.4.0",
+          "Microsoft.CSharp": "4.6.0",
+          "Microsoft.Extensions.Configuration.Json": "1.0.2",
+          "Microsoft.Extensions.Configuration.Xml": "1.0.2",
+          "Spring.EL": "1.0.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/Autofac.Annotation.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Autofac.Annotation.dll": {}
+        }
+      },
       "Autofac.Extensions.DependencyInjection/5.0.1": {
         "type": "package",
         "dependencies": {
@@ -92,7 +110,7 @@
           "lib/netstandard1.3/Autofac.Extras.DynamicProxy.dll": {}
         }
       },
-      "Castle.Core/4.3.1": {
+      "Castle.Core/4.4.0": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1",
@@ -1836,7 +1854,7 @@
           "lib/netstandard1.3/Microsoft.CodeAnalysis.Workspaces.dll": {}
         }
       },
-      "Microsoft.CSharp/4.5.0": {
+      "Microsoft.CSharp/4.6.0": {
         "type": "package",
         "compile": {
           "ref/netcoreapp2.0/_._": {}
@@ -3374,6 +3392,23 @@
           }
         }
       },
+      "Spring.EL/1.0.4": {
+        "type": "package",
+        "dependencies": {
+          "System.CodeDom": "4.5.0",
+          "System.Configuration.ConfigurationManager": "4.5.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Emit": "4.3.0",
+          "System.Reflection.Emit.Lightweight": "4.3.0",
+          "System.Reflection.Primitives": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Spring.EL.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Spring.EL.dll": {}
+        }
+      },
       "SQLitePCLRaw.bundle_green/1.1.12": {
         "type": "package",
         "dependencies": {
@@ -3589,6 +3624,15 @@
         },
         "runtime": {
           "lib/netcoreapp2.0/_._": {}
+        }
+      },
+      "System.CodeDom/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.CodeDom.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.CodeDom.dll": {}
         }
       },
       "System.Collections/4.3.0": {
@@ -5658,6 +5702,23 @@
         "lib/netstandard2.0/Autofac.xml"
       ]
     },
+    "Autofac.Annotation/3.0.5": {
+      "sha512": "Zl8kq1FLup9AZj3wdgotaADpvF58mjH2VqafJ8MNFM/MOm6MUiJKj61ZB3TI8JaZEoQfx3T0oXiQBv7+d7ga+Q==",
+      "type": "package",
+      "path": "autofac.annotation/3.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "autofac.annotation.3.0.5.nupkg.sha512",
+        "autofac.annotation.nuspec",
+        "lib/net46/Autofac.Annotation.dll",
+        "lib/net46/Autofac.Annotation.pdb",
+        "lib/net46/Autofac.Annotation.xml",
+        "lib/netstandard2.0/Autofac.Annotation.dll",
+        "lib/netstandard2.0/Autofac.Annotation.pdb",
+        "lib/netstandard2.0/Autofac.Annotation.xml"
+      ]
+    },
     "Autofac.Extensions.DependencyInjection/5.0.1": {
       "sha512": "92/AmuykrdvaLlE8Y4sc4SlX2RrCeClUqddjNi7cAYsOsVD/jq5JXDP1ZhHSBan4P/o7AKjpxjD/MrPTO0DHRw==",
       "type": "package",
@@ -5689,17 +5750,17 @@
         "lib/netstandard1.3/Autofac.Extras.DynamicProxy.xml"
       ]
     },
-    "Castle.Core/4.3.1": {
-      "sha512": "8Y/eTr6GTElAGV7eAmJuhfLhGdFpNvaNrQ9UQYDScziLmX+/BLGM+9eQr0IcdNDcPN0ADmbtwT6MgecGKy4obw==",
+    "Castle.Core/4.4.0": {
+      "sha512": "b5rRL5zeaau1y/5hIbI+6mGw3cwun16YjkHZnV9RRT5UyUIFsgLmNXJ0YnIN9p8Hw7K7AbG1q1UclQVU3DinAQ==",
       "type": "package",
-      "path": "castle.core/4.3.1",
+      "path": "castle.core/4.4.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "ASL - Apache Software Foundation License.txt",
         "CHANGELOG.md",
         "LICENSE",
-        "castle.core.4.3.1.nupkg.sha512",
+        "castle.core.4.4.0.nupkg.sha512",
         "castle.core.nuspec",
         "lib/net35/Castle.Core.dll",
         "lib/net35/Castle.Core.xml",
@@ -7146,10 +7207,10 @@
         "microsoft.codeanalysis.workspaces.common.nuspec"
       ]
     },
-    "Microsoft.CSharp/4.5.0": {
-      "sha512": "kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
+    "Microsoft.CSharp/4.6.0": {
+      "sha512": "kxn3M2rnAGy5N5DgcIwcE8QTePWU/XiYcQVzn9HqTls2NKluVzVSmVWRjK7OUPWbljCXuZxHyhEz9kPRIQeXow==",
       "type": "package",
-      "path": "microsoft.csharp/4.5.0",
+      "path": "microsoft.csharp/4.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -7162,6 +7223,7 @@
         "lib/netcoreapp2.0/_._",
         "lib/netstandard1.3/Microsoft.CSharp.dll",
         "lib/netstandard2.0/Microsoft.CSharp.dll",
+        "lib/netstandard2.0/Microsoft.CSharp.xml",
         "lib/portable-net45+win8+wp8+wpa81/_._",
         "lib/uap10.0.16299/_._",
         "lib/win8/_._",
@@ -7171,7 +7233,7 @@
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
-        "microsoft.csharp.4.5.0.nupkg.sha512",
+        "microsoft.csharp.4.6.0.nupkg.sha512",
         "microsoft.csharp.nuspec",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
@@ -9573,6 +9635,19 @@
         "version.txt"
       ]
     },
+    "Spring.EL/1.0.4": {
+      "sha512": "PPkI41ipPp+rC5dRDjMwdeJkSkNBpMD9rIxbmOtCW/dkiVkTMXCq6sXiF6Tb2ug6Qv7TJ1LEdv5W/+xbTfmrbg==",
+      "type": "package",
+      "path": "spring.el/1.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Spring.EL.dll",
+        "lib/netstandard2.0/Spring.EL.dll",
+        "spring.el.1.0.4.nupkg.sha512",
+        "spring.el.nuspec"
+      ]
+    },
     "SQLitePCLRaw.bundle_green/1.1.12": {
       "sha512": "U5lZv+E0JBCG5uQngaRgyIAlbzIwRczb0m46XJfLGXovtfVOaMNRY/oGyKAJjdexVrfqLRd+JyopGMySpAZRGQ==",
       "type": "package",
@@ -9858,6 +9933,27 @@
         "ref/uap10.0.16299/_._",
         "system.buffers.4.5.0.nupkg.sha512",
         "system.buffers.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.CodeDom/4.5.0": {
+      "sha512": "gqpR1EeXOuzNQWL7rOzmtdIz3CaXVjSQCiaGOs2ivjPwynKSJYm39X81fdlp7WuojZs/Z5t1k5ni7HtKQurhjw==",
+      "type": "package",
+      "path": "system.codedom/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.CodeDom.dll",
+        "lib/netstandard2.0/System.CodeDom.dll",
+        "ref/net461/System.CodeDom.dll",
+        "ref/net461/System.CodeDom.xml",
+        "ref/netstandard2.0/System.CodeDom.dll",
+        "ref/netstandard2.0/System.CodeDom.xml",
+        "system.codedom.4.5.0.nupkg.sha512",
+        "system.codedom.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
@@ -15120,6 +15216,7 @@
       "AspectCore.Core >= 1.3.0",
       "AspectCore.Extensions.DependencyInjection >= 1.3.0",
       "Autofac >= 4.9.4",
+      "Autofac.Annotation >= 3.0.5",
       "Autofac.Extensions.DependencyInjection >= 5.0.1",
       "Autofac.Extras.DynamicProxy >= 4.5.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
@@ -15198,6 +15295,10 @@
           "Autofac": {
             "target": "Package",
             "version": "[4.9.4, )"
+          },
+          "Autofac.Annotation": {
+            "target": "Package",
+            "version": "[3.0.5, )"
           },
           "Autofac.Extensions.DependencyInjection": {
             "target": "Package",

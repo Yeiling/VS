@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "771de73f3edd1ce283ffd53a051f9d64e124dba1"
+    "signature": "680bf0f8e74d62a0083ad8113bef579f16191323"
   },
   "compilationOptions": {
     "defines": [
@@ -27,6 +27,7 @@
           "AspectCore.Core": "1.3.0",
           "AspectCore.Extensions.DependencyInjection": "1.3.0",
           "Autofac": "4.9.4",
+          "Autofac.Annotation": "3.0.5",
           "Autofac.Extensions.DependencyInjection": "5.0.1",
           "Autofac.Extras.DynamicProxy": "4.5.0",
           "Microsoft.AspNetCore.App": "2.2.0",
@@ -64,7 +65,7 @@
         "dependencies": {
           "AspectCore.Abstractions": "1.3.0",
           "AspectCore.Extensions.Reflection": "1.3.0",
-          "Microsoft.CSharp": "4.5.0",
+          "Microsoft.CSharp": "4.6.0",
           "System.Reflection.Emit": "4.3.0",
           "System.Reflection.Emit.ILGeneration": "4.3.0"
         },
@@ -119,6 +120,26 @@
           "lib/netstandard2.0/Autofac.dll": {}
         }
       },
+      "Autofac.Annotation/3.0.5": {
+        "dependencies": {
+          "AspectCore.Extensions.Reflection": "1.3.0",
+          "Autofac": "4.9.4",
+          "Castle.Core": "4.4.0",
+          "Microsoft.CSharp": "4.6.0",
+          "Microsoft.Extensions.Configuration.Json": "2.2.0",
+          "Microsoft.Extensions.Configuration.Xml": "2.2.0",
+          "Spring.EL": "1.0.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Autofac.Annotation.dll": {
+            "assemblyVersion": "3.0.5.0",
+            "fileVersion": "3.0.5.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Autofac.Annotation.dll": {}
+        }
+      },
       "Autofac.Extensions.DependencyInjection/5.0.1": {
         "dependencies": {
           "Autofac": "4.9.4",
@@ -137,7 +158,7 @@
       "Autofac.Extras.DynamicProxy/4.5.0": {
         "dependencies": {
           "Autofac": "4.9.4",
-          "Castle.Core": "4.3.1",
+          "Castle.Core": "4.4.0",
           "NETStandard.Library": "2.0.3"
         },
         "runtime": {
@@ -150,7 +171,7 @@
           "lib/netstandard1.3/Autofac.Extras.DynamicProxy.dll": {}
         }
       },
-      "Castle.Core/4.3.1": {
+      "Castle.Core/4.4.0": {
         "dependencies": {
           "NETStandard.Library": "2.0.3",
           "System.Collections.Specialized": "4.3.0",
@@ -166,7 +187,7 @@
         "runtime": {
           "lib/netstandard1.5/Castle.Core.dll": {
             "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.3.1.0"
+            "fileVersion": "4.4.0.0"
           }
         },
         "compile": {
@@ -261,6 +282,7 @@
           "lib/netstandard1.3/Microsoft.CodeAnalysis.Workspaces.dll": {}
         }
       },
+      "Microsoft.CSharp/4.6.0": {},
       "Microsoft.Data.Sqlite/2.2.4": {
         "dependencies": {
           "Microsoft.Data.Sqlite.Core": "2.2.4",
@@ -501,6 +523,25 @@
           "lib/netstandard2.0/Oracle.ManagedDataAccess.dll": {}
         }
       },
+      "Spring.EL/1.0.4": {
+        "dependencies": {
+          "System.CodeDom": "4.5.0",
+          "System.Configuration.ConfigurationManager": "4.6.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Emit": "4.3.0",
+          "System.Reflection.Emit.Lightweight": "4.3.0",
+          "System.Reflection.Primitives": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Spring.EL.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Spring.EL.dll": {}
+        }
+      },
       "SQLitePCLRaw.bundle_green/1.1.12": {
         "dependencies": {
           "SQLitePCLRaw.core": "1.1.12",
@@ -704,6 +745,17 @@
         },
         "compile": {
           "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
+        }
+      },
+      "System.CodeDom/4.5.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.CodeDom.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.6.26515.6"
+          }
+        },
+        "compile": {
+          "ref/netstandard2.0/System.CodeDom.dll": {}
         }
       },
       "System.ComponentModel/4.3.0": {
@@ -1908,7 +1960,7 @@
       },
       "Microsoft.AspNetCore.JsonPatch/2.2.0": {
         "dependencies": {
-          "Microsoft.CSharp": "4.5.0",
+          "Microsoft.CSharp": "4.6.0",
           "Newtonsoft.Json": "12.0.2"
         },
         "compile": {
@@ -2553,9 +2605,6 @@
         },
         "compileOnly": true
       },
-      "Microsoft.CSharp/4.5.0": {
-        "compileOnly": true
-      },
       "Microsoft.DotNet.PlatformAbstractions/2.1.0": {
         "dependencies": {
           "System.AppContext": "4.3.0",
@@ -2601,7 +2650,7 @@
       },
       "Microsoft.EntityFrameworkCore.Design/2.2.0": {
         "dependencies": {
-          "Microsoft.CSharp": "4.5.0",
+          "Microsoft.CSharp": "4.6.0",
           "Microsoft.EntityFrameworkCore.Relational": "2.2.0"
         },
         "compile": {
@@ -4439,6 +4488,13 @@
       "path": "autofac/4.9.4",
       "hashPath": "autofac.4.9.4.nupkg.sha512"
     },
+    "Autofac.Annotation/3.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Zl8kq1FLup9AZj3wdgotaADpvF58mjH2VqafJ8MNFM/MOm6MUiJKj61ZB3TI8JaZEoQfx3T0oXiQBv7+d7ga+Q==",
+      "path": "autofac.annotation/3.0.5",
+      "hashPath": "autofac.annotation.3.0.5.nupkg.sha512"
+    },
     "Autofac.Extensions.DependencyInjection/5.0.1": {
       "type": "package",
       "serviceable": true,
@@ -4453,12 +4509,12 @@
       "path": "autofac.extras.dynamicproxy/4.5.0",
       "hashPath": "autofac.extras.dynamicproxy.4.5.0.nupkg.sha512"
     },
-    "Castle.Core/4.3.1": {
+    "Castle.Core/4.4.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-8Y/eTr6GTElAGV7eAmJuhfLhGdFpNvaNrQ9UQYDScziLmX+/BLGM+9eQr0IcdNDcPN0ADmbtwT6MgecGKy4obw==",
-      "path": "castle.core/4.3.1",
-      "hashPath": "castle.core.4.3.1.nupkg.sha512"
+      "sha512": "sha512-b5rRL5zeaau1y/5hIbI+6mGw3cwun16YjkHZnV9RRT5UyUIFsgLmNXJ0YnIN9p8Hw7K7AbG1q1UclQVU3DinAQ==",
+      "path": "castle.core/4.4.0",
+      "hashPath": "castle.core.4.4.0.nupkg.sha512"
     },
     "Google.Protobuf/3.5.1": {
       "type": "package",
@@ -4487,6 +4543,13 @@
       "sha512": "sha512-tJlJ99SD8bHBAXShOG/pXQ1K118cnsF01obEf9aAtdgLbw3yEPahZ7qvWeGMjrheUhvOsSkv/wTKYg9euKa8MQ==",
       "path": "microsoft.codeanalysis.workspaces.common/2.8.0",
       "hashPath": "microsoft.codeanalysis.workspaces.common.2.8.0.nupkg.sha512"
+    },
+    "Microsoft.CSharp/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kxn3M2rnAGy5N5DgcIwcE8QTePWU/XiYcQVzn9HqTls2NKluVzVSmVWRjK7OUPWbljCXuZxHyhEz9kPRIQeXow==",
+      "path": "microsoft.csharp/4.6.0",
+      "hashPath": "microsoft.csharp.4.6.0.nupkg.sha512"
     },
     "Microsoft.Data.Sqlite/2.2.4": {
       "type": "package",
@@ -4621,6 +4684,13 @@
       "path": "oracle.manageddataaccess.core/2.18.3",
       "hashPath": "oracle.manageddataaccess.core.2.18.3.nupkg.sha512"
     },
+    "Spring.EL/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PPkI41ipPp+rC5dRDjMwdeJkSkNBpMD9rIxbmOtCW/dkiVkTMXCq6sXiF6Tb2ug6Qv7TJ1LEdv5W/+xbTfmrbg==",
+      "path": "spring.el/1.0.4",
+      "hashPath": "spring.el.1.0.4.nupkg.sha512"
+    },
     "SQLitePCLRaw.bundle_green/1.1.12": {
       "type": "package",
       "serviceable": true,
@@ -4697,6 +4767,13 @@
       "sha512": "sha512-d2U7NyV0e4UhyCzAVK9QHm0iz2QoVPUa9XzJ/Gr0rn/jBZWFpVLvigKv0vxFzO2E793sY605+4h885gvCdKSxQ==",
       "path": "swashbuckle.aspnetcore.swaggerui/4.0.1",
       "hashPath": "swashbuckle.aspnetcore.swaggerui.4.0.1.nupkg.sha512"
+    },
+    "System.CodeDom/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gqpR1EeXOuzNQWL7rOzmtdIz3CaXVjSQCiaGOs2ivjPwynKSJYm39X81fdlp7WuojZs/Z5t1k5ni7HtKQurhjw==",
+      "path": "system.codedom/4.5.0",
+      "hashPath": "system.codedom.4.5.0.nupkg.sha512"
     },
     "System.ComponentModel/4.3.0": {
       "type": "package",
@@ -5606,13 +5683,6 @@
       "sha512": "sha512-2qL0Qyu5qHzg6/JzF80mLgsqn9NP/Q0mQwjH+Z+DiqcuODJx8segjN4un2Tnz6bEAWv8FCRFNXR/s5wzlxqA8A==",
       "path": "microsoft.codeanalysis.razor/2.2.0",
       "hashPath": "microsoft.codeanalysis.razor.2.2.0.nupkg.sha512"
-    },
-    "Microsoft.CSharp/4.5.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
-      "path": "microsoft.csharp/4.5.0",
-      "hashPath": "microsoft.csharp.4.5.0.nupkg.sha512"
     },
     "Microsoft.DotNet.PlatformAbstractions/2.1.0": {
       "type": "package",

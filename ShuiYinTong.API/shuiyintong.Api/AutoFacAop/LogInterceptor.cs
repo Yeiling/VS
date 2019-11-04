@@ -7,7 +7,7 @@ using System.Linq;
 namespace shuiyintong.Api.AutoFacAop
 {
     /// <summary>
-    /// 拦截器 需要实现 IInterceptor接口 Intercept方法
+    /// AutoFac AOP拦截器 需要实现 IInterceptor接口 Intercept方法
     /// </summary>
     public class LogInterceptor : IInterceptor
     {

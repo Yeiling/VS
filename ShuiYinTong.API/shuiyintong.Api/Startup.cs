@@ -3,9 +3,6 @@ using AspectCore.Extensions.DependencyInjection;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Autofac.Extras.DynamicProxy;
-using log4net;
-using log4net.Config;
-using log4net.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -13,10 +10,7 @@ using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.Extensions.Options;
 using shuiyintong.Api.AutoFacAop;
-using shuiyintong.Api.Controllers;
-using shuiyintong.Common.BankConfig;
 using shuiyintong.DBUtils.IService;
 using shuiyintong.DBUtils.Service;
 using Swashbuckle.AspNetCore.Swagger;
@@ -45,9 +39,6 @@ namespace shuiyintong.Api
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            //Log4net
-            //LogRepository.Repository = LogManager.CreateRepository("Log4Repository");
-            //var t = XmlConfigurator.Configure(LogRepository.Repository, new FileInfo("log4net.config"));
         }
 
         //IServiceProvider--- This method gets called by the runtime. Use this method to add services to the container.
@@ -107,15 +98,25 @@ namespace shuiyintong.Api
                 });
             });
 
+            //
+            //IServiceCollection DynamicProxyColl = new ServiceCollection();
+            //services.ConfigureDynamicProxy(config =>
+            //{
+            //    config.Interceptors.AddTyped<LogInterceptorAttribute>();
+            //});
+            //IServiceProvider serviceProvider = services.BuildAspectInjectorProvider();
+
+
             //------------------------------------AutoFac+AOP-------------------------------
             //1：AutoFac+AOP合并注入
             var Builder = new ContainerBuilder();
             //2：AutoFac注册AOP LogInterceptor拦截器
-            //Builder.RegisterType<LogInterceptor>();
+            Builder.RegisterType<LogInterceptor>();
 
             //3：注入泛型BaseService<>和接口IBaseService<>，并动态注入拦截器-->InterceptedBy(typeof(LogInterceptor)).EnableInterfaceInterceptors()
             Builder.RegisterGeneric(typeof(BaseService<>)).As(typeof(IBaseService<>));
             //.InterceptedBy(typeof(LogInterceptor)).EnableInterfaceInterceptors();
+
             //注册所有以Service结尾的服务类
             //（当前模块文件所在程序集中的所有类型注册为其实现的服务接口，注册模式为生命周期模式，所有的服务类都以Service结尾）
             //Builder.RegisterAssemblyTypes(Assembly.Load("程序集名称"))
@@ -126,6 +127,7 @@ namespace shuiyintong.Api
             //    .InterceptedBy(typeof(LogInterceptor))
             //    .EnableClassInterceptors()
             //    .PropertiesAutowired();
+
             //注入程序集shuiyintong.Api
             //Builder.RegisterAssemblyTypes(Assembly.Load("shuiyintong.Api")).PropertiesAutowired();
             //属性注入当前程序集下的所有控制器PropertiesAutowired()和（控制器）拦截器EnableClassInterceptors()
@@ -138,10 +140,8 @@ namespace shuiyintong.Api
             //            .InterceptedBy(typeof(LogInterceptor)).EnableClassInterceptors(); //启用类代理拦截器
             //}
             Builder.RegisterTypes(controllersTypesInAssembly)
-                .PropertiesAutowired(); //属性注入
-                                        //.InterceptedBy(typeof(LogInterceptor)).EnableClassInterceptors(); //启用类代理拦截器
-
-
+                .PropertiesAutowired() //属性注入
+            .InterceptedBy(typeof(LogInterceptor)).EnableClassInterceptors(); //启用类代理拦截器
 
             //---------------------------------------------AOP实例----------------------------------------------
             #region AOP实例详情
@@ -171,7 +171,6 @@ namespace shuiyintong.Api
             Builder.Populate(services);
             var container = Builder.Build();
             return new AutofacServiceProvider(container);
-
 
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

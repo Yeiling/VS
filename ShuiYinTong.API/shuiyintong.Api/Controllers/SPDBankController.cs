@@ -45,10 +45,6 @@ namespace shuiyintong.Api.Controllers
         /// </summary>
         private readonly int Code = 200;
 
-        ///// <summary>
-        ///// Log4服务对象
-        ///// </summary>
-        //private ILog _log = LogManager.GetLogger(LogRepository.Repository.Name, typeof(SPDBankController));
         #region 接口签名
 
         /// <summary>
@@ -226,8 +222,8 @@ namespace shuiyintong.Api.Controllers
                           DateTime = Now
                       };
 
-                  //Redis保存
-                  key += responseType;
+                      //Redis保存
+                      key += responseType;
                       redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
                       if (redis != null)
                           redis.Set(key, baseResponse);
