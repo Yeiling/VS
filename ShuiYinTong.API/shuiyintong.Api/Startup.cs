@@ -1,4 +1,6 @@
-﻿using Autofac;
+﻿using AspectCore.Configuration;
+using AspectCore.Extensions.DependencyInjection;
+using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Autofac.Extras.DynamicProxy;
 using log4net;
@@ -105,32 +107,41 @@ namespace shuiyintong.Api
                 });
             });
 
-            //AutoFac+AOP合并注入
+            //------------------------------------AutoFac+AOP-------------------------------
+            //1：AutoFac+AOP合并注入
             var Builder = new ContainerBuilder();
-            //AutoFac注册AOP LogInterceptor拦截器
-            Builder.RegisterType<LogInterceptor>();
+            //2：AutoFac注册AOP LogInterceptor拦截器
+            //Builder.RegisterType<LogInterceptor>();
 
-            //注入泛型BaseService<>和接口IBaseService<>，并动态注入拦截器-->InterceptedBy(typeof(LogInterceptor)).EnableInterfaceInterceptors()
-            Builder.RegisterGeneric(typeof(BaseService<>)).As(typeof(IBaseService<>))
-            .InterceptedBy(typeof(LogInterceptor)).EnableInterfaceInterceptors();
+            //3：注入泛型BaseService<>和接口IBaseService<>，并动态注入拦截器-->InterceptedBy(typeof(LogInterceptor)).EnableInterfaceInterceptors()
+            Builder.RegisterGeneric(typeof(BaseService<>)).As(typeof(IBaseService<>));
+            //.InterceptedBy(typeof(LogInterceptor)).EnableInterfaceInterceptors();
             //注册所有以Service结尾的服务类
             //（当前模块文件所在程序集中的所有类型注册为其实现的服务接口，注册模式为生命周期模式，所有的服务类都以Service结尾）
             //Builder.RegisterAssemblyTypes(Assembly.Load("程序集名称"))
             //    .Where(t => t.Name.EndsWith("Service")).AsImplementedInterfaces().InstancePerLifetimeScope();
 
-            //动态注入拦截器LogInterceptor---aop
-            //Builder.RegisterType<SPDBankController>().InterceptedBy(typeof(LogInterceptor))
-            //    .PropertiesAutowired()
-            //    .InterceptedBy(typeof(LogInterceptor));
+            //4：动态注入拦截器LogInterceptor---aop
+            //Builder.RegisterType<SPDBankController>()
+            //    .InterceptedBy(typeof(LogInterceptor))
+            //    .EnableClassInterceptors()
+            //    .PropertiesAutowired();
             //注入程序集shuiyintong.Api
             //Builder.RegisterAssemblyTypes(Assembly.Load("shuiyintong.Api")).PropertiesAutowired();
             //属性注入当前程序集下的所有控制器PropertiesAutowired()和（控制器）拦截器EnableClassInterceptors()
             var controllersTypesInAssembly = typeof(Startup).Assembly.GetExportedTypes()
             .Where(type => typeof(ControllerBase).IsAssignableFrom(type)).ToArray();
-
+            //if (controllersTypesInAssembly != null && controllersTypesInAssembly.Length > 0)
+            //{
+            //    foreach (var controllersType in controllersTypesInAssembly)
+            //        Builder.RegisterType(controllersType).PropertiesAutowired() //属性注入
+            //            .InterceptedBy(typeof(LogInterceptor)).EnableClassInterceptors(); //启用类代理拦截器
+            //}
             Builder.RegisterTypes(controllersTypesInAssembly)
-                .PropertiesAutowired() //属性注入
-                .InterceptedBy(typeof(LogInterceptor)).EnableClassInterceptors(); //启用类代理拦截器
+                .PropertiesAutowired(); //属性注入
+                                        //.InterceptedBy(typeof(LogInterceptor)).EnableClassInterceptors(); //启用类代理拦截器
+
+
 
             //---------------------------------------------AOP实例----------------------------------------------
             #region AOP实例详情
@@ -160,6 +171,8 @@ namespace shuiyintong.Api
             Builder.Populate(services);
             var container = Builder.Build();
             return new AutofacServiceProvider(container);
+
+
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         /// <summary>

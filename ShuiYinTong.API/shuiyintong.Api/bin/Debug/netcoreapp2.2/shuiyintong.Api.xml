@@ -20,6 +20,19 @@
             </summary>
             <param name="invocation"></param>
         </member>
+        <member name="T:shuiyintong.Api.AutoFacAop.LogInterceptorAttribute">
+            <summary>
+            AspectCore AOP
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.AutoFacAop.LogInterceptorAttribute.Invoke(AspectCore.DynamicProxy.AspectContext,AspectCore.DynamicProxy.AspectDelegate)">
+            <summary>
+            重写AbstractInterceptorAttribute的Invoke方法
+            </summary>
+            <param name="context"></param>
+            <param name="next"></param>
+            <returns></returns>
+        </member>
         <member name="T:shuiyintong.Api.BuilderJsonConfig">
             <summary>
             读取配置文件
