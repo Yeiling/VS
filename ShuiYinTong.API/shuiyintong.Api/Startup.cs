@@ -86,7 +86,6 @@ namespace shuiyintong.Api
 
             services.UseJsonConfig(Configuration);
 
-
             services.AddCors(options =>
             {
                 options.AddPolicy("any", builder =>
@@ -111,7 +110,7 @@ namespace shuiyintong.Api
             //1：AutoFac+AOP合并注入
             var Builder = new ContainerBuilder();
             //2：AutoFac注册AOP LogInterceptor拦截器
-            Builder.RegisterType<LogInterceptor>();
+            //Builder.RegisterType<LogInterceptor>();
 
             //3：注入泛型BaseService<>和接口IBaseService<>，并动态注入拦截器-->InterceptedBy(typeof(LogInterceptor)).EnableInterfaceInterceptors()
             Builder.RegisterGeneric(typeof(BaseService<>)).As(typeof(IBaseService<>));
@@ -140,8 +139,8 @@ namespace shuiyintong.Api
             //            .InterceptedBy(typeof(LogInterceptor)).EnableClassInterceptors(); //启用类代理拦截器
             //}
             Builder.RegisterTypes(controllersTypesInAssembly)
-                .PropertiesAutowired() //属性注入
-            .InterceptedBy(typeof(LogInterceptor)).EnableClassInterceptors(); //启用类代理拦截器
+                .PropertiesAutowired(); //属性注入
+            //.InterceptedBy(typeof(LogInterceptor)).EnableClassInterceptors(); //启用类代理拦截器
 
             //---------------------------------------------AOP实例----------------------------------------------
             #region AOP实例详情

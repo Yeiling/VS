@@ -25,10 +25,10 @@ namespace shuiyintong.Api.Controllers
     /// </summary>
     public class SPDBankController : BaseController
     {
-        /// <summary>
-        /// 数据库实现
-        /// </summary>
-        public IBaseService<AcctDtlInfoQry> AcctDtlInfoServer { get; set; }
+        ///// <summary>
+        ///// 数据库实现
+        ///// </summary>
+        //public IBaseService<AcctDtlInfoQry> AcctDtlInfoServer { get; set; }
         //public IBaseService<DVR_USER_LOGIN_INFO> DVR_USER_LOGIN_INFO { get; set; }
 
 

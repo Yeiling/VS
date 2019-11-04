@@ -113,11 +113,6 @@
             浦发银行接口
             </summary>
         </member>
-        <member name="P:shuiyintong.Api.Controllers.SPDBankController.AcctDtlInfoServer">
-            <summary>
-            数据库实现
-            </summary>
-        </member>
         <member name="F:shuiyintong.Api.Controllers.SPDBankController.SPDBank">
             <summary>
             银行类型---浦发银行

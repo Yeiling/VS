@@ -22,10 +22,6 @@ namespace shuiyintong.Api.AutoFacAop
         /// <param name="invocation"></param>
         public void Intercept(IInvocation invocation)
         {
- //           string str1 = string.Format("方法执行前:拦截{0}类下的方法{1}的参数是{2}",
- //invocation.TargetType.FullName,
- //invocation.Method.Name, string.Join(",", invocation.Arguments.Select(a => (a ?? "").ToString()).ToArray()));
-
             try
             {
                 //在被拦截的方法执行完毕后 继续执行
@@ -36,12 +32,12 @@ namespace shuiyintong.Api.AutoFacAop
             {
                 _log.ErrorFormat("方法执行前:拦截{0}类下的方法{1}的参数是{2},异常信息{3},返回结果是{4}",
 invocation.TargetType.FullName,
-invocation.Method.Name, 
+invocation.Method.Name,
 string.Join(",", invocation.Arguments.Select(a => (a ?? "").ToString()).ToArray()),
 ex.Message,
 invocation.ReturnValue.ToJson());
             }
-  
+
         }
     }
 }
