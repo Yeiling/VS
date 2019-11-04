@@ -1,8 +1,5 @@
-﻿using AspectCore.Configuration;
-using AspectCore.Extensions.DependencyInjection;
-using Autofac;
+﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using Autofac.Extras.DynamicProxy;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -10,7 +7,6 @@ using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using shuiyintong.Api.AutoFacAop;
 using shuiyintong.DBUtils.IService;
 using shuiyintong.DBUtils.Service;
 using Swashbuckle.AspNetCore.Swagger;
@@ -83,9 +79,9 @@ namespace shuiyintong.Api
             services.Replace(ServiceDescriptor.Transient<IControllerActivator, ServiceBasedControllerActivator>());
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
+            //读取配置Json文件
             services.UseJsonConfig(Configuration);
-
+            //Ajax跨域
             services.AddCors(options =>
             {
                 options.AddPolicy("any", builder =>
@@ -96,14 +92,6 @@ namespace shuiyintong.Api
                     .AllowCredentials();//指定处理cookie
                 });
             });
-
-            //
-            //IServiceCollection DynamicProxyColl = new ServiceCollection();
-            //services.ConfigureDynamicProxy(config =>
-            //{
-            //    config.Interceptors.AddTyped<LogInterceptorAttribute>();
-            //});
-            //IServiceProvider serviceProvider = services.BuildAspectInjectorProvider();
 
 
             //------------------------------------AutoFac+AOP-------------------------------
