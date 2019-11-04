@@ -107,12 +107,12 @@ namespace shuiyintong.Api
 
             //AutoFac+AOP合并注入
             var Builder = new ContainerBuilder();
-            //AOP注册LogInterceptor拦截器
+            //AutoFac注册AOP LogInterceptor拦截器
             Builder.RegisterType<LogInterceptor>();
 
             //注入泛型BaseService<>和接口IBaseService<>，并动态注入拦截器-->InterceptedBy(typeof(LogInterceptor)).EnableInterfaceInterceptors()
             Builder.RegisterGeneric(typeof(BaseService<>)).As(typeof(IBaseService<>))
-                .InterceptedBy(typeof(LogInterceptor)).EnableInterfaceInterceptors();
+            .InterceptedBy(typeof(LogInterceptor)).EnableInterfaceInterceptors();
             //注册所有以Service结尾的服务类
             //（当前模块文件所在程序集中的所有类型注册为其实现的服务接口，注册模式为生命周期模式，所有的服务类都以Service结尾）
             //Builder.RegisterAssemblyTypes(Assembly.Load("程序集名称"))
@@ -125,6 +125,7 @@ namespace shuiyintong.Api
             //属性注入当前程序集下的所有控制器PropertiesAutowired()和（控制器）拦截器EnableClassInterceptors()
             var controllersTypesInAssembly = typeof(Startup).Assembly.GetExportedTypes()
             .Where(type => typeof(ControllerBase).IsAssignableFrom(type)).ToArray();
+
             Builder.RegisterTypes(controllersTypesInAssembly)
                 .PropertiesAutowired() //属性注入
                 .EnableClassInterceptors(); //拦截器注入

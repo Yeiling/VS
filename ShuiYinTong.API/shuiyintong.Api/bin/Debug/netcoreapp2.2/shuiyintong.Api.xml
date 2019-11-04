@@ -85,6 +85,13 @@
             <param name="dataRequest">请求Json字符串</param>
             <returns></returns>
         </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.AAA(System.String)">
+            <summary>
+            测试
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
         <member name="M:shuiyintong.Api.Controllers.SPDBankController.AcctInfo(shuiyintong.Entity.SPDBankEntity.SPDBankReq.AccountReq)">
             <summary>
             获取账户信息
