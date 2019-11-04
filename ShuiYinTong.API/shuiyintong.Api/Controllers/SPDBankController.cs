@@ -23,6 +23,7 @@ namespace shuiyintong.Api.Controllers
     /// <summary>
     /// 浦发银行接口
     /// </summary>
+    [Intercept(typeof(LogInterceptor))] ////AOP拦截器
     public class SPDBankController : BaseController
     {
         /// <summary>
@@ -195,7 +196,7 @@ namespace shuiyintong.Api.Controllers
         [HttpPost]
         public string SingleTransfer([FromBody]SingleTransferReq singleTransferReq)
         {
-            var re = AcctDtlInfoServer.GetList(r => r.ID > 1000);
+            var rr = AcctDtlInfoServer.GetList(r => true);
 
             string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
@@ -212,35 +213,35 @@ namespace shuiyintong.Api.Controllers
                 APICode = BankAPIType,
                 APIName = sPDBankAPIType.GetDescription()
             };
-            try
-            {
-                var header = GetHeaderSign(singleTransferReq, out string dataRequest);
-                resultStr = HttpClientHelper.POSTRequest(SPDBankConfig.SingleTransfer, dataRequest, header, (statusCode, result) =>
+            //try
+            //{
+            var header = GetHeaderSign(singleTransferReq, out string dataRequest);
+            resultStr = HttpClientHelper.POSTRequest(SPDBankConfig.SingleTransfer, dataRequest, header, (statusCode, result) =>
+              {
+                  code = (int)statusCode;
+                  responseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+                  responseType = (byte)ResponseType.Success;
+                  BaseResponse<string> baseResponse = new BaseResponse<string>
                   {
-                      code = (int)statusCode;
-                      responseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
-                      responseType = (byte)ResponseType.Success;
-                      BaseResponse<string> baseResponse = new BaseResponse<string>
-                      {
-                          Code = code,
-                          Data = result,
-                          ResponseType = responseType,
-                          DateTime = Now
-                      };
+                      Code = code,
+                      Data = result,
+                      ResponseType = responseType,
+                      DateTime = Now
+                  };
 
-                      //Redis保存
-                      key += responseType;
-                      redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
-                      if (redis != null)
-                          redis.Set(key, baseResponse);
-                  });
-            }
-            catch (Exception ex)
-            {
-                responseType = (byte)ResponseType.Fail;
-                log.ErrorMsg = ex.Message;
-                key += responseType;
-            }
+                  //Redis保存
+                  key += responseType;
+                  redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
+                  if (redis != null)
+                      redis.Set(key, baseResponse);
+              });
+            //}
+            //catch (Exception ex)
+            //{
+            //responseType = (byte)ResponseType.Fail;
+            //log.ErrorMsg = ex.Message;
+            //key += responseType;
+            //}
             //保存日志
             redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.ErrorDb);
             if (redis != null)

@@ -119,7 +119,9 @@ namespace shuiyintong.Api
             //    .Where(t => t.Name.EndsWith("Service")).AsImplementedInterfaces().InstancePerLifetimeScope();
 
             //动态注入拦截器LogInterceptor---aop
-            //Builder.RegisterType<SPDBankController>().InterceptedBy(typeof(LogInterceptor)).PropertiesAutowired().EnableClassInterceptors();
+            //Builder.RegisterType<SPDBankController>().InterceptedBy(typeof(LogInterceptor))
+            //    .PropertiesAutowired()
+            //    .InterceptedBy(typeof(LogInterceptor));
             //注入程序集shuiyintong.Api
             //Builder.RegisterAssemblyTypes(Assembly.Load("shuiyintong.Api")).PropertiesAutowired();
             //属性注入当前程序集下的所有控制器PropertiesAutowired()和（控制器）拦截器EnableClassInterceptors()
@@ -128,8 +130,7 @@ namespace shuiyintong.Api
 
             Builder.RegisterTypes(controllersTypesInAssembly)
                 .PropertiesAutowired() //属性注入
-                .EnableClassInterceptors(); //拦截器注入
-
+                .InterceptedBy(typeof(LogInterceptor)).EnableClassInterceptors(); //启用类代理拦截器
 
             //---------------------------------------------AOP实例----------------------------------------------
             #region AOP实例详情
