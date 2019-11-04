@@ -52,11 +52,6 @@
             数据库链接字符串
             </summary>
         </member>
-        <member name="T:shuiyintong.Api.Controllers.FileOperController">
-            <summary>
-            文件上传和下载
-            </summary>
-        </member>
         <member name="T:shuiyintong.Api.Controllers.SPDBankController">
             <summary>
             浦发银行接口
@@ -80,11 +75,6 @@
         <member name="F:shuiyintong.Api.Controllers.SPDBankController.Code">
             <summary>
             Http请求返回Code
-            </summary>
-        </member>
-        <member name="F:shuiyintong.Api.Controllers.SPDBankController._log">
-            <summary>
-            Log4服务对象
             </summary>
         </member>
         <member name="M:shuiyintong.Api.Controllers.SPDBankController.GetHeaderSign(System.Object,System.String@)">

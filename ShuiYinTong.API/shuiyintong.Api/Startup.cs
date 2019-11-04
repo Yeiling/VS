@@ -44,8 +44,8 @@ namespace shuiyintong.Api
         {
             Configuration = configuration;
             //Log4net
-            LogRepository.Repository = LogManager.CreateRepository("Log4Repository");
-            var t = XmlConfigurator.Configure(LogRepository.Repository, new FileInfo("log4net.config"));
+            //LogRepository.Repository = LogManager.CreateRepository("Log4Repository");
+            //var t = XmlConfigurator.Configure(LogRepository.Repository, new FileInfo("log4net.config"));
         }
 
         //IServiceProvider--- This method gets called by the runtime. Use this method to add services to the container.
@@ -118,6 +118,8 @@ namespace shuiyintong.Api
             //Builder.RegisterAssemblyTypes(Assembly.Load("程序集名称"))
             //    .Where(t => t.Name.EndsWith("Service")).AsImplementedInterfaces().InstancePerLifetimeScope();
 
+            //动态注入拦截器LogInterceptor---aop
+            //Builder.RegisterType<SPDBankController>().InterceptedBy(typeof(LogInterceptor)).PropertiesAutowired().EnableClassInterceptors();
             //注入程序集shuiyintong.Api
             //Builder.RegisterAssemblyTypes(Assembly.Load("shuiyintong.Api")).PropertiesAutowired();
             //属性注入当前程序集下的所有控制器PropertiesAutowired()和（控制器）拦截器EnableClassInterceptors()

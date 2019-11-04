@@ -23,7 +23,6 @@ namespace shuiyintong.Api.Controllers
     /// <summary>
     /// 浦发银行接口
     /// </summary>
-    [Intercept(typeof(LogInterceptor))]
     public class SPDBankController : BaseController
     {
         /// <summary>
@@ -46,10 +45,10 @@ namespace shuiyintong.Api.Controllers
         /// </summary>
         private readonly int Code = 200;
 
-        /// <summary>
-        /// Log4服务对象
-        /// </summary>
-        private ILog _log = LogManager.GetLogger(LogRepository.Repository.Name, typeof(SPDBankController));
+        ///// <summary>
+        ///// Log4服务对象
+        ///// </summary>
+        //private ILog _log = LogManager.GetLogger(LogRepository.Repository.Name, typeof(SPDBankController));
         #region 接口签名
 
         /// <summary>
@@ -196,7 +195,7 @@ namespace shuiyintong.Api.Controllers
         [HttpPost]
         public string SingleTransfer([FromBody]SingleTransferReq singleTransferReq)
         {
-            bool b = AcctDtlInfoServer.AddOne(null);
+            var re = AcctDtlInfoServer.GetList(r => r.ID > 1000);
 
             string resultStr = string.Empty;
             var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
@@ -238,8 +237,6 @@ namespace shuiyintong.Api.Controllers
             }
             catch (Exception ex)
             {
-                _log.ErrorFormat("出错了", ex.Message);
-
                 responseType = (byte)ResponseType.Fail;
                 log.ErrorMsg = ex.Message;
                 key += responseType;
