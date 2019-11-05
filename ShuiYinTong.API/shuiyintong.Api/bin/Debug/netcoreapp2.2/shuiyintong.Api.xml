@@ -274,9 +274,16 @@
             Log4net日志
             </summary>
         </member>
-        <member name="M:shuiyintong.Api.Log4Helper.Info(System.String,System.Exception)">
+        <member name="M:shuiyintong.Api.Log4Helper.Info(System.Object,System.Exception)">
             <summary>
             普通日志
+            </summary>
+            <param name="message"></param>
+            <param name="exception"></param>
+        </member>
+        <member name="M:shuiyintong.Api.Log4Helper.Error(System.Object,System.Exception)">
+            <summary>
+            错误日志
             </summary>
             <param name="message"></param>
             <param name="exception"></param>
@@ -284,13 +291,6 @@
         <member name="M:shuiyintong.Api.Log4Helper.Warn(System.String,System.Exception)">
             <summary>
             告警日志
-            </summary>
-            <param name="message"></param>
-            <param name="exception"></param>
-        </member>
-        <member name="M:shuiyintong.Api.Log4Helper.Error(System.String,System.Exception)">
-            <summary>
-            错误日志
             </summary>
             <param name="message"></param>
             <param name="exception"></param>
