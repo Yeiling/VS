@@ -271,21 +271,6 @@
             NLog日志记录帮助类
             </summary>
         </member>
-        <member name="M:shuiyintong.Api.NLogHelper.Process(System.DateTime,System.String,System.String,System.String,System.String)">
-            <summary>
-            
-            </summary>
-            <param name="createDate"></param>
-            <param name="origin"></param>
-            <param name="logLevel"></param>
-            <param name="message"></param>
-            <param name="stackTrace"></param>
-        </member>
-        <member name="M:shuiyintong.Api.NLogHelper.Flush">
-            <summary>
-            释放资源
-            </summary>
-        </member>
         <member name="T:shuiyintong.Api.Program">
             <summary>
             主程序

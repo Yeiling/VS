@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 
 namespace shuiyintong.Api
 {
@@ -78,7 +79,7 @@ namespace shuiyintong.Api
                     { "Bearer", Enumerable.Empty<string>() }
                 });
             });
-
+            //控制器注入时，替换服务
             services.Replace(ServiceDescriptor.Transient<IControllerActivator, ServiceBasedControllerActivator>());
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
@@ -95,6 +96,8 @@ namespace shuiyintong.Api
                     .AllowCredentials();//指定处理cookie
                 });
             });
+
+
 
 
             //------------------------------------AutoFac+AOP-------------------------------
