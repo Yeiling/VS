@@ -268,8 +268,7 @@ namespace shuiyintong.Api.Controllers
             }
             catch (Exception ex)
             {
-                Log4Helper.Error(null, ex);
-
+                NLogHelper.Process(DateTime.Now, "Home/Index", "2", ex.Message, ex.StackTrace);
                 responseType = (byte)ResponseType.Fail;
                 log.ErrorMsg = ex.Message;
                 key += responseType;

@@ -266,36 +266,25 @@
             <param name="interestTrialReq">请求参数</param>
             <returns></returns>
         </member>
-        <member name="T:shuiyintong.Api.Log4Helper">
+        <member name="T:shuiyintong.Api.NLogHelper">
             <summary>
-            Log4net日志
+            NLog日志记录帮助类
             </summary>
         </member>
-        <member name="P:shuiyintong.Api.Log4Helper.logger">
+        <member name="M:shuiyintong.Api.NLogHelper.Process(System.DateTime,System.String,System.String,System.String,System.String)">
             <summary>
-            日志记录对象
+            
             </summary>
-        </member>
-        <member name="M:shuiyintong.Api.Log4Helper.Info(System.Object,System.Exception)">
-            <summary>
-            普通日志
-            </summary>
+            <param name="createDate"></param>
+            <param name="origin"></param>
+            <param name="logLevel"></param>
             <param name="message"></param>
-            <param name="exception"></param>
+            <param name="stackTrace"></param>
         </member>
-        <member name="M:shuiyintong.Api.Log4Helper.Error(System.Object,System.Exception)">
+        <member name="M:shuiyintong.Api.NLogHelper.Flush">
             <summary>
-            错误日志
+            释放资源
             </summary>
-            <param name="message"></param>
-            <param name="exception"></param>
-        </member>
-        <member name="M:shuiyintong.Api.Log4Helper.Warn(System.String,System.Exception)">
-            <summary>
-            告警日志
-            </summary>
-            <param name="message"></param>
-            <param name="exception"></param>
         </member>
         <member name="T:shuiyintong.Api.Program">
             <summary>
