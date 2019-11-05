@@ -428,6 +428,16 @@
         "runtime": {
           "bin/placeholder/shuiyintong.Common.dll": {}
         }
+      },
+      "shuiyintong.Entity/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "compile": {
+          "bin/placeholder/shuiyintong.Entity.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/shuiyintong.Entity.dll": {}
+        }
       }
     }
   },
@@ -1299,12 +1309,18 @@
       "type": "project",
       "path": "../shuiyintong.Common/shuiyintong.Common.csproj",
       "msbuildProject": "../shuiyintong.Common/shuiyintong.Common.csproj"
+    },
+    "shuiyintong.Entity/1.0.0": {
+      "type": "project",
+      "path": "../shuiyintong.Entity/shuiyintong.Entity.csproj",
+      "msbuildProject": "../shuiyintong.Entity/shuiyintong.Entity.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "Microsoft.NETCore.App >= 2.2.0",
-      "shuiyintong.Common >= 1.0.0"
+      "shuiyintong.Common >= 1.0.0",
+      "shuiyintong.Entity >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1339,6 +1355,9 @@
           "projectReferences": {
             "F:\\GitHubProject\\ShuiYinTong.API\\shuiyintong.Common\\shuiyintong.Common.csproj": {
               "projectPath": "F:\\GitHubProject\\ShuiYinTong.API\\shuiyintong.Common\\shuiyintong.Common.csproj"
+            },
+            "F:\\GitHubProject\\ShuiYinTong.API\\shuiyintong.Entity\\shuiyintong.Entity.csproj": {
+              "projectPath": "F:\\GitHubProject\\ShuiYinTong.API\\shuiyintong.Entity\\shuiyintong.Entity.csproj"
             }
           }
         }

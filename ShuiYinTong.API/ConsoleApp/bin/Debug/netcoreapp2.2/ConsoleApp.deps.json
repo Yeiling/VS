@@ -638,7 +638,8 @@
       },
       "shuiyintong.SPDB/1.0.0": {
         "dependencies": {
-          "shuiyintong.Common": "1.0.0"
+          "shuiyintong.Common": "1.0.0",
+          "shuiyintong.Entity": "1.0.0"
         },
         "runtime": {
           "shuiyintong.SPDB.dll": {}

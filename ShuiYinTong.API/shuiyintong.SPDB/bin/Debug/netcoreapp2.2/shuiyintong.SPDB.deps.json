@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v2.2": {
       "shuiyintong.SPDB/1.0.0": {
         "dependencies": {
-          "shuiyintong.Common": "1.0.0"
+          "shuiyintong.Common": "1.0.0",
+          "shuiyintong.Entity": "1.0.0"
         },
         "runtime": {
           "shuiyintong.SPDB.dll": {}
@@ -215,6 +216,11 @@
         "runtime": {
           "shuiyintong.Common.dll": {}
         }
+      },
+      "shuiyintong.Entity/1.0.0": {
+        "runtime": {
+          "shuiyintong.Entity.dll": {}
+        }
       }
     }
   },
@@ -344,6 +350,11 @@
       "hashPath": "system.security.principal.windows.4.6.0.nupkg.sha512"
     },
     "shuiyintong.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "shuiyintong.Entity/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1,7 +1,4 @@
-﻿using Autofac.Extras.DynamicProxy;
-using log4net;
-using Microsoft.AspNetCore.Mvc;
-using shuiyintong.Api.AutoFacAop;
+﻿using Microsoft.AspNetCore.Mvc;
 using shuiyintong.Common;
 using shuiyintong.Common.BankConfig;
 using shuiyintong.Common.Extend;
@@ -9,6 +6,7 @@ using shuiyintong.DBUtils;
 using shuiyintong.DBUtils.IService;
 using shuiyintong.DBUtils.SYT_apiDB_TestEntity;
 using shuiyintong.Entity;
+using shuiyintong.Entity.SPDBankEntity.SPDBankFile;
 using shuiyintong.Entity.SPDBankEntity.SPDBankReq;
 using shuiyintong.SPDB;
 using System;
@@ -17,6 +15,7 @@ using static shuiyintong.Entity.Enums.BankTypeEum;
 using static shuiyintong.Entity.Enums.RedisDBEnum;
 using static shuiyintong.Entity.Enums.RespCodeEnum;
 using static shuiyintong.Entity.SPDBankEntity.SPDBankAPITypeEunm;
+using WTPC_ERR = shuiyintong.Entity.SPDBankEntity.SPDBankFile.WTPC_ERR;
 
 namespace shuiyintong.Api.Controllers
 {
@@ -45,6 +44,7 @@ namespace shuiyintong.Api.Controllers
         /// </summary>
         private readonly int Code = 200;
 
+
         #region 接口签名
 
         /// <summary>
@@ -65,6 +65,43 @@ namespace shuiyintong.Api.Controllers
         }
         #endregion
 
+        #region 文件上传下载
+        /// <summary>
+        /// 文件上传
+        /// </summary>
+        /// <param name="upLoadReq">请求参数</param>
+        [HttpPost]
+        public string UpLoadfile([FromBody]SPDBankFileUpLoadReq upLoadReq)
+        {
+            if (upLoadReq != null)
+            {
+                WTPC_ERR tPC_ERR = new WTPC_ERR();
+                bool b = SPDBankFile.UpLoadfile(upLoadReq.localFile, upLoadReq.remoteFile, upLoadReq.remotedir, upLoadReq.transId, upLoadReq.transFlag, ref tPC_ERR);
+                if (b)
+                    return tPC_ERR.ToJson();
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// 文件下载
+        /// </summary>
+        /// <param name="downLoadReq">请求参数</param>
+        /// <returns></returns>
+        [HttpPost]
+        public string DownLoadfile([FromBody]SPDBankFileDownLoadReq downLoadReq)
+        {
+            if (downLoadReq != null)
+            {
+                WTPC_ERR tPC_ERR = new WTPC_ERR();
+                bool b = SPDBankFile.DownLoadfile(downLoadReq.remoteFile, downLoadReq.localFile, downLoadReq.localdir, downLoadReq.transId, downLoadReq.transFlag, downLoadReq.taskid, ref tPC_ERR);
+                if (b)
+                    return tPC_ERR.ToJson();
+            }
+            return null;
+        }
+        #endregion
 
         #region e账通标准API接口
 

@@ -220,6 +220,96 @@
             贷款试算
             </summary>
         </member>
+        <member name="F:shuiyintong.Entity.SPDBankEntity.SPDBankAPITypeEunm.SPDBankAPIType.ReceiptApply">
+            <summary>
+            电子回单申请
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileDownLoadReq">
+            <summary>
+            浦发银行下载文件请求类型
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileDownLoadReq.localFile">
+            <summary>
+            上传的本地文件绝对路径---必填
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileDownLoadReq.remoteFile">
+            <summary>
+            上传文件重命名---必填(noname表示文件不变名）
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileDownLoadReq.localdir">
+            <summary>
+            上传目的目录，nodir表示为业务根目录
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileDownLoadReq.transId">
+            <summary>
+            上传文件传输id，不续传时可用noid表示不填该项
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileDownLoadReq.transFlag">
+            <summary>
+            是否续传标志，1为续传，0为不续传
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileDownLoadReq.taskid">
+            <summary>
+            任务id(noTaskId表示taskId为空)
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileUpLoadReq">
+            <summary>
+            浦发银行文件上传请求类型
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileUpLoadReq.localFile">
+            <summary>
+            上传的本地文件绝对路径---必填
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileUpLoadReq.remoteFile">
+            <summary>
+            上传文件重命名---必填(noname表示文件不变名)
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileUpLoadReq.remotedir">
+            <summary>
+            上传目的目录---必填(nodir表示为业务根目录）
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileUpLoadReq.transId">
+            <summary>
+            上传文件传输id，不续传时可用noid表示不填该项
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileUpLoadReq.transFlag">
+            <summary>
+            是否续传标志，1为续传，0为不续传
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankFile.WTPC_ERR">
+            <summary>
+            浦发银行文件上传下载错误信息对象
+            </summary>
+        </member>
+        <member name="F:shuiyintong.Entity.SPDBankEntity.SPDBankFile.WTPC_ERR.tp_errno">
+            <summary>
+            tp编码
+            </summary>
+        </member>
+        <member name="F:shuiyintong.Entity.SPDBankEntity.SPDBankFile.WTPC_ERR.sys_errno">
+            <summary>
+            sys编码
+            </summary>
+        </member>
+        <member name="F:shuiyintong.Entity.SPDBankEntity.SPDBankFile.WTPC_ERR.errstr">
+            <summary>
+            错误消息
+            </summary>
+        </member>
         <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankReq.AccountReq">
             <summary>
             银行账户信息请求类型
@@ -858,6 +948,56 @@
         <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankReq.PayInsrDtlQryReq.tranDate">
             <summary>
             商户交易日期---必填
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankReq.ReceiptApplyReq">
+            <summary>
+            电子回单申请请求类型
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankReq.ReceiptApplyReq.pltfrmNo">
+            <summary>
+            平台号---必填
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankReq.ReceiptApplyReq.pltfrmSeq">
+            <summary>
+            平台流水号---必填
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankReq.ReceiptApplyReq.rcpDgType">
+            <summary>
+            电子回单类型---必填
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankReq.ReceiptApplyReq.tranSeqNo">
+            <summary>
+            柜员流水号---必填
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankReq.ReceiptApplyReq.clientNo">
+            <summary>
+            客户号码---必填
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankReq.ReceiptApplyReq.clientAcctNo">
+            <summary>
+            客户账号---必填
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankReq.ReceiptApplyReq.duebillNo">
+            <summary>
+            借据号
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankReq.ReceiptApplyReq.startDate">
+            <summary>
+            起始日期---必填
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankReq.ReceiptApplyReq.endDate">
+            <summary>
+            结束日期---必填
             </summary>
         </member>
         <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankReq.RexgAddInfoQryReq">
@@ -2158,6 +2298,21 @@
         <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankResp.PayInsrDtlQryResp.ivsDtTm">
             <summary>
             复核/拒绝/取消时间
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankResp.ReceiptApplyResp">
+            <summary>
+            电子回单申请返回类型
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankResp.ReceiptApplyResp.recptNo">
+            <summary>
+            回单编号
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankResp.ReceiptApplyResp.rcpDgFN">
+            <summary>
+            电子回单文件名
             </summary>
         </member>
         <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankResp.ZLSysInrBnkTfrResp">

@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\shuiyintong.Common\shuiyintong.Common.csproj" />
+    <ProjectReference Include="..\shuiyintong.Entity\shuiyintong.Entity.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -104,7 +104,11 @@ namespace shuiyintong.Entity.SPDBankEntity
             /// </summary>
             [Description("贷款试算")]
             InterestTrial = 117,
-
+            /// <summary>
+            /// 电子回单申请
+            /// </summary>
+            [Description("电子回单申请")]
+            ReceiptApply = 118,
 
 
 
