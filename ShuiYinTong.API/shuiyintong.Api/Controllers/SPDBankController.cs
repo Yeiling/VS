@@ -268,7 +268,7 @@ namespace shuiyintong.Api.Controllers
             }
             catch (Exception ex)
             {
-                _logger.Error(null, ex);
+                Log4Helper.Error(null, ex);
 
                 responseType = (byte)ResponseType.Fail;
                 log.ErrorMsg = ex.Message;
