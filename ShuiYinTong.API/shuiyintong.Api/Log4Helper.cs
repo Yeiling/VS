@@ -11,13 +11,16 @@ namespace shuiyintong.Api
     /// </summary>
     public class Log4Helper
     {
+        /// <summary>
+        /// 日志记录对象
+        /// </summary>
         private static ILog logger;
         static Log4Helper()
         {
             if (logger == null)
             {
                 //DebugAppender  AdoNetAppender
-                var repository = LogManager.CreateRepository("NETCoreRepository");
+                var repository = LogManager.CreateRepository("NetCoreRepository");
                 //log4net从log4net.config文件中读取配置信息
                 XmlConfigurator.Configure(repository, new FileInfo("log4net.config"));
                 //logger是写入数据库日志对象

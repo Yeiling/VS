@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using log4net;
+using Microsoft.AspNetCore.Mvc;
 using shuiyintong.Common;
 using shuiyintong.Common.BankConfig;
 using shuiyintong.Common.Extend;
@@ -43,7 +44,6 @@ namespace shuiyintong.Api.Controllers
         /// Http请求返回Code
         /// </summary>
         private readonly int Code = 200;
-
 
         #region 接口签名
 
@@ -268,6 +268,8 @@ namespace shuiyintong.Api.Controllers
             }
             catch (Exception ex)
             {
+                _logger.Error(null, ex);
+
                 responseType = (byte)ResponseType.Fail;
                 log.ErrorMsg = ex.Message;
                 key += responseType;
