@@ -1,0 +1,1137 @@
+2019-11-06 17:50:18.2233 Info Message Template Auto Format enabled
+2019-11-06 17:50:18.2496 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-11-06 17:50:18.2496 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2019-11-06 17:50:18.2621 Debug Setting 'UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2019-11-06 17:50:18.2621 Trace Wrapping LevelLayoutRenderer with UppercaseLayoutRendererWrapper
+2019-11-06 17:50:18.2621 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-11-06 17:50:18.2621 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-11-06 17:50:18.2621 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-11-06 17:50:18.2621 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2019-11-06 17:50:18.2774 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2019-11-06 17:50:18.2774 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2019-11-06 17:50:18.2774 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:18.2774 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-11-06 17:50:18.2774 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-11-06 17:50:18.2774 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2019-11-06 17:50:18.2774 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-11-06 17:50:18.2774 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-11-06 17:50:18.2774 Debug Setting 'NullTarget.name' to 'blackhole'
+2019-11-06 17:50:18.2897 Info Adding target NullTarget(Name=blackhole)
+2019-11-06 17:50:18.2897 Debug Registered target blackhole: NLog.Targets.NullTarget
+2019-11-06 17:50:18.2897 Debug Setting 'DatabaseTarget.commandText' to '
+        insert into nlog (
+        Application, Logged, Level, Message,
+        Logger, CallSite, Exception
+        ) values (
+        @Application, @Logged, @Level, @Message,
+        @Logger, @Callsite, @Exception
+        );
+      '
+2019-11-06 17:50:18.2897 Debug Setting 'DatabaseTarget.name' to 'database'
+2019-11-06 17:50:18.2897 Debug Setting 'DatabaseTarget.dbProvider' to 'Microsoft.Data.SqlClient.SqlConnection,Microsoft.Data.SqlClient'
+2019-11-06 17:50:18.3033 Debug Setting 'DatabaseTarget.connectionString' to 'Data Source=39.105.178.182,3588;Initial Catalog=SYT_apiDB_Test;User ID=Test_sa;Password=data2018!;Integrated Security=True'
+2019-11-06 17:50:18.3033 Debug Setting 'DatabaseParameterInfo.name' to '@application'
+2019-11-06 17:50:18.3033 Debug Setting 'DatabaseParameterInfo.layout' to 'NLog'
+2019-11-06 17:50:18.3033 Debug Setting 'DatabaseParameterInfo.name' to '@logged'
+2019-11-06 17:50:18.3033 Debug Setting 'DatabaseParameterInfo.layout' to '${date}'
+2019-11-06 17:50:18.3033 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-11-06 17:50:18.3033 Trace Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-11-06 17:50:18.3033 Debug Setting 'DatabaseParameterInfo.name' to '@level'
+2019-11-06 17:50:18.3033 Debug Setting 'DatabaseParameterInfo.layout' to '${level}'
+2019-11-06 17:50:18.3033 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-11-06 17:50:18.3033 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-11-06 17:50:18.3033 Debug Setting 'DatabaseParameterInfo.name' to '@message'
+2019-11-06 17:50:18.3033 Debug Setting 'DatabaseParameterInfo.layout' to '${message}'
+2019-11-06 17:50:18.3033 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-11-06 17:50:18.3033 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-11-06 17:50:18.3033 Debug Setting 'DatabaseParameterInfo.name' to '@logger'
+2019-11-06 17:50:18.3183 Debug Setting 'DatabaseParameterInfo.layout' to '${logger}'
+2019-11-06 17:50:18.3183 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-11-06 17:50:18.3183 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2019-11-06 17:50:18.3183 Debug Setting 'DatabaseParameterInfo.name' to '@callSite'
+2019-11-06 17:50:18.3183 Debug Setting 'DatabaseParameterInfo.layout' to '${callsite:filename=true}'
+2019-11-06 17:50:18.3183 Debug Setting 'CallSiteLayoutRenderer.filename' to 'true'
+2019-11-06 17:50:18.3183 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-11-06 17:50:18.3183 Trace Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-11-06 17:50:18.3183 Debug Setting 'DatabaseParameterInfo.name' to '@exception'
+2019-11-06 17:50:18.3183 Debug Setting 'DatabaseParameterInfo.layout' to '${exception:tostring}'
+2019-11-06 17:50:18.3415 Debug Setting 'ExceptionLayoutRenderer.Format' to 'tostring'
+2019-11-06 17:50:18.3415 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-11-06 17:50:18.3415 Trace Scanning ExceptionLayoutRenderer 'Layout Renderer: ${exception}'
+2019-11-06 17:50:18.3415 Trace  Scanning Property Formats 'System.Collections.Generic.List`1[NLog.Config.ExceptionRenderingFormat]' System.Collections.Generic
+2019-11-06 17:50:18.3415 Info Adding target DatabaseTarget(Name=database)
+2019-11-06 17:50:18.3415 Debug Registered target database: NLog.Targets.DatabaseTarget
+2019-11-06 17:50:18.3415 Trace ParseRulesElement
+2019-11-06 17:50:18.3652 Debug Unused target checking is started... Rule Count: 2, Target Count: 2
+2019-11-06 17:50:18.3652 Debug Unused target checking is completed. Total Rule Count: 2, Total Target Count: 2, Unused Target Count: 0
+2019-11-06 17:50:18.3843 Debug Watching path 'F:\GitHubProject\ShuiYinTong.API\shuiyintong.Api\bin\Debug\netcoreapp2.2' filter 'NLog.config' for changes.
+2019-11-06 17:50:18.3843 Debug --- NLog configuration dump ---
+2019-11-06 17:50:18.3843 Debug Targets:
+2019-11-06 17:50:18.3843 Debug Null Target[blackhole]
+2019-11-06 17:50:18.3843 Debug Database Target[database]
+2019-11-06 17:50:18.3843 Debug Rules:
+2019-11-06 17:50:18.3843 Debug logNamePattern: (Microsoft.:StartsWith) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ blackhole ]
+2019-11-06 17:50:18.3843 Debug logNamePattern: (NLog.:StartsWith) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ database ]
+2019-11-06 17:50:18.3843 Debug --- End of NLog configuration dump ---
+2019-11-06 17:50:18.3843 Trace FindReachableObject<System.Object>:
+2019-11-06 17:50:18.3958 Trace Scanning LoggingRule 'logNamePattern: (Microsoft.:StartsWith) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ blackhole ]'
+2019-11-06 17:50:18.3958 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2019-11-06 17:50:18.3958 Trace  Scanning NullTarget 'Null Target[blackhole]'
+2019-11-06 17:50:18.3958 Trace   Scanning Property Layout ''${longdate}|${level:uppercase=true}|${logger}|${message}'' NLog.Layouts
+2019-11-06 17:50:18.3958 Trace   Scanning SimpleLayout ''${longdate}|${level:uppercase=true}|${logger}|${message}''
+2019-11-06 17:50:18.3958 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:18.3958 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2019-11-06 17:50:18.3958 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:18.3958 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2019-11-06 17:50:18.3958 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2019-11-06 17:50:18.3958 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2019-11-06 17:50:18.3958 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:18.3958 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-11-06 17:50:18.3958 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:18.3958 Trace    Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2019-11-06 17:50:18.3958 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:18.3958 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-11-06 17:50:18.3958 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2019-11-06 17:50:18.3958 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2019-11-06 17:50:18.3958 Trace Scanning LoggingRule 'logNamePattern: (NLog.:StartsWith) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ database ]'
+2019-11-06 17:50:18.3958 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2019-11-06 17:50:18.3958 Trace  Scanning DatabaseTarget 'Database Target[database]'
+2019-11-06 17:50:18.3958 Trace   Scanning Property CommandText ''
+        insert into nlog (
+        Application, Logged, Level, Message,
+        Logger, CallSite, Exception
+        ) values (
+        @Application, @Logged, @Level, @Message,
+        @Logger, @Callsite, @Exception
+        );
+      '' NLog.Layouts
+2019-11-06 17:50:18.3958 Trace   Scanning SimpleLayout ''
+        insert into nlog (
+        Application, Logged, Level, Message,
+        Logger, CallSite, Exception
+        ) values (
+        @Application, @Logged, @Level, @Message,
+        @Logger, @Callsite, @Exception
+        );
+      ''
+2019-11-06 17:50:18.4115 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:18.4115 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:18.4115 Trace   Scanning Property ConnectionString ''Data Source=39.105.178.182,3588;Initial Catalog=SYT_apiDB_Test;User ID=Test_sa;Password=data2018!;Integrated Security=True'' NLog.Layouts
+2019-11-06 17:50:18.4115 Trace   Scanning SimpleLayout ''Data Source=39.105.178.182,3588;Initial Catalog=SYT_apiDB_Test;User ID=Test_sa;Password=data2018!;Integrated Security=True''
+2019-11-06 17:50:18.4115 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:18.4115 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:18.4115 Trace   Scanning Property InstallDdlCommands 'System.Collections.Generic.List`1[NLog.Targets.DatabaseCommandInfo]' System.Collections.Generic
+2019-11-06 17:50:18.4115 Trace   Scanning Property UninstallDdlCommands 'System.Collections.Generic.List`1[NLog.Targets.DatabaseCommandInfo]' System.Collections.Generic
+2019-11-06 17:50:18.4115 Trace   Scanning Property DBHost ''.'' NLog.Layouts
+2019-11-06 17:50:18.4115 Trace   Scanning SimpleLayout ''.''
+2019-11-06 17:50:18.4115 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:18.4115 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:18.4115 Trace   Scanning Property Parameters 'System.Collections.Generic.List`1[NLog.Targets.DatabaseParameterInfo]' System.Collections.Generic
+2019-11-06 17:50:18.4115 Trace   Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:18.4115 Trace    Scanning Property Layout ''NLog'' NLog.Layouts
+2019-11-06 17:50:18.4115 Trace    Scanning SimpleLayout ''NLog''
+2019-11-06 17:50:18.4115 Trace     Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:18.4115 Trace     Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:18.4115 Trace   Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:18.4115 Trace    Scanning Property Layout ''${date}'' NLog.Layouts
+2019-11-06 17:50:18.4115 Trace    Scanning SimpleLayout ''${date}''
+2019-11-06 17:50:18.4115 Trace     Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:18.4115 Trace     Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-11-06 17:50:18.4115 Trace   Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:18.4115 Trace    Scanning Property Layout ''${level}'' NLog.Layouts
+2019-11-06 17:50:18.4273 Trace    Scanning SimpleLayout ''${level}''
+2019-11-06 17:50:18.4273 Trace     Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:18.4273 Trace     Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-11-06 17:50:18.4273 Trace   Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:18.4273 Trace    Scanning Property Layout ''${message}'' NLog.Layouts
+2019-11-06 17:50:18.4273 Trace    Scanning SimpleLayout ''${message}''
+2019-11-06 17:50:18.4273 Trace     Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:18.4273 Trace     Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-11-06 17:50:18.4273 Trace   Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:18.4273 Trace    Scanning Property Layout ''${logger}'' NLog.Layouts
+2019-11-06 17:50:18.4273 Trace    Scanning SimpleLayout ''${logger}''
+2019-11-06 17:50:18.4273 Trace     Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:18.4273 Trace     Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2019-11-06 17:50:18.4273 Trace   Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:18.4273 Trace    Scanning Property Layout ''${callsite:filename=true}'' NLog.Layouts
+2019-11-06 17:50:18.4273 Trace    Scanning SimpleLayout ''${callsite:filename=true}''
+2019-11-06 17:50:18.4273 Trace     Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:18.4273 Trace     Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-11-06 17:50:18.4273 Trace   Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:18.4273 Trace    Scanning Property Layout ''${exception:tostring}'' NLog.Layouts
+2019-11-06 17:50:18.4273 Trace    Scanning SimpleLayout ''${exception:tostring}''
+2019-11-06 17:50:18.4273 Trace     Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:18.4273 Trace     Scanning ExceptionLayoutRenderer 'Layout Renderer: ${exception}'
+2019-11-06 17:50:18.4273 Trace      Scanning Property Formats 'System.Collections.Generic.List`1[NLog.Config.ExceptionRenderingFormat]' System.Collections.Generic
+2019-11-06 17:50:18.4273 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2019-11-06 17:50:18.4429 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2019-11-06 17:50:18.4429 Info Found 41 configuration items
+2019-11-06 17:50:18.4429 Trace Initializing Layout Renderer: ${exception}
+2019-11-06 17:50:18.4429 Trace Initializing '${exception:tostring}'
+2019-11-06 17:50:18.4429 Trace FindReachableObject<System.Object>:
+2019-11-06 17:50:18.4429 Trace Scanning SimpleLayout ''${exception:tostring}''
+2019-11-06 17:50:18.4429 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:18.4429 Trace  Scanning ExceptionLayoutRenderer 'Layout Renderer: ${exception}'
+2019-11-06 17:50:18.4429 Trace   Scanning Property Formats 'System.Collections.Generic.List`1[NLog.Config.ExceptionRenderingFormat]' System.Collections.Generic
+2019-11-06 17:50:18.4429 Trace Initializing Layout Renderer: ${callsite}
+2019-11-06 17:50:18.4429 Trace Initializing '${callsite:filename=true}'
+2019-11-06 17:50:18.4429 Trace FindReachableObject<System.Object>:
+2019-11-06 17:50:18.4429 Trace Scanning SimpleLayout ''${callsite:filename=true}''
+2019-11-06 17:50:18.4429 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:18.4583 Trace  Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-11-06 17:50:18.4583 Trace Initializing Layout Renderer: ${logger}
+2019-11-06 17:50:18.4583 Trace Initializing '${logger}'
+2019-11-06 17:50:18.4583 Trace FindReachableObject<System.Object>:
+2019-11-06 17:50:18.4583 Trace Scanning SimpleLayout ''${logger}''
+2019-11-06 17:50:18.4583 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:18.4583 Trace  Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2019-11-06 17:50:18.4583 Trace Initializing Layout Renderer: ${message}
+2019-11-06 17:50:18.4583 Trace Initializing '${message}'
+2019-11-06 17:50:18.4583 Trace FindReachableObject<System.Object>:
+2019-11-06 17:50:18.4583 Trace Scanning SimpleLayout ''${message}''
+2019-11-06 17:50:18.4583 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:18.4583 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-11-06 17:50:18.4583 Trace Initializing Layout Renderer: ${level}
+2019-11-06 17:50:18.4583 Trace Initializing '${level}'
+2019-11-06 17:50:18.4583 Trace FindReachableObject<System.Object>:
+2019-11-06 17:50:18.4583 Trace Scanning SimpleLayout ''${level}''
+2019-11-06 17:50:18.4583 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:18.4583 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-11-06 17:50:18.4583 Trace Initializing Layout Renderer: ${date}
+2019-11-06 17:50:18.4583 Trace Initializing '${date}'
+2019-11-06 17:50:18.4583 Trace FindReachableObject<System.Object>:
+2019-11-06 17:50:18.4583 Trace Scanning SimpleLayout ''${date}''
+2019-11-06 17:50:18.4583 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:18.4583 Trace  Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-11-06 17:50:18.4583 Trace Initializing Layout Renderer: ${literal}
+2019-11-06 17:50:18.4583 Trace Initializing 'NLog'
+2019-11-06 17:50:18.4583 Trace FindReachableObject<System.Object>:
+2019-11-06 17:50:18.4583 Trace Scanning SimpleLayout ''NLog''
+2019-11-06 17:50:18.4741 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:18.4741 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:18.4741 Trace Initializing Layout Renderer: ${literal}
+2019-11-06 17:50:18.4741 Trace Initializing '.'
+2019-11-06 17:50:18.4741 Trace FindReachableObject<System.Object>:
+2019-11-06 17:50:18.4741 Trace Scanning SimpleLayout ''.''
+2019-11-06 17:50:18.4741 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:18.4741 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:18.4741 Trace Initializing Layout Renderer: ${literal}
+2019-11-06 17:50:18.4741 Trace Initializing 'Data Source=39.105.178.182,3588;Initial Catalog=SYT_apiDB_Test;User ID=Test_sa;Password=data2018!;Integrated Security=True'
+2019-11-06 17:50:18.4741 Trace FindReachableObject<System.Object>:
+2019-11-06 17:50:18.4741 Trace Scanning SimpleLayout ''Data Source=39.105.178.182,3588;Initial Catalog=SYT_apiDB_Test;User ID=Test_sa;Password=data2018!;Integrated Security=True''
+2019-11-06 17:50:18.4741 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:18.4741 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:18.4741 Trace Initializing Layout Renderer: ${literal}
+2019-11-06 17:50:18.4741 Trace Initializing '
+        insert into nlog (
+        Application, Logged, Level, Message,
+        Logger, CallSite, Exception
+        ) values (
+        @Application, @Logged, @Level, @Message,
+        @Logger, @Callsite, @Exception
+        );
+      '
+2019-11-06 17:50:18.4741 Trace FindReachableObject<System.Object>:
+2019-11-06 17:50:18.4741 Trace Scanning SimpleLayout ''
+        insert into nlog (
+        Application, Logged, Level, Message,
+        Logger, CallSite, Exception
+        ) values (
+        @Application, @Logged, @Level, @Message,
+        @Logger, @Callsite, @Exception
+        );
+      ''
+2019-11-06 17:50:18.4741 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:18.4741 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:18.4741 Trace Initializing Database Target[database]
+2019-11-06 17:50:18.4911 Trace FindReachableObject<NLog.Layouts.Layout>:
+2019-11-06 17:50:18.4911 Trace Scanning DatabaseTarget 'Database Target[database]'
+2019-11-06 17:50:18.4911 Trace  Scanning Property CommandText ''
+        insert into nlog (
+        Application, Logged, Level, Message,
+        Logger, CallSite, Exception
+        ) values (
+        @Application, @Logged, @Level, @Message,
+        @Logger, @Callsite, @Exception
+        );
+      '' NLog.Layouts
+2019-11-06 17:50:18.4911 Trace  Scanning SimpleLayout ''
+        insert into nlog (
+        Application, Logged, Level, Message,
+        Logger, CallSite, Exception
+        ) values (
+        @Application, @Logged, @Level, @Message,
+        @Logger, @Callsite, @Exception
+        );
+      ''
+2019-11-06 17:50:18.4911 Trace  Scanning Property ConnectionString ''Data Source=39.105.178.182,3588;Initial Catalog=SYT_apiDB_Test;User ID=Test_sa;Password=data2018!;Integrated Security=True'' NLog.Layouts
+2019-11-06 17:50:18.4911 Trace  Scanning SimpleLayout ''Data Source=39.105.178.182,3588;Initial Catalog=SYT_apiDB_Test;User ID=Test_sa;Password=data2018!;Integrated Security=True''
+2019-11-06 17:50:18.4911 Trace  Scanning Property InstallDdlCommands 'System.Collections.Generic.List`1[NLog.Targets.DatabaseCommandInfo]' System.Collections.Generic
+2019-11-06 17:50:18.4911 Trace  Scanning Property UninstallDdlCommands 'System.Collections.Generic.List`1[NLog.Targets.DatabaseCommandInfo]' System.Collections.Generic
+2019-11-06 17:50:18.4911 Trace  Scanning Property DBHost ''.'' NLog.Layouts
+2019-11-06 17:50:18.4911 Trace  Scanning SimpleLayout ''.''
+2019-11-06 17:50:18.4911 Trace  Scanning Property Parameters 'System.Collections.Generic.List`1[NLog.Targets.DatabaseParameterInfo]' System.Collections.Generic
+2019-11-06 17:50:18.4911 Trace  Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:18.4911 Trace   Scanning Property Layout ''NLog'' NLog.Layouts
+2019-11-06 17:50:18.4911 Trace   Scanning SimpleLayout ''NLog''
+2019-11-06 17:50:18.4911 Trace  Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:18.4911 Trace   Scanning Property Layout ''${date}'' NLog.Layouts
+2019-11-06 17:50:18.4911 Trace   Scanning SimpleLayout ''${date}''
+2019-11-06 17:50:18.4911 Trace  Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:18.4911 Trace   Scanning Property Layout ''${level}'' NLog.Layouts
+2019-11-06 17:50:18.4911 Trace   Scanning SimpleLayout ''${level}''
+2019-11-06 17:50:18.5057 Trace  Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:18.5057 Trace   Scanning Property Layout ''${message}'' NLog.Layouts
+2019-11-06 17:50:18.5057 Trace   Scanning SimpleLayout ''${message}''
+2019-11-06 17:50:18.5057 Trace  Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:18.5057 Trace   Scanning Property Layout ''${logger}'' NLog.Layouts
+2019-11-06 17:50:18.5057 Trace   Scanning SimpleLayout ''${logger}''
+2019-11-06 17:50:18.5057 Trace  Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:18.5057 Trace   Scanning Property Layout ''${callsite:filename=true}'' NLog.Layouts
+2019-11-06 17:50:18.5057 Trace   Scanning SimpleLayout ''${callsite:filename=true}''
+2019-11-06 17:50:18.5057 Trace  Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:18.5057 Trace   Scanning Property Layout ''${exception:tostring}'' NLog.Layouts
+2019-11-06 17:50:18.5057 Trace   Scanning SimpleLayout ''${exception:tostring}''
+2019-11-06 17:50:18.5057 Trace Database Target[database] has 10 layouts
+2019-11-06 17:50:18.5874 Trace Initializing Layout Renderer: ${message}
+2019-11-06 17:50:18.5874 Trace Initializing Layout Renderer: ${literal}
+2019-11-06 17:50:18.5874 Trace Initializing Layout Renderer: ${logger}
+2019-11-06 17:50:18.5874 Trace Initializing Layout Renderer: ${literal}
+2019-11-06 17:50:18.5874 Trace Initializing Layout Renderer: ${level}
+2019-11-06 17:50:18.5874 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2019-11-06 17:50:18.5874 Trace FindReachableObject<System.Object>:
+2019-11-06 17:50:18.5874 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2019-11-06 17:50:18.5874 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:18.5874 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-11-06 17:50:18.5874 Trace Initializing Layout Renderer: ${uppercase}
+2019-11-06 17:50:18.5874 Trace Initializing Layout Renderer: ${literal}
+2019-11-06 17:50:18.5874 Trace Initializing Layout Renderer: ${longdate}
+2019-11-06 17:50:18.5874 Trace Initializing '${longdate}|${level:uppercase=true}|${logger}|${message}'
+2019-11-06 17:50:18.5874 Trace FindReachableObject<System.Object>:
+2019-11-06 17:50:18.5991 Trace Scanning SimpleLayout ''${longdate}|${level:uppercase=true}|${logger}|${message}''
+2019-11-06 17:50:18.5991 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:18.5991 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2019-11-06 17:50:18.5991 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:18.5991 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2019-11-06 17:50:18.5991 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2019-11-06 17:50:18.5991 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2019-11-06 17:50:18.5991 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:18.5991 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-11-06 17:50:18.5991 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:18.5991 Trace  Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2019-11-06 17:50:18.5991 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:18.5991 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-11-06 17:50:18.5991 Trace Initializing Null Target[blackhole]
+2019-11-06 17:50:18.5991 Trace FindReachableObject<NLog.Layouts.Layout>:
+2019-11-06 17:50:18.5991 Trace Scanning NullTarget 'Null Target[blackhole]'
+2019-11-06 17:50:18.5991 Trace  Scanning Property Layout ''${longdate}|${level:uppercase=true}|${logger}|${message}'' NLog.Layouts
+2019-11-06 17:50:18.5991 Trace  Scanning SimpleLayout ''${longdate}|${level:uppercase=true}|${logger}|${message}''
+2019-11-06 17:50:18.5991 Trace Null Target[blackhole] has 1 layouts
+2019-11-06 17:50:18.6163 Info Configuration initialized.
+2019-11-06 17:50:18.6163 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.6.8.10751. Product version: 4.6.8.
+2019-11-06 17:50:18.6324 Debug Targets for Microsoft.AspNetCore.Hosting.Internal.WebHost by level:
+2019-11-06 17:50:18.6324 Debug Trace => blackhole
+2019-11-06 17:50:18.6324 Debug Debug => blackhole
+2019-11-06 17:50:18.6324 Debug Info => blackhole
+2019-11-06 17:50:18.6324 Debug Warn => blackhole
+2019-11-06 17:50:18.6324 Debug Error => blackhole
+2019-11-06 17:50:18.6324 Debug Fatal => blackhole
+2019-11-06 17:50:18.7156 Debug Targets for Microsoft.AspNetCore.Hosting.Internal.ApplicationLifetime by level:
+2019-11-06 17:50:18.7156 Debug Trace => blackhole
+2019-11-06 17:50:18.7156 Debug Debug => blackhole
+2019-11-06 17:50:18.7156 Debug Info => blackhole
+2019-11-06 17:50:18.7156 Debug Warn => blackhole
+2019-11-06 17:50:18.7156 Debug Error => blackhole
+2019-11-06 17:50:18.7156 Debug Fatal => blackhole
+2019-11-06 17:50:18.7156 Debug Targets for Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets by level:
+2019-11-06 17:50:18.7243 Debug Trace => blackhole
+2019-11-06 17:50:18.7243 Debug Debug => blackhole
+2019-11-06 17:50:18.7243 Debug Info => blackhole
+2019-11-06 17:50:18.7243 Debug Warn => blackhole
+2019-11-06 17:50:18.7243 Debug Error => blackhole
+2019-11-06 17:50:18.7243 Debug Fatal => blackhole
+2019-11-06 17:50:18.7243 Debug Targets for Microsoft.AspNetCore.Server.Kestrel by level:
+2019-11-06 17:50:18.7243 Debug Trace => blackhole
+2019-11-06 17:50:18.7243 Debug Debug => blackhole
+2019-11-06 17:50:18.7243 Debug Info => blackhole
+2019-11-06 17:50:18.7243 Debug Warn => blackhole
+2019-11-06 17:50:18.7243 Debug Error => blackhole
+2019-11-06 17:50:18.7243 Debug Fatal => blackhole
+2019-11-06 17:50:18.7531 Debug Targets for Microsoft.AspNetCore.DataProtection.TypeForwardingActivator by level:
+2019-11-06 17:50:18.7531 Debug Trace => blackhole
+2019-11-06 17:50:18.7531 Debug Debug => blackhole
+2019-11-06 17:50:18.7531 Debug Info => blackhole
+2019-11-06 17:50:18.7576 Debug Warn => blackhole
+2019-11-06 17:50:18.7576 Debug Error => blackhole
+2019-11-06 17:50:18.7576 Debug Fatal => blackhole
+2019-11-06 17:50:18.7576 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager by level:
+2019-11-06 17:50:18.7576 Debug Trace => blackhole
+2019-11-06 17:50:18.7576 Debug Debug => blackhole
+2019-11-06 17:50:18.7576 Debug Info => blackhole
+2019-11-06 17:50:18.7576 Debug Warn => blackhole
+2019-11-06 17:50:18.7709 Debug Error => blackhole
+2019-11-06 17:50:18.7709 Debug Fatal => blackhole
+2019-11-06 17:50:18.7709 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory by level:
+2019-11-06 17:50:18.7709 Debug Trace => blackhole
+2019-11-06 17:50:18.7709 Debug Debug => blackhole
+2019-11-06 17:50:18.7709 Debug Info => blackhole
+2019-11-06 17:50:18.7709 Debug Warn => blackhole
+2019-11-06 17:50:18.7709 Debug Error => blackhole
+2019-11-06 17:50:18.7709 Debug Fatal => blackhole
+2019-11-06 17:50:18.7709 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory by level:
+2019-11-06 17:50:18.7709 Debug Trace => blackhole
+2019-11-06 17:50:18.7709 Debug Debug => blackhole
+2019-11-06 17:50:18.7709 Debug Info => blackhole
+2019-11-06 17:50:18.7709 Debug Warn => blackhole
+2019-11-06 17:50:18.7709 Debug Error => blackhole
+2019-11-06 17:50:18.7709 Debug Fatal => blackhole
+2019-11-06 17:50:18.7709 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory by level:
+2019-11-06 17:50:18.7864 Debug Trace => blackhole
+2019-11-06 17:50:18.7864 Debug Debug => blackhole
+2019-11-06 17:50:18.7864 Debug Info => blackhole
+2019-11-06 17:50:18.7864 Debug Warn => blackhole
+2019-11-06 17:50:18.7864 Debug Error => blackhole
+2019-11-06 17:50:18.7864 Debug Fatal => blackhole
+2019-11-06 17:50:18.8030 Debug Targets for Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor by level:
+2019-11-06 17:50:18.8030 Debug Trace => blackhole
+2019-11-06 17:50:18.8030 Debug Debug => blackhole
+2019-11-06 17:50:18.8030 Debug Info => blackhole
+2019-11-06 17:50:18.8030 Debug Warn => blackhole
+2019-11-06 17:50:18.8030 Debug Error => blackhole
+2019-11-06 17:50:18.8030 Debug Fatal => blackhole
+2019-11-06 17:50:18.8030 Debug Targets for Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository by level:
+2019-11-06 17:50:18.8030 Debug Trace => blackhole
+2019-11-06 17:50:18.8030 Debug Debug => blackhole
+2019-11-06 17:50:18.8030 Debug Info => blackhole
+2019-11-06 17:50:18.8030 Debug Warn => blackhole
+2019-11-06 17:50:18.8030 Debug Error => blackhole
+2019-11-06 17:50:18.8030 Debug Fatal => blackhole
+2019-11-06 17:50:18.8382 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver by level:
+2019-11-06 17:50:18.8382 Debug Trace => blackhole
+2019-11-06 17:50:18.8382 Debug Debug => blackhole
+2019-11-06 17:50:18.8382 Debug Info => blackhole
+2019-11-06 17:50:18.8382 Debug Warn => blackhole
+2019-11-06 17:50:18.8382 Debug Error => blackhole
+2019-11-06 17:50:18.8503 Debug Fatal => blackhole
+2019-11-06 17:50:18.8503 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider by level:
+2019-11-06 17:50:18.8503 Debug Trace => blackhole
+2019-11-06 17:50:18.8503 Debug Debug => blackhole
+2019-11-06 17:50:18.8503 Debug Info => blackhole
+2019-11-06 17:50:18.8503 Debug Warn => blackhole
+2019-11-06 17:50:18.8503 Debug Error => blackhole
+2019-11-06 17:50:18.8503 Debug Fatal => blackhole
+2019-11-06 17:50:18.8503 Debug Targets for Microsoft.AspNetCore.DataProtection.Internal.DataProtectionStartupFilter by level:
+2019-11-06 17:50:18.8503 Debug Trace => blackhole
+2019-11-06 17:50:18.8503 Debug Debug => blackhole
+2019-11-06 17:50:18.8503 Debug Info => blackhole
+2019-11-06 17:50:18.8503 Debug Warn => blackhole
+2019-11-06 17:50:18.8503 Debug Error => blackhole
+2019-11-06 17:50:18.8503 Debug Fatal => blackhole
+2019-11-06 17:50:18.9324 Debug Targets for Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor by level:
+2019-11-06 17:50:18.9324 Debug Trace => blackhole
+2019-11-06 17:50:18.9324 Debug Debug => blackhole
+2019-11-06 17:50:18.9324 Debug Info => blackhole
+2019-11-06 17:50:18.9324 Debug Warn => blackhole
+2019-11-06 17:50:18.9324 Debug Error => blackhole
+2019-11-06 17:50:18.9324 Debug Fatal => blackhole
+2019-11-06 17:50:19.0147 Debug Hide assemblies for callsite
+2019-11-06 17:50:19.0147 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2019-11-06 17:50:19.0147 Debug ScanAssembly('NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2019-11-06 17:50:19.0147 Debug Loading config from F:\GitHubProject\ShuiYinTong.API\shuiyintong.Api\NLog.config
+2019-11-06 17:50:19.0147 Info Configuring from an XML element in F:\GitHubProject\ShuiYinTong.API\shuiyintong.Api\NLog.config...
+2019-11-06 17:50:19.0208 Trace ParseNLogElement
+2019-11-06 17:50:19.0208 Trace ParseNLogConfig
+2019-11-06 17:50:19.0208 Info Message Template Auto Format enabled
+2019-11-06 17:50:19.0208 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-11-06 17:50:19.0208 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2019-11-06 17:50:19.0208 Debug Setting 'UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2019-11-06 17:50:19.0208 Trace Wrapping LevelLayoutRenderer with UppercaseLayoutRendererWrapper
+2019-11-06 17:50:19.0208 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-11-06 17:50:19.0208 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-11-06 17:50:19.0446 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-11-06 17:50:19.0446 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2019-11-06 17:50:19.0446 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2019-11-06 17:50:19.0446 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2019-11-06 17:50:19.0446 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:19.0446 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-11-06 17:50:19.0446 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-11-06 17:50:19.0446 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2019-11-06 17:50:19.0446 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-11-06 17:50:19.0446 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-11-06 17:50:19.0446 Debug Setting 'NullTarget.name' to 'blackhole'
+2019-11-06 17:50:19.0446 Info Adding target NullTarget(Name=blackhole)
+2019-11-06 17:50:19.0446 Debug Registered target blackhole: NLog.Targets.NullTarget
+2019-11-06 17:50:19.0524 Debug Setting 'DatabaseTarget.commandText' to '
+        insert into nlog(Application,Logged,Level,Message,Logger,CallSite,Exception) 
+        values(@Application,@Logged,@Level,@Message,@Logger,@Callsite,@Exception)
+      '
+2019-11-06 17:50:19.0524 Debug Setting 'DatabaseTarget.name' to 'database'
+2019-11-06 17:50:19.0524 Debug Setting 'DatabaseTarget.dbProvider' to 'Microsoft.Data.SqlClient.SqlConnection,Microsoft.Data.SqlClient'
+2019-11-06 17:50:19.0524 Debug Setting 'DatabaseTarget.connectionString' to 'Data Source=39.105.178.182,3588;Initial Catalog=SYT_apiDB_Test;User ID=Test_sa;Password=data2018!;Integrated Security=True'
+2019-11-06 17:50:19.0524 Debug Setting 'DatabaseParameterInfo.name' to '@application'
+2019-11-06 17:50:19.0524 Debug Setting 'DatabaseParameterInfo.layout' to 'NLog'
+2019-11-06 17:50:19.0524 Debug Setting 'DatabaseParameterInfo.name' to '@logged'
+2019-11-06 17:50:19.0524 Debug Setting 'DatabaseParameterInfo.layout' to '${date}'
+2019-11-06 17:50:19.0524 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-11-06 17:50:19.0524 Trace Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-11-06 17:50:19.0524 Debug Setting 'DatabaseParameterInfo.name' to '@level'
+2019-11-06 17:50:19.0524 Debug Setting 'DatabaseParameterInfo.layout' to '${level}'
+2019-11-06 17:50:19.0524 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-11-06 17:50:19.0524 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-11-06 17:50:19.0524 Debug Setting 'DatabaseParameterInfo.name' to '@message'
+2019-11-06 17:50:19.0524 Debug Setting 'DatabaseParameterInfo.layout' to '${message}'
+2019-11-06 17:50:19.0524 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-11-06 17:50:19.0692 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-11-06 17:50:19.0692 Debug Setting 'DatabaseParameterInfo.name' to '@logger'
+2019-11-06 17:50:19.0692 Debug Setting 'DatabaseParameterInfo.layout' to '${logger}'
+2019-11-06 17:50:19.0692 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-11-06 17:50:19.0692 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2019-11-06 17:50:19.0692 Debug Setting 'DatabaseParameterInfo.name' to '@callSite'
+2019-11-06 17:50:19.0692 Debug Setting 'DatabaseParameterInfo.layout' to '${callsite:filename=true}'
+2019-11-06 17:50:19.0692 Debug Setting 'CallSiteLayoutRenderer.filename' to 'true'
+2019-11-06 17:50:19.0692 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-11-06 17:50:19.0692 Trace Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-11-06 17:50:19.0692 Debug Setting 'DatabaseParameterInfo.name' to '@exception'
+2019-11-06 17:50:19.0692 Debug Setting 'DatabaseParameterInfo.layout' to '${exception:tostring}'
+2019-11-06 17:50:19.0692 Debug Setting 'ExceptionLayoutRenderer.Format' to 'tostring'
+2019-11-06 17:50:19.0833 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2019-11-06 17:50:19.0833 Trace Scanning ExceptionLayoutRenderer 'Layout Renderer: ${exception}'
+2019-11-06 17:50:19.0833 Trace  Scanning Property Formats 'System.Collections.Generic.List`1[NLog.Config.ExceptionRenderingFormat]' System.Collections.Generic
+2019-11-06 17:50:19.0833 Info Adding target DatabaseTarget(Name=database)
+2019-11-06 17:50:19.0833 Debug Registered target database: NLog.Targets.DatabaseTarget
+2019-11-06 17:50:19.0833 Trace ParseRulesElement
+2019-11-06 17:50:19.0833 Debug Unused target checking is started... Rule Count: 2, Target Count: 2
+2019-11-06 17:50:19.0833 Debug Unused target checking is completed. Total Rule Count: 2, Total Target Count: 2, Unused Target Count: 0
+2019-11-06 17:50:19.0833 Info Closing old configuration.
+2019-11-06 17:50:19.0998 Trace LogFactory.Flush(00:00:15)
+2019-11-06 17:50:19.0998 Trace Flushing all targets...
+2019-11-06 17:50:19.0998 Trace ForEachItemInParallel() 2 items
+2019-11-06 17:50:19.1285 Trace Continuation invoked: 
+2019-11-06 17:50:19.1285 Trace Continuation invoked: 
+2019-11-06 17:50:19.1285 Trace Parallel task completed. 0 items remaining
+2019-11-06 17:50:19.1285 Trace Parallel task completed. 1 items remaining
+2019-11-06 17:50:19.1327 Debug Closing logging configuration...
+2019-11-06 17:50:19.1327 Trace Closing Null Target[blackhole]
+2019-11-06 17:50:19.1327 Debug Closing target 'Null Target[blackhole]'.
+2019-11-06 17:50:19.1327 Debug Closed target 'Null Target[blackhole]'.
+2019-11-06 17:50:19.1327 Trace Closing '${longdate}|${level:uppercase=true}|${logger}|${message}'
+2019-11-06 17:50:19.1327 Trace Closing Layout Renderer: ${longdate}
+2019-11-06 17:50:19.1327 Trace Closing Layout Renderer: ${literal}
+2019-11-06 17:50:19.1327 Trace Closing Layout Renderer: ${uppercase}
+2019-11-06 17:50:19.1327 Trace Closing SimpleLayout=Layout Renderer: ${level}
+2019-11-06 17:50:19.1327 Trace Closing Layout Renderer: ${level}
+2019-11-06 17:50:19.1327 Trace Closing Layout Renderer: ${literal}
+2019-11-06 17:50:19.1327 Trace Closing Layout Renderer: ${logger}
+2019-11-06 17:50:19.1327 Trace Closing Layout Renderer: ${literal}
+2019-11-06 17:50:19.1327 Trace Closing Layout Renderer: ${message}
+2019-11-06 17:50:19.1327 Trace Closing Database Target[database]
+2019-11-06 17:50:19.1327 Debug Closing target 'Database Target[database]'.
+2019-11-06 17:50:19.1327 Trace DatabaseTarget(Name=database): Close connection because of CloseTarget
+2019-11-06 17:50:19.1327 Debug Closed target 'Database Target[database]'.
+2019-11-06 17:50:19.1327 Trace Closing '
+        insert into nlog (
+        Application, Logged, Level, Message,
+        Logger, CallSite, Exception
+        ) values (
+        @Application, @Logged, @Level, @Message,
+        @Logger, @Callsite, @Exception
+        );
+      '
+2019-11-06 17:50:19.1457 Trace Closing Layout Renderer: ${literal}
+2019-11-06 17:50:19.1457 Trace Closing 'Data Source=39.105.178.182,3588;Initial Catalog=SYT_apiDB_Test;User ID=Test_sa;Password=data2018!;Integrated Security=True'
+2019-11-06 17:50:19.1457 Trace Closing Layout Renderer: ${literal}
+2019-11-06 17:50:19.1457 Trace Closing '.'
+2019-11-06 17:50:19.1457 Trace Closing Layout Renderer: ${literal}
+2019-11-06 17:50:19.1457 Trace Closing 'NLog'
+2019-11-06 17:50:19.1457 Trace Closing Layout Renderer: ${literal}
+2019-11-06 17:50:19.1457 Trace Closing '${date}'
+2019-11-06 17:50:19.1457 Trace Closing Layout Renderer: ${date}
+2019-11-06 17:50:19.1457 Trace Closing '${level}'
+2019-11-06 17:50:19.1457 Trace Closing Layout Renderer: ${level}
+2019-11-06 17:50:19.1457 Trace Closing '${message}'
+2019-11-06 17:50:19.1457 Trace Closing Layout Renderer: ${message}
+2019-11-06 17:50:19.1457 Trace Closing '${logger}'
+2019-11-06 17:50:19.1457 Trace Closing Layout Renderer: ${logger}
+2019-11-06 17:50:19.1457 Trace Closing '${callsite:filename=true}'
+2019-11-06 17:50:19.1457 Trace Closing Layout Renderer: ${callsite}
+2019-11-06 17:50:19.1457 Trace Closing '${exception:tostring}'
+2019-11-06 17:50:19.1457 Trace Closing Layout Renderer: ${exception}
+2019-11-06 17:50:19.1457 Debug Finished closing logging configuration.
+2019-11-06 17:50:19.1457 Debug Stopping file watching for path 'F:\GitHubProject\ShuiYinTong.API\shuiyintong.Api\bin\Debug\netcoreapp2.2' filter 'NLog.config'
+2019-11-06 17:50:19.1621 Debug Watching path 'F:\GitHubProject\ShuiYinTong.API\shuiyintong.Api' filter 'NLog.config' for changes.
+2019-11-06 17:50:19.1621 Debug --- NLog configuration dump ---
+2019-11-06 17:50:19.1621 Debug Targets:
+2019-11-06 17:50:19.1621 Debug Null Target[blackhole]
+2019-11-06 17:50:19.1621 Debug Database Target[database]
+2019-11-06 17:50:19.1621 Debug Rules:
+2019-11-06 17:50:19.1621 Debug logNamePattern: (Microsoft.:StartsWith) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ blackhole ]
+2019-11-06 17:50:19.1621 Debug logNamePattern: (NLog.:StartsWith) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ database ]
+2019-11-06 17:50:19.1621 Debug --- End of NLog configuration dump ---
+2019-11-06 17:50:19.1621 Trace FindReachableObject<System.Object>:
+2019-11-06 17:50:19.1621 Trace Scanning LoggingRule 'logNamePattern: (Microsoft.:StartsWith) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ blackhole ]'
+2019-11-06 17:50:19.1621 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2019-11-06 17:50:19.1621 Trace  Scanning NullTarget 'Null Target[blackhole]'
+2019-11-06 17:50:19.1621 Trace   Scanning Property Layout ''${longdate}|${level:uppercase=true}|${logger}|${message}'' NLog.Layouts
+2019-11-06 17:50:19.1621 Trace   Scanning SimpleLayout ''${longdate}|${level:uppercase=true}|${logger}|${message}''
+2019-11-06 17:50:19.1621 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:19.1621 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2019-11-06 17:50:19.1621 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:19.1621 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2019-11-06 17:50:19.1621 Trace     Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2019-11-06 17:50:19.1621 Trace     Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2019-11-06 17:50:19.1621 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:19.1621 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-11-06 17:50:19.1771 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:19.1771 Trace    Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2019-11-06 17:50:19.1771 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:19.1771 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-11-06 17:50:19.1771 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2019-11-06 17:50:19.1771 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2019-11-06 17:50:19.1771 Trace Scanning LoggingRule 'logNamePattern: (NLog.:StartsWith) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ database ]'
+2019-11-06 17:50:19.1771 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2019-11-06 17:50:19.1771 Trace  Scanning DatabaseTarget 'Database Target[database]'
+2019-11-06 17:50:19.1771 Trace   Scanning Property CommandText ''
+        insert into nlog(Application,Logged,Level,Message,Logger,CallSite,Exception) 
+        values(@Application,@Logged,@Level,@Message,@Logger,@Callsite,@Exception)
+      '' NLog.Layouts
+2019-11-06 17:50:19.1771 Trace   Scanning SimpleLayout ''
+        insert into nlog(Application,Logged,Level,Message,Logger,CallSite,Exception) 
+        values(@Application,@Logged,@Level,@Message,@Logger,@Callsite,@Exception)
+      ''
+2019-11-06 17:50:19.1771 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:19.1771 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:19.1771 Trace   Scanning Property ConnectionString ''Data Source=39.105.178.182,3588;Initial Catalog=SYT_apiDB_Test;User ID=Test_sa;Password=data2018!;Integrated Security=True'' NLog.Layouts
+2019-11-06 17:50:19.1771 Trace   Scanning SimpleLayout ''Data Source=39.105.178.182,3588;Initial Catalog=SYT_apiDB_Test;User ID=Test_sa;Password=data2018!;Integrated Security=True''
+2019-11-06 17:50:19.1771 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:19.1771 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:19.1771 Trace   Scanning Property InstallDdlCommands 'System.Collections.Generic.List`1[NLog.Targets.DatabaseCommandInfo]' System.Collections.Generic
+2019-11-06 17:50:19.1771 Trace   Scanning Property UninstallDdlCommands 'System.Collections.Generic.List`1[NLog.Targets.DatabaseCommandInfo]' System.Collections.Generic
+2019-11-06 17:50:19.1924 Trace   Scanning Property DBHost ''.'' NLog.Layouts
+2019-11-06 17:50:19.1924 Trace   Scanning SimpleLayout ''.''
+2019-11-06 17:50:19.1924 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:19.1924 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:19.1924 Trace   Scanning Property Parameters 'System.Collections.Generic.List`1[NLog.Targets.DatabaseParameterInfo]' System.Collections.Generic
+2019-11-06 17:50:19.1924 Trace   Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:19.1924 Trace    Scanning Property Layout ''NLog'' NLog.Layouts
+2019-11-06 17:50:19.1924 Trace    Scanning SimpleLayout ''NLog''
+2019-11-06 17:50:19.1924 Trace     Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:19.1924 Trace     Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:19.1924 Trace   Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:19.1924 Trace    Scanning Property Layout ''${date}'' NLog.Layouts
+2019-11-06 17:50:19.1924 Trace    Scanning SimpleLayout ''${date}''
+2019-11-06 17:50:19.1924 Trace     Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:19.1924 Trace     Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-11-06 17:50:19.1924 Trace   Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:19.1924 Trace    Scanning Property Layout ''${level}'' NLog.Layouts
+2019-11-06 17:50:19.1924 Trace    Scanning SimpleLayout ''${level}''
+2019-11-06 17:50:19.1924 Trace     Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:19.1924 Trace     Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-11-06 17:50:19.1924 Trace   Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:19.1924 Trace    Scanning Property Layout ''${message}'' NLog.Layouts
+2019-11-06 17:50:19.1924 Trace    Scanning SimpleLayout ''${message}''
+2019-11-06 17:50:19.1924 Trace     Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:19.1924 Trace     Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-11-06 17:50:19.1924 Trace   Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:19.1924 Trace    Scanning Property Layout ''${logger}'' NLog.Layouts
+2019-11-06 17:50:19.1924 Trace    Scanning SimpleLayout ''${logger}''
+2019-11-06 17:50:19.1924 Trace     Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:19.1924 Trace     Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2019-11-06 17:50:19.1924 Trace   Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:19.1924 Trace    Scanning Property Layout ''${callsite:filename=true}'' NLog.Layouts
+2019-11-06 17:50:19.1924 Trace    Scanning SimpleLayout ''${callsite:filename=true}''
+2019-11-06 17:50:19.1924 Trace     Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:19.1924 Trace     Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-11-06 17:50:19.2081 Trace   Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:19.2081 Trace    Scanning Property Layout ''${exception:tostring}'' NLog.Layouts
+2019-11-06 17:50:19.2081 Trace    Scanning SimpleLayout ''${exception:tostring}''
+2019-11-06 17:50:19.2081 Trace     Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:19.2081 Trace     Scanning ExceptionLayoutRenderer 'Layout Renderer: ${exception}'
+2019-11-06 17:50:19.2081 Trace      Scanning Property Formats 'System.Collections.Generic.List`1[NLog.Config.ExceptionRenderingFormat]' System.Collections.Generic
+2019-11-06 17:50:19.2081 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2019-11-06 17:50:19.2081 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2019-11-06 17:50:19.2081 Info Found 41 configuration items
+2019-11-06 17:50:19.2081 Trace Initializing Layout Renderer: ${exception}
+2019-11-06 17:50:19.2081 Trace Initializing '${exception:tostring}'
+2019-11-06 17:50:19.2081 Trace FindReachableObject<System.Object>:
+2019-11-06 17:50:19.2081 Trace Scanning SimpleLayout ''${exception:tostring}''
+2019-11-06 17:50:19.2081 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:19.2081 Trace  Scanning ExceptionLayoutRenderer 'Layout Renderer: ${exception}'
+2019-11-06 17:50:19.2081 Trace   Scanning Property Formats 'System.Collections.Generic.List`1[NLog.Config.ExceptionRenderingFormat]' System.Collections.Generic
+2019-11-06 17:50:19.2081 Trace Initializing Layout Renderer: ${callsite}
+2019-11-06 17:50:19.2081 Trace Initializing '${callsite:filename=true}'
+2019-11-06 17:50:19.2081 Trace FindReachableObject<System.Object>:
+2019-11-06 17:50:19.2081 Trace Scanning SimpleLayout ''${callsite:filename=true}''
+2019-11-06 17:50:19.2081 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:19.2081 Trace  Scanning CallSiteLayoutRenderer 'Layout Renderer: ${callsite}'
+2019-11-06 17:50:19.2081 Trace Initializing Layout Renderer: ${logger}
+2019-11-06 17:50:19.2081 Trace Initializing '${logger}'
+2019-11-06 17:50:19.2081 Trace FindReachableObject<System.Object>:
+2019-11-06 17:50:19.2239 Trace Scanning SimpleLayout ''${logger}''
+2019-11-06 17:50:19.2239 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:19.2239 Trace  Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2019-11-06 17:50:19.2239 Trace Initializing Layout Renderer: ${message}
+2019-11-06 17:50:19.2239 Trace Initializing '${message}'
+2019-11-06 17:50:19.2239 Trace FindReachableObject<System.Object>:
+2019-11-06 17:50:19.2239 Trace Scanning SimpleLayout ''${message}''
+2019-11-06 17:50:19.2239 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:19.2239 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-11-06 17:50:19.2239 Trace Initializing Layout Renderer: ${level}
+2019-11-06 17:50:19.2239 Trace Initializing '${level}'
+2019-11-06 17:50:19.2239 Trace FindReachableObject<System.Object>:
+2019-11-06 17:50:19.2239 Trace Scanning SimpleLayout ''${level}''
+2019-11-06 17:50:19.2239 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:19.2239 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-11-06 17:50:19.2239 Trace Initializing Layout Renderer: ${date}
+2019-11-06 17:50:19.2239 Trace Initializing '${date}'
+2019-11-06 17:50:19.2239 Trace FindReachableObject<System.Object>:
+2019-11-06 17:50:19.2239 Trace Scanning SimpleLayout ''${date}''
+2019-11-06 17:50:19.2239 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:19.2397 Trace  Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2019-11-06 17:50:19.2397 Trace Initializing Layout Renderer: ${literal}
+2019-11-06 17:50:19.2397 Trace Initializing 'NLog'
+2019-11-06 17:50:19.2397 Trace FindReachableObject<System.Object>:
+2019-11-06 17:50:19.2397 Trace Scanning SimpleLayout ''NLog''
+2019-11-06 17:50:19.2397 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:19.2397 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:19.2397 Trace Initializing Layout Renderer: ${literal}
+2019-11-06 17:50:19.2397 Trace Initializing '.'
+2019-11-06 17:50:19.2397 Trace FindReachableObject<System.Object>:
+2019-11-06 17:50:19.2397 Trace Scanning SimpleLayout ''.''
+2019-11-06 17:50:19.2397 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:19.2397 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:19.2397 Trace Initializing Layout Renderer: ${literal}
+2019-11-06 17:50:19.2397 Trace Initializing 'Data Source=39.105.178.182,3588;Initial Catalog=SYT_apiDB_Test;User ID=Test_sa;Password=data2018!;Integrated Security=True'
+2019-11-06 17:50:19.2397 Trace FindReachableObject<System.Object>:
+2019-11-06 17:50:19.2397 Trace Scanning SimpleLayout ''Data Source=39.105.178.182,3588;Initial Catalog=SYT_apiDB_Test;User ID=Test_sa;Password=data2018!;Integrated Security=True''
+2019-11-06 17:50:19.2397 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:19.2397 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:19.2397 Trace Initializing Layout Renderer: ${literal}
+2019-11-06 17:50:19.2549 Trace Initializing '
+        insert into nlog(Application,Logged,Level,Message,Logger,CallSite,Exception) 
+        values(@Application,@Logged,@Level,@Message,@Logger,@Callsite,@Exception)
+      '
+2019-11-06 17:50:19.2549 Trace FindReachableObject<System.Object>:
+2019-11-06 17:50:19.2549 Trace Scanning SimpleLayout ''
+        insert into nlog(Application,Logged,Level,Message,Logger,CallSite,Exception) 
+        values(@Application,@Logged,@Level,@Message,@Logger,@Callsite,@Exception)
+      ''
+2019-11-06 17:50:19.2549 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:19.2549 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:19.2549 Trace Initializing Database Target[database]
+2019-11-06 17:50:19.2549 Trace FindReachableObject<NLog.Layouts.Layout>:
+2019-11-06 17:50:19.2549 Trace Scanning DatabaseTarget 'Database Target[database]'
+2019-11-06 17:50:19.2549 Trace  Scanning Property CommandText ''
+        insert into nlog(Application,Logged,Level,Message,Logger,CallSite,Exception) 
+        values(@Application,@Logged,@Level,@Message,@Logger,@Callsite,@Exception)
+      '' NLog.Layouts
+2019-11-06 17:50:19.2549 Trace  Scanning SimpleLayout ''
+        insert into nlog(Application,Logged,Level,Message,Logger,CallSite,Exception) 
+        values(@Application,@Logged,@Level,@Message,@Logger,@Callsite,@Exception)
+      ''
+2019-11-06 17:50:19.2549 Trace  Scanning Property ConnectionString ''Data Source=39.105.178.182,3588;Initial Catalog=SYT_apiDB_Test;User ID=Test_sa;Password=data2018!;Integrated Security=True'' NLog.Layouts
+2019-11-06 17:50:19.2549 Trace  Scanning SimpleLayout ''Data Source=39.105.178.182,3588;Initial Catalog=SYT_apiDB_Test;User ID=Test_sa;Password=data2018!;Integrated Security=True''
+2019-11-06 17:50:19.2549 Trace  Scanning Property InstallDdlCommands 'System.Collections.Generic.List`1[NLog.Targets.DatabaseCommandInfo]' System.Collections.Generic
+2019-11-06 17:50:19.2549 Trace  Scanning Property UninstallDdlCommands 'System.Collections.Generic.List`1[NLog.Targets.DatabaseCommandInfo]' System.Collections.Generic
+2019-11-06 17:50:19.2708 Trace  Scanning Property DBHost ''.'' NLog.Layouts
+2019-11-06 17:50:19.2708 Trace  Scanning SimpleLayout ''.''
+2019-11-06 17:50:19.2708 Trace  Scanning Property Parameters 'System.Collections.Generic.List`1[NLog.Targets.DatabaseParameterInfo]' System.Collections.Generic
+2019-11-06 17:50:19.2708 Trace  Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:19.2708 Trace   Scanning Property Layout ''NLog'' NLog.Layouts
+2019-11-06 17:50:19.2708 Trace   Scanning SimpleLayout ''NLog''
+2019-11-06 17:50:19.2708 Trace  Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:19.2708 Trace   Scanning Property Layout ''${date}'' NLog.Layouts
+2019-11-06 17:50:19.2708 Trace   Scanning SimpleLayout ''${date}''
+2019-11-06 17:50:19.2708 Trace  Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:19.2708 Trace   Scanning Property Layout ''${level}'' NLog.Layouts
+2019-11-06 17:50:19.2708 Trace   Scanning SimpleLayout ''${level}''
+2019-11-06 17:50:19.2708 Trace  Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:19.2708 Trace   Scanning Property Layout ''${message}'' NLog.Layouts
+2019-11-06 17:50:19.2708 Trace   Scanning SimpleLayout ''${message}''
+2019-11-06 17:50:19.2708 Trace  Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:19.2864 Trace   Scanning Property Layout ''${logger}'' NLog.Layouts
+2019-11-06 17:50:19.2864 Trace   Scanning SimpleLayout ''${logger}''
+2019-11-06 17:50:19.2864 Trace  Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:19.2864 Trace   Scanning Property Layout ''${callsite:filename=true}'' NLog.Layouts
+2019-11-06 17:50:19.2864 Trace   Scanning SimpleLayout ''${callsite:filename=true}''
+2019-11-06 17:50:19.2864 Trace  Scanning DatabaseParameterInfo 'NLog.Targets.DatabaseParameterInfo'
+2019-11-06 17:50:19.2864 Trace   Scanning Property Layout ''${exception:tostring}'' NLog.Layouts
+2019-11-06 17:50:19.2864 Trace   Scanning SimpleLayout ''${exception:tostring}''
+2019-11-06 17:50:19.3022 Trace Database Target[database] has 10 layouts
+2019-11-06 17:50:19.3022 Trace Initializing Layout Renderer: ${message}
+2019-11-06 17:50:19.3022 Trace Initializing Layout Renderer: ${literal}
+2019-11-06 17:50:19.3022 Trace Initializing Layout Renderer: ${logger}
+2019-11-06 17:50:19.3022 Trace Initializing Layout Renderer: ${literal}
+2019-11-06 17:50:19.3022 Trace Initializing Layout Renderer: ${level}
+2019-11-06 17:50:19.3022 Trace Initializing SimpleLayout=Layout Renderer: ${level}
+2019-11-06 17:50:19.3022 Trace FindReachableObject<System.Object>:
+2019-11-06 17:50:19.3022 Trace Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2019-11-06 17:50:19.3022 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:19.3022 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-11-06 17:50:19.3022 Trace Initializing Layout Renderer: ${uppercase}
+2019-11-06 17:50:19.3022 Trace Initializing Layout Renderer: ${literal}
+2019-11-06 17:50:19.3022 Trace Initializing Layout Renderer: ${longdate}
+2019-11-06 17:50:19.3022 Trace Initializing '${longdate}|${level:uppercase=true}|${logger}|${message}'
+2019-11-06 17:50:19.3022 Trace FindReachableObject<System.Object>:
+2019-11-06 17:50:19.3177 Trace Scanning SimpleLayout ''${longdate}|${level:uppercase=true}|${logger}|${message}''
+2019-11-06 17:50:19.3177 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:19.3177 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2019-11-06 17:50:19.3177 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:19.3177 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2019-11-06 17:50:19.3177 Trace   Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2019-11-06 17:50:19.3177 Trace   Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2019-11-06 17:50:19.3177 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2019-11-06 17:50:19.3177 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2019-11-06 17:50:19.3177 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:19.3177 Trace  Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2019-11-06 17:50:19.3177 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2019-11-06 17:50:19.3177 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2019-11-06 17:50:19.3177 Trace Initializing Null Target[blackhole]
+2019-11-06 17:50:19.3177 Trace FindReachableObject<NLog.Layouts.Layout>:
+2019-11-06 17:50:19.3177 Trace Scanning NullTarget 'Null Target[blackhole]'
+2019-11-06 17:50:19.3177 Trace  Scanning Property Layout ''${longdate}|${level:uppercase=true}|${logger}|${message}'' NLog.Layouts
+2019-11-06 17:50:19.3177 Trace  Scanning SimpleLayout ''${longdate}|${level:uppercase=true}|${logger}|${message}''
+2019-11-06 17:50:19.3177 Trace Null Target[blackhole] has 1 layouts
+2019-11-06 17:50:19.3177 Debug Targets for Microsoft.AspNetCore.Hosting.Internal.WebHost by level:
+2019-11-06 17:50:19.3177 Debug Trace => blackhole
+2019-11-06 17:50:19.3177 Debug Debug => blackhole
+2019-11-06 17:50:19.3177 Debug Info => blackhole
+2019-11-06 17:50:19.3177 Debug Warn => blackhole
+2019-11-06 17:50:19.3177 Debug Error => blackhole
+2019-11-06 17:50:19.3177 Debug Fatal => blackhole
+2019-11-06 17:50:19.3177 Debug Targets for Microsoft.AspNetCore.Hosting.Internal.ApplicationLifetime by level:
+2019-11-06 17:50:19.3177 Debug Trace => blackhole
+2019-11-06 17:50:19.3177 Debug Debug => blackhole
+2019-11-06 17:50:19.3333 Debug Info => blackhole
+2019-11-06 17:50:19.3333 Debug Warn => blackhole
+2019-11-06 17:50:19.3333 Debug Error => blackhole
+2019-11-06 17:50:19.3333 Debug Fatal => blackhole
+2019-11-06 17:50:19.3333 Debug Targets for Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets by level:
+2019-11-06 17:50:19.3333 Debug Trace => blackhole
+2019-11-06 17:50:19.3333 Debug Debug => blackhole
+2019-11-06 17:50:19.3333 Debug Info => blackhole
+2019-11-06 17:50:19.3333 Debug Warn => blackhole
+2019-11-06 17:50:19.3333 Debug Error => blackhole
+2019-11-06 17:50:19.3333 Debug Fatal => blackhole
+2019-11-06 17:50:19.3333 Debug Targets for Microsoft.AspNetCore.Server.Kestrel by level:
+2019-11-06 17:50:19.3333 Debug Trace => blackhole
+2019-11-06 17:50:19.3333 Debug Debug => blackhole
+2019-11-06 17:50:19.3333 Debug Info => blackhole
+2019-11-06 17:50:19.3333 Debug Warn => blackhole
+2019-11-06 17:50:19.3490 Debug Error => blackhole
+2019-11-06 17:50:19.3490 Debug Fatal => blackhole
+2019-11-06 17:50:19.3490 Debug Targets for Microsoft.AspNetCore.DataProtection.TypeForwardingActivator by level:
+2019-11-06 17:50:19.3490 Debug Trace => blackhole
+2019-11-06 17:50:19.3490 Debug Debug => blackhole
+2019-11-06 17:50:19.3490 Debug Info => blackhole
+2019-11-06 17:50:19.3490 Debug Warn => blackhole
+2019-11-06 17:50:19.3490 Debug Error => blackhole
+2019-11-06 17:50:19.3490 Debug Fatal => blackhole
+2019-11-06 17:50:19.3490 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager by level:
+2019-11-06 17:50:19.3490 Debug Trace => blackhole
+2019-11-06 17:50:19.3490 Debug Debug => blackhole
+2019-11-06 17:50:19.3490 Debug Info => blackhole
+2019-11-06 17:50:19.3490 Debug Warn => blackhole
+2019-11-06 17:50:19.3490 Debug Error => blackhole
+2019-11-06 17:50:19.3490 Debug Fatal => blackhole
+2019-11-06 17:50:19.3490 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory by level:
+2019-11-06 17:50:19.3490 Debug Trace => blackhole
+2019-11-06 17:50:19.3490 Debug Debug => blackhole
+2019-11-06 17:50:19.3490 Debug Info => blackhole
+2019-11-06 17:50:19.3490 Debug Warn => blackhole
+2019-11-06 17:50:19.3490 Debug Error => blackhole
+2019-11-06 17:50:19.3643 Debug Fatal => blackhole
+2019-11-06 17:50:19.3643 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory by level:
+2019-11-06 17:50:19.3643 Debug Trace => blackhole
+2019-11-06 17:50:19.3643 Debug Debug => blackhole
+2019-11-06 17:50:19.3643 Debug Info => blackhole
+2019-11-06 17:50:19.3643 Debug Warn => blackhole
+2019-11-06 17:50:19.3643 Debug Error => blackhole
+2019-11-06 17:50:19.3643 Debug Fatal => blackhole
+2019-11-06 17:50:19.3643 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory by level:
+2019-11-06 17:50:19.3643 Debug Trace => blackhole
+2019-11-06 17:50:19.3643 Debug Debug => blackhole
+2019-11-06 17:50:19.3643 Debug Info => blackhole
+2019-11-06 17:50:19.3643 Debug Warn => blackhole
+2019-11-06 17:50:19.3643 Debug Error => blackhole
+2019-11-06 17:50:19.3643 Debug Fatal => blackhole
+2019-11-06 17:50:19.3643 Debug Targets for Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor by level:
+2019-11-06 17:50:19.3643 Debug Trace => blackhole
+2019-11-06 17:50:19.3643 Debug Debug => blackhole
+2019-11-06 17:50:19.3643 Debug Info => blackhole
+2019-11-06 17:50:19.3643 Debug Warn => blackhole
+2019-11-06 17:50:19.3643 Debug Error => blackhole
+2019-11-06 17:50:19.3643 Debug Fatal => blackhole
+2019-11-06 17:50:19.3643 Debug Targets for Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository by level:
+2019-11-06 17:50:19.3643 Debug Trace => blackhole
+2019-11-06 17:50:19.3643 Debug Debug => blackhole
+2019-11-06 17:50:19.3643 Debug Info => blackhole
+2019-11-06 17:50:19.3643 Debug Warn => blackhole
+2019-11-06 17:50:19.3643 Debug Error => blackhole
+2019-11-06 17:50:19.3803 Debug Fatal => blackhole
+2019-11-06 17:50:19.3803 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver by level:
+2019-11-06 17:50:19.3803 Debug Trace => blackhole
+2019-11-06 17:50:19.3803 Debug Debug => blackhole
+2019-11-06 17:50:19.3803 Debug Info => blackhole
+2019-11-06 17:50:19.3803 Debug Warn => blackhole
+2019-11-06 17:50:19.3803 Debug Error => blackhole
+2019-11-06 17:50:19.3803 Debug Fatal => blackhole
+2019-11-06 17:50:19.3803 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider by level:
+2019-11-06 17:50:19.3803 Debug Trace => blackhole
+2019-11-06 17:50:19.3803 Debug Debug => blackhole
+2019-11-06 17:50:19.3803 Debug Info => blackhole
+2019-11-06 17:50:19.3803 Debug Warn => blackhole
+2019-11-06 17:50:19.3803 Debug Error => blackhole
+2019-11-06 17:50:19.3803 Debug Fatal => blackhole
+2019-11-06 17:50:19.3803 Debug Targets for Microsoft.AspNetCore.DataProtection.Internal.DataProtectionStartupFilter by level:
+2019-11-06 17:50:19.3803 Debug Trace => blackhole
+2019-11-06 17:50:19.3803 Debug Debug => blackhole
+2019-11-06 17:50:19.3803 Debug Info => blackhole
+2019-11-06 17:50:19.3803 Debug Warn => blackhole
+2019-11-06 17:50:19.3803 Debug Error => blackhole
+2019-11-06 17:50:19.3803 Debug Fatal => blackhole
+2019-11-06 17:50:19.3803 Debug Targets for Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor by level:
+2019-11-06 17:50:19.3966 Debug Trace => blackhole
+2019-11-06 17:50:19.3966 Debug Debug => blackhole
+2019-11-06 17:50:19.3966 Debug Info => blackhole
+2019-11-06 17:50:19.3966 Debug Warn => blackhole
+2019-11-06 17:50:19.3966 Debug Error => blackhole
+2019-11-06 17:50:19.3966 Debug Fatal => blackhole
+2019-11-06 17:50:19.4256 Debug Targets for Microsoft.AspNetCore.Mvc.MvcJsonOptions by level:
+2019-11-06 17:50:19.4256 Debug Trace => blackhole
+2019-11-06 17:50:19.4269 Debug Debug => blackhole
+2019-11-06 17:50:19.4269 Debug Info => blackhole
+2019-11-06 17:50:19.4269 Debug Warn => blackhole
+2019-11-06 17:50:19.4269 Debug Error => blackhole
+2019-11-06 17:50:19.4269 Debug Fatal => blackhole
+2019-11-06 17:50:19.4269 Debug Targets for Microsoft.AspNetCore.Mvc.MvcOptions by level:
+2019-11-06 17:50:19.4432 Debug Trace => blackhole
+2019-11-06 17:50:19.4432 Debug Debug => blackhole
+2019-11-06 17:50:19.4432 Debug Info => blackhole
+2019-11-06 17:50:19.4432 Debug Warn => blackhole
+2019-11-06 17:50:19.4432 Debug Error => blackhole
+2019-11-06 17:50:19.4432 Debug Fatal => blackhole
+2019-11-06 17:50:19.4930 Debug Targets for Microsoft.AspNetCore.Mvc.Formatters.JsonPatchInputFormatter by level:
+2019-11-06 17:50:19.4930 Debug Trace => blackhole
+2019-11-06 17:50:19.4930 Debug Debug => blackhole
+2019-11-06 17:50:19.4930 Debug Info => blackhole
+2019-11-06 17:50:19.4930 Debug Warn => blackhole
+2019-11-06 17:50:19.4930 Debug Error => blackhole
+2019-11-06 17:50:19.4930 Debug Fatal => blackhole
+2019-11-06 17:50:19.4930 Debug Targets for Microsoft.AspNetCore.Mvc.Formatters.JsonInputFormatter by level:
+2019-11-06 17:50:19.4930 Debug Trace => blackhole
+2019-11-06 17:50:19.4930 Debug Debug => blackhole
+2019-11-06 17:50:19.4930 Debug Info => blackhole
+2019-11-06 17:50:19.4930 Debug Warn => blackhole
+2019-11-06 17:50:19.4930 Debug Error => blackhole
+2019-11-06 17:50:19.4930 Debug Fatal => blackhole
+2019-11-06 17:50:19.5206 Debug Targets for Microsoft.AspNetCore.Mvc.ApiBehaviorOptions by level:
+2019-11-06 17:50:19.5206 Debug Trace => blackhole
+2019-11-06 17:50:19.5206 Debug Debug => blackhole
+2019-11-06 17:50:19.5206 Debug Info => blackhole
+2019-11-06 17:50:19.5361 Debug Warn => blackhole
+2019-11-06 17:50:19.5361 Debug Error => blackhole
+2019-11-06 17:50:19.5361 Debug Fatal => blackhole
+2019-11-06 17:50:19.5697 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions by level:
+2019-11-06 17:50:19.5697 Debug Trace => blackhole
+2019-11-06 17:50:19.5697 Debug Debug => blackhole
+2019-11-06 17:50:19.5697 Debug Info => blackhole
+2019-11-06 17:50:19.5697 Debug Warn => blackhole
+2019-11-06 17:50:19.5697 Debug Error => blackhole
+2019-11-06 17:50:19.5697 Debug Fatal => blackhole
+2019-11-06 17:50:19.5697 Debug Targets for Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions by level:
+2019-11-06 17:50:19.5697 Debug Trace => blackhole
+2019-11-06 17:50:19.5697 Debug Debug => blackhole
+2019-11-06 17:50:19.5697 Debug Info => blackhole
+2019-11-06 17:50:19.5697 Debug Warn => blackhole
+2019-11-06 17:50:19.5697 Debug Error => blackhole
+2019-11-06 17:50:19.5697 Debug Fatal => blackhole
+2019-11-06 17:50:19.6211 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.Internal.RazorViewCompiler by level:
+2019-11-06 17:50:19.6211 Debug Trace => blackhole
+2019-11-06 17:50:19.6211 Debug Debug => blackhole
+2019-11-06 17:50:19.6211 Debug Info => blackhole
+2019-11-06 17:50:19.6211 Debug Warn => blackhole
+2019-11-06 17:50:19.6211 Debug Error => blackhole
+2019-11-06 17:50:19.6211 Debug Fatal => blackhole
+2019-11-06 17:50:19.6329 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine by level:
+2019-11-06 17:50:19.6329 Debug Trace => blackhole
+2019-11-06 17:50:19.6329 Debug Debug => blackhole
+2019-11-06 17:50:19.6329 Debug Info => blackhole
+2019-11-06 17:50:19.6329 Debug Warn => blackhole
+2019-11-06 17:50:19.6329 Debug Error => blackhole
+2019-11-06 17:50:19.6329 Debug Fatal => blackhole
+2019-11-06 17:50:19.6329 Debug Targets for Microsoft.AspNetCore.Mvc.MvcViewOptions by level:
+2019-11-06 17:50:19.6329 Debug Trace => blackhole
+2019-11-06 17:50:19.6329 Debug Debug => blackhole
+2019-11-06 17:50:19.6329 Debug Info => blackhole
+2019-11-06 17:50:19.6329 Debug Warn => blackhole
+2019-11-06 17:50:19.6329 Debug Error => blackhole
+2019-11-06 17:50:19.6329 Debug Fatal => blackhole
+2019-11-06 17:50:19.6466 Debug Targets for Microsoft.AspNetCore.Mvc.RazorPages.Internal.RazorProjectPageRouteModelProvider by level:
+2019-11-06 17:50:19.6466 Debug Trace => blackhole
+2019-11-06 17:50:19.6466 Debug Debug => blackhole
+2019-11-06 17:50:19.6466 Debug Info => blackhole
+2019-11-06 17:50:19.6466 Debug Warn => blackhole
+2019-11-06 17:50:19.6466 Debug Error => blackhole
+2019-11-06 17:50:19.6466 Debug Fatal => blackhole
+2019-11-06 17:50:19.6466 Debug Targets for Microsoft.AspNetCore.Mvc.RazorPages.Internal.CompiledPageRouteModelProvider by level:
+2019-11-06 17:50:19.6466 Debug Trace => blackhole
+2019-11-06 17:50:19.6466 Debug Debug => blackhole
+2019-11-06 17:50:19.6466 Debug Info => blackhole
+2019-11-06 17:50:19.6466 Debug Warn => blackhole
+2019-11-06 17:50:19.6466 Debug Error => blackhole
+2019-11-06 17:50:19.6466 Debug Fatal => blackhole
+2019-11-06 17:50:19.6800 Debug Targets for Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory by level:
+2019-11-06 17:50:19.6800 Debug Trace => blackhole
+2019-11-06 17:50:19.6800 Debug Debug => blackhole
+2019-11-06 17:50:19.6800 Debug Info => blackhole
+2019-11-06 17:50:19.6800 Debug Warn => blackhole
+2019-11-06 17:50:19.6800 Debug Error => blackhole
+2019-11-06 17:50:19.6800 Debug Fatal => blackhole
+2019-11-06 17:50:19.7089 Debug Targets for Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder by level:
+2019-11-06 17:50:19.7089 Debug Trace => blackhole
+2019-11-06 17:50:19.7089 Debug Debug => blackhole
+2019-11-06 17:50:19.7089 Debug Info => blackhole
+2019-11-06 17:50:19.7089 Debug Warn => blackhole
+2019-11-06 17:50:19.7089 Debug Error => blackhole
+2019-11-06 17:50:19.7089 Debug Fatal => blackhole
+2019-11-06 17:50:19.7089 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker by level:
+2019-11-06 17:50:19.7089 Debug Trace => blackhole
+2019-11-06 17:50:19.7089 Debug Debug => blackhole
+2019-11-06 17:50:19.7089 Debug Info => blackhole
+2019-11-06 17:50:19.7089 Debug Warn => blackhole
+2019-11-06 17:50:19.7089 Debug Error => blackhole
+2019-11-06 17:50:19.7089 Debug Fatal => blackhole
+2019-11-06 17:50:19.7387 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector by level:
+2019-11-06 17:50:19.7399 Debug Trace => blackhole
+2019-11-06 17:50:19.7399 Debug Debug => blackhole
+2019-11-06 17:50:19.7399 Debug Info => blackhole
+2019-11-06 17:50:19.7399 Debug Warn => blackhole
+2019-11-06 17:50:19.7399 Debug Error => blackhole
+2019-11-06 17:50:19.7399 Debug Fatal => blackhole
+2019-11-06 17:50:19.7399 Debug Targets for Microsoft.AspNetCore.Mvc.ViewFeatures.CookieTempDataProvider by level:
+2019-11-06 17:50:19.7399 Debug Trace => blackhole
+2019-11-06 17:50:19.7399 Debug Debug => blackhole
+2019-11-06 17:50:19.7399 Debug Info => blackhole
+2019-11-06 17:50:19.7399 Debug Warn => blackhole
+2019-11-06 17:50:19.7399 Debug Error => blackhole
+2019-11-06 17:50:19.7399 Debug Fatal => blackhole
+2019-11-06 17:50:19.8059 Debug Targets for Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker by level:
+2019-11-06 17:50:19.8059 Debug Trace => blackhole
+2019-11-06 17:50:19.8059 Debug Debug => blackhole
+2019-11-06 17:50:19.8059 Debug Info => blackhole
+2019-11-06 17:50:19.8059 Debug Warn => blackhole
+2019-11-06 17:50:19.8059 Debug Error => blackhole
+2019-11-06 17:50:19.8059 Debug Fatal => blackhole
+2019-11-06 17:50:19.8059 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.ActionSelector by level:
+2019-11-06 17:50:19.8059 Debug Trace => blackhole
+2019-11-06 17:50:19.8059 Debug Debug => blackhole
+2019-11-06 17:50:19.8059 Debug Info => blackhole
+2019-11-06 17:50:19.8059 Debug Warn => blackhole
+2019-11-06 17:50:19.8059 Debug Error => blackhole
+2019-11-06 17:50:19.8174 Debug Fatal => blackhole
+2019-11-06 17:50:19.8174 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.MvcRouteHandler by level:
+2019-11-06 17:50:19.8174 Debug Trace => blackhole
+2019-11-06 17:50:19.8174 Debug Debug => blackhole
+2019-11-06 17:50:19.8174 Debug Info => blackhole
+2019-11-06 17:50:19.8174 Debug Warn => blackhole
+2019-11-06 17:50:19.8174 Debug Error => blackhole
+2019-11-06 17:50:19.8174 Debug Fatal => blackhole
+2019-11-06 17:50:19.8411 Debug Targets for Microsoft.AspNetCore.Builder.RouterMiddleware by level:
+2019-11-06 17:50:19.8411 Debug Trace => blackhole
+2019-11-06 17:50:19.8411 Debug Debug => blackhole
+2019-11-06 17:50:19.8411 Debug Info => blackhole
+2019-11-06 17:50:19.8411 Debug Warn => blackhole
+2019-11-06 17:50:19.8411 Debug Error => blackhole
+2019-11-06 17:50:19.8411 Debug Fatal => blackhole
+2019-11-06 17:50:19.8699 Debug Targets for Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware by level:
+2019-11-06 17:50:19.8699 Debug Trace => blackhole
+2019-11-06 17:50:19.8699 Debug Debug => blackhole
+2019-11-06 17:50:19.8699 Debug Info => blackhole
+2019-11-06 17:50:19.8699 Debug Warn => blackhole
+2019-11-06 17:50:19.8699 Debug Error => blackhole
+2019-11-06 17:50:19.8699 Debug Fatal => blackhole
+2019-11-06 17:50:19.8906 Debug Targets for Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware by level:
+2019-11-06 17:50:19.8906 Debug Trace => blackhole
+2019-11-06 17:50:19.8906 Debug Debug => blackhole
+2019-11-06 17:50:19.8906 Debug Info => blackhole
+2019-11-06 17:50:19.8959 Debug Warn => blackhole
+2019-11-06 17:50:19.8959 Debug Error => blackhole
+2019-11-06 17:50:19.8959 Debug Fatal => blackhole
+2019-11-06 17:50:19.8959 Debug Targets for Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware by level:
+2019-11-06 17:50:19.8959 Debug Trace => blackhole
+2019-11-06 17:50:19.8959 Debug Debug => blackhole
+2019-11-06 17:50:19.8959 Debug Info => blackhole
+2019-11-06 17:50:19.8959 Debug Warn => blackhole
+2019-11-06 17:50:19.8959 Debug Error => blackhole
+2019-11-06 17:50:19.8959 Debug Fatal => blackhole
+2019-11-06 17:50:19.9176 Debug Targets for Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware by level:
+2019-11-06 17:50:19.9176 Debug Trace => blackhole
+2019-11-06 17:50:19.9176 Debug Debug => blackhole
+2019-11-06 17:50:19.9176 Debug Info => blackhole
+2019-11-06 17:50:19.9176 Debug Warn => blackhole
+2019-11-06 17:50:19.9176 Debug Error => blackhole
+2019-11-06 17:50:19.9176 Debug Fatal => blackhole
+2019-11-06 17:50:19.9288 Debug Targets for Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersMiddleware by level:
+2019-11-06 17:50:19.9288 Debug Trace => blackhole
+2019-11-06 17:50:19.9288 Debug Debug => blackhole
+2019-11-06 17:50:19.9288 Debug Info => blackhole
+2019-11-06 17:50:19.9288 Debug Warn => blackhole
+2019-11-06 17:50:19.9288 Debug Error => blackhole
+2019-11-06 17:50:19.9288 Debug Fatal => blackhole
+2019-11-06 17:50:19.9288 Debug Targets for Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware by level:
+2019-11-06 17:50:19.9288 Debug Trace => blackhole
+2019-11-06 17:50:19.9288 Debug Debug => blackhole
+2019-11-06 17:50:19.9288 Debug Info => blackhole
+2019-11-06 17:50:19.9288 Debug Warn => blackhole
+2019-11-06 17:50:19.9288 Debug Error => blackhole
+2019-11-06 17:50:19.9288 Debug Fatal => blackhole
+2019-11-06 17:50:19.9501 Debug Targets for Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor by level:
+2019-11-06 17:50:19.9501 Debug Trace => blackhole
+2019-11-06 17:50:19.9501 Debug Debug => blackhole
+2019-11-06 17:50:19.9501 Debug Info => blackhole
+2019-11-06 17:50:19.9501 Debug Warn => blackhole
+2019-11-06 17:50:19.9501 Debug Error => blackhole
+2019-11-06 17:50:19.9501 Debug Fatal => blackhole
+2019-11-06 17:50:19.9663 Debug Targets for Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer by level:
+2019-11-06 17:50:19.9663 Debug Trace => blackhole
+2019-11-06 17:50:19.9663 Debug Debug => blackhole
+2019-11-06 17:50:19.9663 Debug Info => blackhole
+2019-11-06 17:50:19.9663 Debug Warn => blackhole
+2019-11-06 17:50:19.9663 Debug Error => blackhole
+2019-11-06 17:50:19.9663 Debug Fatal => blackhole
+2019-11-06 17:50:23.4137 Debug Targets for Microsoft.AspNetCore.Routing.Tree.TreeRouter by level:
+2019-11-06 17:50:23.4137 Debug Trace => blackhole
+2019-11-06 17:50:23.4137 Debug Debug => blackhole
+2019-11-06 17:50:23.4137 Debug Info => blackhole
+2019-11-06 17:50:23.4137 Debug Warn => blackhole
+2019-11-06 17:50:23.4137 Debug Error => blackhole
+2019-11-06 17:50:23.4137 Debug Fatal => blackhole
+2019-11-06 17:50:23.4137 Debug Targets for Microsoft.AspNetCore.Routing.RouteConstraintMatcher by level:
+2019-11-06 17:50:23.4137 Debug Trace => blackhole
+2019-11-06 17:50:23.4137 Debug Debug => blackhole
+2019-11-06 17:50:23.4137 Debug Info => blackhole
+2019-11-06 17:50:23.4137 Debug Warn => blackhole
+2019-11-06 17:50:23.4137 Debug Error => blackhole
+2019-11-06 17:50:23.4137 Debug Fatal => blackhole
+2019-11-06 17:50:23.4292 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.MvcAttributeRouteHandler by level:
+2019-11-06 17:50:23.4292 Debug Trace => blackhole
+2019-11-06 17:50:23.4292 Debug Debug => blackhole
+2019-11-06 17:50:23.4292 Debug Info => blackhole
+2019-11-06 17:50:23.4292 Debug Warn => blackhole
+2019-11-06 17:50:23.4292 Debug Error => blackhole
+2019-11-06 17:50:23.4292 Debug Fatal => blackhole
+2019-11-06 17:50:23.4849 Debug Targets for Microsoft.AspNetCore.Cors.Infrastructure.CorsService by level:
+2019-11-06 17:50:23.4849 Debug Trace => blackhole
+2019-11-06 17:50:23.4849 Debug Debug => blackhole
+2019-11-06 17:50:23.4849 Debug Info => blackhole
+2019-11-06 17:50:23.4849 Debug Warn => blackhole
+2019-11-06 17:50:23.4849 Debug Error => blackhole
+2019-11-06 17:50:23.4849 Debug Fatal => blackhole
+2019-11-06 17:50:23.4935 Debug Targets for Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter by level:
+2019-11-06 17:50:23.4935 Debug Trace => blackhole
+2019-11-06 17:50:23.4935 Debug Debug => blackhole
+2019-11-06 17:50:23.4935 Debug Info => blackhole
+2019-11-06 17:50:23.4935 Debug Warn => blackhole
+2019-11-06 17:50:23.4935 Debug Error => blackhole
+2019-11-06 17:50:23.4935 Debug Fatal => blackhole
+2019-11-06 17:50:23.5533 Debug Targets not configured for logger: shuiyintong.Api.Controllers.DefaultController
