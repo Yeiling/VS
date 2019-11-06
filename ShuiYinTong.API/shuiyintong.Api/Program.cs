@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using NLog.Web;
 using System;
 using System.IO;
 
@@ -34,7 +35,7 @@ namespace shuiyintong.Api
             {
                 config.SetBasePath(Directory.GetCurrentDirectory());
                 config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-            });
-            //.UseNLog(); //引入Nlog日志记录组件
+            })
+            .UseNLog(); //引入Nlog日志记录组件
     }
 }

@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Logging;
+using NLog.Extensions.Logging;
+using NLog.Web;
 using shuiyintong.DBUtils.IService;
 using shuiyintong.DBUtils.Service;
 using Swashbuckle.AspNetCore.Swagger;
@@ -127,7 +130,7 @@ namespace shuiyintong.Api
             //}
             Builder.RegisterTypes(controllersTypesInAssembly)
                 .PropertiesAutowired(); //属性注入
-            //.InterceptedBy(typeof(LogInterceptor)).EnableClassInterceptors(); //启用类代理拦截器
+                                        //.InterceptedBy(typeof(LogInterceptor)).EnableClassInterceptors(); //启用类代理拦截器
 
             //---------------------------------------------AOP实例----------------------------------------------
             #region AOP实例详情
@@ -154,18 +157,22 @@ namespace shuiyintong.Api
             #endregion
             //-----------------------------------------------AOP------------------------------------------------
 
+
+
             Builder.Populate(services);
             var container = Builder.Build();
             return new AutofacServiceProvider(container);
 
         }
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         /// <summary>
         /// 配置信息
         /// </summary>
         /// <param name="app"></param>
         /// <param name="env"></param>
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        /// <param name="loggerFactory">NLog</param>
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
@@ -173,6 +180,18 @@ namespace shuiyintong.Api
                 app.UseHsts();
 
             app.UseHttpsRedirection();
+
+            //Nlog日志
+            //使用NLog作为日志记录工具
+            //loggingBuilder.AddNLog();
+            //引入Nlog配置文件
+            //webHostBuilder.UseNLog();
+
+            //使用NLog作为日志记录工具
+            loggerFactory.AddNLog();
+            //引入Nlog配置文件
+            env.ConfigureNLog("NLog.config");
+
 
             //添加Swagger
             app.UseSwagger();
