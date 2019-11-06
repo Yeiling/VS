@@ -44,9 +44,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="C:\Users\Mypc\.nuget\packages\nlog.config\4.6.8\contentFiles\any\any\NLog.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="NLog.config.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
