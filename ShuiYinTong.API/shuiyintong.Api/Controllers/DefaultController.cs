@@ -53,6 +53,7 @@ namespace shuiyintong.Api.Controllers
             {
                 nlog.Log(LogLevel.Error, e.Message);
                 nlog.Error(e.Message);
+                nlog.Debug(e.Message);
             }
         }
 

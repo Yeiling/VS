@@ -190,9 +190,7 @@ namespace shuiyintong.Api
             //使用NLog作为日志记录工具
             loggerFactory.AddNLog();
             //引入Nlog配置文件
-            var xmlFile = Assembly.GetExecutingAssembly();
-            var path = Path.GetDirectoryName(xmlFile.Location);
-            env.ConfigureNLog(path + "\\NLog.config");
+            env.ConfigureNLog("NLog.config");
 
 
             //添加Swagger
