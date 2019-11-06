@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using NLog;
 using shuiyintong.DBUtils.IService;
 using shuiyintong.DBUtils.Service;
 using Swashbuckle.AspNetCore.Swagger;

@@ -1,4 +1,3 @@
-F:\GitHubProject\ShuiYinTong.API\shuiyintong.Api\bin\Debug\netcoreapp2.2\NLog.config
 F:\GitHubProject\ShuiYinTong.API\shuiyintong.Api\bin\Debug\netcoreapp2.2\shuiyintong.Api.xml
 F:\GitHubProject\ShuiYinTong.API\shuiyintong.Api\bin\Debug\netcoreapp2.2\shuiyintong.Api.deps.json
 F:\GitHubProject\ShuiYinTong.API\shuiyintong.Api\bin\Debug\netcoreapp2.2\shuiyintong.Api.runtimeconfig.json
