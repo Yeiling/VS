@@ -8,7 +8,7 @@ namespace shuiyintong.Api
     /// </summary>
     public class NLogHelper
     {
-        public readonly static Logger _Logger = LogManager.GetCurrentClassLogger();
+       
 
     }
 }

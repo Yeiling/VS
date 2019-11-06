@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="logs\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
@@ -22,6 +23,7 @@
     <PackageReference Include="Autofac.Extras.DynamicProxy" Version="4.5.0" />
     <PackageReference Include="Microsoft.ApplicationInsights.Log4NetAppender" Version="2.11.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="1.0.19269.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
     <PackageReference Include="NLog" Version="4.6.8" />
     <PackageReference Include="NLog.Config" Version="4.6.8" />
@@ -38,6 +40,12 @@
     <ProjectReference Include="..\shuiyintong.dbutils\shuiyintong.DBUtils.csproj" />
     <ProjectReference Include="..\shuiyintong.Entity\shuiyintong.Entity.csproj" />
     <ProjectReference Include="..\shuiyintong.SPDB\shuiyintong.SPDB.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="C:\Users\Mypc\.nuget\packages\nlog.config\4.6.8\contentFiles\any\any\NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JSONSchema="" /></VisualStudio></ProjectExtensions>

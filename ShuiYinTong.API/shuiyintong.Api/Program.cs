@@ -36,5 +36,6 @@ namespace shuiyintong.Api
                 config.SetBasePath(Directory.GetCurrentDirectory());
                 config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
             });
+            //.UseNLog(); //引入Nlog日志记录组件
     }
 }

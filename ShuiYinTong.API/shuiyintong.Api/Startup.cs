@@ -1,7 +1,5 @@
 ﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using log4net;
-using log4net.Config;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -9,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using NLog.Targets;
+using NLog;
 using shuiyintong.DBUtils.IService;
 using shuiyintong.DBUtils.Service;
 using Swashbuckle.AspNetCore.Swagger;
@@ -18,7 +16,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 
 namespace shuiyintong.Api
 {
@@ -96,9 +93,6 @@ namespace shuiyintong.Api
                     .AllowCredentials();//指定处理cookie
                 });
             });
-
-
-
 
             //------------------------------------AutoFac+AOP-------------------------------
             //1：AutoFac+AOP合并注入

@@ -1,5 +1,5 @@
-﻿using log4net;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using NLog;
 using shuiyintong.Common;
 using shuiyintong.Common.BankConfig;
 using shuiyintong.Common.Extend;
@@ -44,7 +44,10 @@ namespace shuiyintong.Api.Controllers
         /// Http请求返回Code
         /// </summary>
         private readonly int Code = 200;
-
+        /// <summary>
+        /// NLog日志记录对象
+        /// </summary>
+        private readonly Logger nlog = LogManager.GetCurrentClassLogger(); //获得日志实例;
         #region 接口签名
 
         /// <summary>
@@ -268,7 +271,7 @@ namespace shuiyintong.Api.Controllers
             }
             catch (Exception ex)
             {
-                NLogHelper._Logger.Error(ex.Message);
+                nlog.Log(LogLevel.Error, ex.Message);
 
                 responseType = (byte)ResponseType.Fail;
                 log.ErrorMsg = ex.Message;
