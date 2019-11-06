@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "0078ff16b1736683d9bd649e28422062a04f0dc2"
+    "signature": "bfff70ed625258e832c450a70642989a73b84b6d"
   },
   "compilationOptions": {
     "defines": [
@@ -37,6 +37,7 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.3",
           "NLog": "4.6.8",
           "NLog.Config": "4.6.8",
+          "NLog.Extensions.Logging": "1.6.1",
           "NLog.Web.AspNetCore": "4.9.0",
           "Swashbuckle.AspNetCore": "4.0.1",
           "System.Data.SqlClient": "4.7.0",
@@ -697,7 +698,7 @@
           "NLog.Schema": "4.6.8"
         }
       },
-      "NLog.Extensions.Logging/1.6.0": {
+      "NLog.Extensions.Logging/1.6.1": {
         "dependencies": {
           "Microsoft.Extensions.Logging": "2.2.0",
           "NLog": "4.6.8"
@@ -705,7 +706,7 @@
         "runtime": {
           "lib/netstandard2.0/NLog.Extensions.Logging.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.6.0.1196"
+            "fileVersion": "1.6.1.1203"
           }
         },
         "compile": {
@@ -718,7 +719,7 @@
           "Microsoft.AspNetCore.Hosting.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Http": "2.2.0",
           "Microsoft.AspNetCore.Routing.Abstractions": "2.2.0",
-          "NLog.Extensions.Logging": "1.6.0"
+          "NLog.Extensions.Logging": "1.6.1"
         },
         "runtime": {
           "lib/netstandard2.0/NLog.Web.AspNetCore.dll": {
@@ -5142,12 +5143,12 @@
       "path": "nlog.config/4.6.8",
       "hashPath": "nlog.config.4.6.8.nupkg.sha512"
     },
-    "NLog.Extensions.Logging/1.6.0": {
+    "NLog.Extensions.Logging/1.6.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-T4EoyIMeVG0hMRzbzAOALtTvzshsDkdlxcgpQ0h/MDNppe/VwG39/M4LwisR8ViLPJmakLO0y7ey/IrK46FMFA==",
-      "path": "nlog.extensions.logging/1.6.0",
-      "hashPath": "nlog.extensions.logging.1.6.0.nupkg.sha512"
+      "sha512": "sha512-Fm5tqHYUpGMe/SbgmH/+Kl/WHFL6BTAZVWy/5yycatmFAuqf22FBD4Nkohe8PZ8jUKPYRcUu17BB+0Tku/QK6w==",
+      "path": "nlog.extensions.logging/1.6.1",
+      "hashPath": "nlog.extensions.logging.1.6.1.nupkg.sha512"
     },
     "NLog.Schema/4.6.8": {
       "type": "package",

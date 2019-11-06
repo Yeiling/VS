@@ -3299,7 +3299,7 @@
           }
         }
       },
-      "NLog.Extensions.Logging/1.6.0": {
+      "NLog.Extensions.Logging/1.6.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Logging": "2.1.0",
@@ -9847,10 +9847,10 @@
         "tools/Install.ps1"
       ]
     },
-    "NLog.Extensions.Logging/1.6.0": {
-      "sha512": "T4EoyIMeVG0hMRzbzAOALtTvzshsDkdlxcgpQ0h/MDNppe/VwG39/M4LwisR8ViLPJmakLO0y7ey/IrK46FMFA==",
+    "NLog.Extensions.Logging/1.6.1": {
+      "sha512": "Fm5tqHYUpGMe/SbgmH/+Kl/WHFL6BTAZVWy/5yycatmFAuqf22FBD4Nkohe8PZ8jUKPYRcUu17BB+0Tku/QK6w==",
       "type": "package",
-      "path": "nlog.extensions.logging/1.6.0",
+      "path": "nlog.extensions.logging/1.6.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -9866,7 +9866,7 @@
         "lib/netstandard1.5/NLog.Extensions.Logging.xml",
         "lib/netstandard2.0/NLog.Extensions.Logging.dll",
         "lib/netstandard2.0/NLog.Extensions.Logging.xml",
-        "nlog.extensions.logging.1.6.0.nupkg.sha512",
+        "nlog.extensions.logging.1.6.1.nupkg.sha512",
         "nlog.extensions.logging.nuspec"
       ]
     },
@@ -16020,6 +16020,7 @@
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.2.3",
       "NLog >= 4.6.8",
       "NLog.Config >= 4.6.8",
+      "NLog.Extensions.Logging >= 1.6.1",
       "NLog.Web.AspNetCore >= 4.9.0",
       "Swashbuckle.AspNetCore >= 4.0.1",
       "System.Data.SqlClient >= 4.7.0",
@@ -16138,6 +16139,10 @@
           "NLog.Config": {
             "target": "Package",
             "version": "[4.6.8, )"
+          },
+          "NLog.Extensions.Logging": {
+            "target": "Package",
+            "version": "[1.6.1, )"
           },
           "NLog.Web.AspNetCore": {
             "target": "Package",
