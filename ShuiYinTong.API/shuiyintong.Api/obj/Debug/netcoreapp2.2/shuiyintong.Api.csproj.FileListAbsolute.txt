@@ -23,3 +23,4 @@ F:\GitHubProject\ShuiYinTong.API\shuiyintong.Api\obj\Debug\netcoreapp2.2\shuiyin
 F:\GitHubProject\ShuiYinTong.API\shuiyintong.Api\obj\Debug\netcoreapp2.2\shuiyintong.Api.csproj.CopyComplete
 F:\GitHubProject\ShuiYinTong.API\shuiyintong.Api\obj\Debug\netcoreapp2.2\shuiyintong.Api.dll
 F:\GitHubProject\ShuiYinTong.API\shuiyintong.Api\obj\Debug\netcoreapp2.2\shuiyintong.Api.pdb
+F:\GitHubProject\ShuiYinTong.API\shuiyintong.Api\bin\Debug\netcoreapp2.2\NLog.config
