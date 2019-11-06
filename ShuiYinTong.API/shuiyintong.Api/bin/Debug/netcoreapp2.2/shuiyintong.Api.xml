@@ -108,6 +108,17 @@
             数据库链接字符串
             </summary>
         </member>
+        <member name="T:shuiyintong.Api.Controllers.DefaultController">
+            <summary>
+            测试使用
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.DefaultController.CreateWord(shuiyintong.Entity.SPDBankEntity.SPDBankFile.GuaranteeReq)">
+            <summary>
+            生成Word文档GenerateDoc
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:shuiyintong.Api.Controllers.SPDBankController">
             <summary>
             浦发银行接口
@@ -128,11 +139,6 @@
             Http请求返回Code
             </summary>
         </member>
-        <member name="F:shuiyintong.Api.Controllers.SPDBankController.nlog">
-            <summary>
-            NLog日志记录对象
-            </summary>
-        </member>
         <member name="M:shuiyintong.Api.Controllers.SPDBankController.GetHeaderSign(System.Object,System.String@)">
             <summary>
             获取签名
@@ -140,6 +146,12 @@
             <param name="obj">对象参数</param>
             <param name="dataRequest">请求Json字符串</param>
             <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.GenerateDoc(shuiyintong.Entity.SPDBankEntity.SPDBankFile.GuaranteeReq)">
+            <summary>
+            担保函导出Word文档
+            </summary>
+            <param name="guaranteeReq">参数---输出路径必填</param>
         </member>
         <member name="M:shuiyintong.Api.Controllers.SPDBankController.UpLoadfile(shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileUpLoadReq)">
             <summary>
@@ -270,11 +282,6 @@
             </summary>
             <param name="interestTrialReq">请求参数</param>
             <returns></returns>
-        </member>
-        <member name="T:shuiyintong.Api.NLogHelper">
-            <summary>
-            NLog日志记录帮助类
-            </summary>
         </member>
         <member name="T:shuiyintong.Api.Program">
             <summary>

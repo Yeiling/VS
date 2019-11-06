@@ -3,6 +3,7 @@ using NLog;
 using shuiyintong.Common;
 using shuiyintong.Common.BankConfig;
 using shuiyintong.Common.Extend;
+using shuiyintong.Common.NPOIFile;
 using shuiyintong.DBUtils;
 using shuiyintong.DBUtils.IService;
 using shuiyintong.DBUtils.SYT_apiDB_TestEntity;
@@ -12,6 +13,7 @@ using shuiyintong.Entity.SPDBankEntity.SPDBankReq;
 using shuiyintong.SPDB;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using static shuiyintong.Entity.Enums.BankTypeEum;
 using static shuiyintong.Entity.Enums.RedisDBEnum;
 using static shuiyintong.Entity.Enums.RespCodeEnum;
@@ -47,7 +49,7 @@ namespace shuiyintong.Api.Controllers
         /// <summary>
         /// NLog日志记录对象
         /// </summary>
-        private readonly Logger nlog = LogManager.GetCurrentClassLogger(); //获得日志实例;
+        //private readonly Logger nlog = LogManager.GetCurrentClassLogger(); //获得日志实例;
         #region 接口签名
 
         /// <summary>
@@ -65,6 +67,37 @@ namespace shuiyintong.Api.Controllers
                         { "X-SPDB-Client-Id", bankConfig.SPDBankConfig.ClientId },
                         { "X-SPDB-SIGNATURE", SignMsg }
                 };
+        }
+        #endregion
+
+        #region 生成担保函
+        /// <summary>
+        /// 担保函导出Word文档
+        /// </summary>
+        /// <param name="guaranteeReq">参数---输出路径必填</param>
+        [HttpPost]
+        public void GenerateDoc([FromBody]GuaranteeReq guaranteeReq)
+        {
+            if (guaranteeReq != null && !string.IsNullOrWhiteSpace(guaranteeReq.OutPath))
+            {
+                var DirData = new Dictionary<string, string>
+                       {
+                           { "BorrowingEnterprise",guaranteeReq.BorrowingEnterprise}, //借款企业
+                           { "AgreementNumber",guaranteeReq.AgreementNumber}, //借款合同编号
+                           { "Loan",guaranteeReq.Loan}, //借款金额         
+                           { "GuaranteedMount",guaranteeReq.GuaranteedMount},//担保的借款金额为人民币
+                           { "PeriodMonth",guaranteeReq.PeriodMonth}, //申请借款的期限月
+                           { "InterestYear",guaranteeReq.InterestDate.Year.ToString()},//起息日
+                           { "AAA",guaranteeReq.InterestDate.Month.ToString()},
+                           { "BBB",guaranteeReq.InterestDate.Day.ToString()},
+                           { "DueYear",guaranteeReq.DueDate.Year.ToString()},//到期日
+                           { "CCC",guaranteeReq.DueDate.Month.ToString()},
+                           { "DDD",guaranteeReq.DueDate.Day.ToString()},
+                           { "TotalMoney",guaranteeReq.TotalMoney}
+                       };
+                var path = Directory.GetCurrentDirectory() + "\\File\\担保函.docx";
+                NPOIHleper.Export(path, guaranteeReq.OutPath, DirData);
+            }
         }
         #endregion
 
@@ -105,6 +138,7 @@ namespace shuiyintong.Api.Controllers
             return null;
         }
         #endregion
+
 
         #region e账通标准API接口
 
@@ -271,8 +305,6 @@ namespace shuiyintong.Api.Controllers
             }
             catch (Exception ex)
             {
-                nlog.Log(LogLevel.Error, ex.Message);
-
                 responseType = (byte)ResponseType.Fail;
                 log.ErrorMsg = ex.Message;
                 key += responseType;

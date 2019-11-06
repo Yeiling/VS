@@ -225,6 +225,56 @@
             电子回单申请
             </summary>
         </member>
+        <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankFile.GuaranteeReq">
+            <summary>
+            生成担保函文档请求类型
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankFile.GuaranteeReq.BorrowingEnterprise">
+             <summary>
+            借款企业 
+             </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankFile.GuaranteeReq.AgreementNumber">
+            <summary>
+            借款合同编号
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankFile.GuaranteeReq.Loan">
+            <summary>
+            借款金额
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankFile.GuaranteeReq.GuaranteedMount">
+            <summary>
+             担保的借款金额为人民币
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankFile.GuaranteeReq.PeriodMonth">
+            <summary>
+            申请借款的期限月
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankFile.GuaranteeReq.InterestDate">
+            <summary>
+            起息日期
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankFile.GuaranteeReq.DueDate">
+            <summary>
+            到期日期
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankFile.GuaranteeReq.TotalMoney">
+            <summary>
+            总金额
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankFile.GuaranteeReq.OutPath">
+            <summary>
+            输出路径
+            </summary>
+        </member>
         <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileDownLoadReq">
             <summary>
             浦发银行下载文件请求类型
