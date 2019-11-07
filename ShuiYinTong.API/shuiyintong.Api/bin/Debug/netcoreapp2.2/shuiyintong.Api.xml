@@ -371,5 +371,54 @@
             <param name="env"></param>
             <param name="loggerFactory">NLog</param>
         </member>
+        <member name="T:shuiyintong.Api.Validate.ValidateModelAttribute">
+            <summary>
+            验证重写
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.Validate.ValidateModelAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            重写OnActionExecuting方法，统一定义验证
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:shuiyintong.Api.Validate.ValidationError">
+            <summary>
+            验证错误类
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Api.Validate.ValidationError.Field">
+            <summary>
+            请求类型属性字段
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Api.Validate.ValidationError.Message">
+            <summary>
+            错误消息
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.Validate.ValidationError.#ctor(System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="field"></param>
+            <param name="message"></param>
+        </member>
+        <member name="T:shuiyintong.Api.Validate.WebApiExceptionFilterAttribute">
+            <summary>
+            WebAPI异常处理重写
+            </summary>
+        </member>
+        <member name="F:shuiyintong.Api.Validate.WebApiExceptionFilterAttribute.nlog">
+            <summary>
+            获得日志实例
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.Validate.WebApiExceptionFilterAttribute.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            重写基类的异常处理方法
+            </summary>
+            <param name="exceptionContext"></param>
+        </member>
     </members>
 </doc>

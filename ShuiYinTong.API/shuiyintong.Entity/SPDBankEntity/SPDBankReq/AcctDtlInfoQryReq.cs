@@ -1,4 +1,6 @@
-﻿namespace shuiyintong.Entity.SPDBankEntity.SPDBankReq
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace shuiyintong.Entity.SPDBankEntity.SPDBankReq
 {
     /// <summary>
     /// 账户信息查询URL
@@ -8,18 +10,22 @@
         /// <summary>
         /// 账号---必填
         /// </summary>
+        [Required(ErrorMessage = "账号必填")]
         public string acctNo { get; set; }
         /// <summary>
         /// 起始日期---必填
         /// </summary>
+        [Required(ErrorMessage = "起始日期必填")]
         public string beginDate { get; set; }
         /// <summary>
         /// 终止日期---必填
         /// </summary>
+        [Required(ErrorMessage = "终止日期必填")]
         public string endDate { get; set; }
         /// <summary>
         /// 起始笔数---必填
         /// </summary>
+        [Required(ErrorMessage = "起始笔数必填")]
         public string beginNumber { get; set; }
         /// <summary>
         /// 交易金额

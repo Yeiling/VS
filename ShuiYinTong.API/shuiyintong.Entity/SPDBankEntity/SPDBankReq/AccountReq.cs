@@ -1,4 +1,7 @@
-﻿namespace shuiyintong.Entity.SPDBankEntity.SPDBankReq
+﻿
+using System.ComponentModel.DataAnnotations;
+
+namespace shuiyintong.Entity.SPDBankEntity.SPDBankReq
 {
     /// <summary>
     /// 银行账户信息请求类型
@@ -8,6 +11,7 @@
         /// <summary>
         /// 账号---必填
         /// </summary>
+        [Required(ErrorMessage = "账号必填")]
         public string acctNo { get; set; }
     }
 }

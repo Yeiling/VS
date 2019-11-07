@@ -10,8 +10,8 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
 using NLog.Web;
-using shuiyintong.DBUtils.IService;
-using shuiyintong.DBUtils.Service;
+
+using shuiyintong.Api.Validate;
 using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.Collections.Generic;
@@ -81,7 +81,15 @@ namespace shuiyintong.Api
             //控制器注入时，替换服务
             services.Replace(ServiceDescriptor.Transient<IControllerActivator, ServiceBasedControllerActivator>());
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc(option =>
+            {
+                //Http添加请求验证
+                option.Filters.Add<ValidateModelAttribute>();
+                //Http请求异常处理
+                option.Filters.Add<WebApiExceptionFilterAttribute>();
+
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
             //读取配置Json文件
             services.UseJsonConfig(Configuration);
             //Ajax跨域

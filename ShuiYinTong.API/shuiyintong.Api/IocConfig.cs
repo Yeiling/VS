@@ -39,10 +39,10 @@ namespace shuiyintong.Api
             //1：AOP注入IOC容易
             builder.RegisterType<LogInterceptor>();
             //2：控制器注入AOP容器---AOP调试没有达到预期效果
-            builder.RegisterTypes(assembly).PropertiesAutowired()
-                .Where(type => typeof(ControllerBase).IsAssignableFrom(type))
-                .InterceptedBy(typeof(LogInterceptor))
-                .EnableClassInterceptors();
+            builder.RegisterTypes(assembly).PropertiesAutowired();
+            //.Where(type => typeof(ControllerBase).IsAssignableFrom(type))
+            //.InterceptedBy(typeof(LogInterceptor))
+            //.EnableClassInterceptors();
 
             //3:数据库服务注入---AOP可实现
             builder.RegisterGeneric(typeof(BaseService<>)).As(typeof(IBaseService<>));
