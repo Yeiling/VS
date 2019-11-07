@@ -15645,6 +15645,7 @@
       "Autofac.Annotation >= 3.0.5",
       "Autofac.Extensions.DependencyInjection >= 5.0.1",
       "Autofac.Extras.DynamicProxy >= 4.5.0",
+      "Castle.Core >= 4.4.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.Data.SqlClient >= 1.0.19269.1",
       "Microsoft.NETCore.App >= 2.2.0",
@@ -15735,6 +15736,10 @@
           "Autofac.Extras.DynamicProxy": {
             "target": "Package",
             "version": "[4.5.0, )"
+          },
+          "Castle.Core": {
+            "target": "Package",
+            "version": "[4.4.0, )"
           },
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
