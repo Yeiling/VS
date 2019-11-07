@@ -6,7 +6,7 @@ using System.Linq;
 namespace shuiyintong.Api.Validate
 {
     /// <summary>
-    /// 验证重写
+    /// 请求参数验证---重写
     /// </summary>
     public class ValidateModelAttribute : ActionFilterAttribute
     {

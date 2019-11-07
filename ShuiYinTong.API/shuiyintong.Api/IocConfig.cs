@@ -1,5 +1,4 @@
 ﻿using Autofac;
-using Autofac.Annotation;
 using Microsoft.AspNetCore.Mvc;
 using shuiyintong.Api.AutoFacAop;
 using shuiyintong.DBUtils.IService;

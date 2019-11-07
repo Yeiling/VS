@@ -1,11 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
 using NLog;
-using System;
 
 namespace shuiyintong.Api.Validate
 {
     /// <summary>
-    /// WebAPI异常处理重写
+    /// WebAPI异常处理---重写
     /// </summary>
     public class WebApiExceptionFilterAttribute : ExceptionFilterAttribute
     {

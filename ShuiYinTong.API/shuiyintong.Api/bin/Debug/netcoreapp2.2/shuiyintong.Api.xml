@@ -373,7 +373,7 @@
         </member>
         <member name="T:shuiyintong.Api.Validate.ValidateModelAttribute">
             <summary>
-            验证重写
+            请求参数验证---重写
             </summary>
         </member>
         <member name="M:shuiyintong.Api.Validate.ValidateModelAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
@@ -406,7 +406,7 @@
         </member>
         <member name="T:shuiyintong.Api.Validate.WebApiExceptionFilterAttribute">
             <summary>
-            WebAPI异常处理重写
+            WebAPI异常处理---重写
             </summary>
         </member>
         <member name="F:shuiyintong.Api.Validate.WebApiExceptionFilterAttribute.nlog">
