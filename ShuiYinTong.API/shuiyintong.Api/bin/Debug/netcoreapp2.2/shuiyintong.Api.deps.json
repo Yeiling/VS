@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "e877c1656368353f0dfff3062729e8b79c3444a7"
+    "signature": "ea5615e9e8c794001256c13ea9404e59ac04a336"
   },
   "compilationOptions": {
     "defines": [
@@ -25,7 +25,6 @@
       "shuiyintong.Api/1.0.0": {
         "dependencies": {
           "AspectCore.Core": "1.3.0",
-          "AspectCore.Extensions.DependencyInjection": "1.3.0",
           "Autofac": "4.9.4",
           "Autofac.Annotation": "3.0.5",
           "Autofac.Extensions.DependencyInjection": "5.0.1",
@@ -83,21 +82,6 @@
         },
         "compile": {
           "lib/netstandard2.0/AspectCore.Core.dll": {}
-        }
-      },
-      "AspectCore.Extensions.DependencyInjection/1.3.0": {
-        "dependencies": {
-          "AspectCore.Core": "1.3.0",
-          "Microsoft.Extensions.DependencyInjection": "2.2.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/AspectCore.Extensions.DependencyInjection.dll": {
-            "assemblyVersion": "1.3.0.0",
-            "fileVersion": "1.3.0.0"
-          }
-        },
-        "compile": {
-          "lib/netstandard2.0/AspectCore.Extensions.DependencyInjection.dll": {}
         }
       },
       "AspectCore.Extensions.Reflection/1.3.0": {
@@ -4762,13 +4746,6 @@
       "sha512": "sha512-3MPIgu8PUuhd/f6a6gRSU11i3ig6jDS0IaWsnQlrAZurxaY20xGEx2cb7iTOv4auDFK9w9psj5ElXi4QO2WTZw==",
       "path": "aspectcore.core/1.3.0",
       "hashPath": "aspectcore.core.1.3.0.nupkg.sha512"
-    },
-    "AspectCore.Extensions.DependencyInjection/1.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-/h6pMcY+bPppntDmr9dUqRVtqiWxzGIhCitj9D9Db7jQLN2H0ep+9nA2ZZpxxMoA13y1UVzquH5ZcS5L/MrPzg==",
-      "path": "aspectcore.extensions.dependencyinjection/1.3.0",
-      "hashPath": "aspectcore.extensions.dependencyinjection.1.3.0.nupkg.sha512"
     },
     "AspectCore.Extensions.Reflection/1.3.0": {
       "type": "package",
