@@ -42,7 +42,7 @@ namespace shuiyintong.Api.Controllers
         /// 日志测试
         /// </summary>
         [HttpGet]
-        public void test()
+        public void Test()
         {
             try
             {
