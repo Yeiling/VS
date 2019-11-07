@@ -48,7 +48,6 @@ namespace shuiyintong.Api.Controllers
         /// </summary>
         //private readonly Logger nlog = LogManager.GetCurrentClassLogger(); //获得日志实例;
         #region 接口签名
-
         /// <summary>
         /// 获取签名
         /// </summary>
