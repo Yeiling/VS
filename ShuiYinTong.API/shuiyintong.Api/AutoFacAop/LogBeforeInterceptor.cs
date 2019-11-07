@@ -1,7 +1,4 @@
 ﻿using Autofac.Aspect;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace shuiyintong.Api.AutoFacAop

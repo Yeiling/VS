@@ -43,9 +43,9 @@ namespace shuiyintong.Api.Controllers
         /// Http请求返回Code
         /// </summary>
         private readonly int Code = 200;
-        /// <summary>
-        /// NLog日志记录对象
-        /// </summary>
+        ///// <summary>
+        ///// NLog日志记录对象
+        ///// </summary>
         //private readonly Logger nlog = LogManager.GetCurrentClassLogger(); //获得日志实例;
         #region 接口签名
         /// <summary>

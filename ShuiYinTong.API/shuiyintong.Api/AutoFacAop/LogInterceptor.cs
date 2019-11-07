@@ -1,5 +1,5 @@
 ﻿using Castle.DynamicProxy;
-using log4net;
+using NLog;
 using shuiyintong.Common.Extend;
 using System;
 using System.Linq;
@@ -14,7 +14,7 @@ namespace shuiyintong.Api.AutoFacAop
         /// <summary>
         /// 日志记录器
         /// </summary>
-        private readonly ILog _log = LogManager.GetLogger(typeof(LogInterceptor));
+        private readonly Logger nlog = LogManager.GetCurrentClassLogger();
 
         /// <summary>
         /// 实现Castle.DynamicProxy(动态代理中的接口IInterceptor)
@@ -30,7 +30,7 @@ namespace shuiyintong.Api.AutoFacAop
             }
             catch (Exception ex)
             {
-                _log.ErrorFormat("方法执行前:拦截{0}类下的方法{1}的参数是{2},异常信息{3},返回结果是{4}",
+                nlog.Error("方法执行前:拦截{0}类下的方法{1}的参数是{2},异常信息{3},返回结果是{4}",
 invocation.TargetType.FullName,
 invocation.Method.Name,
 string.Join(",", invocation.Arguments.Select(a => (a ?? "").ToString()).ToArray()),
