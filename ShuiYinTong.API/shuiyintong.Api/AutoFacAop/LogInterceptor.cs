@@ -27,7 +27,6 @@ namespace shuiyintong.Api.AutoFacAop
             catch (Exception ex)
             {
                 nlog.Error(ex, ex.Message);
-                throw;
             }
         }
 

@@ -147,6 +147,11 @@
             浦发银行接口
             </summary>
         </member>
+        <member name="P:shuiyintong.Api.Controllers.SPDBankController.AcctDtlInfoServer">
+            <summary>
+            数据库实现
+            </summary>
+        </member>
         <member name="F:shuiyintong.Api.Controllers.SPDBankController.SPDBank">
             <summary>
             银行类型---浦发银行
@@ -305,6 +310,17 @@
             </summary>
             <param name="interestTrialReq">请求参数</param>
             <returns></returns>
+        </member>
+        <member name="T:shuiyintong.Api.IocConfig">
+            <summary>
+            AutoFac IOC扩展
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.IocConfig.AutoFacIoc(Autofac.ContainerBuilder)">
+            <summary>
+            AutoFac 属性注入和AOP注入
+            </summary>
+            <param name="builder"></param>
         </member>
         <member name="T:shuiyintong.Api.Program">
             <summary>
