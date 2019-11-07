@@ -51,9 +51,19 @@ namespace shuiyintong.Api.Controllers
             }
             catch (Exception e)
             {
-                nlog.Log(LogLevel.Error, e.Message);
+                nlog.Log(LogLevel.Trace, "Trace");
+                nlog.Log(LogLevel.Debug, "Debug");
+                nlog.Log(LogLevel.Info, "Info");
+                nlog.Log(LogLevel.Warn, "Warn");
+                nlog.Log(LogLevel.Error, "Error");
+                nlog.Log(LogLevel.Fatal, "Fatal");
+
+                nlog.Trace(e, e.Message);
+                nlog.Debug(e, e.Message);
+                nlog.Info(e,e.Message);
+                nlog.Warn(e, e.Message);
                 nlog.Error(e, e.Message);
-                nlog.Debug(e,e.Message);
+                nlog.Fatal(e, e.Message);
             }
         }
 
