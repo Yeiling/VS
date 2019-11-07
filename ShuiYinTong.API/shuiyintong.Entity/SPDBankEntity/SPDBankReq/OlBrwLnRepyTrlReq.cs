@@ -3,9 +3,9 @@
 namespace shuiyintong.Entity.SPDBankEntity.SPDBankReq
 {
     /// <summary>
-    /// 贷款还款明细查询请求类型
+    /// 归还贷款本金利息试算请求类型
     /// </summary>
-    public class IntDtlQryReq
+    public class OlBrwLnRepyTrlReq
     {
         /// <summary>
         /// 平台号
@@ -23,23 +23,20 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDBankReq
         [Required(ErrorMessage = "借据号必填")]
         public string duebillNo { get; set; }
         /// <summary>
-        /// 起始笔数
+        /// 还款总额
         /// </summary>
-        [Required(ErrorMessage = "起始笔数必填")]
-        public string startNum { get; set; }
+        [Required(ErrorMessage = "还款总额必填")]
+        public string repayTot { get; set; }
         /// <summary>
-        /// 查询笔数
+        /// 试算方式
         /// </summary>
-        [Required(ErrorMessage = "查询笔数必填")]
-        public string queryNum { get; set; }
+        [Required(ErrorMessage = "试算方式必填")]
+        public string repayTrlMd { get; set; }
         /// <summary>
-        /// 起始日期
+        /// 还款账号
         /// </summary>
-        public string startDate { get; set; }
-        /// <summary>
-        /// 终止日期
-        /// </summary>
-        public string endDate { get; set; }
+        [Required(ErrorMessage = "还款账号必填")]
+        public string repayAcctNo { get; set; }
 
     }
 }

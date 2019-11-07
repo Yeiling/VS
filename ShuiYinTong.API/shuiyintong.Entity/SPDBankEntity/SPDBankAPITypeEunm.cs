@@ -109,6 +109,26 @@ namespace shuiyintong.Entity.SPDBankEntity
             /// </summary>
             [Description("电子回单申请")]
             ReceiptApply = 118,
+            /// <summary>
+            /// 对公贷款还款维护
+            /// </summary>
+            [Description("对公贷款还款维护")]
+            CorpLnCntlAcctRep = 119,
+            /// <summary>
+            /// 归还贷款本金利息试算
+            /// </summary>
+            [Description("归还贷款本金利息试算")]
+            OlBrwLnRepyTrl = 120,
+            /// <summary>
+            /// 还款查询
+            /// </summary>
+            [Description("还款查询")]
+            CoreTranQry = 121,
+            /// <summary>
+            /// 划拨结果查询
+            /// </summary>
+            [Description("划拨结果查询")]
+            ZLSysBussBkQry = 122,
 
 
 

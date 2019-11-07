@@ -1,4 +1,6 @@
-﻿namespace shuiyintong.Entity.SPDBankEntity.SPDBankReq
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace shuiyintong.Entity.SPDBankEntity.SPDBankReq
 {
     /// <summary>
     /// 收款人白名单维护请求类型
@@ -6,12 +8,14 @@
     public class PayeeWhtLstMntnReq
     {
         /// <summary>
-        /// 状态---必填
+        /// 状态
         /// </summary>
+        [Required(ErrorMessage = "状态必填")]
         public string acctNoStatus { get; set; }
         /// <summary>
-        /// 三方签约账号---必填
+        /// 三方签约账号
         /// </summary>
+        [Required(ErrorMessage = "三方签约账号必填")]
         public string acctNo { get; set; }
         /// <summary>
         /// 白名单编号

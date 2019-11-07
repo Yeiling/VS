@@ -1,4 +1,5 @@
 ﻿using shuiyintong.Entity.SPDBankEntity.SPDBankResp;
+using System.ComponentModel.DataAnnotations;
 
 namespace shuiyintong.Entity.SPDBankEntity.SPDBankReq
 {
@@ -8,60 +9,73 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDBankReq
     public class PayInsrChkReq: BaseResp
     {
         /// <summary>
-        /// 商户编号---必填
+        /// 商户编号
         /// </summary>
+        [Required(ErrorMessage = "商户编号必填")]
         public string mrchId { get; set; }
         /// <summary>
-        /// 交易流水号--必填
+        /// 交易流水号
         /// </summary>
+        [Required(ErrorMessage = "交易流水号必填")]
         public string tranSeqNo { get; set; }
         /// <summary>
-        /// 商户日期时间--必填
+        /// 商户日期时间
         /// </summary>
+        [Required(ErrorMessage = "商户日期时间必填")]
         public string mrchDateTim { get; set; }
         /// <summary>
-        /// 客户号--必填
+        /// 客户号
         /// </summary>
+        [Required(ErrorMessage = "客户号必填")]
         public string clientNo { get; set; }
         /// <summary>
-        /// 行内行外标志--必填
+        /// 行内行外标志
         /// </summary>
+        [Required(ErrorMessage = "行内行外标志必填")]
         public string inOutBankFlag { get; set; }
         /// <summary>
-        /// 指令审批核心企业账号--必填
+        /// 指令审批核心企业账号
         /// </summary>
+        [Required(ErrorMessage = "指令审批核心企业账号必填")]
         public string insAprCrEpClntAtNo { get; set; }
         /// <summary>
-        /// 指令审批核心企业中文名--必填
+        /// 指令审批核心企业中文名
         /// </summary>
+        [Required(ErrorMessage = "指令审批核心企业中文名必填")]
         public string insAprCrEpCltChsNm { get; set; }
         /// <summary>
-        /// 发起方--必填
+        /// 发起方
         /// </summary>
+        [Required(ErrorMessage = "发起方必填")]
         public string ittChannelId { get; set; }
         /// <summary>
         /// 款项用途
         /// </summary>
+        [Required(ErrorMessage = "款项用途必填")]
         public string fndUsg { get; set; }
         /// <summary>
         /// 汇路标志
         /// </summary>
         public string lnkRdFlg { get; set; }
         /// <summary>
-        /// 付款人账号--必填
+        /// 付款人账号
         /// </summary>
+        [Required(ErrorMessage = "付款人账号必填")]
         public string payerAcctNo { get; set; }
         /// <summary>
-        /// 付款人名称--必填
+        /// 付款人名称
         /// </summary>
+        [Required(ErrorMessage = "付款人名称必填")]
         public string payerName { get; set; }
         /// <summary>
-        /// 收款人账号--必填
+        /// 收款人账号
         /// </summary>
+        [Required(ErrorMessage = "收款人账号必填")]
         public string payeeAcctNo { get; set; }
         /// <summary>
-        /// 收款人名称--必填
+        /// 收款人名称
         /// </summary>
+        [Required(ErrorMessage = "收款人名称必填")]
         public string payeeName { get; set; }
         /// <summary>
         /// 收款行行号
@@ -72,17 +86,19 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDBankReq
         /// </summary>
         public string payeeBranchName { get; set; }
         /// <summary>
-        /// 金额--必填
+        /// 金额
         /// </summary>
+        [Required(ErrorMessage = "金额必填")]
         public string amt { get; set; }
         /// <summary>
-        /// 附言--必填
+        /// 附言
         /// </summary>
+        [Required(ErrorMessage = "附言必填")]
         public string postscript { get; set; }
-        ///// <summary>
-        ///// 交易摘要
-        ///// </summary>
-        ////public string abstract{ get; set; }
+        /// <summary>
+        /// 交易摘要
+        /// </summary>
+        public string @abstract{ get; set; }
 
         /// <summary>
         /// 订单编号

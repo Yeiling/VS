@@ -1,5 +1,4 @@
-﻿
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace shuiyintong.Entity.SPDBankEntity.SPDBankReq
 {
@@ -9,7 +8,7 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDBankReq
     public class AccountReq
     {
         /// <summary>
-        /// 账号---必填
+        /// 账号
         /// </summary>
         [Required(ErrorMessage = "账号必填")]
         public string acctNo { get; set; }
