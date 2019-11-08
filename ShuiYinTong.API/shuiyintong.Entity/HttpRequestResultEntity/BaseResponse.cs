@@ -1,4 +1,4 @@
-﻿namespace shuiyintong.Entity
+﻿namespace shuiyintong.Entity.HttpRequestResultEntity
 {
     /// <summary>
     /// 返回结果基类

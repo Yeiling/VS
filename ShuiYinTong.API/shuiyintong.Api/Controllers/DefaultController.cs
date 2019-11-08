@@ -3,14 +3,11 @@ using NLog;
 using shuiyintong.Common;
 using shuiyintong.Common.BankConfig;
 using shuiyintong.Common.Extend;
-using shuiyintong.DBUtils;
-using shuiyintong.Entity;
+using shuiyintong.Entity.HttpRequestResultEntity;
 using shuiyintong.Entity.SPDBankEntity.SPDBankReq;
 using shuiyintong.SPDB;
 using System;
 using System.Collections.Generic;
-using static shuiyintong.Entity.Enums.BankTypeEum;
-using static shuiyintong.Entity.Enums.RedisDBEnum;
 using static shuiyintong.Entity.Enums.RespCodeEnum;
 using static shuiyintong.Entity.SPDBankEntity.SPDBankAPITypeEunm;
 
