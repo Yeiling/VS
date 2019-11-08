@@ -4,41 +4,6 @@
         <name>shuiyintong.Entity</name>
     </assembly>
     <members>
-        <member name="T:shuiyintong.Entity.BaseLog">
-            <summary>
-            日志数据类型
-            </summary>
-        </member>
-        <member name="P:shuiyintong.Entity.BaseLog.BankName">
-            <summary>
-            银行名称
-            </summary>
-        </member>
-        <member name="P:shuiyintong.Entity.BaseLog.Code">
-            <summary>
-            code(1:成功，0:错误或者异常)
-            </summary>
-        </member>
-        <member name="P:shuiyintong.Entity.BaseLog.ErrorMsg">
-            <summary>
-            错误信息
-            </summary>
-        </member>
-        <member name="P:shuiyintong.Entity.BaseLog.DateTime">
-            <summary>
-            请求时间
-            </summary>
-        </member>
-        <member name="P:shuiyintong.Entity.BaseLog.APICode">
-            <summary>
-            接口编号
-            </summary>
-        </member>
-        <member name="P:shuiyintong.Entity.BaseLog.APIName">
-            <summary>
-            接口名称
-            </summary>
-        </member>
         <member name="T:shuiyintong.Entity.Enums.BankTypeEum">
             <summary>
             银行类型

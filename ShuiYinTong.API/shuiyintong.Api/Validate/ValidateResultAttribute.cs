@@ -14,7 +14,7 @@ namespace shuiyintong.Api.Validate
         /// <param name="context"></param>
         public override void OnActionExecuting(ActionExecutingContext context) => base.OnActionExecuting(context);
         /// <summary>
-        /// 执行结果过滤(包含参数验证失败返回和请求成功返回，定义统一格式返回数据，方便解析)
+        /// 执行结果过滤(包含参数验证失败返回和请求)
         /// </summary>
         /// <param name="context"></param>
         public override void OnResultExecuting(ResultExecutingContext context)
