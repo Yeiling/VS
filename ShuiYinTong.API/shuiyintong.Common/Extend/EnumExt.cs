@@ -4,8 +4,16 @@ using System.Linq;
 
 namespace shuiyintong.Common.Extend
 {
+    /// <summary>
+    /// 枚举扩展
+    /// </summary>
     public static class EnumExt
     {
+        /// <summary>
+        /// 获取枚举描述信息
+        /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
         public static string EnumToDesc(this Enum val)
         {
             var type = val.GetType();

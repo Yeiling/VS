@@ -3,6 +3,10 @@ using System.Collections.Generic;
 
 namespace shuiyintong.DBUtils.IService
 {
+    /// <summary>
+    /// Redis泛型基类
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface IRedisBaseService<T> where T : class, new()
     {
         #region Key

@@ -4,6 +4,9 @@ using System.Runtime.Serialization;
 
 namespace shuiyintong.Common.BankConfig
 {
+    /// <summary>
+    /// 缓存Cache使用
+    /// </summary>
     [Serializable]
     public class SettingsModel
     {

@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Newtonsoft.Json;
 using shuiyintong.Entity.HttpRequestResultEntity;
 using System;
 using System.Collections.Generic;

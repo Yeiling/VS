@@ -27,6 +27,7 @@ namespace shuiyintong.Api.Controllers
         /// 浦发银行配合信息
         /// </summary>
         private readonly SPDBankConfig SPDBankConfig = bankConfig.SPDBankConfig;
+
         /// <summary>
         /// Http请求返回Code
         /// </summary>

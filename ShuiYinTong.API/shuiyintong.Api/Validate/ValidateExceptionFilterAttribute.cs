@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
 using NLog;
-using shuiyintong.Entity.HttpRequestResultEntity;
 
 namespace shuiyintong.Api.Validate
 {

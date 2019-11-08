@@ -5,7 +5,13 @@
     /// </summary>
     public class BankConfig
     {
+        /// <summary>
+        /// 数据连接配置(包括数据库连接字符和redis连接字符)
+        /// </summary>
         public DBConfig DBConfig { get; set; }
+        /// <summary>
+        /// 浦发银行请求地址配置
+        /// </summary>
         public SPDBankConfig SPDBankConfig { get; set; }
 
     }
@@ -15,7 +21,13 @@
     /// </summary>
     public class DBConfig
     {
+        /// <summary>
+        /// 数据库连接
+        /// </summary>
         public string DBConn { get; set; }
+        /// <summary>
+        /// Redis连接
+        /// </summary>
         public string RedisConn { get; set; }
     }
 

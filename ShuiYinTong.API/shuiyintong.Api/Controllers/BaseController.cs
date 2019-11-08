@@ -1,7 +1,5 @@
-﻿using Autofac.Extras.DynamicProxy;
-using Microsoft.AspNetCore.Cors;
+﻿using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using shuiyintong.Api.AutoFacAop;
 using shuiyintong.Common.BankConfig;
 
 namespace shuiyintong.Api.Controllers

@@ -1,5 +1,5 @@
-﻿using System.Threading.Tasks;
-using Autofac.Aspect;
+﻿using Autofac.Aspect;
+using System.Threading.Tasks;
 
 namespace shuiyintong.Api.AutoFacAop
 {

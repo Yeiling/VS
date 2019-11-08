@@ -7,6 +7,10 @@ using System.Linq;
 
 namespace shuiyintong.DBUtils.Service
 {
+    /// <summary>
+    /// Redis操作泛型基类
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class RedisBaseService<T> : IRedisBaseService<T> where T : class, new()
     {
         #region MyRegion
@@ -20,7 +24,7 @@ namespace shuiyintong.DBUtils.Service
         private readonly Redis redis;
 
         private RedisBaseService()
-        {}
+        { }
         private RedisBaseService(byte dbNum) => redis = Redis.Create(RedisConn, dbNum);
         /// <summary>
         /// 创建Redis服务对象

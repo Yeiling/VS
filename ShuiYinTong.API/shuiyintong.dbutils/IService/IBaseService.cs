@@ -4,6 +4,10 @@ using System.Linq.Expressions;
 
 namespace shuiyintong.DBUtils.IService
 {
+    /// <summary>
+    /// 数据库服务泛型基类
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface IBaseService<T> where T : class, new()
     {
         #region 增

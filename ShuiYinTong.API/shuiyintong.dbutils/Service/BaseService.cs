@@ -7,6 +7,10 @@ using System.Linq.Expressions;
 
 namespace shuiyintong.DBUtils.Service
 {
+    /// <summary>
+    /// 数据库操作泛型基类
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class BaseService<T> : IBaseService<T> where T : class, new()
     {
         #region 属性字段
@@ -144,6 +148,6 @@ namespace shuiyintong.DBUtils.Service
         /// <returns></returns>
         public bool Modefy(Expression<Func<T, bool>> exp, Expression<Func<T, T>> columns) => EntityDB.Update(columns, exp);
 
-        
+
     }
 }
