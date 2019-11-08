@@ -147,11 +147,6 @@
             浦发银行接口
             </summary>
         </member>
-        <member name="P:shuiyintong.Api.Controllers.SPDBankController.AcctDtlInfoServer">
-            <summary>
-            数据库实现
-            </summary>
-        </member>
         <member name="F:shuiyintong.Api.Controllers.SPDBankController.SPDBank">
             <summary>
             银行类型---浦发银行
@@ -211,6 +206,161 @@
             单笔划拨
             </summary>
             <param name="singleTransferReq">请求参数</param>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.SnglTrsfRstlQry(shuiyintong.Entity.SPDBankEntity.SPDBankReq.SnglTrsfRstlQryReq)">
+            <summary>
+            单笔划拨结果查询
+            </summary>
+            <param name="snglTrsfRstlQryReq">请求参数</param>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.ElectRecptApplction(shuiyintong.Entity.SPDBankEntity.SPDBankReq.ElectRecptApplctionReq)">
+            <summary>
+            电子回单申请
+            </summary>
+            <param name="electRecptApplctionReq">请求参数</param>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.FncThdCncl(shuiyintong.Entity.SPDBankEntity.SPDBankReq.FncThdCnclReq)">
+            <summary>
+            三方解约
+            </summary>
+            <param name="fncThdCnclReq">请求参数</param>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.RexgAddInfoQry(shuiyintong.Entity.SPDBankEntity.SPDBankReq.RexgAddInfoQryReq)">
+            <summary>
+            退汇附加信息查询
+            </summary>
+            <param name="rexgAddInfoQryReq">请求参数</param>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.BnkInfoQryCombntnTran(shuiyintong.Entity.SPDBankEntity.SPDBankReq.BnkInfoQryCombntnTranReq)">
+            <summary>
+            根据抹账流水查原往账流水
+            </summary>
+            <param name="bnkInfoQryCombntnTranReq">请求参数</param>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.AuthSmlAmt(shuiyintong.Entity.SPDBankEntity.SPDBankReq.AuthSmlAmtReq)">
+            <summary>
+            单笔资金划拨小额鉴权
+            </summary>
+            <param name="authSmlAmt">请求参数</param>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.PayInsrChk(shuiyintong.Entity.SPDBankEntity.SPDBankReq.PayInsrChkReq)">
+            <summary>
+            支付指令登记
+            </summary>
+            <param name="payInsrChkReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.PayInsrDtlQry(shuiyintong.Entity.SPDBankEntity.SPDBankReq.PayInsrDtlQryReq)">
+            <summary>
+            支付指令明细查询
+            </summary>
+            <param name="payInsrDtlQryReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.PayInsrCnl(shuiyintong.Entity.SPDBankEntity.SPDBankReq.PayInsrCnlReq)">
+            <summary>
+            支付指令取消
+            </summary>
+            <param name="payInsrCnlReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.PayeeWhtLstQry(shuiyintong.Entity.SPDBankEntity.SPDBankReq.PayeeWhtLstQryReq)">
+            <summary>
+            收款人白名单查询
+            </summary>
+            <param name="payeeWhtLstQryReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.PayeeWhtLstMntn(shuiyintong.Entity.SPDBankEntity.SPDBankReq.PayeeWhtLstMntnReq)">
+            <summary>
+            收款人白名单维护
+            </summary>
+            <param name="payeeWhtLstMntnReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.ZLSysInrBnkTfr(shuiyintong.Entity.SPDBankEntity.SPDBankReq.ZLSysInrBnkTfrReq)">
+            <summary>
+            备付金或结算户转客户结算户
+            </summary>
+            <param name="zLSysInrBnkTfrReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.OlBrwLnRepy(shuiyintong.Entity.SPDBankEntity.SPDBankReq.OlBrwLnRepyReq)">
+            <summary>
+            贷款归还
+            </summary>
+            <param name="olBrwLnRepyReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.IntDtlQry(shuiyintong.Entity.SPDBankEntity.SPDBankReq.IntDtlQryReq)">
+            <summary>
+            贷款还款明细查询
+            </summary>
+            <param name="intDtlQryReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.InterestTrial(shuiyintong.Entity.SPDBankEntity.SPDBankReq.InterestTrialReq)">
+            <summary>
+            贷款试算
+            </summary>
+            <param name="interestTrialReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.ReceiptApply(shuiyintong.Entity.SPDBankEntity.SPDBankReq.ReceiptApplyReq)">
+            <summary>
+            电子回单申请
+            </summary>
+            <param name="receiptApplyReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.CorpLnCntlAcctRep(shuiyintong.Entity.SPDBankEntity.SPDBankReq.CorpLnCntlAcctReq)">
+            <summary>
+            对公贷款还款维护
+            </summary>
+            <param name="corpLnCntlAcctReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.OlBrwLnRepyTrl(shuiyintong.Entity.SPDBankEntity.SPDBankReq.OlBrwLnRepyTrlReq)">
+            <summary>
+            归还贷款本金利息试算
+            </summary>
+            <param name="olBrwLnRepyTrlReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.CoreTranQry(shuiyintong.Entity.SPDBankEntity.SPDBankReq.CoreTranQryReq)">
+            <summary>
+            还款查询
+            </summary>
+            <param name="coreTranQryReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.ZLSysBussBkQry(shuiyintong.Entity.SPDBankEntity.SPDBankReq.ZLSysBussBkQryReq)">
+            <summary>
+            划拨结果查询
+            </summary>
+            <param name="zLSysBussBkQryReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.LnRcrdDtlQry(shuiyintong.Entity.SPDBankEntity.SPDBankReq.LnRcrdDtlQryReq)">
+            <summary>
+            借据详细信息查看
+            </summary>
+            <param name="lnRcrdDtlQryReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.CorpAgngLnRcvblntQry(shuiyintong.Entity.SPDBankEntity.SPDBankReq.CorpAgngLnRcvblntQryReq)">
+            <summary>
+            借据应还本金利息查询
+            </summary>
+            <param name="corpAgngLnRcvblntQryReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.CrpLnIntTrl(shuiyintong.Entity.SPDBankEntity.SPDBankReq.CrpLnIntTrlReq)">
+            <summary>
+            已放贷款还款计划查询
+            </summary>
+            <param name="crpLnIntTrlReq">请求参数</param>
+            <returns></returns>
         </member>
         <member name="T:shuiyintong.Api.IocConfig">
             <summary>

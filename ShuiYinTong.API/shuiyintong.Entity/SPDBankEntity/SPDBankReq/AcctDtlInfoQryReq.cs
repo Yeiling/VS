@@ -3,7 +3,7 @@
 namespace shuiyintong.Entity.SPDBankEntity.SPDBankReq
 {
     /// <summary>
-    /// 账户信息查询URL
+    /// 账户信息查询
     /// </summary>
     public class AcctDtlInfoQryReq
     {
@@ -13,7 +13,7 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDBankReq
         [Required(ErrorMessage = "账号必填")]
         public string acctNo { get; set; }
         /// <summary>
-        /// 起始日期-
+        /// 起始日期
         /// </summary>
         [Required(ErrorMessage = "起始日期必填")]
         public string beginDate { get; set; }

@@ -129,9 +129,21 @@ namespace shuiyintong.Entity.SPDBankEntity
             /// </summary>
             [Description("划拨结果查询")]
             ZLSysBussBkQry = 122,
-
-
-
+            /// <summary>
+            /// 借据详细信息查看
+            /// </summary>
+            [Description("借据详细信息查看")]
+            LnRcrdDtlQry = 123,
+            /// <summary>
+            /// 借据应还本金利息查询
+            /// </summary>
+            [Description("借据应还本金利息查询")]
+            CorpAgngLnRcvblntQry = 124,
+            /// <summary>
+            /// 已放贷款还款计划查询
+            /// </summary>
+            [Description("已放贷款还款计划查询")]
+            CrpLnIntTrl = 125,
         }
     }
 }

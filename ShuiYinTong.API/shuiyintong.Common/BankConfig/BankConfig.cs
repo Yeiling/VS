@@ -107,7 +107,38 @@
         /// 贷款试算
         /// </summary>
         public string InterestTrial { get; set; }
-
+        /// <summary>
+        /// 电子回单申请
+        /// </summary>
+        public string ReceiptApply { get; set; }
+        /// <summary>
+        /// 对公贷款还款维护
+        /// </summary>
+        public string CorpLnCntlAcctRep { get; set; }
+        /// <summary>
+        /// 归还贷款本金利息试算
+        /// </summary>
+        public string OlBrwLnRepyTrl { get; set; }
+        /// <summary>
+        /// 还款查询
+        /// </summary>
+        public string CoreTranQry { get; set; }
+        /// <summary>
+        /// 划拨结果查询
+        /// </summary>
+        public string ZLSysBussBkQry { get; set; }
+        /// <summary>
+        /// 借据详细信息查看
+        /// </summary>
+        public string LnRcrdDtlQry { get; set; }
+        /// <summary>
+        /// 借据应还本金利息查询
+        /// </summary>
+        public string CorpAgngLnRcvblntQry { get; set; }
+        /// <summary>
+        /// 已放贷款还款计划查询
+        /// </summary>
+        public string CrpLnIntTrl { get; set; }
 
     }
 }
