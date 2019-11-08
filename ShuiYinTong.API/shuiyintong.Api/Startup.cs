@@ -10,7 +10,6 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
 using NLog.Web;
-
 using shuiyintong.Api.Validate;
 using Swashbuckle.AspNetCore.Swagger;
 using System;

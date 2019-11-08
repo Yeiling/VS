@@ -58,6 +58,7 @@ window.SwaggerTranslator.learn({
     "Hide Response": "隐藏响应",
     "Headers": "头",
     "Try it out!": "试一下！",
+    "Execute": "执行",
     "Show/Hide": "显示/隐藏",
     "List Operations": "显示操作",
     "Expand Operations": "展开操作",
