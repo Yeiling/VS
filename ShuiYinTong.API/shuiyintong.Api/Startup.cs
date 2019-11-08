@@ -218,6 +218,8 @@ namespace shuiyintong.Api
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "ShuiYinTong.WebApi");
                 c.RoutePrefix = string.Empty;
+                //Swagger引入汉化
+                c.InjectJavascript($"/swagger.js");
             });
             //扩展路由
             app.UseMvc(routes =>
