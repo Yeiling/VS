@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using NLog;
+using shuiyintong.Common.Extend;
 using shuiyintong.Entity.HttpRequestResultEntity;
 using System;
 using System.Collections.Generic;
@@ -11,8 +13,9 @@ namespace shuiyintong.Api.Validate
     /// <summary>
     /// 请求参数属性验证(如:必填项，数值范围约定，正则表达式匹配等)---重写
     /// </summary>
-    public class ValidateModelAttribute : ActionFilterAttribute
+    public class ValidateModelFilter : ActionFilterAttribute
     {
+        private readonly Logger nlog = LogManager.GetCurrentClassLogger();
         /// <summary>
         /// 重写OnActionExecuting方法，统一定义验证
         /// </summary>
@@ -34,38 +37,9 @@ namespace shuiyintong.Api.Validate
                     DateTime = DateTime.Now.ToString("yyyyMMddHHmmss")
                 };
                 context.Result = new ObjectResult(ParameterValidation);
+                //nlog.Info(result.ToJson());
             }
         }
     }
-
-    #region 验证错误类---注释掉
-    ///// <summary>
-    ///// 验证错误类
-    ///// </summary>
-    //public class ValidationError
-    //{
-    //    /// <summary>
-    //    /// 请求类型属性字段
-    //    /// </summary>
-    //    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    //    public string Field { get; }
-    //    /// <summary>
-    //    /// 错误消息
-    //    /// </summary>
-    //    public string Message { get; }
-
-
-    //    /// <summary>
-    //    /// 构造函数
-    //    /// </summary>
-    //    /// <param name="field"></param>
-    //    /// <param name="message"></param>
-    //    public ValidationError(string field, string message)
-    //    {
-    //        Field = field != string.Empty ? field : null;
-    //        Message = message;
-    //    }
-    //} 
-    #endregion
 
 }

@@ -6,7 +6,7 @@ namespace shuiyintong.Api.Validate
     /// <summary>
     /// 请求返回结果验证---重写
     /// </summary>
-    public class ValidateResultAttribute : ActionFilterAttribute
+    public class ValidateResultFilter : ActionFilterAttribute
     {
         /// <summary>
         /// 请求执行

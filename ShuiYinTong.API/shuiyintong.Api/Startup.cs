@@ -83,11 +83,11 @@ namespace shuiyintong.Api
             services.AddMvc(option =>
             {
                 //Http添加请求参数验证---请求参数验证
-                option.Filters.Add<ValidateModelAttribute>();
-                //Http添加请求结果验证---请求参数验证
-                option.Filters.Add<ValidateResultAttribute>();
+                option.Filters.Add<ValidateModelFilter>();
                 //Http请求异常处理验证---异常处理验证
-                option.Filters.Add<ValidateExceptionFilterAttribute>();
+                option.Filters.Add<ValidateExceptionFilter>();
+                //Http添加请求结果验证---请求结果验证
+                //option.Filters.Add<ValidateResultAttribute>();              
 
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 

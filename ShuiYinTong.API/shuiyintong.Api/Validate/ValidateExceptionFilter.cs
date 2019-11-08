@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc.Filters;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using NLog;
+using System;
+using System.Threading.Tasks;
 
 namespace shuiyintong.Api.Validate
 {
     /// <summary>
-    /// WebAPI异常处理过滤---重写
+    /// WebAPI异常处理过滤---重写ExceptionFilterAttribute
     /// </summary>
-    public class ValidateExceptionFilterAttribute : ExceptionFilterAttribute
+    public class ValidateExceptionFilter : ExceptionFilterAttribute
     {
         /// <summary>
         /// 获得日志实例
@@ -39,7 +42,21 @@ namespace shuiyintong.Api.Validate
             nlog.Error(exceptionContext.Exception, exceptionContext.Exception.Message);
 
             base.OnException(exceptionContext);
+          
         }
+
+        /// <summary>
+        /// 发生异常时 异步进入
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public override Task OnExceptionAsync(ExceptionContext context)
+        {
+            OnException(context);
+            return Task.CompletedTask;
+        }
+
+
     }
 
     /// <summary>
