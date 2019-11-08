@@ -39,32 +39,6 @@
             接口名称
             </summary>
         </member>
-        <member name="T:shuiyintong.Entity.BaseResponse`1">
-            <summary>
-            返回结果基类
-            </summary>
-            <typeparam name="T"></typeparam>
-        </member>
-        <member name="P:shuiyintong.Entity.BaseResponse`1.ResponseType">
-            <summary>
-            返回类型
-            </summary>
-        </member>
-        <member name="P:shuiyintong.Entity.BaseResponse`1.Code">
-            <summary>
-            http code
-            </summary>
-        </member>
-        <member name="P:shuiyintong.Entity.BaseResponse`1.Data">
-            <summary>
-            返回数据
-            </summary>
-        </member>
-        <member name="P:shuiyintong.Entity.BaseResponse`1.DateTime">
-            <summary>
-            请求时间
-            </summary>
-        </member>
         <member name="T:shuiyintong.Entity.Enums.BankTypeEum">
             <summary>
             银行类型
@@ -119,6 +93,54 @@
             <summary>
             请求成功
             </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.HttpRequestResultEntity.BaseResponse`1">
+            <summary>
+            返回结果基类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:shuiyintong.Entity.HttpRequestResultEntity.BaseResponse`1.ResponseType">
+            <summary>
+            返回类型
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.HttpRequestResultEntity.BaseResponse`1.Code">
+            <summary>
+            http code
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.HttpRequestResultEntity.BaseResponse`1.Data">
+            <summary>
+            返回数据
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.HttpRequestResultEntity.BaseResponse`1.DateTime">
+            <summary>
+            请求时间
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.HttpRequestResultEntity.ValidateModel">
+            <summary>
+            参数（请求参数实体属性验证）返回对象
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.HttpRequestResultEntity.ValidateModel.Field">
+            <summary>
+            字段名称
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.HttpRequestResultEntity.ValidateModel.Message">
+            <summary>
+            错误消息
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Entity.HttpRequestResultEntity.ValidateModel.#ctor(System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="field">字段名称</param>
+            <param name="message">错误消息</param>
         </member>
         <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankAPITypeEunm">
             <summary>

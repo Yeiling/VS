@@ -179,36 +179,28 @@ namespace shuiyintong.Api.Controllers
         [HttpPost]
         public string AcctDtlInfoQry([FromBody]AcctDtlInfoQryReq acctInfoReq)
         {
-            string resultStr = string.Empty;
-            var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
-            NewLifeRedisHelper redis;
-            SPDBankAPIType sPDBankAPIType = SPDBankAPIType.AcctDtlInfoQry;
-            int BankAPIType = (int)sPDBankAPIType;
-            string key = (int)SPDBank + "-" + BankAPIType + "-" + Now + "-"; ; //Redis key                                                                                                                                         //Redis key
+            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
+            BaseResponse<string> baseResponse = new BaseResponse<string>
+            {
+                DateTime = Now
+            };
             int code = 0; //http请求错误码
-            byte responseType; //返回类型
-
             var header = GetHeaderSign(acctInfoReq, out string dataRequest);
-            resultStr = HttpClientHelper.POSTRequest(SPDBankConfig.AcctDtlInfoQry, dataRequest, header, (statusCode, result) =>
-              {
-                  code = (int)statusCode;
-                  responseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
-                  BaseResponse<string> baseResponse = new BaseResponse<string>
-                  {
-                      Code = code,
-                      Data = result,
-                      ResponseType = responseType,
-                      DateTime = Now
-                  };
+            HttpClientHelper.POSTRequest(SPDBankConfig.AcctDtlInfoQry, dataRequest, header, (statusCode, result) =>
+            {
+                code = (int)statusCode;
+                baseResponse.Code = code;
+                baseResponse.Data = result;
+                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
-                  //Redis保存
-                  key += responseType;
-                  redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
-                  if (redis != null)
-                      redis.Set(key, baseResponse);
-              });
+                //Redis保存 //Redis key
+                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.AcctDtlInfoQry + "-" + Now + "-" + baseResponse.ResponseType;
+                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
+                if (redis != null)
+                    redis.Set(key, baseResponse);
 
-            return resultStr;
+            });
+            return baseResponse.ToJson();
         }
 
         /// <summary>
@@ -218,36 +210,28 @@ namespace shuiyintong.Api.Controllers
         [HttpPost]
         public string SingleTransfer([FromBody]SingleTransferReq singleTransferReq)
         {
-            string resultStr = string.Empty;
-            var Now = DateTime.Now.ToString("yyyyMMddHHmmss");
-            NewLifeRedisHelper redis;
-            SPDBankAPIType sPDBankAPIType = SPDBankAPIType.SingleTransfer;
-            int BankAPIType = (int)sPDBankAPIType;
-            string key = (int)SPDBank + "-" + BankAPIType + "-" + Now + "-"; ; //Redis key
+            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
+            BaseResponse<string> baseResponse = new BaseResponse<string>
+            {
+                DateTime = Now
+            };
             int code = 0; //http请求错误码
-            byte responseType; //返回类型
-
             var header = GetHeaderSign(singleTransferReq, out string dataRequest);
-            resultStr = HttpClientHelper.POSTRequest(SPDBankConfig.SingleTransfer, dataRequest, header, (statusCode, result) =>
-              {
-                  code = (int)statusCode;
-                  responseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
-                  responseType = (byte)ResponseType.Success;
-                  BaseResponse<string> baseResponse = new BaseResponse<string>
-                  {
-                      Code = code,
-                      Data = result,
-                      ResponseType = responseType,
-                      DateTime = Now
-                  };
+            HttpClientHelper.POSTRequest(SPDBankConfig.SingleTransfer, dataRequest, header, (statusCode, result) =>
+            {
+                code = (int)statusCode;
+                baseResponse.Code = code;
+                baseResponse.Data = result;
+                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
-                  //Redis保存
-                  key += responseType;
-                  redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
-                  if (redis != null)
-                      redis.Set(key, baseResponse);
-              });
-            return resultStr;
+                //Redis保存 //Redis key
+                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.SingleTransfer + "-" + Now + "-" + baseResponse.ResponseType;
+                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
+                if (redis != null)
+                    redis.Set(key, baseResponse);
+
+            });
+            return baseResponse.ToJson();
         }
 
         #endregion
