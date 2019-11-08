@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using shuiyintong.Api.Validate;
 using shuiyintong.Common;
 using shuiyintong.Common.BankConfig;
 using shuiyintong.Common.Extend;
@@ -143,11 +144,11 @@ namespace shuiyintong.Api.Controllers
         /// <param name="b"></param>
         /// <returns></returns>
         [HttpGet]
-        public void Sum(int a, int b)
+        public int Sum(int a, int b)
         {
             //try
             //{
-                int tc = a / b;
+            return a / b;
             //}
             //catch (Exception ex) { }
 
