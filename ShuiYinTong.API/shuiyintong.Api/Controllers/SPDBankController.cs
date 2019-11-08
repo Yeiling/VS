@@ -148,7 +148,7 @@ namespace shuiyintong.Api.Controllers
         [HttpPost]
         public string AcctInfo([FromBody]AccountReq accountRequest)
         {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");        
+            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
             {
                 DateTime = Now
