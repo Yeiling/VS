@@ -87,7 +87,7 @@ namespace shuiyintong.Api
                 //Http请求异常处理验证---异常处理验证
                 option.Filters.Add<ValidateExceptionFilter>();
                 //Http添加请求结果验证---请求结果验证
-                //option.Filters.Add<ValidateResultAttribute>();              
+                option.Filters.Add<ValidateResultFilter>();              
 
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
