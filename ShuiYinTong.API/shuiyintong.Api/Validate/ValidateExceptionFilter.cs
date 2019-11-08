@@ -29,8 +29,8 @@ namespace shuiyintong.Api.Validate
         /// <summary>
         /// 重写基类的异常处理方法
         /// </summary>
-        /// <param name="exceptionContext"></param>
-        public override void OnException(ExceptionContext exceptionContext)
+        /// <param name="context"></param>
+        public override void OnException(ExceptionContext context)
         {
             //1.异常日志记录（正式项目里面一般是用log4net记录异常日志）
             //var err = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "——" +
@@ -49,9 +49,8 @@ namespace shuiyintong.Api.Validate
 
             #endregion
             //NLog保存日志
-            nlog.Error(exceptionContext.Exception, exceptionContext.Exception.Message);
-
-            base.OnException(exceptionContext);
+            nlog.Error(context.Exception, context.Exception.Message);
+            base.OnException(context);
         }
 
         /// <summary>
