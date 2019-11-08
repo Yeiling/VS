@@ -1,67 +1,69 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
 using NLog;
+using System.Threading.Tasks;
 
 namespace shuiyintong.Api.Validate
 {
     /// <summary>
-    /// WebAPI异常处理过滤---重写ExceptionFilterAttribute
+    /// WebAPI异常处理过滤---重写ExceptionFilterAttribute ，  IExceptionFilter
     /// </summary>
-    public class ValidateExceptionFilter : IExceptionFilter
+    public class ValidateExceptionFilter : ExceptionFilterAttribute
     {
         /// <summary>
         /// 获得日志实例
         /// </summary>
         private readonly Logger nlog = LogManager.GetCurrentClassLogger();
 
-        /// <summary>
-        /// 异常处理接口
-        /// </summary>
-        /// <param name="context"></param>
-        public void OnException(ExceptionContext context)
-        {
-            nlog.Error(context.Exception, context.Exception.Message);
-        }
-
-        #region 其他写法
+        #region 写法1
         ///// <summary>
-        ///// 重写基类的异常处理方法
-        ///// </summary>
-        ///// <param name="exceptionContext"></param>
-        //public override void OnException(ExceptionContext exceptionContext)
-        //{
-        //    //1.异常日志记录（正式项目里面一般是用log4net记录异常日志）
-        //    //var err = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "——" +
-        //    //    exceptionContext.Exception.GetType().ToString() + "：" + exceptionContext.Exception.Message + "——堆栈信息：" +
-        //    //    exceptionContext.Exception.StackTrace;
-
-        //    #region 异常处理。。。。
-        //    ////2.返回调用方具体的异常信息
-        //    //if (exceptionContext.Exception is NotImplementedException)
-        //    //    exceptionContext.Exception = new HttpResponseMessage(HttpStatusCode.NotImplemented).Content as Exception;
-        //    //else if (exceptionContext.Exception is TimeoutException)
-        //    //    exceptionContext.Response = new HttpResponseMessage(HttpStatusCode.RequestTimeout);
-        //    ////.....这里可以根据项目需要返回到客户端特定的状态码。如果找不到相应的异常，统一返回服务端错误500
-        //    //else
-        //    //    exceptionContext.Response = new HttpResponseMessage(HttpStatusCode.InternalServerError);
-
-        //    #endregion
-        //    //NLog保存日志
-        //    nlog.Error(exceptionContext.Exception, exceptionContext.Exception.Message);
-
-        //    base.OnException(exceptionContext);
-
-        //}
-
-        ///// <summary>
-        ///// 发生异常时 异步进入
+        ///// 异常处理接口
         ///// </summary>
         ///// <param name="context"></param>
-        ///// <returns></returns>
-        //public override Task OnExceptionAsync(ExceptionContext context)
+        //public void OnException(ExceptionContext context)
         //{
-        //    OnException(context);
-        //    return Task.CompletedTask;
-        //} 
+        //    nlog.Error(context.Exception, context.Exception.Message);
+        //}
+
+        #endregion
+        #region 其他写法
+        /// <summary>
+        /// 重写基类的异常处理方法
+        /// </summary>
+        /// <param name="exceptionContext"></param>
+        public override void OnException(ExceptionContext exceptionContext)
+        {
+            //1.异常日志记录（正式项目里面一般是用log4net记录异常日志）
+            //var err = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "——" +
+            //    exceptionContext.Exception.GetType().ToString() + "：" + exceptionContext.Exception.Message + "——堆栈信息：" +
+            //    exceptionContext.Exception.StackTrace;
+
+            #region 异常处理。。。。
+            ////2.返回调用方具体的异常信息
+            //if (exceptionContext.Exception is NotImplementedException)
+            //    exceptionContext.Exception = new HttpResponseMessage(HttpStatusCode.NotImplemented).Content as Exception;
+            //else if (exceptionContext.Exception is TimeoutException)
+            //    exceptionContext.Response = new HttpResponseMessage(HttpStatusCode.RequestTimeout);
+            ////.....这里可以根据项目需要返回到客户端特定的状态码。如果找不到相应的异常，统一返回服务端错误500
+            //else
+            //    exceptionContext.Response = new HttpResponseMessage(HttpStatusCode.InternalServerError);
+
+            #endregion
+            //NLog保存日志
+            nlog.Error(exceptionContext.Exception, exceptionContext.Exception.Message);
+
+            base.OnException(exceptionContext);
+        }
+
+        /// <summary>
+        /// 发生异常时 异步进入
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public override Task OnExceptionAsync(ExceptionContext context)
+        {
+            OnException(context);
+            return Task.CompletedTask;
+        }
         #endregion
 
 

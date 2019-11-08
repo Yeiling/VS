@@ -390,7 +390,7 @@
         </member>
         <member name="T:shuiyintong.Api.Validate.ValidateExceptionFilter">
             <summary>
-            WebAPI异常处理过滤---重写ExceptionFilterAttribute
+            WebAPI异常处理过滤---重写ExceptionFilterAttribute ，  IExceptionFilter
             </summary>
         </member>
         <member name="F:shuiyintong.Api.Validate.ValidateExceptionFilter.nlog">
@@ -400,9 +400,16 @@
         </member>
         <member name="M:shuiyintong.Api.Validate.ValidateExceptionFilter.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
             <summary>
-            异常处理接口
+            重写基类的异常处理方法
+            </summary>
+            <param name="exceptionContext"></param>
+        </member>
+        <member name="M:shuiyintong.Api.Validate.ValidateExceptionFilter.OnExceptionAsync(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            发生异常时 异步进入
             </summary>
             <param name="context"></param>
+            <returns></returns>
         </member>
         <member name="T:shuiyintong.Api.Validate.BaseResultModel">
             <summary>
