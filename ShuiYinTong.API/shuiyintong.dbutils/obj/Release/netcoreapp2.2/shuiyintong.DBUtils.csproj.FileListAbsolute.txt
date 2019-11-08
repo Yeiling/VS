@@ -10,3 +10,15 @@ F:\Project\shuiyintong.dbutils\obj\Release\netcoreapp2.2\shuiyintong.DBUtils.Ass
 F:\Project\shuiyintong.dbutils\obj\Release\netcoreapp2.2\shuiyintong.DBUtils.csproj.CopyComplete
 F:\Project\shuiyintong.dbutils\obj\Release\netcoreapp2.2\shuiyintong.DBUtils.dll
 F:\Project\shuiyintong.dbutils\obj\Release\netcoreapp2.2\shuiyintong.DBUtils.pdb
+F:\GitHubProject\ShuiYinTong.API\shuiyintong.dbutils\bin\Release\netcoreapp2.2\shuiyintong.DBUtils.deps.json
+F:\GitHubProject\ShuiYinTong.API\shuiyintong.dbutils\bin\Release\netcoreapp2.2\shuiyintong.DBUtils.dll
+F:\GitHubProject\ShuiYinTong.API\shuiyintong.dbutils\bin\Release\netcoreapp2.2\shuiyintong.DBUtils.pdb
+F:\GitHubProject\ShuiYinTong.API\shuiyintong.dbutils\bin\Release\netcoreapp2.2\shuiyintong.Common.dll
+F:\GitHubProject\ShuiYinTong.API\shuiyintong.dbutils\bin\Release\netcoreapp2.2\shuiyintong.Common.pdb
+F:\GitHubProject\ShuiYinTong.API\shuiyintong.dbutils\obj\Release\netcoreapp2.2\shuiyintong.DBUtils.csprojAssemblyReference.cache
+F:\GitHubProject\ShuiYinTong.API\shuiyintong.dbutils\obj\Release\netcoreapp2.2\shuiyintong.DBUtils.csproj.CoreCompileInputs.cache
+F:\GitHubProject\ShuiYinTong.API\shuiyintong.dbutils\obj\Release\netcoreapp2.2\shuiyintong.DBUtils.AssemblyInfoInputs.cache
+F:\GitHubProject\ShuiYinTong.API\shuiyintong.dbutils\obj\Release\netcoreapp2.2\shuiyintong.DBUtils.AssemblyInfo.cs
+F:\GitHubProject\ShuiYinTong.API\shuiyintong.dbutils\obj\Release\netcoreapp2.2\shuiyintong.DBUtils.csproj.CopyComplete
+F:\GitHubProject\ShuiYinTong.API\shuiyintong.dbutils\obj\Release\netcoreapp2.2\shuiyintong.DBUtils.dll
+F:\GitHubProject\ShuiYinTong.API\shuiyintong.dbutils\obj\Release\netcoreapp2.2\shuiyintong.DBUtils.pdb
