@@ -139,23 +139,6 @@ namespace shuiyintong.Api.Controllers
         }
         #endregion
 
-        /// <summary>
-        /// 测试
-        /// </summary>
-        /// <param name="a"></param>
-        /// <param name="b"></param>
-        /// <returns></returns>
-        [HttpGet]
-        public int Sum(int a, int b)
-        {
-            //try
-            //{
-            return a / b;
-            //}
-            //catch (Exception ex) { }
-
-        }
-
         #region e账通标准API接口
 
         /// <summary>
