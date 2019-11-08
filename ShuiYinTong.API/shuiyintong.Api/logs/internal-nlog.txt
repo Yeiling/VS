@@ -16081,3 +16081,568 @@ Error Number:53,State:0,Class:20
 2019-11-08 17:08:43.7109 Debug Warn => blackhole
 2019-11-08 17:08:43.7109 Debug Error => blackhole
 2019-11-08 17:08:43.7109 Debug Fatal => blackhole
+2019-11-08 17:17:33.3223 Info Message Template Auto Format enabled
+2019-11-08 17:17:33.3223 Info Loading assembly: NLog.Web.AspNetCore
+2019-11-08 17:17:33.3223 Debug ScanAssembly('NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2019-11-08 17:17:33.3578 Debug Setting 'UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2019-11-08 17:17:33.3724 Debug Setting 'NullTarget.name' to 'blackhole'
+2019-11-08 17:17:33.3724 Info Adding target NullTarget(Name=blackhole)
+2019-11-08 17:17:33.3724 Debug Registered target blackhole: NLog.Targets.NullTarget
+2019-11-08 17:17:33.3815 Debug Setting 'DatabaseTarget.commandText' to '
+        insert into nlog(Application,Logged,Level,Message,Logger,CallSite,Exception)
+        values(@Application,@Logged,@Level,@Message,@Logger,@Callsite,@Exception)
+      '
+2019-11-08 17:17:33.3815 Debug Setting 'DatabaseTarget.dbProvider' to 'MySql.Data.MySqlClient.MySqlConnection, MySql.Data'
+2019-11-08 17:17:33.3815 Debug Setting 'DatabaseTarget.name' to 'database'
+2019-11-08 17:17:33.3815 Debug Setting 'DatabaseTarget.connectionstring' to 'Data Source=192.168.56.105;initial catalog=test;user id=root;password=123456;SslMode=none'
+2019-11-08 17:17:33.3815 Debug Setting 'DatabaseParameterInfo.name' to '@application'
+2019-11-08 17:17:33.3815 Debug Setting 'DatabaseParameterInfo.layout' to 'shuiyitong.API'
+2019-11-08 17:17:33.3815 Debug Setting 'DatabaseParameterInfo.name' to '@logged'
+2019-11-08 17:17:33.3815 Debug Setting 'DatabaseParameterInfo.layout' to '${date}'
+2019-11-08 17:17:33.3948 Debug Setting 'DatabaseParameterInfo.name' to '@level'
+2019-11-08 17:17:33.3948 Debug Setting 'DatabaseParameterInfo.layout' to '${level}'
+2019-11-08 17:17:33.3948 Debug Setting 'DatabaseParameterInfo.name' to '@message'
+2019-11-08 17:17:33.3948 Debug Setting 'DatabaseParameterInfo.layout' to '${message}'
+2019-11-08 17:17:33.3948 Debug Setting 'DatabaseParameterInfo.name' to '@logger'
+2019-11-08 17:17:33.3948 Debug Setting 'DatabaseParameterInfo.layout' to '${logger}'
+2019-11-08 17:17:33.3948 Debug Setting 'DatabaseParameterInfo.name' to '@callSite'
+2019-11-08 17:17:33.3948 Debug Setting 'DatabaseParameterInfo.layout' to '${callsite:filename=true}'
+2019-11-08 17:17:33.3948 Debug Setting 'CallSiteLayoutRenderer.filename' to 'true'
+2019-11-08 17:17:33.3948 Debug Setting 'DatabaseParameterInfo.name' to '@exception'
+2019-11-08 17:17:33.3948 Debug Setting 'DatabaseParameterInfo.layout' to '${exception:tostring}'
+2019-11-08 17:17:33.4168 Debug Setting 'ExceptionLayoutRenderer.Format' to 'tostring'
+2019-11-08 17:17:33.4168 Info Adding target DatabaseTarget(Name=database)
+2019-11-08 17:17:33.4168 Debug Registered target database: NLog.Targets.DatabaseTarget
+2019-11-08 17:17:33.4321 Debug Unused target checking is started... Rule Count: 2, Target Count: 2
+2019-11-08 17:17:33.4321 Debug Unused target checking is completed. Total Rule Count: 2, Total Target Count: 2, Unused Target Count: 0
+2019-11-08 17:17:33.4484 Debug Watching path 'F:\GitHubProject\ShuiYinTong.API\shuiyintong.Api\bin\Debug\netcoreapp2.2' filter 'NLog.config' for changes.
+2019-11-08 17:17:33.4484 Debug --- NLog configuration dump ---
+2019-11-08 17:17:33.4484 Debug Targets:
+2019-11-08 17:17:33.4484 Debug Null Target[blackhole]
+2019-11-08 17:17:33.4484 Debug Database Target[database]
+2019-11-08 17:17:33.4484 Debug Rules:
+2019-11-08 17:17:33.4593 Debug logNamePattern: (Microsoft.:StartsWith) levels: [ Debug Info Warn Error Fatal ] appendTo: [ blackhole ]
+2019-11-08 17:17:33.4593 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ database ]
+2019-11-08 17:17:33.4593 Debug --- End of NLog configuration dump ---
+2019-11-08 17:17:33.4593 Info Found 41 configuration items
+2019-11-08 17:17:33.5485 Info Configuration initialized.
+2019-11-08 17:17:33.5606 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.6.8.10751. Product version: 4.6.8.
+2019-11-08 17:17:33.5606 Debug Targets for Microsoft.AspNetCore.Hosting.Internal.WebHost by level:
+2019-11-08 17:17:33.5606 Debug Trace =>
+2019-11-08 17:17:33.5606 Debug Debug => blackhole
+2019-11-08 17:17:33.5658 Debug Info => blackhole
+2019-11-08 17:17:33.5658 Debug Warn => blackhole
+2019-11-08 17:17:33.5658 Debug Error => blackhole
+2019-11-08 17:17:33.5658 Debug Fatal => blackhole
+2019-11-08 17:17:33.6290 Debug Targets for Microsoft.AspNetCore.Hosting.Internal.ApplicationLifetime by level:
+2019-11-08 17:17:33.6290 Debug Trace =>
+2019-11-08 17:17:33.6290 Debug Debug => blackhole
+2019-11-08 17:17:33.6290 Debug Info => blackhole
+2019-11-08 17:17:33.6290 Debug Warn => blackhole
+2019-11-08 17:17:33.6290 Debug Error => blackhole
+2019-11-08 17:17:33.6290 Debug Fatal => blackhole
+2019-11-08 17:17:33.6290 Debug Targets for Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets by level:
+2019-11-08 17:17:33.6290 Debug Trace =>
+2019-11-08 17:17:33.6290 Debug Debug => blackhole
+2019-11-08 17:17:33.6290 Debug Info => blackhole
+2019-11-08 17:17:33.6290 Debug Warn => blackhole
+2019-11-08 17:17:33.6290 Debug Error => blackhole
+2019-11-08 17:17:33.6290 Debug Fatal => blackhole
+2019-11-08 17:17:33.6448 Debug Targets for Microsoft.AspNetCore.Server.Kestrel by level:
+2019-11-08 17:17:33.6448 Debug Trace =>
+2019-11-08 17:17:33.6448 Debug Debug => blackhole
+2019-11-08 17:17:33.6448 Debug Info => blackhole
+2019-11-08 17:17:33.6448 Debug Warn => blackhole
+2019-11-08 17:17:33.6448 Debug Error => blackhole
+2019-11-08 17:17:33.6448 Debug Fatal => blackhole
+2019-11-08 17:17:33.6640 Debug Targets for Microsoft.AspNetCore.DataProtection.TypeForwardingActivator by level:
+2019-11-08 17:17:33.6640 Debug Trace =>
+2019-11-08 17:17:33.6640 Debug Debug => blackhole
+2019-11-08 17:17:33.6640 Debug Info => blackhole
+2019-11-08 17:17:33.6640 Debug Warn => blackhole
+2019-11-08 17:17:33.6640 Debug Error => blackhole
+2019-11-08 17:17:33.6640 Debug Fatal => blackhole
+2019-11-08 17:17:33.6786 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager by level:
+2019-11-08 17:17:33.6786 Debug Trace =>
+2019-11-08 17:17:33.6786 Debug Debug => blackhole
+2019-11-08 17:17:33.6786 Debug Info => blackhole
+2019-11-08 17:17:33.6786 Debug Warn => blackhole
+2019-11-08 17:17:33.6786 Debug Error => blackhole
+2019-11-08 17:17:33.6786 Debug Fatal => blackhole
+2019-11-08 17:17:33.6921 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory by level:
+2019-11-08 17:17:33.6921 Debug Trace =>
+2019-11-08 17:17:33.6921 Debug Debug => blackhole
+2019-11-08 17:17:33.6921 Debug Info => blackhole
+2019-11-08 17:17:33.6921 Debug Warn => blackhole
+2019-11-08 17:17:33.6921 Debug Error => blackhole
+2019-11-08 17:17:33.6921 Debug Fatal => blackhole
+2019-11-08 17:17:33.6921 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory by level:
+2019-11-08 17:17:33.6921 Debug Trace =>
+2019-11-08 17:17:33.6921 Debug Debug => blackhole
+2019-11-08 17:17:33.6921 Debug Info => blackhole
+2019-11-08 17:17:33.6921 Debug Warn => blackhole
+2019-11-08 17:17:33.6921 Debug Error => blackhole
+2019-11-08 17:17:33.6921 Debug Fatal => blackhole
+2019-11-08 17:17:33.6921 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory by level:
+2019-11-08 17:17:33.6921 Debug Trace =>
+2019-11-08 17:17:33.6921 Debug Debug => blackhole
+2019-11-08 17:17:33.6921 Debug Info => blackhole
+2019-11-08 17:17:33.6921 Debug Warn => blackhole
+2019-11-08 17:17:33.7064 Debug Error => blackhole
+2019-11-08 17:17:33.7064 Debug Fatal => blackhole
+2019-11-08 17:17:33.7064 Debug Targets for Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor by level:
+2019-11-08 17:17:33.7064 Debug Trace =>
+2019-11-08 17:17:33.7064 Debug Debug => blackhole
+2019-11-08 17:17:33.7216 Debug Info => blackhole
+2019-11-08 17:17:33.7216 Debug Warn => blackhole
+2019-11-08 17:17:33.7216 Debug Error => blackhole
+2019-11-08 17:17:33.7216 Debug Fatal => blackhole
+2019-11-08 17:17:33.7216 Debug Targets for Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository by level:
+2019-11-08 17:17:33.7216 Debug Trace =>
+2019-11-08 17:17:33.7216 Debug Debug => blackhole
+2019-11-08 17:17:33.7216 Debug Info => blackhole
+2019-11-08 17:17:33.7216 Debug Warn => blackhole
+2019-11-08 17:17:33.7216 Debug Error => blackhole
+2019-11-08 17:17:33.7216 Debug Fatal => blackhole
+2019-11-08 17:17:33.7478 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver by level:
+2019-11-08 17:17:33.7534 Debug Trace =>
+2019-11-08 17:17:33.7534 Debug Debug => blackhole
+2019-11-08 17:17:33.7534 Debug Info => blackhole
+2019-11-08 17:17:33.7534 Debug Warn => blackhole
+2019-11-08 17:17:33.7534 Debug Error => blackhole
+2019-11-08 17:17:33.7534 Debug Fatal => blackhole
+2019-11-08 17:17:33.7534 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider by level:
+2019-11-08 17:17:33.7534 Debug Trace =>
+2019-11-08 17:17:33.7534 Debug Debug => blackhole
+2019-11-08 17:17:33.7534 Debug Info => blackhole
+2019-11-08 17:17:33.7534 Debug Warn => blackhole
+2019-11-08 17:17:33.7534 Debug Error => blackhole
+2019-11-08 17:17:33.7534 Debug Fatal => blackhole
+2019-11-08 17:17:33.7534 Debug Targets for Microsoft.AspNetCore.DataProtection.Internal.DataProtectionStartupFilter by level:
+2019-11-08 17:17:33.7534 Debug Trace =>
+2019-11-08 17:17:33.7534 Debug Debug => blackhole
+2019-11-08 17:17:33.7534 Debug Info => blackhole
+2019-11-08 17:17:33.7534 Debug Warn => blackhole
+2019-11-08 17:17:33.7534 Debug Error => blackhole
+2019-11-08 17:17:33.7534 Debug Fatal => blackhole
+2019-11-08 17:17:33.8195 Debug Targets for Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor by level:
+2019-11-08 17:17:33.8195 Debug Trace =>
+2019-11-08 17:17:33.8195 Debug Debug => blackhole
+2019-11-08 17:17:33.8195 Debug Info => blackhole
+2019-11-08 17:17:33.8195 Debug Warn => blackhole
+2019-11-08 17:17:33.8195 Debug Error => blackhole
+2019-11-08 17:17:33.8195 Debug Fatal => blackhole
+2019-11-08 17:17:33.9072 Debug Hide assemblies for callsite
+2019-11-08 17:17:33.9072 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2019-11-08 17:17:33.9094 Debug ScanAssembly('NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2019-11-08 17:17:33.9094 Debug Loading config from F:\GitHubProject\ShuiYinTong.API\shuiyintong.Api\bin\Debug\netcoreapp2.2//NLog.config
+2019-11-08 17:17:33.9094 Info Configuring from an XML element in F:\GitHubProject\ShuiYinTong.API\shuiyintong.Api\bin\Debug\netcoreapp2.2//NLog.config...
+2019-11-08 17:17:33.9094 Info Message Template Auto Format enabled
+2019-11-08 17:17:33.9094 Info Loading assembly: NLog.Web.AspNetCore
+2019-11-08 17:17:33.9094 Debug ScanAssembly('NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2019-11-08 17:17:33.9094 Debug Setting 'UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2019-11-08 17:17:33.9094 Debug Setting 'NullTarget.name' to 'blackhole'
+2019-11-08 17:17:33.9094 Info Adding target NullTarget(Name=blackhole)
+2019-11-08 17:17:33.9094 Debug Registered target blackhole: NLog.Targets.NullTarget
+2019-11-08 17:17:33.9094 Debug Setting 'DatabaseTarget.commandText' to '
+        insert into nlog(Application,Logged,Level,Message,Logger,CallSite,Exception)
+        values(@Application,@Logged,@Level,@Message,@Logger,@Callsite,@Exception)
+      '
+2019-11-08 17:17:33.9094 Debug Setting 'DatabaseTarget.dbProvider' to 'MySql.Data.MySqlClient.MySqlConnection, MySql.Data'
+2019-11-08 17:17:33.9094 Debug Setting 'DatabaseTarget.name' to 'database'
+2019-11-08 17:17:33.9094 Debug Setting 'DatabaseTarget.connectionstring' to 'Data Source=192.168.56.105;initial catalog=test;user id=root;password=123456;SslMode=none'
+2019-11-08 17:17:33.9094 Debug Setting 'DatabaseParameterInfo.name' to '@application'
+2019-11-08 17:17:33.9094 Debug Setting 'DatabaseParameterInfo.layout' to 'shuiyitong.API'
+2019-11-08 17:17:33.9094 Debug Setting 'DatabaseParameterInfo.name' to '@logged'
+2019-11-08 17:17:33.9094 Debug Setting 'DatabaseParameterInfo.layout' to '${date}'
+2019-11-08 17:17:33.9094 Debug Setting 'DatabaseParameterInfo.name' to '@level'
+2019-11-08 17:17:33.9257 Debug Setting 'DatabaseParameterInfo.layout' to '${level}'
+2019-11-08 17:17:33.9257 Debug Setting 'DatabaseParameterInfo.name' to '@message'
+2019-11-08 17:17:33.9257 Debug Setting 'DatabaseParameterInfo.layout' to '${message}'
+2019-11-08 17:17:33.9257 Debug Setting 'DatabaseParameterInfo.name' to '@logger'
+2019-11-08 17:17:33.9257 Debug Setting 'DatabaseParameterInfo.layout' to '${logger}'
+2019-11-08 17:17:33.9257 Debug Setting 'DatabaseParameterInfo.name' to '@callSite'
+2019-11-08 17:17:33.9257 Debug Setting 'DatabaseParameterInfo.layout' to '${callsite:filename=true}'
+2019-11-08 17:17:33.9257 Debug Setting 'CallSiteLayoutRenderer.filename' to 'true'
+2019-11-08 17:17:33.9257 Debug Setting 'DatabaseParameterInfo.name' to '@exception'
+2019-11-08 17:17:33.9257 Debug Setting 'DatabaseParameterInfo.layout' to '${exception:tostring}'
+2019-11-08 17:17:33.9257 Debug Setting 'ExceptionLayoutRenderer.Format' to 'tostring'
+2019-11-08 17:17:33.9257 Info Adding target DatabaseTarget(Name=database)
+2019-11-08 17:17:33.9257 Debug Registered target database: NLog.Targets.DatabaseTarget
+2019-11-08 17:17:33.9257 Debug Unused target checking is started... Rule Count: 2, Target Count: 2
+2019-11-08 17:17:33.9257 Debug Unused target checking is completed. Total Rule Count: 2, Total Target Count: 2, Unused Target Count: 0
+2019-11-08 17:17:33.9257 Info Closing old configuration.
+2019-11-08 17:17:33.9656 Debug Closing logging configuration...
+2019-11-08 17:17:33.9656 Debug Closing target 'Null Target[blackhole]'.
+2019-11-08 17:17:33.9656 Debug Closed target 'Null Target[blackhole]'.
+2019-11-08 17:17:33.9656 Debug Closing target 'Database Target[database]'.
+2019-11-08 17:17:33.9656 Debug Closed target 'Database Target[database]'.
+2019-11-08 17:17:33.9656 Debug Finished closing logging configuration.
+2019-11-08 17:17:33.9737 Debug Stopping file watching for path 'F:\GitHubProject\ShuiYinTong.API\shuiyintong.Api\bin\Debug\netcoreapp2.2' filter 'NLog.config'
+2019-11-08 17:17:33.9737 Debug Watching path 'F:\GitHubProject\ShuiYinTong.API\shuiyintong.Api\bin\Debug\netcoreapp2.2' filter 'NLog.config' for changes.
+2019-11-08 17:17:33.9737 Debug --- NLog configuration dump ---
+2019-11-08 17:17:33.9737 Debug Targets:
+2019-11-08 17:17:33.9737 Debug Null Target[blackhole]
+2019-11-08 17:17:33.9737 Debug Database Target[database]
+2019-11-08 17:17:33.9737 Debug Rules:
+2019-11-08 17:17:33.9737 Debug logNamePattern: (Microsoft.:StartsWith) levels: [ Debug Info Warn Error Fatal ] appendTo: [ blackhole ]
+2019-11-08 17:17:33.9737 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ database ]
+2019-11-08 17:17:33.9737 Debug --- End of NLog configuration dump ---
+2019-11-08 17:17:33.9737 Info Found 41 configuration items
+2019-11-08 17:17:33.9737 Debug Targets for Microsoft.AspNetCore.Hosting.Internal.WebHost by level:
+2019-11-08 17:17:33.9737 Debug Trace =>
+2019-11-08 17:17:33.9737 Debug Debug => blackhole
+2019-11-08 17:17:33.9737 Debug Info => blackhole
+2019-11-08 17:17:33.9737 Debug Warn => blackhole
+2019-11-08 17:17:33.9873 Debug Error => blackhole
+2019-11-08 17:17:33.9873 Debug Fatal => blackhole
+2019-11-08 17:17:33.9873 Debug Targets for Microsoft.AspNetCore.Hosting.Internal.ApplicationLifetime by level:
+2019-11-08 17:17:33.9873 Debug Trace =>
+2019-11-08 17:17:33.9873 Debug Debug => blackhole
+2019-11-08 17:17:33.9873 Debug Info => blackhole
+2019-11-08 17:17:33.9873 Debug Warn => blackhole
+2019-11-08 17:17:33.9873 Debug Error => blackhole
+2019-11-08 17:17:33.9873 Debug Fatal => blackhole
+2019-11-08 17:17:33.9873 Debug Targets for Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets by level:
+2019-11-08 17:17:33.9873 Debug Trace =>
+2019-11-08 17:17:33.9873 Debug Debug => blackhole
+2019-11-08 17:17:33.9873 Debug Info => blackhole
+2019-11-08 17:17:33.9873 Debug Warn => blackhole
+2019-11-08 17:17:33.9873 Debug Error => blackhole
+2019-11-08 17:17:33.9873 Debug Fatal => blackhole
+2019-11-08 17:17:33.9873 Debug Targets for Microsoft.AspNetCore.Server.Kestrel by level:
+2019-11-08 17:17:33.9873 Debug Trace =>
+2019-11-08 17:17:33.9873 Debug Debug => blackhole
+2019-11-08 17:17:33.9873 Debug Info => blackhole
+2019-11-08 17:17:33.9873 Debug Warn => blackhole
+2019-11-08 17:17:33.9873 Debug Error => blackhole
+2019-11-08 17:17:33.9873 Debug Fatal => blackhole
+2019-11-08 17:17:33.9873 Debug Targets for Microsoft.AspNetCore.DataProtection.TypeForwardingActivator by level:
+2019-11-08 17:17:33.9873 Debug Trace =>
+2019-11-08 17:17:33.9873 Debug Debug => blackhole
+2019-11-08 17:17:33.9873 Debug Info => blackhole
+2019-11-08 17:17:33.9873 Debug Warn => blackhole
+2019-11-08 17:17:33.9873 Debug Error => blackhole
+2019-11-08 17:17:33.9873 Debug Fatal => blackhole
+2019-11-08 17:17:33.9873 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager by level:
+2019-11-08 17:17:33.9873 Debug Trace =>
+2019-11-08 17:17:33.9873 Debug Debug => blackhole
+2019-11-08 17:17:33.9873 Debug Info => blackhole
+2019-11-08 17:17:33.9873 Debug Warn => blackhole
+2019-11-08 17:17:33.9873 Debug Error => blackhole
+2019-11-08 17:17:33.9873 Debug Fatal => blackhole
+2019-11-08 17:17:33.9873 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory by level:
+2019-11-08 17:17:34.0028 Debug Trace =>
+2019-11-08 17:17:34.0028 Debug Debug => blackhole
+2019-11-08 17:17:34.0028 Debug Info => blackhole
+2019-11-08 17:17:34.0028 Debug Warn => blackhole
+2019-11-08 17:17:34.0028 Debug Error => blackhole
+2019-11-08 17:17:34.0028 Debug Fatal => blackhole
+2019-11-08 17:17:34.0028 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory by level:
+2019-11-08 17:17:34.0028 Debug Trace =>
+2019-11-08 17:17:34.0028 Debug Debug => blackhole
+2019-11-08 17:17:34.0028 Debug Info => blackhole
+2019-11-08 17:17:34.0028 Debug Warn => blackhole
+2019-11-08 17:17:34.0028 Debug Error => blackhole
+2019-11-08 17:17:34.0028 Debug Fatal => blackhole
+2019-11-08 17:17:34.0028 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory by level:
+2019-11-08 17:17:34.0028 Debug Trace =>
+2019-11-08 17:17:34.0028 Debug Debug => blackhole
+2019-11-08 17:17:34.0028 Debug Info => blackhole
+2019-11-08 17:17:34.0028 Debug Warn => blackhole
+2019-11-08 17:17:34.0028 Debug Error => blackhole
+2019-11-08 17:17:34.0028 Debug Fatal => blackhole
+2019-11-08 17:17:34.0028 Debug Targets for Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor by level:
+2019-11-08 17:17:34.0028 Debug Trace =>
+2019-11-08 17:17:34.0028 Debug Debug => blackhole
+2019-11-08 17:17:34.0028 Debug Info => blackhole
+2019-11-08 17:17:34.0028 Debug Warn => blackhole
+2019-11-08 17:17:34.0028 Debug Error => blackhole
+2019-11-08 17:17:34.0028 Debug Fatal => blackhole
+2019-11-08 17:17:34.0028 Debug Targets for Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository by level:
+2019-11-08 17:17:34.0028 Debug Trace =>
+2019-11-08 17:17:34.0028 Debug Debug => blackhole
+2019-11-08 17:17:34.0028 Debug Info => blackhole
+2019-11-08 17:17:34.0028 Debug Warn => blackhole
+2019-11-08 17:17:34.0028 Debug Error => blackhole
+2019-11-08 17:17:34.0028 Debug Fatal => blackhole
+2019-11-08 17:17:34.0193 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver by level:
+2019-11-08 17:17:34.0193 Debug Trace =>
+2019-11-08 17:17:34.0193 Debug Debug => blackhole
+2019-11-08 17:17:34.0193 Debug Info => blackhole
+2019-11-08 17:17:34.0193 Debug Warn => blackhole
+2019-11-08 17:17:34.0193 Debug Error => blackhole
+2019-11-08 17:17:34.0193 Debug Fatal => blackhole
+2019-11-08 17:17:34.0193 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider by level:
+2019-11-08 17:17:34.0193 Debug Trace =>
+2019-11-08 17:17:34.0193 Debug Debug => blackhole
+2019-11-08 17:17:34.0193 Debug Info => blackhole
+2019-11-08 17:17:34.0193 Debug Warn => blackhole
+2019-11-08 17:17:34.0193 Debug Error => blackhole
+2019-11-08 17:17:34.0193 Debug Fatal => blackhole
+2019-11-08 17:17:34.0193 Debug Targets for Microsoft.AspNetCore.DataProtection.Internal.DataProtectionStartupFilter by level:
+2019-11-08 17:17:34.0193 Debug Trace =>
+2019-11-08 17:17:34.0193 Debug Debug => blackhole
+2019-11-08 17:17:34.0193 Debug Info => blackhole
+2019-11-08 17:17:34.0193 Debug Warn => blackhole
+2019-11-08 17:17:34.0193 Debug Error => blackhole
+2019-11-08 17:17:34.0193 Debug Fatal => blackhole
+2019-11-08 17:17:34.0193 Debug Targets for Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor by level:
+2019-11-08 17:17:34.0193 Debug Trace =>
+2019-11-08 17:17:34.0193 Debug Debug => blackhole
+2019-11-08 17:17:34.0193 Debug Info => blackhole
+2019-11-08 17:17:34.0193 Debug Warn => blackhole
+2019-11-08 17:17:34.0193 Debug Error => blackhole
+2019-11-08 17:17:34.0193 Debug Fatal => blackhole
+2019-11-08 17:17:34.0550 Debug Targets for Microsoft.AspNetCore.Mvc.MvcJsonOptions by level:
+2019-11-08 17:17:34.0550 Debug Trace =>
+2019-11-08 17:17:34.0550 Debug Debug => blackhole
+2019-11-08 17:17:34.0550 Debug Info => blackhole
+2019-11-08 17:17:34.0550 Debug Warn => blackhole
+2019-11-08 17:17:34.0550 Debug Error => blackhole
+2019-11-08 17:17:34.0550 Debug Fatal => blackhole
+2019-11-08 17:17:34.0652 Debug Targets for Microsoft.AspNetCore.Mvc.MvcOptions by level:
+2019-11-08 17:17:34.0652 Debug Trace =>
+2019-11-08 17:17:34.0652 Debug Debug => blackhole
+2019-11-08 17:17:34.0652 Debug Info => blackhole
+2019-11-08 17:17:34.0652 Debug Warn => blackhole
+2019-11-08 17:17:34.0652 Debug Error => blackhole
+2019-11-08 17:17:34.0652 Debug Fatal => blackhole
+2019-11-08 17:17:34.0898 Debug Targets for Microsoft.AspNetCore.Mvc.Formatters.JsonPatchInputFormatter by level:
+2019-11-08 17:17:34.0898 Debug Trace =>
+2019-11-08 17:17:34.0898 Debug Debug => blackhole
+2019-11-08 17:17:34.0898 Debug Info => blackhole
+2019-11-08 17:17:34.0898 Debug Warn => blackhole
+2019-11-08 17:17:34.0898 Debug Error => blackhole
+2019-11-08 17:17:34.0898 Debug Fatal => blackhole
+2019-11-08 17:17:34.0898 Debug Targets for Microsoft.AspNetCore.Mvc.Formatters.JsonInputFormatter by level:
+2019-11-08 17:17:34.0898 Debug Trace =>
+2019-11-08 17:17:34.0898 Debug Debug => blackhole
+2019-11-08 17:17:34.0898 Debug Info => blackhole
+2019-11-08 17:17:34.0898 Debug Warn => blackhole
+2019-11-08 17:17:34.0898 Debug Error => blackhole
+2019-11-08 17:17:34.0898 Debug Fatal => blackhole
+2019-11-08 17:17:34.1248 Debug Targets for Microsoft.AspNetCore.Mvc.ApiBehaviorOptions by level:
+2019-11-08 17:17:34.1248 Debug Trace =>
+2019-11-08 17:17:34.1248 Debug Debug => blackhole
+2019-11-08 17:17:34.1248 Debug Info => blackhole
+2019-11-08 17:17:34.1248 Debug Warn => blackhole
+2019-11-08 17:17:34.1248 Debug Error => blackhole
+2019-11-08 17:17:34.1281 Debug Fatal => blackhole
+2019-11-08 17:17:34.1495 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions by level:
+2019-11-08 17:17:34.1495 Debug Trace =>
+2019-11-08 17:17:34.1495 Debug Debug => blackhole
+2019-11-08 17:17:34.1495 Debug Info => blackhole
+2019-11-08 17:17:34.1495 Debug Warn => blackhole
+2019-11-08 17:17:34.1495 Debug Error => blackhole
+2019-11-08 17:17:34.1495 Debug Fatal => blackhole
+2019-11-08 17:17:34.1592 Debug Targets for Microsoft.AspNetCore.Mvc.RazorPages.RazorPagesOptions by level:
+2019-11-08 17:17:34.1592 Debug Trace =>
+2019-11-08 17:17:34.1592 Debug Debug => blackhole
+2019-11-08 17:17:34.1592 Debug Info => blackhole
+2019-11-08 17:17:34.1592 Debug Warn => blackhole
+2019-11-08 17:17:34.1592 Debug Error => blackhole
+2019-11-08 17:17:34.1592 Debug Fatal => blackhole
+2019-11-08 17:17:34.2128 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.Internal.RazorViewCompiler by level:
+2019-11-08 17:17:34.2128 Debug Trace =>
+2019-11-08 17:17:34.2128 Debug Debug => blackhole
+2019-11-08 17:17:34.2128 Debug Info => blackhole
+2019-11-08 17:17:34.2128 Debug Warn => blackhole
+2019-11-08 17:17:34.2128 Debug Error => blackhole
+2019-11-08 17:17:34.2128 Debug Fatal => blackhole
+2019-11-08 17:17:34.2338 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine by level:
+2019-11-08 17:17:34.2338 Debug Trace =>
+2019-11-08 17:17:34.2373 Debug Debug => blackhole
+2019-11-08 17:17:34.2373 Debug Info => blackhole
+2019-11-08 17:17:34.2373 Debug Warn => blackhole
+2019-11-08 17:17:34.2373 Debug Error => blackhole
+2019-11-08 17:17:34.2373 Debug Fatal => blackhole
+2019-11-08 17:17:34.2373 Debug Targets for Microsoft.AspNetCore.Mvc.MvcViewOptions by level:
+2019-11-08 17:17:34.2373 Debug Trace =>
+2019-11-08 17:17:34.2373 Debug Debug => blackhole
+2019-11-08 17:17:34.2373 Debug Info => blackhole
+2019-11-08 17:17:34.2373 Debug Warn => blackhole
+2019-11-08 17:17:34.2373 Debug Error => blackhole
+2019-11-08 17:17:34.2373 Debug Fatal => blackhole
+2019-11-08 17:17:34.2541 Debug Targets for Microsoft.AspNetCore.Mvc.RazorPages.Internal.RazorProjectPageRouteModelProvider by level:
+2019-11-08 17:17:34.2541 Debug Trace =>
+2019-11-08 17:17:34.2541 Debug Debug => blackhole
+2019-11-08 17:17:34.2541 Debug Info => blackhole
+2019-11-08 17:17:34.2541 Debug Warn => blackhole
+2019-11-08 17:17:34.2541 Debug Error => blackhole
+2019-11-08 17:17:34.2541 Debug Fatal => blackhole
+2019-11-08 17:17:34.2541 Debug Targets for Microsoft.AspNetCore.Mvc.RazorPages.Internal.CompiledPageRouteModelProvider by level:
+2019-11-08 17:17:34.2541 Debug Trace =>
+2019-11-08 17:17:34.2541 Debug Debug => blackhole
+2019-11-08 17:17:34.2541 Debug Info => blackhole
+2019-11-08 17:17:34.2541 Debug Warn => blackhole
+2019-11-08 17:17:34.2541 Debug Error => blackhole
+2019-11-08 17:17:34.2541 Debug Fatal => blackhole
+2019-11-08 17:17:34.2810 Debug Targets for Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory by level:
+2019-11-08 17:17:34.2810 Debug Trace =>
+2019-11-08 17:17:34.2810 Debug Debug => blackhole
+2019-11-08 17:17:34.2810 Debug Info => blackhole
+2019-11-08 17:17:34.2810 Debug Warn => blackhole
+2019-11-08 17:17:34.2810 Debug Error => blackhole
+2019-11-08 17:17:34.2810 Debug Fatal => blackhole
+2019-11-08 17:17:34.2995 Debug Targets for Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder by level:
+2019-11-08 17:17:34.2995 Debug Trace =>
+2019-11-08 17:17:34.2995 Debug Debug => blackhole
+2019-11-08 17:17:34.2995 Debug Info => blackhole
+2019-11-08 17:17:34.2995 Debug Warn => blackhole
+2019-11-08 17:17:34.2995 Debug Error => blackhole
+2019-11-08 17:17:34.2995 Debug Fatal => blackhole
+2019-11-08 17:17:34.2995 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker by level:
+2019-11-08 17:17:34.2995 Debug Trace =>
+2019-11-08 17:17:34.2995 Debug Debug => blackhole
+2019-11-08 17:17:34.2995 Debug Info => blackhole
+2019-11-08 17:17:34.2995 Debug Warn => blackhole
+2019-11-08 17:17:34.2995 Debug Error => blackhole
+2019-11-08 17:17:34.2995 Debug Fatal => blackhole
+2019-11-08 17:17:34.3269 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector by level:
+2019-11-08 17:17:34.3269 Debug Trace =>
+2019-11-08 17:17:34.3269 Debug Debug => blackhole
+2019-11-08 17:17:34.3269 Debug Info => blackhole
+2019-11-08 17:17:34.3269 Debug Warn => blackhole
+2019-11-08 17:17:34.3269 Debug Error => blackhole
+2019-11-08 17:17:34.3269 Debug Fatal => blackhole
+2019-11-08 17:17:34.3382 Debug Targets for Microsoft.AspNetCore.Mvc.ViewFeatures.CookieTempDataProvider by level:
+2019-11-08 17:17:34.3382 Debug Trace =>
+2019-11-08 17:17:34.3382 Debug Debug => blackhole
+2019-11-08 17:17:34.3382 Debug Info => blackhole
+2019-11-08 17:17:34.3382 Debug Warn => blackhole
+2019-11-08 17:17:34.3382 Debug Error => blackhole
+2019-11-08 17:17:34.3382 Debug Fatal => blackhole
+2019-11-08 17:17:34.3629 Debug Targets for Microsoft.AspNetCore.Mvc.RazorPages.Internal.PageActionInvoker by level:
+2019-11-08 17:17:34.3629 Debug Trace =>
+2019-11-08 17:17:34.3629 Debug Debug => blackhole
+2019-11-08 17:17:34.3629 Debug Info => blackhole
+2019-11-08 17:17:34.3629 Debug Warn => blackhole
+2019-11-08 17:17:34.3629 Debug Error => blackhole
+2019-11-08 17:17:34.3629 Debug Fatal => blackhole
+2019-11-08 17:17:34.3629 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.ActionSelector by level:
+2019-11-08 17:17:34.3629 Debug Trace =>
+2019-11-08 17:17:34.3629 Debug Debug => blackhole
+2019-11-08 17:17:34.3629 Debug Info => blackhole
+2019-11-08 17:17:34.3629 Debug Warn => blackhole
+2019-11-08 17:17:34.3629 Debug Error => blackhole
+2019-11-08 17:17:34.3629 Debug Fatal => blackhole
+2019-11-08 17:17:34.3629 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.MvcRouteHandler by level:
+2019-11-08 17:17:34.3629 Debug Trace =>
+2019-11-08 17:17:34.3629 Debug Debug => blackhole
+2019-11-08 17:17:34.3778 Debug Info => blackhole
+2019-11-08 17:17:34.3778 Debug Warn => blackhole
+2019-11-08 17:17:34.3778 Debug Error => blackhole
+2019-11-08 17:17:34.3778 Debug Fatal => blackhole
+2019-11-08 17:17:34.3937 Debug Targets for Microsoft.AspNetCore.Builder.RouterMiddleware by level:
+2019-11-08 17:17:34.3937 Debug Trace =>
+2019-11-08 17:17:34.3937 Debug Debug => blackhole
+2019-11-08 17:17:34.3937 Debug Info => blackhole
+2019-11-08 17:17:34.3937 Debug Warn => blackhole
+2019-11-08 17:17:34.3937 Debug Error => blackhole
+2019-11-08 17:17:34.3937 Debug Fatal => blackhole
+2019-11-08 17:17:34.4177 Debug Targets for Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware by level:
+2019-11-08 17:17:34.4177 Debug Trace =>
+2019-11-08 17:17:34.4177 Debug Debug => blackhole
+2019-11-08 17:17:34.4177 Debug Info => blackhole
+2019-11-08 17:17:34.4177 Debug Warn => blackhole
+2019-11-08 17:17:34.4177 Debug Error => blackhole
+2019-11-08 17:17:34.4177 Debug Fatal => blackhole
+2019-11-08 17:17:34.4333 Debug Targets for Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware by level:
+2019-11-08 17:17:34.4333 Debug Trace =>
+2019-11-08 17:17:34.4333 Debug Debug => blackhole
+2019-11-08 17:17:34.4333 Debug Info => blackhole
+2019-11-08 17:17:34.4333 Debug Warn => blackhole
+2019-11-08 17:17:34.4333 Debug Error => blackhole
+2019-11-08 17:17:34.4333 Debug Fatal => blackhole
+2019-11-08 17:17:34.4440 Debug Targets for Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware by level:
+2019-11-08 17:17:34.4440 Debug Trace =>
+2019-11-08 17:17:34.4440 Debug Debug => blackhole
+2019-11-08 17:17:34.4440 Debug Info => blackhole
+2019-11-08 17:17:34.4440 Debug Warn => blackhole
+2019-11-08 17:17:34.4440 Debug Error => blackhole
+2019-11-08 17:17:34.4440 Debug Fatal => blackhole
+2019-11-08 17:17:34.4440 Debug Targets for Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware by level:
+2019-11-08 17:17:34.4560 Debug Trace =>
+2019-11-08 17:17:34.4560 Debug Debug => blackhole
+2019-11-08 17:17:34.4560 Debug Info => blackhole
+2019-11-08 17:17:34.4560 Debug Warn => blackhole
+2019-11-08 17:17:34.4560 Debug Error => blackhole
+2019-11-08 17:17:34.4560 Debug Fatal => blackhole
+2019-11-08 17:17:34.4560 Debug Targets for Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersMiddleware by level:
+2019-11-08 17:17:34.4560 Debug Trace =>
+2019-11-08 17:17:34.4560 Debug Debug => blackhole
+2019-11-08 17:17:34.4560 Debug Info => blackhole
+2019-11-08 17:17:34.4560 Debug Warn => blackhole
+2019-11-08 17:17:34.4560 Debug Error => blackhole
+2019-11-08 17:17:34.4560 Debug Fatal => blackhole
+2019-11-08 17:17:34.4560 Debug Targets for Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware by level:
+2019-11-08 17:17:34.4560 Debug Trace =>
+2019-11-08 17:17:34.4560 Debug Debug => blackhole
+2019-11-08 17:17:34.4560 Debug Info => blackhole
+2019-11-08 17:17:34.4560 Debug Warn => blackhole
+2019-11-08 17:17:34.4560 Debug Error => blackhole
+2019-11-08 17:17:34.4560 Debug Fatal => blackhole
+2019-11-08 17:17:34.4763 Debug Targets for Microsoft.AspNetCore.Hosting.Internal.HostedServiceExecutor by level:
+2019-11-08 17:17:34.4763 Debug Trace =>
+2019-11-08 17:17:34.4763 Debug Debug => blackhole
+2019-11-08 17:17:34.4763 Debug Info => blackhole
+2019-11-08 17:17:34.4763 Debug Warn => blackhole
+2019-11-08 17:17:34.4763 Debug Error => blackhole
+2019-11-08 17:17:34.4763 Debug Fatal => blackhole
+2019-11-08 17:17:34.4904 Debug Targets for Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer by level:
+2019-11-08 17:17:34.4904 Debug Trace =>
+2019-11-08 17:17:34.4904 Debug Debug => blackhole
+2019-11-08 17:17:34.4904 Debug Info => blackhole
+2019-11-08 17:17:34.4904 Debug Warn => blackhole
+2019-11-08 17:17:34.4904 Debug Error => blackhole
+2019-11-08 17:17:34.4904 Debug Fatal => blackhole
+2019-11-08 17:17:40.7298 Debug Targets for Microsoft.AspNetCore.Routing.Tree.TreeRouter by level:
+2019-11-08 17:17:40.7298 Debug Trace =>
+2019-11-08 17:17:40.7298 Debug Debug => blackhole
+2019-11-08 17:17:40.7298 Debug Info => blackhole
+2019-11-08 17:17:40.7384 Debug Warn => blackhole
+2019-11-08 17:17:40.7384 Debug Error => blackhole
+2019-11-08 17:17:40.7384 Debug Fatal => blackhole
+2019-11-08 17:17:40.7384 Debug Targets for Microsoft.AspNetCore.Routing.RouteConstraintMatcher by level:
+2019-11-08 17:17:40.7384 Debug Trace =>
+2019-11-08 17:17:40.7384 Debug Debug => blackhole
+2019-11-08 17:17:40.7384 Debug Info => blackhole
+2019-11-08 17:17:40.7384 Debug Warn => blackhole
+2019-11-08 17:17:40.7384 Debug Error => blackhole
+2019-11-08 17:17:40.7384 Debug Fatal => blackhole
+2019-11-08 17:17:40.7384 Debug Targets for Microsoft.AspNetCore.Mvc.Internal.MvcAttributeRouteHandler by level:
+2019-11-08 17:17:40.7556 Debug Trace =>
+2019-11-08 17:17:40.7556 Debug Debug => blackhole
+2019-11-08 17:17:40.7556 Debug Info => blackhole
+2019-11-08 17:17:40.7556 Debug Warn => blackhole
+2019-11-08 17:17:40.7556 Debug Error => blackhole
+2019-11-08 17:17:40.7556 Debug Fatal => blackhole
+2019-11-08 17:17:40.8053 Debug Targets for Microsoft.AspNetCore.Cors.Infrastructure.CorsService by level:
+2019-11-08 17:17:40.8053 Debug Trace =>
+2019-11-08 17:17:40.8053 Debug Debug => blackhole
+2019-11-08 17:17:40.8053 Debug Info => blackhole
+2019-11-08 17:17:40.8053 Debug Warn => blackhole
+2019-11-08 17:17:40.8053 Debug Error => blackhole
+2019-11-08 17:17:40.8053 Debug Fatal => blackhole
+2019-11-08 17:17:40.8053 Debug Targets for Microsoft.AspNetCore.Mvc.Cors.CorsAuthorizationFilter by level:
+2019-11-08 17:17:40.8053 Debug Trace =>
+2019-11-08 17:17:40.8053 Debug Debug => blackhole
+2019-11-08 17:17:40.8053 Debug Info => blackhole
+2019-11-08 17:17:40.8053 Debug Warn => blackhole
+2019-11-08 17:17:40.8053 Debug Error => blackhole
+2019-11-08 17:17:40.8053 Debug Fatal => blackhole
+2019-11-08 17:17:40.8173 Debug Targets for shuiyintong.Api.Validate.ValidateModelFilter by level:
+2019-11-08 17:17:40.8173 Debug Trace =>
+2019-11-08 17:17:40.8173 Debug Debug => database
+2019-11-08 17:17:40.8173 Debug Info => database
+2019-11-08 17:17:40.8173 Debug Warn => database
+2019-11-08 17:17:40.8173 Debug Error => database
+2019-11-08 17:17:40.8173 Debug Fatal => database
+2019-11-08 17:17:40.8173 Debug Targets for Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder by level:
+2019-11-08 17:17:40.8173 Debug Trace =>
+2019-11-08 17:17:40.8308 Debug Debug => blackhole
+2019-11-08 17:17:40.8308 Debug Info => blackhole
+2019-11-08 17:17:40.8308 Debug Warn => blackhole
+2019-11-08 17:17:40.8308 Debug Error => blackhole
+2019-11-08 17:17:40.8308 Debug Fatal => blackhole

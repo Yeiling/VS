@@ -396,6 +396,11 @@
             <param name="env"></param>
             <param name="loggerFactory">NLog</param>
         </member>
+        <member name="T:shuiyintong.Api.Validate.ErrorHandlingMiddleware">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:shuiyintong.Api.Validate.ValidateExceptionFilter">
             <summary>
             WebAPI异常处理过滤---重写ExceptionFilterAttribute

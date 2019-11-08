@@ -222,6 +222,7 @@ namespace shuiyintong.Api
                 //Swagger引入汉化
                 //c.InjectJavascript($"/swagger.js");
             });
+
             //扩展路由
             app.UseMvc(routes =>
             {
