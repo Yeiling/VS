@@ -47,6 +47,20 @@ namespace shuiyintong.Api
         /// <returns></returns>
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
+            //控制器注入时，替换服务
+            services.Replace(ServiceDescriptor.Transient<IControllerActivator, ServiceBasedControllerActivator>());
+
+            services.AddMvc(option =>
+            {
+                //Http添加请求参数验证---请求参数验证
+                option.Filters.Add<ValidateModelFilter>();
+                //Http请求异常处理验证---异常处理验证
+                option.Filters.Add<ValidateExceptionFilter>();
+                //Http添加请求结果验证---请求结果验证
+                option.Filters.Add<ValidateResultFilter>();
+
+            });//.SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
             // 注册Swagger服务
             services.AddSwaggerGen(c =>
             {
@@ -77,19 +91,6 @@ namespace shuiyintong.Api
                     { "Bearer", Enumerable.Empty<string>() }
                 });
             });
-            //控制器注入时，替换服务
-            services.Replace(ServiceDescriptor.Transient<IControllerActivator, ServiceBasedControllerActivator>());
-
-            services.AddMvc(option =>
-            {
-                //Http添加请求参数验证---请求参数验证
-                option.Filters.Add<ValidateModelFilter>();
-                //Http请求异常处理验证---异常处理验证
-                option.Filters.Add<ValidateExceptionFilter>();
-                //Http添加请求结果验证---请求结果验证
-                option.Filters.Add<ValidateResultFilter>();              
-
-            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             //读取配置Json文件
             services.UseJsonConfig(Configuration);
@@ -219,7 +220,7 @@ namespace shuiyintong.Api
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "ShuiYinTong.WebApi");
                 c.RoutePrefix = string.Empty;
                 //Swagger引入汉化
-                c.InjectJavascript($"/swagger.js");
+                //c.InjectJavascript($"/swagger.js");
             });
             //扩展路由
             app.UseMvc(routes =>
