@@ -108,40 +108,6 @@
             数据库链接字符串
             </summary>
         </member>
-        <member name="T:shuiyintong.Api.Controllers.DefaultController">
-            <summary>
-            测试使用
-            </summary>
-        </member>
-        <member name="F:shuiyintong.Api.Controllers.DefaultController.nlog">
-            <summary>
-            获得日志实例
-            </summary>
-        </member>
-        <member name="F:shuiyintong.Api.Controllers.DefaultController.SPDBankConfig">
-            <summary>
-            浦发银行配合信息
-            </summary>
-        </member>
-        <member name="F:shuiyintong.Api.Controllers.DefaultController.Code">
-            <summary>
-            Http请求返回Code
-            </summary>
-        </member>
-        <member name="M:shuiyintong.Api.Controllers.DefaultController.SingleTransfer(shuiyintong.Entity.SPDBankEntity.SPDBankReq.SingleTransferReq)">
-            <summary>
-            单笔划拨--日志测试
-            </summary>
-            <param name="singleTransferReq">请求参数</param>
-        </member>
-        <member name="M:shuiyintong.Api.Controllers.DefaultController.GetHeaderSign(System.Object,System.String@)">
-            <summary>
-            获取签名
-            </summary>
-            <param name="obj">对象参数</param>
-            <param name="dataRequest">请求Json字符串</param>
-            <returns></returns>
-        </member>
         <member name="T:shuiyintong.Api.Controllers.SPDBankController">
             <summary>
             浦发银行接口
