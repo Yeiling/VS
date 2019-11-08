@@ -212,7 +212,6 @@ namespace shuiyintong.Api
             var path = Path.GetDirectoryName(xmlFile.Location);
             env.ConfigureNLog(path + "\\NLog.config");
 
-
             //添加Swagger
             app.UseSwagger();
             app.UseSwaggerUI(c =>
