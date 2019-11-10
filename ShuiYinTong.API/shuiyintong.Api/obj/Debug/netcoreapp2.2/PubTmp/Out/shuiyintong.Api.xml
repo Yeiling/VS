@@ -402,7 +402,7 @@
             <summary>
             重写基类的异常处理方法
             </summary>
-            <param name="exceptionContext"></param>
+            <param name="context"></param>
         </member>
         <member name="M:shuiyintong.Api.Validate.ValidateExceptionFilter.OnExceptionAsync(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
             <summary>
