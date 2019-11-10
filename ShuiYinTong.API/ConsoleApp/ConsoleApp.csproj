@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\shuiyintong.dbutils\shuiyintong.DBUtils.csproj" />
+    <ProjectReference Include="..\shuiyintong.Entity\shuiyintong.Entity.csproj" />
+    <ProjectReference Include="..\shuiyintong.SPDB\shuiyintong.SPDB.csproj" />
+  </ItemGroup>
+
+</Project>

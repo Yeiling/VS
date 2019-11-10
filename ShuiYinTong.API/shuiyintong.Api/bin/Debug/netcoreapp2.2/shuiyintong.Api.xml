@@ -1,0 +1,507 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>shuiyintong.Api</name>
+    </assembly>
+    <members>
+        <member name="T:shuiyintong.Api.AutoFacAop.LogAfterInterceptor">
+            <summary>
+            Aspect AOP定义一个前置拦截器
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.AutoFacAop.LogAfterInterceptor.After(Autofac.Aspect.AspectContext)">
+            <summary>
+            后置拦截器拦截器
+            </summary>
+            <param name="aspectContext"></param>
+            <returns></returns>
+        </member>
+        <member name="T:shuiyintong.Api.AutoFacAop.LogArroundInterceptor">
+            <summary>
+            Aspect AOP定义一个环绕拦截器
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.AutoFacAop.LogArroundInterceptor.Before(Autofac.Aspect.AspectContext)">
+            <summary>
+            前置拦截器拦截器
+            </summary>
+            <param name="aspectContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.AutoFacAop.LogArroundInterceptor.After(Autofac.Aspect.AspectContext)">
+            <summary>
+            后置拦截器拦截器
+            </summary>
+            <param name="aspectContext"></param>
+            <returns></returns>
+        </member>
+        <member name="T:shuiyintong.Api.AutoFacAop.LogBeforeInterceptor">
+            <summary>
+            Aspect AOP定义一个前置拦截器---事务
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.AutoFacAop.LogBeforeInterceptor.Before(Autofac.Aspect.AspectContext)">
+            <summary>
+            前置拦截器
+            </summary>
+            <param name="aspectContext"></param>
+            <returns></returns>
+        </member>
+        <member name="T:shuiyintong.Api.AutoFacAop.LogInterceptor">
+            <summary>
+            AutoFac AOP拦截器 需要实现 IInterceptor接口 Intercept方法
+            </summary>
+        </member>
+        <member name="F:shuiyintong.Api.AutoFacAop.LogInterceptor.nlog">
+            <summary>
+            日志记录器
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.AutoFacAop.LogInterceptor.Intercept(Castle.DynamicProxy.IInvocation)">
+            <summary>
+            实现Castle.DynamicProxy(动态代理中的接口IInterceptor)
+            </summary>
+            <param name="invocation"></param>
+        </member>
+        <member name="T:shuiyintong.Api.AutoFacAop.LogInterceptorAttribute">
+            <summary>
+            AspectCore AOP
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.AutoFacAop.LogInterceptorAttribute.Invoke(AspectCore.DynamicProxy.AspectContext,AspectCore.DynamicProxy.AspectDelegate)">
+            <summary>
+            重写AbstractInterceptorAttribute的Invoke方法
+            </summary>
+            <param name="context"></param>
+            <param name="next"></param>
+            <returns></returns>
+        </member>
+        <member name="T:shuiyintong.Api.BuilderJsonConfig">
+            <summary>
+            读取配置文件
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.BuilderJsonConfig.UseJsonConfig(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            实现
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="T:shuiyintong.Api.Controllers.BaseController">
+            <summary>
+            控制器基类
+            </summary>
+        </member>
+        <member name="F:shuiyintong.Api.Controllers.BaseController.bankConfig">
+            <summary>
+            银行配置
+            </summary>
+        </member>
+        <member name="F:shuiyintong.Api.Controllers.BaseController.RedisConn">
+            <summary>
+            Redis链接字符串
+            </summary>
+        </member>
+        <member name="F:shuiyintong.Api.Controllers.BaseController.DBConn">
+            <summary>
+            数据库链接字符串
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Api.Controllers.SPDBankController">
+            <summary>
+            浦发银行接口
+            </summary>
+        </member>
+        <member name="F:shuiyintong.Api.Controllers.SPDBankController.SPDBank">
+            <summary>
+            银行类型---浦发银行
+            </summary>
+        </member>
+        <member name="F:shuiyintong.Api.Controllers.SPDBankController.SPDBankConfig">
+            <summary>
+            浦发银行配合信息
+            </summary>
+        </member>
+        <member name="F:shuiyintong.Api.Controllers.SPDBankController.Code">
+            <summary>
+            Http请求返回Code
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.GetHeaderSign(System.Object,System.String@)">
+            <summary>
+            获取签名
+            </summary>
+            <param name="obj">对象参数</param>
+            <param name="dataRequest">请求Json字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.GenerateDoc(shuiyintong.Entity.SPDBankEntity.SPDBankFile.GuaranteeReq)">
+            <summary>
+            担保函导出Word文档
+            </summary>
+            <param name="guaranteeReq">参数---输出路径必填</param>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.UpLoadfile(shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileUpLoadReq)">
+            <summary>
+            文件上传
+            </summary>
+            <param name="upLoadReq">请求参数</param>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.DownLoadfile(shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileDownLoadReq)">
+            <summary>
+            文件下载
+            </summary>
+            <param name="downLoadReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.AcctInfo(shuiyintong.Entity.SPDBankEntity.SPDBankReq.AccountReq)">
+            <summary>
+            获取账户信息
+            </summary>
+            <param name="accountRequest">请求参数</param>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.AcctDtlInfoQry(shuiyintong.Entity.SPDBankEntity.SPDBankReq.AcctDtlInfoQryReq)">
+            <summary>
+            查询账户信息
+            </summary>
+            <param name="acctInfoReq">请求参数</param>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.SingleTransfer(shuiyintong.Entity.SPDBankEntity.SPDBankReq.SingleTransferReq)">
+            <summary>
+            单笔划拨
+            </summary>
+            <param name="singleTransferReq">请求参数</param>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.SnglTrsfRstlQry(shuiyintong.Entity.SPDBankEntity.SPDBankReq.SnglTrsfRstlQryReq)">
+            <summary>
+            单笔划拨结果查询
+            </summary>
+            <param name="snglTrsfRstlQryReq">请求参数</param>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.ElectRecptApplction(shuiyintong.Entity.SPDBankEntity.SPDBankReq.ElectRecptApplctionReq)">
+            <summary>
+            电子回单申请
+            </summary>
+            <param name="electRecptApplctionReq">请求参数</param>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.FncThdCncl(shuiyintong.Entity.SPDBankEntity.SPDBankReq.FncThdCnclReq)">
+            <summary>
+            三方解约
+            </summary>
+            <param name="fncThdCnclReq">请求参数</param>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.RexgAddInfoQry(shuiyintong.Entity.SPDBankEntity.SPDBankReq.RexgAddInfoQryReq)">
+            <summary>
+            退汇附加信息查询
+            </summary>
+            <param name="rexgAddInfoQryReq">请求参数</param>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.BnkInfoQryCombntnTran(shuiyintong.Entity.SPDBankEntity.SPDBankReq.BnkInfoQryCombntnTranReq)">
+            <summary>
+            根据抹账流水查原往账流水
+            </summary>
+            <param name="bnkInfoQryCombntnTranReq">请求参数</param>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.AuthSmlAmt(shuiyintong.Entity.SPDBankEntity.SPDBankReq.AuthSmlAmtReq)">
+            <summary>
+            单笔资金划拨小额鉴权
+            </summary>
+            <param name="authSmlAmt">请求参数</param>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.PayInsrChk(shuiyintong.Entity.SPDBankEntity.SPDBankReq.PayInsrChkReq)">
+            <summary>
+            支付指令登记
+            </summary>
+            <param name="payInsrChkReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.PayInsrDtlQry(shuiyintong.Entity.SPDBankEntity.SPDBankReq.PayInsrDtlQryReq)">
+            <summary>
+            支付指令明细查询
+            </summary>
+            <param name="payInsrDtlQryReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.PayInsrCnl(shuiyintong.Entity.SPDBankEntity.SPDBankReq.PayInsrCnlReq)">
+            <summary>
+            支付指令取消
+            </summary>
+            <param name="payInsrCnlReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.PayeeWhtLstQry(shuiyintong.Entity.SPDBankEntity.SPDBankReq.PayeeWhtLstQryReq)">
+            <summary>
+            收款人白名单查询
+            </summary>
+            <param name="payeeWhtLstQryReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.PayeeWhtLstMntn(shuiyintong.Entity.SPDBankEntity.SPDBankReq.PayeeWhtLstMntnReq)">
+            <summary>
+            收款人白名单维护
+            </summary>
+            <param name="payeeWhtLstMntnReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.ZLSysInrBnkTfr(shuiyintong.Entity.SPDBankEntity.SPDBankReq.ZLSysInrBnkTfrReq)">
+            <summary>
+            备付金或结算户转客户结算户
+            </summary>
+            <param name="zLSysInrBnkTfrReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.OlBrwLnRepy(shuiyintong.Entity.SPDBankEntity.SPDBankReq.OlBrwLnRepyReq)">
+            <summary>
+            贷款归还
+            </summary>
+            <param name="olBrwLnRepyReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.IntDtlQry(shuiyintong.Entity.SPDBankEntity.SPDBankReq.IntDtlQryReq)">
+            <summary>
+            贷款还款明细查询
+            </summary>
+            <param name="intDtlQryReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.InterestTrial(shuiyintong.Entity.SPDBankEntity.SPDBankReq.InterestTrialReq)">
+            <summary>
+            贷款试算
+            </summary>
+            <param name="interestTrialReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.ReceiptApply(shuiyintong.Entity.SPDBankEntity.SPDBankReq.ReceiptApplyReq)">
+            <summary>
+            电子回单申请
+            </summary>
+            <param name="receiptApplyReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.CorpLnCntlAcctRep(shuiyintong.Entity.SPDBankEntity.SPDBankReq.CorpLnCntlAcctReq)">
+            <summary>
+            对公贷款还款维护
+            </summary>
+            <param name="corpLnCntlAcctReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.OlBrwLnRepyTrl(shuiyintong.Entity.SPDBankEntity.SPDBankReq.OlBrwLnRepyTrlReq)">
+            <summary>
+            归还贷款本金利息试算
+            </summary>
+            <param name="olBrwLnRepyTrlReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.CoreTranQry(shuiyintong.Entity.SPDBankEntity.SPDBankReq.CoreTranQryReq)">
+            <summary>
+            还款查询
+            </summary>
+            <param name="coreTranQryReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.ZLSysBussBkQry(shuiyintong.Entity.SPDBankEntity.SPDBankReq.ZLSysBussBkQryReq)">
+            <summary>
+            划拨结果查询
+            </summary>
+            <param name="zLSysBussBkQryReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.LnRcrdDtlQry(shuiyintong.Entity.SPDBankEntity.SPDBankReq.LnRcrdDtlQryReq)">
+            <summary>
+            借据详细信息查看
+            </summary>
+            <param name="lnRcrdDtlQryReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.CorpAgngLnRcvblntQry(shuiyintong.Entity.SPDBankEntity.SPDBankReq.CorpAgngLnRcvblntQryReq)">
+            <summary>
+            借据应还本金利息查询
+            </summary>
+            <param name="corpAgngLnRcvblntQryReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.CrpLnIntTrl(shuiyintong.Entity.SPDBankEntity.SPDBankReq.CrpLnIntTrlReq)">
+            <summary>
+            已放贷款还款计划查询
+            </summary>
+            <param name="crpLnIntTrlReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="T:shuiyintong.Api.IocConfig">
+            <summary>
+            AutoFac IOC扩展
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.IocConfig.AutoFacIoc(Autofac.ContainerBuilder)">
+            <summary>
+            AutoFac 属性注入和AOP注入
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="T:shuiyintong.Api.Program">
+            <summary>
+            主程序
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.Program.Main(System.String[])">
+            <summary>
+            入口
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:shuiyintong.Api.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            CreateWebHostBuilder
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:shuiyintong.Api.Startup">
+            <summary>
+            Startup类
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Api.Startup.Configuration">
+            <summary>
+            配置属性
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:shuiyintong.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            配置服务
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment,Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary>
+            配置信息
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+            <param name="loggerFactory">NLog</param>
+        </member>
+        <member name="T:shuiyintong.Api.Validate.ValidateExceptionFilter">
+            <summary>
+            WebAPI异常处理过滤---重写ExceptionFilterAttribute ，  IExceptionFilter
+            </summary>
+        </member>
+        <member name="F:shuiyintong.Api.Validate.ValidateExceptionFilter.nlog">
+            <summary>
+            获得日志实例
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.Validate.ValidateExceptionFilter.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            重写基类的异常处理方法
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:shuiyintong.Api.Validate.ValidateExceptionFilter.OnExceptionAsync(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            发生异常时 异步进入
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:shuiyintong.Api.Validate.BaseResultModel">
+            <summary>
+            结果验证对象
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Api.Validate.BaseResultModel.Code">
+            <summary>
+            错误码
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Api.Validate.BaseResultModel.Message">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Api.Validate.BaseResultModel.Result">
+            <summary>
+            错误结果
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Api.Validate.BaseResultModel.ReturnStatus">
+            <summary>
+            错误状态
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.Validate.BaseResultModel.#ctor(System.Nullable{System.Int32},System.String,System.Object,shuiyintong.Api.Validate.ReturnStatus)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="code"></param>
+            <param name="message"></param>
+            <param name="result"></param>
+            <param name="returnStatus"></param>
+        </member>
+        <member name="T:shuiyintong.Api.Validate.ReturnStatus">
+            <summary>
+            状态码
+            </summary>
+        </member>
+        <member name="F:shuiyintong.Api.Validate.ReturnStatus.Success">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="F:shuiyintong.Api.Validate.ReturnStatus.Fail">
+            <summary>
+            失败
+            </summary>
+        </member>
+        <member name="F:shuiyintong.Api.Validate.ReturnStatus.ConfirmIsContinue">
+            <summary>
+            命令继续
+            </summary>
+        </member>
+        <member name="F:shuiyintong.Api.Validate.ReturnStatus.Error">
+            <summary>
+            错误
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Api.Validate.EeFilter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Api.Validate.ValidateModelFilter">
+            <summary>
+            请求参数属性验证(如:必填项，数值范围约定，正则表达式匹配等)---重写
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.Validate.ValidateModelFilter.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            重写OnActionExecuting方法，统一定义验证
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:shuiyintong.Api.Validate.ValidateResultFilter">
+            <summary>
+            请求返回结果验证---重写
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.Validate.ValidateResultFilter.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            请求执行
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:shuiyintong.Api.Validate.ValidateResultFilter.OnResultExecuting(Microsoft.AspNetCore.Mvc.Filters.ResultExecutingContext)">
+            <summary>
+            执行结果过滤(包含参数验证失败返回和请求)
+            </summary>
+            <param name="context"></param>
+        </member>
+    </members>
+</doc>
