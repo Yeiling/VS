@@ -686,30 +686,30 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mypc\\.nuget\\packages\\": {},
+    "C:\\Users\\InSpire\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\GitHubProject\\ShuiYinTong.API\\shuiyintong.Entity\\shuiyintong.Entity.csproj",
+      "projectUniqueName": "D:\\GitFiles\\ShuiYinTong.API\\shuiyintong.Entity\\shuiyintong.Entity.csproj",
       "projectName": "shuiyintong.Entity",
-      "projectPath": "F:\\GitHubProject\\ShuiYinTong.API\\shuiyintong.Entity\\shuiyintong.Entity.csproj",
-      "packagesPath": "C:\\Users\\Mypc\\.nuget\\packages\\",
-      "outputPath": "F:\\GitHubProject\\ShuiYinTong.API\\shuiyintong.Entity\\obj\\",
+      "projectPath": "D:\\GitFiles\\ShuiYinTong.API\\shuiyintong.Entity\\shuiyintong.Entity.csproj",
+      "packagesPath": "C:\\Users\\InSpire\\.nuget\\packages\\",
+      "outputPath": "D:\\GitFiles\\ShuiYinTong.API\\shuiyintong.Entity\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Mypc\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\InSpire\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

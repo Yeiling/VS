@@ -17,3 +17,9 @@ F:\GitHubProject\ShuiYinTong.API\shuiyintong.Entity\obj\Debug\netcoreapp2.2\shui
 F:\GitHubProject\ShuiYinTong.API\shuiyintong.Entity\obj\Debug\netcoreapp2.2\shuiyintong.Entity.AssemblyInfo.cs
 F:\GitHubProject\ShuiYinTong.API\shuiyintong.Entity\obj\Debug\netcoreapp2.2\shuiyintong.Entity.dll
 F:\GitHubProject\ShuiYinTong.API\shuiyintong.Entity\obj\Debug\netcoreapp2.2\shuiyintong.Entity.pdb
+D:\GitFiles\ShuiYinTong.API\shuiyintong.Entity\obj\Debug\netcoreapp2.2\shuiyintong.Entity.csproj.CoreCompileInputs.cache
+D:\GitFiles\ShuiYinTong.API\shuiyintong.Entity\obj\Debug\netcoreapp2.2\shuiyintong.Entity.AssemblyInfoInputs.cache
+D:\GitFiles\ShuiYinTong.API\shuiyintong.Entity\obj\Debug\netcoreapp2.2\shuiyintong.Entity.AssemblyInfo.cs
+D:\GitFiles\ShuiYinTong.API\shuiyintong.Entity\obj\Debug\netcoreapp2.2\shuiyintong.Entity.dll
+D:\GitFiles\ShuiYinTong.API\shuiyintong.Entity\obj\Debug\netcoreapp2.2\shuiyintong.Entity.pdb
+D:\GitFiles\ShuiYinTong.API\shuiyintong.Entity\obj\Debug\netcoreapp2.2\shuiyintong.Entity.csprojAssemblyReference.cache
