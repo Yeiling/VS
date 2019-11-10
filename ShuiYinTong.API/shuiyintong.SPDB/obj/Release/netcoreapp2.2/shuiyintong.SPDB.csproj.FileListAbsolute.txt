@@ -24,3 +24,17 @@ F:\GitHubProject\ShuiYinTong.API\shuiyintong.SPDB\obj\Release\netcoreapp2.2\shui
 F:\GitHubProject\ShuiYinTong.API\shuiyintong.SPDB\obj\Release\netcoreapp2.2\shuiyintong.SPDB.csproj.CopyComplete
 F:\GitHubProject\ShuiYinTong.API\shuiyintong.SPDB\obj\Release\netcoreapp2.2\shuiyintong.SPDB.dll
 F:\GitHubProject\ShuiYinTong.API\shuiyintong.SPDB\obj\Release\netcoreapp2.2\shuiyintong.SPDB.pdb
+D:\GitFiles\ShuiYinTong.API\shuiyintong.SPDB\bin\Release\netcoreapp2.2\shuiyintong.SPDB.deps.json
+D:\GitFiles\ShuiYinTong.API\shuiyintong.SPDB\bin\Release\netcoreapp2.2\shuiyintong.SPDB.dll
+D:\GitFiles\ShuiYinTong.API\shuiyintong.SPDB\bin\Release\netcoreapp2.2\shuiyintong.SPDB.pdb
+D:\GitFiles\ShuiYinTong.API\shuiyintong.SPDB\bin\Release\netcoreapp2.2\shuiyintong.Common.dll
+D:\GitFiles\ShuiYinTong.API\shuiyintong.SPDB\bin\Release\netcoreapp2.2\shuiyintong.Entity.dll
+D:\GitFiles\ShuiYinTong.API\shuiyintong.SPDB\bin\Release\netcoreapp2.2\shuiyintong.Common.pdb
+D:\GitFiles\ShuiYinTong.API\shuiyintong.SPDB\bin\Release\netcoreapp2.2\shuiyintong.Entity.pdb
+D:\GitFiles\ShuiYinTong.API\shuiyintong.SPDB\obj\Release\netcoreapp2.2\shuiyintong.SPDB.csprojAssemblyReference.cache
+D:\GitFiles\ShuiYinTong.API\shuiyintong.SPDB\obj\Release\netcoreapp2.2\shuiyintong.SPDB.csproj.CoreCompileInputs.cache
+D:\GitFiles\ShuiYinTong.API\shuiyintong.SPDB\obj\Release\netcoreapp2.2\shuiyintong.SPDB.AssemblyInfoInputs.cache
+D:\GitFiles\ShuiYinTong.API\shuiyintong.SPDB\obj\Release\netcoreapp2.2\shuiyintong.SPDB.AssemblyInfo.cs
+D:\GitFiles\ShuiYinTong.API\shuiyintong.SPDB\obj\Release\netcoreapp2.2\shuiyintong.SPDB.csproj.CopyComplete
+D:\GitFiles\ShuiYinTong.API\shuiyintong.SPDB\obj\Release\netcoreapp2.2\shuiyintong.SPDB.dll
+D:\GitFiles\ShuiYinTong.API\shuiyintong.SPDB\obj\Release\netcoreapp2.2\shuiyintong.SPDB.pdb
