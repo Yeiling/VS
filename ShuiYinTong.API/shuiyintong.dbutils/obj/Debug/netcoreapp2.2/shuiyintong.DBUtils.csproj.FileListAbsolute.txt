@@ -34,3 +34,15 @@ D:\GitFiles\ShuiYinTong.API\shuiyintong.dbutils\obj\Debug\netcoreapp2.2\shuiyint
 D:\GitFiles\ShuiYinTong.API\shuiyintong.dbutils\obj\Debug\netcoreapp2.2\shuiyintong.DBUtils.csproj.CopyComplete
 D:\GitFiles\ShuiYinTong.API\shuiyintong.dbutils\obj\Debug\netcoreapp2.2\shuiyintong.DBUtils.dll
 D:\GitFiles\ShuiYinTong.API\shuiyintong.dbutils\obj\Debug\netcoreapp2.2\shuiyintong.DBUtils.pdb
+F:\githubpro\ShuiYinTong.API\shuiyintong.dbutils\bin\Debug\netcoreapp2.2\shuiyintong.DBUtils.deps.json
+F:\githubpro\ShuiYinTong.API\shuiyintong.dbutils\bin\Debug\netcoreapp2.2\shuiyintong.DBUtils.dll
+F:\githubpro\ShuiYinTong.API\shuiyintong.dbutils\bin\Debug\netcoreapp2.2\shuiyintong.DBUtils.pdb
+F:\githubpro\ShuiYinTong.API\shuiyintong.dbutils\bin\Debug\netcoreapp2.2\shuiyintong.Common.dll
+F:\githubpro\ShuiYinTong.API\shuiyintong.dbutils\bin\Debug\netcoreapp2.2\shuiyintong.Common.pdb
+F:\githubpro\ShuiYinTong.API\shuiyintong.dbutils\obj\Debug\netcoreapp2.2\shuiyintong.DBUtils.csprojAssemblyReference.cache
+F:\githubpro\ShuiYinTong.API\shuiyintong.dbutils\obj\Debug\netcoreapp2.2\shuiyintong.DBUtils.csproj.CoreCompileInputs.cache
+F:\githubpro\ShuiYinTong.API\shuiyintong.dbutils\obj\Debug\netcoreapp2.2\shuiyintong.DBUtils.AssemblyInfoInputs.cache
+F:\githubpro\ShuiYinTong.API\shuiyintong.dbutils\obj\Debug\netcoreapp2.2\shuiyintong.DBUtils.AssemblyInfo.cs
+F:\githubpro\ShuiYinTong.API\shuiyintong.dbutils\obj\Debug\netcoreapp2.2\shuiyintong.DBUtils.csproj.CopyComplete
+F:\githubpro\ShuiYinTong.API\shuiyintong.dbutils\obj\Debug\netcoreapp2.2\shuiyintong.DBUtils.dll
+F:\githubpro\ShuiYinTong.API\shuiyintong.dbutils\obj\Debug\netcoreapp2.2\shuiyintong.DBUtils.pdb
