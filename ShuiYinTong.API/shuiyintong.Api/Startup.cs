@@ -55,7 +55,7 @@ namespace shuiyintong.Api
                 //Http添加请求参数验证---请求参数验证
                 option.Filters.Add<ValidateModelFilter>();
                 //Http请求异常处理验证---异常处理验证
-                option.Filters.Add<ValidateExceptionFilter>();
+                //option.Filters.Add<ValidateExceptionFilter>();
                 //Http添加请求结果验证---请求结果验证
                 //option.Filters.Add<ValidateResultFilter>();
 

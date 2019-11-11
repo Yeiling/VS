@@ -24,3 +24,12 @@ D:\GitFiles\ShuiYinTong.API\shuiyintong.Common\obj\Release\netcoreapp2.2\shuiyin
 D:\GitFiles\ShuiYinTong.API\shuiyintong.Common\obj\Release\netcoreapp2.2\shuiyintong.Common.AssemblyInfo.cs
 D:\GitFiles\ShuiYinTong.API\shuiyintong.Common\obj\Release\netcoreapp2.2\shuiyintong.Common.dll
 D:\GitFiles\ShuiYinTong.API\shuiyintong.Common\obj\Release\netcoreapp2.2\shuiyintong.Common.pdb
+F:\githubpro\ShuiYinTong.API\shuiyintong.Common\bin\Release\netcoreapp2.2\shuiyintong.Common.deps.json
+F:\githubpro\ShuiYinTong.API\shuiyintong.Common\bin\Release\netcoreapp2.2\shuiyintong.Common.dll
+F:\githubpro\ShuiYinTong.API\shuiyintong.Common\bin\Release\netcoreapp2.2\shuiyintong.Common.pdb
+F:\githubpro\ShuiYinTong.API\shuiyintong.Common\obj\Release\netcoreapp2.2\shuiyintong.Common.csprojAssemblyReference.cache
+F:\githubpro\ShuiYinTong.API\shuiyintong.Common\obj\Release\netcoreapp2.2\shuiyintong.Common.csproj.CoreCompileInputs.cache
+F:\githubpro\ShuiYinTong.API\shuiyintong.Common\obj\Release\netcoreapp2.2\shuiyintong.Common.AssemblyInfoInputs.cache
+F:\githubpro\ShuiYinTong.API\shuiyintong.Common\obj\Release\netcoreapp2.2\shuiyintong.Common.AssemblyInfo.cs
+F:\githubpro\ShuiYinTong.API\shuiyintong.Common\obj\Release\netcoreapp2.2\shuiyintong.Common.dll
+F:\githubpro\ShuiYinTong.API\shuiyintong.Common\obj\Release\netcoreapp2.2\shuiyintong.Common.pdb

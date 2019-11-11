@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using NLog;
 using shuiyintong.Common.Extend;
 using shuiyintong.Entity.HttpRequestResultEntity;
