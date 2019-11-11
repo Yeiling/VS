@@ -1,7 +1,7 @@
 ﻿namespace 尚硅谷数据结构和算法.Arry
 {
     /// <summary>
-    /// 稀疏数组类
+    /// 稀疏数组
     /// </summary>
     public class SparseArry
     {
@@ -17,7 +17,7 @@
         /// <returns></returns>
         public int[,] CreateArry(int row, int col)
         {
-            ////ChessArry数组表示有row行col列的二维数组
+            //ChessArry数组表示有row行col列的二维数组
             int[,] ChessArry = new int[row, col];
             ChessArry[1, 2] = 1; //黑子 第2行第3列为黑子棋
             ChessArry[2, 3] = 2; //蓝子 第3行第4列为蓝子棋
@@ -85,6 +85,8 @@
                 arr[sparseArr[i, 0], sparseArr[i, 1]] = sparseArr[i, 2];
             return arr;
         }
+      
 
     }
+  
 }
