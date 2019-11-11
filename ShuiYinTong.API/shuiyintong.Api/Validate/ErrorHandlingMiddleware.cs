@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using NLog;
+using shuiyintong.Common.BankConfig;
 using shuiyintong.Common.Extend;
 using shuiyintong.Entity.HttpRequestResultEntity;
 using System;
@@ -54,11 +55,14 @@ namespace shuiyintong.Api.Validate
         /// <returns></returns>
         private Task HandleExceptionAsync(HttpContext context, Exception exception)
         {
+            var url = context.Request.Path.ToString().Split("/");
+            var bankControlItem = AppSettings.BankConfig.BankControllers.Find(r => r.Controller == url[1]);
             LogEventInfo lei = new LogEventInfo();
-            lei.Properties["method"] = context.Request.Method;
+            lei.Properties["bankname"] = bankControlItem?.BankName;
+            lei.Properties["controller"] = url[1];
+            lei.Properties["action"] = url[2];
             lei.Properties["httptype"] = context.Request.IsHttps ? "Https" : "Http";
             lei.Properties["message"] = exception.Message;
-            lei.Properties["url"] = context.Request.Path.ToString();
             nlog.Error(lei);
 
             BaseResponse<string> ErrValidation = new BaseResponse<string>
