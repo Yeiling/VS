@@ -57,9 +57,9 @@ namespace shuiyintong.Api
                 //Http请求异常处理验证---异常处理验证
                 option.Filters.Add<ValidateExceptionFilter>();
                 //Http添加请求结果验证---请求结果验证
-                option.Filters.Add<ValidateResultFilter>();
+                //option.Filters.Add<ValidateResultFilter>();
 
-            });//.SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             // 注册Swagger服务
             services.AddSwaggerGen(c =>
@@ -199,6 +199,9 @@ namespace shuiyintong.Api
                 app.UseHsts();
 
             app.UseHttpsRedirection();
+
+            //NetCore WebAPI全局异常处理只能通过中间件来实现---区别于ASP.NET MVC全局过滤
+            app.UseMiddleware<ErrorHandlingMiddleware>();
 
             //Nlog日志
             //使用NLog作为日志记录工具
