@@ -31,7 +31,6 @@ namespace shuiyintong.DBUtils.Service
         /// 实体数据处理对象 
         /// </summary>
         private SimpleClient<T> EntityDB { get; set; }
-
         #endregion
 
         #region 构造函数
@@ -52,6 +51,7 @@ namespace shuiyintong.DBUtils.Service
         }
         #endregion
 
+        #region 添加
         /// <summary>
         /// 批量添加
         /// </summary>
@@ -64,8 +64,9 @@ namespace shuiyintong.DBUtils.Service
         /// <param name="entity">对象</param>
         /// <returns></returns>
         public bool AddOne(T entity) => EntityDB.Insert(entity);
+        #endregion
 
-
+        #region 删除
         /// <summary>
         /// 批量删除
         /// </summary>
@@ -84,8 +85,9 @@ namespace shuiyintong.DBUtils.Service
         /// <param name="Obj"></param>
         /// <returns></returns>
         public bool Delete(T Obj) => EntityDB.Delete(Obj);
+        #endregion
 
-
+        #region 查询
         /// <summary>
         /// 查询单个实体
         /// </summary>
@@ -133,7 +135,9 @@ namespace shuiyintong.DBUtils.Service
         /// <param name="sql">SQL语句</param>
         /// <returns></returns>
         public IEnumerable<T> GetListBySQL(string sql) => DB.SqlQueryable<T>(sql).ToList();
+        #endregion
 
+        #region 修改
         /// <summary>
         /// 批量修改
         /// </summary>
@@ -153,7 +157,12 @@ namespace shuiyintong.DBUtils.Service
         /// <param name="columns">列</param>
         /// <returns></returns>
         public bool Modefy(Expression<Func<T, bool>> exp, Expression<Func<T, T>> columns) => EntityDB.Update(columns, exp);
+        #endregion
 
+        #region 其他
+
+
+        #endregion
 
     }
 }
