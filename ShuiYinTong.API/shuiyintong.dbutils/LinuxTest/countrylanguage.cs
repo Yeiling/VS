@@ -3,15 +3,15 @@ using System.Linq;
 using System.Text;
 using SqlSugar;
 
-namespace shuiyintong.Entity.LinuxTest
+namespace shuiyintong.DBUtils.LinuxTest
 {
     ///<summary>
     ///
     ///</summary>
-    [SugarTable("city")]
-    public partial class city
+    [SugarTable("countrylanguage")]
+    public partial class countrylanguage
     {
-           public city(){
+           public countrylanguage(){
 
 
            }
@@ -20,21 +20,7 @@ namespace shuiyintong.Entity.LinuxTest
            /// Default:
            /// Nullable:False
            /// </summary>           
-           [SugarColumn(IsPrimaryKey=true,IsIdentity=true)]
-           public int ID {get;set;}
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>           
-           public string Name {get;set;}
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>           
+           [SugarColumn(IsPrimaryKey=true)]
            public string CountryCode {get;set;}
 
            /// <summary>
@@ -42,14 +28,22 @@ namespace shuiyintong.Entity.LinuxTest
            /// Default:
            /// Nullable:False
            /// </summary>           
-           public string District {get;set;}
+           [SugarColumn(IsPrimaryKey=true)]
+           public string Language {get;set;}
 
            /// <summary>
            /// Desc:
-           /// Default:0
+           /// Default:F
            /// Nullable:False
            /// </summary>           
-           public int Population {get;set;}
+           public string IsOfficial {get;set;}
+
+           /// <summary>
+           /// Desc:
+           /// Default:0.0
+           /// Nullable:False
+           /// </summary>           
+           public float Percentage {get;set;}
 
     }
 }

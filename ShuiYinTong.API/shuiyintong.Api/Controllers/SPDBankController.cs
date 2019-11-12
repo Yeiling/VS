@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using shuiyintong.Api.Validate;
 using shuiyintong.Common;
 using shuiyintong.Common.BankConfig;
 using shuiyintong.Common.Extend;
 using shuiyintong.Common.NPOIFile;
 using shuiyintong.DBUtils;
 using shuiyintong.DBUtils.IService;
-using shuiyintong.DBUtils.SYT_apiDB_TestEntity;
+using shuiyintong.DBUtils.LinuxTest;
 using shuiyintong.Entity.HttpRequestResultEntity;
 using shuiyintong.Entity.SPDBankEntity.SPDBankFile;
 using shuiyintong.Entity.SPDBankEntity.SPDBankReq;
@@ -33,6 +32,10 @@ namespace shuiyintong.Api.Controllers
         //public IBaseService<AcctDtlInfoQry> AcctDtlInfoServer { get; set; }
         //public IBaseService<DVR_USER_LOGIN_INFO> DVR_USER_LOGIN_INFO { get; set; }
 
+        /// <summary>
+        /// 注入数据库操作服务
+        /// </summary>
+        public IBaseService<country> CountryServer { get; set; }
 
         /// <summary>
         /// 银行类型---浦发银行
@@ -973,33 +976,15 @@ namespace shuiyintong.Api.Controllers
         /// <summary>
         /// JWT测试验证接口
         /// </summary>
-        /// <param name="accountRequest"></param>
         /// <returns></returns>
         [HttpPost]
-        public string Test([FromBody]AccountReq accountRequest)
+        public string Test()
         {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
-            BaseResponse<string> baseResponse = new BaseResponse<string>
-            {
-                DateTime = Now
-            };
-            int code = 0; //http请求错误码
-            var header = GetHeaderSign(accountRequest, out string dataRequest);
-            HttpClientHelper.POSTRequest(SPDBankConfig.AcctInfo, dataRequest, header, (statusCode, result) =>
-            {
-                code = (int)statusCode;
-                baseResponse.Code = code;
-                baseResponse.Data = result;
-                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+            var CountryList = CountryServer.GetList(c => true);
+            if (CountryList.IsNotNullOrEmpty())
+                return CountryList.ToJson();
 
-                //Redis保存 //Redis key
-                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.AcctInfo + "-" + Now + "-" + baseResponse.ResponseType;
-                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
-                if (redis != null)
-                    redis.Set(key, baseResponse);
-
-            });
-            return baseResponse.ToJson();
+            return null;
         }
 
     }

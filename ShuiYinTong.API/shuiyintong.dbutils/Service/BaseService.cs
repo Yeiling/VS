@@ -15,7 +15,7 @@ namespace shuiyintong.DBUtils.Service
     {
         #region 属性字段
         private readonly string conn = AppSettings.BankConfig.DBConfig.DBConn;
-        private readonly DbType dbType = DbType.SqlServer;
+        private readonly DbType dbType = DbType.MySql;
 
         /// <summary>
         /// 数据库连接对象
