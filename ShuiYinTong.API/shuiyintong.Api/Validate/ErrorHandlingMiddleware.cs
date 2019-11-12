@@ -62,6 +62,7 @@ namespace shuiyintong.Api.Validate
             lei.Properties["controller"] = url[1];
             lei.Properties["action"] = url[2];
             lei.Properties["httptype"] = context.Request.IsHttps ? "Https" : "Http";
+            lei.Properties["method"] = context.Request.Method;
             lei.Properties["message"] = exception.Message;
             nlog.Error(lei);
 
