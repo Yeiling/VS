@@ -241,11 +241,15 @@ namespace shuiyintong.Api
             //webHostBuilder.UseNLog();
 
             //使用NLog作为日志记录工具
+#pragma warning disable CS0618 // “ConfigureExtensions.AddNLog(ILoggerFactory)”已过时:“Instead use ILoggingBuilder.AddNLog() or IHostBuilder.UseNLog()”
             loggerFactory.AddNLog();
+#pragma warning restore CS0618 // “ConfigureExtensions.AddNLog(ILoggerFactory)”已过时:“Instead use ILoggingBuilder.AddNLog() or IHostBuilder.UseNLog()”
             //引入Nlog配置文件
             var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             var filePath = Path.Combine(path, "NLog.config");
+#pragma warning disable CS0618 // “AspNetExtensions.ConfigureNLog(IHostingEnvironment, string)”已过时:“Use UseNLog() on IHostBuilder / IWebHostBuilder, and NLog.Web.NLogBuilder.ConfigureNLog(). Or AddNLog() on ILoggingBuilder”
             env.ConfigureNLog(filePath);
+#pragma warning restore CS0618 // “AspNetExtensions.ConfigureNLog(IHostingEnvironment, string)”已过时:“Use UseNLog() on IHostBuilder / IWebHostBuilder, and NLog.Web.NLogBuilder.ConfigureNLog(). Or AddNLog() on ILoggingBuilder”
 
             //添加Swagger
             app.UseSwagger();
