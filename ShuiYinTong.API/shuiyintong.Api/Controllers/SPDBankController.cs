@@ -58,9 +58,6 @@ namespace shuiyintong.Api.Controllers
         [HttpGet]
         public string Test(string name)
         {
-            int a = 1, b = 0;
-            int cc = a / b;
-
             var CountryList = CountryServer.GetList(c => c.Name.Contains(name));
             if (CountryList.IsNotNullOrEmpty())
                 return CountryList.ToJson();
