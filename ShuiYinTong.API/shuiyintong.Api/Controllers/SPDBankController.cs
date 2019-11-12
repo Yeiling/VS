@@ -50,6 +50,20 @@ namespace shuiyintong.Api.Controllers
         /// </summary>
         private readonly int Code = 200;
 
+        /// <summary>
+        /// 测试验证接口
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public string Test()
+        {
+            var CountryList = CountryServer.GetList(c => true);
+            if (CountryList.IsNotNullOrEmpty())
+                return CountryList.ToJson();
+
+            return null;
+        }
+
 
         #region 接口签名
 
@@ -973,19 +987,6 @@ namespace shuiyintong.Api.Controllers
 
         #endregion
 
-        /// <summary>
-        /// JWT测试验证接口
-        /// </summary>
-        /// <returns></returns>
-        [HttpPost]
-        public string Test()
-        {
-            var CountryList = CountryServer.GetList(c => true);
-            if (CountryList.IsNotNullOrEmpty())
-                return CountryList.ToJson();
-
-            return null;
-        }
 
     }
 }
