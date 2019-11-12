@@ -14,7 +14,13 @@ namespace shuiyintong.DBUtils.Service
     public class BaseService<T> : IBaseService<T> where T : class, new()
     {
         #region 属性字段
+        /// <summary>
+        /// 数据库链接字段
+        /// </summary>
         private readonly string conn = AppSettings.BankConfig.DBConfig.DBConn;
+        /// <summary>
+        /// 数据库类型MySQL
+        /// </summary>
         private readonly DbType dbType = DbType.MySql;
 
         /// <summary>
