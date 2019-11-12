@@ -970,5 +970,37 @@ namespace shuiyintong.Api.Controllers
 
         #endregion
 
+        /// <summary>
+        /// JWT测试验证接口
+        /// </summary>
+        /// <param name="accountRequest"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public string Test([FromBody]AccountReq accountRequest)
+        {
+            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
+            BaseResponse<string> baseResponse = new BaseResponse<string>
+            {
+                DateTime = Now
+            };
+            int code = 0; //http请求错误码
+            var header = GetHeaderSign(accountRequest, out string dataRequest);
+            HttpClientHelper.POSTRequest(SPDBankConfig.AcctInfo, dataRequest, header, (statusCode, result) =>
+            {
+                code = (int)statusCode;
+                baseResponse.Code = code;
+                baseResponse.Data = result;
+                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
+
+                //Redis保存 //Redis key
+                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.AcctInfo + "-" + Now + "-" + baseResponse.ResponseType;
+                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
+                if (redis != null)
+                    redis.Set(key, baseResponse);
+
+            });
+            return baseResponse.ToJson();
+        }
+
     }
 }

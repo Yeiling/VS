@@ -51,9 +51,6 @@ namespace shuiyintong.Api
         /// <returns></returns>
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            //AppSettings配置缓存读取
-            var SwaggerConfig = AppSettings.SwaggerConfig;
-
             //控制器注入时，替换服务
             services.Replace(ServiceDescriptor.Transient<IControllerActivator, ServiceBasedControllerActivator>());
 
@@ -91,6 +88,23 @@ namespace shuiyintong.Api
                     }
                 }
 
+                //添加JWT（Bearer Token）认证
+                //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                //.AddJwtBearer(options =>
+                //{
+                //    options.TokenValidationParameters = new TokenValidationParameters
+                //    {
+                //        ValidateIssuer = true,//是否验证Issuer
+                //        ValidateAudience = true,//是否验证Audience
+                //        ValidateLifetime = true,//是否验证失效时间
+                //        ValidateIssuerSigningKey = true,//是否验证SecurityKey
+                //        ValidAudience = AppSettings.SwaggerConfig.audience,//Audience
+                //        ValidIssuer = AppSettings.SwaggerConfig.issuer,//Issuer，这两项和签发jwt的设置一致
+                //        //拿到SecurityKey
+                //        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(AppSettings.SwaggerConfig.SecurityKey))
+                //    };
+                //});
+
                 //Swagger中添加JWT认证功能如下
                 //c.AddSecurityDefinition("Bearer", new ApiKeyScheme
                 //{
@@ -103,23 +117,6 @@ namespace shuiyintong.Api
                 //{
                 //    { "Bearer",Enumerable.Empty<string>()},
                 //});
-
-                //添加jwt验证：
-                services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(options =>
-                {
-                    options.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidateIssuer = true,//是否验证Issuer
-                        ValidateAudience = true,//是否验证Audience
-                        ValidateLifetime = true,//是否验证失效时间
-                        ValidateIssuerSigningKey = true,//是否验证SecurityKey
-                        ValidAudience = SwaggerConfig.audience,//Audience
-                        ValidIssuer = SwaggerConfig.issuer,//Issuer，这两项和签发jwt的设置一致
-                        //拿到SecurityKey
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(SwaggerConfig.SecurityKey))
-                    };
-                });
 
             });
 
@@ -231,7 +228,10 @@ namespace shuiyintong.Api
 
             app.UseHttpsRedirection();
 
-            //NetCore WebAPI全局异常处理只能通过中间件来实现---区别于ASP.NET MVC全局过滤
+            //Swagger JWT配置授权
+            app.UseAuthentication();
+
+            //NetCore WebAPI全局[异常]处理只能通过中间件来实现---区别于ASP.NET MVC全局过滤
             app.UseMiddleware<ErrorHandlingMiddleware>();
 
             //Nlog日志
