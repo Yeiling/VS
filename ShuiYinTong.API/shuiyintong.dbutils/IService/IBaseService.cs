@@ -31,13 +31,15 @@ namespace shuiyintong.DBUtils.IService
         T GetById(dynamic id);
         IEnumerable<T> GetList(Expression<Func<T, bool>> exp);
         IEnumerable<T> GetPageList(Expression<Func<T, bool>> exp, int pageIndex, int pageSize, ref int totalCount);
-        List<T> QueryPage(
+        IEnumerable<T> QueryPage(
                 Expression<Func<T, bool>> whereExpression,
                 ref int intTotalCount,
-                int intPageIndex = 0,
+                int intPageIndex = 1,
                 int intPageSize = 20,
                 string strOrderByFileds = null);
+        IEnumerable<T> QueryPage(string sql, ref int TotalCount, int PageIndex = 1, int PageSize = 30)
         IEnumerable<T> GetListBySQL(string sql);
+
         #endregion
 
 

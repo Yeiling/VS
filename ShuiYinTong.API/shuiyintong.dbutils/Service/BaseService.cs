@@ -3,6 +3,7 @@ using shuiyintong.DBUtils.IService;
 using SqlSugar;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace shuiyintong.DBUtils.Service
@@ -117,17 +118,37 @@ namespace shuiyintong.DBUtils.Service
         /// <param name="intPageSize"></param>
         /// <param name="strOrderByFileds"></param>
         /// <returns></returns>
-        public List<T> QueryPage(
+        public IEnumerable<T> QueryPage(
          Expression<Func<T, bool>> whereExpression,
-         ref int intTotalCount,
-         int intPageIndex = 0,
-         int intPageSize = 20,
+         ref int TotalCount,
+         int PageIndex = 1,
+         int PageSize = 20,
          string strOrderByFileds = null)
         {
             return DB.Queryable<T>()
                 .OrderByIF(!string.IsNullOrEmpty(strOrderByFileds), strOrderByFileds)
                 .WhereIF(whereExpression != null, whereExpression)
-                .ToPageList(intPageIndex, intPageSize, ref intTotalCount);
+                .ToPageList(PageIndex, PageSize, ref TotalCount);
+        }
+        /// <summary>
+        /// SQL 分页查询
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="TotalCount"></param>
+        /// <param name="PageIndex"></param>
+        /// <param name="PageSize"></param>
+        /// <returns></returns>
+        public IEnumerable<T> QueryPage(string sql, ref int TotalCount, int PageIndex = 1, int PageSize = 30)
+        {
+            var lst = DB.Ado.SqlQuery<T>(sql);
+            if (lst == null)
+            {
+                TotalCount = 0;
+                return null;
+            }
+            TotalCount = lst.Count;
+            return lst.Skip((PageIndex - 1) * PageSize)
+                .Take(PageSize);
         }
         /// <summary>
         /// SQL查询集合
@@ -160,7 +181,6 @@ namespace shuiyintong.DBUtils.Service
         #endregion
 
         #region 其他
-
 
         #endregion
 
