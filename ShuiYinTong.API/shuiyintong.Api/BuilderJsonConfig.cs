@@ -12,7 +12,7 @@ namespace shuiyintong.Api
     {
         private static System.IDisposable callbackRegistration;
         /// <summary>
-        /// 实现
+        /// 实现读取配置Json文件
         /// </summary>
         /// <param name="services"></param>
         /// <param name="configuration"></param>
@@ -21,6 +21,8 @@ namespace shuiyintong.Api
         {
             callbackRegistration = configuration.GetSection("BankConfig").GetReloadToken().RegisterChangeCallback(OnAppConfigChanged, configuration.GetSection("BankConfig"));
             AppSettings.BankConfig = services.Configure<BankConfig>(configuration.GetSection("BankConfig")).BuildServiceProvider().GetService<IOptionsSnapshot<BankConfig>>().Value;
+
+            AppSettings.SwaggerConfig = services.Configure<SwaggerConfig>(configuration.GetSection("SwaggerConfig")).BuildServiceProvider().GetService<IOptionsSnapshot<SwaggerConfig>>().Value;
         }
 
         

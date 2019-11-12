@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -8,15 +9,18 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using NLog.Extensions.Logging;
 using NLog.Web;
 using shuiyintong.Api.Validate;
+using shuiyintong.Common.BankConfig;
 using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 
 namespace shuiyintong.Api
 {
@@ -47,9 +51,13 @@ namespace shuiyintong.Api
         /// <returns></returns>
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
+            //AppSettings配置缓存读取
+            var SwaggerConfig = AppSettings.SwaggerConfig;
+
             //控制器注入时，替换服务
             services.Replace(ServiceDescriptor.Transient<IControllerActivator, ServiceBasedControllerActivator>());
 
+            //WebAPI 全局顾虑器设置
             services.AddMvc(option =>
             {
                 //Http添加请求参数验证---请求参数验证
@@ -64,8 +72,12 @@ namespace shuiyintong.Api
             // 注册Swagger服务
             services.AddSwaggerGen(c =>
             {
+                //Swagger文档
                 c.SwaggerDoc("v1", new Info { Title = "ShuiYinTong.WebApi", Version = "v1" });
-                //添加xml文件
+                //Swagger Token过滤器
+                c.OperationFilter<SwaggerOperationFilter>();
+
+                //添加xml文件解析
                 var xmlFile = Assembly.GetExecutingAssembly();
                 var path = Path.GetDirectoryName(xmlFile.Location);
                 DirectoryInfo directoryInfo = new DirectoryInfo(path);
@@ -78,18 +90,37 @@ namespace shuiyintong.Api
                         c.IncludeXmlComments(xmlPath, true);
                     }
                 }
-                c.AddSecurityDefinition("Bearer", new ApiKeyScheme
+
+                //Swagger中添加JWT认证功能如下
+                //c.AddSecurityDefinition("Bearer", new ApiKeyScheme
+                //{
+                //    Description = "请输入带有Bearer的Token",
+                //    Name = "Authorization",
+                //    In = "header",
+                //    Type = "apiKey"
+                //});
+                //c.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>>
+                //{
+                //    { "Bearer",Enumerable.Empty<string>()},
+                //});
+
+                //添加jwt验证：
+                services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
                 {
-                    Description = "请输入带有Bearer的Token",
-                    Name = "Authorization",
-                    In = "header",
-                    Type = "apiKey"
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,//是否验证Issuer
+                        ValidateAudience = true,//是否验证Audience
+                        ValidateLifetime = true,//是否验证失效时间
+                        ValidateIssuerSigningKey = true,//是否验证SecurityKey
+                        ValidAudience = SwaggerConfig.audience,//Audience
+                        ValidIssuer = SwaggerConfig.issuer,//Issuer，这两项和签发jwt的设置一致
+                        //拿到SecurityKey
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(SwaggerConfig.SecurityKey))
+                    };
                 });
-                //Json Token认证方式，此方式为全局添加
-                c.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>>
-                {
-                    { "Bearer", Enumerable.Empty<string>() }
-                });
+
             });
 
             //读取配置Json文件

@@ -419,6 +419,18 @@
             <param name="exception"></param>
             <returns></returns>
         </member>
+        <member name="T:shuiyintong.Api.Validate.SwaggerOperationFilter">
+            <summary>
+            Swagger授权访问过滤
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.Validate.SwaggerOperationFilter.Apply(Swashbuckle.AspNetCore.Swagger.Operation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)">
+            <summary>
+            实现Swagger过滤接口验证
+            </summary>
+            <param name="operation"></param>
+            <param name="context"></param>
+        </member>
         <member name="T:shuiyintong.Api.Validate.ValidateExceptionFilter">
             <summary>
             WebAPI异常处理过滤---重写ExceptionFilterAttribute ，  IExceptionFilter
