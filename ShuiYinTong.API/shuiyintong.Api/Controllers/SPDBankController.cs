@@ -53,11 +53,12 @@ namespace shuiyintong.Api.Controllers
         /// <summary>
         /// 测试验证接口
         /// </summary>
+        /// <param name="name">CountryName</param>
         /// <returns></returns>
-        [HttpPost]
-        public string Test()
+        [HttpGet]
+        public string Test(string name)
         {
-            var CountryList = CountryServer.GetList(c => true);
+            var CountryList = CountryServer.GetList(c => c.Name.Contains(name));
             if (CountryList.IsNotNullOrEmpty())
                 return CountryList.ToJson();
 
@@ -90,8 +91,8 @@ namespace shuiyintong.Api.Controllers
         /// 担保函导出Word文档
         /// </summary>
         /// <param name="guaranteeReq">参数---输出路径必填</param>
-        [HttpGet]
-        public void GenerateDoc(GuaranteeReq guaranteeReq)
+        [HttpPost]
+        public void GenerateDoc([FromBody]GuaranteeReq guaranteeReq)
         {
             if (guaranteeReq != null && !string.IsNullOrWhiteSpace(guaranteeReq.OutPath))
             {

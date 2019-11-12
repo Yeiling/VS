@@ -133,10 +133,11 @@
             Http请求返回Code
             </summary>
         </member>
-        <member name="M:shuiyintong.Api.Controllers.SPDBankController.Test">
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.Test(System.String)">
             <summary>
             测试验证接口
             </summary>
+            <param name="name">CountryName</param>
             <returns></returns>
         </member>
         <member name="M:shuiyintong.Api.Controllers.SPDBankController.GetHeaderSign(System.Object,System.String@)">
