@@ -10,11 +10,11 @@
         /// </summary>
         public string SecurityKey { get; set; }
         /// <summary>
-        /// 授权用户
+        /// 服务端
         /// </summary>
         public string issuer { get; set; }
         /// <summary>
-        /// 
+        /// 客户端
         /// </summary>
         public string audience { get; set; }
     }
