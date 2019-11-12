@@ -133,6 +133,12 @@
             Http请求返回Code
             </summary>
         </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.Test">
+            <summary>
+            测试验证接口
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:shuiyintong.Api.Controllers.SPDBankController.GetHeaderSign(System.Object,System.String@)">
             <summary>
             获取签名
@@ -331,12 +337,6 @@
             已放贷款还款计划查询
             </summary>
             <param name="crpLnIntTrlReq">请求参数</param>
-            <returns></returns>
-        </member>
-        <member name="M:shuiyintong.Api.Controllers.SPDBankController.Test">
-            <summary>
-            JWT测试验证接口
-            </summary>
             <returns></returns>
         </member>
         <member name="T:shuiyintong.Api.IocConfig">
