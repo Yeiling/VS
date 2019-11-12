@@ -5,6 +5,6 @@
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <_PublishTargetUrl>G:\Windowspublish</_PublishTargetUrl>
+    <_PublishTargetUrl>G:\Linuxpublish</_PublishTargetUrl>
   </PropertyGroup>
 </Project>
