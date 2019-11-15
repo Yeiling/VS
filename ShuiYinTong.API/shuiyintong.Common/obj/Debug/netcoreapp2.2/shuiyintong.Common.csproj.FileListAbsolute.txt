@@ -6,4 +6,3 @@ F:\githubpro\ShuiYinTong.API\shuiyintong.Common\obj\Debug\netcoreapp2.2\shuiyint
 F:\githubpro\ShuiYinTong.API\shuiyintong.Common\obj\Debug\netcoreapp2.2\shuiyintong.Common.AssemblyInfo.cs
 F:\githubpro\ShuiYinTong.API\shuiyintong.Common\obj\Debug\netcoreapp2.2\shuiyintong.Common.dll
 F:\githubpro\ShuiYinTong.API\shuiyintong.Common\obj\Debug\netcoreapp2.2\shuiyintong.Common.pdb
-F:\githubpro\ShuiYinTong.API\shuiyintong.Common\obj\Debug\netcoreapp2.2\shuiyintong.Common.csprojAssemblyReference.cache
