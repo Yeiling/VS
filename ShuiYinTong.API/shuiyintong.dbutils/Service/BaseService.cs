@@ -156,6 +156,13 @@ namespace shuiyintong.DBUtils.Service
         /// <param name="sql">SQL语句</param>
         /// <returns></returns>
         public IEnumerable<T> GetListBySQL(string sql) => DB.SqlQueryable<T>(sql).ToList();
+        /// <summary>
+        /// 动态类型
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="whereObj"></param>
+        /// <returns></returns>
+        public IEnumerable<dynamic> SqlQueryDynamic(string sql, object whereObj = null) => DB.Ado.SqlQuery<dynamic>(sql, whereObj);
         #endregion
 
         #region 修改

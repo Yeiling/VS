@@ -1267,11 +1267,7 @@
             电子回单类型
             </summary>
         </member>
-        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankReq.ReceiptApplyReq.tranSeqNo">
-            <summary>
-            柜员流水号
-            </summary>
-        </member>
+        <!-- 对于成员“P:shuiyintong.Entity.SPDBankEntity.SPDBankReq.ReceiptApplyReq.tranSeqNo”忽略有格式错误的 XML 注释 -->
         <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankReq.ReceiptApplyReq.clientNo">
             <summary>
             客户号码

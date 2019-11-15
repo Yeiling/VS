@@ -37,9 +37,9 @@ namespace shuiyintong.DBUtils.IService
                 int intPageIndex = 1,
                 int intPageSize = 20,
                 string strOrderByFileds = null);
-        IEnumerable<T> QueryPage(string sql, ref int TotalCount, int PageIndex = 1, int PageSize = 30)
+        IEnumerable<T> QueryPage(string sql, ref int TotalCount, int PageIndex = 1, int PageSize = 30);
         IEnumerable<T> GetListBySQL(string sql);
-
+        IEnumerable<dynamic> SqlQueryDynamic(string sql, object whereObj = null);
         #endregion
 
 
