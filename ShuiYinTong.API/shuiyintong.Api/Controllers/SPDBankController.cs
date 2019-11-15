@@ -4,8 +4,6 @@ using shuiyintong.Common.BankConfig;
 using shuiyintong.Common.Extend;
 using shuiyintong.Common.NPOIFile;
 using shuiyintong.DBUtils;
-using shuiyintong.DBUtils.IService;
-using shuiyintong.DBUtils.LinuxTest;
 using shuiyintong.Entity.HttpRequestResultEntity;
 using shuiyintong.Entity.SPDBankEntity.SPDBankFile;
 using shuiyintong.Entity.SPDBankEntity.SPDBankReq;
@@ -32,14 +30,6 @@ namespace shuiyintong.Api.Controllers
         //public IBaseService<AcctDtlInfoQry> AcctDtlInfoServer { get; set; }
         //public IBaseService<DVR_USER_LOGIN_INFO> DVR_USER_LOGIN_INFO { get; set; }
 
-        /// <summary>
-        /// 注入数据库操作Country服务
-        /// </summary>
-        public IBaseService<country> CountryServer { get; set; }
-        /// <summary>
-        /// 注入数据库操作City服务
-        /// </summary>
-        public IBaseService<city> CityServer { get; set; }
 
         /// <summary>
         /// 银行类型---浦发银行
@@ -53,23 +43,10 @@ namespace shuiyintong.Api.Controllers
         /// Http请求返回Code
         /// </summary>
         private readonly int Code = 200;
-
         /// <summary>
-        /// 测试验证接口
+        /// Redis服务
         /// </summary>
-        /// <param name="name">CountryName</param>
-        /// <returns></returns>
-        [HttpGet]
-        public void Test(string name)
-        {
-            var CountryList = CountryServer.GetList(c => c.Name.Contains(name));
-            var lst = CountryList.ToJson();
-
-            //var a = CityServer.SqlQueryDynamic("select * from city where CountryCode like 'AR%'");
-            //var aa = a.ToJson();
-
-        }
-
+        private static readonly NewLifeRedisHelper redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
 
         #region 接口签名
 
@@ -96,8 +73,8 @@ namespace shuiyintong.Api.Controllers
         /// 担保函导出Word文档
         /// </summary>
         /// <param name="guaranteeReq">参数---输出路径必填</param>
-        [HttpPost]
-        public void GenerateDoc([FromBody]GuaranteeReq guaranteeReq)
+        [HttpGet]
+        public void GenerateDoc(GuaranteeReq guaranteeReq)
         {
             if (guaranteeReq != null && !string.IsNullOrWhiteSpace(guaranteeReq.OutPath))
             {
@@ -169,7 +146,7 @@ namespace shuiyintong.Api.Controllers
         /// </summary>
         /// <param name="accountRequest">请求参数</param>
         [HttpPost]
-        public string AcctInfo([FromBody]AccountReq accountRequest)
+        public JsonResult AcctInfo([FromBody]AccountReq accountRequest)
         {
             string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
@@ -187,12 +164,11 @@ namespace shuiyintong.Api.Controllers
 
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.AcctInfo + "-" + Now + "-" + baseResponse.ResponseType;
-                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
             });
-            return baseResponse.ToJson();
+            return Json(baseResponse);
         }
 
         /// <summary>
@@ -218,7 +194,6 @@ namespace shuiyintong.Api.Controllers
 
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.AcctDtlInfoQry + "-" + Now + "-" + baseResponse.ResponseType;
-                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
@@ -249,7 +224,6 @@ namespace shuiyintong.Api.Controllers
 
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.SingleTransfer + "-" + Now + "-" + baseResponse.ResponseType;
-                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
@@ -280,7 +254,6 @@ namespace shuiyintong.Api.Controllers
 
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.SnglTrsfRstlQry + "-" + Now + "-" + baseResponse.ResponseType;
-                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
@@ -311,7 +284,6 @@ namespace shuiyintong.Api.Controllers
 
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.ElectRecptApplction + "-" + Now + "-" + baseResponse.ResponseType;
-                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
@@ -342,7 +314,6 @@ namespace shuiyintong.Api.Controllers
 
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.FncThdCncl + "-" + Now + "-" + baseResponse.ResponseType;
-                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
@@ -373,7 +344,6 @@ namespace shuiyintong.Api.Controllers
 
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.RexgAddInfoQry + "-" + Now + "-" + baseResponse.ResponseType;
-                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
@@ -404,7 +374,6 @@ namespace shuiyintong.Api.Controllers
 
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.BnkInfoQryCombntnTran + "-" + Now + "-" + baseResponse.ResponseType;
-                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
@@ -435,7 +404,6 @@ namespace shuiyintong.Api.Controllers
 
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.AuthSmlAmt + "-" + Now + "-" + baseResponse.ResponseType;
-                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
@@ -467,7 +435,6 @@ namespace shuiyintong.Api.Controllers
 
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.PayInsrChk + "-" + Now + "-" + baseResponse.ResponseType;
-                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
@@ -499,7 +466,6 @@ namespace shuiyintong.Api.Controllers
 
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.PayInsrDtlQry + "-" + Now + "-" + baseResponse.ResponseType;
-                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
@@ -531,7 +497,6 @@ namespace shuiyintong.Api.Controllers
 
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.PayInsrCnl + "-" + Now + "-" + baseResponse.ResponseType;
-                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
@@ -563,7 +528,6 @@ namespace shuiyintong.Api.Controllers
 
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.PayeeWhtLstQry + "-" + Now + "-" + baseResponse.ResponseType;
-                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
@@ -595,7 +559,6 @@ namespace shuiyintong.Api.Controllers
 
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.PayeeWhtLstMntn + "-" + Now + "-" + baseResponse.ResponseType;
-                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
@@ -631,7 +594,6 @@ namespace shuiyintong.Api.Controllers
 
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.ZLSysInrBnkTfr + "-" + Now + "-" + baseResponse.ResponseType;
-                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
@@ -663,7 +625,6 @@ namespace shuiyintong.Api.Controllers
 
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.OlBrwLnRepy + "-" + Now + "-" + baseResponse.ResponseType;
-                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
@@ -695,7 +656,6 @@ namespace shuiyintong.Api.Controllers
 
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.IntDtlQry + "-" + Now + "-" + baseResponse.ResponseType;
-                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
@@ -727,7 +687,6 @@ namespace shuiyintong.Api.Controllers
 
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.InterestTrial + "-" + Now + "-" + baseResponse.ResponseType;
-                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
@@ -759,7 +718,6 @@ namespace shuiyintong.Api.Controllers
 
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.ReceiptApply + "-" + Now + "-" + baseResponse.ResponseType;
-                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
@@ -791,7 +749,6 @@ namespace shuiyintong.Api.Controllers
 
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.CorpLnCntlAcctRep + "-" + Now + "-" + baseResponse.ResponseType;
-                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
@@ -823,7 +780,6 @@ namespace shuiyintong.Api.Controllers
 
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.OlBrwLnRepyTrl + "-" + Now + "-" + baseResponse.ResponseType;
-                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
@@ -855,7 +811,6 @@ namespace shuiyintong.Api.Controllers
 
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.CoreTranQry + "-" + Now + "-" + baseResponse.ResponseType;
-                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
@@ -887,7 +842,6 @@ namespace shuiyintong.Api.Controllers
 
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.ZLSysBussBkQry + "-" + Now + "-" + baseResponse.ResponseType;
-                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
@@ -919,7 +873,6 @@ namespace shuiyintong.Api.Controllers
 
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.LnRcrdDtlQry + "-" + Now + "-" + baseResponse.ResponseType;
-                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
@@ -951,7 +904,6 @@ namespace shuiyintong.Api.Controllers
 
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.CorpAgngLnRcvblntQry + "-" + Now + "-" + baseResponse.ResponseType;
-                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
@@ -983,7 +935,6 @@ namespace shuiyintong.Api.Controllers
 
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.CrpLnIntTrl + "-" + Now + "-" + baseResponse.ResponseType;
-                var redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
@@ -992,7 +943,6 @@ namespace shuiyintong.Api.Controllers
         }
 
         #endregion
-
 
     }
 }
