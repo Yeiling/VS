@@ -9,7 +9,7 @@ namespace ConsoleApp
         {
             #region ORM
             string conn = "Server=192.168.56.105;Database=test;Uid=root;Pwd=123456";
-            SqlSugarHelper.InitClient(conn).TableToEntity(@"F:\githubpro\ShuiYinTong.API\shuiyintong.Entity\LinuxTest", "shuiyintong.Entity.LinuxTest");
+            SqlSugarHelper.InitClient(conn).TableToEntity(@"F:\githubpro\ShuiYinTong.API\shuiyintong.dbutils\LinuxTestEntity", "shuiyintong.DBUtils.LinuxTestEntity");
             //var lst = SqlSugarHelper.InitClient(conn).GetList<DM_DataApiType>();
 
 

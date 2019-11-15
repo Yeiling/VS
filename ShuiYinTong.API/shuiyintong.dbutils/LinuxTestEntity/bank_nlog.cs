@@ -3,15 +3,15 @@ using System.Linq;
 using System.Text;
 using SqlSugar;
 
-namespace shuiyintong.DBUtils.LinuxTest
+namespace shuiyintong.DBUtils.LinuxTestEntity
 {
     ///<summary>
     ///
     ///</summary>
-    [SugarTable("Bank_NLog")]
-    public partial class Bank_NLog
+    [SugarTable("bank_nlog")]
+    public partial class bank_nlog
     {
-           public Bank_NLog(){
+           public bank_nlog(){
 
 
            }

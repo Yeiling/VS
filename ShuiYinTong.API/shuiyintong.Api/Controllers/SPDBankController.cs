@@ -26,9 +26,8 @@ namespace shuiyintong.Api.Controllers
     {
         ///// <summary>
         ///// 数据库实现
-        ///// </summary>
-        //public IBaseService<AcctDtlInfoQry> AcctDtlInfoServer { get; set; }
-        //public IBaseService<DVR_USER_LOGIN_INFO> DVR_USER_LOGIN_INFO { get; set; }
+        ///// </summary>s
+        
 
 
         /// <summary>
@@ -67,6 +66,16 @@ namespace shuiyintong.Api.Controllers
                 };
         }
         #endregion
+
+        /// <summary>
+        /// 数据库接口测试
+        /// </summary>
+        [HttpGet]
+        public void Test()
+        {
+
+        }
+
 
         #region 生成担保函
         /// <summary>

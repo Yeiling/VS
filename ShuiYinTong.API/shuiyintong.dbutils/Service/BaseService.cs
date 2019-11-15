@@ -22,7 +22,7 @@ namespace shuiyintong.DBUtils.Service
         /// <summary>
         /// 数据库类型MySQL
         /// </summary>
-        private readonly DbType dbType = DbType.MySql;
+        private readonly DbType dbType = (DbType)AppSettings.DBConfig.DbType;
 
         /// <summary>
         /// 数据库连接对象

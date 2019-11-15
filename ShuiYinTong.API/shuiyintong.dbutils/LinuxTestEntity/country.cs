@@ -3,7 +3,7 @@ using System.Linq;
 using System.Text;
 using SqlSugar;
 
-namespace shuiyintong.DBUtils.LinuxTest
+namespace shuiyintong.DBUtils.LinuxTestEntity
 {
     ///<summary>
     ///
