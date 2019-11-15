@@ -163,6 +163,14 @@ namespace shuiyintong.DBUtils.Service
         /// <param name="whereObj"></param>
         /// <returns></returns>
         public IEnumerable<dynamic> SqlQueryDynamic(string sql, object whereObj = null) => DB.Ado.SqlQuery<dynamic>(sql, whereObj);
+
+        /// <summary>
+        /// 根据主键，使用In条件查询
+        /// </summary>
+        /// <param name="paras"></param>
+        /// <returns></returns>
+        public IEnumerable<T> SqlQueryIn(params object[] paras) => DB.Queryable<T>().In(paras).ToList();
+
         #endregion
 
         #region 修改

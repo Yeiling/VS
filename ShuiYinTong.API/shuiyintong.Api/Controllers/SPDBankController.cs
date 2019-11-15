@@ -33,9 +33,13 @@ namespace shuiyintong.Api.Controllers
         //public IBaseService<DVR_USER_LOGIN_INFO> DVR_USER_LOGIN_INFO { get; set; }
 
         /// <summary>
-        /// 注入数据库操作服务
+        /// 注入数据库操作Country服务
         /// </summary>
         public IBaseService<country> CountryServer { get; set; }
+        /// <summary>
+        /// 注入数据库操作City服务
+        /// </summary>
+        public IBaseService<city> CityServer { get; set; }
 
         /// <summary>
         /// 银行类型---浦发银行
@@ -56,13 +60,14 @@ namespace shuiyintong.Api.Controllers
         /// <param name="name">CountryName</param>
         /// <returns></returns>
         [HttpGet]
-        public string Test(string name)
+        public void Test(string name)
         {
             var CountryList = CountryServer.GetList(c => c.Name.Contains(name));
-            if (CountryList.IsNotNullOrEmpty())
-                return CountryList.ToJson();
+            var lst = CountryList.ToJson();
 
-            return null;
+            //var a = CityServer.SqlQueryDynamic("select * from city where CountryCode like 'AR%'");
+            //var aa = a.ToJson();
+
         }
 
 

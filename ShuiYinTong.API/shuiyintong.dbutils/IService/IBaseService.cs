@@ -40,6 +40,9 @@ namespace shuiyintong.DBUtils.IService
         IEnumerable<T> QueryPage(string sql, ref int TotalCount, int PageIndex = 1, int PageSize = 30);
         IEnumerable<T> GetListBySQL(string sql);
         IEnumerable<dynamic> SqlQueryDynamic(string sql, object whereObj = null);
+
+        IEnumerable<T> SqlQueryIn(params object[] paras);
+
         #endregion
 
 
