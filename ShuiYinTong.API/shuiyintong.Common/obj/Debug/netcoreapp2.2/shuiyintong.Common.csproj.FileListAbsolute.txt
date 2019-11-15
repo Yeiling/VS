@@ -26,7 +26,6 @@ D:\GitFiles\ShuiYinTong.API\shuiyintong.Common\obj\Debug\netcoreapp2.2\shuiyinto
 F:\githubpro\ShuiYinTong.API\shuiyintong.Common\bin\Debug\netcoreapp2.2\shuiyintong.Common.deps.json
 F:\githubpro\ShuiYinTong.API\shuiyintong.Common\bin\Debug\netcoreapp2.2\shuiyintong.Common.dll
 F:\githubpro\ShuiYinTong.API\shuiyintong.Common\bin\Debug\netcoreapp2.2\shuiyintong.Common.pdb
-F:\githubpro\ShuiYinTong.API\shuiyintong.Common\obj\Debug\netcoreapp2.2\shuiyintong.Common.csprojAssemblyReference.cache
 F:\githubpro\ShuiYinTong.API\shuiyintong.Common\obj\Debug\netcoreapp2.2\shuiyintong.Common.csproj.CoreCompileInputs.cache
 F:\githubpro\ShuiYinTong.API\shuiyintong.Common\obj\Debug\netcoreapp2.2\shuiyintong.Common.AssemblyInfoInputs.cache
 F:\githubpro\ShuiYinTong.API\shuiyintong.Common\obj\Debug\netcoreapp2.2\shuiyintong.Common.AssemblyInfo.cs

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using NLog;
-using shuiyintong.Common.BankConfig;
 using shuiyintong.Common.Extend;
+using shuiyintong.Entity.AppSettiongModel;
 using shuiyintong.Entity.HttpRequestResultEntity;
 using System;
 using System.Threading.Tasks;

@@ -46,3 +46,6 @@ F:\githubpro\ShuiYinTong.API\shuiyintong.dbutils\obj\Debug\netcoreapp2.2\shuiyin
 F:\githubpro\ShuiYinTong.API\shuiyintong.dbutils\obj\Debug\netcoreapp2.2\shuiyintong.DBUtils.csproj.CopyComplete
 F:\githubpro\ShuiYinTong.API\shuiyintong.dbutils\obj\Debug\netcoreapp2.2\shuiyintong.DBUtils.dll
 F:\githubpro\ShuiYinTong.API\shuiyintong.dbutils\obj\Debug\netcoreapp2.2\shuiyintong.DBUtils.pdb
+F:\githubpro\ShuiYinTong.API\shuiyintong.dbutils\bin\Debug\netcoreapp2.2\shuiyintong.Entity.dll
+F:\githubpro\ShuiYinTong.API\shuiyintong.dbutils\bin\Debug\netcoreapp2.2\shuiyintong.Entity.pdb
+F:\githubpro\ShuiYinTong.API\shuiyintong.dbutils\bin\Debug\netcoreapp2.2\shuiyintong.Entity.xml

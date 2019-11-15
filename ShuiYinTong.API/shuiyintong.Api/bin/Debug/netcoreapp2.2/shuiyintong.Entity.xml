@@ -4,6 +4,286 @@
         <name>shuiyintong.Entity</name>
     </assembly>
     <members>
+        <member name="T:shuiyintong.Entity.AppSettiongModel.AppSettings">
+            <summary>
+            AppSettiong对象
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.AppSettings.AllowedHosts">
+            <summary>
+            允许主机IP
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.AppSettings.Logging">
+            <summary>
+            日志配置
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.AppSettings.SwaggerConfig">
+            <summary>
+            Swagger配置
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.AppSettings.DBConfig">
+            <summary>
+            DB数据库配置
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.AppSettings.RedisConfig">
+            <summary>
+            Redis配置
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.AppSettings.BankConfig">
+            <summary>
+            银行配置
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.AppSettiongModel.BankConfig">
+            <summary>
+            银行配置类型
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.BankConfig.BankControllers">
+            <summary>
+            控制器和银行映射关系集合
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.BankConfig.SPDBankConfig">
+            <summary>
+            浦发银行请求地址配置
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.AppSettiongModel.BankControllerItem">
+            <summary>
+            银行和控制器对象
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.BankControllerItem.Controller">
+            <summary>
+            控制器名称
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.BankControllerItem.BankName">
+            <summary>
+            银行名称
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.AppSettiongModel.DBConfig">
+            <summary>
+            DB数据库配置
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.DBConfig.DbType">
+            <summary>
+            数据库类型
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.DBConfig.DBConn">
+            <summary>
+            数据库连接字符串
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.AppSettiongModel.Logging">
+            <summary>
+            AppSettiong---Logging定义
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.Logging.LogLevel">
+            <summary>
+            日志级别
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.AppSettiongModel.LogLevel">
+            <summary>
+            AppSettiong---LogLevel定义
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.LogLevel.Default">
+            <summary>
+            默认级别
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.AppSettiongModel.RedisConfig">
+            <summary>
+            Redis配置
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.RedisConfig.RedisConn">
+            <summary>
+            Redis连接字符串
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.AppSettiongModel.SPDBankConfig">
+            <summary>
+            浦发银行API参数配置
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.ClientId">
+            <summary>
+            客户端id
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.Secret">
+            <summary>
+            秘钥
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.AcctInfo">
+            <summary>
+            账户信息
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.AcctDtlInfoQry">
+            <summary>
+            账户信息查询
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.SingleTransfer">
+            <summary>
+            单笔划拨
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.SnglTrsfRstlQry">
+            <summary>
+            单笔划拨结果
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.ElectRecptApplction">
+            <summary>
+            电子回单申请
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.FncThdCncl">
+            <summary>
+            三方解约
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.RexgAddInfoQry">
+            <summary>
+            退汇附加信息查询
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.BnkInfoQryCombntnTran">
+            <summary>
+            根据抹账流水查原往账流水
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.AuthSmlAmt">
+            <summary>
+            单笔资金划拨小额鉴权
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.PayInsrChk">
+            <summary>
+            支付指令登记
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.PayInsrDtlQry">
+            <summary>
+            支付指令明细查询
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.PayInsrCnl">
+            <summary>
+            支付指令取消
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.PayeeWhtLstQry">
+            <summary>
+            收款人白名单查询
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.PayeeWhtLstMntn">
+            <summary>
+            收款人白名单维护
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.ZLSysInrBnkTfr">
+            <summary>
+            备付金或结算户转客户结算户
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.OlBrwLnRepy">
+            <summary>
+            贷款归还
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.IntDtlQry">
+            <summary>
+            贷款还款明细查询
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.InterestTrial">
+            <summary>
+            贷款试算
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.ReceiptApply">
+            <summary>
+            电子回单申请
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.CorpLnCntlAcctRep">
+            <summary>
+            对公贷款还款维护
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.OlBrwLnRepyTrl">
+            <summary>
+            归还贷款本金利息试算
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.CoreTranQry">
+            <summary>
+            还款查询
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.ZLSysBussBkQry">
+            <summary>
+            划拨结果查询
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.LnRcrdDtlQry">
+            <summary>
+            借据详细信息查看
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.CorpAgngLnRcvblntQry">
+            <summary>
+            借据应还本金利息查询
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SPDBankConfig.CrpLnIntTrl">
+            <summary>
+            已放贷款还款计划查询
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.AppSettiongModel.SwaggerConfig">
+            <summary>
+            Swagger配置类 Token验证参数
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SwaggerConfig.AllowedHosts">
+            <summary>
+            被允许的主机ip
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SwaggerConfig.SecurityKey">
+            <summary>
+            秘钥
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SwaggerConfig.issuer">
+            <summary>
+            服务端
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.SwaggerConfig.audience">
+            <summary>
+            客户端
+            </summary>
+        </member>
         <member name="T:shuiyintong.Entity.Enums.BankTypeEum">
             <summary>
             银行类型

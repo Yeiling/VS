@@ -1,5 +1,5 @@
-﻿using shuiyintong.Common.BankConfig;
-using shuiyintong.DBUtils.IService;
+﻿using shuiyintong.DBUtils.IService;
+using shuiyintong.Entity.AppSettiongModel;
 using SqlSugar;
 using System;
 using System.Collections.Generic;
@@ -18,7 +18,7 @@ namespace shuiyintong.DBUtils.Service
         /// <summary>
         /// 数据库链接字段
         /// </summary>
-        private readonly string conn = AppSettings.BankConfig.DBConfig.DBConn;
+        private readonly string conn = AppSettings.DBConfig.DBConn;
         /// <summary>
         /// 数据库类型MySQL
         /// </summary>

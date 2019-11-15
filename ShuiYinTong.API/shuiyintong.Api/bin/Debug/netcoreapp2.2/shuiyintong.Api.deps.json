@@ -1599,6 +1599,7 @@
         "dependencies": {
           "NewLife.Redis": "2.1.6871.1098",
           "shuiyintong.Common": "1.0.0",
+          "shuiyintong.Entity": "1.0.0",
           "sqlSugarCore": "5.0.0.10"
         },
         "runtime": {

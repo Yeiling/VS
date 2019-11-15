@@ -113,16 +113,6 @@
             浦发银行接口
             </summary>
         </member>
-        <member name="P:shuiyintong.Api.Controllers.SPDBankController.CountryServer">
-            <summary>
-            注入数据库操作Country服务
-            </summary>
-        </member>
-        <member name="P:shuiyintong.Api.Controllers.SPDBankController.CityServer">
-            <summary>
-            注入数据库操作City服务
-            </summary>
-        </member>
         <member name="F:shuiyintong.Api.Controllers.SPDBankController.SPDBank">
             <summary>
             银行类型---浦发银行
@@ -138,12 +128,10 @@
             Http请求返回Code
             </summary>
         </member>
-        <member name="M:shuiyintong.Api.Controllers.SPDBankController.Test(System.String)">
+        <member name="F:shuiyintong.Api.Controllers.SPDBankController.redis">
             <summary>
-            测试验证接口
+            Redis服务
             </summary>
-            <param name="name">CountryName</param>
-            <returns></returns>
         </member>
         <member name="M:shuiyintong.Api.Controllers.SPDBankController.GetHeaderSign(System.Object,System.String@)">
             <summary>

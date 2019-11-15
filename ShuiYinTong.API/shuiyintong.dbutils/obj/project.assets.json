@@ -1056,6 +1056,16 @@
         "runtime": {
           "bin/placeholder/shuiyintong.Common.dll": {}
         }
+      },
+      "shuiyintong.Entity/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "compile": {
+          "bin/placeholder/shuiyintong.Entity.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/shuiyintong.Entity.dll": {}
+        }
       }
     }
   },
@@ -3501,6 +3511,11 @@
       "type": "project",
       "path": "../shuiyintong.Common/shuiyintong.Common.csproj",
       "msbuildProject": "../shuiyintong.Common/shuiyintong.Common.csproj"
+    },
+    "shuiyintong.Entity/1.0.0": {
+      "type": "project",
+      "path": "../shuiyintong.Entity/shuiyintong.Entity.csproj",
+      "msbuildProject": "../shuiyintong.Entity/shuiyintong.Entity.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3508,6 +3523,7 @@
       "Microsoft.NETCore.App >= 2.2.0",
       "NewLife.Redis >= 2.1.6871.1098",
       "shuiyintong.Common >= 1.0.0",
+      "shuiyintong.Entity >= 1.0.0",
       "sqlSugarCore >= 5.0.0.10"
     ]
   },
@@ -3543,6 +3559,9 @@
           "projectReferences": {
             "F:\\githubpro\\ShuiYinTong.API\\shuiyintong.Common\\shuiyintong.Common.csproj": {
               "projectPath": "F:\\githubpro\\ShuiYinTong.API\\shuiyintong.Common\\shuiyintong.Common.csproj"
+            },
+            "F:\\githubpro\\ShuiYinTong.API\\shuiyintong.Entity\\shuiyintong.Entity.csproj": {
+              "projectPath": "F:\\githubpro\\ShuiYinTong.API\\shuiyintong.Entity\\shuiyintong.Entity.csproj"
             }
           }
         }

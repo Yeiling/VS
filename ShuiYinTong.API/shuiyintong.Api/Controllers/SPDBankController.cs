@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using shuiyintong.Common;
-using shuiyintong.Common.BankConfig;
 using shuiyintong.Common.Extend;
 using shuiyintong.Common.NPOIFile;
 using shuiyintong.DBUtils;
+using shuiyintong.Entity.AppSettiongModel;
 using shuiyintong.Entity.HttpRequestResultEntity;
 using shuiyintong.Entity.SPDBankEntity.SPDBankFile;
 using shuiyintong.Entity.SPDBankEntity.SPDBankReq;
