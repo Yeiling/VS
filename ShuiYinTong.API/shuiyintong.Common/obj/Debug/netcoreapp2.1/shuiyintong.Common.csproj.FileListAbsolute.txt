@@ -1,9 +1,0 @@
-F:\Project\shuiyintong.Common\bin\Debug\netcoreapp2.1\shuiyintong.Common.deps.json
-F:\Project\shuiyintong.Common\bin\Debug\netcoreapp2.1\shuiyintong.Common.dll
-F:\Project\shuiyintong.Common\bin\Debug\netcoreapp2.1\shuiyintong.Common.pdb
-F:\Project\shuiyintong.Common\obj\Debug\netcoreapp2.1\shuiyintong.Common.csproj.CoreCompileInputs.cache
-F:\Project\shuiyintong.Common\obj\Debug\netcoreapp2.1\shuiyintong.Common.AssemblyInfoInputs.cache
-F:\Project\shuiyintong.Common\obj\Debug\netcoreapp2.1\shuiyintong.Common.AssemblyInfo.cs
-F:\Project\shuiyintong.Common\obj\Debug\netcoreapp2.1\shuiyintong.Common.dll
-F:\Project\shuiyintong.Common\obj\Debug\netcoreapp2.1\shuiyintong.Common.pdb
-F:\Project\shuiyintong.Common\obj\Debug\netcoreapp2.1\shuiyintong.Common.csprojAssemblyReference.cache
