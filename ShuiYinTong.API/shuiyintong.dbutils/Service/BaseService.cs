@@ -147,8 +147,7 @@ namespace shuiyintong.DBUtils.Service
                 return null;
             }
             TotalCount = lst.Count;
-            return lst.Skip((PageIndex - 1) * PageSize)
-                .Take(PageSize);
+            return lst.Skip((PageIndex - 1) * PageSize).Take(PageSize);
         }
         /// <summary>
         /// SQL查询集合

@@ -115,7 +115,12 @@
         </member>
         <member name="P:shuiyintong.Api.Controllers.SPDBankController.CountryServer">
             <summary>
-            注入数据库操作服务
+            注入数据库操作Country服务
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Api.Controllers.SPDBankController.CityServer">
+            <summary>
+            注入数据库操作City服务
             </summary>
         </member>
         <member name="F:shuiyintong.Api.Controllers.SPDBankController.SPDBank">
