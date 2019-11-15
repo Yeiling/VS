@@ -3,6 +3,8 @@ using shuiyintong.Common;
 using shuiyintong.Common.Extend;
 using shuiyintong.Common.NPOIFile;
 using shuiyintong.DBUtils;
+using shuiyintong.DBUtils.IService;
+using shuiyintong.DBUtils.LinuxTestEntity;
 using shuiyintong.Entity.AppSettiongModel;
 using shuiyintong.Entity.HttpRequestResultEntity;
 using shuiyintong.Entity.SPDBankEntity.SPDBankFile;
@@ -24,10 +26,10 @@ namespace shuiyintong.Api.Controllers
     /// </summary>
     public class SPDBankController : BaseController
     {
-        ///// <summary>
-        ///// 数据库实现
-        ///// </summary>s
-        
+        /// <summary>
+        /// 数据库实现
+        /// </summary>
+        public IBaseService<country> CountryServer { get; set; }
 
 
         /// <summary>
@@ -73,7 +75,8 @@ namespace shuiyintong.Api.Controllers
         [HttpGet]
         public void Test()
         {
-
+            var lst = CountryServer.GetList(c => true);
+            var json = lst.ToJson();
         }
 
 

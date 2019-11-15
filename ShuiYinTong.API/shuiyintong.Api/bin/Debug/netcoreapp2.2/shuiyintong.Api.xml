@@ -113,6 +113,11 @@
             浦发银行接口
             </summary>
         </member>
+        <member name="P:shuiyintong.Api.Controllers.SPDBankController.CountryServer">
+            <summary>
+            数据库实现
+            </summary>
+        </member>
         <member name="F:shuiyintong.Api.Controllers.SPDBankController.SPDBank">
             <summary>
             银行类型---浦发银行
@@ -140,6 +145,11 @@
             <param name="obj">对象参数</param>
             <param name="dataRequest">请求Json字符串</param>
             <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.Test">
+            <summary>
+            数据库接口测试
+            </summary>
         </member>
         <member name="M:shuiyintong.Api.Controllers.SPDBankController.GenerateDoc(shuiyintong.Entity.SPDBankEntity.SPDBankFile.GuaranteeReq)">
             <summary>
