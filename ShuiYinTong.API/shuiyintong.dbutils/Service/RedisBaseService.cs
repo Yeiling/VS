@@ -1,6 +1,6 @@
 ﻿using NewLife.Caching;
-using shuiyintong.Common.BankConfig;
 using shuiyintong.DBUtils.IService;
+using shuiyintong.Entity.AppSettiongModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +17,7 @@ namespace shuiyintong.DBUtils.Service
         /// <summary>
         /// Rerdis链接字符串
         /// </summary>
-        private readonly string RedisConn = AppSettings.BankConfig.DBConfig.RedisConn;
+        private readonly string RedisConn = AppSettings.RedisConfig.RedisConn;
         /// <summary>
         /// Redis操作对象
         /// </summary>

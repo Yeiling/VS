@@ -3,7 +3,7 @@
 namespace 尚硅谷数据结构和算法.Queues
 {
     /// <summary>
-    /// 数组模拟队列---静态的队列，明显布斯和并发和多线程不安全
+    /// 数组模拟队列---静态的队列，明显不适合并发和多线程不安全
     /// </summary>
     public class ArrayQueue
     {

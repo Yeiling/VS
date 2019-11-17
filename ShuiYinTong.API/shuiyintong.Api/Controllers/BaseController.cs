@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using shuiyintong.Common.BankConfig;
+using shuiyintong.Entity.AppSettiongModel;
 
 namespace shuiyintong.Api.Controllers
 {
@@ -19,11 +19,11 @@ namespace shuiyintong.Api.Controllers
         /// <summary>
         /// Redis链接字符串
         /// </summary>
-        public static string RedisConn = bankConfig.DBConfig.RedisConn;
+        public static string RedisConn = AppSettings.RedisConfig.RedisConn;
         /// <summary>
         /// 数据库链接字符串
         /// </summary>
-        public static string DBConn = bankConfig.DBConfig.DBConn;
+        public static string DBConn = AppSettings.DBConfig.DBConn;
     }
 
 

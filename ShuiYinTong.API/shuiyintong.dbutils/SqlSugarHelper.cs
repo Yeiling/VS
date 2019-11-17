@@ -9,11 +9,12 @@ namespace shuiyintong.DBUtils
     {
         private SqlSugarClient SqlClient;
         private SimpleClient SimpleClient;
+        private DbType DBtype = DbType.MySql;
 
         #region 单例模式
         private static SqlSugarHelper sqlSugarHelper = null;
         private SqlSugarHelper() { }
-        public SqlSugarHelper(string conn, DbType DBtype = DbType.SqlServer)
+        public SqlSugarHelper(string conn)
         {
             SqlClient = new SqlSugarClient(new ConnectionConfig()
             {
@@ -30,10 +31,10 @@ namespace shuiyintong.DBUtils
         /// <param name="conn">链接字符串</param>
         /// <param name="DBtype">数据库类型</param>
         /// <returns></returns>
-        public static SqlSugarHelper InitClient(string conn, DbType DBtype = DbType.SqlServer)
+        public static SqlSugarHelper InitClient(string conn)
         {
             if (sqlSugarHelper == null)
-                sqlSugarHelper = new SqlSugarHelper(conn, DBtype);
+                sqlSugarHelper = new SqlSugarHelper(conn);
 
             return sqlSugarHelper;
         }

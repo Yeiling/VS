@@ -1,0 +1,17 @@
+﻿#Software: shuiyintong.Api
+#ProcessID: 15400 x64
+#AppDomain: shuiyintong.Api
+#FileName: C:\Program Files\dotnet\dotnet.exe
+#BaseDirectory: F:\githubpro\ShuiYinTong.API\shuiyintong.Api\bin\Debug\netcoreapp2.2\
+#CurrentDirectory: F:\githubpro\ShuiYinTong.API\shuiyintong.Api
+#CommandLine: F:\githubpro\ShuiYinTong.API\shuiyintong.Api\bin\Debug\netcoreapp2.2\shuiyintong.Api.dll
+#ApplicationType: WinForm
+#CLR: 4.0.30319.42000, 
+#OS: Microsoft Windows NT 6.2.9200.0, PC-20190928QROQ/Mypc
+#CPU: 4
+#Date: 2019-11-12
+#字段: 时间 线程ID 线程池Y网页W普通N 线程名 消息内容
+#Fields: Time ThreadID IsPoolThread ThreadName Message
+13:19:37.288  7 N - shuiyintong.Api v1.0.0.0 Build 2000-01-01 
+13:19:37.289  7 N - shuiyintong.Api 
+13:19:37.289  7 N - 为NewLife.Caching.Redis自动注册NewLife.Caching.FullRedis

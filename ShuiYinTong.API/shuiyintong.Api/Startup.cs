@@ -50,22 +50,27 @@ namespace shuiyintong.Api
             //控制器注入时，替换服务
             services.Replace(ServiceDescriptor.Transient<IControllerActivator, ServiceBasedControllerActivator>());
 
+            //WebAPI 全局顾虑器设置
             services.AddMvc(option =>
             {
                 //Http添加请求参数验证---请求参数验证
                 option.Filters.Add<ValidateModelFilter>();
                 //Http请求异常处理验证---异常处理验证
-                option.Filters.Add<ValidateExceptionFilter>();
+                //option.Filters.Add<ValidateExceptionFilter>();
                 //Http添加请求结果验证---请求结果验证
-                option.Filters.Add<ValidateResultFilter>();
+                //option.Filters.Add<ValidateResultFilter>();
 
-            });//.SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             // 注册Swagger服务
             services.AddSwaggerGen(c =>
             {
+                //Swagger文档
                 c.SwaggerDoc("v1", new Info { Title = "ShuiYinTong.WebApi", Version = "v1" });
-                //添加xml文件
+                //Swagger Token过滤器
+                c.OperationFilter<SwaggerOperationFilter>();
+
+                //添加xml文件解析
                 var xmlFile = Assembly.GetExecutingAssembly();
                 var path = Path.GetDirectoryName(xmlFile.Location);
                 DirectoryInfo directoryInfo = new DirectoryInfo(path);
@@ -78,6 +83,25 @@ namespace shuiyintong.Api
                         c.IncludeXmlComments(xmlPath, true);
                     }
                 }
+
+                //添加JWT（Bearer Token）认证
+                //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                //.AddJwtBearer(options =>
+                //{
+                //    options.TokenValidationParameters = new TokenValidationParameters
+                //    {
+                //        ValidateIssuer = true,//是否验证Issuer
+                //        ValidateAudience = true,//是否验证Audience
+                //        ValidateLifetime = true,//是否验证失效时间
+                //        ValidateIssuerSigningKey = true,//是否验证SecurityKey
+                //        ValidAudience = AppSettings.SwaggerConfig.audience,//Audience
+                //        ValidIssuer = AppSettings.SwaggerConfig.issuer,//Issuer，这两项和签发jwt的设置一致
+                //        //拿到SecurityKey
+                //        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(AppSettings.SwaggerConfig.SecurityKey))
+                //    };
+                //});
+
+                //Swagger中添加JWT认证功能如下
                 c.AddSecurityDefinition("Bearer", new ApiKeyScheme
                 {
                     Description = "请输入带有Bearer的Token",
@@ -85,11 +109,11 @@ namespace shuiyintong.Api
                     In = "header",
                     Type = "apiKey"
                 });
-                //Json Token认证方式，此方式为全局添加
                 c.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>>
                 {
-                    { "Bearer", Enumerable.Empty<string>() }
+                    { "Bearer",Enumerable.Empty<string>()},
                 });
+
             });
 
             //读取配置Json文件
@@ -190,8 +214,7 @@ namespace shuiyintong.Api
         /// </summary>
         /// <param name="app"></param>
         /// <param name="env"></param>
-        /// <param name="loggerFactory">NLog</param>
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
@@ -200,18 +223,11 @@ namespace shuiyintong.Api
 
             app.UseHttpsRedirection();
 
-            //Nlog日志
-            //使用NLog作为日志记录工具
-            //loggingBuilder.AddNLog();
-            //引入Nlog配置文件
-            //webHostBuilder.UseNLog();
+            //Swagger JWT配置授权
+            app.UseAuthentication();
 
-            //使用NLog作为日志记录工具
-            loggerFactory.AddNLog();
-            //引入Nlog配置文件
-            var xmlFile = Assembly.GetExecutingAssembly();
-            var path = Path.GetDirectoryName(xmlFile.Location);
-            env.ConfigureNLog(path + "//NLog.config");
+            //NetCore WebAPI全局[异常]处理只能通过中间件来实现---区别于ASP.NET MVC全局过滤
+            app.UseMiddleware<ErrorHandlingMiddleware>();
 
             //添加Swagger
             app.UseSwagger();

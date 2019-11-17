@@ -37,7 +37,7 @@ namespace shuiyintong.Api.Validate
                     DateTime = DateTime.Now.ToString("yyyyMMddHHmmss")
                 };
                 context.Result = new ObjectResult(ParameterValidation);
-                nlog.Info(result.ToJson());
+                //nlog.Info(result.ToJson());
             }
         }
     }

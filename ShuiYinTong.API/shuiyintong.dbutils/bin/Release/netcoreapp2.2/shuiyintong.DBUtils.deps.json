@@ -10,6 +10,7 @@
         "dependencies": {
           "NewLife.Redis": "2.1.6871.1098",
           "shuiyintong.Common": "1.0.0",
+          "shuiyintong.Entity": "1.0.0",
           "sqlSugarCore": "5.0.0.10"
         },
         "runtime": {
@@ -722,6 +723,11 @@
         "runtime": {
           "shuiyintong.Common.dll": {}
         }
+      },
+      "shuiyintong.Entity/1.0.0": {
+        "runtime": {
+          "shuiyintong.Entity.dll": {}
+        }
       }
     }
   },
@@ -1159,6 +1165,11 @@
       "hashPath": "system.threading.tasks.extensions.4.3.0.nupkg.sha512"
     },
     "shuiyintong.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "shuiyintong.Entity/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

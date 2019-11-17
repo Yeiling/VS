@@ -1,0 +1,71 @@
+﻿#Software: shuiyintong.Api
+#ProcessID: 14984 x64
+#AppDomain: shuiyintong.Api
+#FileName: C:\Program Files\dotnet\dotnet.exe
+#BaseDirectory: F:\githubpro\ShuiYinTong.API\shuiyintong.Api\bin\Debug\netcoreapp2.2\
+#CurrentDirectory: F:\githubpro\ShuiYinTong.API\shuiyintong.Api
+#CommandLine: F:\githubpro\ShuiYinTong.API\shuiyintong.Api\bin\Debug\netcoreapp2.2\shuiyintong.Api.dll
+#ApplicationType: WinForm
+#CLR: 4.0.30319.42000, 
+#OS: Microsoft Windows NT 6.2.9200.0, PC-20190928QROQ/Mypc
+#CPU: 4
+#Date: 2019-11-15
+#字段: 时间 线程ID 线程池Y网页W普通N 线程名 消息内容
+#Fields: Time ThreadID IsPoolThread ThreadName Message
+15:59:14.795  7 N - shuiyintong.Api v1.0.0.0 Build 2000-01-01 
+15:59:14.808  7 N - shuiyintong.Api 
+15:59:14.808  7 N - 为NewLife.Caching.Redis自动注册NewLife.Caching.FullRedis
+
+#Software: shuiyintong.Api
+#ProcessID: 5164
+#AppDomain: shuiyintong.Api
+#FileName: C:\Program Files\dotnet\dotnet.exe
+#BaseDirectory: D:\GitFiles\ShuiYinTong.API\shuiyintong.Api\bin\Debug\netcoreapp2.2\
+#CurrentDirectory: D:\GitFiles\ShuiYinTong.API\shuiyintong.Api
+#CommandLine: D:\GitFiles\ShuiYinTong.API\shuiyintong.Api\bin\Debug\netcoreapp2.2\shuiyintong.Api.dll
+#ApplicationType: WinForm
+#CLR: 4.0.30319.42000, 
+#OS: Microsoft Windows NT 6.1.7601 Service Pack 1, INSPIRE-PC/InSpire
+#CPU: 4
+#Date: 2019-11-15
+#字段: 时间 线程ID 线程池Y网页W普通N 线程名 消息内容
+#Fields: Time ThreadID IsPoolThread ThreadName Message
+19:16:11.777  4 N - shuiyintong.Api v1.0.0.0 Build 2000-01-01 
+19:16:11.778  4 N - shuiyintong.Api 
+19:16:11.778  4 N - 为NewLife.Caching.Redis自动注册NewLife.Caching.FullRedis
+
+#Software: shuiyintong.Api
+#ProcessID: 4404
+#AppDomain: shuiyintong.Api
+#FileName: C:\Program Files\dotnet\dotnet.exe
+#BaseDirectory: D:\GitFiles\ShuiYinTong.API\shuiyintong.Api\bin\Debug\netcoreapp2.2\
+#CurrentDirectory: D:\GitFiles\ShuiYinTong.API\shuiyintong.Api
+#CommandLine: D:\GitFiles\ShuiYinTong.API\shuiyintong.Api\bin\Debug\netcoreapp2.2\shuiyintong.Api.dll
+#ApplicationType: WinForm
+#CLR: 4.0.30319.42000, 
+#OS: Microsoft Windows NT 6.1.7601 Service Pack 1, INSPIRE-PC/InSpire
+#CPU: 4
+#Date: 2019-11-15
+#字段: 时间 线程ID 线程池Y网页W普通N 线程名 消息内容
+#Fields: Time ThreadID IsPoolThread ThreadName Message
+19:17:29.089  7 N - shuiyintong.Api v1.0.0.0 Build 2000-01-01 
+19:17:29.090  7 N - shuiyintong.Api 
+19:17:29.090  7 N - 为NewLife.Caching.Redis自动注册NewLife.Caching.FullRedis
+
+#Software: shuiyintong.Api
+#ProcessID: 5168
+#AppDomain: shuiyintong.Api
+#FileName: C:\Program Files\dotnet\dotnet.exe
+#BaseDirectory: D:\GitFiles\ShuiYinTong.API\shuiyintong.Api\bin\Debug\netcoreapp2.2\
+#CurrentDirectory: D:\GitFiles\ShuiYinTong.API\shuiyintong.Api
+#CommandLine: D:\GitFiles\ShuiYinTong.API\shuiyintong.Api\bin\Debug\netcoreapp2.2\shuiyintong.Api.dll
+#ApplicationType: WinForm
+#CLR: 4.0.30319.42000, 
+#OS: Microsoft Windows NT 6.1.7601 Service Pack 1, INSPIRE-PC/InSpire
+#CPU: 4
+#Date: 2019-11-15
+#字段: 时间 线程ID 线程池Y网页W普通N 线程名 消息内容
+#Fields: Time ThreadID IsPoolThread ThreadName Message
+19:19:17.270  8 N - shuiyintong.Api v1.0.0.0 Build 2000-01-01 
+19:19:17.272  8 N - shuiyintong.Api 
+19:19:17.272  8 N - 为NewLife.Caching.Redis自动注册NewLife.Caching.FullRedis
