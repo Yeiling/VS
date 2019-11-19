@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using shuiyintong.Common;
 using shuiyintong.Common.Extend;
 using shuiyintong.Common.NPOIFile;
@@ -79,6 +80,22 @@ namespace shuiyintong.Api.Controllers
             var json = lst.ToJson();
             int a = 1, b = 0;
             int cc = a / b;
+        }
+
+        /// <summary>
+        /// 文件上传
+        /// </summary>
+        /// <param name="file">文件参数</param>
+        /// <returns></returns>
+        [HttpPost]
+        public string UpLoadfiles(SPDBankFileUpLoadReqExt file)
+        {
+            WTPC_ERR tPC_ERR = new WTPC_ERR();
+            var stream = file.localFile.OpenReadStream();
+            bool b = SPDBankFile.UpLoadfile(file.localFile.FileName, file.remoteFile, file.remotedir, file.transId, file.transFlag, ref tPC_ERR);
+            if (b)
+                return tPC_ERR.ToJson();
+            return null;
         }
 
 

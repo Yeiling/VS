@@ -642,6 +642,36 @@
             是否续传标志，1为续传，0为不续传
             </summary>
         </member>
+        <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileUpLoadReqExt">
+            <summary>
+            浦发银行文件上传请求类型
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileUpLoadReqExt.localFile">
+            <summary>
+            上传的本地文件绝对路径
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileUpLoadReqExt.remoteFile">
+            <summary>
+            上传文件重命名(noname表示文件不变名)
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileUpLoadReqExt.remotedir">
+            <summary>
+            上传目的目录(nodir表示为业务根目录）
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileUpLoadReqExt.transId">
+            <summary>
+            上传文件传输id，不续传时可用noid表示不填该项
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileUpLoadReqExt.transFlag">
+            <summary>
+            是否续传标志，1为续传，0为不续传
+            </summary>
+        </member>
         <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankFile.WTPC_ERR">
             <summary>
             浦发银行文件上传下载错误信息对象

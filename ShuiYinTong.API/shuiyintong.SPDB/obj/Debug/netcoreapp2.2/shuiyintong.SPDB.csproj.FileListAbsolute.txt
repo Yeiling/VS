@@ -28,3 +28,5 @@ D:\GitFiles\ShuiYinTong.API\shuiyintong.SPDB\obj\Debug\netcoreapp2.2\shuiyintong
 D:\GitFiles\ShuiYinTong.API\shuiyintong.SPDB\obj\Debug\netcoreapp2.2\shuiyintong.SPDB.csproj.CopyComplete
 D:\GitFiles\ShuiYinTong.API\shuiyintong.SPDB\obj\Debug\netcoreapp2.2\shuiyintong.SPDB.dll
 D:\GitFiles\ShuiYinTong.API\shuiyintong.SPDB\obj\Debug\netcoreapp2.2\shuiyintong.SPDB.pdb
+F:\githubpro\ShuiYinTong.API\shuiyintong.SPDB\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Http.Features.dll
+F:\githubpro\ShuiYinTong.API\shuiyintong.SPDB\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Http.Features.xml

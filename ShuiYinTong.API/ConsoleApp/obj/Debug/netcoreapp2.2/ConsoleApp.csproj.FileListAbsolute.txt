@@ -40,3 +40,5 @@ D:\GitFiles\ShuiYinTong.API\ConsoleApp\obj\Debug\netcoreapp2.2\ConsoleApp.Assemb
 D:\GitFiles\ShuiYinTong.API\ConsoleApp\obj\Debug\netcoreapp2.2\ConsoleApp.csproj.CopyComplete
 D:\GitFiles\ShuiYinTong.API\ConsoleApp\obj\Debug\netcoreapp2.2\ConsoleApp.dll
 D:\GitFiles\ShuiYinTong.API\ConsoleApp\obj\Debug\netcoreapp2.2\ConsoleApp.pdb
+F:\githubpro\ShuiYinTong.API\ConsoleApp\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Http.Features.dll
+F:\githubpro\ShuiYinTong.API\ConsoleApp\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Http.Features.xml

@@ -67,8 +67,8 @@ namespace shuiyintong.Api
             {
                 //Swagger文档
                 c.SwaggerDoc("v1", new Info { Title = "ShuiYinTong.WebApi", Version = "v1" });
-                //Swagger Token过滤器
-                c.OperationFilter<SwaggerOperationFilter>();
+                //Swagger选项过滤器
+                c.OperationFilter<SwaggerFileUploadFilter>();
 
                 //添加xml文件解析
                 var xmlFile = Assembly.GetExecutingAssembly();

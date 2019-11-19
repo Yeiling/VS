@@ -28,3 +28,5 @@ D:\GitFiles\ShuiYinTong.API\shuiyintong.dbutils\obj\Debug\netcoreapp2.2\shuiyint
 D:\GitFiles\ShuiYinTong.API\shuiyintong.dbutils\obj\Debug\netcoreapp2.2\shuiyintong.DBUtils.csproj.CopyComplete
 D:\GitFiles\ShuiYinTong.API\shuiyintong.dbutils\obj\Debug\netcoreapp2.2\shuiyintong.DBUtils.dll
 D:\GitFiles\ShuiYinTong.API\shuiyintong.dbutils\obj\Debug\netcoreapp2.2\shuiyintong.DBUtils.pdb
+F:\githubpro\ShuiYinTong.API\shuiyintong.dbutils\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Http.Features.dll
+F:\githubpro\ShuiYinTong.API\shuiyintong.dbutils\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Http.Features.xml

@@ -151,6 +151,13 @@
             数据库接口测试
             </summary>
         </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.UpLoadfiles(shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileUpLoadReqExt)">
+            <summary>
+            文件上传
+            </summary>
+            <param name="file">文件参数</param>
+            <returns></returns>
+        </member>
         <member name="M:shuiyintong.Api.Controllers.SPDBankController.GenerateDoc(shuiyintong.Entity.SPDBankEntity.SPDBankFile.GuaranteeReq)">
             <summary>
             担保函导出Word文档
@@ -433,14 +440,19 @@
             <param name="exception"></param>
             <returns></returns>
         </member>
-        <member name="T:shuiyintong.Api.Validate.SwaggerOperationFilter">
+        <member name="T:shuiyintong.Api.Validate.SwaggerFileUploadFilter">
             <summary>
-            Swagger授权访问过滤
+            Swagger选项过滤器代码（文件上传选择文件路径）
             </summary>
         </member>
-        <member name="M:shuiyintong.Api.Validate.SwaggerOperationFilter.Apply(Swashbuckle.AspNetCore.Swagger.Operation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)">
+        <member name="F:shuiyintong.Api.Validate.SwaggerFileUploadFilter.FormFilePropertyNames">
             <summary>
-            实现Swagger过滤接口验证
+            FormFile名称
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.Validate.SwaggerFileUploadFilter.Apply(Swashbuckle.AspNetCore.Swagger.Operation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)">
+            <summary>
+            实现接口方法
             </summary>
             <param name="operation"></param>
             <param name="context"></param>

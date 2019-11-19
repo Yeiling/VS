@@ -736,6 +736,9 @@
         }
       },
       "shuiyintong.Entity/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "2.2.0.0"
+        },
         "runtime": {
           "shuiyintong.Entity.dll": {}
         }
@@ -747,6 +750,14 @@
         },
         "runtime": {
           "shuiyintong.SPDB.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Http.Features.Reference/2.2.0.0": {
+        "runtime": {
+          "Microsoft.AspNetCore.Http.Features.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.18316"
+          }
         }
       }
     }
@@ -1201,6 +1212,11 @@
     },
     "shuiyintong.SPDB/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.AspNetCore.Http.Features.Reference/2.2.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }
