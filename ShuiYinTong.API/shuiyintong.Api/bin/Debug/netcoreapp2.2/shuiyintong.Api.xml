@@ -457,6 +457,23 @@
             <param name="operation"></param>
             <param name="context"></param>
         </member>
+        <member name="T:shuiyintong.Api.Validate.ValidateActionFilter">
+            <summary>
+            请求参数属性验证(如:必填项，数值范围约定，正则表达式匹配等)---重写
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.Validate.ValidateActionFilter.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            重写OnActionExecuting方法，统一定义验证
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:shuiyintong.Api.Validate.ValidateActionFilter.OnActionExecuted(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext)">
+            <summary>
+            重写OnActionExecuted方法，统一对返回结果处理
+            </summary>
+            <param name="context"></param>
+        </member>
         <member name="T:shuiyintong.Api.Validate.ValidateExceptionFilter">
             <summary>
             WebAPI异常处理过滤---重写ExceptionFilterAttribute ，  IExceptionFilter
@@ -543,34 +560,6 @@
             <summary>
             
             </summary>
-        </member>
-        <member name="T:shuiyintong.Api.Validate.ValidateModelFilter">
-            <summary>
-            请求参数属性验证(如:必填项，数值范围约定，正则表达式匹配等)---重写
-            </summary>
-        </member>
-        <member name="M:shuiyintong.Api.Validate.ValidateModelFilter.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
-            <summary>
-            重写OnActionExecuting方法，统一定义验证
-            </summary>
-            <param name="context"></param>
-        </member>
-        <member name="T:shuiyintong.Api.Validate.ValidateResultFilter">
-            <summary>
-            请求返回结果验证---重写
-            </summary>
-        </member>
-        <member name="M:shuiyintong.Api.Validate.ValidateResultFilter.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
-            <summary>
-            请求执行
-            </summary>
-            <param name="context"></param>
-        </member>
-        <member name="M:shuiyintong.Api.Validate.ValidateResultFilter.OnResultExecuting(Microsoft.AspNetCore.Mvc.Filters.ResultExecutingContext)">
-            <summary>
-            执行结果过滤(包含参数验证失败返回和请求)
-            </summary>
-            <param name="context"></param>
         </member>
     </members>
 </doc>
