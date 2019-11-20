@@ -53,11 +53,11 @@ namespace shuiyintong.Api
             //WebAPI 全局顾虑器设置
             services.AddMvc(option =>
             {
-                //Http添加请求参数验证---请求参数验证
-                option.Filters.Add<ValidateModelFilter>();
+                //Http添加请求参数验证---请求参数验证和结果验证
+                option.Filters.Add<ValidateActionFilter>();
                 //Http请求异常处理验证---异常处理验证
                 //option.Filters.Add<ValidateExceptionFilter>();
-                //Http添加请求结果验证---请求结果验证
+                //Http添加请求结果验证---请求结果验证---已删除
                 //option.Filters.Add<ValidateResultFilter>();
 
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
