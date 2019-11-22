@@ -36,7 +36,8 @@ namespace shuiyintong.Api.Validate
                     Code = 412,//参数验证失败码
                     ResponseType = (byte)ResponseType.Fail,
                     Data = result,
-                    DateTime = DateTime.Now.ToString("yyyyMMddHHmmss")
+                    DateTime = DateTime.Now.ToString("yyyyMMddHHmmss"),
+                    Msg = ResponseType.Fail.GetDescription()
                 };
                 context.Result = new ObjectResult(ParameterValidation);
                 //nlog.Info(result.ToJson());

@@ -365,6 +365,11 @@
             请求时间
             </summary>
         </member>
+        <member name="P:shuiyintong.Entity.HttpRequestResultEntity.BaseResponse`1.Msg">
+            <summary>
+            错误信息
+            </summary>
+        </member>
         <member name="T:shuiyintong.Entity.HttpRequestResultEntity.ValidateModel">
             <summary>
             参数（请求参数实体属性验证）返回对象
@@ -525,6 +530,156 @@
         <member name="F:shuiyintong.Entity.SPDBankEntity.SPDBankAPITypeEunm.SPDBankAPIType.CrpLnIntTrl">
             <summary>
             已放贷款还款计划查询
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.DeductionEnum">
+            <summary>
+            浦发银行回传平台信息枚举统一定义
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.DeductionEnum.EnterpriseScaleType">
+            <summary>
+            企业规模枚举类型
+            </summary>
+        </member>
+        <member name="F:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.DeductionEnum.EnterpriseScaleType.Miniature">
+            <summary>
+            微型企业
+            </summary>
+        </member>
+        <member name="F:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.DeductionEnum.EnterpriseScaleType.Smal">
+            <summary>
+            小型企业
+            </summary>
+        </member>
+        <member name="F:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.DeductionEnum.EnterpriseScaleType.Medium">
+            <summary>
+            中型企业
+            </summary>
+        </member>
+        <member name="F:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.DeductionEnum.EnterpriseScaleType.Large">
+            <summary>
+            大型企业
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.DeductionEnum.InteractiveCode">
+            <summary>
+            推送编码定义
+            </summary>
+        </member>
+        <member name="F:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.DeductionEnum.InteractiveCode.Fail">
+            <summary>
+            失败
+            </summary>
+        </member>
+        <member name="F:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.DeductionEnum.InteractiveCode.Success">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.ProjectApproval">
+            <summary>
+            授信---项目审批信息请求类型
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.ProjectApproval.platformAcctNo">
+            <summary>
+            平台项目账号
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.ProjectApproval.enterpriseName">
+            <summary>
+            企业名称
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.ProjectApproval.approvalOpinion">
+            <summary>
+            审批意见---1-->通过/0-->拒绝
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.ProjectApproval.remarks">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.ProjectApproval.enterpriseScale">
+            <summary>
+            企业规模---大型/中型/小型
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.ProjectApproval.planningEnterprise">
+            <summary>
+            划型企业---按照四部委标准定义
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.ProjectApproval.businessIncome">
+            <summary>
+            营业收入
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.ProjectApproval.practitioners">
+            <summary>
+            从业人员
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.ProjectApproval.totalAssets">
+            <summary>
+            资产总额
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.ProjectApproval.IsFitReq">
+            <summary>
+            企业以及关键人是否满足人行征信准入条件
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.ProjectApproval.proportion">
+            <summary>
+            企业消贷比(分值)
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.ProjectApproval.overdueFrequency">
+            <summary>
+            企业法定代表人最近24个自然月最高连续逾期次数
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.ProjectApproval.overdueTotalFrequency">
+            <summary>
+            企业法定代表人最近24个自然月累计逾期次数
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.TaxVerification">
+            <summary>
+            授信---退税核验请求类型
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.TaxVerification.platformAcctNo">
+            <summary>
+            平台项目编号
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.TaxVerification.enterpriseName">
+            <summary>
+            企业名称
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.TaxVerification.accountName">
+            <summary>
+            户名
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.TaxVerification.acctNo">
+            <summary>
+            账号
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.TaxVerification.openBank">
+            <summary>
+            开户行
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.TaxVerification.IsDrawback">
+            <summary>
+            是否退税账户---(1:是 0：否)
             </summary>
         </member>
         <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankFile.GuaranteeReq">

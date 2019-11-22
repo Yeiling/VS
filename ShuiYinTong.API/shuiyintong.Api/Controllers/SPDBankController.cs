@@ -1,13 +1,13 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using shuiyintong.Common;
 using shuiyintong.Common.Extend;
 using shuiyintong.Common.NPOIFile;
 using shuiyintong.DBUtils;
 using shuiyintong.DBUtils.IService;
-using shuiyintong.DBUtils.LinuxTestEntity;
+using shuiyintong.DBUtils.Test_tuishui_Demo;
 using shuiyintong.Entity.AppSettiongModel;
 using shuiyintong.Entity.HttpRequestResultEntity;
+using shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq;
 using shuiyintong.Entity.SPDBankEntity.SPDBankFile;
 using shuiyintong.Entity.SPDBankEntity.SPDBankReq;
 using shuiyintong.SPDB;
@@ -18,6 +18,7 @@ using static shuiyintong.Entity.Enums.BankTypeEum;
 using static shuiyintong.Entity.Enums.RedisDBEnum;
 using static shuiyintong.Entity.Enums.RespCodeEnum;
 using static shuiyintong.Entity.SPDBankEntity.SPDBankAPITypeEunm;
+using static shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.DeductionEnum;
 using WTPC_ERR = shuiyintong.Entity.SPDBankEntity.SPDBankFile.WTPC_ERR;
 
 namespace shuiyintong.Api.Controllers
@@ -27,11 +28,29 @@ namespace shuiyintong.Api.Controllers
     /// </summary>
     public class SPDBankController : BaseController
     {
+        #region 数据库操作相关服务
         /// <summary>
-        /// 数据库实现
+        /// 项目审批信息
         /// </summary>
-        public IBaseService<country> CountryServer { get; set; }
+        public IBaseService<tb_ProjectApproval> ProjectApprovalServer { get; set; }
+        /// <summary>
+        /// 订单表服务
+        /// </summary>
+        public IBaseService<tb_productOrder> ProductOrderServer { get; set; }
 
+        /// <summary>
+        /// 退税账户核验
+        /// </summary>
+        public IBaseService<tb_TaxVerification> TaxVerificationServer { get; set; }
+        /// <summary>
+        /// 公司账户
+        /// </summary>
+        public IBaseService<tb_companyAccount> CompanyAccountServer { get; set; }
+
+
+        #endregion
+
+        #region 银行配置缓存
 
         /// <summary>
         /// 银行类型---浦发银行
@@ -49,6 +68,8 @@ namespace shuiyintong.Api.Controllers
         /// Redis服务
         /// </summary>
         private static readonly NewLifeRedisHelper redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
+        #endregion
+
 
         #region 接口签名
 
@@ -70,38 +91,9 @@ namespace shuiyintong.Api.Controllers
         }
         #endregion
 
-        /// <summary>
-        /// 数据库接口测试
-        /// </summary>
-        [HttpGet]
-        public void Test()
-        {
-            var lst = CountryServer.GetList(c => true);
-            var json = lst.ToJson();
-            int a = 1, b = 0;
-            int cc = a / b;
-        }
-
-        /// <summary>
-        /// 文件上传
-        /// </summary>
-        /// <param name="file">文件参数</param>
-        /// <returns></returns>
-        [HttpPost]
-        public string UpLoadfiles(SPDBankFileUpLoadReqExt file)
-        {
-            WTPC_ERR tPC_ERR = new WTPC_ERR();
-            var stream = file.localFile.OpenReadStream();
-            bool b = SPDBankFile.UpLoadfile(file.localFile.FileName, file.remoteFile, file.remotedir, file.transId, file.transFlag, ref tPC_ERR);
-            if (b)
-                return tPC_ERR.ToJson();
-            return null;
-        }
-
-
         #region 生成担保函
         /// <summary>
-        /// 担保函导出Word文档
+        /// 担保函导出Word文档----------------------------------------生成担保函--------------------
         /// </summary>
         /// <param name="guaranteeReq">参数---输出路径必填</param>
         [HttpGet]
@@ -126,13 +118,60 @@ namespace shuiyintong.Api.Controllers
                        };
                 //var xmlFile = Assembly.GetExecutingAssembly();
                 //var path = Path.GetDirectoryName(xmlFile.Location) + "\\担保函.docx";
-                var path = Directory.GetCurrentDirectory() + "\\File\\担保函.docx";
+                var path = AppDomain.CurrentDomain.BaseDirectory + "File\\担保函.docx";
                 NPOIHleper.Export(path, guaranteeReq.OutPath, DirData);
             }
         }
         #endregion
 
         #region 文件上传下载
+        /// <summary>
+        /// 文件上传---扩展测试----------------------------------------文件上传下载开始--------------------
+        /// </summary>
+        /// <param name="file">文件参数</param>
+        /// <returns></returns>
+        [HttpPost]
+        public string UpLoadfileExt(SPDBankFileUpLoadReqExt file)
+        {
+            string path = AppDomain.CurrentDomain.BaseDirectory + "UpLoadFile\\";
+
+            DirectoryInfo dir = new DirectoryInfo(path);
+            FileSystemInfo[] fileinfo = dir.GetFileSystemInfos();  //返回目录中所有文件和子目录
+            DirectoryInfo subdir = null;
+            foreach (FileSystemInfo i in fileinfo)
+            {
+                if (i is DirectoryInfo)            //判断是否文件夹
+                {
+                    subdir = new DirectoryInfo(i.FullName);
+                    subdir.Delete(true);          //删除子目录和文件
+                }
+                else
+                    //如果 使用了 streamreader 在删除前 必须先关闭流 ，否则无法删除 sr.close();
+                    System.IO.File.Delete(i.FullName);      //删除指定文件
+            }
+
+            WTPC_ERR tPC_ERR = new WTPC_ERR();
+            bool b = false;
+            var stream = file.localFile.OpenReadStream();
+            // 把 Stream 转换成 byte[] 
+            byte[] bytes = new byte[stream.Length];
+            stream.Read(bytes, 0, bytes.Length);
+            //设置当前流的位置为流的开始 
+            stream.Seek(0, SeekOrigin.Begin);
+            // 把 byte[] 写入文件 
+            using (FileStream fs = new FileStream(path + file.localFile.FileName, FileMode.OpenOrCreate))
+            {
+                BinaryWriter bw = new BinaryWriter(fs);
+                bw.Write(bytes);
+                bw.Close();
+
+                b = SPDBankFile.UpLoadfile(path + file.localFile.FileName, file.remoteFile, file.remotedir, file.transId, file.transFlag, ref tPC_ERR);
+                if (b)
+                    return tPC_ERR.ToJson();
+                return null;
+            }
+        }
+
         /// <summary>
         /// 文件上传
         /// </summary>
@@ -147,12 +186,11 @@ namespace shuiyintong.Api.Controllers
                 if (b)
                     return tPC_ERR.ToJson();
             }
-
             return null;
         }
 
         /// <summary>
-        /// 文件下载
+        /// 文件下载------------------------------------------------------------文件上传下载结束--------------------
         /// </summary>
         /// <param name="downLoadReq">请求参数</param>
         /// <returns></returns>
@@ -173,31 +211,28 @@ namespace shuiyintong.Api.Controllers
         #region e账通标准API接口
 
         /// <summary>
-        /// 获取账户信息
+        /// 获取账户信息----------------------------------------e账通标准API接口开始--------------------
         /// </summary>
         /// <param name="accountRequest">请求参数</param>
         [HttpPost]
         public JsonResult AcctInfo([FromBody]AccountReq accountRequest)
         {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
             {
-                DateTime = Now
+                DateTime = DateTime.Now.ToString("yyyyMMddHHmmss")
             };
             int code = 0; //http请求错误码
+            ResponseType responseType;
             var header = GetHeaderSign(accountRequest, out string dataRequest);
             HttpClientHelper.POSTRequest(SPDBankConfig.AcctInfo, dataRequest, header, (statusCode, result) =>
             {
                 code = (int)statusCode;
                 baseResponse.Code = code;
                 baseResponse.Data = result;
-                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
-                //Redis保存 //Redis key
-                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.AcctInfo + "-" + Now + "-" + baseResponse.ResponseType;
-                if (redis != null)
-                    redis.Set(key, baseResponse);
-
+                responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
+                baseResponse.ResponseType = (byte)responseType;
+                baseResponse.Msg = responseType.GetDescription();
             });
             return Json(baseResponse);
         }
@@ -207,29 +242,26 @@ namespace shuiyintong.Api.Controllers
         /// </summary>
         /// <param name="acctInfoReq">请求参数</param>
         [HttpPost]
-        public string AcctDtlInfoQry([FromBody]AcctDtlInfoQryReq acctInfoReq)
+        public JsonResult AcctDtlInfoQry([FromBody]AcctDtlInfoQryReq acctInfoReq)
         {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
             {
-                DateTime = Now
+                DateTime = DateTime.Now.ToString("yyyyMMddHHmmss")
             };
             int code = 0; //http请求错误码
+            ResponseType responseType;
             var header = GetHeaderSign(acctInfoReq, out string dataRequest);
             HttpClientHelper.POSTRequest(SPDBankConfig.AcctDtlInfoQry, dataRequest, header, (statusCode, result) =>
             {
                 code = (int)statusCode;
                 baseResponse.Code = code;
                 baseResponse.Data = result;
-                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
-                //Redis保存 //Redis key
-                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.AcctDtlInfoQry + "-" + Now + "-" + baseResponse.ResponseType;
-                if (redis != null)
-                    redis.Set(key, baseResponse);
-
+                responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
+                baseResponse.ResponseType = (byte)responseType;
+                baseResponse.Msg = responseType.GetDescription();
             });
-            return baseResponse.ToJson();
+            return Json(baseResponse);
         }
 
         /// <summary>
@@ -237,7 +269,7 @@ namespace shuiyintong.Api.Controllers
         /// </summary>
         /// <param name="singleTransferReq">请求参数</param>
         [HttpPost]
-        public string SingleTransfer([FromBody]SingleTransferReq singleTransferReq)
+        public JsonResult SingleTransfer([FromBody]SingleTransferReq singleTransferReq)
         {
             string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
@@ -245,21 +277,24 @@ namespace shuiyintong.Api.Controllers
                 DateTime = Now
             };
             int code = 0; //http请求错误码
+            ResponseType responseType;
             var header = GetHeaderSign(singleTransferReq, out string dataRequest);
             HttpClientHelper.POSTRequest(SPDBankConfig.SingleTransfer, dataRequest, header, (statusCode, result) =>
             {
                 code = (int)statusCode;
                 baseResponse.Code = code;
                 baseResponse.Data = result;
-                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
+                responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
+                baseResponse.ResponseType = (byte)responseType;
+                baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.SingleTransfer + "-" + Now + "-" + baseResponse.ResponseType;
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
             });
-            return baseResponse.ToJson();
+            return Json(baseResponse);
         }
 
         /// <summary>
@@ -267,29 +302,26 @@ namespace shuiyintong.Api.Controllers
         /// </summary>
         /// <param name="snglTrsfRstlQryReq">请求参数</param>
         [HttpPost]
-        public string SnglTrsfRstlQry([FromBody]SnglTrsfRstlQryReq snglTrsfRstlQryReq)
+        public JsonResult SnglTrsfRstlQry([FromBody]SnglTrsfRstlQryReq snglTrsfRstlQryReq)
         {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
             {
-                DateTime = Now
+                DateTime = DateTime.Now.ToString("yyyyMMddHHmmss")
             };
             int code = 0; //http请求错误码
+            ResponseType responseType;
             var header = GetHeaderSign(snglTrsfRstlQryReq, out string dataRequest);
             HttpClientHelper.POSTRequest(SPDBankConfig.SnglTrsfRstlQry, dataRequest, header, (statusCode, result) =>
             {
                 code = (int)statusCode;
                 baseResponse.Code = code;
                 baseResponse.Data = result;
-                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
-                //Redis保存 //Redis key
-                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.SnglTrsfRstlQry + "-" + Now + "-" + baseResponse.ResponseType;
-                if (redis != null)
-                    redis.Set(key, baseResponse);
-
+                responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
+                baseResponse.ResponseType = (byte)responseType;
+                baseResponse.Msg = responseType.GetDescription();
             });
-            return baseResponse.ToJson();
+            return Json(baseResponse);
         }
 
         /// <summary>
@@ -297,7 +329,7 @@ namespace shuiyintong.Api.Controllers
         /// </summary>
         /// <param name="electRecptApplctionReq">请求参数</param>
         [HttpPost]
-        public string ElectRecptApplction([FromBody]ElectRecptApplctionReq electRecptApplctionReq)
+        public JsonResult ElectRecptApplction([FromBody]ElectRecptApplctionReq electRecptApplctionReq)
         {
             string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
@@ -305,21 +337,24 @@ namespace shuiyintong.Api.Controllers
                 DateTime = Now
             };
             int code = 0; //http请求错误码
+            ResponseType responseType;
             var header = GetHeaderSign(electRecptApplctionReq, out string dataRequest);
             HttpClientHelper.POSTRequest(SPDBankConfig.ElectRecptApplction, dataRequest, header, (statusCode, result) =>
             {
                 code = (int)statusCode;
                 baseResponse.Code = code;
                 baseResponse.Data = result;
-                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
+                responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
+                baseResponse.ResponseType = (byte)responseType;
+                baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.ElectRecptApplction + "-" + Now + "-" + baseResponse.ResponseType;
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
             });
-            return baseResponse.ToJson();
+            return Json(baseResponse);
         }
 
         /// <summary>
@@ -327,7 +362,7 @@ namespace shuiyintong.Api.Controllers
         /// </summary>
         /// <param name="fncThdCnclReq">请求参数</param>
         [HttpPost]
-        public string FncThdCncl([FromBody]FncThdCnclReq fncThdCnclReq)
+        public JsonResult FncThdCncl([FromBody]FncThdCnclReq fncThdCnclReq)
         {
             string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
@@ -335,21 +370,24 @@ namespace shuiyintong.Api.Controllers
                 DateTime = Now
             };
             int code = 0; //http请求错误码
+            ResponseType responseType;
             var header = GetHeaderSign(fncThdCnclReq, out string dataRequest);
             HttpClientHelper.POSTRequest(SPDBankConfig.FncThdCncl, dataRequest, header, (statusCode, result) =>
             {
                 code = (int)statusCode;
                 baseResponse.Code = code;
                 baseResponse.Data = result;
-                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
+                responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
+                baseResponse.ResponseType = (byte)responseType;
+                baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.FncThdCncl + "-" + Now + "-" + baseResponse.ResponseType;
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
             });
-            return baseResponse.ToJson();
+            return Json(baseResponse);
         }
 
         /// <summary>
@@ -357,29 +395,26 @@ namespace shuiyintong.Api.Controllers
         /// </summary>
         /// <param name="rexgAddInfoQryReq">请求参数</param>
         [HttpPost]
-        public string RexgAddInfoQry([FromBody]RexgAddInfoQryReq rexgAddInfoQryReq)
+        public JsonResult RexgAddInfoQry([FromBody]RexgAddInfoQryReq rexgAddInfoQryReq)
         {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
             {
-                DateTime = Now
+                DateTime = DateTime.Now.ToString("yyyyMMddHHmmss")
             };
             int code = 0; //http请求错误码
+            ResponseType responseType;
             var header = GetHeaderSign(rexgAddInfoQryReq, out string dataRequest);
             HttpClientHelper.POSTRequest(SPDBankConfig.RexgAddInfoQry, dataRequest, header, (statusCode, result) =>
             {
                 code = (int)statusCode;
                 baseResponse.Code = code;
                 baseResponse.Data = result;
-                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
-                //Redis保存 //Redis key
-                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.RexgAddInfoQry + "-" + Now + "-" + baseResponse.ResponseType;
-                if (redis != null)
-                    redis.Set(key, baseResponse);
-
+                responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
+                baseResponse.ResponseType = (byte)responseType;
+                baseResponse.Msg = responseType.GetDescription();
             });
-            return baseResponse.ToJson();
+            return Json(baseResponse);
         }
 
         /// <summary>
@@ -387,7 +422,7 @@ namespace shuiyintong.Api.Controllers
         /// </summary>
         /// <param name="bnkInfoQryCombntnTranReq">请求参数</param>
         [HttpPost]
-        public string BnkInfoQryCombntnTran([FromBody]BnkInfoQryCombntnTranReq bnkInfoQryCombntnTranReq)
+        public JsonResult BnkInfoQryCombntnTran([FromBody]BnkInfoQryCombntnTranReq bnkInfoQryCombntnTranReq)
         {
             string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
@@ -395,21 +430,24 @@ namespace shuiyintong.Api.Controllers
                 DateTime = Now
             };
             int code = 0; //http请求错误码
+            ResponseType responseType;
             var header = GetHeaderSign(bnkInfoQryCombntnTranReq, out string dataRequest);
             HttpClientHelper.POSTRequest(SPDBankConfig.BnkInfoQryCombntnTran, dataRequest, header, (statusCode, result) =>
             {
                 code = (int)statusCode;
                 baseResponse.Code = code;
                 baseResponse.Data = result;
-                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
+                responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
+                baseResponse.ResponseType = (byte)responseType;
+                baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.BnkInfoQryCombntnTran + "-" + Now + "-" + baseResponse.ResponseType;
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
             });
-            return baseResponse.ToJson();
+            return Json(baseResponse);
         }
 
         /// <summary>
@@ -417,7 +455,7 @@ namespace shuiyintong.Api.Controllers
         /// </summary>
         /// <param name="authSmlAmt">请求参数</param>
         [HttpPost]
-        public string AuthSmlAmt([FromBody]AuthSmlAmtReq authSmlAmt)
+        public JsonResult AuthSmlAmt([FromBody]AuthSmlAmtReq authSmlAmt)
         {
             string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
@@ -425,21 +463,24 @@ namespace shuiyintong.Api.Controllers
                 DateTime = Now
             };
             int code = 0; //http请求错误码
+            ResponseType responseType;
             var header = GetHeaderSign(authSmlAmt, out string dataRequest);
             HttpClientHelper.POSTRequest(SPDBankConfig.AuthSmlAmt, dataRequest, header, (statusCode, result) =>
             {
                 code = (int)statusCode;
                 baseResponse.Code = code;
                 baseResponse.Data = result;
-                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
+                responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
+                baseResponse.ResponseType = (byte)responseType;
+                baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.AuthSmlAmt + "-" + Now + "-" + baseResponse.ResponseType;
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
             });
-            return baseResponse.ToJson();
+            return Json(baseResponse);
         }
 
         /// <summary>
@@ -448,7 +489,7 @@ namespace shuiyintong.Api.Controllers
         /// <param name="payInsrChkReq">请求参数</param>
         /// <returns></returns>
         [HttpPost]
-        public string PayInsrChk([FromBody]PayInsrChkReq payInsrChkReq)
+        public JsonResult PayInsrChk([FromBody]PayInsrChkReq payInsrChkReq)
         {
             string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
@@ -456,21 +497,24 @@ namespace shuiyintong.Api.Controllers
                 DateTime = Now
             };
             int code = 0; //http请求错误码
+            ResponseType responseType;
             var header = GetHeaderSign(payInsrChkReq, out string dataRequest);
             HttpClientHelper.POSTRequest(SPDBankConfig.PayInsrChk, dataRequest, header, (statusCode, result) =>
             {
                 code = (int)statusCode;
                 baseResponse.Code = code;
                 baseResponse.Data = result;
-                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
+                responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
+                baseResponse.ResponseType = (byte)responseType;
+                baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.PayInsrChk + "-" + Now + "-" + baseResponse.ResponseType;
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
             });
-            return baseResponse.ToJson();
+            return Json(baseResponse);
         }
 
         /// <summary>
@@ -479,29 +523,26 @@ namespace shuiyintong.Api.Controllers
         /// <param name="payInsrDtlQryReq">请求参数</param>
         /// <returns></returns>
         [HttpPost]
-        public string PayInsrDtlQry([FromBody]PayInsrDtlQryReq payInsrDtlQryReq)
+        public JsonResult PayInsrDtlQry([FromBody]PayInsrDtlQryReq payInsrDtlQryReq)
         {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
             {
-                DateTime = Now
+                DateTime = DateTime.Now.ToString("yyyyMMddHHmmss")
             };
             int code = 0; //http请求错误码
+            ResponseType responseType;
             var header = GetHeaderSign(payInsrDtlQryReq, out string dataRequest);
             HttpClientHelper.POSTRequest(SPDBankConfig.PayInsrDtlQry, dataRequest, header, (statusCode, result) =>
             {
                 code = (int)statusCode;
                 baseResponse.Code = code;
                 baseResponse.Data = result;
-                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
-                //Redis保存 //Redis key
-                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.PayInsrDtlQry + "-" + Now + "-" + baseResponse.ResponseType;
-                if (redis != null)
-                    redis.Set(key, baseResponse);
-
+                responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
+                baseResponse.ResponseType = (byte)responseType;
+                baseResponse.Msg = responseType.GetDescription();
             });
-            return baseResponse.ToJson();
+            return Json(baseResponse);
         }
 
         /// <summary>
@@ -510,7 +551,7 @@ namespace shuiyintong.Api.Controllers
         /// <param name="payInsrCnlReq">请求参数</param>
         /// <returns></returns>
         [HttpPost]
-        public string PayInsrCnl([FromBody]PayInsrCnlReq payInsrCnlReq)
+        public JsonResult PayInsrCnl([FromBody]PayInsrCnlReq payInsrCnlReq)
         {
             string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
@@ -518,21 +559,24 @@ namespace shuiyintong.Api.Controllers
                 DateTime = Now
             };
             int code = 0; //http请求错误码
+            ResponseType responseType;
             var header = GetHeaderSign(payInsrCnlReq, out string dataRequest);
             HttpClientHelper.POSTRequest(SPDBankConfig.PayInsrCnl, dataRequest, header, (statusCode, result) =>
             {
                 code = (int)statusCode;
                 baseResponse.Code = code;
                 baseResponse.Data = result;
-                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
+                responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
+                baseResponse.ResponseType = (byte)responseType;
+                baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.PayInsrCnl + "-" + Now + "-" + baseResponse.ResponseType;
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
             });
-            return baseResponse.ToJson();
+            return Json(baseResponse);
         }
 
         /// <summary>
@@ -541,38 +585,35 @@ namespace shuiyintong.Api.Controllers
         /// <param name="payeeWhtLstQryReq">请求参数</param>
         /// <returns></returns>
         [HttpPost]
-        public string PayeeWhtLstQry([FromBody]PayeeWhtLstQryReq payeeWhtLstQryReq)
+        public JsonResult PayeeWhtLstQry([FromBody]PayeeWhtLstQryReq payeeWhtLstQryReq)
         {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
             {
-                DateTime = Now
+                DateTime = DateTime.Now.ToString("yyyyMMddHHmmss")
             };
             int code = 0; //http请求错误码
+            ResponseType responseType;
             var header = GetHeaderSign(payeeWhtLstQryReq, out string dataRequest);
             HttpClientHelper.POSTRequest(SPDBankConfig.PayeeWhtLstQry, dataRequest, header, (statusCode, result) =>
             {
                 code = (int)statusCode;
                 baseResponse.Code = code;
                 baseResponse.Data = result;
-                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
-                //Redis保存 //Redis key
-                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.PayeeWhtLstQry + "-" + Now + "-" + baseResponse.ResponseType;
-                if (redis != null)
-                    redis.Set(key, baseResponse);
-
+                responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
+                baseResponse.ResponseType = (byte)responseType;
+                baseResponse.Msg = responseType.GetDescription();
             });
-            return baseResponse.ToJson();
+            return Json(baseResponse);
         }
 
         /// <summary>
-        /// 收款人白名单维护
+        /// 收款人白名单维护----------------------------------------e账通标准API接口结束--------------------
         /// </summary>
         /// <param name="payeeWhtLstMntnReq">请求参数</param>
         /// <returns></returns>
         [HttpPost]
-        public string PayeeWhtLstMntn([FromBody]PayeeWhtLstMntnReq payeeWhtLstMntnReq)
+        public JsonResult PayeeWhtLstMntn([FromBody]PayeeWhtLstMntnReq payeeWhtLstMntnReq)
         {
             string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
@@ -580,21 +621,24 @@ namespace shuiyintong.Api.Controllers
                 DateTime = Now
             };
             int code = 0; //http请求错误码
+            ResponseType responseType;
             var header = GetHeaderSign(payeeWhtLstMntnReq, out string dataRequest);
             HttpClientHelper.POSTRequest(SPDBankConfig.PayeeWhtLstMntn, dataRequest, header, (statusCode, result) =>
             {
                 code = (int)statusCode;
                 baseResponse.Code = code;
                 baseResponse.Data = result;
-                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
+                responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
+                baseResponse.ResponseType = (byte)responseType;
+                baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.PayeeWhtLstMntn + "-" + Now + "-" + baseResponse.ResponseType;
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
             });
-            return baseResponse.ToJson();
+            return Json(baseResponse);
         }
 
         #endregion
@@ -602,12 +646,12 @@ namespace shuiyintong.Api.Controllers
         #region e商贷API接口
 
         /// <summary>
-        /// 备付金或结算户转客户结算户
+        /// 备付金或结算户转客户结算户----------------------------------------e商贷API接口开始--------------------
         /// </summary>
         /// <param name="zLSysInrBnkTfrReq">请求参数</param>
         /// <returns></returns>
         [HttpPost]
-        public string ZLSysInrBnkTfr([FromBody]ZLSysInrBnkTfrReq zLSysInrBnkTfrReq)
+        public JsonResult ZLSysInrBnkTfr([FromBody]ZLSysInrBnkTfrReq zLSysInrBnkTfrReq)
         {
             string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
@@ -615,21 +659,24 @@ namespace shuiyintong.Api.Controllers
                 DateTime = Now
             };
             int code = 0; //http请求错误码
+            ResponseType responseType;
             var header = GetHeaderSign(zLSysInrBnkTfrReq, out string dataRequest);
             HttpClientHelper.POSTRequest(SPDBankConfig.ZLSysInrBnkTfr, dataRequest, header, (statusCode, result) =>
             {
                 code = (int)statusCode;
                 baseResponse.Code = code;
                 baseResponse.Data = result;
-                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
+                responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
+                baseResponse.ResponseType = (byte)responseType;
+                baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.ZLSysInrBnkTfr + "-" + Now + "-" + baseResponse.ResponseType;
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
             });
-            return baseResponse.ToJson();
+            return Json(baseResponse);
         }
 
         /// <summary>
@@ -638,7 +685,7 @@ namespace shuiyintong.Api.Controllers
         /// <param name="olBrwLnRepyReq">请求参数</param>
         /// <returns></returns>
         [HttpPost]
-        public string OlBrwLnRepy([FromBody]OlBrwLnRepyReq olBrwLnRepyReq)
+        public JsonResult OlBrwLnRepy([FromBody]OlBrwLnRepyReq olBrwLnRepyReq)
         {
             string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
@@ -646,21 +693,24 @@ namespace shuiyintong.Api.Controllers
                 DateTime = Now
             };
             int code = 0; //http请求错误码
+            ResponseType responseType;
             var header = GetHeaderSign(olBrwLnRepyReq, out string dataRequest);
             HttpClientHelper.POSTRequest(SPDBankConfig.OlBrwLnRepy, dataRequest, header, (statusCode, result) =>
             {
                 code = (int)statusCode;
                 baseResponse.Code = code;
                 baseResponse.Data = result;
-                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
+                responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
+                baseResponse.ResponseType = (byte)responseType;
+                baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.OlBrwLnRepy + "-" + Now + "-" + baseResponse.ResponseType;
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
             });
-            return baseResponse.ToJson();
+            return Json(baseResponse);
         }
 
         /// <summary>
@@ -669,29 +719,26 @@ namespace shuiyintong.Api.Controllers
         /// <param name="intDtlQryReq">请求参数</param>
         /// <returns></returns>
         [HttpPost]
-        public string IntDtlQry([FromBody]IntDtlQryReq intDtlQryReq)
+        public JsonResult IntDtlQry([FromBody]IntDtlQryReq intDtlQryReq)
         {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
             {
-                DateTime = Now
+                DateTime = DateTime.Now.ToString("yyyyMMddHHmmss")
             };
             int code = 0; //http请求错误码
+            ResponseType responseType;
             var header = GetHeaderSign(intDtlQryReq, out string dataRequest);
             HttpClientHelper.POSTRequest(SPDBankConfig.IntDtlQry, dataRequest, header, (statusCode, result) =>
             {
                 code = (int)statusCode;
                 baseResponse.Code = code;
                 baseResponse.Data = result;
-                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
-                //Redis保存 //Redis key
-                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.IntDtlQry + "-" + Now + "-" + baseResponse.ResponseType;
-                if (redis != null)
-                    redis.Set(key, baseResponse);
-
+                responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
+                baseResponse.ResponseType = (byte)responseType;
+                baseResponse.Msg = responseType.GetDescription();
             });
-            return baseResponse.ToJson();
+            return Json(baseResponse);
         }
 
         /// <summary>
@@ -700,7 +747,7 @@ namespace shuiyintong.Api.Controllers
         /// <param name="interestTrialReq">请求参数</param>
         /// <returns></returns>
         [HttpPost]
-        public string InterestTrial([FromBody]InterestTrialReq interestTrialReq)
+        public JsonResult InterestTrial([FromBody]InterestTrialReq interestTrialReq)
         {
             string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
@@ -708,21 +755,24 @@ namespace shuiyintong.Api.Controllers
                 DateTime = Now
             };
             int code = 0; //http请求错误码
+            ResponseType responseType;
             var header = GetHeaderSign(interestTrialReq, out string dataRequest);
             HttpClientHelper.POSTRequest(SPDBankConfig.InterestTrial, dataRequest, header, (statusCode, result) =>
             {
                 code = (int)statusCode;
                 baseResponse.Code = code;
                 baseResponse.Data = result;
-                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
+                responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
+                baseResponse.ResponseType = (byte)responseType;
+                baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.InterestTrial + "-" + Now + "-" + baseResponse.ResponseType;
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
             });
-            return baseResponse.ToJson();
+            return Json(baseResponse);
         }
 
         /// <summary>
@@ -731,7 +781,7 @@ namespace shuiyintong.Api.Controllers
         /// <param name="receiptApplyReq">请求参数</param>
         /// <returns></returns>
         [HttpPost]
-        public string ReceiptApply([FromBody]ReceiptApplyReq receiptApplyReq)
+        public JsonResult ReceiptApply([FromBody]ReceiptApplyReq receiptApplyReq)
         {
             string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
@@ -739,21 +789,24 @@ namespace shuiyintong.Api.Controllers
                 DateTime = Now
             };
             int code = 0; //http请求错误码
+            ResponseType responseType;
             var header = GetHeaderSign(receiptApplyReq, out string dataRequest);
             HttpClientHelper.POSTRequest(SPDBankConfig.ReceiptApply, dataRequest, header, (statusCode, result) =>
             {
                 code = (int)statusCode;
                 baseResponse.Code = code;
                 baseResponse.Data = result;
-                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
+                responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
+                baseResponse.ResponseType = (byte)responseType;
+                baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.ReceiptApply + "-" + Now + "-" + baseResponse.ResponseType;
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
             });
-            return baseResponse.ToJson();
+            return Json(baseResponse);
         }
 
         /// <summary>
@@ -762,7 +815,7 @@ namespace shuiyintong.Api.Controllers
         /// <param name="corpLnCntlAcctReq">请求参数</param>
         /// <returns></returns>
         [HttpPost]
-        public string CorpLnCntlAcctRep([FromBody]CorpLnCntlAcctReq corpLnCntlAcctReq)
+        public JsonResult CorpLnCntlAcctRep([FromBody]CorpLnCntlAcctReq corpLnCntlAcctReq)
         {
             string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
@@ -770,21 +823,24 @@ namespace shuiyintong.Api.Controllers
                 DateTime = Now
             };
             int code = 0; //http请求错误码
+            ResponseType responseType;
             var header = GetHeaderSign(corpLnCntlAcctReq, out string dataRequest);
             HttpClientHelper.POSTRequest(SPDBankConfig.CorpLnCntlAcctRep, dataRequest, header, (statusCode, result) =>
             {
                 code = (int)statusCode;
                 baseResponse.Code = code;
                 baseResponse.Data = result;
-                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
+                responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
+                baseResponse.ResponseType = (byte)responseType;
+                baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.CorpLnCntlAcctRep + "-" + Now + "-" + baseResponse.ResponseType;
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
             });
-            return baseResponse.ToJson();
+            return Json(baseResponse);
         }
 
         /// <summary>
@@ -793,7 +849,7 @@ namespace shuiyintong.Api.Controllers
         /// <param name="olBrwLnRepyTrlReq">请求参数</param>
         /// <returns></returns>
         [HttpPost]
-        public string OlBrwLnRepyTrl([FromBody]OlBrwLnRepyTrlReq olBrwLnRepyTrlReq)
+        public JsonResult OlBrwLnRepyTrl([FromBody]OlBrwLnRepyTrlReq olBrwLnRepyTrlReq)
         {
             string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
@@ -801,21 +857,24 @@ namespace shuiyintong.Api.Controllers
                 DateTime = Now
             };
             int code = 0; //http请求错误码
+            ResponseType responseType;
             var header = GetHeaderSign(olBrwLnRepyTrlReq, out string dataRequest);
             HttpClientHelper.POSTRequest(SPDBankConfig.OlBrwLnRepyTrl, dataRequest, header, (statusCode, result) =>
             {
                 code = (int)statusCode;
                 baseResponse.Code = code;
                 baseResponse.Data = result;
-                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
+                responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
+                baseResponse.ResponseType = (byte)responseType;
+                baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.OlBrwLnRepyTrl + "-" + Now + "-" + baseResponse.ResponseType;
                 if (redis != null)
                     redis.Set(key, baseResponse);
 
             });
-            return baseResponse.ToJson();
+            return Json(baseResponse);
         }
 
         /// <summary>
@@ -824,29 +883,26 @@ namespace shuiyintong.Api.Controllers
         /// <param name="coreTranQryReq">请求参数</param>
         /// <returns></returns>
         [HttpPost]
-        public string CoreTranQry([FromBody]CoreTranQryReq coreTranQryReq)
+        public JsonResult CoreTranQry([FromBody]CoreTranQryReq coreTranQryReq)
         {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
             {
-                DateTime = Now
+                DateTime = DateTime.Now.ToString("yyyyMMddHHmmss")
             };
             int code = 0; //http请求错误码
+            ResponseType responseType;
             var header = GetHeaderSign(coreTranQryReq, out string dataRequest);
             HttpClientHelper.POSTRequest(SPDBankConfig.CoreTranQry, dataRequest, header, (statusCode, result) =>
             {
                 code = (int)statusCode;
                 baseResponse.Code = code;
                 baseResponse.Data = result;
-                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
-                //Redis保存 //Redis key
-                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.CoreTranQry + "-" + Now + "-" + baseResponse.ResponseType;
-                if (redis != null)
-                    redis.Set(key, baseResponse);
-
+                responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
+                baseResponse.ResponseType = (byte)responseType;
+                baseResponse.Msg = responseType.GetDescription();
             });
-            return baseResponse.ToJson();
+            return Json(baseResponse);
         }
 
         /// <summary>
@@ -855,29 +911,26 @@ namespace shuiyintong.Api.Controllers
         /// <param name="zLSysBussBkQryReq">请求参数</param>
         /// <returns></returns>
         [HttpPost]
-        public string ZLSysBussBkQry([FromBody]ZLSysBussBkQryReq zLSysBussBkQryReq)
+        public JsonResult ZLSysBussBkQry([FromBody]ZLSysBussBkQryReq zLSysBussBkQryReq)
         {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
             {
-                DateTime = Now
+                DateTime = DateTime.Now.ToString("yyyyMMddHHmmss")
             };
             int code = 0; //http请求错误码
+            ResponseType responseType;
             var header = GetHeaderSign(zLSysBussBkQryReq, out string dataRequest);
             HttpClientHelper.POSTRequest(SPDBankConfig.ZLSysBussBkQry, dataRequest, header, (statusCode, result) =>
             {
                 code = (int)statusCode;
                 baseResponse.Code = code;
                 baseResponse.Data = result;
-                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
-                //Redis保存 //Redis key
-                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.ZLSysBussBkQry + "-" + Now + "-" + baseResponse.ResponseType;
-                if (redis != null)
-                    redis.Set(key, baseResponse);
-
+                responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
+                baseResponse.ResponseType = (byte)responseType;
+                baseResponse.Msg = responseType.GetDescription();
             });
-            return baseResponse.ToJson();
+            return Json(baseResponse);
         }
 
         /// <summary>
@@ -886,29 +939,26 @@ namespace shuiyintong.Api.Controllers
         /// <param name="lnRcrdDtlQryReq">请求参数</param>
         /// <returns></returns>
         [HttpPost]
-        public string LnRcrdDtlQry([FromBody]LnRcrdDtlQryReq lnRcrdDtlQryReq)
+        public JsonResult LnRcrdDtlQry([FromBody]LnRcrdDtlQryReq lnRcrdDtlQryReq)
         {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
             {
-                DateTime = Now
+                DateTime = DateTime.Now.ToString("yyyyMMddHHmmss")
             };
             int code = 0; //http请求错误码
+            ResponseType responseType;
             var header = GetHeaderSign(lnRcrdDtlQryReq, out string dataRequest);
             HttpClientHelper.POSTRequest(SPDBankConfig.LnRcrdDtlQry, dataRequest, header, (statusCode, result) =>
             {
                 code = (int)statusCode;
                 baseResponse.Code = code;
                 baseResponse.Data = result;
-                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
-                //Redis保存 //Redis key
-                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.LnRcrdDtlQry + "-" + Now + "-" + baseResponse.ResponseType;
-                if (redis != null)
-                    redis.Set(key, baseResponse);
-
+                responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
+                baseResponse.ResponseType = (byte)responseType;
+                baseResponse.Msg = responseType.GetDescription();
             });
-            return baseResponse.ToJson();
+            return Json(baseResponse);
         }
 
         /// <summary>
@@ -917,63 +967,230 @@ namespace shuiyintong.Api.Controllers
         /// <param name="corpAgngLnRcvblntQryReq">请求参数</param>
         /// <returns></returns>
         [HttpPost]
-        public string CorpAgngLnRcvblntQry([FromBody]CorpAgngLnRcvblntQryReq corpAgngLnRcvblntQryReq)
+        public JsonResult CorpAgngLnRcvblntQry([FromBody]CorpAgngLnRcvblntQryReq corpAgngLnRcvblntQryReq)
         {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
             {
-                DateTime = Now
+                DateTime = DateTime.Now.ToString("yyyyMMddHHmmss")
             };
             int code = 0; //http请求错误码
+            ResponseType responseType;
             var header = GetHeaderSign(corpAgngLnRcvblntQryReq, out string dataRequest);
             HttpClientHelper.POSTRequest(SPDBankConfig.CorpAgngLnRcvblntQry, dataRequest, header, (statusCode, result) =>
             {
                 code = (int)statusCode;
                 baseResponse.Code = code;
                 baseResponse.Data = result;
-                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
-                //Redis保存 //Redis key
-                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.CorpAgngLnRcvblntQry + "-" + Now + "-" + baseResponse.ResponseType;
-                if (redis != null)
-                    redis.Set(key, baseResponse);
-
+                responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
+                baseResponse.ResponseType = (byte)responseType;
+                baseResponse.Msg = responseType.GetDescription();
             });
-            return baseResponse.ToJson();
+            return Json(baseResponse);
         }
 
         /// <summary>
-        /// 已放贷款还款计划查询
+        /// 已放贷款还款计划查询----------------------------------------e商贷API接口结束--------------------
         /// </summary>
         /// <param name="crpLnIntTrlReq">请求参数</param>
         /// <returns></returns>
         [HttpPost]
-        public string CrpLnIntTrl([FromBody]CrpLnIntTrlReq crpLnIntTrlReq)
+        public JsonResult CrpLnIntTrl([FromBody]CrpLnIntTrlReq crpLnIntTrlReq)
         {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
             BaseResponse<string> baseResponse = new BaseResponse<string>
             {
-                DateTime = Now
+                DateTime = DateTime.Now.ToString("yyyyMMddHHmmss")
             };
             int code = 0; //http请求错误码
+            ResponseType responseType;
             var header = GetHeaderSign(crpLnIntTrlReq, out string dataRequest);
             HttpClientHelper.POSTRequest(SPDBankConfig.CrpLnIntTrl, dataRequest, header, (statusCode, result) =>
             {
                 code = (int)statusCode;
                 baseResponse.Code = code;
                 baseResponse.Data = result;
-                baseResponse.ResponseType = code == Code ? (byte)ResponseType.Success : (byte)ResponseType.Fail;
 
-                //Redis保存 //Redis key
-                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.CrpLnIntTrl + "-" + Now + "-" + baseResponse.ResponseType;
-                if (redis != null)
-                    redis.Set(key, baseResponse);
-
+                responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
+                baseResponse.ResponseType = (byte)responseType;
+                baseResponse.Msg = responseType.GetDescription();
             });
-            return baseResponse.ToJson();
+            return Json(baseResponse);
         }
+
+        #endregion
+
+
+        #region 平台接口---税单贷自动付款
+
+        #region 授信
+        /// <summary>
+        /// 授信(数据表tb_ProjectApproval)---项目审批信息(银行)，项目风险信息(尽调+征信)----------------------------------------(银行回传平台)接口开始--------------------
+        /// </summary>
+        /// <param name="projectApproval">类型</param>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult CreditBKApprove([FromBody]ProjectApproval projectApproval)
+        {
+            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
+            if (projectApproval == null)
+            {
+                return Json(new BaseResponse<string>
+                {
+                    Code = 500,
+                    ResponseType = (byte)InteractiveCode.Fail,
+                    Data = "请求参数无效，没有推送成功",
+                    DateTime = Now,
+                    Msg = InteractiveCode.Fail.GetDescription()
+                });
+            }
+            //审批意见为“拒绝”，则需“备注”说明。approvalOpinion=true表示通过，approvalOpinion=false表示拒绝
+            if (!projectApproval.approvalOpinion && string.IsNullOrWhiteSpace(projectApproval.remarks))
+            {
+                return Json(new BaseResponse<string>
+                {
+                    Code = 200,
+                    ResponseType = (byte)InteractiveCode.Fail,
+                    Data = "审批意见为“拒绝”，则必须填写“备注”说明",
+                    DateTime = Now,
+                    Msg = InteractiveCode.Fail.GetDescription()
+                });
+            }
+            tb_ProjectApproval ProjectApprovalModel = new tb_ProjectApproval
+            {
+                platformAcctNo = projectApproval.platformAcctNo,
+                enterpriseName = projectApproval.enterpriseName,
+                approvalOpinion = projectApproval.approvalOpinion,
+                remarks = projectApproval.remarks,
+                enterpriseScale = projectApproval.enterpriseScale,
+                planningEnterprise = projectApproval.planningEnterprise,
+                businessIncome = projectApproval.businessIncome,
+                practitioners = projectApproval.practitioners,
+                totalAssets = projectApproval.totalAssets,
+                IsFitReq = projectApproval.IsFitReq,
+                proportion = projectApproval.proportion,
+                overdueFrequency = projectApproval.overdueFrequency,
+                overdueTotalFrequency = projectApproval.overdueTotalFrequency,
+                createTime = DateTime.Now
+            };
+            bool bol = ProjectApprovalServer.AddOne(ProjectApprovalModel); //保存推送数据
+            if (bol)
+            {
+                string Status = string.Empty;  //数据库订单表状态
+                switch (projectApproval.approvalOpinion)
+                {
+                    case true:
+                        Status = "0100";  //通过审批
+                        break;
+                    default:
+                        Status = "11";  //审批拒绝
+                        break;
+                }
+
+                //更新tb_productOrder表订单状态
+                ProductOrderServer.Modefy(p => p.OrderNo == projectApproval.platformAcctNo,
+                    po => new tb_productOrder { status = Status, updatetime = DateTime.Now });
+
+                return Json(new BaseResponse<string>
+                {
+                    Code = 200,
+                    ResponseType = (byte)InteractiveCode.Success,
+                    Data = ProjectApprovalModel.ToJson(),
+                    DateTime = Now,
+                    Msg = InteractiveCode.Success.GetDescription()
+                });
+            }
+            else  //推送失败提示信息
+            {
+                return Json(new BaseResponse<string>
+                {
+                    Code = 200,
+                    ResponseType = (byte)InteractiveCode.Fail,
+                    DateTime = Now,
+                    Msg = InteractiveCode.Fail.GetDescription()
+                });
+            }
+        }
+
+        /// <summary>
+        /// 授信(数据表tb_TaxVerification) 退税账户核验信息
+        /// </summary>
+        /// <param name="taxVerification"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult CreditBKVer([FromBody]TaxVerification taxVerification)
+        {
+            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
+            if (taxVerification == null)
+            {
+                return Json(new BaseResponse<string>
+                {
+                    Code = 500,
+                    ResponseType = (byte)InteractiveCode.Fail,
+                    Data = "请求参数无效，没有推送成功",
+                    DateTime = Now,
+                    Msg = InteractiveCode.Fail.GetDescription()
+                });
+            }
+            tb_TaxVerification TaxVerificationModel = new tb_TaxVerification
+            {
+                platformAcctNo = taxVerification.platformAcctNo,
+                enterpriseName = taxVerification.enterpriseName,
+                accountName = taxVerification.accountName,
+                acctNo = taxVerification.acctNo,
+                openBank = taxVerification.openBank,
+                IsDrawback = taxVerification.IsDrawback,
+                createTime = DateTime.Now
+            };
+            bool bol = TaxVerificationServer.AddOne(TaxVerificationModel); //保存推送数据
+            if (bol)
+            {
+                string BankConfirmFlag = string.Empty, Status = string.Empty;  //数据库订单表状态;    
+                switch (TaxVerificationModel.IsDrawback)
+                {
+                    case true:
+                        Status = "0100_pass";  //通过审批
+                        BankConfirmFlag = "1";  //退税账户
+                        break;
+                    default:
+                        Status = "0100_fail";  //审批拒绝
+                        BankConfirmFlag = "0";  //非退税账户
+                        break;
+                }
+
+                //更新tb_productOrder表订单状态
+                ProductOrderServer.Modefy(p => p.OrderNo == taxVerification.platformAcctNo,
+                    po => new tb_productOrder { status = Status, updatetime = DateTime.Now });
+                //更新tb_companyAccount表标识
+                CompanyAccountServer.Modefy(p => p.OrderNo == taxVerification.platformAcctNo,
+                    po => new tb_companyAccount { bankConfirmFlag = BankConfirmFlag });
+
+                return Json(new BaseResponse<string>
+                {
+                    Code = 200,
+                    ResponseType = (byte)InteractiveCode.Success,
+                    Data = TaxVerificationModel.ToJson(),
+                    DateTime = Now,
+                    Msg = InteractiveCode.Success.GetDescription()
+                });
+            }
+            else  //推送失败提示信息
+            {
+                return Json(new BaseResponse<string>
+                {
+                    Code = 200,
+                    ResponseType = (byte)InteractiveCode.Fail,
+                    DateTime = Now,
+                    Msg = InteractiveCode.Fail.GetDescription()
+                });
+            }
+        }
+        #endregion
 
         #endregion
 
     }
 }
+
+
+
+

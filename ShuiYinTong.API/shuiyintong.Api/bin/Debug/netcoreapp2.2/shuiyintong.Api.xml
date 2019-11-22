@@ -113,9 +113,24 @@
             浦发银行接口
             </summary>
         </member>
-        <member name="P:shuiyintong.Api.Controllers.SPDBankController.CountryServer">
+        <member name="P:shuiyintong.Api.Controllers.SPDBankController.ProjectApprovalServer">
             <summary>
-            数据库实现
+            项目审批信息
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Api.Controllers.SPDBankController.ProductOrderServer">
+            <summary>
+            订单表服务
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Api.Controllers.SPDBankController.TaxVerificationServer">
+            <summary>
+            退税账户核验
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Api.Controllers.SPDBankController.CompanyAccountServer">
+            <summary>
+            公司账户
             </summary>
         </member>
         <member name="F:shuiyintong.Api.Controllers.SPDBankController.SPDBank">
@@ -146,23 +161,18 @@
             <param name="dataRequest">请求Json字符串</param>
             <returns></returns>
         </member>
-        <member name="M:shuiyintong.Api.Controllers.SPDBankController.Test">
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.GenerateDoc(shuiyintong.Entity.SPDBankEntity.SPDBankFile.GuaranteeReq)">
             <summary>
-            数据库接口测试
+            担保函导出Word文档----------------------------------------生成担保函--------------------
             </summary>
+            <param name="guaranteeReq">参数---输出路径必填</param>
         </member>
-        <member name="M:shuiyintong.Api.Controllers.SPDBankController.UpLoadfiles(shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileUpLoadReqExt)">
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.UpLoadfileExt(shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileUpLoadReqExt)">
             <summary>
-            文件上传
+            文件上传---扩展测试----------------------------------------文件上传下载开始--------------------
             </summary>
             <param name="file">文件参数</param>
             <returns></returns>
-        </member>
-        <member name="M:shuiyintong.Api.Controllers.SPDBankController.GenerateDoc(shuiyintong.Entity.SPDBankEntity.SPDBankFile.GuaranteeReq)">
-            <summary>
-            担保函导出Word文档
-            </summary>
-            <param name="guaranteeReq">参数---输出路径必填</param>
         </member>
         <member name="M:shuiyintong.Api.Controllers.SPDBankController.UpLoadfile(shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileUpLoadReq)">
             <summary>
@@ -172,14 +182,14 @@
         </member>
         <member name="M:shuiyintong.Api.Controllers.SPDBankController.DownLoadfile(shuiyintong.Entity.SPDBankEntity.SPDBankFile.SPDBankFileDownLoadReq)">
             <summary>
-            文件下载
+            文件下载------------------------------------------------------------文件上传下载结束--------------------
             </summary>
             <param name="downLoadReq">请求参数</param>
             <returns></returns>
         </member>
         <member name="M:shuiyintong.Api.Controllers.SPDBankController.AcctInfo(shuiyintong.Entity.SPDBankEntity.SPDBankReq.AccountReq)">
             <summary>
-            获取账户信息
+            获取账户信息----------------------------------------e账通标准API接口开始--------------------
             </summary>
             <param name="accountRequest">请求参数</param>
         </member>
@@ -261,14 +271,14 @@
         </member>
         <member name="M:shuiyintong.Api.Controllers.SPDBankController.PayeeWhtLstMntn(shuiyintong.Entity.SPDBankEntity.SPDBankReq.PayeeWhtLstMntnReq)">
             <summary>
-            收款人白名单维护
+            收款人白名单维护----------------------------------------e账通标准API接口结束--------------------
             </summary>
             <param name="payeeWhtLstMntnReq">请求参数</param>
             <returns></returns>
         </member>
         <member name="M:shuiyintong.Api.Controllers.SPDBankController.ZLSysInrBnkTfr(shuiyintong.Entity.SPDBankEntity.SPDBankReq.ZLSysInrBnkTfrReq)">
             <summary>
-            备付金或结算户转客户结算户
+            备付金或结算户转客户结算户----------------------------------------e商贷API接口开始--------------------
             </summary>
             <param name="zLSysInrBnkTfrReq">请求参数</param>
             <returns></returns>
@@ -345,9 +355,23 @@
         </member>
         <member name="M:shuiyintong.Api.Controllers.SPDBankController.CrpLnIntTrl(shuiyintong.Entity.SPDBankEntity.SPDBankReq.CrpLnIntTrlReq)">
             <summary>
-            已放贷款还款计划查询
+            已放贷款还款计划查询----------------------------------------e商贷API接口结束--------------------
             </summary>
             <param name="crpLnIntTrlReq">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.CreditBKApprove(shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.ProjectApproval)">
+            <summary>
+            授信(数据表tb_ProjectApproval)---项目审批信息(银行)，项目风险信息(尽调+征信)----------------------------------------(银行回传平台)接口开始--------------------
+            </summary>
+            <param name="projectApproval">类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SPDBankController.CreditBKVer(shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.TaxVerification)">
+            <summary>
+            授信(数据表tb_TaxVerification) 退税账户核验信息
+            </summary>
+            <param name="taxVerification"></param>
             <returns></returns>
         </member>
         <member name="T:shuiyintong.Api.IocConfig">

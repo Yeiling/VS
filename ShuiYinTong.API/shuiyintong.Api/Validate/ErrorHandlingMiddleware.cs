@@ -71,7 +71,8 @@ namespace shuiyintong.Api.Validate
                 Code = 500,  //context.Response.StatusCode,
                 ResponseType = (byte)ResponseType.Fail,
                 Data = exception.Message,
-                DateTime = DateTime.Now.ToString("yyyyMMddHHmmss")
+                DateTime = DateTime.Now.ToString("yyyyMMddHHmmss"),
+                Msg = ResponseType.Fail.GetDescription()
             };
             return context.Response.WriteAsync(ErrValidation.ToJson());
         }

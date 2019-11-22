@@ -22,5 +22,9 @@
         /// 请求时间
         /// </summary>
         public string DateTime { get; set; }
+        /// <summary>
+        /// 错误信息
+        /// </summary>
+        public string Msg { get; set; }
     }
 }

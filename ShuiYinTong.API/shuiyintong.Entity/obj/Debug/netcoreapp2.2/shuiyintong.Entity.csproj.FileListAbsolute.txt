@@ -14,3 +14,4 @@ D:\GitFiles\ShuiYinTong.API\shuiyintong.Entity\obj\Debug\netcoreapp2.2\shuiyinto
 D:\GitFiles\ShuiYinTong.API\shuiyintong.Entity\obj\Debug\netcoreapp2.2\shuiyintong.Entity.pdb
 D:\GitFiles\ShuiYinTong.API\shuiyintong.Entity\obj\Debug\netcoreapp2.2\shuiyintong.Entity.csprojAssemblyReference.cache
 F:\githubpro\ShuiYinTong.API\shuiyintong.Entity\obj\Debug\netcoreapp2.2\shuiyintong.Entity.csproj.CopyComplete
+F:\githubpro\ShuiYinTong.API\shuiyintong.Entity\obj\Debug\netcoreapp2.2\shuiyintong.Entity.csprojAssemblyReference.cache
