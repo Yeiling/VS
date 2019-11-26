@@ -50,7 +50,7 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDBankResp
         /// </summary>
         public string abstractCode { get; set; }
         /// <summary>
-        /// 交易状态
+        /// 交易状态 0-已汇出　成功 1-已扣款，待汇出 2-已退回 失败 3-二代汇出成功 4-宕账
         /// </summary>
         public string tranStatus { get; set; }
         /// <summary>

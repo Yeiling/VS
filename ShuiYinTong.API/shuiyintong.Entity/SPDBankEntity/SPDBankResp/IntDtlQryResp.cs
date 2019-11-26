@@ -36,19 +36,19 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDBankResp
     public class tranIntInfoItem
     {
         /// <summary>
-        /// 交易日期
+        /// 交易日期 
         /// </summary>
         public string intAcrlEndDt { get; set; }
         /// <summary>
-        /// 实还本金
+        /// 实还本金 小数点后保留两位有限数字 eg:100.00
         /// </summary>
         public string repymtPrncpl { get; set; }
         /// <summary>
-        /// 实还本金利息
+        /// 实还本金利息 小数点后保留两位有限数字 eg:100.00
         /// </summary>
         public string repymtIntAmt { get; set; }
         /// <summary>
-        /// 实还表内欠息
+        /// 实还表内欠息 小数点后保留六位有限数字 eg:100.000000
         /// </summary>
         public string pdOwOnBalOwIntAmt { get; set; }
         /// <summary>
@@ -56,19 +56,19 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDBankResp
         /// </summary>
         public string pdOwOnBalOwIntIntAmt { get; set; }
         /// <summary>
-        /// 实还表外欠息
+        /// 实还表外欠息 小数点后保留八位有限数字 eg:100.00000000
         /// </summary>
         public string pOwOfBalOwIntAmt { get; set; }
         /// <summary>
-        /// 实还表外欠息利息
+        /// 实还表外欠息利息 小数点后保留两位有限数字 eg:100.00
         /// </summary>
         public string pdOwOfBalOwItItAmt { get; set; }
         /// <summary>
-        /// 实还表外复息
+        /// 实还表外复息 小数点后保留两位有限数字 eg:100.00
         /// </summary>
         public string pdOwOfBalCmpdItAmt { get; set; }
         /// <summary>
-        /// 实还表外复息利息
+        /// 实还表外复息利息  小数点后保留两位有限数字 eg:100.00
         /// </summary>
         public string pdOwOfBalCmpdItItAmt { get; set; }
 

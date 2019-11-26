@@ -78,7 +78,7 @@
         /// </summary>
         public string transDigest { get; set; }
         /// <summary>
-        /// 交易状态
+        /// 交易状态00-成功（本行）;  01-失败;  16-受理成功（跨行）;  99-超时
         /// </summary>
         public string transStatus { get; set; }
 

@@ -31,7 +31,7 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDBankResp
         /// </summary>
         public string spclListNo { get; set; }
         /// <summary>
-        /// 入金账号类型
+        /// 入金账号类型 1-行内   2-行外
         /// </summary>
         public string acctNoType { get; set; }
         /// <summary>
@@ -43,7 +43,7 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDBankResp
         /// </summary>
         public string pyeAcctNm { get; set; }
         /// <summary>
-        /// 状态
+        /// 状态 1-生效   2-失效
         /// </summary>
         public string acctNoStatus { get; set; }
         /// <summary>

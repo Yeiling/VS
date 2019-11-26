@@ -8,7 +8,7 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDBankResp
     public class CorpLnCntlAcctResp : BaseResp
     {
         /// <summary>
-        /// 入账标志
+        /// 入账标志 0-未入账 1-入账成功 2-入账失败 3-宕账
         /// </summary>
         public string creditedFlag { get; set; }
         /// <summary>
@@ -16,7 +16,7 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDBankResp
         /// </summary>
         public string hostSeqNo { get; set; }
         /// <summary>
-        /// 交易日期
+        /// 交易日期 YYYYMMDD
         /// </summary>
         public DateTime tranDate { get; set; }
         /// <summary>
@@ -28,11 +28,11 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDBankResp
         /// </summary>
         public string pymtUntRpyAcctNo { get; set; }
         /// <summary>
-        /// 还本总额
+        /// 还本总额 小数点后保留两位有限数字.eg:100.00
         /// </summary>
         public string histOduePnpSmy { get; set; }
         /// <summary>
-        /// 还息总额
+        /// 还息总额 小数点后保留两位有限数字.eg:100.00
         /// </summary>
         public string corpLnIntIncm { get; set; }
 

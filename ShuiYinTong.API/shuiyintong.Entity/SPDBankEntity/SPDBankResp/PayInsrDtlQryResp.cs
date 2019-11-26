@@ -18,7 +18,7 @@
         /// </summary>
         public string tranDate { get; set; }
         /// <summary>
-        /// 行内行外标志
+        /// 行内行外标志 1-行内 2-行外
         /// </summary>
         public string inOutBankFlag { get; set; }
         /// <summary>
@@ -30,15 +30,15 @@
         /// </summary>
         public string insAprCrEpCltChsNm { get; set; }
         /// <summary>
-        /// 发起方
+        /// 发起方 0-三方签约商户 1-核心企业
         /// </summary>
         public string ittChannelId { get; set; }
         /// <summary>
-        /// 款项用途
+        /// 款项用途 1-受托支付  2-主动扣款
         /// </summary>
         public string fndUsg { get; set; }
         /// <summary>
-        /// 汇路标志
+        /// 汇路标志 1-超网 2-二代支付
         /// </summary>
         public string lnkRdFlg { get; set; }
         /// <summary>
@@ -98,7 +98,7 @@
         /// </summary>
         public string brndNm { get; set; }
         /// <summary>
-        /// 纯度
+        /// 纯度 百分比
         /// </summary>
         public string purity { get; set; }
         /// <summary>

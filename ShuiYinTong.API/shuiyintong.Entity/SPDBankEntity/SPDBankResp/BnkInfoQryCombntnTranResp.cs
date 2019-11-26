@@ -16,7 +16,7 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDResp
         /// </summary>
         public string tranDate { get; set; }
         /// <summary>
-        /// 原柜员流水号
+        /// 原柜员流水号 对应原“划拨结果查询”中返回的核心流水号
         /// </summary>
         public string origHostSeqNo { get; set; }
         /// <summary>
@@ -28,7 +28,7 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDResp
         /// </summary>
         public string acctNo { get; set; }
         /// <summary>
-        /// 原往账传票组内序号
+        /// 原往账传票组内序号  对应原“划拨结果查询”中返回的传票组内序号
         /// </summary>
         public string origTxnSeqNo { get; set; }
 
