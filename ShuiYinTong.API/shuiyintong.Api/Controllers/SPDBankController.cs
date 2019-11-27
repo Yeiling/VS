@@ -1019,7 +1019,6 @@ namespace shuiyintong.Api.Controllers
 
         #endregion
 
-
         #region 平台接口---税单贷自动付款
 
         #region 授信
