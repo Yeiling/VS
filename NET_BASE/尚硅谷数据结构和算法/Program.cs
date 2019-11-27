@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using 尚硅谷数据结构和算法.LinkLists;
 using 尚硅谷数据结构和算法.Stacks;
 
 namespace 尚硅谷数据结构和算法
@@ -99,9 +101,33 @@ namespace 尚硅谷数据结构和算法
 
             #endregion
 
+            #region 环形链表实现约瑟夫环
+            //创建环形链表
+            //CircleList<int> circleList = new CircleList<int>();
+
+            //circleList.Add(2);
+            //circleList.Add(6);
+            //circleList.Add(1);
+            //circleList.Add(7);
+            //circleList.Add(9);
+
+            ////报数出列
+            //var lst = circleList.Show();
+            //circleList.Del(2);
+
+            #endregion
+
+            #region 栈(net自带栈)实现混合运算
+            string str = "5+2*6-7*2+1";
+            Stack numStack = new Stack();
+            Stack fhStack = new Stack();
+            for (int i = 0; i < str.Length; i++)
+            {
+
+            }
 
 
-
+            #endregion
 
 
 
