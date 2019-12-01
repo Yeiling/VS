@@ -1,6 +1,6 @@
 ﻿using shuiyintong.Entity.SPDBankEntity.SPDBankResp;
 
-namespace shuiyintong.Entity.SPDBankEntity.SPDResp
+namespace shuiyintong.Entity.SPDBankEntity.SPDBankResp
 {
     /// <summary>
     /// 账户信息返回类型

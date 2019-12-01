@@ -26,7 +26,7 @@
         /// </summary>
         public string pyeAcctNm { get; set; }
         /// <summary>
-        /// 状态
+        /// 状态 1-生效   2-失效
         /// </summary>
         public string acctNoStatus { get; set; }
         /// <summary>

@@ -18,7 +18,7 @@
         /// </summary>
         public string ordrNo { get; set; }
         /// <summary>
-        /// 支付指令状态
+        /// 支付指令状态 3-取消成功
         /// </summary>
         public string insrSt { get; set; }
 

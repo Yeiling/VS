@@ -30,7 +30,7 @@
         /// </summary>
         public string insrCreateTimep { get; set; }
         /// <summary>
-        /// 支付指令状态
+        /// 支付指令状态  0-已处理 1- 待处理 2- 已拒绝 3- 已取消
         /// </summary>
         public string insrSt { get; set; }
 

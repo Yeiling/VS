@@ -3,25 +3,14 @@ using shuiyintong.Entity.AppSettiongModel;
 using SqlSugar;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
 
 namespace shuiyintong.DBUtils.Service
 {
-    /// <summary>
-    /// 数据库操作泛型基类
-    /// </summary>
-    /// <typeparam name="T"></typeparam>
     public class BaseService<T> : IBaseService<T> where T : class, new()
     {
         #region 属性字段
-        /// <summary>
-        /// 数据库链接字段
-        /// </summary>
         private readonly string conn = AppSettings.DBConfig.DBConn;
-        /// <summary>
-        /// 数据库类型MySQL
-        /// </summary>
         private readonly DbType dbType = (DbType)AppSettings.DBConfig.DbType;
 
         /// <summary>
@@ -32,6 +21,7 @@ namespace shuiyintong.DBUtils.Service
         /// 实体数据处理对象 
         /// </summary>
         private SimpleClient<T> EntityDB { get; set; }
+
         #endregion
 
         #region 构造函数
@@ -52,7 +42,6 @@ namespace shuiyintong.DBUtils.Service
         }
         #endregion
 
-        #region 添加
         /// <summary>
         /// 批量添加
         /// </summary>
@@ -65,9 +54,8 @@ namespace shuiyintong.DBUtils.Service
         /// <param name="entity">对象</param>
         /// <returns></returns>
         public bool AddOne(T entity) => EntityDB.Insert(entity);
-        #endregion
 
-        #region 删除
+
         /// <summary>
         /// 批量删除
         /// </summary>
@@ -86,15 +74,20 @@ namespace shuiyintong.DBUtils.Service
         /// <param name="Obj"></param>
         /// <returns></returns>
         public bool Delete(T Obj) => EntityDB.Delete(Obj);
-        #endregion
 
-        #region 查询
+
         /// <summary>
         /// 查询单个实体
         /// </summary>
         /// <param name="id">主键id</param>
         /// <returns></returns>
         public T GetById(dynamic id) => EntityDB.GetById(id);
+        /// <summary>
+        /// 查询单个实体
+        /// </summary>
+        /// <param name="exp"></param>
+        /// <returns></returns>
+        public T GetSingle(Expression<Func<T, bool>> exp) => EntityDB.GetSingle(exp);
         /// <summary>
         /// 条件查询集合对象
         /// </summary>
@@ -118,43 +111,31 @@ namespace shuiyintong.DBUtils.Service
         /// <param name="intPageSize"></param>
         /// <param name="strOrderByFileds"></param>
         /// <returns></returns>
-        public IEnumerable<T> QueryPage(
+        public List<T> QueryPage(
          Expression<Func<T, bool>> whereExpression,
-         ref int TotalCount,
-         int PageIndex = 1,
-         int PageSize = 20,
+         ref int intTotalCount,
+         int intPageIndex = 0,
+         int intPageSize = 20,
          string strOrderByFileds = null)
         {
             return DB.Queryable<T>()
                 .OrderByIF(!string.IsNullOrEmpty(strOrderByFileds), strOrderByFileds)
                 .WhereIF(whereExpression != null, whereExpression)
-                .ToPageList(PageIndex, PageSize, ref TotalCount);
+                .ToPageList(intPageIndex, intPageSize, ref intTotalCount);
         }
         /// <summary>
-        /// SQL 分页查询
+        /// 查询
         /// </summary>
-        /// <param name="sql"></param>
-        /// <param name="TotalCount"></param>
-        /// <param name="PageIndex"></param>
-        /// <param name="PageSize"></param>
         /// <returns></returns>
-        public IEnumerable<T> QueryPage(string sql, ref int TotalCount, int PageIndex = 1, int PageSize = 30)
-        {
-            var lst = DB.Ado.SqlQuery<T>(sql);
-            if (lst == null)
-            {
-                TotalCount = 0;
-                return null;
-            }
-            TotalCount = lst.Count;
-            return lst.Skip((PageIndex - 1) * PageSize).Take(PageSize);
-        }
+        public ISugarQueryable<T> Queryable() => DB.Queryable<T>();
+
         /// <summary>
         /// SQL查询集合
         /// </summary>
         /// <param name="sql">SQL语句</param>
         /// <returns></returns>
         public IEnumerable<T> GetListBySQL(string sql) => DB.SqlQueryable<T>(sql).ToList();
+
         /// <summary>
         /// 动态类型
         /// </summary>
@@ -163,16 +144,6 @@ namespace shuiyintong.DBUtils.Service
         /// <returns></returns>
         public IEnumerable<dynamic> SqlQueryDynamic(string sql, object whereObj = null) => DB.Ado.SqlQuery<dynamic>(sql, whereObj);
 
-        /// <summary>
-        /// 根据主键，使用In条件查询
-        /// </summary>
-        /// <param name="paras"></param>
-        /// <returns></returns>
-        public IEnumerable<T> SqlQueryIn(params object[] paras) => DB.Queryable<T>().In(paras).ToList();
-
-        #endregion
-
-        #region 修改
         /// <summary>
         /// 批量修改
         /// </summary>
@@ -192,11 +163,7 @@ namespace shuiyintong.DBUtils.Service
         /// <param name="columns">列</param>
         /// <returns></returns>
         public bool Modefy(Expression<Func<T, bool>> exp, Expression<Func<T, T>> columns) => EntityDB.Update(columns, exp);
-        #endregion
 
-        #region 其他
-
-        #endregion
 
     }
 }

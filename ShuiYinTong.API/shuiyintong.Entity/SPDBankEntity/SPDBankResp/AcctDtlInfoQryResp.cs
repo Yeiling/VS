@@ -1,7 +1,6 @@
-﻿using shuiyintong.Entity.SPDBankEntity.SPDBankResp;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace shuiyintong.Entity.SPDBankEntity.SPDResp
+namespace shuiyintong.Entity.SPDBankEntity.SPDBankResp
 {
     /// <summary>
     /// 账户信息查询请求参数对象

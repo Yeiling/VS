@@ -33,16 +33,15 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDBankFile
         public int transFlag { get; set; }
     }
 
-
     /// <summary>
     /// 浦发银行文件上传请求类型
     /// </summary>
     public class SPDBankFileUpLoadReqExt
     {
         /// <summary>
-        /// 上传的本地文件绝对路径
+        /// 本地文件
         /// </summary>
-        [Required(ErrorMessage = "上传的本地文件绝对路径必填")]
+        [Required(ErrorMessage = "本地文件")]
         public IFormFile localFile { get; set; }
         /// <summary>
         /// 上传文件重命名(noname表示文件不变名)

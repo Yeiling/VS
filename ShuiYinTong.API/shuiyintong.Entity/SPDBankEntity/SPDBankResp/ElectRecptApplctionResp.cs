@@ -24,7 +24,7 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDResp
     public class eRecptAplInfoItem
     {
         /// <summary>
-        /// 返回结果
+        /// 返回结果0.申请成功  1.申请失败
         /// </summary>
         public string applyStatus { get; set; }
         /// <summary>

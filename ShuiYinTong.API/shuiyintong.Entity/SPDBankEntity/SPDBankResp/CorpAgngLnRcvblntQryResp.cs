@@ -50,7 +50,7 @@
         /// </summary>
         public string offBalCmpdInts { get; set; }
         /// <summary>
-        /// 贷款性质
+        /// 贷款性质 0-正常 1-展期 2-一类逾期 3-二类逾期 4-呆滞 5-呆帐帐
         /// </summary>
         public string loanChartic { get; set; }
 

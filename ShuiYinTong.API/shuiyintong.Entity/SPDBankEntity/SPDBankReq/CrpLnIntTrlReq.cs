@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace shuiyintong.Entity.SPDBankEntity.SPDBankReq
+namespace shuiyintong.Entity.SPDBankEntity.SPDBankResp
 {
     /// <summary>
     /// 已放贷款还款计划查询请求类型

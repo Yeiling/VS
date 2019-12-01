@@ -62,7 +62,7 @@
         /// </summary>
         public string transDigest { get; set; }
         /// <summary>
-        /// 交易状态
+        /// 交易状态1.成功  2.失败  3.受理成功
         /// </summary>
         public string transStatus { get; set; }
         /// <summary>

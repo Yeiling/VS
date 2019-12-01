@@ -5,7 +5,7 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDBankResp
     /// <summary>
     /// 已放贷款还款计划查询返回类型
     /// </summary>
-    public class CrpLnIntTrlReq : BaseResp
+    public class CrpLnIntTrlResp : BaseResp
     {
         /// <summary>
         /// 借据号
@@ -16,7 +16,7 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDBankResp
         /// </summary>
         public string loanBal { get; set; }
         /// <summary>
-        /// 还款方式
+        /// 还款方式 1－等额本息还款（预留） 2－等额本金还款（预留） 3－到期一次还本 A－分期还款计划
         /// </summary>
         public string repayMode { get; set; }
         /// <summary>
