@@ -3,6 +3,7 @@ using System.Collections;
 using 尚硅谷数据结构和算法.Kmp;
 using 尚硅谷数据结构和算法.LinkLists;
 using 尚硅谷数据结构和算法.Resoursion;
+using 尚硅谷数据结构和算法.Sorts;
 using 尚硅谷数据结构和算法.Stacks;
 
 namespace 尚硅谷数据结构和算法
@@ -132,18 +133,18 @@ namespace 尚硅谷数据结构和算法
             #endregion
 
             #region 迷宫问题
-            //创建二维数组
-            int[,] arry = MiGong.CreateArry(8, 8);
-            //设置最外围一圈为1，表示不可以遍历
-            for (int i = 0; i < 8; i++)
-            {
-                //0行和7行赋值1
-                arry[0, i] = 1;
-                arry[7, i] = 1;
-                //0列和7列赋值1
-                arry[i, 0] = 1;
-                arry[i, 7] = 1;
-            }
+            ////创建二维数组
+            //int[,] arry = MiGong.CreateArry(8, 8);
+            ////设置最外围一圈为1，表示不可以遍历
+            //for (int i = 0; i < 8; i++)
+            //{
+            //    //0行和7行赋值1
+            //    arry[0, i] = 1;
+            //    arry[7, i] = 1;
+            //    //0列和7列赋值1
+            //    arry[i, 0] = 1;
+            //    arry[i, 7] = 1;
+            //}
 
             //打印二维数组地图
             //for (int i = 0; i < 8; i++)
@@ -154,16 +155,17 @@ namespace 尚硅谷数据结构和算法
             //    }
             //    Console.WriteLine();
             //}
-            MiGong.GetWay2(arry, 1, 1, 4, 3);
-            //打印二维数组地图
-            for (int i = 0; i < 8; i++)
-            {
-                for (int j = 0; j < 8; j++)
-                {
-                    Console.Write(arry[i, j] + "  ");
-                }
-                Console.WriteLine();
-            }
+
+            //MiGong.GetWay2(arry, 1, 1, 4, 3);
+            ////打印二维数组地图
+            //for (int i = 0; i < 8; i++)
+            //{
+            //    for (int j = 0; j < 8; j++)
+            //    {
+            //        Console.Write(arry[i, j] + "  ");
+            //    }
+            //    Console.WriteLine();
+            //}
             #endregion
 
             #region 暴力匹配和KMP---字符串匹配
@@ -173,7 +175,15 @@ namespace 尚硅谷数据结构和算法
 
             #endregion
 
+            #region 排序
+            int[] arry = new int[] { 6, 3, -1, 9, 7, 2 };
+            arry = Sort.BubbleSort(arry, (before, after) => before - after > 0);
+            arry = Sort.BubbleSort(arry, (before, after) => before - after < 0);
 
+
+
+
+            #endregion
 
             Console.ReadKey();
         }
