@@ -5,6 +5,7 @@ using shuiyintong.DBUtils.Test_tuishui_Demo;
 using shuiyintong.Entity.HttpRequestResultEntity;
 using shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq;
 using System;
+using System.Linq;
 using static shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.DeductionEnum;
 namespace shuiyintong.Api.Controllers
 {
@@ -14,6 +15,7 @@ namespace shuiyintong.Api.Controllers
     public class SPDPlatController : BaseController
     {
         #region 数据库操作相关服务
+
         /// <summary>
         /// 记录操作日志
         /// </summary>
@@ -47,7 +49,6 @@ namespace shuiyintong.Api.Controllers
         /// </summary>
         public IBaseService<tb_Warning> WarningSer { get; set; }
 
-
         #endregion
 
 
@@ -60,7 +61,8 @@ namespace shuiyintong.Api.Controllers
         [HttpPost]
         public JsonResult CreditBKApprove([FromBody]ProjectApproval projectApproval)
         {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
+            DateTime Now = DateTime.Now;
+            string NowStr = Now.ToString("yyyyMMddHHmmss");
             if (projectApproval == null)
             {
                 return Json(new BaseResponse<string>
@@ -68,7 +70,7 @@ namespace shuiyintong.Api.Controllers
                     Code = 500,
                     ResponseType = (byte)InteractiveCode.Fail,
                     Data = "请求参数无效，没有推送成功",
-                    DateTime = Now,
+                    DateTime = NowStr,
                     Msg = InteractiveCode.Fail.GetDescription()
                 });
             }
@@ -80,15 +82,16 @@ namespace shuiyintong.Api.Controllers
                     Code = 200,
                     ResponseType = (byte)InteractiveCode.Fail,
                     Data = "审批意见为“拒绝”，则必须填写“备注”说明",
-                    DateTime = Now,
+                    DateTime = NowStr,
                     Msg = InteractiveCode.Fail.GetDescription()
                 });
             }
-            tb_ProjectApproval ProjectApprovalModel = new tb_ProjectApproval
+            //保存数据
+            bool bol = ProjectApprovalSer.AddOne(new tb_ProjectApproval
             {
                 platformAcctNo = projectApproval.platformAcctNo,
                 enterpriseName = projectApproval.enterpriseName,
-                approvalOpinion = projectApproval.approvalOpinion,
+                approvalOpinion = projectApproval.approvalOpinion ? "通过" : "拒绝",
                 remarks = projectApproval.remarks,
                 enterpriseScale = projectApproval.enterpriseScale,
                 planningEnterprise = projectApproval.planningEnterprise,
@@ -97,51 +100,48 @@ namespace shuiyintong.Api.Controllers
                 totalAssets = projectApproval.totalAssets,
                 IsFitReq = projectApproval.IsFitReq,
                 proportion = projectApproval.proportion,
+                loanBalance = projectApproval.loanBalance,
                 overdueFrequency = projectApproval.overdueFrequency,
                 overdueTotalFrequency = projectApproval.overdueTotalFrequency,
-                createTime = DateTime.Now
-            };
-            bool bol = ProjectApprovalSer.AddOne(ProjectApprovalModel); //保存推送数据
-            if (bol)
-            {
-                var PAModel = ProductOrderSer.GetSingle(p => p.OrderNo == projectApproval.platformAcctNo);
-                //更新tb_productOrder表订单状态
-                PAModel.status = projectApproval.approvalOpinion ? "0100" : "11";
-                PAModel.updatetime = DateTime.Now;
-                bol = ProductOrderSer.ModefyOne(PAModel);
-                if (bol)
-                {
-                    //记录日志
-                    ProductOrderLogServer.AddOne(new tb_productOrderLog
-                    {
-                        userName = "银行",
-                        dates = DateTime.Now,
-                        action = projectApproval.approvalOpinion ? "通过" : "拒绝",
-                        remark = ProjectApprovalModel.remarks,
-                        title = "银行审批",
-                        orderId = PAModel?.Id.ToString()
-                    });
-                }
-                return Json(new BaseResponse<string>
-                {
-                    Code = 200,
-                    ResponseType = (byte)InteractiveCode.Success,
-                    Data = ProjectApprovalModel.ToJson(),
-                    DateTime = Now,
-                    Msg = InteractiveCode.Success.GetDescription()
-                });
+                createTime = Now
+            });
 
-            }
-            else  //推送失败提示信息
+            //更新tb_productOrder表订单状态
+            var PAModel = ProductOrderSer.GetSingle(p => p.OrderNo == projectApproval.platformAcctNo);
+            if (PAModel == null)
             {
                 return Json(new BaseResponse<string>
                 {
-                    Code = 200,
-                    ResponseType = (byte)InteractiveCode.Fail,
-                    DateTime = Now,
-                    Msg = InteractiveCode.Fail.GetDescription()
+                    Code = bol ? 200 : 500,
+                    ResponseType = bol ? (byte)InteractiveCode.Success : (byte)InteractiveCode.Fail,
+                    Data = "更新tb_productOrder表订单状态失败，没有相关数据",
+                    DateTime = NowStr,
+                    Msg = bol ? InteractiveCode.Success.GetDescription() : InteractiveCode.Fail.GetDescription()
                 });
             }
+            PAModel.status = projectApproval.approvalOpinion ? "0100" : "11";
+            PAModel.updatetime = Now;
+            bol = ProductOrderSer.ModifyOne(PAModel);
+            if (bol) //记录日志
+            {
+                ProductOrderLogServer.AddOne(new tb_productOrderLog
+                {
+                    userName = "银行",
+                    dates = Now,
+                    action = projectApproval.approvalOpinion ? "通过" : "拒绝",
+                    remark = projectApproval.remarks,
+                    title = "银行审批",
+                    orderId = PAModel?.Id.ToString()
+                });
+            }
+            return Json(new BaseResponse<string>
+            {
+                Code = bol ? 200 : 500,
+                ResponseType = bol ? (byte)InteractiveCode.Success : (byte)InteractiveCode.Fail,
+                Data = bol ? projectApproval.ToJson() : null,
+                DateTime = NowStr,
+                Msg = bol ? InteractiveCode.Success.GetDescription() : InteractiveCode.Fail.GetDescription()
+            });
         }
 
         /// <summary>
@@ -152,7 +152,8 @@ namespace shuiyintong.Api.Controllers
         [HttpPost]
         public JsonResult CreditBKVer([FromBody]TaxVerification taxVerification)
         {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
+            DateTime Now = DateTime.Now;
+            string NowStr = Now.ToString("yyyyMMddHHmmss");
             if (taxVerification == null)
             {
                 return Json(new BaseResponse<string>
@@ -160,11 +161,12 @@ namespace shuiyintong.Api.Controllers
                     Code = 500,
                     ResponseType = (byte)InteractiveCode.Fail,
                     Data = "请求参数无效，没有推送成功",
-                    DateTime = Now,
+                    DateTime = NowStr,
                     Msg = InteractiveCode.Fail.GetDescription()
                 });
             }
-            tb_TaxVerification TaxVerificationModel = new tb_TaxVerification
+            //保存推送数据
+            bool bol = TaxVerificationSer.AddOne(new tb_TaxVerification
             {
                 platformAcctNo = taxVerification.platformAcctNo,
                 enterpriseName = taxVerification.enterpriseName,
@@ -172,16 +174,15 @@ namespace shuiyintong.Api.Controllers
                 acctNo = taxVerification.acctNo,
                 openBank = taxVerification.openBank,
                 IsDrawback = taxVerification.IsDrawback,
-                createTime = DateTime.Now
-            };
-            bool bol = TaxVerificationSer.AddOne(TaxVerificationModel); //保存推送数据
+                createTime = Now
+            });
             if (bol)
             {
                 var PAModel = ProductOrderSer.GetSingle(p => p.OrderNo == taxVerification.platformAcctNo);
                 var CAModel = CompanyAccountSer.GetSingle(c => c.OrderNo == taxVerification.platformAcctNo);
                 if (PAModel != null && CAModel != null)
                 {
-                    PAModel.updatetime = DateTime.Now;
+                    PAModel.updatetime = Now;
                     switch (taxVerification.IsDrawback)
                     {
                         case true:
@@ -194,15 +195,15 @@ namespace shuiyintong.Api.Controllers
                             break;
                     }
                     //更新tb_productOrder表订单状态
-                    ProductOrderSer.ModefyOne(PAModel);
+                    ProductOrderSer.ModifyOne(PAModel);
                     //更新tb_productOrder表订单状态
-                    CompanyAccountSer.ModefyOne(CAModel);
+                    CompanyAccountSer.ModifyOne(CAModel);
                     return Json(new BaseResponse<string>
                     {
                         Code = 200,
                         ResponseType = (byte)InteractiveCode.Success,
-                        Data = TaxVerificationModel.ToJson(),
-                        DateTime = Now,
+                        Data = taxVerification.ToJson(),
+                        DateTime = NowStr,
                         Msg = InteractiveCode.Success.GetDescription()
                     });
                 }
@@ -212,8 +213,8 @@ namespace shuiyintong.Api.Controllers
                     {
                         Code = 500,
                         ResponseType = (byte)InteractiveCode.Fail,
-                        Data = "推送成功，并出现其他数据操作异常",
-                        DateTime = Now,
+                        Data = "保存推送成功，并出现其他数据操作异常---无订单或者公司账户不存在",
+                        DateTime = NowStr,
                         Msg = InteractiveCode.Fail.GetDescription()
                     });
                 }
@@ -222,9 +223,9 @@ namespace shuiyintong.Api.Controllers
             {
                 return Json(new BaseResponse<string>
                 {
-                    Code = 200,
+                    Code = 500,
                     ResponseType = (byte)InteractiveCode.Fail,
-                    DateTime = Now,
+                    DateTime = NowStr,
                     Msg = InteractiveCode.Fail.GetDescription()
                 });
             }
@@ -240,7 +241,8 @@ namespace shuiyintong.Api.Controllers
         [HttpPost]
         public JsonResult LoanBKApprove([FromBody]ProjectUsage projectUsage)
         {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
+            DateTime Now = DateTime.Now;
+            string NowStr = Now.ToString("yyyyMMddHHmmss");
             if (projectUsage == null)
             {
                 return Json(new BaseResponse<string>
@@ -248,7 +250,7 @@ namespace shuiyintong.Api.Controllers
                     Code = 500,
                     ResponseType = (byte)InteractiveCode.Fail,
                     Data = "请求参数无效，没有推送成功",
-                    DateTime = Now,
+                    DateTime = NowStr,
                     Msg = InteractiveCode.Fail.GetDescription()
                 });
             }
@@ -260,19 +262,19 @@ namespace shuiyintong.Api.Controllers
                     Code = 200,
                     ResponseType = (byte)InteractiveCode.Fail,
                     Data = "审批意见为“拒绝”，则必须填写“备注”说明",
-                    DateTime = Now,
+                    DateTime = NowStr,
                     Msg = InteractiveCode.Fail.GetDescription()
                 });
             }
             //更新tb_productOrder表订单状态
-            bool bol = YongkuanSer.Modefy(p => p.OrderNo == projectUsage.platformAcctNo,
+            bool bol = YongkuanSer.Modify(p => p.OrderNo == projectUsage.platformAcctNo,
                   po => new tb_Yongkuan
                   {
                       //"3010"--通过审批  "3001"--审批拒绝
                       status = projectUsage.approvalOpinion ? "3010" : "3001",
-                      DqSxEdu = projectUsage.currentCreditAmount, //当前授信额度
-                      DbYkEdu = projectUsage.singlePaymentAmount, //单笔授信额度
-                      updatetime = DateTime.Now
+                      DqSxEdu = decimal.Parse(projectUsage.currentCreditAmount), //当前授信额度
+                      DbYkEdu = decimal.Parse(projectUsage.singlePaymentAmount), //单笔授信额度
+                      updatetime = Now
                   });
             if (bol)
             {
@@ -281,7 +283,7 @@ namespace shuiyintong.Api.Controllers
                 ProductOrderLogServer.AddOne(new tb_productOrderLog
                 {
                     userName = "银行",
-                    dates = DateTime.Now,
+                    dates = Now,
                     action = "通过",
                     title = "银行用款审批",
                     orderId = PAModel?.Id.ToString()
@@ -291,7 +293,7 @@ namespace shuiyintong.Api.Controllers
                     Code = 200,
                     ResponseType = (byte)InteractiveCode.Success,
                     Data = projectUsage.ToJson(),
-                    DateTime = Now,
+                    DateTime = NowStr,
                     Msg = InteractiveCode.Success.GetDescription()
                 });
             }
@@ -299,9 +301,9 @@ namespace shuiyintong.Api.Controllers
             {
                 return Json(new BaseResponse<string>
                 {
-                    Code = 200,
+                    Code = 500,
                     ResponseType = (byte)InteractiveCode.Fail,
-                    DateTime = Now,
+                    DateTime = NowStr,
                     Msg = InteractiveCode.Fail.GetDescription()
                 });
             }
@@ -315,7 +317,8 @@ namespace shuiyintong.Api.Controllers
         [HttpPost]
         public JsonResult CreditBKAdvance([FromBody]LoanInfo loanInfo)
         {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
+            DateTime Now = DateTime.Now;
+            string NowStr = Now.ToString("yyyyMMddHHmmss");
             if (loanInfo == null)
             {
                 return Json(new BaseResponse<string>
@@ -323,16 +326,16 @@ namespace shuiyintong.Api.Controllers
                     Code = 500,
                     ResponseType = (byte)InteractiveCode.Fail,
                     Data = "请求参数无效，没有推送成功",
-                    DateTime = Now,
+                    DateTime = NowStr,
                     Msg = InteractiveCode.Fail.GetDescription()
                 });
             }
             //更新tb_productOrder表订单状态 //"3060" 已放款
-            bool bol = YongkuanSer.Modefy(p => p.OrderNo == loanInfo.platformAcctNo,
+            bool bol = YongkuanSer.Modify(p => p.OrderNo == loanInfo.platformAcctNo,
                    po => new tb_Yongkuan
                    {
                        status = "3060",
-                       TkEdu = loanInfo.withdrawalAmount,  //提款金额
+                       TkEdu = decimal.Parse(loanInfo.withdrawalAmount),  //提款金额
                        tkTime = loanInfo.withdrawalTime, //提款日期
                        tkAccNo = loanInfo.acctNo,  //提款账户账号
                        tkAccName = loanInfo.accountName, //提款账户户名
@@ -340,7 +343,7 @@ namespace shuiyintong.Api.Controllers
                        jkEndTime = loanInfo.loanDueDate, //借款到期日
                        ZJyt = loanInfo.proceUse, //资金用途
                        JkHtNo = loanInfo.loanContractNo, //借款合同编号
-                       updatetime = DateTime.Now
+                       updatetime = Now
                    });
             if (bol)
             {
@@ -349,7 +352,7 @@ namespace shuiyintong.Api.Controllers
                 ProductOrderLogServer.AddOne(new tb_productOrderLog
                 {
                     userName = "银行",
-                    dates = DateTime.Now,
+                    dates = Now,
                     action = "通过",
                     title = "银行放款信息",
                     orderId = PAModel?.Id.ToString()
@@ -359,7 +362,7 @@ namespace shuiyintong.Api.Controllers
                     Code = 200,
                     ResponseType = (byte)InteractiveCode.Success,
                     Data = loanInfo.ToJson(),
-                    DateTime = Now,
+                    DateTime = NowStr,
                     Msg = InteractiveCode.Success.GetDescription()
                 });
             }
@@ -367,9 +370,9 @@ namespace shuiyintong.Api.Controllers
             {
                 return Json(new BaseResponse<string>
                 {
-                    Code = 200,
+                    Code = 500,
                     ResponseType = (byte)InteractiveCode.Fail,
-                    DateTime = Now,
+                    DateTime = NowStr,
                     Msg = InteractiveCode.Fail.GetDescription()
                 });
             }
@@ -385,7 +388,8 @@ namespace shuiyintong.Api.Controllers
         [HttpPost]
         public JsonResult PostLoanBKRiskList([FromBody]GuarantWarn guarantWarn)
         {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
+            DateTime Now = DateTime.Now;
+            string NowStr = Now.ToString("yyyyMMddHHmmss");
             if (guarantWarn == null)
             {
                 return Json(new BaseResponse<string>
@@ -393,39 +397,41 @@ namespace shuiyintong.Api.Controllers
                     Code = 500,
                     ResponseType = (byte)InteractiveCode.Fail,
                     Data = "请求参数无效，没有推送成功",
-                    DateTime = Now,
+                    DateTime = NowStr,
                     Msg = InteractiveCode.Fail.GetDescription()
                 });
             }
-            //更新tb_productOrder表订单状态 //"3060_A" 推送担保的预警信息
-            //bool bol = ProductOrderSer.Modefy(p => p.OrderNo == guarantWarn.platformAcctNo,
-            //       po => new tb_productOrder
-            //       {
-            //           status = "3060_A",
-            //           updatetime = DateTime.Now
-            //       });
-            //if (bol)
-            //{
-            //    return Json(new BaseResponse<string>
-            //    {
-            //        Code = 200,
-            //        ResponseType = (byte)InteractiveCode.Success,
-            //        Data = guarantWarn.ToJson(),
-            //        DateTime = Now,
-            //        Msg = InteractiveCode.Success.GetDescription()
-            //    });
-            //}
-            //else  //推送失败提示信息
-            //{
-            //    return Json(new BaseResponse<string>
-            //    {
-            //        Code = 200,
-            //        ResponseType = (byte)InteractiveCode.Fail,
-            //        DateTime = Now,
-            //        Msg = InteractiveCode.Fail.GetDescription()
-            //    });
-            //}
-            return null;
+
+            bool bol = false;
+            var yonkuan = YongkuanSer.GetSingle(y => y.YongkuanNo == guarantWarn.usageContractNo);
+            if (yonkuan != null)
+            {
+                var total = WarningSer.GetList(w => w.WarningType == "银行").Count();
+                bol = WarningSer.AddOne(new tb_Warning
+                {
+                    YKId = yonkuan.Id.ToString(),
+                    OrderId = yonkuan.OrderId.ToString(),
+                    orderNo = guarantWarn.platformAcctNo,
+                    ykNo = guarantWarn.usageContractNo,
+                    WarningContent = guarantWarn.guarantWarnMsg,
+                    WarningType = "银行",
+                    WarningStatus = "待处理",
+                    WarningLevel = "高阶预警",
+                    Advice = "-",
+                    WarningStep = "用款",
+                    WarningSort = "3",
+                    warningNo = "YH" + total.ToString().PadLeft(9, '0'), //YK000000066
+                    createtime = Now
+                });
+            }
+            return Json(new BaseResponse<string>
+            {
+                Code = bol ? 200 : 500,
+                ResponseType = bol ? (byte)InteractiveCode.Success : (byte)InteractiveCode.Fail,
+                Data = bol ? guarantWarn.ToJson() : null,
+                DateTime = NowStr,
+                Msg = bol ? InteractiveCode.Success.GetDescription() : InteractiveCode.Fail.GetDescription()
+            });
         }
 
         /// <summary>
@@ -436,7 +442,8 @@ namespace shuiyintong.Api.Controllers
         [HttpPost]
         public JsonResult PostLoanBKRiskResult([FromBody]GuarantWarnResult guarantWarnResult)
         {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
+            DateTime Now = DateTime.Now;
+            string NowStr = Now.ToString("yyyyMMddHHmmss");
             if (guarantWarnResult == null)
             {
                 return Json(new BaseResponse<string>
@@ -444,35 +451,24 @@ namespace shuiyintong.Api.Controllers
                     Code = 500,
                     ResponseType = (byte)InteractiveCode.Fail,
                     Data = "请求参数无效，没有推送成功",
-                    DateTime = Now,
+                    DateTime = NowStr,
                     Msg = InteractiveCode.Fail.GetDescription()
                 });
             }
-            //更新tb_productOrder表订单状态 //"3070" 
-            //bool bol = ProductOrderSer.Modefy(p => p.OrderNo == guarantWarnResult.platformAcctNo,
-            //       po => new tb_productOrder { status = "3070", updatetime = DateTime.Now });
-            //if (bol)
-            //{
-            //    return Json(new BaseResponse<string>
-            //    {
-            //        Code = 200,
-            //        ResponseType = (byte)InteractiveCode.Success,
-            //        Data = guarantWarnResult.ToJson(),
-            //        DateTime = Now,
-            //        Msg = InteractiveCode.Success.GetDescription()
-            //    });
-            //}
-            //else  //推送失败提示信息
-            //{
-            //    return Json(new BaseResponse<string>
-            //    {
-            //        Code = 200,
-            //        ResponseType = (byte)InteractiveCode.Fail,
-            //        DateTime = Now,
-            //        Msg = InteractiveCode.Fail.GetDescription()
-            //    });
-            //}
-            return null;
+            //tb_Warning 预警编号
+            bool bol = WarningSer.Modify(w => w.warningNo == guarantWarnResult.guarantNo, wo => new tb_Warning
+            {
+                bank_dealresult = guarantWarnResult.treatmentExplain, //处理情况说明
+                SysUpdateTime = Now
+            });
+            return Json(new BaseResponse<string>
+            {
+                Code = bol ? 200 : 500,
+                ResponseType = bol ? (byte)InteractiveCode.Success : (byte)InteractiveCode.Fail,
+                Data = bol ? guarantWarnResult.ToJson() : null,
+                DateTime = NowStr,
+                Msg = bol ? InteractiveCode.Success.GetDescription() : InteractiveCode.Fail.GetDescription()
+            });
         }
 
         /// <summary>
@@ -483,7 +479,8 @@ namespace shuiyintong.Api.Controllers
         [HttpPost]
         public JsonResult PostLoanBKEnquiry([FromBody]CreditStatement creditStatement)
         {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
+            DateTime Now = DateTime.Now;
+            string NowStr = Now.ToString("yyyyMMddHHmmss");
             if (creditStatement == null)
             {
                 return Json(new BaseResponse<string>
@@ -491,35 +488,42 @@ namespace shuiyintong.Api.Controllers
                     Code = 500,
                     ResponseType = (byte)InteractiveCode.Fail,
                     Data = "请求参数无效，没有推送成功",
-                    DateTime = Now,
+                    DateTime = NowStr,
                     Msg = InteractiveCode.Fail.GetDescription()
                 });
             }
-            //更新tb_productOrder表订单状态 //"3060_A" 
-            //bool bol = ProductOrderSer.Modefy(p => p.OrderNo == creditStatement.platformAcctNo,
-            //       po => new tb_productOrder { status = "3060_A", updatetime = DateTime.Now });
-            //if (bol)
-            //{
-            //    return Json(new BaseResponse<string>
-            //    {
-            //        Code = 200,
-            //        ResponseType = (byte)InteractiveCode.Success,
-            //        Data = creditStatement.ToJson(),
-            //        DateTime = Now,
-            //        Msg = InteractiveCode.Success.GetDescription()
-            //    });
-            //}
-            //else  //推送失败提示信息
-            //{
-            //    return Json(new BaseResponse<string>
-            //    {
-            //        Code = 200,
-            //        ResponseType = (byte)InteractiveCode.Fail,
-            //        DateTime = Now,
-            //        Msg = InteractiveCode.Fail.GetDescription()
-            //    });
-            //}
-            return null;
+            bool bol = false;
+            ////????????????
+            var yonkuan = YongkuanSer.GetSingle(y => y.YongkuanNo == creditStatement.enterpriseName);
+            if (yonkuan != null)
+            {
+                var total = WarningSer.GetList(w => w.WarningType == "银行").Count();
+                bol = WarningSer.AddOne(new tb_Warning
+                {
+                    YKId = yonkuan.Id.ToString(),
+                    OrderId = yonkuan.OrderId.ToString(),
+                    orderNo = creditStatement.platformAcctNo,
+                    //ykNo = creditStatement.usageContractNo,
+                    //WarningContent = creditStatement.guarantWarnMsg,
+                    WarningType = "银行",
+                    WarningStatus = "待处理",
+                    WarningLevel = "高阶预警",
+                    Advice = "-",
+                    WarningStep = "用款",
+                    WarningSort = "3",
+                    warningNo = "YH" + total.ToString().PadLeft(9, '0'), //YK000000066
+                    bank_dealresult = creditStatement.IsbadCredit ? "企业及关键人人行征信出现不良信用记录" : "企业及关键人人行征信未出现不良信用记录",
+                    createtime = Now
+                });
+            }
+            return Json(new BaseResponse<string>
+            {
+                Code = bol ? 200 : 500,
+                ResponseType = bol ? (byte)InteractiveCode.Success : (byte)InteractiveCode.Fail,
+                Data = bol ? creditStatement.ToJson() : null,
+                DateTime = NowStr,
+                Msg = bol ? InteractiveCode.Success.GetDescription() : InteractiveCode.Fail.GetDescription()
+            });
         }
 
 
@@ -531,7 +535,8 @@ namespace shuiyintong.Api.Controllers
         [HttpPost]
         public JsonResult PostLoanBKPay([FromBody]DeductionAccount deductionAccount)
         {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
+            DateTime Now = DateTime.Now;
+            string NowStr = Now.ToString("yyyyMMddHHmmss");
             if (deductionAccount == null)
             {
                 return Json(new BaseResponse<string>
@@ -539,34 +544,21 @@ namespace shuiyintong.Api.Controllers
                     Code = 500,
                     ResponseType = (byte)InteractiveCode.Fail,
                     Data = "请求参数无效，没有推送成功",
-                    DateTime = Now,
+                    DateTime = NowStr,
                     Msg = InteractiveCode.Fail.GetDescription()
                 });
             }
             //更新tb_productOrder表订单状态  //100
-            bool bol = ProductOrderSer.Modefy(p => p.OrderNo == deductionAccount.platformAcctNo,
-                   po => new tb_productOrder { status = "100", updatetime = DateTime.Now });
-            if (bol)
+            bool bol = ProductOrderSer.Modify(p => p.OrderNo == deductionAccount.platformAcctNo,
+                   po => new tb_productOrder { status = "100", updatetime = Now });
+            return Json(new BaseResponse<string>
             {
-                return Json(new BaseResponse<string>
-                {
-                    Code = 200,
-                    ResponseType = (byte)InteractiveCode.Success,
-                    Data = deductionAccount.ToJson(),
-                    DateTime = Now,
-                    Msg = InteractiveCode.Success.GetDescription()
-                });
-            }
-            else  //推送失败提示信息
-            {
-                return Json(new BaseResponse<string>
-                {
-                    Code = 200,
-                    ResponseType = (byte)InteractiveCode.Fail,
-                    DateTime = Now,
-                    Msg = InteractiveCode.Fail.GetDescription()
-                });
-            }
+                Code = bol ? 200 : 500,
+                ResponseType = bol ? (byte)InteractiveCode.Success : (byte)InteractiveCode.Fail,
+                Data = bol ? deductionAccount.ToJson() : null,
+                DateTime = NowStr,
+                Msg = bol ? InteractiveCode.Success.GetDescription() : InteractiveCode.Fail.GetDescription()
+            });
         }
 
         /// <summary>
@@ -577,7 +569,8 @@ namespace shuiyintong.Api.Controllers
         [HttpPost]
         public JsonResult PostLoanBKOverdue([FromBody]OverdueInfo overdueInfo)
         {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
+            DateTime Now = DateTime.Now;
+            string NowStr = Now.ToString("yyyyMMddHHmmss");
             if (overdueInfo == null)
             {
                 return Json(new BaseResponse<string>
@@ -585,172 +578,130 @@ namespace shuiyintong.Api.Controllers
                     Code = 500,
                     ResponseType = (byte)InteractiveCode.Fail,
                     Data = "请求参数无效，没有推送成功",
-                    DateTime = Now,
+                    DateTime = NowStr,
                     Msg = InteractiveCode.Fail.GetDescription()
                 });
             }
             //更新tb_productOrder表订单状态 
-            bool bol = ProductOrderSer.Modefy(p => p.OrderNo == overdueInfo.platformAcctNo,
-                   po => new tb_productOrder { status = "60", updatetime = DateTime.Now });
+            bool bol = ProductOrderSer.Modify(p => p.OrderNo == overdueInfo.platformAcctNo,
+                   po => new tb_productOrder { status = "60", historyYuQi = "1", updatetime = Now });
             if (bol)
             {
-                return Json(new BaseResponse<string>
-                {
-                    Code = 200,
-                    ResponseType = (byte)InteractiveCode.Success,
-                    Data = overdueInfo.ToJson(),
-                    DateTime = Now,
-                    Msg = InteractiveCode.Success.GetDescription()
-                });
+                bol = YongkuanSer.Modify(y => y.OrderNo == overdueInfo.platformAcctNo,
+                                   yk => new tb_Yongkuan { historyYuQi = "1", updatetime = Now });
             }
-            else  //推送失败提示信息
+
+            return Json(new BaseResponse<string>
             {
-                return Json(new BaseResponse<string>
-                {
-                    Code = 200,
-                    ResponseType = (byte)InteractiveCode.Fail,
-                    DateTime = Now,
-                    Msg = InteractiveCode.Fail.GetDescription()
-                });
-            }
+                Code = bol ? 200 : 500,
+                ResponseType = bol ? (byte)InteractiveCode.Success : (byte)InteractiveCode.Fail,
+                Data = bol ? overdueInfo.ToJson() : null,
+                DateTime = NowStr,
+                Msg = bol ? InteractiveCode.Success.GetDescription() : InteractiveCode.Fail.GetDescription()
+            });
         }
 
         /// <summary>
         /// 24成功扣款之后---结项信息
         /// </summary>
-        /// <param name="loanInfo"></param>
+        /// <param name="nodeItemInfo"></param>
         /// <returns></returns>
         [HttpPost]
-        public JsonResult PostLoanBKCollection([FromBody]LoanInfo loanInfo)
+        public JsonResult PostLoanBKCollection([FromBody]NodeItemInfo nodeItemInfo)
         {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
-            if (loanInfo == null)
+            DateTime Now = DateTime.Now;
+            string NowStr = Now.ToString("yyyyMMddHHmmss");
+            if (nodeItemInfo == null)
             {
                 return Json(new BaseResponse<string>
                 {
                     Code = 500,
                     ResponseType = (byte)InteractiveCode.Fail,
                     Data = "请求参数无效，没有推送成功",
-                    DateTime = Now,
+                    DateTime = NowStr,
                     Msg = InteractiveCode.Fail.GetDescription()
                 });
             }
-            //更新tb_productOrder表订单状态 //"3060" 已放款
-            bool bol = ProductOrderSer.Modefy(p => p.OrderNo == loanInfo.platformAcctNo,
-                   po => new tb_productOrder { status = "60_finish", updatetime = DateTime.Now });
-            if (bol)
+            //更新tb_productOrder表订单状态 //"60_finish" 结项信息
+            bool bol = ProductOrderSer.Modify(p => p.OrderNo == nodeItemInfo.platformAcctNo,
+                   po => new tb_productOrder { status = "60_finish", updatetime = Now });
+            return Json(new BaseResponse<string>
             {
-                return Json(new BaseResponse<string>
-                {
-                    Code = 200,
-                    ResponseType = (byte)InteractiveCode.Success,
-                    Data = loanInfo.ToJson(),
-                    DateTime = Now,
-                    Msg = InteractiveCode.Success.GetDescription()
-                });
-            }
-            else  //推送失败提示信息
-            {
-                return Json(new BaseResponse<string>
-                {
-                    Code = 200,
-                    ResponseType = (byte)InteractiveCode.Fail,
-                    DateTime = Now,
-                    Msg = InteractiveCode.Fail.GetDescription()
-                });
-            }
+                Code = bol ? 200 : 500,
+                ResponseType = bol ? (byte)InteractiveCode.Success : (byte)InteractiveCode.Fail,
+                Data = bol ? nodeItemInfo.ToJson() : null,
+                DateTime = NowStr,
+                Msg = bol ? InteractiveCode.Success.GetDescription() : InteractiveCode.Fail.GetDescription()
+            });
         }
 
         /// <summary>
         /// 25银行发起代偿---发起代偿信息
         /// </summary>
-        /// <param name="loanInfo"></param>
+        /// <param name="compensationInfo"></param>
         /// <returns></returns>
         [HttpPost]
-        public JsonResult PostLoanBKCompensatory([FromBody]LoanInfo loanInfo)
+        public JsonResult PostLoanBKCompensatory([FromBody]CompensationInfo compensationInfo)
         {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
-            if (loanInfo == null)
+            DateTime Now = DateTime.Now;
+            string NowStr = Now.ToString("yyyyMMddHHmmss");
+            if (compensationInfo == null)
             {
                 return Json(new BaseResponse<string>
                 {
                     Code = 500,
                     ResponseType = (byte)InteractiveCode.Fail,
                     Data = "请求参数无效，没有推送成功",
-                    DateTime = Now,
+                    DateTime = NowStr,
                     Msg = InteractiveCode.Fail.GetDescription()
                 });
             }
-            //更新tb_productOrder表订单状态 //"3060" 已放款
-            bool bol = ProductOrderSer.Modefy(p => p.OrderNo == loanInfo.platformAcctNo,
-                   po => new tb_productOrder { status = "60_bank", updatetime = DateTime.Now });
-            if (bol)
+            //更新tb_productOrder表订单状态 //"60_bank" 银行发起代偿
+            bool bol = ProductOrderSer.Modify(p => p.OrderNo == compensationInfo.platformAcctNo,
+                   po => new tb_productOrder { status = "60_bank", updatetime = Now });
+
+            return Json(new BaseResponse<string>
             {
-                return Json(new BaseResponse<string>
-                {
-                    Code = 200,
-                    ResponseType = (byte)InteractiveCode.Success,
-                    Data = loanInfo.ToJson(),
-                    DateTime = Now,
-                    Msg = InteractiveCode.Success.GetDescription()
-                });
-            }
-            else  //推送失败提示信息
-            {
-                return Json(new BaseResponse<string>
-                {
-                    Code = 200,
-                    ResponseType = (byte)InteractiveCode.Fail,
-                    DateTime = Now,
-                    Msg = InteractiveCode.Fail.GetDescription()
-                });
-            }
+                Code = bol ? 200 : 500,
+                ResponseType = bol ? (byte)InteractiveCode.Success : (byte)InteractiveCode.Fail,
+                Data = bol ? compensationInfo.ToJson() : null,
+                DateTime = NowStr,
+                Msg = bol ? InteractiveCode.Success.GetDescription() : InteractiveCode.Fail.GetDescription()
+            });
         }
 
         /// <summary>
         /// 28银行查看确认结项之后---结项信息----------------------------------------(银行回传平台)接口结束----------------------------------------
         /// </summary>
-        /// <param name="loanInfo"></param>
+        /// <param name="nodeItemInfo"></param>
         /// <returns></returns>
         [HttpPost]
-        public JsonResult PostLoanBKNodeTerm([FromBody]LoanInfo loanInfo)
+        public JsonResult PostLoanBKNodeTerm([FromBody]NodeItemInfo nodeItemInfo)
         {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
-            if (loanInfo == null)
+            DateTime Now = DateTime.Now;
+            string NowStr = Now.ToString("yyyyMMddHHmmss");
+            if (nodeItemInfo == null)
             {
                 return Json(new BaseResponse<string>
                 {
                     Code = 500,
                     ResponseType = (byte)InteractiveCode.Fail,
                     Data = "请求参数无效，没有推送成功",
-                    DateTime = Now,
+                    DateTime = NowStr,
                     Msg = InteractiveCode.Fail.GetDescription()
                 });
             }
-            //更新tb_productOrder表订单状态 //"3060" 已放款
-            bool bol = ProductOrderSer.Modefy(p => p.OrderNo == loanInfo.platformAcctNo,
-                   po => new tb_productOrder { status = "3060", updatetime = DateTime.Now });
-            if (bol)
+            //更新tb_productOrder表订单状态 //"3060" 已结项
+            bool bol = ProductOrderSer.Modify(p => p.OrderNo == nodeItemInfo.platformAcctNo,
+                   po => new tb_productOrder { status = "3060", updatetime = Now });
+            return Json(new BaseResponse<string>
             {
-                return Json(new BaseResponse<string>
-                {
-                    Code = 200,
-                    ResponseType = (byte)InteractiveCode.Success,
-                    Data = loanInfo.ToJson(),
-                    DateTime = Now,
-                    Msg = InteractiveCode.Success.GetDescription()
-                });
-            }
-            else  //推送失败提示信息
-            {
-                return Json(new BaseResponse<string>
-                {
-                    Code = 200,
-                    ResponseType = (byte)InteractiveCode.Fail,
-                    DateTime = Now,
-                    Msg = InteractiveCode.Fail.GetDescription()
-                });
-            }
+                Code = bol ? 200 : 500,
+                ResponseType = bol ? (byte)InteractiveCode.Success : (byte)InteractiveCode.Fail,
+                Data = bol ? nodeItemInfo.ToJson() : null,
+                DateTime = NowStr,
+                Msg = bol ? InteractiveCode.Success.GetDescription() : InteractiveCode.Fail.GetDescription()
+            });
         }
 
         #endregion

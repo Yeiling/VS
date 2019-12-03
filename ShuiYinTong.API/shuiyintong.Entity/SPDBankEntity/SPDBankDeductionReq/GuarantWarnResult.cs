@@ -35,11 +35,11 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq
         /// 预警事件编号
         /// </summary>     
         [Required(ErrorMessage = "预警事件编号必填")]
-        public decimal guarantNo { get; set; }
+        public string guarantNo { get; set; }
 
         /// <summary>
         /// 处理情况说明描述
         /// </summary>     
-        public decimal treatmentExplain { get; set; }
+        public string treatmentExplain { get; set; }
     }
 }

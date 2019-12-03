@@ -148,5 +148,12 @@ namespace shuiyintong.DBUtils.Test_tuishui_Demo
            /// </summary>           
            public string Type {get;set;}
 
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>           
+           public string bankRate {get;set;}
+
     }
 }

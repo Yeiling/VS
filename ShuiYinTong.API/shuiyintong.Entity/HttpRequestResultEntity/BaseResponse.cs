@@ -11,7 +11,7 @@
         /// </summary>
         public byte ResponseType { get; set; }
         /// <summary>
-        /// http code
+        /// http请求返回编码
         /// </summary>
         public int Code { get; set; }
         /// <summary>
@@ -23,7 +23,7 @@
         /// </summary>
         public string DateTime { get; set; }
         /// <summary>
-        /// 错误信息
+        /// 提示信息
         /// </summary>
         public string Msg { get; set; }
     }

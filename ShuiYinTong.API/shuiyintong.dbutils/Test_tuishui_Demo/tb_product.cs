@@ -240,5 +240,12 @@ namespace shuiyintong.DBUtils.Test_tuishui_Demo
            /// </summary>           
            public DateTime? updateDate {get;set;}
 
+           /// <summary>
+           /// Desc:融资利率
+           /// Default:
+           /// Nullable:True
+           /// </summary>           
+           public string bankRate {get;set;}
+
     }
 }

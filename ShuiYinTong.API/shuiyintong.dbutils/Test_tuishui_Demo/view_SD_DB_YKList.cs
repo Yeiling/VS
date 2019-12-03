@@ -104,6 +104,20 @@ namespace shuiyintong.DBUtils.Test_tuishui_Demo
            /// Default:
            /// Nullable:True
            /// </summary>           
+           public DateTime? tkTime {get;set;}
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>           
+           public DateTime? jkEndTime {get;set;}
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>           
            public string xmstatus {get;set;}
 
            /// <summary>

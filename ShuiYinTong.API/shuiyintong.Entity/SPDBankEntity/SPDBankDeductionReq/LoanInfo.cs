@@ -36,7 +36,7 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq
         /// 提款金额
         /// </summary>     
         [Required(ErrorMessage = "提款金额必填")]
-        public decimal withdrawalAmount { get; set; }
+        public string withdrawalAmount { get; set; }
 
         /// <summary>
         /// 提款日期

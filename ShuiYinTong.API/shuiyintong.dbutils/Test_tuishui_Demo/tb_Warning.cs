@@ -142,5 +142,12 @@ namespace shuiyintong.DBUtils.Test_tuishui_Demo
            /// </summary>           
            public string ykNo {get;set;}
 
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>           
+           public string bank_dealresult {get;set;}
+
     }
 }

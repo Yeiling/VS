@@ -2,7 +2,7 @@
 using shuiyintong.Common;
 using shuiyintong.Common.Extend;
 using shuiyintong.Common.NPOIFile;
-using shuiyintong.DBUtils;
+using shuiyintong.DBUtils.IService;
 using shuiyintong.Entity.AppSettiongModel;
 using shuiyintong.Entity.HttpRequestResultEntity;
 using shuiyintong.Entity.SPDBankEntity.SPDBankFile;
@@ -14,7 +14,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using static shuiyintong.Entity.Enums.BankTypeEum;
-using static shuiyintong.Entity.Enums.RedisDBEnum;
 using static shuiyintong.Entity.Enums.RespCodeEnum;
 using static shuiyintong.Entity.SPDBankEntity.SPDBankAPITypeEunm;
 using WTPC_ERR = shuiyintong.Entity.SPDBankEntity.SPDBankFile.WTPC_ERR;
@@ -40,12 +39,17 @@ namespace shuiyintong.Api.Controllers
         /// Http请求返回Code
         /// </summary>
         private readonly int Code = 200;
+
+        #endregion
+
         /// <summary>
         /// Redis服务
         /// </summary>
-        private static readonly NewLifeRedisHelper redis = NewLifeRedisHelper.GetRedis(RedisConn, (byte)RedisDbNum.RespDb);
-        #endregion
-
+        public IRediServer<string> rediServer { get; set; }
+        /// <summary>
+        /// Redis库编号
+        /// </summary>
+        private readonly short RedisDbNum = 1;
         #region 接口签名
 
         /// <summary>
@@ -267,8 +271,8 @@ namespace shuiyintong.Api.Controllers
                 baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.SingleTransfer + "-" + Now + "-" + baseResponse.ResponseType;
-                if (redis != null)
-                    redis.Set(key, baseResponse);
+                if (rediServer != null)
+                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
 
             });
             return baseResponse;
@@ -327,8 +331,8 @@ namespace shuiyintong.Api.Controllers
                 baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.ElectRecptApplction + "-" + Now + "-" + baseResponse.ResponseType;
-                if (redis != null)
-                    redis.Set(key, baseResponse);
+                if (rediServer != null)
+                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
 
             });
             return baseResponse;
@@ -360,8 +364,8 @@ namespace shuiyintong.Api.Controllers
                 baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.FncThdCncl + "-" + Now + "-" + baseResponse.ResponseType;
-                if (redis != null)
-                    redis.Set(key, baseResponse);
+                if (rediServer != null)
+                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
 
             });
             return baseResponse;
@@ -420,8 +424,8 @@ namespace shuiyintong.Api.Controllers
                 baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.BnkInfoQryCombntnTran + "-" + Now + "-" + baseResponse.ResponseType;
-                if (redis != null)
-                    redis.Set(key, baseResponse);
+                if (rediServer != null)
+                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
 
             });
             return baseResponse;
@@ -453,8 +457,8 @@ namespace shuiyintong.Api.Controllers
                 baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.AuthSmlAmt + "-" + Now + "-" + baseResponse.ResponseType;
-                if (redis != null)
-                    redis.Set(key, baseResponse);
+                if (rediServer != null)
+                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
 
             });
             return baseResponse;
@@ -487,8 +491,8 @@ namespace shuiyintong.Api.Controllers
                 baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.PayInsrChk + "-" + Now + "-" + baseResponse.ResponseType;
-                if (redis != null)
-                    redis.Set(key, baseResponse);
+                if (rediServer != null)
+                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
 
             });
             return baseResponse;
@@ -549,8 +553,8 @@ namespace shuiyintong.Api.Controllers
                 baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.PayInsrCnl + "-" + Now + "-" + baseResponse.ResponseType;
-                if (redis != null)
-                    redis.Set(key, baseResponse);
+                if (rediServer != null)
+                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
 
             });
             return baseResponse;
@@ -611,8 +615,8 @@ namespace shuiyintong.Api.Controllers
                 baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.PayeeWhtLstMntn + "-" + Now + "-" + baseResponse.ResponseType;
-                if (redis != null)
-                    redis.Set(key, baseResponse);
+                if (rediServer != null)
+                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
 
             });
             return baseResponse;
@@ -649,8 +653,8 @@ namespace shuiyintong.Api.Controllers
                 baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.ZLSysInrBnkTfr + "-" + Now + "-" + baseResponse.ResponseType;
-                if (redis != null)
-                    redis.Set(key, baseResponse);
+                if (rediServer != null)
+                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
 
             });
             return baseResponse;
@@ -683,8 +687,8 @@ namespace shuiyintong.Api.Controllers
                 baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.OlBrwLnRepy + "-" + Now + "-" + baseResponse.ResponseType;
-                if (redis != null)
-                    redis.Set(key, baseResponse);
+                if (rediServer != null)
+                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
 
             });
             return baseResponse;
@@ -745,8 +749,8 @@ namespace shuiyintong.Api.Controllers
                 baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.InterestTrial + "-" + Now + "-" + baseResponse.ResponseType;
-                if (redis != null)
-                    redis.Set(key, baseResponse);
+                if (rediServer != null)
+                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
 
             });
             return baseResponse;
@@ -779,8 +783,8 @@ namespace shuiyintong.Api.Controllers
                 baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.ReceiptApply + "-" + Now + "-" + baseResponse.ResponseType;
-                if (redis != null)
-                    redis.Set(key, baseResponse);
+                if (rediServer != null)
+                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
 
             });
             return baseResponse;
@@ -813,8 +817,8 @@ namespace shuiyintong.Api.Controllers
                 baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.CorpLnCntlAcctRep + "-" + Now + "-" + baseResponse.ResponseType;
-                if (redis != null)
-                    redis.Set(key, baseResponse);
+                if (rediServer != null)
+                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
 
             });
             return baseResponse;
@@ -847,8 +851,8 @@ namespace shuiyintong.Api.Controllers
                 baseResponse.Msg = responseType.GetDescription();
                 //Redis保存 //Redis key
                 string key = (int)SPDBank + "-" + (int)SPDBankAPIType.OlBrwLnRepyTrl + "-" + Now + "-" + baseResponse.ResponseType;
-                if (redis != null)
-                    redis.Set(key, baseResponse);
+                if (rediServer != null)
+                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
 
             });
             return baseResponse;
@@ -991,175 +995,7 @@ namespace shuiyintong.Api.Controllers
                 baseResponse.ResponseType = (byte)responseType;
                 baseResponse.Msg = responseType.GetDescription();
             });
-            return Json(baseResponse);
-        }
-
-        #endregion
-
-
-        #region 平台接口---税单贷自动付款
-
-        #region 授信
-        /// <summary>
-        /// 授信(数据表tb_ProjectApproval)---项目审批信息(银行)，项目风险信息(尽调+征信)----------------------------------------(银行回传平台)接口开始--------------------
-        /// </summary>
-        /// <param name="projectApproval">类型</param>
-        /// <returns></returns>
-        [HttpPost]
-        public JsonResult CreditBKApprove([FromBody]ProjectApproval projectApproval)
-        {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
-            if (projectApproval == null)
-            {
-                return Json(new BaseResponse<string>
-                {
-                    Code = 500,
-                    ResponseType = (byte)InteractiveCode.Fail,
-                    Data = "请求参数无效，没有推送成功",
-                    DateTime = Now,
-                    Msg = InteractiveCode.Fail.GetDescription()
-                });
-            }
-            //审批意见为“拒绝”，则需“备注”说明。approvalOpinion=true表示通过，approvalOpinion=false表示拒绝
-            if (!projectApproval.approvalOpinion && string.IsNullOrWhiteSpace(projectApproval.remarks))
-            {
-                return Json(new BaseResponse<string>
-                {
-                    Code = 200,
-                    ResponseType = (byte)InteractiveCode.Fail,
-                    Data = "审批意见为“拒绝”，则必须填写“备注”说明",
-                    DateTime = Now,
-                    Msg = InteractiveCode.Fail.GetDescription()
-                });
-            }
-            tb_ProjectApproval ProjectApprovalModel = new tb_ProjectApproval
-            {
-                platformAcctNo = projectApproval.platformAcctNo,
-                enterpriseName = projectApproval.enterpriseName,
-                approvalOpinion = projectApproval.approvalOpinion,
-                remarks = projectApproval.remarks,
-                enterpriseScale = projectApproval.enterpriseScale,
-                planningEnterprise = projectApproval.planningEnterprise,
-                businessIncome = projectApproval.businessIncome,
-                practitioners = projectApproval.practitioners,
-                totalAssets = projectApproval.totalAssets,
-                IsFitReq = projectApproval.IsFitReq,
-                proportion = projectApproval.proportion,
-                overdueFrequency = projectApproval.overdueFrequency,
-                overdueTotalFrequency = projectApproval.overdueTotalFrequency,
-                createTime = DateTime.Now
-            };
-            bool bol = ProjectApprovalServer.AddOne(ProjectApprovalModel); //保存推送数据
-            if (bol)
-            {
-                string Status = string.Empty;  //数据库订单表状态
-                switch (projectApproval.approvalOpinion)
-                {
-                    case true:
-                        Status = "0100";  //通过审批
-                        break;
-                    default:
-                        Status = "11";  //审批拒绝
-                        break;
-                }
-
-                //更新tb_productOrder表订单状态
-                ProductOrderServer.Modefy(p => p.OrderNo == projectApproval.platformAcctNo,
-                    po => new tb_productOrder { status = Status, updatetime = DateTime.Now });
-
-                return Json(new BaseResponse<string>
-                {
-                    Code = 200,
-                    ResponseType = (byte)InteractiveCode.Success,
-                    Data = ProjectApprovalModel.ToJson(),
-                    DateTime = Now,
-                    Msg = InteractiveCode.Success.GetDescription()
-                });
-            }
-            else  //推送失败提示信息
-            {
-                return Json(new BaseResponse<string>
-                {
-                    Code = 200,
-                    ResponseType = (byte)InteractiveCode.Fail,
-                    DateTime = Now,
-                    Msg = InteractiveCode.Fail.GetDescription()
-                });
-            }
-        }
-
-        /// <summary>
-        /// 授信(数据表tb_TaxVerification) 退税账户核验信息
-        /// </summary>
-        /// <param name="taxVerification"></param>
-        /// <returns></returns>
-        [HttpPost]
-        public JsonResult CreditBKVer([FromBody]TaxVerification taxVerification)
-        {
-            string Now = DateTime.Now.ToString("yyyyMMddHHmmss");
-            if (taxVerification == null)
-            {
-                return Json(new BaseResponse<string>
-                {
-                    Code = 500,
-                    ResponseType = (byte)InteractiveCode.Fail,
-                    Data = "请求参数无效，没有推送成功",
-                    DateTime = Now,
-                    Msg = InteractiveCode.Fail.GetDescription()
-                });
-            }
-            tb_TaxVerification TaxVerificationModel = new tb_TaxVerification
-            {
-                platformAcctNo = taxVerification.platformAcctNo,
-                enterpriseName = taxVerification.enterpriseName,
-                accountName = taxVerification.accountName,
-                acctNo = taxVerification.acctNo,
-                openBank = taxVerification.openBank,
-                IsDrawback = taxVerification.IsDrawback,
-                createTime = DateTime.Now
-            };
-            bool bol = TaxVerificationServer.AddOne(TaxVerificationModel); //保存推送数据
-            if (bol)
-            {
-                string BankConfirmFlag = string.Empty, Status = string.Empty;  //数据库订单表状态;    
-                switch (TaxVerificationModel.IsDrawback)
-                {
-                    case true:
-                        Status = "0100_pass";  //通过审批
-                        BankConfirmFlag = "1";  //退税账户
-                        break;
-                    default:
-                        Status = "0100_fail";  //审批拒绝
-                        BankConfirmFlag = "0";  //非退税账户
-                        break;
-                }
-
-                //更新tb_productOrder表订单状态
-                ProductOrderServer.Modefy(p => p.OrderNo == taxVerification.platformAcctNo,
-                    po => new tb_productOrder { status = Status, updatetime = DateTime.Now });
-                //更新tb_companyAccount表标识
-                CompanyAccountServer.Modefy(p => p.OrderNo == taxVerification.platformAcctNo,
-                    po => new tb_companyAccount { bankConfirmFlag = BankConfirmFlag });
-
-                return Json(new BaseResponse<string>
-                {
-                    Code = 200,
-                    ResponseType = (byte)InteractiveCode.Success,
-                    Data = TaxVerificationModel.ToJson(),
-                    DateTime = Now,
-                    Msg = InteractiveCode.Success.GetDescription()
-                });
-            }
-            else  //推送失败提示信息
-            {
-                return Json(new BaseResponse<string>
-                {
-                    Code = 200,
-                    ResponseType = (byte)InteractiveCode.Fail,
-                    DateTime = Now,
-                    Msg = InteractiveCode.Fail.GetDescription()
-                });
-            }
+            return baseResponse;
         }
 
         #endregion

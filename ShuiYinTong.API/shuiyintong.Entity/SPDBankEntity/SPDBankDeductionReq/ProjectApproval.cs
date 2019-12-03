@@ -31,7 +31,7 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq
         /// <summary>
         /// 企业规模---大型/中型/小型
         /// </summary>
-        public byte? enterpriseScale { get; set; }
+        public string enterpriseScale { get; set; }
         /// <summary>
         /// 划型企业---按照四部委标准定义
         /// </summary>
@@ -39,31 +39,35 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq
         /// <summary>
         /// 营业收入
         /// </summary>
-        public decimal? businessIncome { get; set; }
+        public string businessIncome { get; set; }
         /// <summary>
         /// 从业人员
         /// </summary>
-        public int? practitioners { get; set; }
+        public string practitioners { get; set; }
         /// <summary>
         /// 资产总额
         /// </summary>
-        public decimal? totalAssets { get; set; }
+        public string totalAssets { get; set; }
         /// <summary>
         /// 企业以及关键人是否满足人行征信准入条件
         /// </summary>
-        public bool? IsFitReq { get; set; }
+        public string IsFitReq { get; set; }
         /// <summary>
         /// 企业消贷比(分值)
         /// </summary>
-        public double? proportion { get; set; }
+        public string proportion { get; set; }
+        /// <summary>
+        /// 企业未结清贷款余额（分值）
+        /// </summary>
+        public string loanBalance { get; set; }
         /// <summary>
         /// 企业法定代表人最近24个自然月最高连续逾期次数
         /// </summary>
-        public int? overdueFrequency { get; set; }
+        public string overdueFrequency { get; set; }
         /// <summary>
         /// 企业法定代表人最近24个自然月累计逾期次数
         /// </summary>
-        public int? overdueTotalFrequency { get; set; }
+        public string overdueTotalFrequency { get; set; }
 
     }
 }

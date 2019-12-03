@@ -15,22 +15,22 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq
             /// <summary>
             /// 微型企业
             /// </summary>
-            [Description("微型")]
+            [Description("微型企业")]
             Miniature = 0,
             /// <summary>
             /// 小型企业
             /// </summary>
-            [Description("小型")]
+            [Description("小型企业")]
             Smal = 10,
             /// <summary>
             /// 中型企业
             /// </summary>
-            [Description("中型")]
+            [Description("中型企业")]
             Medium = 20,
             /// <summary>
             /// 大型企业
             /// </summary>
-            [Description("大型")]
+            [Description("大型企业")]
             Large = 30,
 
         }

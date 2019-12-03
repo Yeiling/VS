@@ -133,7 +133,21 @@ namespace shuiyintong.DBUtils.Test_tuishui_Demo
            /// Default:
            /// Nullable:True
            /// </summary>           
+           public string maxRate {get;set;}
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>           
            public string DB_status {get;set;}
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>           
+           public string bankRate {get;set;}
 
     }
 }

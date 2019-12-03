@@ -61,12 +61,12 @@
         </member>
         <member name="P:shuiyintong.Entity.AppSettiongModel.BankControllerItem.Controller">
             <summary>
-            控制器名称
+            控制器英文名称
             </summary>
         </member>
-        <member name="P:shuiyintong.Entity.AppSettiongModel.BankControllerItem.BankName">
+        <member name="P:shuiyintong.Entity.AppSettiongModel.BankControllerItem.Name">
             <summary>
-            银行名称
+            控制器中文名称
             </summary>
         </member>
         <member name="T:shuiyintong.Entity.AppSettiongModel.DBConfig">
@@ -352,7 +352,7 @@
         </member>
         <member name="P:shuiyintong.Entity.HttpRequestResultEntity.BaseResponse`1.Code">
             <summary>
-            http code
+            http请求返回编码
             </summary>
         </member>
         <member name="P:shuiyintong.Entity.HttpRequestResultEntity.BaseResponse`1.Data">
@@ -367,7 +367,7 @@
         </member>
         <member name="P:shuiyintong.Entity.HttpRequestResultEntity.BaseResponse`1.Msg">
             <summary>
-            错误信息
+            提示信息
             </summary>
         </member>
         <member name="T:shuiyintong.Entity.HttpRequestResultEntity.ValidateModel">
@@ -566,6 +566,41 @@
             <summary>
             已放贷款还款计划查询
             </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.CompensationInfo">
+            <summary>
+            代偿信息
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.CompensationInfo.platformAcctNo">
+            <summary>
+            平台项目编号
+            </summary>        
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.CompensationInfo.guaranteeContractNo">
+            <summary>
+            担授合同编号
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.CompensationInfo.usageContractNo">
+            <summary>
+            用款编号
+            </summary>       
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.CompensationInfo.enterpriseName">
+            <summary>
+            企业名称
+            </summary>   
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.CompensationInfo.compensationAmount">
+            <summary>
+            代偿金额
+            </summary>   
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.CompensationInfo.compensationDate">
+            <summary>
+            代偿日期
+            </summary>   
         </member>
         <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.CreditStatement">
             <summary>
@@ -812,6 +847,51 @@
             借款合同编号
             </summary>      
         </member>
+        <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.NodeItemInfo">
+            <summary>
+            结项信息
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.NodeItemInfo.platformAcctNo">
+            <summary>
+            平台项目编号
+            </summary>        
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.NodeItemInfo.guaranteeContractNo">
+            <summary>
+            担授合同编号
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.NodeItemInfo.usageContractNo">
+            <summary>
+            用款编号
+            </summary>       
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.NodeItemInfo.enterpriseName">
+            <summary>
+            企业名称
+            </summary>   
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.NodeItemInfo.repaymentAmount">
+            <summary>
+            偿还金额
+            </summary>   
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.NodeItemInfo.repaymentDate">
+            <summary>
+            偿还日期
+            </summary>   
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.NodeItemInfo.overdueDays">
+            <summary>
+            逾期天数
+            </summary>   
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.NodeItemInfo.penaltyAmount">
+            <summary>
+            罚息金额
+            </summary>   
+        </member>
         <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.OverdueInfo">
             <summary>
             与逾期信息
@@ -905,6 +985,11 @@
         <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.ProjectApproval.proportion">
             <summary>
             企业消贷比(分值)
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.ProjectApproval.loanBalance">
+            <summary>
+            企业未结清贷款余额（分值）
             </summary>
         </member>
         <member name="P:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.ProjectApproval.overdueFrequency">

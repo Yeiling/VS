@@ -1,11 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq
 {
     /// <summary>
-    /// 银行选择推送担保的预警信息
+    /// 代偿信息
     /// </summary>
-    public class GuarantWarn
+    public class CompensationInfo
     {
         /// <summary>
         /// 平台项目编号
@@ -32,10 +33,15 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq
         public string enterpriseName { get; set; }
 
         /// <summary>
-        /// 预警提示
-        /// </summary>     
-        [Required(ErrorMessage = "预警提示信息必填")]
-        public string guarantWarnMsg { get; set; }
+        /// 代偿金额
+        /// </summary>   
+        [Required(ErrorMessage = "代偿金额必填")]
+        public string compensationAmount { get; set; }
 
+        /// <summary>
+        /// 代偿日期
+        /// </summary>   
+        [Required(ErrorMessage = "代偿日期必填")]
+        public DateTime compensationDate { get; set; }
     }
 }

@@ -98,11 +98,6 @@
             银行配置
             </summary>
         </member>
-        <member name="F:shuiyintong.Api.Controllers.BaseController.RedisConn">
-            <summary>
-            Redis链接字符串
-            </summary>
-        </member>
         <member name="F:shuiyintong.Api.Controllers.BaseController.DBConn">
             <summary>
             数据库链接字符串
@@ -145,9 +140,14 @@
             Http请求返回Code
             </summary>
         </member>
-        <member name="F:shuiyintong.Api.Controllers.SPDBankController.redis">
+        <member name="P:shuiyintong.Api.Controllers.SPDBankController.rediServer">
             <summary>
             Redis服务
+            </summary>
+        </member>
+        <member name="F:shuiyintong.Api.Controllers.SPDBankController.RedisDbNum">
+            <summary>
+            Redis库编号
             </summary>
         </member>
         <member name="M:shuiyintong.Api.Controllers.SPDBankController.GetHeaderSign(System.Object,System.String@)">
@@ -460,25 +460,25 @@
             <param name="overdueInfo"></param>
             <returns></returns>
         </member>
-        <member name="M:shuiyintong.Api.Controllers.SPDPlatController.PostLoanBKCollection(shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.LoanInfo)">
+        <member name="M:shuiyintong.Api.Controllers.SPDPlatController.PostLoanBKCollection(shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.NodeItemInfo)">
             <summary>
             24成功扣款之后---结项信息
             </summary>
-            <param name="loanInfo"></param>
+            <param name="nodeItemInfo"></param>
             <returns></returns>
         </member>
-        <member name="M:shuiyintong.Api.Controllers.SPDPlatController.PostLoanBKCompensatory(shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.LoanInfo)">
+        <member name="M:shuiyintong.Api.Controllers.SPDPlatController.PostLoanBKCompensatory(shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.CompensationInfo)">
             <summary>
             25银行发起代偿---发起代偿信息
             </summary>
-            <param name="loanInfo"></param>
+            <param name="compensationInfo"></param>
             <returns></returns>
         </member>
-        <member name="M:shuiyintong.Api.Controllers.SPDPlatController.PostLoanBKNodeTerm(shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.LoanInfo)">
+        <member name="M:shuiyintong.Api.Controllers.SPDPlatController.PostLoanBKNodeTerm(shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.NodeItemInfo)">
             <summary>
             28银行查看确认结项之后---结项信息----------------------------------------(银行回传平台)接口结束----------------------------------------
             </summary>
-            <param name="loanInfo"></param>
+            <param name="nodeItemInfo"></param>
             <returns></returns>
         </member>
         <member name="T:shuiyintong.Api.IocConfig">

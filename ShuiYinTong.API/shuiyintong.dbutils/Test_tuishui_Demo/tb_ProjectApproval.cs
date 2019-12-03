@@ -42,7 +42,7 @@ namespace shuiyintong.DBUtils.Test_tuishui_Demo
            /// Default:
            /// Nullable:False
            /// </summary>           
-           public bool approvalOpinion {get;set;}
+           public string approvalOpinion {get;set;}
 
            /// <summary>
            /// Desc:备注
@@ -56,7 +56,7 @@ namespace shuiyintong.DBUtils.Test_tuishui_Demo
            /// Default:
            /// Nullable:True
            /// </summary>           
-           public byte? enterpriseScale {get;set;}
+           public string enterpriseScale {get;set;}
 
            /// <summary>
            /// Desc:划型企业---按照四部委标准定义
@@ -70,49 +70,56 @@ namespace shuiyintong.DBUtils.Test_tuishui_Demo
            /// Default:
            /// Nullable:True
            /// </summary>           
-           public decimal? businessIncome {get;set;}
+           public string businessIncome {get;set;}
 
            /// <summary>
            /// Desc:从业人员
            /// Default:
            /// Nullable:True
            /// </summary>           
-           public int? practitioners {get;set;}
+           public string practitioners {get;set;}
 
            /// <summary>
            /// Desc:资产总额
            /// Default:
            /// Nullable:True
            /// </summary>           
-           public decimal? totalAssets {get;set;}
+           public string totalAssets {get;set;}
 
            /// <summary>
            /// Desc:企业以及关键人是否满足人行征信准入条件
            /// Default:
            /// Nullable:True
            /// </summary>           
-           public bool? IsFitReq {get;set;}
+           public string IsFitReq {get;set;}
 
            /// <summary>
            /// Desc:企业消贷比(分值)
            /// Default:
            /// Nullable:True
            /// </summary>           
-           public double? proportion {get;set;}
+           public string proportion {get;set;}
+
+           /// <summary>
+           /// Desc:企业未结清贷款余额（分值）
+           /// Default:
+           /// Nullable:True
+           /// </summary>           
+           public string loanBalance {get;set;}
 
            /// <summary>
            /// Desc:企业法定代表人最近24个自然月最高连续逾期次数
            /// Default:
            /// Nullable:True
            /// </summary>           
-           public int? overdueFrequency {get;set;}
+           public string overdueFrequency {get;set;}
 
            /// <summary>
            /// Desc:企业法定代表人最近24个自然月累计逾期次数
            /// Default:
            /// Nullable:True
            /// </summary>           
-           public int? overdueTotalFrequency {get;set;}
+           public string overdueTotalFrequency {get;set;}
 
            /// <summary>
            /// Desc:创建时间
