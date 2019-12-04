@@ -70,11 +70,9 @@ namespace shuiyintong.Api
                 //Swagger选项过滤器
                 c.OperationFilter<SwaggerFileUploadFilter>();
 
-                //添加xml文件解析
-                var xmlFile = Assembly.GetExecutingAssembly();
-                var path = Path.GetDirectoryName(xmlFile.Location);
-                DirectoryInfo directoryInfo = new DirectoryInfo(path);
-                var fileList = directoryInfo.GetFiles("*.xml");
+                //添加所有xml文件解析
+                DirectoryInfo directoryInfo = new DirectoryInfo(AppContext.BaseDirectory);
+                FileInfo[] fileList = directoryInfo.GetFiles("*.xml");
                 if (fileList != null && fileList.Length > 0)
                 {
                     foreach (var file in fileList)
