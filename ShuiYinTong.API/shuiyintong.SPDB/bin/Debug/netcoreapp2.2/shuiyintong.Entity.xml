@@ -24,6 +24,11 @@
             Swagger配置
             </summary>
         </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.AppSettings.DingDingURL">
+            <summary>
+            钉钉URL地址
+            </summary>
+        </member>
         <member name="P:shuiyintong.Entity.AppSettiongModel.AppSettings.DBConfig">
             <summary>
             DB数据库配置
@@ -82,6 +87,16 @@
         <member name="P:shuiyintong.Entity.AppSettiongModel.DBConfig.DBConn">
             <summary>
             数据库连接字符串
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.AppSettiongModel.DingDingURL">
+            <summary>
+            钉钉配置
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.DingDingURL.URL">
+            <summary>
+            URL地址
             </summary>
         </member>
         <member name="T:shuiyintong.Entity.AppSettiongModel.Logging">
