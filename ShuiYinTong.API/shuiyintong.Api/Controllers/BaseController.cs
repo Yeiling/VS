@@ -11,14 +11,6 @@ namespace shuiyintong.Api.Controllers
     [Route("[controller]/[action]")]
     public class BaseController : Controller
     {
-        /// <summary>
-        /// 银行配置
-        /// </summary>
-        public static BankConfig bankConfig = AppSettings.BankConfig;
-        /// <summary>
-        /// 数据库链接字符串
-        /// </summary>
-        public static string DBConn = AppSettings.DBConfig.DBConn;
     }
 
 

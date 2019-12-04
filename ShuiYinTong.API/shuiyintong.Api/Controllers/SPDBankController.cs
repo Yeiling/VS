@@ -34,7 +34,7 @@ namespace shuiyintong.Api.Controllers
         /// <summary>
         /// 浦发银行配合信息
         /// </summary>
-        private readonly SPDBankConfig SPDBankConfig = bankConfig.SPDBankConfig;
+        private readonly SPDBankConfig SPDBankConfig = AppSettings.BankConfig.SPDBankConfig;
         /// <summary>
         /// Http请求返回Code
         /// </summary>
@@ -61,10 +61,10 @@ namespace shuiyintong.Api.Controllers
         private Dictionary<string, string> GetHeaderSign(object obj, out string dataRequest)
         {
             dataRequest = obj.ToJson();
-            var SignMsg = SPDBSignature.Sign(dataRequest, bankConfig.SPDBankConfig.Secret);
+            var SignMsg = SPDBSignature.Sign(dataRequest, SPDBankConfig.Secret);
             return new Dictionary<string, string>
                 {
-                        { "X-SPDB-Client-Id", bankConfig.SPDBankConfig.ClientId },
+                        { "X-SPDB-Client-Id", SPDBankConfig.ClientId },
                         { "X-SPDB-SIGNATURE", SignMsg }
                 };
         }
