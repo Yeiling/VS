@@ -24,6 +24,16 @@
             Swagger配置
             </summary>
         </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.AppSettings.DingDingURL">
+            <summary>
+            钉钉URL地址
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.AppSettings.RemoteCofig">
+            <summary>
+            远程地址配置
+            </summary>
+        </member>
         <member name="P:shuiyintong.Entity.AppSettiongModel.AppSettings.DBConfig">
             <summary>
             DB数据库配置
@@ -89,6 +99,16 @@
             数据库连接字符串
             </summary>
         </member>
+        <member name="T:shuiyintong.Entity.AppSettiongModel.DingDingURL">
+            <summary>
+            钉钉配置
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.DingDingURL.URL">
+            <summary>
+            URL地址
+            </summary>
+        </member>
         <member name="T:shuiyintong.Entity.AppSettiongModel.Logging">
             <summary>
             AppSettiong---Logging定义
@@ -117,6 +137,16 @@
         <member name="P:shuiyintong.Entity.AppSettiongModel.RedisConfig.RedisConn">
             <summary>
             Redis连接字符串
+            </summary>
+        </member>
+        <member name="T:shuiyintong.Entity.AppSettiongModel.RemoteCofig">
+            <summary>
+            远程访问地址
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Entity.AppSettiongModel.RemoteCofig.RZFK_Visit">
+            <summary>
+            RZFK_Visit接口地址
             </summary>
         </member>
         <member name="T:shuiyintong.Entity.AppSettiongModel.SPDBankConfig">
@@ -714,12 +744,12 @@
         </member>
         <member name="F:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.DeductionEnum.InteractiveCode.Fail">
             <summary>
-            失败
+            推送失败
             </summary>
         </member>
         <member name="F:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.DeductionEnum.InteractiveCode.Success">
             <summary>
-            成功
+            推送成功
             </summary>
         </member>
         <member name="T:shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq.GuarantWarn">
