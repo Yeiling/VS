@@ -27,7 +27,6 @@ namespace shuiyintong.Api.Validate
         public void Apply(Operation operation, OperationFilterContext context)
         {
             //1：Http请求头输入框
-            var attrs = context.ApiDescription.ActionDescriptor.AttributeRouteInfo;
             //先判断是否是匿名访问,
             var descriptor = context.ApiDescription.ActionDescriptor as ControllerActionDescriptor;
             if (descriptor != null)
