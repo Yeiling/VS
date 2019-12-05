@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Primitives;
-using shuiyintong.DBUtils.IService;
-using shuiyintong.DBUtils.Test_tuishui_Demo;
 using shuiyintong.Entity.AppSettiongModel;
 using shuiyintong.Entity.HttpRequestResultEntity;
 using System;
@@ -16,7 +14,7 @@ namespace shuiyintong.Api.Validate
     public class AuthFilterAttribute : IAuthorizationFilter
     {
         /// <summary>
-        /// 
+        /// 权限验证方法，实现接口
         /// </summary>
         /// <param name="context"></param>
         public void OnAuthorization(AuthorizationFilterContext context)
