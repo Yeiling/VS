@@ -31,6 +31,10 @@ namespace shuiyintong.Entity.AppSettiongModel
         /// 控制器中文名称
         /// </summary>
         public string Name { get; set; }
+        /// <summary>
+        /// 秘钥
+        /// </summary>
+        public string Key { get; set; }
     }
 
 }

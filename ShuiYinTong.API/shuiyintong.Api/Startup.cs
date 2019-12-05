@@ -53,6 +53,8 @@ namespace shuiyintong.Api
             //WebAPI 全局顾虑器设置
             services.AddMvc(option =>
             {
+                //Http添加权限验证
+                option.Filters.Add<AuthFilterAttribute>();
                 //Http添加请求参数验证---请求参数验证和结果验证
                 option.Filters.Add<ValidateActionFilter>();
                 //Http请求异常处理验证---异常处理验证
