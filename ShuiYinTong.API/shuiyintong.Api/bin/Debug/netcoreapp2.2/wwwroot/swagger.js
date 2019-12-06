@@ -99,6 +99,6 @@ $(function () {
     var test_token = localStorage.getItem("test_x_token") || "";
     $(".authorize-wrapper").append("X-Token：<input type='text' id='customtoken' value='" + test_token + "' style='width:50%' /> <button onClick='saveToken()'>保存</button>")
     $("input[name='X-Token']").val(test_token)
-    $("input[name='X-Version']").val(swaggerUi.api.info.version)
+    //$("input[name='X-Version']").val(swaggerUi.api.info.version)
 
 });

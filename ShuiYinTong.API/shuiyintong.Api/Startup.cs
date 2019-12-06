@@ -229,7 +229,7 @@ namespace shuiyintong.Api
 
             //NetCore WebAPI全局[异常]处理只能通过中间件来实现---区别于ASP.NET MVC全局过滤
             app.UseMiddleware<ErrorHandlingMiddleware>();
-   
+
             //添加Swagger
             app.UseSwagger();
             app.UseSwaggerUI(c =>
@@ -248,6 +248,12 @@ namespace shuiyintong.Api
                 c.EnableFilter(); //添加搜索框
                 c.ShowExtensions();
 
+                //添加Js和CSS样式
+                c.InjectJavascript("/jquery/jquery.js");//jquery 插件
+                c.InjectJavascript("/buzyload/app.min.js");//loading 遮罩层js
+                c.InjectStylesheet("/buzyload/app.min.css");//等待load遮罩层样式
+                c.InjectStylesheet("/swagger-common.css");//自定义样式
+                c.InjectJavascript("/swagger-lang.js");//我们自定义的js
                 //Swagger引入汉化
                 c.InjectJavascript($"/swagger.js");
             });
