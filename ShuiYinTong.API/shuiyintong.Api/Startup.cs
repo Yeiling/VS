@@ -255,7 +255,7 @@ namespace shuiyintong.Api
                 c.InjectStylesheet("/swagger-common.css");//自定义样式
                 c.InjectJavascript("/swagger-lang.js");//我们自定义的js
                 //Swagger引入汉化
-                c.InjectJavascript($"/swagger.js");
+                //c.InjectJavascript($"/swagger.js");
             });
 
             //设置首页
