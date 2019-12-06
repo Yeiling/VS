@@ -3287,6 +3287,24 @@
           "lib/netstandard2.0/Oracle.ManagedDataAccess.dll": {}
         }
       },
+      "RazorEngine.NetCore/2.2.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Razor": "2.2.0",
+          "Microsoft.AspNetCore.Razor.Language": "2.2.0",
+          "Microsoft.AspNetCore.Razor.Runtime": "2.2.0",
+          "Microsoft.CSharp": "4.5.0",
+          "Microsoft.CodeAnalysis.CSharp": "2.8.0",
+          "System.Reflection.Emit": "4.3.0",
+          "System.Security.Permissions": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/RazorEngine.NetCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/RazorEngine.NetCore.dll": {}
+        }
+      },
       "Remotion.Linq/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -3522,6 +3540,24 @@
         },
         "runtime": {
           "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll": {}
+        }
+      },
+      "Spire.Doc/7.10.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Drawing.Common": "4.5.0",
+          "System.Security.Cryptography.Xml": "4.5.0",
+          "System.Text.Encoding.CodePages": "4.5.0"
+        },
+        "compile": {
+          "lib/netcoreapp2.0/Spire.Doc.dll": {},
+          "lib/netcoreapp2.0/Spire.License.dll": {},
+          "lib/netcoreapp2.0/Spire.Pdf.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/Spire.Doc.dll": {},
+          "lib/netcoreapp2.0/Spire.License.dll": {},
+          "lib/netcoreapp2.0/Spire.Pdf.dll": {}
         }
       },
       "Spring.EL/1.0.4": {
@@ -9965,6 +10001,19 @@
         "readme.txt"
       ]
     },
+    "RazorEngine.NetCore/2.2.2": {
+      "sha512": "bcLW32qvlZSYl/MitQX0icnZ++kFwLLu6QLPS5gFHjMnpEbzZOxqD3JFmDQpIRHW1aqt1w66tc0kkW6KwxYRxw==",
+      "type": "package",
+      "path": "razorengine.netcore/2.2.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net461/RazorEngine.NetCore.dll",
+        "lib/netstandard2.0/RazorEngine.NetCore.dll",
+        "razorengine.netcore.2.2.2.nupkg.sha512",
+        "razorengine.netcore.nuspec"
+      ]
+    },
     "Remotion.Linq/2.2.0": {
       "sha512": "fK/76UmpC0FXBlGDFVPLJHQlDLYnGC+XY3eoDgCgbtrhi0vzbXDQ3n/IYHhqSKqXQfGw/u04A1drWs7rFVkRjw==",
       "type": "package",
@@ -10270,6 +10319,54 @@
         "lib/netstandard2.0/ICSharpCode.SharpZipLib.xml",
         "sharpziplib.1.2.0.nupkg.sha512",
         "sharpziplib.nuspec"
+      ]
+    },
+    "Spire.Doc/7.10.0": {
+      "sha512": "W8l7ur9Uu8DjKBqx4rAj5NnTzKA5Y5mBozCU58kWNDK0lHmsashvdV6KrK87U5Lupfzdqo+osdwRqbsp+H3ftw==",
+      "type": "package",
+      "path": "spire.doc/7.10.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/Spire.Doc.XML",
+        "lib/net20/Spire.Doc.dll",
+        "lib/net20/Spire.License.dll",
+        "lib/net20/Spire.License.xml",
+        "lib/net20/Spire.Pdf.dll",
+        "lib/net20/Spire.Pdf.xml",
+        "lib/net40-client/Spire.Doc.XML",
+        "lib/net40-client/Spire.Doc.dll",
+        "lib/net40-client/Spire.License.dll",
+        "lib/net40-client/Spire.License.xml",
+        "lib/net40-client/Spire.Pdf.dll",
+        "lib/net40-client/Spire.Pdf.xml",
+        "lib/net40/Spire.Doc.XML",
+        "lib/net40/Spire.Doc.dll",
+        "lib/net40/Spire.License.dll",
+        "lib/net40/Spire.License.xml",
+        "lib/net40/Spire.Pdf.dll",
+        "lib/net40/Spire.Pdf.xml",
+        "lib/net46/Spire.Doc.dll",
+        "lib/net46/Spire.Doc.xml",
+        "lib/net46/Spire.License.dll",
+        "lib/net46/Spire.License.xml",
+        "lib/net46/Spire.Pdf.dll",
+        "lib/net46/Spire.Pdf.xml",
+        "lib/netcoreapp2.0/Spire.Doc.dll",
+        "lib/netcoreapp2.0/Spire.Doc.xml",
+        "lib/netcoreapp2.0/Spire.License.dll",
+        "lib/netcoreapp2.0/Spire.License.xml",
+        "lib/netcoreapp2.0/Spire.Pdf.dll",
+        "lib/netcoreapp2.0/Spire.Pdf.xml",
+        "lib/netstandard2.0/Spire.Doc.dll",
+        "lib/netstandard2.0/Spire.Doc.xml",
+        "lib/netstandard2.0/Spire.License.dll",
+        "lib/netstandard2.0/Spire.License.xml",
+        "lib/netstandard2.0/Spire.Pdf.dll",
+        "lib/netstandard2.0/Spire.Pdf.xml",
+        "license.txt",
+        "spire.doc.7.10.0.nupkg.sha512",
+        "spire.doc.nuspec"
       ]
     },
     "Spring.EL/1.0.4": {
@@ -15896,6 +15993,8 @@
       "NLog.Config >= 4.6.8",
       "NLog.Extensions.Logging >= 1.6.1",
       "NLog.Web.AspNetCore >= 4.9.0",
+      "RazorEngine.NetCore >= 2.2.2",
+      "Spire.Doc >= 7.10.0",
       "Swashbuckle.AspNetCore >= 4.0.1",
       "System.Data.SqlClient >= 4.7.0",
       "shuiyintong.Common >= 1.0.0",
@@ -16021,6 +16120,14 @@
           "NLog.Web.AspNetCore": {
             "target": "Package",
             "version": "[4.9.0, )"
+          },
+          "RazorEngine.NetCore": {
+            "target": "Package",
+            "version": "[2.2.2, )"
+          },
+          "Spire.Doc": {
+            "target": "Package",
+            "version": "[7.10.0, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

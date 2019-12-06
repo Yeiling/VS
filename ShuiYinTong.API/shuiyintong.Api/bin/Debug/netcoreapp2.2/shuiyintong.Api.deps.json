@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "15c82d0476258d07b120a02aa429a5988b44c15f"
+    "signature": "394dfb3f5a34fd94d03313985b00ea1f7cd3f0e8"
   },
   "compilationOptions": {
     "defines": [
@@ -39,6 +39,8 @@
           "NLog.Config": "4.6.8",
           "NLog.Extensions.Logging": "1.6.1",
           "NLog.Web.AspNetCore": "4.9.0",
+          "RazorEngine.NetCore": "2.2.2",
+          "Spire.Doc": "7.10.0",
           "Swashbuckle.AspNetCore": "4.0.1",
           "System.Data.SqlClient": "4.7.0",
           "shuiyintong.Common": "1.0.0",
@@ -683,6 +685,26 @@
           "lib/netstandard2.0/Oracle.ManagedDataAccess.dll": {}
         }
       },
+      "RazorEngine.NetCore/2.2.2": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Razor": "2.2.0",
+          "Microsoft.AspNetCore.Razor.Language": "2.2.0",
+          "Microsoft.AspNetCore.Razor.Runtime": "2.2.0",
+          "Microsoft.CSharp": "4.6.0",
+          "Microsoft.CodeAnalysis.CSharp": "2.8.0",
+          "System.Reflection.Emit": "4.3.0",
+          "System.Security.Permissions": "4.6.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/RazorEngine.NetCore.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/RazorEngine.NetCore.dll": {}
+        }
+      },
       "runtime.native.System.Data.SqlClient.sni/4.6.0": {
         "dependencies": {
           "runtime.win-arm64.runtime.native.System.Data.SqlClient.sni": "4.4.0",
@@ -726,6 +748,32 @@
         },
         "compile": {
           "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll": {}
+        }
+      },
+      "Spire.Doc/7.10.0": {
+        "dependencies": {
+          "System.Drawing.Common": "4.5.0",
+          "System.Security.Cryptography.Xml": "4.5.0",
+          "System.Text.Encoding.CodePages": "4.6.0"
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/Spire.Doc.dll": {
+            "assemblyVersion": "7.10.6.4420",
+            "fileVersion": "7.10.6.4420"
+          },
+          "lib/netcoreapp2.0/Spire.License.dll": {
+            "assemblyVersion": "1.3.7.320",
+            "fileVersion": "1.3.7.320"
+          },
+          "lib/netcoreapp2.0/Spire.Pdf.dll": {
+            "assemblyVersion": "5.10.8.2420",
+            "fileVersion": "5.10.8.2420"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp2.0/Spire.Doc.dll": {},
+          "lib/netcoreapp2.0/Spire.License.dll": {},
+          "lib/netcoreapp2.0/Spire.Pdf.dll": {}
         }
       },
       "Spring.EL/1.0.4": {
@@ -5022,6 +5070,13 @@
       "path": "oracle.manageddataaccess.core/2.18.3",
       "hashPath": "oracle.manageddataaccess.core.2.18.3.nupkg.sha512"
     },
+    "RazorEngine.NetCore/2.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bcLW32qvlZSYl/MitQX0icnZ++kFwLLu6QLPS5gFHjMnpEbzZOxqD3JFmDQpIRHW1aqt1w66tc0kkW6KwxYRxw==",
+      "path": "razorengine.netcore/2.2.2",
+      "hashPath": "razorengine.netcore.2.2.2.nupkg.sha512"
+    },
     "runtime.native.System.Data.SqlClient.sni/4.6.0": {
       "type": "package",
       "serviceable": true,
@@ -5056,6 +5111,13 @@
       "sha512": "sha512-zvWa/L02JHNatdtjya6Swpudb2YEHaOLHL1eRrqpjm71iGRNUNONO5adUF/9CHbSJbzhELW1UoH4NGy7n7+3bQ==",
       "path": "sharpziplib/1.2.0",
       "hashPath": "sharpziplib.1.2.0.nupkg.sha512"
+    },
+    "Spire.Doc/7.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-W8l7ur9Uu8DjKBqx4rAj5NnTzKA5Y5mBozCU58kWNDK0lHmsashvdV6KrK87U5Lupfzdqo+osdwRqbsp+H3ftw==",
+      "path": "spire.doc/7.10.0",
+      "hashPath": "spire.doc.7.10.0.nupkg.sha512"
     },
     "Spring.EL/1.0.4": {
       "type": "package",

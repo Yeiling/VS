@@ -24,6 +24,8 @@
     <PackageReference Include="NLog.Config" Version="4.6.8" />
     <PackageReference Include="NLog.Extensions.Logging" Version="1.6.1" />
     <PackageReference Include="NLog.Web.AspNetCore" Version="4.9.0" />
+    <PackageReference Include="RazorEngine.NetCore" Version="2.2.2" />
+    <PackageReference Include="Spire.Doc" Version="7.10.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
     <PackageReference Include="System.Data.SqlClient" Version="4.7.0" />
   </ItemGroup>
@@ -37,6 +39,12 @@
     <ProjectReference Include="..\shuiyintong.dbutils\shuiyintong.DBUtils.csproj" />
     <ProjectReference Include="..\shuiyintong.Entity\shuiyintong.Entity.csproj" />
     <ProjectReference Include="..\shuiyintong.SPDB\shuiyintong.SPDB.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\swagger.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

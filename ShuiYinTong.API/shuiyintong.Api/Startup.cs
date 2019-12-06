@@ -12,6 +12,7 @@ using NLog.Extensions.Logging;
 using NLog.Web;
 using shuiyintong.Api.Validate;
 using Swashbuckle.AspNetCore.Swagger;
+using Swashbuckle.AspNetCore.SwaggerUI;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -228,16 +229,36 @@ namespace shuiyintong.Api
 
             //NetCore WebAPI全局[异常]处理只能通过中间件来实现---区别于ASP.NET MVC全局过滤
             app.UseMiddleware<ErrorHandlingMiddleware>();
-
+   
             //添加Swagger
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "ShuiYinTong.WebApi");
-                c.RoutePrefix = string.Empty;
+                //c.RoutePrefix = string.Empty;  ////导出文档需要，第260行已设置
+                //接口列表折叠配置
+                //c.DefaultModelExpandDepth(2);
+                c.DefaultModelRendering(ModelRendering.Model);
+                //c.DefaultModelsExpandDepth(-1);//不显示model
+
+                c.DisplayOperationId();  //接口右侧添加接口名
+                c.DisplayRequestDuration();
+                c.DocExpansion(DocExpansion.None); //接口列表折叠配置
+                c.EnableDeepLinking();
+                c.EnableFilter(); //添加搜索框
+                c.ShowExtensions();
+
                 //Swagger引入汉化
-                //c.InjectJavascript($"/swagger.js");
+                c.InjectJavascript($"/swagger.js");
             });
+
+            //设置首页
+            DefaultFilesOptions defaultFilesOptions = new DefaultFilesOptions();
+            defaultFilesOptions.DefaultFileNames.Clear();
+            defaultFilesOptions.DefaultFileNames.Add("index.html");
+            app.UseDefaultFiles(defaultFilesOptions);
+            // 使用静态文件
+            app.UseStaticFiles();
 
             //扩展路由
             app.UseMvc(routes =>

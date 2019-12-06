@@ -1,9 +1,12 @@
 ﻿using Autofac;
 using Autofac.Annotation;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using shuiyintong.Api.AutoFacAop;
+using shuiyintong.Api.Tool;
 using shuiyintong.DBUtils.IService;
 using shuiyintong.DBUtils.Service;
+using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Linq;
 
 namespace shuiyintong.Api
@@ -48,6 +51,11 @@ namespace shuiyintong.Api
             builder.RegisterGeneric(typeof(BaseService<>)).As(typeof(IBaseService<>)).InterceptedBy(typeof(LogInterceptor)).EnableInterfaceInterceptors();
             //4：Redis服务注册
             builder.RegisterGeneric(typeof(RediServer<>)).As(typeof(IRediServer<>)).InterceptedBy(typeof(LogInterceptor)).EnableInterfaceInterceptors();
+
+            //Swagger文件导出注入
+            builder.RegisterType<IHostingEnvironment>();
+            builder.RegisterType<SpireDocHelper>();
+            builder.RegisterType<SwaggerGenerator>();
         }
     }
 }
