@@ -471,6 +471,34 @@
             <param name="nodeItemInfo"></param>
             <returns></returns>
         </member>
+        <member name="T:shuiyintong.Api.Controllers.SwaggerController">
+            <summary>
+            Swagger文档生成
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Api.Controllers.SwaggerController._hostingEnvironment">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Api.Controllers.SwaggerController._spireDocHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Api.Controllers.SwaggerController._swaggerGenerator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.SwaggerController.ExportApiWord(System.String,System.String)">
+            <summary>
+            Swagger 文档导出
+            </summary>
+            <param name="type"></param>
+            <param name="version"></param>
+            <returns></returns>
+        </member>
         <member name="T:shuiyintong.Api.IocConfig">
             <summary>
             AutoFac IOC扩展
