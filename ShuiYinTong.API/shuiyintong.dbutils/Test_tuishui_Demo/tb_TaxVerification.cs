@@ -6,7 +6,7 @@ using SqlSugar;
 namespace shuiyintong.DBUtils.Test_tuishui_Demo
 {
     ///<summary>
-    ///退税账户核验信息
+    ///授信---退税账户核验信息
     ///</summary>
     [SugarTable("tb_TaxVerification")]
     public partial class tb_TaxVerification

@@ -107,5 +107,33 @@ namespace shuiyintong.DBUtils.Test_tuishui_Demo
            /// </summary>           
            public string LinkPath {get;set;}
 
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>           
+           public string ykstatus {get;set;}
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>           
+           public string SYT_ENT_ID {get;set;}
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>           
+           public decimal? finalEduToAuto {get;set;}
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>           
+           public string ykstatusshow {get;set;}
+
     }
 }

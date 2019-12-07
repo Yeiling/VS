@@ -14,6 +14,7 @@ namespace shuiyintong.DBUtils.IService
         /// <param name="entity"></param>
         /// <returns></returns>
         bool AddOne(T entity);
+
         /// <summary>
         /// 批量添加
         /// </summary>
@@ -29,12 +30,14 @@ namespace shuiyintong.DBUtils.IService
         /// <param name="id"></param>
         /// <returns></returns>
         bool DeleteById(dynamic id);
+
         /// <summary>
         /// 根据自定义条件删除
         /// </summary>
         /// <param name="exp"></param>
         /// <returns></returns>
         bool DeleteList(Expression<Func<T, bool>> exp);
+
         /// <summary>
         /// 删除单个对象
         /// </summary>
@@ -49,20 +52,23 @@ namespace shuiyintong.DBUtils.IService
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        bool ModefyOne(T model);
+        bool ModifyOne(T model);
+
         /// <summary>
         /// 批量修改
         /// </summary>
         /// <param name="entityArr"></param>
         /// <returns></returns>
-        bool Modefylist(T[] entityArr);
+        bool Modifylist(T[] entityArr);
+
         /// <summary>
         /// 根据条件自定义修改自定义的列
         /// </summary>
         /// <param name="exp"></param>
         /// <param name="columns"></param>
         /// <returns></returns>
-        bool Modefy(Expression<Func<T, bool>> exp, Expression<Func<T, T>> columns);
+        bool Modify(Expression<Func<T, bool>> exp, Expression<Func<T, T>> columns);
+
         #endregion
 
         #region 查
@@ -72,18 +78,21 @@ namespace shuiyintong.DBUtils.IService
         /// <param name="id"></param>
         /// <returns></returns>
         T GetById(dynamic id);
+
         /// <summary>
         /// 查询单个实体
         /// </summary>
         /// <param name="whereExpression"></param>
         /// <returns></returns>
         T GetSingle(Expression<Func<T, bool>> whereExpression);
+
         /// <summary>
         /// 根据条件查询
         /// </summary>
         /// <param name="exp"></param>
         /// <returns></returns>
         IEnumerable<T> GetList(Expression<Func<T, bool>> exp);
+
         /// <summary>
         /// 分页查询
         /// </summary>
@@ -93,6 +102,7 @@ namespace shuiyintong.DBUtils.IService
         /// <param name="totalCount"></param>
         /// <returns></returns>
         IEnumerable<T> GetPageList(Expression<Func<T, bool>> exp, int pageIndex, int pageSize, ref int totalCount);
+
         /// <summary>
         /// 分页查询
         /// </summary>
@@ -108,17 +118,20 @@ namespace shuiyintong.DBUtils.IService
                 int intPageIndex = 0,
                 int intPageSize = 20,
                 string strOrderByFileds = null);
+
         /// <summary>
         /// 多条件查询 
         /// </summary>
         /// <returns></returns>
         ISugarQueryable<T> Queryable();
+
         /// <summary>
         /// SQL查询
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
         IEnumerable<T> GetListBySQL(string sql);
+
         /// <summary>
         /// SQL查询动态类型数据
         /// </summary>
@@ -126,6 +139,7 @@ namespace shuiyintong.DBUtils.IService
         /// <param name="whereObj"></param>
         /// <returns></returns>
         IEnumerable<dynamic> SqlQueryDynamic(string sql, object whereObj = null);
+
         #endregion
 
     }

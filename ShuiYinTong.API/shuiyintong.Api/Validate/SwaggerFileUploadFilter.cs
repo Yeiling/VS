@@ -1,7 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Controllers;
 using Swashbuckle.AspNetCore.Swagger;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
@@ -24,6 +27,32 @@ namespace shuiyintong.Api.Validate
         /// <param name="context"></param>
         public void Apply(Operation operation, OperationFilterContext context)
         {
+            //1：Http请求头输入框
+            if (operation.Parameters == null)
+                operation.Parameters = new List<IParameter>();
+            //var attrs = context.ApiDescription.ActionDescriptor.AttributeRouteInfo;
+
+            //先判断是否是匿名访问,
+            var descriptor = context.ApiDescription.ActionDescriptor as ControllerActionDescriptor;
+            if (descriptor != null)
+            {
+                var actionAttributes = descriptor.MethodInfo.GetCustomAttributes(inherit: true);
+                bool isAnonymous = actionAttributes.Any(a => a is AllowAnonymousAttribute);
+                //非匿名的方法,链接中添加accesstoken值
+                if (!isAnonymous)
+                {
+                    operation.Parameters.Add(new NonBodyParameter()
+                    {
+                        Name = "Key",
+                        In = "header",//query/header/body/path/formData
+                        Type = "string",
+                        Required = true, //是否必选
+                        Description = "Http请求头Token Key",
+                    });
+                }
+            }
+
+            //2:SwaggerUI添加上传问价组件
             if (!context.ApiDescription.HttpMethod.Equals("POST", StringComparison.OrdinalIgnoreCase) &&
                            !context.ApiDescription.HttpMethod.Equals("PUT", StringComparison.OrdinalIgnoreCase))
             {

@@ -247,5 +247,12 @@ namespace shuiyintong.DBUtils.Test_tuishui_Demo
            /// </summary>           
            public string showguaranteeSXendDate {get;set;}
 
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>           
+           public string historyYuQi {get;set;}
+
     }
 }

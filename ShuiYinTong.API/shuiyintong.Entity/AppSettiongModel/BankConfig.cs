@@ -24,13 +24,17 @@ namespace shuiyintong.Entity.AppSettiongModel
     public class BankControllerItem
     {
         /// <summary>
-        /// 控制器名称
+        /// 控制器英文名称
         /// </summary>
         public string Controller { get; set; }
         /// <summary>
-        /// 银行名称
+        /// 控制器中文名称
         /// </summary>
-        public string BankName { get; set; }
+        public string Name { get; set; }
+        /// <summary>
+        /// 秘钥
+        /// </summary>
+        public string Key { get; set; }
     }
 
 }

@@ -326,6 +326,13 @@ namespace shuiyintong.DBUtils.Test_tuishui_Demo
            /// <summary>
            /// Desc:
            /// Default:
+           /// Nullable:False
+           /// </summary>           
+           public string proName {get;set;}
+
+           /// <summary>
+           /// Desc:
+           /// Default:
            /// Nullable:True
            /// </summary>           
            public string companyName {get;set;}
@@ -441,6 +448,20 @@ namespace shuiyintong.DBUtils.Test_tuishui_Demo
            /// Nullable:True
            /// </summary>           
            public string bgdzrResult {get;set;}
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>           
+           public int? days {get;set;}
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>           
+           public string qixian {get;set;}
 
            /// <summary>
            /// Desc:

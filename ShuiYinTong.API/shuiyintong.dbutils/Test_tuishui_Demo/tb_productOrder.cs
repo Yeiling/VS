@@ -20,7 +20,7 @@ namespace shuiyintong.DBUtils.Test_tuishui_Demo
            /// Default:
            /// Nullable:False
            /// </summary>           
-           [SugarColumn(IsIdentity=true)]
+           [SugarColumn(IsPrimaryKey=true,IsIdentity=true)]
            public int Id {get;set;}
 
            /// <summary>
@@ -414,6 +414,13 @@ namespace shuiyintong.DBUtils.Test_tuishui_Demo
            /// Nullable:True
            /// </summary>           
            public DateTime? zrfsuptime {get;set;}
+
+           /// <summary>
+           /// Desc:历史逾期标志 1-历史逾期
+           /// Default:
+           /// Nullable:True
+           /// </summary>           
+           public string historyYuQi {get;set;}
 
     }
 }

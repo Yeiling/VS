@@ -20,7 +20,7 @@ namespace shuiyintong.DBUtils.Test_tuishui_Demo
            /// Default:
            /// Nullable:False
            /// </summary>           
-           [SugarColumn(IsIdentity=true)]
+           [SugarColumn(IsPrimaryKey=true,IsIdentity=true)]
            public int Id {get;set;}
 
            /// <summary>
@@ -280,7 +280,7 @@ namespace shuiyintong.DBUtils.Test_tuishui_Demo
            /// Default:
            /// Nullable:True
            /// </summary>           
-           public DateTime? KKtime {get;set;}
+           public string KKtime {get;set;}
 
            /// <summary>
            /// Desc:结清状态
@@ -351,6 +351,48 @@ namespace shuiyintong.DBUtils.Test_tuishui_Demo
            /// Nullable:True
            /// </summary>           
            public string bgdzrResult {get;set;}
+
+           /// <summary>
+           /// Desc:扣费成功与否
+           /// Default:
+           /// Nullable:True
+           /// </summary>           
+           public string kfresult {get;set;}
+
+           /// <summary>
+           /// Desc:扣费时间
+           /// Default:
+           /// Nullable:True
+           /// </summary>           
+           public DateTime? kftime {get;set;}
+
+           /// <summary>
+           /// Desc:扣费金额
+           /// Default:
+           /// Nullable:True
+           /// </summary>           
+           public decimal? kfmoney {get;set;}
+
+           /// <summary>
+           /// Desc:自动扣款金额
+           /// Default:
+           /// Nullable:True
+           /// </summary>           
+           public decimal? AutoKoukuan {get;set;}
+
+           /// <summary>
+           /// Desc:历史逾期标志 1-历史逾期
+           /// Default:
+           /// Nullable:True
+           /// </summary>           
+           public string historyYuQi {get;set;}
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>           
+           public string YKDateline {get;set;}
 
     }
 }

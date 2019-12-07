@@ -58,7 +58,7 @@ namespace shuiyintong.Api.Validate
             var url = context.Request.Path.ToString().Split("/");
             var bankControlItem = AppSettings.BankConfig.BankControllers.Find(r => r.Controller == url[1]);
             LogEventInfo lei = new LogEventInfo();
-            lei.Properties["bankname"] = bankControlItem?.BankName;
+            lei.Properties["bankname"] = bankControlItem?.Name;
             lei.Properties["controller"] = url[1];
             lei.Properties["action"] = url[2];
             lei.Properties["httptype"] = context.Request.IsHttps ? "Https" : "Http";

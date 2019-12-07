@@ -46,13 +46,13 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq
         /// 当前授信额度
         /// </summary>      
         [Required(ErrorMessage = "当前授信额度必填")]
-        public decimal? currentCreditAmount { get; set; }
+        public string currentCreditAmount { get; set; }
 
         /// <summary>
         /// 单笔用款额度
         /// </summary>      
         [Required(ErrorMessage = "单笔用款额度必填")]
-        public decimal? singlePaymentAmount { get; set; }
+        public string singlePaymentAmount { get; set; }
 
         /// <summary>
         /// 企业及关键人是否满足人行征信准入条件：是/否
@@ -62,22 +62,22 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq
         /// <summary>
         /// 企业销贷比（分值）
         /// </summary>           
-        public double? proportion { get; set; }
+        public string proportion { get; set; }
 
         /// <summary>
         /// 企业未结清贷款余额（分值）
         /// </summary>           
-        public decimal? outstandFrequency { get; set; }
+        public string outstandFrequency { get; set; }
 
         /// <summary>
         /// 企业法定代表人最近24个自然月最高连续逾期次数（分值）
         /// </summary>           
-        public int? overdueFrequency { get; set; }
+        public string overdueFrequency { get; set; }
 
         /// <summary>
         /// 企业法定代表人最近24个自然月累计逾期次数（分值）
         /// </summary>           
-        public int? overdueTotalFrequency { get; set; }
+        public string overdueTotalFrequency { get; set; }
 
     }
 }

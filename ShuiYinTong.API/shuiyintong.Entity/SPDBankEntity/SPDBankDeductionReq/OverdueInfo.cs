@@ -35,7 +35,7 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq
         /// 应还金额
         /// </summary>   
         [Required(ErrorMessage = "应还金额必填")]
-        public decimal payableAmount { get; set; }
+        public string payableAmount { get; set; }
 
         /// <summary>
         /// 项目状态

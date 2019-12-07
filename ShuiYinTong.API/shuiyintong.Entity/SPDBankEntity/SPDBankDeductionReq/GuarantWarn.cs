@@ -35,7 +35,7 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDBankDeductionReq
         /// 预警提示
         /// </summary>     
         [Required(ErrorMessage = "预警提示信息必填")]
-        public decimal guarantWarnMsg { get; set; }
+        public string guarantWarnMsg { get; set; }
 
     }
 }

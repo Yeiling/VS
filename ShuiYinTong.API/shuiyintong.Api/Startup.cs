@@ -12,6 +12,7 @@ using NLog.Extensions.Logging;
 using NLog.Web;
 using shuiyintong.Api.Validate;
 using Swashbuckle.AspNetCore.Swagger;
+using Swashbuckle.AspNetCore.SwaggerUI;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -53,6 +54,8 @@ namespace shuiyintong.Api
             //WebAPI 全局顾虑器设置
             services.AddMvc(option =>
             {
+                //Http添加权限验证
+                option.Filters.Add<AuthFilterAttribute>();
                 //Http添加请求参数验证---请求参数验证和结果验证
                 option.Filters.Add<ValidateActionFilter>();
                 //Http请求异常处理验证---异常处理验证
@@ -70,11 +73,9 @@ namespace shuiyintong.Api
                 //Swagger选项过滤器
                 c.OperationFilter<SwaggerFileUploadFilter>();
 
-                //添加xml文件解析
-                var xmlFile = Assembly.GetExecutingAssembly();
-                var path = Path.GetDirectoryName(xmlFile.Location);
-                DirectoryInfo directoryInfo = new DirectoryInfo(path);
-                var fileList = directoryInfo.GetFiles("*.xml");
+                //添加所有xml文件解析
+                DirectoryInfo directoryInfo = new DirectoryInfo(AppContext.BaseDirectory);
+                FileInfo[] fileList = directoryInfo.GetFiles("*.xml");
                 if (fileList != null && fileList.Length > 0)
                 {
                     foreach (var file in fileList)
@@ -234,10 +235,36 @@ namespace shuiyintong.Api
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "ShuiYinTong.WebApi");
-                c.RoutePrefix = string.Empty;
+                //c.RoutePrefix = string.Empty;  ////导出文档需要，第260行已设置
+                //接口列表折叠配置
+                //c.DefaultModelExpandDepth(2);
+                c.DefaultModelRendering(ModelRendering.Model);
+                //c.DefaultModelsExpandDepth(-1);//不显示model
+
+                c.DisplayOperationId();  //接口右侧添加接口名
+                c.DisplayRequestDuration();
+                c.DocExpansion(DocExpansion.None); //接口列表折叠配置
+                c.EnableDeepLinking();
+                c.EnableFilter(); //添加搜索框
+                c.ShowExtensions();
+
+                //添加Js和CSS样式
+                c.InjectJavascript("/jquery/jquery.js");//jquery 插件
+                c.InjectJavascript("/buzyload/app.min.js");//loading 遮罩层js
+                c.InjectStylesheet("/buzyload/app.min.css");//等待load遮罩层样式
+                c.InjectStylesheet("/swagger-common.css");//自定义样式
+                c.InjectJavascript("/swagger-lang.js");//我们自定义的js
                 //Swagger引入汉化
                 //c.InjectJavascript($"/swagger.js");
             });
+
+            //设置首页
+            DefaultFilesOptions defaultFilesOptions = new DefaultFilesOptions();
+            defaultFilesOptions.DefaultFileNames.Clear();
+            defaultFilesOptions.DefaultFileNames.Add("index.html");
+            app.UseDefaultFiles(defaultFilesOptions);
+            // 使用静态文件
+            app.UseStaticFiles();
 
             //扩展路由
             app.UseMvc(routes =>
