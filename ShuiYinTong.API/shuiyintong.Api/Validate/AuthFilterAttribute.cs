@@ -19,7 +19,7 @@ namespace shuiyintong.Api.Validate
         /// <param name="context"></param>
         public void OnAuthorization(AuthorizationFilterContext context)
         {
-            string privateKeyFlag = "Key";
+            string privateKeyFlag = "key";
             var HeaderKeys = context.HttpContext.Request.Headers.Keys;
             if (!HeaderKeys.Contains(privateKeyFlag))
             {

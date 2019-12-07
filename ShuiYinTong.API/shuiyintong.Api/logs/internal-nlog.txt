@@ -18040,3 +18040,9 @@ Error Number:10051,State:0,Class:20
 2019-12-07 09:22:19.1433 Error Error parsing layout Status will be ignored. Exception: System.ArgumentException: LayoutRenderer cannot be found: 'Status'
    at NLog.Config.Factory`2.CreateInstance(String itemName)
    at NLog.Layouts.LayoutParser.GetLayoutRenderer(ConfigurationItemFactory configurationItemFactory, String name)
+2019-12-07 09:24:29.5879 Error Error parsing layout Status will be ignored. Exception: System.ArgumentException: LayoutRenderer cannot be found: 'Status'
+   at NLog.Config.Factory`2.CreateInstance(String itemName)
+   at NLog.Layouts.LayoutParser.GetLayoutRenderer(ConfigurationItemFactory configurationItemFactory, String name)
+2019-12-07 09:27:19.2394 Error Error parsing layout Status will be ignored. Exception: System.ArgumentException: LayoutRenderer cannot be found: 'Status'
+   at NLog.Config.Factory`2.CreateInstance(String itemName)
+   at NLog.Layouts.LayoutParser.GetLayoutRenderer(ConfigurationItemFactory configurationItemFactory, String name)
