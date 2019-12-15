@@ -13,7 +13,13 @@ namespace Java分布式算法
 
             //加权随机算法
             //var ser1 = WeightRandom.WeightServer1();
-            var ser2 = WeightRandom.WeightServer2();
+            //var ser2 = WeightRandom.WeightServer2();
+
+
+            //轮询
+            var lst = RoundRoBin.RoundServer2(20);
+
+
 
             Console.ReadKey();
         }
