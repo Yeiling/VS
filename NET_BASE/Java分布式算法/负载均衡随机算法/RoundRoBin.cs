@@ -14,11 +14,11 @@ namespace Java分布式算法.负载均衡随机算法
         /// </summary>
         private static Dictionary<string, short> ServersMap = new Dictionary<string, short>
         {
-           { "192.168.56.100:8080", 3 },
-           { "192.168.56.101:8080", 4 },
-           { "192.168.56.102:8080", 5 },
-           { "192.168.56.103:8080", 6 },
-           { "192.168.56.104:8080", 7 }
+           { "192.168.56.100:8080", 10 },
+           { "192.168.56.101:8080", 9 },
+           { "192.168.56.102:8080", 8 },
+           { "192.168.56.103:8080", 7 },
+           { "192.168.56.104:8080", 6 }
         };
 
         #region 常规轮询算法
@@ -52,7 +52,7 @@ namespace Java分布式算法.负载均衡随机算法
 
         #region 加权平滑轮询算法
         /// <summary>
-        /// 加权平滑轮询算法---使用数组或者集合---尚未实现
+        /// 加权平滑轮询算法---使用数组或者集合
         /// </summary>
         /// <param name="num">魂环次数</param>
         /// <returns></returns>
@@ -76,59 +76,48 @@ namespace Java分布式算法.负载均衡随机算法
 
             //请求结果服务器
             List<string> reqServer = new List<string>(num);
-            while (num >= 0)
+            Random r = new Random();
+            int rdmNum = 0;
+            while (num > 0)
             {
                 int max = WeightList[0];
+                //1:获取最大值
                 for (int i = 0; i < WeightList.Count; i++)
                 {
                     //1:获取最大值
                     if (max < WeightList[i])
                         max = WeightList[i];
-
+                }
+                for (int i = 0; i < WeightList.Count; i++)
+                {
                     if (isFisrtRequest)
                     {
                         //第一个减去TotalWeight
                         WeightList[0] -= TotalWeight;
                         isFisrtRequest = false;
+                        break;
                     }
                     else
                         //2:每个字加上初始权重
                         WeightList[i] += InitList[i];
                 }
 
+                rdmNum = r.Next(TotalWeight);
                 //:3获取轮询服务器ip地址
                 foreach (var key in ServersMap.Keys)
                 {
-                    if (max < ServersMap[key])
+                    if (rdmNum < ServersMap[key])
                     {
                         reqServer.Add(key);
                         break;
                     }
-
-                    max -= ServersMap[key];
+                    rdmNum -= ServersMap[key];
                 }
-
                 num--;
             }
             return reqServer;
         }
         #endregion
-
-        /// <summary>
-        /// 获取集合最大值
-        /// </summary>
-        /// <param name="arry"></param>
-        /// <returns></returns>
-        public static short GetMax(List<short> arry)
-        {
-            short max = arry[0];
-            for (int i = 1; i < arry.Count; i++)
-            {
-                if (max < arry[i])
-                    max = arry[i];
-            }
-            return max;
-        }
 
 
     }
