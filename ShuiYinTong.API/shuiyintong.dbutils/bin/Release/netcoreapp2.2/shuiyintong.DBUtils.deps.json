@@ -1,14 +1,14 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "9eefacf6e6cca23b6a53d73c9e61ea8275dd11db"
+    "signature": "fbe2deeedc60f269c30adabfcf1164fd7f8bf908"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.2": {
       "shuiyintong.DBUtils/1.0.0": {
         "dependencies": {
-          "NewLife.Redis": "2.1.6871.1098",
+          "NewLife.Core": "8.4.2019.1109",
           "shuiyintong.Common": "1.0.0",
           "shuiyintong.Entity": "1.0.0",
           "sqlSugarCore": "5.0.0.10"
@@ -231,22 +231,11 @@
           }
         }
       },
-      "NewLife.Core/7.3.6870.42457": {
+      "NewLife.Core/8.4.2019.1109": {
         "runtime": {
           "lib/netstandard2.0/NewLife.Core.dll": {
-            "assemblyVersion": "7.3.6870.42457",
-            "fileVersion": "7.3.2018.630"
-          }
-        }
-      },
-      "NewLife.Redis/2.1.6871.1098": {
-        "dependencies": {
-          "NewLife.Core": "7.3.6870.42457"
-        },
-        "runtime": {
-          "lib/netstandard2.0/NewLife.Redis.dll": {
-            "assemblyVersion": "2.1.6871.1098",
-            "fileVersion": "2.1.2018.922"
+            "assemblyVersion": "8.4.7252.1563",
+            "fileVersion": "8.4.2019.1109"
           }
         }
       },
@@ -725,8 +714,19 @@
         }
       },
       "shuiyintong.Entity/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "2.2.0.0"
+        },
         "runtime": {
           "shuiyintong.Entity.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Http.Features.Reference/2.2.0.0": {
+        "runtime": {
+          "Microsoft.AspNetCore.Http.Features.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.18316"
+          }
         }
       }
     }
@@ -870,19 +870,12 @@
       "path": "mysql.data/8.0.15",
       "hashPath": "mysql.data.8.0.15.nupkg.sha512"
     },
-    "NewLife.Core/7.3.6870.42457": {
+    "NewLife.Core/8.4.2019.1109": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Mk3oBDivwGfI544FbV9/eTEDYKDK2hAFzoJ0T9NsSzfIMGBq1GP7kSnHQy1ffgHrBZFzsRGyOnzHEvdBssMpqA==",
-      "path": "newlife.core/7.3.6870.42457",
-      "hashPath": "newlife.core.7.3.6870.42457.nupkg.sha512"
-    },
-    "NewLife.Redis/2.1.6871.1098": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-KUNBUpJTsn0bN59DoadYIx2xlBn5glb4YYDQGTDkj/2cQGx98E88LOtu2IEnQEU+E6CzLX16zbHm2lpMQP1IKg==",
-      "path": "newlife.redis/2.1.6871.1098",
-      "hashPath": "newlife.redis.2.1.6871.1098.nupkg.sha512"
+      "sha512": "sha512-lvdvB61nx7HgEu25uc7O1wD6HpqjGYjDs2ieu1znG4ogH9pT7sPHUCV1afwUYwe7Ccyv0i4p0ZAAfiyn+RQBWQ==",
+      "path": "newlife.core/8.4.2019.1109",
+      "hashPath": "newlife.core.8.4.2019.1109.nupkg.sha512"
     },
     "Newtonsoft.Json/12.0.2": {
       "type": "package",
@@ -1171,6 +1164,11 @@
     },
     "shuiyintong.Entity/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.AspNetCore.Http.Features.Reference/2.2.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }
