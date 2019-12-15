@@ -12,8 +12,8 @@ namespace Java分布式算法
             //var server = WeightRandom.RandomServer();
 
             //加权随机算法
-            var ser = WeightRandom.WeightServer();
-
+            //var ser1 = WeightRandom.WeightServer1();
+            var ser2 = WeightRandom.WeightServer2();
 
             Console.ReadKey();
         }
