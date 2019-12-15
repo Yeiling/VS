@@ -14,11 +14,16 @@ namespace Java分布式算法.负载均衡随机算法
         /// </summary>
         private static Dictionary<string, short> ServersMap = new Dictionary<string, short>
         {
-           { "192.168.56.100:8080", 10 },
-           { "192.168.56.101:8080", 9 },
-           { "192.168.56.102:8080", 8 },
-           { "192.168.56.103:8080", 7 },
-           { "192.168.56.104:8080", 6 }
+           { "192.168.56.110:8080", 10 },
+           { "192.168.56.109:8080", 9 },
+           { "192.168.56.108:8080", 8 },
+           { "192.168.56.107:8080", 7 },
+           { "192.168.56.106:8080", 6 },
+           { "192.168.56.105:8080", 5 },
+           { "192.168.56.104:8080", 4 },
+           { "192.168.56.103:8080", 3 },
+           { "192.168.56.102:8080", 2 },
+           { "192.168.56.101:8080", 1 }
         };
 
         #region 常规轮询算法
@@ -90,14 +95,14 @@ namespace Java分布式算法.负载均衡随机算法
                 }
                 for (int i = 0; i < WeightList.Count; i++)
                 {
-                    if (isFisrtRequest)
+                    if (isFisrtRequest)  //第一次请求
                     {
                         //第一个减去TotalWeight
                         WeightList[0] -= TotalWeight;
                         isFisrtRequest = false;
                         break;
                     }
-                    else
+                    else  //第二次以及后续请求
                         //2:每个字加上初始权重
                         WeightList[i] += InitList[i];
                 }

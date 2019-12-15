@@ -17,7 +17,7 @@ namespace Java分布式算法
 
 
             //轮询
-            var lst = RoundRoBin.RoundServer2(20);
+            var lst = RoundRoBin.RoundServer2(100);
 
 
 
