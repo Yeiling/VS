@@ -19,7 +19,7 @@
             //折半查找
             while (low <= high)
             {
-                //求得mid
+                //求得mid-
                 mid = (low + high) / 2;
 
                 //判断是否等于
