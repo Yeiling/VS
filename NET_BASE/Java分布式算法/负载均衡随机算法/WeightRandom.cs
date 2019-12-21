@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 
 //分布式算法有很多，常用的有:
@@ -73,7 +72,7 @@ namespace Java分布式算法.负载均衡随机算法
 
 
         /// <summary>
-        /// 加权随机算法---优于WeightServer1，此算法必须保持顺序
+        /// 加权随机算法---优于WeightServer1，此算法必须保持顺序---权重从小到大
         /// 0__3____7____11_______16
         /// </summary>
         /// <returns></returns>
