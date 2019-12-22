@@ -41,14 +41,14 @@ namespace shuiyintong.Api.Controllers
         /// <summary>
         /// Swagger 文档导出
         /// </summary>
-        /// <param name="type"></param>
-        /// <param name="version"></param>
+        /// <param name="type">文档类型</param>
+        /// <param name="version">版本</param>
         /// <returns></returns>
         [HttpGet]
         public FileResult ExportApiWord(string type, string version)
         {
-            string memi = string.Empty, fileExten = string.Empty;
-            Stream outdata = null;
+            string memi = string.Empty;
+            string fileExten = string.Empty;
 
             //1.获取api文档json，version是版本，根据指定版本获取指定版本的json对象。
             var model = _swaggerGenerator.GetSwagger(version);
@@ -62,8 +62,7 @@ namespace shuiyintong.Api.Controllers
             if (!op.Successed)
                 throw new Exception(op.Message);
 
-            outdata = op.Data;
-            return File(outdata, memi, $"WebAPI文档 {version}{type}");//返回文件流，type是文件格式
+            return File(op.Data, memi, $"WebAPI文档 {version}{type}");//返回文件流，type是文件格式
         }
     }
 }
