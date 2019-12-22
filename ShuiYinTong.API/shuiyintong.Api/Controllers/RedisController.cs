@@ -29,5 +29,8 @@ namespace shuiyintong.Api.Controllers
             rediServer.InitDB(RedisDbNum);
             return rediServer.Set<T>(Key, Value);
         }
+
+
+
     }
 }

@@ -18105,3 +18105,38 @@ Error Number:10051,State:0,Class:20
 2019-12-22 13:14:23.2325 Info Found 47 configuration items
 2019-12-22 13:14:23.3530 Info Configuration initialized.
 2019-12-22 13:14:23.3670 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.6.8.10751. Product version: 4.6.8.
+2019-12-22 13:15:54.6986 Info Message Template Auto Format enabled
+2019-12-22 13:15:54.7131 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-22 13:15:54.7596 Info Adding target NullTarget(Name=blackhole)
+2019-12-22 13:15:54.7736 Info Adding target DatabaseTarget(Name=database)
+2019-12-22 13:15:54.8376 Info Found 47 configuration items
+2019-12-22 13:15:54.9782 Info Configuration initialized.
+2019-12-22 13:15:54.9912 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.6.8.10751. Product version: 4.6.8.
+2019-12-22 13:17:00.7280 Info Message Template Auto Format enabled
+2019-12-22 13:17:00.7280 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-22 13:17:00.8100 Info Adding target NullTarget(Name=blackhole)
+2019-12-22 13:17:00.8275 Info Adding target DatabaseTarget(Name=database)
+2019-12-22 13:17:00.8815 Info Found 47 configuration items
+2019-12-22 13:17:00.9870 Info Configuration initialized.
+2019-12-22 13:17:00.9980 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.6.8.10751. Product version: 4.6.8.
+2019-12-22 13:18:06.0878 Info Message Template Auto Format enabled
+2019-12-22 13:18:06.0878 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-22 13:18:06.1353 Info Adding target NullTarget(Name=blackhole)
+2019-12-22 13:18:06.1498 Info Adding target DatabaseTarget(Name=database)
+2019-12-22 13:18:06.2023 Info Found 47 configuration items
+2019-12-22 13:18:06.3218 Info Configuration initialized.
+2019-12-22 13:18:06.3218 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.6.8.10751. Product version: 4.6.8.
+2019-12-22 13:19:58.4121 Info Message Template Auto Format enabled
+2019-12-22 13:19:58.4121 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-22 13:19:58.4866 Info Adding target NullTarget(Name=blackhole)
+2019-12-22 13:19:58.5171 Info Adding target DatabaseTarget(Name=database)
+2019-12-22 13:19:58.6191 Info Found 47 configuration items
+2019-12-22 13:19:58.8406 Info Configuration initialized.
+2019-12-22 13:19:58.8626 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.6.8.10751. Product version: 4.6.8.
+2019-12-22 13:20:48.0129 Info Message Template Auto Format enabled
+2019-12-22 13:20:48.0194 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-22 13:20:48.0784 Info Adding target NullTarget(Name=blackhole)
+2019-12-22 13:20:48.1014 Info Adding target DatabaseTarget(Name=database)
+2019-12-22 13:20:48.1499 Info Found 47 configuration items
+2019-12-22 13:20:48.2404 Info Configuration initialized.
+2019-12-22 13:20:48.2539 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.6.8.10751. Product version: 4.6.8.
