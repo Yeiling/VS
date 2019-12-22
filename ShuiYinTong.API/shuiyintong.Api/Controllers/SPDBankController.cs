@@ -42,14 +42,6 @@ namespace shuiyintong.Api.Controllers
 
         #endregion
 
-        /// <summary>
-        /// Redis服务
-        /// </summary>
-        public IRediServer<string> rediServer { get; set; }
-        /// <summary>
-        /// Redis库编号
-        /// </summary>
-        private readonly short RedisDbNum = 1;
         #region 接口签名
 
         /// <summary>
@@ -269,11 +261,6 @@ namespace shuiyintong.Api.Controllers
                 responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
                 baseResponse.ResponseType = (byte)responseType;
                 baseResponse.Msg = responseType.GetDescription();
-                //Redis保存 //Redis key
-                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.SingleTransfer + "-" + Now + "-" + baseResponse.ResponseType;
-                if (rediServer != null)
-                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
-
             });
             return baseResponse;
         }
@@ -329,10 +316,6 @@ namespace shuiyintong.Api.Controllers
                 responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
                 baseResponse.ResponseType = (byte)responseType;
                 baseResponse.Msg = responseType.GetDescription();
-                //Redis保存 //Redis key
-                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.ElectRecptApplction + "-" + Now + "-" + baseResponse.ResponseType;
-                if (rediServer != null)
-                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
 
             });
             return baseResponse;
@@ -362,10 +345,6 @@ namespace shuiyintong.Api.Controllers
                 responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
                 baseResponse.ResponseType = (byte)responseType;
                 baseResponse.Msg = responseType.GetDescription();
-                //Redis保存 //Redis key
-                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.FncThdCncl + "-" + Now + "-" + baseResponse.ResponseType;
-                if (rediServer != null)
-                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
 
             });
             return baseResponse;
@@ -422,10 +401,6 @@ namespace shuiyintong.Api.Controllers
                 responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
                 baseResponse.ResponseType = (byte)responseType;
                 baseResponse.Msg = responseType.GetDescription();
-                //Redis保存 //Redis key
-                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.BnkInfoQryCombntnTran + "-" + Now + "-" + baseResponse.ResponseType;
-                if (rediServer != null)
-                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
 
             });
             return baseResponse;
@@ -455,10 +430,6 @@ namespace shuiyintong.Api.Controllers
                 responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
                 baseResponse.ResponseType = (byte)responseType;
                 baseResponse.Msg = responseType.GetDescription();
-                //Redis保存 //Redis key
-                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.AuthSmlAmt + "-" + Now + "-" + baseResponse.ResponseType;
-                if (rediServer != null)
-                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
 
             });
             return baseResponse;
@@ -489,10 +460,6 @@ namespace shuiyintong.Api.Controllers
                 responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
                 baseResponse.ResponseType = (byte)responseType;
                 baseResponse.Msg = responseType.GetDescription();
-                //Redis保存 //Redis key
-                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.PayInsrChk + "-" + Now + "-" + baseResponse.ResponseType;
-                if (rediServer != null)
-                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
 
             });
             return baseResponse;
@@ -551,10 +518,6 @@ namespace shuiyintong.Api.Controllers
                 responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
                 baseResponse.ResponseType = (byte)responseType;
                 baseResponse.Msg = responseType.GetDescription();
-                //Redis保存 //Redis key
-                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.PayInsrCnl + "-" + Now + "-" + baseResponse.ResponseType;
-                if (rediServer != null)
-                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
 
             });
             return baseResponse;
@@ -613,10 +576,6 @@ namespace shuiyintong.Api.Controllers
                 responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
                 baseResponse.ResponseType = (byte)responseType;
                 baseResponse.Msg = responseType.GetDescription();
-                //Redis保存 //Redis key
-                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.PayeeWhtLstMntn + "-" + Now + "-" + baseResponse.ResponseType;
-                if (rediServer != null)
-                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
 
             });
             return baseResponse;
@@ -651,10 +610,6 @@ namespace shuiyintong.Api.Controllers
                 responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
                 baseResponse.ResponseType = (byte)responseType;
                 baseResponse.Msg = responseType.GetDescription();
-                //Redis保存 //Redis key
-                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.ZLSysInrBnkTfr + "-" + Now + "-" + baseResponse.ResponseType;
-                if (rediServer != null)
-                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
 
             });
             return baseResponse;
@@ -685,10 +640,6 @@ namespace shuiyintong.Api.Controllers
                 responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
                 baseResponse.ResponseType = (byte)responseType;
                 baseResponse.Msg = responseType.GetDescription();
-                //Redis保存 //Redis key
-                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.OlBrwLnRepy + "-" + Now + "-" + baseResponse.ResponseType;
-                if (rediServer != null)
-                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
 
             });
             return baseResponse;
@@ -747,10 +698,6 @@ namespace shuiyintong.Api.Controllers
                 responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
                 baseResponse.ResponseType = (byte)responseType;
                 baseResponse.Msg = responseType.GetDescription();
-                //Redis保存 //Redis key
-                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.InterestTrial + "-" + Now + "-" + baseResponse.ResponseType;
-                if (rediServer != null)
-                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
 
             });
             return baseResponse;
@@ -781,10 +728,6 @@ namespace shuiyintong.Api.Controllers
                 responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
                 baseResponse.ResponseType = (byte)responseType;
                 baseResponse.Msg = responseType.GetDescription();
-                //Redis保存 //Redis key
-                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.ReceiptApply + "-" + Now + "-" + baseResponse.ResponseType;
-                if (rediServer != null)
-                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
 
             });
             return baseResponse;
@@ -815,10 +758,6 @@ namespace shuiyintong.Api.Controllers
                 responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
                 baseResponse.ResponseType = (byte)responseType;
                 baseResponse.Msg = responseType.GetDescription();
-                //Redis保存 //Redis key
-                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.CorpLnCntlAcctRep + "-" + Now + "-" + baseResponse.ResponseType;
-                if (rediServer != null)
-                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
 
             });
             return baseResponse;
@@ -849,10 +788,6 @@ namespace shuiyintong.Api.Controllers
                 responseType = code == Code ? ResponseType.Success : ResponseType.Fail;
                 baseResponse.ResponseType = (byte)responseType;
                 baseResponse.Msg = responseType.GetDescription();
-                //Redis保存 //Redis key
-                string key = (int)SPDBank + "-" + (int)SPDBankAPIType.OlBrwLnRepyTrl + "-" + Now + "-" + baseResponse.ResponseType;
-                if (rediServer != null)
-                    rediServer.InitDB(RedisDbNum).Set(key, baseResponse.ToJson());
 
             });
             return baseResponse;

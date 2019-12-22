@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace shuiyintong.DBUtils.IService
 {
-    public interface IRediServer<T>
+    public interface IRediServer
     {
         #region 库编号
         /// <summary>
@@ -13,7 +13,7 @@ namespace shuiyintong.DBUtils.IService
         /// </summary>
         /// <param name="dbnum">库编号</param>
         /// <returns></returns>
-        RediServer<T> InitDB(short dbnum);
+        RediServer InitDB(short dbnum);
         #endregion
 
         #region Key操作
@@ -24,7 +24,7 @@ namespace shuiyintong.DBUtils.IService
         /// <param name="value">值</param>
         /// <param name="expire">过期时间(-1:永不过期)</param>
         /// <returns></returns>
-        bool Set(string key, T value, int expire = -1);
+        bool Set<T>(string key, T value, int expire = -1);
 
         /// <summary>
         /// 对已添加的Key,设置key有效期
@@ -40,7 +40,7 @@ namespace shuiyintong.DBUtils.IService
         /// <param name="values">键值对集合</param>
         /// <param name="expire">过期时间(-1:永不过期</param>
         /// <returns></returns>
-        void SetAll(IDictionary<string, T> values, int expire = -1);
+        void SetAll<T>(IDictionary<string, T> values, int expire = -1);
 
         /// <summary>
         /// 是否含有Key
@@ -54,14 +54,14 @@ namespace shuiyintong.DBUtils.IService
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        T Get(string key);
+        T Get<T>(string key);
 
         /// <summary>
         /// 获取多个Key值
         /// </summary>
         /// <param name="keys">Key集合</param>
         /// <returns></returns>
-        IDictionary<string, T> GetAll(IEnumerable<string> keys);
+        IDictionary<string, T> GetAll<T>(IEnumerable<string> keys);
 
         /// <summary>
         /// 获取Key的过期时间，单位是TimeSpan
@@ -77,7 +77,7 @@ namespace shuiyintong.DBUtils.IService
         /// <param name="key"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        T Replace(string key, T value);
+        T Replace<T>(string key, T value);
 
         /// <summary>
         /// 获取所有的Key

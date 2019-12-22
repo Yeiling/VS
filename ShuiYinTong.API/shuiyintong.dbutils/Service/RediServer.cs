@@ -10,7 +10,7 @@ namespace shuiyintong.DBUtils.Service
     /// <summary>
     /// Redis封装
     /// </summary>
-    public class RediServer<T> : IRediServer<T>
+    public class RediServer : IRediServer
     {
         /// <summary>
         /// Redis服务对象
@@ -33,7 +33,7 @@ namespace shuiyintong.DBUtils.Service
         /// </summary>
         /// <param name="dbnum">默认是0号库</param>
         /// <returns></returns>
-        public RediServer<T> InitDB(short dbnum = 0)
+        public RediServer InitDB(short dbnum = 0)
         {
             if (redis == null)
                 redis = Redis.Create(serverIp, dbnum);
@@ -52,7 +52,7 @@ namespace shuiyintong.DBUtils.Service
         /// <param name="value">值</param>
         /// <param name="expire">过期时间(-1:永不过期)</param>
         /// <returns></returns>
-        public bool Set(string key, T value, int expire = -1) => redis.Set<T>(key, value, expire);
+        public bool Set<T>(string key, T value, int expire = -1) => redis.Set<T>(key, value, expire);
 
         /// <summary>
         /// 对已添加的Key,设置key有效期
@@ -68,7 +68,7 @@ namespace shuiyintong.DBUtils.Service
         /// <param name="values">键值对集合</param>
         /// <param name="expire">过期时间(-1:永不过期</param>
         /// <returns></returns>
-        public void SetAll(IDictionary<string, T> values, int expire = -1) => redis.SetAll<T>(values, -1);
+        public void SetAll<T>(IDictionary<string, T> values, int expire = -1) => redis.SetAll<T>(values, -1);
 
         /// <summary>
         /// 是否含有Key
@@ -82,14 +82,14 @@ namespace shuiyintong.DBUtils.Service
         /// </summary>
         /// <param name="key">Key键</param>
         /// <returns></returns>
-        public T Get(string key) => redis.Get<T>(key);
+        public T Get<T>(string key) => redis.Get<T>(key);
 
         /// <summary>
         /// 获取多个Key值
         /// </summary>
         /// <param name="keys">Key集合</param>
         /// <returns></returns>
-        public IDictionary<string, T> GetAll(IEnumerable<string> keys) => redis.GetAll<T>(keys);
+        public IDictionary<string, T> GetAll<T>(IEnumerable<string> keys) => redis.GetAll<T>(keys);
 
         /// <summary>
         /// 获取Key的过期时间，单位是TimeSpan
@@ -104,7 +104,7 @@ namespace shuiyintong.DBUtils.Service
         /// <param name="key">key键</param>
         /// <param name="value">值</param>
         /// <returns></returns>
-        public T Replace(string key, T value) => redis.Replace(key, value);
+        public T Replace<T>(string key, T value) => redis.Replace(key, value);
 
         /// <summary>
         /// 获取所有的Key
@@ -156,8 +156,6 @@ namespace shuiyintong.DBUtils.Service
         /// <param name="keys">一个或者多个</param>
         /// <returns></returns>
         public bool DelKey(params string[] keys) => redis.Remove(keys) == keys.Length ? true : false;
-
-
 
         /// <summary>
         /// Key原子自增
