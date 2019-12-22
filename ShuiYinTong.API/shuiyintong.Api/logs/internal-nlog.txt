@@ -18091,3 +18091,10 @@ Error Number:10051,State:0,Class:20
 2019-12-22 13:10:22.1034 Info Found 47 configuration items
 2019-12-22 13:10:22.3239 Info Configuration initialized.
 2019-12-22 13:10:22.3539 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.6.8.10751. Product version: 4.6.8.
+2019-12-22 13:13:22.1507 Info Message Template Auto Format enabled
+2019-12-22 13:13:22.1507 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-22 13:13:22.1983 Info Adding target NullTarget(Name=blackhole)
+2019-12-22 13:13:22.2128 Info Adding target DatabaseTarget(Name=database)
+2019-12-22 13:13:22.2543 Info Found 47 configuration items
+2019-12-22 13:13:22.3933 Info Configuration initialized.
+2019-12-22 13:13:22.4163 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.6.8.10751. Product version: 4.6.8.
