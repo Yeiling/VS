@@ -93,11 +93,6 @@
             控制器基类
             </summary>
         </member>
-        <member name="T:shuiyintong.Api.Controllers.DefaultController">
-            <summary>
-            默认
-            </summary>
-        </member>
         <member name="T:shuiyintong.Api.Controllers.NLogController">
             <summary>
             日志信息
