@@ -24,6 +24,7 @@ namespace shuiyintong.Entity.SPDBankEntity.SPDBankReq
         public string rcpDgType { get; set; }
         /// <summary>
         /// 柜员流水号
+        /// </summary>
         [Required(ErrorMessage = "柜员流水号必填")]
         public string tranSeqNo { get; set; }
         /// <summary>

@@ -50,7 +50,7 @@ namespace shuiyintong.Api
             //3:数据库服务注入---AOP可实现
             builder.RegisterGeneric(typeof(BaseService<>)).As(typeof(IBaseService<>)).InterceptedBy(typeof(LogInterceptor)).EnableInterfaceInterceptors();
             //4：Redis服务注册
-            builder.RegisterGeneric(typeof(RediServer<>)).As(typeof(IRediServer<>)).InterceptedBy(typeof(LogInterceptor)).EnableInterfaceInterceptors();
+            builder.RegisterGeneric(typeof(RediServer)).As(typeof(IRediServer)).InterceptedBy(typeof(LogInterceptor)).EnableInterfaceInterceptors();
 
             //Swagger文件导出注入
             builder.RegisterType<IHostingEnvironment>();

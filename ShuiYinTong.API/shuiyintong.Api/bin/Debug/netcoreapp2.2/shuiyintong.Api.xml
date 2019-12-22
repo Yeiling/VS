@@ -110,14 +110,32 @@
             <param name="logQueryReq">日志</param>
             <returns></returns>
         </member>
+        <member name="T:shuiyintong.Api.Controllers.RedisController">
+            <summary>
+            Redis测试服务
+            </summary>
+        </member>
+        <member name="P:shuiyintong.Api.Controllers.RedisController.rediServer">
+            <summary>
+            Redis服务
+            </summary>
+        </member>
+        <member name="F:shuiyintong.Api.Controllers.RedisController.RedisDbNum">
+            <summary>
+            Redis库编号
+            </summary>
+        </member>
+        <member name="M:shuiyintong.Api.Controllers.RedisController.Set``1(System.String,``0)">
+            <summary>
+            设置值
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="Key"></param>
+            <param name="Value"></param>
+        </member>
         <member name="T:shuiyintong.Api.Controllers.SPDBankController">
             <summary>
             浦发银行接口(平台--->>>浦发银行)
-            </summary>
-        </member>
-        <member name="F:shuiyintong.Api.Controllers.SPDBankController.SPDBank">
-            <summary>
-            银行类型---浦发银行
             </summary>
         </member>
         <member name="F:shuiyintong.Api.Controllers.SPDBankController.SPDBankConfig">
@@ -128,16 +146,6 @@
         <member name="F:shuiyintong.Api.Controllers.SPDBankController.Code">
             <summary>
             Http请求返回Code
-            </summary>
-        </member>
-        <member name="P:shuiyintong.Api.Controllers.SPDBankController.rediServer">
-            <summary>
-            Redis服务
-            </summary>
-        </member>
-        <member name="F:shuiyintong.Api.Controllers.SPDBankController.RedisDbNum">
-            <summary>
-            Redis库编号
             </summary>
         </member>
         <member name="M:shuiyintong.Api.Controllers.SPDBankController.GetHeaderSign(System.Object,System.String@)">

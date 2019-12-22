@@ -29,10 +29,10 @@ namespace shuiyintong.Api.Controllers
         /// <param name="Key"></param>
         /// <param name="Value"></param>
         [HttpGet]
-        public bool Set<T>(string Key, T Value) => rediServer.Set<T>(Key, Value);
-
-
-
-
+        public bool Set<T>(string Key, T Value)
+        {
+            rediServer.InitDB(RedisDbNum);
+            return rediServer.Set<T>(Key, Value);
+        }
     }
 }

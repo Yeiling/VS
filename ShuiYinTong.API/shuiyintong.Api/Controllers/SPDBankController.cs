@@ -28,10 +28,6 @@ namespace shuiyintong.Api.Controllers
         #region 银行配置缓存
 
         /// <summary>
-        /// 银行类型---浦发银行
-        /// </summary>
-        private readonly BankType SPDBank = BankType.SPDBank;
-        /// <summary>
         /// 浦发银行配合信息
         /// </summary>
         private readonly SPDBankConfig SPDBankConfig = AppSettings.BankConfig.SPDBankConfig;
