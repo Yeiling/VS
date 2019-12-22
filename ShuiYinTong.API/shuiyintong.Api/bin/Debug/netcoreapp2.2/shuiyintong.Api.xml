@@ -495,8 +495,8 @@
             <summary>
             Swagger 文档导出
             </summary>
-            <param name="type"></param>
-            <param name="version"></param>
+            <param name="type">文档类型</param>
+            <param name="version">版本</param>
             <returns></returns>
         </member>
         <member name="T:shuiyintong.Api.IocConfig">

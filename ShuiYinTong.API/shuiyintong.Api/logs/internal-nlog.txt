@@ -18049,3 +18049,10 @@ Error Number:10051,State:0,Class:20
 2019-12-08 13:00:32.4702 Error Error parsing layout Status will be ignored. Exception: System.ArgumentException: LayoutRenderer cannot be found: 'Status'
    at NLog.Config.Factory`2.CreateInstance(String itemName)
    at NLog.Layouts.LayoutParser.GetLayoutRenderer(ConfigurationItemFactory configurationItemFactory, String name)
+2019-12-22 12:46:30.0475 Info Message Template Auto Format enabled
+2019-12-22 12:46:30.0900 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-22 12:46:30.1680 Info Adding target NullTarget(Name=blackhole)
+2019-12-22 12:46:30.1866 Info Adding target DatabaseTarget(Name=database)
+2019-12-22 12:46:30.2301 Info Found 47 configuration items
+2019-12-22 12:46:30.8096 Info Configuration initialized.
+2019-12-22 12:46:30.8301 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.6.8.10751. Product version: 4.6.8.
