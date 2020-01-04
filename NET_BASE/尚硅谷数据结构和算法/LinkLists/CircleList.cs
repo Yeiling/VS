@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace 尚硅谷数据结构和算法.LinkLists
 {
@@ -62,7 +60,6 @@ namespace 尚硅谷数据结构和算法.LinkLists
                     break;
                 }
 
-
                 for (int i = 0; i < num - 1; i++)
                 {
                     nowNode = nowNode.Next;
@@ -102,8 +99,6 @@ namespace 尚硅谷数据结构和算法.LinkLists
         /// </summary>
         /// <returns></returns>
         public int Length() => Count;
-
-
 
     }
 }
