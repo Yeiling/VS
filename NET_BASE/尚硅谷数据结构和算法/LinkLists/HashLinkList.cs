@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace 尚硅谷数据结构和算法.LinkLists
 {
