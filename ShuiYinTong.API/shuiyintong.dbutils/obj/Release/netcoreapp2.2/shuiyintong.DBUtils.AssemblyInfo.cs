@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("shuiyintong.DBUtils")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("shuiyintong.dbutils")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("shuiyintong.DBUtils")]
-[assembly: System.Reflection.AssemblyTitleAttribute("shuiyintong.DBUtils")]
+[assembly: System.Reflection.AssemblyProductAttribute("shuiyintong.dbutils")]
+[assembly: System.Reflection.AssemblyTitleAttribute("shuiyintong.dbutils")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // 由 MSBuild WriteCodeFragment 类生成。
