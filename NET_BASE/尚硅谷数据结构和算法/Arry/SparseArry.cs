@@ -72,7 +72,7 @@
         }
 
         /// <summary>
-        /// 稀疏数组转二维数组
+        /// 稀疏数组转普通二维数组
         /// </summary>
         /// <param name="sparseArr">稀疏数组</param>
         /// <returns></returns>

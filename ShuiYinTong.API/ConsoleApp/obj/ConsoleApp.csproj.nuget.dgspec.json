@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitProject\\ShuiYinTong.API\\shuiyintong.Api\\shuiyintong.Api.csproj": {}
+    "D:\\GitProject\\ShuiYinTong.API\\ConsoleApp\\ConsoleApp.csproj": {}
   },
   "projects": {
-    "D:\\GitProject\\ShuiYinTong.API\\shuiyintong.Api\\shuiyintong.Api.csproj": {
+    "D:\\GitProject\\ShuiYinTong.API\\ConsoleApp\\ConsoleApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitProject\\ShuiYinTong.API\\shuiyintong.Api\\shuiyintong.Api.csproj",
-        "projectName": "shuiyintong.Api",
-        "projectPath": "D:\\GitProject\\ShuiYinTong.API\\shuiyintong.Api\\shuiyintong.Api.csproj",
+        "projectUniqueName": "D:\\GitProject\\ShuiYinTong.API\\ConsoleApp\\ConsoleApp.csproj",
+        "projectName": "ConsoleApp",
+        "projectPath": "D:\\GitProject\\ShuiYinTong.API\\ConsoleApp\\ConsoleApp.csproj",
         "packagesPath": "C:\\Users\\Apply\\.nuget\\packages\\",
-        "outputPath": "D:\\GitProject\\ShuiYinTong.API\\shuiyintong.Api\\obj\\",
+        "outputPath": "D:\\GitProject\\ShuiYinTong.API\\ConsoleApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Apply\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,9 +27,6 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "D:\\GitProject\\ShuiYinTong.API\\shuiyintong.Common\\shuiyintong.Common.csproj": {
-                "projectPath": "D:\\GitProject\\ShuiYinTong.API\\shuiyintong.Common\\shuiyintong.Common.csproj"
-              },
               "D:\\GitProject\\ShuiYinTong.API\\shuiyintong.dbutils\\shuiyintong.DBUtils.csproj": {
                 "projectPath": "D:\\GitProject\\ShuiYinTong.API\\shuiyintong.dbutils\\shuiyintong.DBUtils.csproj"
               },
@@ -51,85 +48,15 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
-            "AspectCore.Core": {
-              "target": "Package",
-              "version": "[1.3.0, )"
-            },
-            "Autofac": {
-              "target": "Package",
-              "version": "[4.9.4, )"
-            },
-            "Autofac.Annotation": {
-              "target": "Package",
-              "version": "[3.0.5, )"
-            },
-            "Autofac.Extensions.DependencyInjection": {
-              "target": "Package",
-              "version": "[5.0.1, )"
-            },
-            "Autofac.Extras.DynamicProxy": {
-              "target": "Package",
-              "version": "[4.5.0, )"
-            },
-            "Castle.Core": {
-              "target": "Package",
-              "version": "[4.4.0, )"
-            },
-            "Microsoft.AspNetCore.App": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.2.0, )",
-              "autoReferenced": true
-            },
-            "Microsoft.Data.SqlClient": {
-              "target": "Package",
-              "version": "[1.0.19269.1, )"
-            },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.2.0, )",
               "autoReferenced": true
             },
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+            "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[2.2.3, )"
-            },
-            "MySql.Data": {
-              "target": "Package",
-              "version": "[8.0.18, )"
-            },
-            "NLog": {
-              "target": "Package",
-              "version": "[4.6.8, )"
-            },
-            "NLog.Config": {
-              "target": "Package",
-              "version": "[4.6.8, )"
-            },
-            "NLog.Extensions.Logging": {
-              "target": "Package",
-              "version": "[1.6.1, )"
-            },
-            "NLog.Web.AspNetCore": {
-              "target": "Package",
-              "version": "[4.9.0, )"
-            },
-            "RazorEngine.NetCore": {
-              "target": "Package",
-              "version": "[2.2.2, )"
-            },
-            "Spire.Doc": {
-              "target": "Package",
-              "version": "[7.10.0, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[4.0.1, )"
-            },
-            "System.Data.SqlClient": {
-              "target": "Package",
-              "version": "[4.7.0, )"
+              "version": "[12.0.2, )"
             }
           },
           "imports": [

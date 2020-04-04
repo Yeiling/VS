@@ -3808,23 +3808,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\InSpire\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Apply\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitFiles\\ShuiYinTong.API\\ConsoleApp\\ConsoleApp.csproj",
+      "projectUniqueName": "D:\\GitProject\\ShuiYinTong.API\\ConsoleApp\\ConsoleApp.csproj",
       "projectName": "ConsoleApp",
-      "projectPath": "D:\\GitFiles\\ShuiYinTong.API\\ConsoleApp\\ConsoleApp.csproj",
-      "packagesPath": "C:\\Users\\InSpire\\.nuget\\packages\\",
-      "outputPath": "D:\\GitFiles\\ShuiYinTong.API\\ConsoleApp\\obj\\",
+      "projectPath": "D:\\GitProject\\ShuiYinTong.API\\ConsoleApp\\ConsoleApp.csproj",
+      "packagesPath": "C:\\Users\\Apply\\.nuget\\packages\\",
+      "outputPath": "D:\\GitProject\\ShuiYinTong.API\\ConsoleApp\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\InSpire\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Apply\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3837,14 +3833,14 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "D:\\GitFiles\\ShuiYinTong.API\\shuiyintong.dbutils\\shuiyintong.DBUtils.csproj": {
-              "projectPath": "D:\\GitFiles\\ShuiYinTong.API\\shuiyintong.dbutils\\shuiyintong.DBUtils.csproj"
+            "D:\\GitProject\\ShuiYinTong.API\\shuiyintong.dbutils\\shuiyintong.DBUtils.csproj": {
+              "projectPath": "D:\\GitProject\\ShuiYinTong.API\\shuiyintong.dbutils\\shuiyintong.DBUtils.csproj"
             },
-            "D:\\GitFiles\\ShuiYinTong.API\\shuiyintong.Entity\\shuiyintong.Entity.csproj": {
-              "projectPath": "D:\\GitFiles\\ShuiYinTong.API\\shuiyintong.Entity\\shuiyintong.Entity.csproj"
+            "D:\\GitProject\\ShuiYinTong.API\\shuiyintong.Entity\\shuiyintong.Entity.csproj": {
+              "projectPath": "D:\\GitProject\\ShuiYinTong.API\\shuiyintong.Entity\\shuiyintong.Entity.csproj"
             },
-            "D:\\GitFiles\\ShuiYinTong.API\\shuiyintong.SPDB\\shuiyintong.SPDB.csproj": {
-              "projectPath": "D:\\GitFiles\\ShuiYinTong.API\\shuiyintong.SPDB\\shuiyintong.SPDB.csproj"
+            "D:\\GitProject\\ShuiYinTong.API\\shuiyintong.SPDB\\shuiyintong.SPDB.csproj": {
+              "projectPath": "D:\\GitProject\\ShuiYinTong.API\\shuiyintong.SPDB\\shuiyintong.SPDB.csproj"
             }
           }
         }
@@ -3870,10 +3866,16 @@
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
       }
     }
   }
