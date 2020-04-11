@@ -1,5 +1,6 @@
 ﻿using CSharp_BASE.Class;
 using CSharp_BASE.设计模式.单例模式;
+using CSharp_BASE.设计模式.观察者模式;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -948,7 +949,22 @@ namespace CSharp_BASE
             //Console.WriteLine(sing2.GetHashCode());
 
 
+            //观察者模式
+            //主题
+            SubjectServer subject = new SubjectServer();
+            //观察者---新浪
+            XLObserver xl = new XLObserver();
+            //观察者订阅主题
+            subject.RegisterSubject(xl);
 
+            //观察者---百度
+            BDObserver bd = new BDObserver();
+            //观察者订阅主题
+            subject.RegisterSubject(bd);
+
+            Console.WriteLine("通知观察者有消息......");
+
+            subject.NotifyObservers(23.9, 31, 800);
 
             #endregion
 
