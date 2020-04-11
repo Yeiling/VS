@@ -1,4 +1,5 @@
 ﻿using CSharp_BASE.Class;
+using CSharp_BASE.设计模式;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -917,7 +918,6 @@ namespace CSharp_BASE
             #endregion
             //var result = GetSum(101);
 
-
             #region 方法覆盖和虚方法区别
             //A a = new A();
             //a.Test();
@@ -932,7 +932,6 @@ namespace CSharp_BASE
             //aaa.Test1();
             #endregion
 
-
             #region 时间转换
             //DateTime d1 = DateTime.Parse("2019-09-01");
             //DateTime d2 = DateTime.Parse("2019-09-09");
@@ -940,7 +939,15 @@ namespace CSharp_BASE
             //var t = (d2 - d1);
             //var r = t.TotalDays;
             //Console.WriteLine(r); 
+
+            #region 设计模式
+            var sing1 = Singleton.GetSingleton();
+            var sing2 = Singleton.GetSingleton();
+            Console.WriteLine(sing1.GetHashCode());
+            Console.WriteLine(sing2.GetHashCode());
             #endregion
+
+
 
             Console.ReadKey();
         }
@@ -1497,3 +1504,4 @@ namespace CSharp_BASE
     #endregion
 
 }
+#endregion
