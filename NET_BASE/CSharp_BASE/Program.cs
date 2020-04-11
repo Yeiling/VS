@@ -1,5 +1,5 @@
 ﻿using CSharp_BASE.Class;
-using CSharp_BASE.设计模式;
+using CSharp_BASE.设计模式.单例模式;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -941,10 +941,15 @@ namespace CSharp_BASE
             //Console.WriteLine(r); 
 
             #region 设计模式
-            var sing1 = Singleton.GetSingleton();
-            var sing2 = Singleton.GetSingleton();
-            Console.WriteLine(sing1.GetHashCode());
-            Console.WriteLine(sing2.GetHashCode());
+            //单例模式
+            //var sing1 = Singleton.GetSingleton();
+            //var sing2 = Singleton.GetSingleton();
+            //Console.WriteLine(sing1.GetHashCode());
+            //Console.WriteLine(sing2.GetHashCode());
+
+
+
+
             #endregion
 
 

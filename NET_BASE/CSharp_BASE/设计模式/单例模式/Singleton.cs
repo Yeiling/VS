@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CSharp_BASE.设计模式
+namespace CSharp_BASE.设计模式.单例模式
 {
     /// <summary>
     /// 单例模式
