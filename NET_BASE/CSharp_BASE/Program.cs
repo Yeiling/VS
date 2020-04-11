@@ -950,21 +950,26 @@ namespace CSharp_BASE
 
 
             //观察者模式
-            //主题
-            SubjectServer subject = new SubjectServer();
+            //主题---发布消息为MsgModel。天气信息
+            SubjectServer<MsgModel> subject = new SubjectServer<MsgModel>();
+
             //观察者---新浪
-            XLObserver xl = new XLObserver();
+            XLObserver<MsgModel> xl = new XLObserver<MsgModel>();
             //观察者订阅主题
             subject.RegisterSubject(xl);
 
             //观察者---百度
-            BDObserver bd = new BDObserver();
+            BDObserver<MsgModel> bd = new BDObserver<MsgModel>();
             //观察者订阅主题
             subject.RegisterSubject(bd);
 
             Console.WriteLine("通知观察者有消息......");
+            MsgModel msg = new MsgModel();
+            msg.Wd = 23.9;
+            msg.Sd = 31.5;
+            msg.Qy = 1000;
 
-            subject.NotifyObservers(23.9, 31, 800);
+            var resultMsg = subject.NotifyObservers(msg);
 
             #endregion
 
