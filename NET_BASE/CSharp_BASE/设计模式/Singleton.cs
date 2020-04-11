@@ -23,11 +23,9 @@ namespace CSharp_BASE.设计模式
         //}
         #endregion
 
-        #region 懒汉式写法---优点： 缺点：
+        #region 懒汉式写法---优点：饿汉式写法优点一样 缺点：多线程不安全，单线程使用没问题
         private static Singleton singleton;
-        private Singleton()
-        {
-        }
+        private Singleton() { }
 
         /// <summary>
         /// 对外暴露一个初始化方法
@@ -35,7 +33,7 @@ namespace CSharp_BASE.设计模式
         /// <returns></returns>
         public static Singleton GetSingleton()
         {
-            if (singleton == null)
+            if (singleton == null)  //此处存在多线程安全，开发中不能使用这种写法
                 singleton = new Singleton();
             return singleton;
         }
