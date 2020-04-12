@@ -8,13 +8,14 @@
         /// <summary>
         /// 订阅主题
         /// </summary>
-        void RegisterSubject(ObserverInterface<T> o);
+        /// <param name="Observer"></param>
+        void RegisterSubject(ObserverInterface<T> Observer);
 
         /// <summary>
         /// 取消订阅主题
         /// </summary>
-        /// <returns></returns>
-        void RemoveSubject(ObserverInterface<T> o);
+        /// <param name="Observer"></param>
+        void RemoveSubject(ObserverInterface<T> Observer);
 
         ///// <summary>
         ///// 发布消息给订阅者---发布通知信息
