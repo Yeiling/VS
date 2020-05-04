@@ -1,0 +1,353 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApp</name>
+    </assembly>
+    <members>
+        <member name="T:WebApp.AppSettingsFile.Config">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WebApp.AppSettingsFile.Config.DBConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WebApp.AppSettingsFile.Config.RedisConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WebApp.AppSettingsFile.Config.ServiceConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WebApp.AppSettingsFile.DBConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WebApp.AppSettingsFile.DBConfig.DBType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WebApp.AppSettingsFile.DBConfig.DbConnection">
+            <summary>
+            数据库链接地址
+            </summary>
+        </member>
+        <member name="T:WebApp.AppSettingsFile.RedisConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WebApp.AppSettingsFile.RedisConfig.RedisType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WebApp.AppSettingsFile.RedisConfig.RedisConnection">
+            <summary>
+            数据库链接地址
+            </summary>
+        </member>
+        <member name="T:WebApp.AppSettingsFile.ServiceConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WebApp.AppSettingsFile.ServiceConfig.BaiDu">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WebApp.Controllers.DefaultController">
+            <summary>
+            基础控制器
+            </summary>
+        </member>
+        <member name="T:WebApp.Controllers.v1.HomeController">
+            <summary>
+            Home控制器
+            </summary>
+        </member>
+        <member name="F:WebApp.Controllers.v1.HomeController.userinfoList">
+            <summary>
+            测试数据
+            </summary>
+        </member>
+        <member name="M:WebApp.Controllers.v1.HomeController.#ctor(WebClient.InterfaceFile.HttpWebApiClientInterface{WebApp.InterfaceFiles.IWebApi})">
+            <summary>
+            注入
+            </summary>
+            <param name="WebApi"></param>
+        </member>
+        <member name="M:WebApp.Controllers.v1.HomeController.Get">
+            <summary>
+            Get
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WebApp.Controllers.v1.TeacherController">
+            <summary>
+            教师类
+            </summary>
+        </member>
+        <member name="F:WebApp.Controllers.v1.TeacherController.userinfoList">
+            <summary>
+            测试数据
+            </summary>
+        </member>
+        <member name="M:WebApp.Controllers.v1.TeacherController.Get">
+            <summary>
+            Get
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApp.Controllers.v1.TeacherController.Post(WebApp.OperModel.Teacher)">
+            <summary>
+            添加
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:WebApp.Controllers.v1.TeacherController.Put(System.Int32,WebApp.OperModel.Teacher)">
+            <summary>
+            修改
+            </summary>
+            <param name="id"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:WebApp.Controllers.v1.TeacherController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="T:WebApp.Controllers.v2.OtherController">
+            <summary>
+            其他
+            </summary>
+        </member>
+        <member name="F:WebApp.Controllers.v2.OtherController.userinfoList">
+            <summary>
+            测试数据
+            </summary>
+        </member>
+        <member name="M:WebApp.Controllers.v2.OtherController.Get">
+            <summary>
+            查询
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApp.Controllers.v2.OtherController.Post(System.String)">
+            <summary>
+            添加
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:WebApp.Controllers.v2.OtherController.Put(System.Int32,System.String)">
+            <summary>
+            修改
+            </summary>
+            <param name="id"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:WebApp.Controllers.v2.OtherController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="T:WebApp.Controllers.v2.SchoolController">
+            <summary>
+            学校业务
+            </summary>
+        </member>
+        <member name="M:WebApp.Controllers.v2.SchoolController.Get">
+            <summary>
+            Get
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApp.Controllers.v2.SchoolController.Post(System.String)">
+            <summary>
+            添加
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:WebApp.Controllers.v2.SchoolController.Put(System.Int32,System.String)">
+            <summary>
+            修改
+            </summary>
+            <param name="id"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:WebApp.Controllers.v2.SchoolController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="T:WebApp.Controllers.v2.TeacherController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebApp.Controllers.v2.TeacherController.Get">
+            <summary>
+            Get
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApp.Controllers.v2.TeacherController.Post(System.String)">
+            <summary>
+            添加
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:WebApp.Controllers.v2.TeacherController.Put(System.Int32,System.String)">
+            <summary>
+            修改
+            </summary>
+            <param name="id"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:WebApp.Controllers.v2.TeacherController.Delete(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="T:WebApp.ExtFile.IHttpApiFactoryExtenssions">
+            <summary>
+            扩展IHttpApiFactory
+            </summary>
+        </member>
+        <member name="M:WebApp.ExtFile.IHttpApiFactoryExtenssions.UseIHttpApiFactory``1(WebApiClient.IHttpApiFactory{``0},System.Action{WebApp.ExtFile.HttpApiFactoryOper{``0}})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="httpApiFactory"></param>
+            <param name="act"></param>
+        </member>
+        <member name="T:WebApp.ExtFile.HttpApiFactoryOper`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:WebApp.ExtFile.HttpApiFactoryOper`1.#ctor(WebApiClient.IHttpApiFactory{`0})">
+            <summary>
+            
+            </summary>
+            <param name="httpApiFactory"></param>
+        </member>
+        <member name="M:WebApp.ExtFile.HttpApiFactoryOper`1.Retry(System.Int32,System.Func{`0,System.Boolean})">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WebApp.InterfaceFiles.IWebApi">
+            <summary>
+            测试接口
+            </summary>
+        </member>
+        <member name="M:WebApp.InterfaceFiles.IWebApi.GetUser">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApp.InterfaceFiles.IWebApi.GetUserByAccountAsync21(System.String)">
+            <summary>
+            不处理返回值结果 
+            </summary>
+            <param name="account"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApp.InterfaceFiles.IWebApi.GetUserByAccountAsync22(System.String)">
+            <summary>
+            文件操作---下载
+            </summary>
+            <param name="account"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApp.OperModel.IRouteable">
+            <summary>
+            StartUp配置
+            </summary>
+        </member>
+        <member name="T:WebApp.OperModel.Route">
+            <summary>
+            路由配置
+            </summary>
+        </member>
+        <member name="T:WebApp.OperModel.Teacher">
+            <summary>
+            教师
+            </summary>
+        </member>
+        <member name="P:WebApp.OperModel.Teacher.Id">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:WebApp.OperModel.Teacher.Name">
+            <summary>
+            用户姓名
+            </summary>
+        </member>
+        <member name="T:WebApp.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebApp.Program.Main(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:WebApp.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApp.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WebApp.Startup.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebApp.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:WebApp.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:WebApp.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+            <param name="Provider"></param>
+        </member>
+    </members>
+</doc>

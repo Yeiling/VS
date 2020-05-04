@@ -1,0 +1,9 @@
+D:\Test\SolutionTest\WebClient\bin\Debug\netcoreapp3.1\WebClient.deps.json
+D:\Test\SolutionTest\WebClient\bin\Debug\netcoreapp3.1\WebClient.dll
+D:\Test\SolutionTest\WebClient\obj\Debug\netcoreapp3.1\WebClient.AssemblyInfoInputs.cache
+D:\Test\SolutionTest\WebClient\obj\Debug\netcoreapp3.1\WebClient.AssemblyInfo.cs
+D:\Test\SolutionTest\WebClient\bin\Debug\netcoreapp3.1\WebClient.pdb
+D:\Test\SolutionTest\WebClient\obj\Debug\netcoreapp3.1\WebClient.dll
+D:\Test\SolutionTest\WebClient\obj\Debug\netcoreapp3.1\WebClient.pdb
+D:\Test\SolutionTest\WebClient\obj\Debug\netcoreapp3.1\WebClient.csproj.CoreCompileInputs.cache
+D:\Test\SolutionTest\WebClient\obj\Debug\netcoreapp3.1\WebClient.csprojAssemblyReference.cache
