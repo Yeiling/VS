@@ -12,11 +12,11 @@ namespace 尚硅谷数据结构和算法.LinkLists
         /// </summary>
         private SingleLinkNode<T> FirstNode { get; set; }
         /// <summary>
-        /// 当前戒电脑
+        /// 当前节点
         /// </summary>
         private SingleLinkNode<T> CurrentNode { get; set; }
         /// <summary>
-        /// 数量个数
+        /// 节点个数
         /// </summary>
         private int Count { get; set; }
 

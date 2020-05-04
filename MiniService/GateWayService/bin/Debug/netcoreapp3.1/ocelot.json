@@ -1,0 +1,93 @@
+/* 多实例通用配置 */
+//{
+//  "ReRoutes": [
+//    {
+//      "DownstreamPathTemplate": "/{url}",
+//      "DownstreamScheme": "http",
+//      "DownstreamHostAndPorts": [
+//        {
+//          "Host": "127.0.0.1",
+//          "Port": 5726
+//        },
+//        {
+//          "Host": "127.0.0.1",
+//          "Port": 5727
+//        },
+//        {
+//          "Host": "127.0.0.1",
+//          "Port": 5728
+//        }
+//      ],
+//      "UpstreamPathTemplate": "/{url}",
+//      "LoadBalancerOptions": { //轮训策略
+//        "Type": "RoundRobin"
+//      },
+//      "UpstreamHttpMethod": [ "Get", "Post" ]
+
+//    }
+//  ]
+//}
+
+
+//-------多实例consul------
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/{url}",
+      "DownstreamScheme": "http",
+      //"DownstreamHostAndPorts": [
+      //  {
+      //    "Host": "127.0.0.1",
+      //    "Port": 5726
+      //  },
+      //  {
+      //    "Host": "127.0.0.1",
+      //    "Port": 5727
+      //  },
+      //  {
+      //    "Host": "127.0.0.1",
+      //    "Port": 5728
+      //  }
+      //],
+      "UpstreamPathTemplate": "/{url}",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "UseServiceDiscovery": true, //使用服务发现
+      "ServiceName": "GoodOrderService",
+      "LoadBalancerOptions": { //轮训策略
+        "Type": "RoundRobin"
+      },
+      "FileCacheOptions": { //缓存
+        "TtlSeconds": 3, //单次缓存数据三秒
+        "Region": ""
+      },
+      //熔断
+      "QoSOptions": {
+        "ExceptionsAllowedBeforeBreaking": 3, //允许多少个异常请求
+        "DurationOfBreak": 5, //熔断的时间，单位为秒
+        "TimeoutValue": 5 //如果下游请求的处理时间超过多少则自如将请求设置为超时
+      },
+      //限流配置
+      "RateLimitOptions": {
+        "ClientWhitelist": [], //百名单
+        "EnableRateLimiting": true, //是否启动限流
+        "Period": "10s", //统计时间段：1s, 5m, 1h, 1d
+        "PeriodTimespan": 3, //多少秒之后客户端可以重试
+        "Limit": 3 //在统计时间段内允许的最大请求数量
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://127.0.0.1:5730", //网关地址---Nginx转发的地址
+    "ServiceDiscoveryProvider": {
+      "Host": "127.0.0.1",
+      "Port": 8500,
+      "Type": "Consul"
+    },
+    "RateLimitOptions": {
+      "DisableRateLimitHeaders": false,
+      "QuotaExceededMessage": "Too Many Request!!!",
+      "HttpStatusCode": 999
+      //"ClientIdHeader": "Test"
+    }
+  }
+}
