@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xvfIdWmHj3Oa36PomseBHBOrYdR6dhzwhzbSc+ESNPMlIrQQYOCql90r7MDcnLfsswAlRJv/jUTiMCwzlPHn/g==",
+  "dgSpecHash": "zdgUv8aw0CE5xp2GceVRKD3V/LFMvNCs2h+4thHgnmVg37nn4oodcGXXK7FnctUFPIsZiOWL0I9Oq+FPqbGw1w==",
   "success": true,
-  "projectFilePath": "D:\\MiniService\\Client\\Client.csproj",
+  "projectFilePath": "D:\\GitProject\\MiniService\\Client\\Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ACK\\.nuget\\packages\\consul\\0.7.2.6\\consul.0.7.2.6.nupkg.sha512",
     "C:\\Users\\ACK\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",

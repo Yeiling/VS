@@ -60,7 +60,7 @@ namespace GoodOrderService
 
             //服务注册到Consul容器---服务发现
             //只执行一次
-            //Configuration.Register();
+            Configuration.Register();
 
         }
     }

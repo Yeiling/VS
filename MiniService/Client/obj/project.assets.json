@@ -5363,11 +5363,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MiniService\\Client\\Client.csproj",
+      "projectUniqueName": "D:\\GitProject\\MiniService\\Client\\Client.csproj",
       "projectName": "Client",
-      "projectPath": "D:\\MiniService\\Client\\Client.csproj",
+      "projectPath": "D:\\GitProject\\MiniService\\Client\\Client.csproj",
       "packagesPath": "C:\\Users\\ACK\\.nuget\\packages\\",
-      "outputPath": "D:\\MiniService\\Client\\obj\\",
+      "outputPath": "D:\\GitProject\\MiniService\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ACK\\AppData\\Roaming\\NuGet\\NuGet.Config",

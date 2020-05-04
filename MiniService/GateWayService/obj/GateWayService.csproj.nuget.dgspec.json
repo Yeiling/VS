@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MiniService\\GateWayService\\GateWayService.csproj": {}
+    "D:\\GitProject\\MiniService\\GateWayService\\GateWayService.csproj": {}
   },
   "projects": {
-    "D:\\MiniService\\GateWayService\\GateWayService.csproj": {
+    "D:\\GitProject\\MiniService\\GateWayService\\GateWayService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MiniService\\GateWayService\\GateWayService.csproj",
+        "projectUniqueName": "D:\\GitProject\\MiniService\\GateWayService\\GateWayService.csproj",
         "projectName": "GateWayService",
-        "projectPath": "D:\\MiniService\\GateWayService\\GateWayService.csproj",
+        "projectPath": "D:\\GitProject\\MiniService\\GateWayService\\GateWayService.csproj",
         "packagesPath": "C:\\Users\\ACK\\.nuget\\packages\\",
-        "outputPath": "D:\\MiniService\\GateWayService\\obj\\",
+        "outputPath": "D:\\GitProject\\MiniService\\GateWayService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ACK\\AppData\\Roaming\\NuGet\\NuGet.Config",

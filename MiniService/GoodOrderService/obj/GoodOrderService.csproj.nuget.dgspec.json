@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MiniService\\GoodOrderService\\GoodOrderService.csproj": {}
+    "D:\\GitProject\\MiniService\\GoodOrderService\\GoodOrderService.csproj": {}
   },
   "projects": {
-    "D:\\MiniService\\GoodOrderService\\GoodOrderService.csproj": {
+    "D:\\GitProject\\MiniService\\GoodOrderService\\GoodOrderService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MiniService\\GoodOrderService\\GoodOrderService.csproj",
+        "projectUniqueName": "D:\\GitProject\\MiniService\\GoodOrderService\\GoodOrderService.csproj",
         "projectName": "GoodOrderService",
-        "projectPath": "D:\\MiniService\\GoodOrderService\\GoodOrderService.csproj",
+        "projectPath": "D:\\GitProject\\MiniService\\GoodOrderService\\GoodOrderService.csproj",
         "packagesPath": "C:\\Users\\ACK\\.nuget\\packages\\",
-        "outputPath": "D:\\MiniService\\GoodOrderService\\obj\\",
+        "outputPath": "D:\\GitProject\\MiniService\\GoodOrderService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ACK\\AppData\\Roaming\\NuGet\\NuGet.Config",

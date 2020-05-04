@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Y24h9BQlFhlXzk7anepRPdW1VyMdPrZiqjp74iKU5Jf9GJCGeNl/VoXoTeFJBs6YzwGmCaHEKmQa3j9UioYymg==",
+  "dgSpecHash": "SrmIe5PWeQaZOerOaRokEHvuLHMVlzYgs60iXI09mJWDEyjk9rOr22u6RXJhJ3hHRG6oJojd/J0+Cq0gMUVTIw==",
   "success": true,
-  "projectFilePath": "D:\\MiniService\\GateWayService\\GateWayService.csproj",
+  "projectFilePath": "D:\\GitProject\\MiniService\\GateWayService\\GateWayService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ACK\\.nuget\\packages\\consul\\0.7.2.6\\consul.0.7.2.6.nupkg.sha512",
     "C:\\Users\\ACK\\.nuget\\packages\\fluentvalidation\\8.6.1\\fluentvalidation.8.6.1.nupkg.sha512",
