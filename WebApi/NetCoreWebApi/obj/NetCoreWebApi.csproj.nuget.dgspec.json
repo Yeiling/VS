@@ -1,31 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitProject\\WebApi\\ClassLibrary\\ClassLibrary.csproj": {}
+    "D:\\GitProject\\WebApi\\NetCoreWebApi\\NetCoreWebApi.csproj": {}
   },
   "projects": {
-    "D:\\GitProject\\WebApi\\ClassLibrary\\ClassLibrary.csproj": {
+    "D:\\GitProject\\WebApi\\NetCoreWebApi\\NetCoreWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitProject\\WebApi\\ClassLibrary\\ClassLibrary.csproj",
-        "projectName": "ClassLibrary",
-        "projectPath": "D:\\GitProject\\WebApi\\ClassLibrary\\ClassLibrary.csproj",
+        "projectUniqueName": "D:\\GitProject\\WebApi\\NetCoreWebApi\\NetCoreWebApi.csproj",
+        "projectName": "NetCoreWebApi",
+        "projectPath": "D:\\GitProject\\WebApi\\NetCoreWebApi\\NetCoreWebApi.csproj",
         "packagesPath": "C:\\Users\\Rect\\.nuget\\packages\\",
-        "outputPath": "D:\\GitProject\\WebApi\\ClassLibrary\\obj\\",
+        "outputPath": "D:\\GitProject\\WebApi\\NetCoreWebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Rect\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp2.1"
+          "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp2.1": {
+          "netcoreapp3.1": {
             "projectReferences": {}
           }
         },
@@ -36,19 +36,7 @@
         }
       },
       "frameworks": {
-        "netcoreapp2.1": {
-          "dependencies": {
-            "Microsoft.NETCore.App": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.1.0, )",
-              "autoReferenced": true
-            },
-            "sqlSugarCore": {
-              "target": "Package",
-              "version": "[4.6.4.9, )"
-            }
-          },
+        "netcoreapp3.1": {
           "imports": [
             "net461",
             "net462",
@@ -59,6 +47,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
