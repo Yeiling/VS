@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "f8h90A/Cw5+N3OxWn0j7KxZcTNMKhLrS3LtQ321mhp2+jBod2q7oryJzyDxzNO+OQOXk24/GAPC6s7exitsjBw==",
+  "dgSpecHash": "cXiVHueKx4WS1PNuvUInGX4Tgn4dygr9lk9i7ImPPmX7/e+IDuv6Upws5eANkoTPtEX6ZQbmeMzMudssiOvAqw==",
   "success": true,
-  "projectFilePath": "D:\\GitProject\\WebApi\\NetCoreWebApi\\NetCoreWebApi.csproj",
+  "projectFilePath": "D:\\GitProject\\WebApi\\ServiceLibrary\\ServiceLibrary.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rect\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
   ],

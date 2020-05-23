@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using ServiceLibrary;
+using ServiceLibrary.Config;
 
 namespace NetCoreWebApi
 {
@@ -26,6 +28,39 @@ namespace NetCoreWebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            //注入TestDI---使用默认构造函数
+            //services.AddScoped<TestDI>();
+
+            //注入TestDI---使用带参数构造函数
+            //services.AddScoped(s => new TestDIOne(new ConfigOption
+            //{
+            //    Key = "qazwsx"
+            //}));
+
+            //使用默认构造函数
+            //services.AddScoped(typeof(TestDInterface), typeof(TestDIOne));
+
+
+            //使用带参数构造函数如下两种：
+            services.AddScoped<TestDInterface>(provider =>
+            {
+                return new TestDIOne(new ConfigOption
+                {
+                    Key = "123"
+                });
+            });
+
+            services.AddScoped<TestDInterface, TestDITwo>(provider =>
+            {
+                return new TestDITwo(new ConfigOption
+                {
+                    Key = "123"
+                });
+            });
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

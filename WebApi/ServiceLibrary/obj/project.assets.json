@@ -1,30 +1,11 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {
-      "ServiceLibrary/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "compile": {
-          "bin/placeholder/ServiceLibrary.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ServiceLibrary.dll": {}
-        }
-      }
-    }
+    ".NETCoreApp,Version=v3.1": {}
   },
-  "libraries": {
-    "ServiceLibrary/1.0.0": {
-      "type": "project",
-      "path": "../ServiceLibrary/ServiceLibrary.csproj",
-      "msbuildProject": "../ServiceLibrary/ServiceLibrary.csproj"
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": [
-      "ServiceLibrary >= 1.0.0"
-    ]
+    ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
     "C:\\Users\\Rect\\.nuget\\packages\\": {}
@@ -32,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitProject\\WebApi\\NetCoreWebApi\\NetCoreWebApi.csproj",
-      "projectName": "NetCoreWebApi",
-      "projectPath": "D:\\GitProject\\WebApi\\NetCoreWebApi\\NetCoreWebApi.csproj",
+      "projectUniqueName": "D:\\GitProject\\WebApi\\ServiceLibrary\\ServiceLibrary.csproj",
+      "projectName": "ServiceLibrary",
+      "projectPath": "D:\\GitProject\\WebApi\\ServiceLibrary\\ServiceLibrary.csproj",
       "packagesPath": "C:\\Users\\Rect\\.nuget\\packages\\",
-      "outputPath": "D:\\GitProject\\WebApi\\NetCoreWebApi\\obj\\",
+      "outputPath": "D:\\GitProject\\WebApi\\ServiceLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Rect\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -51,11 +32,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {
-            "D:\\GitProject\\WebApi\\ServiceLibrary\\ServiceLibrary.csproj": {
-              "projectPath": "D:\\GitProject\\WebApi\\ServiceLibrary\\ServiceLibrary.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -83,9 +60,6 @@
           }
         ],
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
