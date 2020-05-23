@@ -51,13 +51,13 @@ namespace NetCoreWebApi
                 });
             });
 
-            services.AddScoped<TestDInterface, TestDITwo>(provider =>
-            {
-                return new TestDITwo(new ConfigOption
-                {
-                    Key = "123"
-                });
-            });
+            //services.AddScoped<TestDInterface, TestDITwo>(provider =>
+            //{
+            //    return new TestDITwo(new ConfigOption
+            //    {
+            //        Key = "123"
+            //    });
+            //});
 
 
 

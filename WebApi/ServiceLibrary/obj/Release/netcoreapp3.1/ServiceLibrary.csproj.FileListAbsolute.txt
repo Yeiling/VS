@@ -1,0 +1,9 @@
+D:\GitProject\WebApi\ServiceLibrary\bin\Release\netcoreapp3.1\ServiceLibrary.deps.json
+D:\GitProject\WebApi\ServiceLibrary\bin\Release\netcoreapp3.1\ServiceLibrary.dll
+D:\GitProject\WebApi\ServiceLibrary\bin\Release\netcoreapp3.1\ServiceLibrary.pdb
+D:\GitProject\WebApi\ServiceLibrary\obj\Release\netcoreapp3.1\ServiceLibrary.csprojAssemblyReference.cache
+D:\GitProject\WebApi\ServiceLibrary\obj\Release\netcoreapp3.1\ServiceLibrary.AssemblyInfoInputs.cache
+D:\GitProject\WebApi\ServiceLibrary\obj\Release\netcoreapp3.1\ServiceLibrary.AssemblyInfo.cs
+D:\GitProject\WebApi\ServiceLibrary\obj\Release\netcoreapp3.1\ServiceLibrary.csproj.CoreCompileInputs.cache
+D:\GitProject\WebApi\ServiceLibrary\obj\Release\netcoreapp3.1\ServiceLibrary.dll
+D:\GitProject\WebApi\ServiceLibrary\obj\Release\netcoreapp3.1\ServiceLibrary.pdb
